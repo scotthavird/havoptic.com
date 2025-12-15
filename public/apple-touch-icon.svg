@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="50%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background - no rounded corners for apple touch icon -->
+  <rect width="180" height="180" fill="url(#bgGrad)"/>
+
+  <!-- The H lettermark -->
+  <text
+    x="90"
+    y="128"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="120"
+    font-weight="800"
+    fill="url(#letterGrad)"
+    text-anchor="middle"
+  >H</text>
+
+  <!-- Accent dots -->
+  <circle cx="48" cy="150" r="8" fill="#f97316"/>
+  <circle cx="90" cy="156" r="8" fill="#10b981"/>
+  <circle cx="132" cy="150" r="8" fill="#8b5cf6"/>
+</svg>

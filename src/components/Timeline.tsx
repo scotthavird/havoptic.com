@@ -24,29 +24,29 @@ export function Timeline({ groupedReleases }: TimelineProps) {
   }
 
   return (
-    <div className="relative">
+    <section className="relative" aria-label="Release timeline">
       {/* Vertical line */}
-      <div className="absolute left-[60px] top-0 bottom-0 w-px bg-slate-700 hidden md:block" />
+      <div className="absolute left-[60px] top-0 bottom-0 w-px bg-slate-700 hidden md:block" aria-hidden="true" />
 
       {groupedReleases.map(({ year, months }) => (
-        <div key={year} className="mb-8">
+        <section key={year} className="mb-8" aria-label={`${year} releases`}>
           {/* Year header */}
-          <div className="flex items-center gap-4 mb-6">
+          <header className="flex items-center gap-4 mb-6">
             <div className="w-[60px] md:w-[120px] flex-shrink-0">
-              <span className="text-2xl font-bold text-white">{year}</span>
+              <h2 className="text-2xl font-bold text-white">{year}</h2>
             </div>
-            <div className="h-px bg-slate-700 flex-grow" />
-          </div>
+            <div className="h-px bg-slate-700 flex-grow" aria-hidden="true" />
+          </header>
 
           {months.map(({ month, monthName, releases }) => (
-            <div key={`${year}-${month}`} className="flex gap-4 md:gap-8 mb-6">
+            <div key={`${year}-${month}`} className="flex gap-4 md:gap-8 mb-6" role="group" aria-label={`${monthName} ${year} releases`}>
               {/* Month label */}
               <div className="w-[60px] md:w-[120px] flex-shrink-0 relative">
                 <span className="text-sm font-medium text-slate-400 sticky top-4">
                   {monthName}
                 </span>
                 {/* Dot on timeline */}
-                <div className="absolute right-[-8px] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-slate-800 hidden md:block" />
+                <div className="absolute right-[-8px] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-slate-800 hidden md:block" aria-hidden="true" />
               </div>
 
               {/* Release cards */}
@@ -57,8 +57,8 @@ export function Timeline({ groupedReleases }: TimelineProps) {
               </div>
             </div>
           ))}
-        </div>
+        </section>
       ))}
-    </div>
+    </section>
   );
 }

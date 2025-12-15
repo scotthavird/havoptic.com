@@ -12,23 +12,27 @@ function App() {
   return (
     <div className="min-h-screen">
       <Header lastUpdated={lastUpdated} />
-      <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
+      <main role="main" aria-label="AI Tool Releases Timeline">
+        <nav aria-label="Filter by tool">
+          <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
+        </nav>
 
-      {loading && (
-        <div className="text-center py-12 text-slate-400">
-          Loading releases...
-        </div>
-      )}
+        {loading && (
+          <div className="text-center py-12 text-slate-400" aria-live="polite" aria-busy="true">
+            Loading releases...
+          </div>
+        )}
 
-      {error && (
-        <div className="text-center py-12 text-red-400">
-          Error: {error}
-        </div>
-      )}
+        {error && (
+          <div className="text-center py-12 text-red-400" role="alert">
+            Error: {error}
+          </div>
+        )}
 
-      {!loading && !error && (
-        <Timeline groupedReleases={groupedReleases} />
-      )}
+        {!loading && !error && (
+          <Timeline groupedReleases={groupedReleases} />
+        )}
+      </main>
     </div>
   );
 }
