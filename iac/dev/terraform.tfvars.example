@@ -1,0 +1,14 @@
+# Copy to terraform.tfvars and fill in values
+
+# Cloudflare Account ID (from dashboard or `npx wrangler whoami`)
+cloudflare_account_id = "your-account-id-here"
+
+# Domain (must be added to Cloudflare first)
+domain = "havoptic.com"
+
+# GitHub (for Pages integration)
+github_owner = "scotthavird"
+github_repo  = "havoptic.com"
+
+# API Token - set via environment variable:
+# export TF_VAR_cloudflare_api_token="your-token-here"
