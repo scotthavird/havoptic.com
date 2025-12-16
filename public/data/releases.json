@@ -1,56 +1,6 @@
 {
-  "lastUpdated": "2025-12-16T06:14:03.174Z",
+  "lastUpdated": "2025-12-15T06:15:11.070Z",
   "releases": [
-    {
-      "id": "claude-code-2.0.70",
-      "tool": "claude-code",
-      "toolDisplayName": "Claude Code",
-      "version": "2.0.70",
-      "date": "2025-12-15T22:38:58.864Z",
-      "summary": "- Added Enter key to accept and submit prompt suggestions immediately (tab still accepts for editing) - Added wildcard syntax mcpserver for MCP tool permissions to allow or deny all tools from a se...",
-      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.73.0",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.73.0",
-      "date": "2025-12-15T22:38:50Z",
-      "summary": "New Features\r   - Add ghost snapshot v2 for improved session capture (PR 8055)",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0",
-      "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.73.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.73.0-alpha.3",
-      "date": "2025-12-15T18:01:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.73.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.73.0-alpha.2",
-      "date": "2025-12-15T10:51:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.73.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.73.0-alpha.1",
-      "date": "2025-12-13T18:22:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0-alpha.1",
-      "type": "prerelease"
-    },
     {
       "id": "openai-codex-rust-v0.72.0",
       "tool": "openai-codex",
@@ -72,16 +22,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.72.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.8",
-      "date": "2025-12-12T23:03:05Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.68",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -90,56 +30,6 @@
       "summary": "- Fixed IME (Input Method Editor) support for languages like Chinese, Japanese, and Korean by correctly positioning the composition window at the cursor - Fixed a bug where disallowed MCP tools wer...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.72.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.6",
-      "date": "2025-12-12T21:28:15Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.72.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.5",
-      "date": "2025-12-12T18:34:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.72.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.4",
-      "date": "2025-12-12T11:29:46Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.72.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.3",
-      "date": "2025-12-12T03:32:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.72.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.2",
-      "date": "2025-12-12T01:26:29Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.67",
@@ -152,16 +42,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.72.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.72.0-alpha.1",
-      "date": "2025-12-11T22:37:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.72.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.71.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -170,36 +50,6 @@
       "summary": "Highlights\r - Introducing gpt-5.2 our latest frontier model with improvements across knowledge, reasoning and coding. Learn More",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.71.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.70.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.70.0-alpha.4",
-      "date": "2025-12-11T17:41:11Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.70.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.70.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.70.0-alpha.3",
-      "date": "2025-12-11T15:11:44Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.70.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.70.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.70.0-alpha.2",
-      "date": "2025-12-11T07:39:12Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.70.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.65",
@@ -212,16 +62,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.70.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.70.0-alpha.1",
-      "date": "2025-12-11T01:14:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.70.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.69.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -230,56 +70,6 @@
       "summary": "Highlights\r   - Skills: Explicit skill selections now inject SKILL.md content into the turn; skills load once per session and warn if a file",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.69.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.9",
-      "date": "2025-12-10T21:32:16Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.8",
-      "date": "2025-12-10T19:46:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.7",
-      "date": "2025-12-10T17:06:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.6",
-      "date": "2025-12-10T06:44:49Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.4",
-      "date": "2025-12-10T04:46:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.4",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.64",
@@ -312,26 +102,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.67.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.2",
-      "date": "2025-12-09T17:43:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.67.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.67.0-alpha.1",
-      "date": "2025-12-09T08:27:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.67.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.66.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -340,16 +110,6 @@
       "summary": "Highlights\r  - Execpolicy: TUI can whitelist command prefixes after an approval, sandbox denials propose an amendment you can accept, shell MCP now runs execpolicy so MCP tools follow the same rule...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.14",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.14",
-      "date": "2025-12-09T02:50:14Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.14",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.62",
@@ -362,36 +122,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.66.0-alpha.12",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.12",
-      "date": "2025-12-08T22:35:16Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.12",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.11",
-      "date": "2025-12-08T09:19:28Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.10",
-      "date": "2025-12-07T18:15:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.61",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -400,26 +130,6 @@
       "summary": "- Reverted VSCode support for multiple terminal clients due to responsiveness issues.",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.9",
-      "date": "2025-12-06T03:33:11Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.8",
-      "date": "2025-12-06T01:15:11Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.8",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.60",
@@ -432,56 +142,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.66.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.7",
-      "date": "2025-12-05T18:47:08Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.6",
-      "date": "2025-12-05T17:32:44Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.5",
-      "date": "2025-12-05T01:17:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.4",
-      "date": "2025-12-04T22:38:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.3",
-      "date": "2025-12-04T22:10:32Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.59",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -490,26 +150,6 @@
       "summary": "- Added --agent CLI flag to override the agent setting for the current session - Added agent setting to configure main thread with a specific agent's system prompt, tool restrictions, and model",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.2",
-      "date": "2025-12-04T20:43:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.66.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.66.0-alpha.1",
-      "date": "2025-12-04T19:02:47Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.66.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.65.0",
@@ -522,66 +162,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.65.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.11",
-      "date": "2025-12-04T06:13:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.10",
-      "date": "2025-12-04T05:34:38Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.9",
-      "date": "2025-12-04T05:02:18Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.8",
-      "date": "2025-12-03T23:56:58Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.7",
-      "date": "2025-12-03T23:28:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.6",
-      "date": "2025-12-03T20:41:22Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.58",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -590,26 +170,6 @@
       "summary": "- Pro users now have access to Opus 4.5 as part of their subscription! - Fixed timer duration showing \"11m 60s\" instead of \"12m 0s\"",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.4",
-      "date": "2025-12-03T17:10:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.3",
-      "date": "2025-12-03T11:02:44Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.3",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.57",
@@ -622,26 +182,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.65.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.2",
-      "date": "2025-12-03T01:52:25Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.65.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.65.0-alpha.1",
-      "date": "2025-12-03T00:36:57Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.64.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -652,16 +192,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.64.0-alpha.13",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.13",
-      "date": "2025-12-02T02:46:51Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.13",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.56",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -670,36 +200,6 @@
       "summary": "- Added setting to enable/disable terminal progress bar (OSC 9;4) - VSCode Extension: Added support for VS Code's secondary sidebar (VS Code 1.97+), allowing Claude Code to be displayed in the righ...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.12",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.12",
-      "date": "2025-12-01T18:39:44Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.12",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.11",
-      "date": "2025-12-01T09:55:59Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.10",
-      "date": "2025-11-28T12:00:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.10",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.55",
@@ -722,16 +222,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.64.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.9",
-      "date": "2025-11-25T18:44:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.52",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -750,46 +240,6 @@
       "summary": "- Added Opus 4.5! https://www.anthropic.com/news/claude-opus-4-5 - Introducing Claude Code for Desktop: https://claude.com/download",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.5",
-      "date": "2025-11-22T00:53:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.4",
-      "date": "2025-11-22T00:26:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.2",
-      "date": "2025-11-21T21:42:18Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.64.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.64.0-alpha.1",
-      "date": "2025-11-21T21:14:24Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "cursor-2.1",
@@ -832,26 +282,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.62.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.62.0-alpha.3",
-      "date": "2025-11-21T16:33:29Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.62.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.62.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.62.0-alpha.2",
-      "date": "2025-11-21T06:41:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.62.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.49",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -860,16 +290,6 @@
       "summary": "- Added readline-style ctrl-y for pasting deleted text - Improved clarity of usage limit warning message",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.62.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.62.0-alpha.1",
-      "date": "2025-11-20T23:34:18Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.62.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.61.0",
@@ -882,16 +302,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.61.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.61.0-alpha.3",
-      "date": "2025-11-20T01:48:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.61.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.47",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -900,26 +310,6 @@
       "summary": "- Improved error messages and validation for claude --teleport - Improved error handling in /usage",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.61.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.61.0-alpha.2",
-      "date": "2025-11-19T22:30:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.61.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.61.1-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.61.1-alpha.1",
-      "date": "2025-11-19T21:36:32Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.61.1-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.60.1",
@@ -942,76 +332,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.59.0-alpha.20",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.20",
-      "date": "2025-11-19T17:30:34Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.20",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.18",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.18",
-      "date": "2025-11-19T16:51:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.18",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.17",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.17",
-      "date": "2025-11-19T14:16:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.17",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.16",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.16",
-      "date": "2025-11-19T11:48:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.16",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.15",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.15",
-      "date": "2025-11-19T10:18:34Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.15",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.14",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.14",
-      "date": "2025-11-19T09:44:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.14",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.13",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.13",
-      "date": "2025-11-19T09:01:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.13",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.46",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1020,46 +340,6 @@
       "summary": "- Fixed image files being reported with incorrect media type when format cannot be detected from metadata",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.12",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.12",
-      "date": "2025-11-19T03:11:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.12",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.11",
-      "date": "2025-11-19T02:06:02Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.10",
-      "date": "2025-11-18T23:11:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.9",
-      "date": "2025-11-18T17:50:32Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.9",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.45",
@@ -1072,16 +352,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.59.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.7",
-      "date": "2025-11-18T06:48:46Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.43",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1090,36 +360,6 @@
       "summary": "- Added permissionMode field for custom agents - Added tooluseid field to PreToolUseHookInput and PostToolUseHookInput types",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.6",
-      "date": "2025-11-17T21:44:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.5",
-      "date": "2025-11-15T07:51:17Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.59.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.4",
-      "date": "2025-11-15T04:14:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.4",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.42",
@@ -1142,16 +382,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.59.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.59.0-alpha.1",
-      "date": "2025-11-13T23:34:54Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.59.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.58.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1160,86 +390,6 @@
       "summary": "Highlights\r - Support for gpt5.1 models family. Read more",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.10",
-      "date": "2025-11-13T16:39:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.9",
-      "date": "2025-11-13T06:52:32Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.8",
-      "date": "2025-11-13T04:11:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.7",
-      "date": "2025-11-13T01:15:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.6",
-      "date": "2025-11-12T21:25:59Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.5",
-      "date": "2025-11-12T16:53:25Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.4",
-      "date": "2025-11-11T16:42:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.3",
-      "date": "2025-11-11T02:06:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.3",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.37",
@@ -1252,26 +402,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.58.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.2",
-      "date": "2025-11-10T20:30:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.58.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.58.0-alpha.1",
-      "date": "2025-11-10T17:52:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.58.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.57.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1280,26 +410,6 @@
       "summary": "Highlights\r - TUI quality-of-life: ctrl-n/p navigation for slash command lists and backtracking skips the /status noise.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.57.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.57.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.57.0-alpha.3",
-      "date": "2025-11-08T02:16:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.57.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.57.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.57.0-alpha.2",
-      "date": "2025-11-08T01:00:08Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.57.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.36",
@@ -1312,34 +422,14 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.57.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.57.0-alpha.1",
-      "date": "2025-11-07T19:34:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.57.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.56.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.56.0",
       "date": "2025-11-07T18:09:48Z",
-      "summary": "Highlights\r   - Introducing our new model GPT-5-Codex-Mini — a more compact and cost-efficient version of GPT-5-Codex",
+      "summary": "Highlights\r   - Introducing our new model GPT-5-Codex-Mini \u2014 a more compact and cost-efficient version of GPT-5-Codex",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.56.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.56.0-alpha.5",
-      "date": "2025-11-06T22:38:58Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0-alpha.5",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.35",
@@ -1352,16 +442,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.56.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.56.0-alpha.4",
-      "date": "2025-11-06T17:01:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.34",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1370,36 +450,6 @@
       "summary": "- VSCode Extension: Added setting to configure the initial permission mode for new conversations - Improved file path suggestion performance with native Rust-based fu",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.56.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.56.0-alpha.3",
-      "date": "2025-11-05T19:43:15Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.56.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.56.0-alpha.2",
-      "date": "2025-11-05T19:08:57Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.56.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.56.0-alpha.1",
-      "date": "2025-11-05T18:16:15Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.33",
@@ -1427,19 +477,9 @@
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.54.0",
       "date": "2025-11-04T18:53:40Z",
-      "summary": "⚠️ WARNING: Attempting to pin musl 1.2.5 for DNS fixes in 6189 turned out to be the wrong fix. We reverted it in 6222 and published 0.55.0.\r Otherwise, this release was mostly bugfixes and document...",
+      "summary": "\u26a0\ufe0f WARNING: Attempting to pin musl 1.2.5 for DNS fixes in 6189 turned out to be the wrong fix. We reverted it in 6222 and published 0.55.0.\r Otherwise, this release was mostly bugfixes and document...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.54.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.54.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.54.0-alpha.3",
-      "date": "2025-11-04T17:44:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.54.0-alpha.3",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.32",
@@ -1450,26 +490,6 @@
       "summary": "- Un-deprecate output styles based on community feedback - Added companyAnnouncements setting for displaying announcements on startup",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.54.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.54.0-alpha.2",
-      "date": "2025-11-03T18:30:40Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.54.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.54.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.54.0-alpha.1",
-      "date": "2025-10-31T22:12:40Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.54.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.31",
@@ -1502,16 +522,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.53.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.53.0-alpha.1",
-      "date": "2025-10-30T20:54:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.53.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.52.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1522,46 +532,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.51.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.11",
-      "date": "2025-10-30T16:49:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.10",
-      "date": "2025-10-30T01:53:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.9",
-      "date": "2025-10-29T23:23:28Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.8",
-      "date": "2025-10-29T21:34:02Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
       "id": "cursor-2.0",
       "tool": "cursor",
       "toolDisplayName": "Cursor",
@@ -1580,46 +550,6 @@
       "summary": "New Coding Model and Agent Interface",
       "url": "https://www.cursor.com/changelog",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.6",
-      "date": "2025-10-29T00:41:00Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.5",
-      "date": "2025-10-28T20:30:47Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.4",
-      "date": "2025-10-28T19:12:46Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.3",
-      "date": "2025-10-28T19:03:04Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.3",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.28",
@@ -1632,26 +562,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.51.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.2",
-      "date": "2025-10-27T16:35:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.51.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.51.0-alpha.1",
-      "date": "2025-10-27T03:49:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.51.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.50.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1660,36 +570,6 @@
       "summary": "Highlights\r - Improved /feedback to get better diagnostics. Please use it to report any issues. (5661, 5663).",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.50.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.50.0-alpha.3",
-      "date": "2025-10-25T06:29:49Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.50.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.50.0-alpha.2",
-      "date": "2025-10-25T05:37:01Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.50.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.50.0-alpha.1",
-      "date": "2025-10-24T23:58:06Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.27",
@@ -1722,26 +602,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.48.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.48.0-alpha.4",
-      "date": "2025-10-23T20:15:25Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.48.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.48.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.48.0-alpha.3",
-      "date": "2025-10-21T21:24:56Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.48.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.25",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1752,16 +612,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.48.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.48.0-alpha.2",
-      "date": "2025-10-21T04:42:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.48.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.24",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1770,16 +620,6 @@
       "summary": "- Fixed a bug where project-level skills were not loading when --setting-sources 'project' was specified - Claude Code Web: Support for Web -> CLI teleport",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.48.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.48.0-alpha.1",
-      "date": "2025-10-20T05:05:37Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.48.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.22",
@@ -1802,16 +642,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.47.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.47.0-alpha.3",
-      "date": "2025-10-17T01:00:35Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.47.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.21",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1820,16 +650,6 @@
       "summary": "- Support MCP structuredContent field in tool responses - Added an interactive question tool",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.47.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.47.0-alpha.2",
-      "date": "2025-10-16T22:29:03Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.47.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.20",
@@ -1882,16 +702,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.47.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.47.0-alpha.1",
-      "date": "2025-10-09T19:38:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.47.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.13",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1922,36 +732,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.46.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.7",
-      "date": "2025-10-08T23:31:33Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.46.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.6",
-      "date": "2025-10-08T22:15:18Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.46.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.5",
-      "date": "2025-10-08T21:01:40Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.11",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1962,36 +742,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.46.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.4",
-      "date": "2025-10-08T17:41:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.46.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.3",
-      "date": "2025-10-08T15:34:06Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.46.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.2",
-      "date": "2025-10-08T01:03:00Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.10",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2000,16 +750,6 @@
       "summary": "- Rewrote terminal renderer for buttery smooth UI - Enable/disable MCP servers by @mentioning, or in /mcp",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.46.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.46.0-alpha.1",
-      "date": "2025-10-07T19:22:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.46.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.9",
@@ -2032,66 +772,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.45.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.6",
-      "date": "2025-10-06T05:25:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.45.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.5",
-      "date": "2025-10-06T01:21:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.45.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.4",
-      "date": "2025-10-05T21:15:57Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.45.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.3",
-      "date": "2025-10-05T06:20:37Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.45.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.2",
-      "date": "2025-10-05T02:45:33Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.45.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.45.0-alpha.1",
-      "date": "2025-10-04T22:48:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.45.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.8",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2112,36 +792,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.43.0-alpha.18",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.18",
-      "date": "2025-10-03T05:03:58Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.18",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.17",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.17",
-      "date": "2025-10-02T22:19:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.17",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.16",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.16",
-      "date": "2025-10-02T20:24:12Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.16",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-2.0.5",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2150,106 +800,6 @@
       "summary": "- IDE: Fix IME unintended message submission with Enter and Tab - IDE: Add \"Open in Terminal\" link in login screen",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.15",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.15",
-      "date": "2025-10-01T20:32:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.15",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.14",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.14",
-      "date": "2025-10-01T19:49:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.14",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.13",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.13",
-      "date": "2025-10-01T19:32:06Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.13",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.12",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.12",
-      "date": "2025-10-01T18:50:50Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.12",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.11",
-      "date": "2025-10-01T18:28:54Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.10",
-      "date": "2025-10-01T16:27:11Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.8",
-      "date": "2025-10-01T03:51:10Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.7",
-      "date": "2025-09-30T22:39:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.6",
-      "date": "2025-09-30T19:19:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.5",
-      "date": "2025-09-30T07:27:02Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.5",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-2.0.1",
@@ -2292,84 +842,14 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.43.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.4",
-      "date": "2025-09-29T02:48:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.3",
-      "date": "2025-09-28T22:40:43Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.2",
-      "date": "2025-09-27T19:33:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.43.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.43.0-alpha.1",
-      "date": "2025-09-27T15:08:35Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.43.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.42.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.42.0",
       "date": "2025-09-26T18:42:34Z",
-      "summary": "Notable Changes\r - Experimental Rust SDK–based MCP client introduced (4252)",
+      "summary": "Notable Changes\r - Experimental Rust SDK\u2013based MCP client introduced (4252)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.42.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.42.0-alpha.3",
-      "date": "2025-09-26T15:33:42Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.42.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.42.0-alpha.2",
-      "date": "2025-09-26T14:31:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.42.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.42.0-alpha.1",
-      "date": "2025-09-26T06:08:06Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.126",
@@ -2402,16 +882,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.41.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.41.0-alpha.1",
-      "date": "2025-09-24T06:16:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.41.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.123",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2432,26 +902,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.40.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.40.0-alpha.3",
-      "date": "2025-09-23T03:43:20Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.40.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.40.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.40.0-alpha.2",
-      "date": "2025-09-23T00:30:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.40.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.120",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2460,16 +910,6 @@
       "summary": "- Fix input lag during typing, especially noticeable with large prompts - Improved VSCode extension command registry and sessions dialog user experience",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.40.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.40.0-alpha.1",
-      "date": "2025-09-19T00:31:20Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.40.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.39.0",
@@ -2492,26 +932,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.39.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.39.0-alpha.2",
-      "date": "2025-09-18T18:43:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.39.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.39.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.39.0-alpha.1",
-      "date": "2025-09-17T18:45:43Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.39.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.38.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2532,16 +952,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.37.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.37.0-alpha.4",
-      "date": "2025-09-17T06:08:28Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.37.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.117",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2550,16 +960,6 @@
       "summary": "- Add Ctrl-R history search to recall previous commands like bash/",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.37.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.37.0-alpha.1",
-      "date": "2025-09-16T19:21:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.37.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.115",
@@ -2592,66 +992,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.35.0-alpha.13",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.13",
-      "date": "2025-09-15T14:04:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.13",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.12",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.12",
-      "date": "2025-09-15T08:12:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.12",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.11",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.11",
-      "date": "2025-09-15T01:34:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.11",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.10",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.10",
-      "date": "2025-09-15T00:49:17Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.10",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.9",
-      "date": "2025-09-14T23:29:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.8",
-      "date": "2025-09-14T21:39:11Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.113",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2660,36 +1000,6 @@
       "summary": "- Deprecated piped input in interactive mode - Move Ctrl+R keybinding for toggling transcript to Ctrl+O",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.7",
-      "date": "2025-09-12T21:05:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.6",
-      "date": "2025-09-12T06:56:19Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.5",
-      "date": "2025-09-12T04:16:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.5",
-      "type": "prerelease"
     },
     {
       "id": "cursor-1.6",
@@ -2722,46 +1032,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.35.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.4",
-      "date": "2025-09-11T20:25:40Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.3",
-      "date": "2025-09-11T18:45:16Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.2",
-      "date": "2025-09-11T16:31:04Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.35.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.35.0-alpha.1",
-      "date": "2025-09-11T15:18:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.35.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.111",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2782,26 +1052,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.34.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.34.0-alpha.2",
-      "date": "2025-09-10T21:12:21Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.34.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.34.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.34.0-alpha.1",
-      "date": "2025-09-10T20:37:56Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.34.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.33.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2810,16 +1060,6 @@
       "summary": "Codex 0.33.0\r Key change is https://github.com/openai/codex/pull/3430, which reverts https://github.com/openai/codex/pull/3179 because it introduced a regression.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.33.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.33.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.33.0-alpha.1",
-      "date": "2025-09-10T17:39:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.33.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.32.0",
@@ -2832,16 +1072,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.32.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.32.0-alpha.3",
-      "date": "2025-09-10T02:50:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.32.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.110",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2850,16 +1080,6 @@
       "summary": "- /terminal-setup command now supports We",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.32.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.32.0-alpha.2",
-      "date": "2025-09-09T15:50:29Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.32.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.109",
@@ -2872,16 +1092,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.32.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.32.0-alpha.1",
-      "date": "2025-09-08T22:08:47Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.32.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.31.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2890,46 +1100,6 @@
       "summary": "Codex 0.31.0\r - https://github.com/openai/codex/pull/3182 added support for a startuptimeoutms option when declaring an MCP server (docs), which has been a highly requested feature, particularly fo...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.31.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.31.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.31.0-alpha.4",
-      "date": "2025-09-08T16:47:37Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.31.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.31.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.31.0-alpha.3",
-      "date": "2025-09-08T15:27:05Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.31.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.31.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.31.0-alpha.2",
-      "date": "2025-09-06T02:23:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.31.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.31.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.31.0-alpha.1",
-      "date": "2025-09-06T02:06:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.31.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.30.0",
@@ -2942,16 +1112,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.29.1-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.7",
-      "date": "2025-09-05T01:02:05Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.7",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.106",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2960,56 +1120,6 @@
       "summary": "- Windows: Fixed path permission matching to consistently use POSIX format (e.g., Read(//c/Users/...))",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.29.1-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.6",
-      "date": "2025-09-04T20:26:46Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.6",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.29.1-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.5",
-      "date": "2025-09-04T17:51:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.29.1-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.4",
-      "date": "2025-09-04T15:35:38Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.29.1-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.3",
-      "date": "2025-09-04T06:36:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.29.1-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.29.1-alpha.2",
-      "date": "2025-09-03T23:08:45Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.29.1-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.29.0",
@@ -3030,16 +1140,6 @@
       "summary": "- [Highlights]\r   - TUI polish and stability improvements: reduced typing lag, cleaner streamed message formatting, better error handling, and improved input behavior.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.28.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.28.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.28.0-alpha.2",
-      "date": "2025-09-02T21:38:12Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.28.0-alpha.2",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.27.0",
@@ -3072,16 +1172,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.26.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.26.0-alpha.1",
-      "date": "2025-08-27T17:42:24Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.26.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.25.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -3090,26 +1180,6 @@
       "summary": "Highlights:\r  New Features",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.25.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.25.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.25.0-alpha.2",
-      "date": "2025-08-27T06:14:17Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.25.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.25.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.25.0-alpha.1",
-      "date": "2025-08-27T05:56:39Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.25.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.93",
@@ -3132,46 +1202,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.24.0-alpha.9",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.9",
-      "date": "2025-08-26T04:03:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.9",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.8",
-      "date": "2025-08-25T23:09:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.7",
-      "date": "2025-08-25T17:36:38Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.6",
-      "date": "2025-08-25T06:06:33Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.90",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3182,46 +1212,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.24.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.5",
-      "date": "2025-08-24T21:51:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.4",
-      "date": "2025-08-24T18:56:53Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.3",
-      "date": "2025-08-23T16:29:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.2",
-      "date": "2025-08-22T21:17:58Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.88",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3230,16 +1220,6 @@
       "summary": "- Fixed issue causing \"OAuth authentication is currently not supported\" - Status line input now includes exceeds200ktokens",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.24.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.24.0-alpha.1",
-      "date": "2025-08-21T05:43:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.86",
@@ -3262,36 +1242,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.23.0-alpha.8",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.8",
-      "date": "2025-08-20T05:07:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.8",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.7",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.7",
-      "date": "2025-08-20T03:44:32Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.7",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.6",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.6",
-      "date": "2025-08-20T03:06:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.6",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.85",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3300,16 +1250,6 @@
       "summary": "- Status line input now includes session cost info - Hooks: Introduced SessionEnd hook",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.5",
-      "date": "2025-08-19T05:03:46Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.5",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.84",
@@ -3322,36 +1262,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.23.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.4",
-      "date": "2025-08-18T20:22:37Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.3",
-      "date": "2025-08-18T04:54:29Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.2",
-      "date": "2025-08-17T17:16:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.83",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3360,16 +1270,6 @@
       "summary": "- @-mention: Support files with spaces in path - New shimmering spinner",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.23.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.23.0-alpha.1",
-      "date": "2025-08-15T21:59:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.23.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.82",
@@ -3392,26 +1292,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.22.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.22.0-alpha.5",
-      "date": "2025-08-14T23:22:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.22.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.22.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.22.0-alpha.4",
-      "date": "2025-08-14T18:37:44Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.22.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.81",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3422,26 +1302,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.22.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.22.0-alpha.3",
-      "date": "2025-08-14T06:23:17Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.22.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.22.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.22.0-alpha.2",
-      "date": "2025-08-14T01:05:57Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.22.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.80",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3450,16 +1310,6 @@
       "summary": "- UI improvements: Fix text contrast for custom subagent colors and spinner rendering issues",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.22.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.22.0-alpha.1",
-      "date": "2025-08-13T19:03:22Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.22.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.77",
@@ -3492,16 +1342,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.21.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.21.0-alpha.1",
-      "date": "2025-08-11T20:25:30Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.21.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "openai-codex-rust-v0.20.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -3510,46 +1350,6 @@
       "summary": "Some key fixes for Windows:\r - https://github.com/openai/codex/pull/2035 the npm release of @openai/codex now runs the Rust CLI instead of falling back to the old TypeScript CLI (TypeScript code wa...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.20.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.20.0-alpha.4",
-      "date": "2025-08-08T23:06:16Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.20.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.20.0-alpha.3",
-      "date": "2025-08-08T22:29:16Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.20.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.20.0-alpha.2",
-      "date": "2025-08-08T20:55:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.20.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.20.0-alpha.1",
-      "date": "2025-08-08T20:18:28Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.72",
@@ -3602,16 +1402,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.15.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.15.0-alpha.1",
-      "date": "2025-08-06T23:34:47Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.15.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.70",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3630,36 +1420,6 @@
       "summary": "Removed some internal messaging from the conversation view: https://github.com/openai/codex/pull/1868, https://github.com/openai/codex/pull/1866\r  Fixed issue where codex exec was printing Internal...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.14.0",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.14.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.14.0-alpha.3",
-      "date": "2025-08-06T15:55:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.14.0-alpha.3",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.14.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.14.0-alpha.2",
-      "date": "2025-08-06T08:24:35Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.14.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.14.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.14.0-alpha.1",
-      "date": "2025-08-06T06:56:02Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.14.0-alpha.1",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.13.0",
@@ -3712,36 +1472,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.11.0-alpha.5",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha.5",
-      "date": "2025-08-01T22:37:00Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha.5",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.11.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha.4",
-      "date": "2025-08-01T22:15:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.11.0-beta.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-beta.1",
-      "date": "2025-08-01T00:52:00Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-beta.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.65",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3750,16 +1480,6 @@
       "summary": "- IDE: Fixed connection stability issues and error handling for diagnostics - Windows: Fixed shell environment setup for users without .bashrc files",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.11.0-alpha.3",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha.3",
-      "date": "2025-07-31T18:23:58Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha.3",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.64",
@@ -3792,26 +1512,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.11.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha.2",
-      "date": "2025-07-28T21:33:25Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.11.0-alpha.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha.1",
-      "date": "2025-07-28T19:53:23Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.61",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3820,16 +1520,6 @@
       "summary": "- Transcript mode (Ctrl+R): Changed Esc to exit transcript mode rather than interrupt - Settings: Added --settings flag to load settings from a JSON file",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.11.0-alpha",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.11.0-alpha",
-      "date": "2025-07-25T18:57:31Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.11.0-alpha",
-      "type": "prerelease"
     },
     {
       "id": "openai-codex-rust-v0.10.0",
@@ -3872,16 +1562,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-rust-v0.9.0-beta.1",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.9.0-beta.1",
-      "date": "2025-07-22T23:04:27Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.9.0-beta.1",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.58",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3890,26 +1570,6 @@
       "summary": "- Added support for reading PDFs - MCP: Improved server health status display in 'claude mcp list'",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-rust-v0.9.0-beta",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.9.0-beta",
-      "date": "2025-07-22T20:57:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.9.0-beta",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-rust-v0.9.0-alpha",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "rust-v0.9.0-alpha",
-      "date": "2025-07-22T07:57:12Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/rust-v0.9.0-alpha",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.57",
@@ -4142,26 +1802,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-2925136536b06a324551627468d17e959afa18d4-1-rust-v0.2.0-alpha.2",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-2925136536b06a324551627468d17e959afa18d4-1-rust-v0.2.0-alpha.2",
-      "date": "2025-06-29T17:32:35Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-2925136536b06a324551627468d17e959afa18d4-1-rust-v0.2.0-alpha.2",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-b289c9207090b2e27494545d7b5404e063bd86f3-1-rust-v0.1.0-alpha.4",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-b289c9207090b2e27494545d7b5404e063bd86f3-1-rust-v0.1.0-alpha.4",
-      "date": "2025-06-28T22:54:10Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-b289c9207090b2e27494545d7b5404e063bd86f3-1-rust-v0.1.0-alpha.4",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.37",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4180,16 +1820,6 @@
       "summary": "- Web search now takes today's date into context - Fixed a bug where stdio MCP servers were not terminating properly on exit",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-6a8a936f75ea44faf05ff4fab0c6a36fc970428d-1-rust-v0.0.2506261603",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-6a8a936f75ea44faf05ff4fab0c6a36fc970428d-1-rust-v0.0.2506261603",
-      "date": "2025-06-26T23:16:56Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-6a8a936f75ea44faf05ff4fab0c6a36fc970428d-1-rust-v0.0.2506261603",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.35",
@@ -4352,46 +1982,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-5fc3c3023d9f179fb416b2722d1434bac278e916-1-rust-v0.0.2506060849",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-5fc3c3023d9f179fb416b2722d1434bac278e916-1-rust-v0.0.2506060849",
-      "date": "2025-06-06T16:05:13Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-5fc3c3023d9f179fb416b2722d1434bac278e916-1-rust-v0.0.2506060849",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-ac6e1b2661320a631d80aa51bdfa8f1635e0c8fa-1-rust-v0.0.2506052246",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-ac6e1b2661320a631d80aa51bdfa8f1635e0c8fa-1-rust-v0.0.2506052246",
-      "date": "2025-06-06T05:59:35Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-ac6e1b2661320a631d80aa51bdfa8f1635e0c8fa-1-rust-v0.0.2506052246",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-121686615fd634e35f3e415896f36908cf8632f9-1-rust-v0.0.2506052203",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-121686615fd634e35f3e415896f36908cf8632f9-1-rust-v0.0.2506052203",
-      "date": "2025-06-06T05:18:18Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-121686615fd634e35f3e415896f36908cf8632f9-1-rust-v0.0.2506052203",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-84eae7b1bc4e3b5420f2d6127b7c17e7a979a5b0-1-rust-v0.0.2506052135",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-84eae7b1bc4e3b5420f2d6127b7c17e7a979a5b0-1-rust-v0.0.2506052135",
-      "date": "2025-06-06T04:49:36Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-84eae7b1bc4e3b5420f2d6127b7c17e7a979a5b0-1-rust-v0.0.2506052135",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.11",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4412,16 +2002,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-45519e12f39777b65c05ed498503ddcb60beb289-1-rust-v0.0.2506030956",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-45519e12f39777b65c05ed498503ddcb60beb289-1-rust-v0.0.2506030956",
-      "date": "2025-06-03T17:15:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-45519e12f39777b65c05ed498503ddcb60beb289-1-rust-v0.0.2506030956",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.8",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4432,26 +2012,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-ca8e97fcbcb991e542b8689f2d4eab9d30c399d6-1-rust-v0.0.2505302325",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-ca8e97fcbcb991e542b8689f2d4eab9d30c399d6-1-rust-v0.0.2505302325",
-      "date": "2025-05-31T06:39:26Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-ca8e97fcbcb991e542b8689f2d4eab9d30c399d6-1-rust-v0.0.2505302325",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-378d773f3af95384eef51addf560df30aa9fd15f-1-rust-v0.0.2505301630",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-378d773f3af95384eef51addf560df30aa9fd15f-1-rust-v0.0.2505301630",
-      "date": "2025-05-30T23:45:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-378d773f3af95384eef51addf560df30aa9fd15f-1-rust-v0.0.2505301630",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.7",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4460,26 +2020,6 @@
       "summary": "- Renamed /allowed-tools -> /permissions - Migrated allowedTools and ignorePatterns from .claude.json -> settings.json",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-dfac02b343605ce61154ab2e075ac6c38f533916-1-rust-v0.0.2505291659",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-dfac02b343605ce61154ab2e075ac6c38f533916-1-rust-v0.0.2505291659",
-      "date": "2025-05-30T00:13:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-dfac02b343605ce61154ab2e075ac6c38f533916-1-rust-v0.0.2505291659",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-b152435fb95e7f1ab197ae2cdde68ae29a7d219b-1-rust-v0.0.2505291458",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-b152435fb95e7f1ab197ae2cdde68ae29a7d219b-1-rust-v0.0.2505291458",
-      "date": "2025-05-29T22:13:50Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-b152435fb95e7f1ab197ae2cdde68ae29a7d219b-1-rust-v0.0.2505291458",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.6",
@@ -4502,36 +2042,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-d519bd8bbd1e1fd9efdc5d68cf7bebdec0dd0f28-1-rust-v0.0.2505270918",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-d519bd8bbd1e1fd9efdc5d68cf7bebdec0dd0f28-1-rust-v0.0.2505270918",
-      "date": "2025-05-27T16:32:08Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-d519bd8bbd1e1fd9efdc5d68cf7bebdec0dd0f28-1-rust-v0.0.2505270918",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-aa156ceac953c3e6f3602e6eb2f61b14ac8adaf3-1-rust-v0.0.2505231205",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-aa156ceac953c3e6f3602e6eb2f61b14ac8adaf3-1-rust-v0.0.2505231205",
-      "date": "2025-05-23T19:18:41Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-aa156ceac953c3e6f3602e6eb2f61b14ac8adaf3-1-rust-v0.0.2505231205",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-d2eee362c1c6cdc00bcb5bf1d479823ef33c143a-1-rust-v0.0.2505231137",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-d2eee362c1c6cdc00bcb5bf1d479823ef33c143a-1-rust-v0.0.2505231137",
-      "date": "2025-05-23T18:50:55Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-d2eee362c1c6cdc00bcb5bf1d479823ef33c143a-1-rust-v0.0.2505231137",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-1.0.1",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4540,16 +2050,6 @@
       "summary": "- Added DISABLEINTERLEAVEDTHINKING to give users the option to opt out of interleaved thinking. - Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Con...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-6a77484c94956d5cd319da3f8500b178ec93fc90-1-rust-v0.0.2505220956",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-6a77484c94956d5cd319da3f8500b178ec93fc90-1-rust-v0.0.2505220956",
-      "date": "2025-05-22T17:11:03Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-6a77484c94956d5cd319da3f8500b178ec93fc90-1-rust-v0.0.2505220956",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-1.0.0",
@@ -4562,16 +2062,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-79cb07bf70a9036200aa2b61b211fe47ea13184a-1-rust-v0.0.2505212314",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-79cb07bf70a9036200aa2b61b211fe47ea13184a-1-rust-v0.0.2505212314",
-      "date": "2025-05-22T06:27:50Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-79cb07bf70a9036200aa2b61b211fe47ea13184a-1-rust-v0.0.2505212314",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-0.2.125",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4580,26 +2070,6 @@
       "summary": "- Breaking change: Bedrock ARN passed to ANTHROPICMODEL or ANTHROPICSMALLFASTMODEL should no longer contain an escaped slash (specify / instead of %2F) - Removed DEBUG=true in favor of ANTHROPICLOG...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-68e94c8c08943e1d4a53bd7987e319ba7dbffb74-1-rust-v0.0.2505191609",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-68e94c8c08943e1d4a53bd7987e319ba7dbffb74-1-rust-v0.0.2505191609",
-      "date": "2025-05-19T23:22:02Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-68e94c8c08943e1d4a53bd7987e319ba7dbffb74-1-rust-v0.0.2505191609",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-c74d7e13e7d8daf3a2493f6216918d5e59a38bed-1-rust-v0.0.2505191518",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-c74d7e13e7d8daf3a2493f6216918d5e59a38bed-1-rust-v0.0.2505191518",
-      "date": "2025-05-19T22:31:29Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-c74d7e13e7d8daf3a2493f6216918d5e59a38bed-1-rust-v0.0.2505191518",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-0.2.117",
@@ -4612,56 +2082,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-5ee08335ac690a69035720a798df9865bc5a4278-1-rust-v0.0.2505171051",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-5ee08335ac690a69035720a798df9865bc5a4278-1-rust-v0.0.2505171051",
-      "date": "2025-05-17T18:04:06Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-5ee08335ac690a69035720a798df9865bc5a4278-1-rust-v0.0.2505171051",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-b5257992b06373acef8b20a4ca25ffc1b96688e2-1-rust-v0.0.2505161708",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-b5257992b06373acef8b20a4ca25ffc1b96688e2-1-rust-v0.0.2505161708",
-      "date": "2025-05-17T00:22:09Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-b5257992b06373acef8b20a4ca25ffc1b96688e2-1-rust-v0.0.2505161708",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-8d6a8b308e7457d432564083bb2f577cd39e132b-1-rust-v0.0.2505151627",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-8d6a8b308e7457d432564083bb2f577cd39e132b-1-rust-v0.0.2505151627",
-      "date": "2025-05-15T23:39:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-8d6a8b308e7457d432564083bb2f577cd39e132b-1-rust-v0.0.2505151627",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-cb19037ca3822e9b19b51417392f8afc046be607-1-rust-v0.0.2505141652",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-cb19037ca3822e9b19b51417392f8afc046be607-1-rust-v0.0.2505141652",
-      "date": "2025-05-15T00:07:33Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-cb19037ca3822e9b19b51417392f8afc046be607-1-rust-v0.0.2505141652",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-3a70a0bc280734d09448cb08ec05b5c44f7c798e-1-rust-v0.0.2505141337",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-3a70a0bc280734d09448cb08ec05b5c44f7c798e-1-rust-v0.0.2505141337",
-      "date": "2025-05-14T20:49:52Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-3a70a0bc280734d09448cb08ec05b5c44f7c798e-1-rust-v0.0.2505141337",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-0.2.108",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4670,36 +2090,6 @@
       "summary": "- You can now send messages to Claude while it works to steer Claude in real-time - Introduced BASHDEFAULTTIMEOUTMS and BASHMAXTIMEOUTMS env vars",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-94c47d69a3f92257e7f9717a2044bd55786eb999-1-rust-v0.0.2505121726",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-94c47d69a3f92257e7f9717a2044bd55786eb999-1-rust-v0.0.2505121726",
-      "date": "2025-05-13T00:38:28Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-94c47d69a3f92257e7f9717a2044bd55786eb999-1-rust-v0.0.2505121726",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-9949f6404378db6f54a01bcadb1956e0535d4921-1-rust-v0.0.2505121520",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-9949f6404378db6f54a01bcadb1956e0535d4921-1-rust-v0.0.2505121520",
-      "date": "2025-05-12T22:32:08Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-9949f6404378db6f54a01bcadb1956e0535d4921-1-rust-v0.0.2505121520",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-7f24ec8cae83ae22e7cc306fea4844958370827d-1-rust-v0.0.2505101753",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-7f24ec8cae83ae22e7cc306fea4844958370827d-1-rust-v0.0.2505101753",
-      "date": "2025-05-11T01:07:12Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-7f24ec8cae83ae22e7cc306fea4844958370827d-1-rust-v0.0.2505101753",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-0.2.107",
@@ -4732,16 +2122,6 @@
       "type": "release"
     },
     {
-      "id": "openai-codex-codex-rs-132146b6d4e133d014f763a0d8dabd853f3fc0c0-1-rust-v0.0.2505061740",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-132146b6d4e133d014f763a0d8dabd853f3fc0c0-1-rust-v0.0.2505061740",
-      "date": "2025-05-07T00:52:04Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-132146b6d4e133d014f763a0d8dabd853f3fc0c0-1-rust-v0.0.2505061740",
-      "type": "prerelease"
-    },
-    {
       "id": "claude-code-0.2.102",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4750,16 +2130,6 @@
       "summary": "- Improved thinking triggering reliability - Improved @mention reliability for images and folders",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-5915a59c8290765d6097caf4074aae93a85380fa-1-rust-v0.0.2505021951",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-5915a59c8290765d6097caf4074aae93a85380fa-1-rust-v0.0.2505021951",
-      "date": "2025-05-03T03:02:07Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-5915a59c8290765d6097caf4074aae93a85380fa-1-rust-v0.0.2505021951",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-0.2.100",
@@ -4790,26 +2160,6 @@
       "summary": "- Claude Code can now also be used with a Claude Max subscription (https://claude.ai/upgrade)",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release"
-    },
-    {
-      "id": "openai-codex-codex-rs-e40bc9911433bd3f942ef4604626fab5638a7a72-1-rust-v0.0.2504301327",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-e40bc9911433bd3f942ef4604626fab5638a7a72-1-rust-v0.0.2504301327",
-      "date": "2025-04-30T20:37:54Z",
-      "summary": "",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-e40bc9911433bd3f942ef4604626fab5638a7a72-1-rust-v0.0.2504301327",
-      "type": "prerelease"
-    },
-    {
-      "id": "openai-codex-codex-rs-72a4c38e41bc64f5a7c8c73d52f45784cb6b7137-1-rust-v0.0.2504301219",
-      "tool": "openai-codex",
-      "toolDisplayName": "OpenAI Codex CLI",
-      "version": "codex-rs-72a4c38e41bc64f5a7c8c73d52f45784cb6b7137-1-rust-v0.0.2504301219",
-      "date": "2025-04-30T20:16:01Z",
-      "summary": "This is not quite ready for public consumption, but we are making this available as a \"release\" to test the DotSlash file.",
-      "url": "https://github.com/openai/codex/releases/tag/codex-rs-72a4c38e41bc64f5a7c8c73d52f45784cb6b7137-1-rust-v0.0.2504301219",
-      "type": "prerelease"
     },
     {
       "id": "claude-code-0.2.93",
