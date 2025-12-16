@@ -22,6 +22,13 @@ on:
       - 'package.json'
       - 'vite.config.ts'
       - 'tailwind.config.js'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'develop'
+        type: string
 
 jobs:
   deploy:
@@ -32,6 +39,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

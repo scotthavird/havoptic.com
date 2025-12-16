@@ -111,6 +111,9 @@ async function fetchOpenAICodex(existingIds) {
       if (data.length === 0) break;
 
       for (const release of data) {
+        // Skip prereleases (alpha/beta versions)
+        if (release.prerelease) continue;
+
         const version = release.tag_name;
         const id = `openai-codex-${version}`;
 
