@@ -1,6 +1,46 @@
 {
-  "lastUpdated": "2025-12-15T06:15:11.070Z",
+  "lastUpdated": "2025-12-16T06:14:03.174Z",
   "releases": [
+    {
+      "id": "claude-code-2.0.70",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.0.70",
+      "date": "2025-12-15T22:38:58.864Z",
+      "summary": "- Added Enter key to accept and submit prompt suggestions immediately (tab still accepts for editing) - Added wildcard syntax mcpserver for MCP tool permissions to allow or deny all tools from a se...",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "openai-codex-rust-v0.73.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.73.0",
+      "date": "2025-12-15T22:38:50Z",
+      "summary": "New Features\r   - Add ghost snapshot v2 for improved session capture (PR 8055)",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0",
+      "type": "release"
+    },
+    {
+      "id": "openai-codex-rust-v0.73.0-alpha.3",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.73.0-alpha.3",
+      "date": "2025-12-15T18:01:27Z",
+      "summary": "",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0-alpha.3",
+      "type": "prerelease"
+    },
+    {
+      "id": "openai-codex-rust-v0.73.0-alpha.2",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.73.0-alpha.2",
+      "date": "2025-12-15T10:51:26Z",
+      "summary": "",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.73.0-alpha.2",
+      "type": "prerelease"
+    },
     {
       "id": "openai-codex-rust-v0.73.0-alpha.1",
       "tool": "openai-codex",
