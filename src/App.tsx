@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Header } from './components/Header';
-import { ToolFilter } from './components/ToolFilter';
 import { Timeline } from './components/Timeline';
+import { ToolFilter } from './components/ToolFilter';
 import { useReleases } from './hooks/useReleases';
-import { trackScrollDepth } from './utils/analytics';
 import type { ToolId } from './types/release';
+import { trackScrollDepth } from './utils/analytics';
 
 function App() {
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
@@ -28,7 +28,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
