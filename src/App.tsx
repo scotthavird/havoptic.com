@@ -52,7 +52,7 @@ function App() {
         )}
 
         {!loading && !error && (
-          <Timeline groupedReleases={groupedReleases} />
+          <Timeline key={selectedTool} groupedReleases={groupedReleases} />
         )}
       </main>
     </div>

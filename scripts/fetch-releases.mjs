@@ -153,6 +153,7 @@ async function fetchOpenAICodex(existingIds) {
 async function fetchCursor(existingIds) {
   console.log('Fetching Cursor releases...');
   const releases = [];
+  const seenIds = new Set(); // Track IDs seen in this fetch to prevent duplicates
 
   try {
     const res = await fetch('https://www.cursor.com/changelog', {
@@ -181,7 +182,9 @@ async function fetchCursor(existingIds) {
       const version = versionMatch[1];
       const id = `cursor-${version}`;
 
-      if (existingIds.has(id)) return;
+      // Skip if already seen in this fetch or exists in file
+      if (seenIds.has(id) || existingIds.has(id)) return;
+      seenIds.add(id);
 
       // Date is in time element with dateTime attribute
       const timeEl = $el.find('time');
@@ -252,8 +255,12 @@ async function main() {
     return;
   }
 
-  // Combine with existing, sort by date descending
-  const combined = [...allNew, ...existingData.releases].sort(
+  // Combine with existing, deduplicate by id, sort by date descending
+  const combinedMap = new Map();
+  for (const release of [...existingData.releases, ...allNew]) {
+    combinedMap.set(release.id, release); // Later entries (new) overwrite older
+  }
+  const combined = Array.from(combinedMap.values()).sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
