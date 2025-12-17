@@ -23,6 +23,9 @@ export function Timeline({ groupedReleases }: TimelineProps) {
     );
   }
 
+  // Track rendered IDs to prevent duplicates at render time
+  const renderedIds = new Set<string>();
+
   return (
     <section className="relative" aria-label="Release timeline">
       {/* Vertical line */}
@@ -38,25 +41,36 @@ export function Timeline({ groupedReleases }: TimelineProps) {
             <div className="h-px bg-slate-700 flex-grow" aria-hidden="true" />
           </header>
 
-          {months.map(({ month, monthName, releases }) => (
-            <div key={`${year}-${month}`} className="flex gap-4 md:gap-8 mb-6" role="group" aria-label={`${monthName} ${year} releases`}>
-              {/* Month label */}
-              <div className="w-[60px] md:w-[120px] flex-shrink-0 relative">
-                <span className="text-sm font-medium text-slate-400 sticky top-4">
-                  {monthName}
-                </span>
-                {/* Dot on timeline */}
-                <div className="absolute right-[-8px] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-slate-800 hidden md:block" aria-hidden="true" />
-              </div>
+          {months.map(({ month, monthName, releases }) => {
+            // Filter out any duplicates that might have slipped through
+            const uniqueReleases = releases.filter(r => {
+              if (renderedIds.has(r.id)) return false;
+              renderedIds.add(r.id);
+              return true;
+            });
 
-              {/* Release cards */}
-              <div className="flex-grow space-y-4">
-                {releases.map((release) => (
-                  <ReleaseCard key={release.id} release={release} />
-                ))}
+            if (uniqueReleases.length === 0) return null;
+
+            return (
+              <div key={`${year}-${month}`} className="flex gap-4 md:gap-8 mb-6" role="group" aria-label={`${monthName} ${year} releases`}>
+                {/* Month label */}
+                <div className="w-[60px] md:w-[120px] flex-shrink-0 relative">
+                  <span className="text-sm font-medium text-slate-400 sticky top-4">
+                    {monthName}
+                  </span>
+                  {/* Dot on timeline */}
+                  <div className="absolute right-[-8px] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-slate-800 hidden md:block" aria-hidden="true" />
+                </div>
+
+                {/* Release cards */}
+                <div className="flex-grow space-y-4">
+                  {uniqueReleases.map((release) => (
+                    <ReleaseCard key={release.id} release={release} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
       ))}
     </section>
