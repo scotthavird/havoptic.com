@@ -1,13 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Header } from './components/Header';
 import { ToolFilter } from './components/ToolFilter';
 import { Timeline } from './components/Timeline';
 import { useReleases } from './hooks/useReleases';
+import { trackScrollDepth } from './utils/analytics';
 import type { ToolId } from './types/release';
 
 function App() {
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
   const { groupedReleases, lastUpdated, loading, error } = useReleases(selectedTool);
+  const scrollMilestones = useRef(new Set<number>());
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+
+      const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100);
+      const milestones = [25, 50, 75, 100];
+
+      for (const milestone of milestones) {
+        if (scrollPercent >= milestone && !scrollMilestones.current.has(milestone)) {
+          scrollMilestones.current.add(milestone);
+          trackScrollDepth(milestone);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen">
