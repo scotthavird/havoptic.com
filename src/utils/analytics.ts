@@ -39,3 +39,10 @@ export function trackScrollDepth(percentage: number): void {
     event_category: 'engagement',
   });
 }
+
+export function trackShare(method: 'native' | 'copy' | 'rss'): void {
+  trackEvent('share', {
+    method: method,
+    event_category: 'engagement',
+  });
+}
