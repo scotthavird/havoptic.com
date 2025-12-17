@@ -18,23 +18,25 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
       className="bg-slate-800/50 rounded-lg p-4 border border-slate-700 hover:border-slate-600 transition-colors"
       aria-label={`${config.displayName} version ${release.version} release`}
     >
-      <header className="flex items-start justify-between gap-4 mb-3">
-        <div className="flex items-center gap-3">
-          <span className={`${config.bgColor} text-white text-xs font-medium px-2.5 py-1 rounded-full`}>
+      <header className="flex items-center justify-between gap-3 mb-3">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className={`${config.bgColor} text-white text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap`}>
             {config.displayName}
           </span>
-          <h3 className="text-white font-mono font-semibold">
+          <h3 className="text-white font-mono font-semibold truncate">
             v{release.version}
           </h3>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
           {release.type === 'prerelease' && (
-            <span className="text-xs text-yellow-500 font-medium">
-              pre-release
+            <span className="text-[10px] text-yellow-500 bg-yellow-500/10 px-1.5 py-0.5 rounded font-medium">
+              PRE
             </span>
           )}
+          <time dateTime={release.date} className="text-slate-500 text-sm whitespace-nowrap">
+            {formattedDate}
+          </time>
         </div>
-        <time dateTime={release.date} className="text-slate-500 text-sm whitespace-nowrap">
-          {formattedDate}
-        </time>
       </header>
 
       <p className="text-slate-300 text-sm mb-3 line-clamp-2">
