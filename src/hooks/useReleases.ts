@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import type { Release, ReleasesData, ToolId } from '../types/release';
 
 interface GroupedReleases {
@@ -19,17 +19,15 @@ export function useReleases(selectedTool: ToolId | 'all') {
   const [data, setData] = useState<ReleasesData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const fetchedRef = useRef(false);
 
   useEffect(() => {
-    // Prevent double-fetch in React Strict Mode
-    if (fetchedRef.current) return;
-    fetchedRef.current = true;
+    const controller = new AbortController();
 
     async function fetchReleases() {
       try {
         const response = await fetch('/data/releases.json', {
           cache: 'no-store',
+          signal: controller.signal,
         });
         if (!response.ok) {
           throw new Error('Failed to fetch releases');
@@ -46,12 +44,15 @@ export function useReleases(selectedTool: ToolId | 'all') {
 
         setData({ lastUpdated: json.lastUpdated, releases: uniqueReleases });
       } catch (err) {
+        if (err instanceof Error && err.name === 'AbortError') return;
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
         setLoading(false);
       }
     }
     fetchReleases();
+
+    return () => controller.abort();
   }, []);
 
   const filteredReleases = useMemo(() => {
