@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import type { Release, ReleasesData, ToolId } from '../types/release';
 
 interface GroupedReleases {
@@ -19,16 +19,32 @@ export function useReleases(selectedTool: ToolId | 'all') {
   const [data, setData] = useState<ReleasesData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const fetchedRef = useRef(false);
 
   useEffect(() => {
+    // Prevent double-fetch in React Strict Mode
+    if (fetchedRef.current) return;
+    fetchedRef.current = true;
+
     async function fetchReleases() {
       try {
-        const response = await fetch('/data/releases.json');
+        const response = await fetch('/data/releases.json', {
+          cache: 'no-store',
+        });
         if (!response.ok) {
           throw new Error('Failed to fetch releases');
         }
         const json: ReleasesData = await response.json();
-        setData(json);
+
+        // Deduplicate releases by id (safety net)
+        const seen = new Set<string>();
+        const uniqueReleases = json.releases.filter(r => {
+          if (seen.has(r.id)) return false;
+          seen.add(r.id);
+          return true;
+        });
+
+        setData({ lastUpdated: json.lastUpdated, releases: uniqueReleases });
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {

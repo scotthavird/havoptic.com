@@ -92,16 +92,6 @@
       "type": "release"
     },
     {
-      "id": "cursor-2.2",
-      "tool": "cursor",
-      "toolDisplayName": "Cursor",
-      "version": "2.2",
-      "date": "2025-12-10T00:00:00.000Z",
-      "summary": "Debug Mode, Plan Mode Improvements, Multi-Agent Judging, and Pinned Chats",
-      "url": "https://www.cursor.com/changelog",
-      "type": "release"
-    },
-    {
       "id": "openai-codex-rust-v0.66.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -239,16 +229,6 @@
       "date": "2025-11-24T18:27:18.026Z",
       "summary": "- Added Opus 4.5! https://www.anthropic.com/news/claude-opus-4-5 - Introducing Claude Code for Desktop: https://claude.com/download",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "cursor-2.1",
-      "tool": "cursor",
-      "toolDisplayName": "Cursor",
-      "version": "2.1",
-      "date": "2025-11-21T19:37:20.971Z",
-      "summary": "Improved Plan Mode, AI Code Review in Editor, and Instant Grep",
-      "url": "https://www.cursor.com/changelog",
       "type": "release"
     },
     {
@@ -427,7 +407,7 @@
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.56.0",
       "date": "2025-11-07T18:09:48Z",
-      "summary": "Highlights\r   - Introducing our new model GPT-5-Codex-Mini \u2014 a more compact and cost-efficient version of GPT-5-Codex",
+      "summary": "Highlights\r   - Introducing our new model GPT-5-Codex-Mini — a more compact and cost-efficient version of GPT-5-Codex",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.56.0",
       "type": "release"
     },
@@ -477,7 +457,7 @@
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.54.0",
       "date": "2025-11-04T18:53:40Z",
-      "summary": "\u26a0\ufe0f WARNING: Attempting to pin musl 1.2.5 for DNS fixes in 6189 turned out to be the wrong fix. We reverted it in 6222 and published 0.55.0.\r Otherwise, this release was mostly bugfixes and document...",
+      "summary": "⚠️ WARNING: Attempting to pin musl 1.2.5 for DNS fixes in 6189 turned out to be the wrong fix. We reverted it in 6222 and published 0.55.0.\r Otherwise, this release was mostly bugfixes and document...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.54.0",
       "type": "release"
     },
@@ -529,16 +509,6 @@
       "date": "2025-10-30T18:32:13Z",
       "summary": "Highlights\r - TUI polish: queued messages visible during streaming; Windows auto-mode guidance; undo op; compaction prompt configurable.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.52.0",
-      "type": "release"
-    },
-    {
-      "id": "cursor-2.0",
-      "tool": "cursor",
-      "toolDisplayName": "Cursor",
-      "version": "2.0",
-      "date": "2025-10-29T05:08:00.000Z",
-      "summary": "New Coding Model and Agent Interface",
-      "url": "https://www.cursor.com/changelog",
       "type": "release"
     },
     {
@@ -832,22 +802,12 @@
       "type": "release"
     },
     {
-      "id": "cursor-1.7",
-      "tool": "cursor",
-      "toolDisplayName": "Cursor",
-      "version": "1.7",
-      "date": "2025-09-29T05:08:58.822Z",
-      "summary": "Browser Controls, Plan Mode, and Hooks",
-      "url": "https://www.cursor.com/changelog",
-      "type": "release"
-    },
-    {
       "id": "openai-codex-rust-v0.42.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
       "version": "rust-v0.42.0",
       "date": "2025-09-26T18:42:34Z",
-      "summary": "Notable Changes\r - Experimental Rust SDK\u2013based MCP client introduced (4252)",
+      "summary": "Notable Changes\r - Experimental Rust SDK–based MCP client introduced (4252)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0",
       "type": "release"
     },
@@ -999,16 +959,6 @@
       "date": "2025-09-13T02:24:02.502Z",
       "summary": "- Deprecated piped input in interactive mode - Move Ctrl+R keybinding for toggling transcript to Ctrl+O",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "cursor-1.6",
-      "tool": "cursor",
-      "toolDisplayName": "Cursor",
-      "version": "1.6",
-      "date": "2025-09-12T01:25:00.000Z",
-      "summary": "Slash commands, summarization, and improved Agent terminal",
-      "url": "https://www.cursor.com/changelog",
       "type": "release"
     },
     {
