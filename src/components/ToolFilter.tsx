@@ -1,4 +1,5 @@
 import { TOOL_CONFIG, type ToolId } from '../types/release';
+import { trackToolFilterClick } from '../utils/analytics';
 
 interface ToolFilterProps {
   selectedTool: ToolId | 'all';
@@ -18,7 +19,10 @@ export function ToolFilter({ selectedTool, onSelect }: ToolFilterProps) {
         return (
           <button
             key={tool}
-            onClick={() => onSelect(tool)}
+            onClick={() => {
+              trackToolFilterClick(tool);
+              onSelect(tool);
+            }}
             aria-pressed={isSelected}
             aria-label={`Filter by ${label}`}
             className={`

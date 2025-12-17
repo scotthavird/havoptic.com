@@ -1,4 +1,5 @@
 import { TOOL_CONFIG, type Release } from '../types/release';
+import { trackReleaseClick } from '../utils/analytics';
 
 interface ReleaseCardProps {
   release: Release;
@@ -44,6 +45,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
         href={release.url}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackReleaseClick(release.tool, release.version, release.url)}
         className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300 transition-colors"
         aria-label={`View ${config.displayName} v${release.version} release on GitHub`}
       >
