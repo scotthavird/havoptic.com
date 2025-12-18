@@ -1,6 +1,16 @@
 {
-  "lastUpdated": "2025-12-17T06:14:15.045Z",
+  "lastUpdated": "2025-12-18T06:14:04.084Z",
   "releases": [
+    {
+      "id": "claude-code-2.0.72",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.0.72",
+      "date": "2025-12-17T21:21:00.969Z",
+      "summary": "- Added Claude in Chrome (Beta) feature that works with the Chrome extension (https://claude.ai/chrome) to let you control your browser directly from Claude Code - Reduced terminal flickering",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.0.71",
       "tool": "claude-code",
