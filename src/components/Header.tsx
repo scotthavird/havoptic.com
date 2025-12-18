@@ -1,3 +1,5 @@
+import { ShareButtons } from './ShareButtons';
+
 interface HeaderProps {
   lastUpdated: string | null;
 }
@@ -15,17 +17,22 @@ export function Header({ lastUpdated }: HeaderProps) {
 
   return (
     <header className="mb-8">
-      <h1 className="text-4xl font-bold text-white mb-2">
-        AI Tool Releases
-      </h1>
-      <p className="text-slate-400 text-lg mb-2">
-        Track the latest releases from Claude Code, OpenAI Codex CLI, and Cursor.
-      </p>
-      {formattedDate && (
-        <p className="text-slate-500 text-sm">
-          Last updated: {formattedDate}
-        </p>
-      )}
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+          <h1 className="text-4xl font-bold text-white mb-2">
+            AI Tool Releases
+          </h1>
+          <p className="text-slate-400 text-lg mb-2">
+            Track the latest releases from Claude Code, OpenAI Codex CLI, and Cursor.
+          </p>
+          {formattedDate && (
+            <p className="text-slate-500 text-sm">
+              Last updated: {formattedDate}
+            </p>
+          )}
+        </div>
+        <ShareButtons className="sm:mt-1" />
+      </div>
     </header>
   );
 }
