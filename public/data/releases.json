@@ -1,6 +1,36 @@
 {
-  "lastUpdated": "2025-12-18T06:14:04.084Z",
+  "lastUpdated": "2025-12-19T06:13:42.972Z",
   "releases": [
+    {
+      "id": "claude-code-2.0.73",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.0.73",
+      "date": "2025-12-18T23:25:55.278Z",
+      "summary": "- Added clickable [Image N] links that open attached images in the default viewer - Added alt-y yank-pop to cycle through kill ring history after ctrl-y yank",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "openai-codex-rust-v0.75.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.75.0",
+      "date": "2025-12-18T19:29:04Z",
+      "summary": "PRs Merged\r 8270 — splash screen",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.75.0",
+      "type": "release"
+    },
+    {
+      "id": "openai-codex-rust-v0.74.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.74.0",
+      "date": "2025-12-18T18:08:47Z",
+      "summary": "Highlights\r - Introducing gpt-5.2-codex our latest frontier model with improvements across knowledge, reasoning and coding. Learn more",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.74.0",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.0.72",
       "tool": "claude-code",
