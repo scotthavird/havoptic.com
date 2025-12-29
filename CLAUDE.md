@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor). It fetches release data from various sources and presents them in a filterable, chronological timeline.
+Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline.
 
 ## Commands
 
@@ -23,11 +23,14 @@ npm run fetch-releases  # Fetch latest releases from sources (requires GITHUB_TO
    - Claude Code: npm registry + GitHub CHANGELOG.md
    - OpenAI Codex: GitHub Releases API
    - Cursor: Scrapes changelog page HTML
+   - Gemini CLI: GitHub Releases API
+   - Kiro CLI: Scrapes changelog page HTML
 2. Results are written to `public/data/releases.json`
-3. React app fetches this JSON at runtime via `useReleases` hook
+3. Sitemap is auto-updated with current date
+4. React app fetches this JSON at runtime via `useReleases` hook
 
 ### Key Types (`src/types/release.ts`)
-- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor'`
+- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro'`
 - `Release`: Individual release with id, tool, version, date, summary, url, type
 - `TOOL_CONFIG`: Display names and Tailwind color classes per tool
 
@@ -43,6 +46,8 @@ Defined in `tailwind.config.js`:
 - `claude`: #D97706 (amber)
 - `codex`: #059669 (emerald)
 - `cursor`: #7C3AED (violet)
+- `gemini`: #00ACC1 (teal)
+- `kiro`: #8B5CF6 (purple)
 
 ## Infrastructure
 
