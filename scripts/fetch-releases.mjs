@@ -149,6 +149,76 @@ async function fetchOpenAICodex(existingIds) {
   return releases;
 }
 
+// Fetch Gemini CLI releases from GitHub API
+async function fetchGeminiCLI(existingIds) {
+  console.log('Fetching Gemini CLI releases...');
+  const releases = [];
+  let page = 1;
+  const perPage = 100;
+
+  const headers = {
+    'Accept': 'application/vnd.github+json',
+    'User-Agent': 'havoptic-release-tracker',
+  };
+  if (GITHUB_TOKEN) {
+    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+  }
+
+  try {
+    while (true) {
+      const url = `https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=${perPage}&page=${page}`;
+      const res = await fetch(url, { headers });
+
+      if (!res.ok) {
+        if (res.status === 403) {
+          console.log('  Rate limited by GitHub API');
+          break;
+        }
+        throw new Error(`GitHub API returned ${res.status}`);
+      }
+
+      const data = await res.json();
+      if (data.length === 0) break;
+
+      for (const release of data) {
+        // Skip prereleases (nightly/preview versions)
+        if (release.prerelease) continue;
+
+        const version = release.tag_name;
+        const id = `gemini-cli-${version}`;
+
+        if (existingIds.has(id)) continue;
+
+        releases.push({
+          id,
+          tool: 'gemini-cli',
+          toolDisplayName: 'Gemini CLI',
+          version,
+          date: release.published_at,
+          summary: extractSummary(release.body),
+          url: release.html_url,
+          type: release.prerelease ? 'prerelease' : 'release',
+        });
+      }
+
+      // Check if we've hit rate limit or end
+      const remaining = res.headers.get('x-ratelimit-remaining');
+      if (remaining && parseInt(remaining) < 5) {
+        console.log('  Approaching rate limit, stopping pagination');
+        break;
+      }
+
+      page++;
+    }
+
+    console.log(`  Found ${releases.length} new Gemini CLI releases`);
+  } catch (err) {
+    console.error('  Error fetching Gemini CLI:', err.message);
+  }
+
+  return releases;
+}
+
 // Fetch Cursor releases by scraping changelog page
 async function fetchCursor(existingIds) {
   console.log('Fetching Cursor releases...');
@@ -237,14 +307,15 @@ async function main() {
   const existingIds = new Set(existingData.releases.map(r => r.id));
 
   // Fetch from all sources
-  const [claudeReleases, codexReleases, cursorReleases] = await Promise.all([
+  const [claudeReleases, codexReleases, cursorReleases, geminiReleases] = await Promise.all([
     fetchClaudeCode(existingIds),
     fetchOpenAICodex(existingIds),
     fetchCursor(existingIds),
+    fetchGeminiCLI(existingIds),
   ]);
 
   // Merge and sort
-  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases];
+  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases, ...geminiReleases];
   console.log(`\nTotal new releases found: ${allNew.length}`);
 
   if (allNew.length === 0) {

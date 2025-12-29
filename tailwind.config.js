@@ -10,6 +10,7 @@ export default {
         'claude': '#D97706',
         'codex': '#059669',
         'cursor': '#7C3AED',
+        'gemini': '#00ACC1',
       },
     },
   },
