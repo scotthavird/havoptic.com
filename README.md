@@ -9,7 +9,6 @@ A timeline of AI coding tool releases. Track the latest updates from Claude Code
 - Chronological timeline of releases grouped by year and month
 - Filter by tool to focus on specific products
 - Auto-updated daily via GitHub Actions
-- RSS feed support
 
 ## Supported Tools
 
