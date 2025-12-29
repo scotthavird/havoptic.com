@@ -10,10 +10,15 @@ open=0
 closed=0
 
 declare -a prs=(
+  # Tier 1: Perfect Fit
   "jamesmurdza/awesome-ai-devtools:181"
   "sourcegraph/awesome-code-ai:80"
   "mahseema/awesome-ai-tools:516"
   "eudk/awesome-ai-tools:60"
+  # Tier 2: Strong Fit
+  "ripienaar/free-for-dev:3947"
+  "agamm/awesome-developer-first:250"
+  "athivvat/awesome-devtools:15"
 )
 
 for item in "${prs[@]}"; do

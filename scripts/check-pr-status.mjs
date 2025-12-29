@@ -10,10 +10,15 @@ import { execSync } from 'child_process';
 
 // List of submitted PRs to track
 const SUBMITTED_PRS = [
+  // Tier 1: Perfect Fit
   { repo: 'jamesmurdza/awesome-ai-devtools', pr: 181 },
   { repo: 'sourcegraph/awesome-code-ai', pr: 80 },
   { repo: 'mahseema/awesome-ai-tools', pr: 516 },
   { repo: 'eudk/awesome-ai-tools', pr: 60 },
+  // Tier 2: Strong Fit
+  { repo: 'ripienaar/free-for-dev', pr: 3947 },
+  { repo: 'agamm/awesome-developer-first', pr: 250 },
+  { repo: 'athivvat/awesome-devtools', pr: 15 },
   // Add more PRs here as they are submitted
 ];
 
