@@ -1,6 +1,56 @@
 {
-  "lastUpdated": "2025-12-29T06:15:49.319Z",
+  "lastUpdated": "2025-12-29T19:03:23.401Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.22.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.22.4",
+      "date": "2025-12-27T00:44:32Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 37be162 to release/v0.22.3-pr-15601 to patch version v0.22.3 and create version 0.22.4 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.22.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.22.3",
+      "date": "2025-12-26T18:32:47Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 9cdb267 to release/v0.22.2-pr-15494 to patch version v0.22.2 and create version 0.22.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.22.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.22.2",
+      "date": "2025-12-22T21:31:28Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.22.0-preview.3...v0.22.2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.22.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.22.1",
+      "date": "2025-12-22T17:59:03Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.21.3...v0.22.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.22.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.22.0",
+      "date": "2025-12-22T16:54:19Z",
+      "summary": "What's Changed  feat(ide): fallback to GEMINICLIIDEAUTHTOKEN env var   by @skeshive in https://github.com/google-gemini/gemini-cli/pull/14843",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.0",
+      "type": "release"
+    },
     {
       "id": "cursor-2.3",
       "tool": "cursor",
@@ -42,6 +92,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.21.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.21.3",
+      "date": "2025-12-19T01:23:30Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 9e6914d to release/v0.21.2-pr-15288 to patch version v0.21.2 and create version 0.21.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.21.3",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.73",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -72,6 +132,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.21.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.21.2",
+      "date": "2025-12-18T00:05:26Z",
+      "summary": "What's Changed  fix(patch): cherry-pick a6d1245 to release/v0.21.1-pr-15214 to patch version v0.21.1 and create version 0.21.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.21.2",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.72",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -82,6 +152,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.21.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.21.1",
+      "date": "2025-12-17T15:46:16Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.21.0...v0.21.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.21.1",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.71",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -89,6 +169,16 @@
       "date": "2025-12-16T21:30:39.801Z",
       "summary": "- Added /config toggle to enable/disable prompt suggestions - Added /settings as an alias for the /config command",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.21.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.21.0",
+      "date": "2025-12-16T18:48:03Z",
+      "summary": "What's Changed  refactor(stdio): always patch stdout and use createWorkingStdio for clean output by @allenhutchison in https://github.com/google-gemini/gemini-cli/pull/14159",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.21.0",
       "type": "release"
     },
     {
@@ -139,6 +229,26 @@
       "date": "2025-12-12T22:56:02.877Z",
       "summary": "- Fixed IME (Input Method Editor) support for languages like Chinese, Japanese, and Korean by correctly positioning the composition window at the cursor - Fixed a bug where disallowed MCP tools wer...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.20.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.2",
+      "date": "2025-12-12T22:39:37Z",
+      "summary": "What's Changed  fix(patch): cherry-pick edbe548 to release/v0.20.1-pr-15007 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15016",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.20.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.1",
+      "date": "2025-12-12T18:30:34Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 3f5f030 to release/v0.20.0-pr-14843 to patch version v0.20.0 and create version 0.20.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.1",
       "type": "release"
     },
     {
@@ -202,6 +312,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.20.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.0",
+      "date": "2025-12-09T20:23:43Z",
+      "summary": "What's Changed  Update error codes when process exiting the gemini cli by @megha1188 in https://github.com/google-gemini/gemini-cli/pull/13728",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.0",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.66.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -239,6 +359,36 @@
       "date": "2025-12-05T21:53:25.502Z",
       "summary": "- Added background agent support. Agents run in the background while you work - Added --disable-slash-commands CLI flag to disable all slash commands",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.4",
+      "date": "2025-12-05T18:12:54Z",
+      "summary": "What's Changed  fix(patch): cherry-pick fcb85e6 to release/v0.19.3-pr-14092 to patch version v0.19.3 and create version 0.19.4 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.3",
+      "date": "2025-12-05T07:43:12Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 934b309 to release/v0.19.2-pr-14566 to patch version v0.19.2 and create version 0.19.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.2",
+      "date": "2025-12-05T04:54:57Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d284fa6 to release/v0.19.1-pr-14545 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/14558",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.2",
       "type": "release"
     },
     {
@@ -282,6 +432,36 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.19.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.1",
+      "date": "2025-12-03T02:15:03Z",
+      "summary": "What's Changed  fix(patch): cherry-pick bde8b78 to release/v0.19.0-pr-14301 to patch version v0.19.0 and create version 0.19.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0",
+      "date": "2025-12-02T23:22:57Z",
+      "summary": "What's Changed  Use lenient MCP output schema validator by @cornmander in https://github.com/google-gemini/gemini-cli/pull/13521",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-preview.1",
+      "date": "2025-12-02T22:31:00Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 576fda1 to release/v0.19.0-preview.0-pr-14099 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/14402",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-preview.1",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.64.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -289,6 +469,16 @@
       "date": "2025-12-02T22:15:06Z",
       "summary": "Features\r   - Threads and turns now include git info, current working directory, CLI version, source metadata, and propagate thread and turn IDs on every item and error. They emit new notifications...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.64.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.20.0-nightly.20251202.29920b16d",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.0-nightly.20251202.29920b16d",
+      "date": "2025-12-02T18:30:23Z",
+      "summary": "What's Changed  fix: Exclude web-fetch tool from executing in default non-interactive mode to avoid CLI hang. by @MayV in https://github.com/google-gemini/gemini-cli/pull/14244",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.0-nightly.20251202.29920b16d",
       "type": "release"
     },
     {
@@ -302,6 +492,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.20.0-nightly.20251201.2fe609cb6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.0-nightly.20251201.2fe609cb6",
+      "date": "2025-12-01T17:26:03Z",
+      "summary": "What's Changed  feat(ui): Show waiting MCP servers in ConfigInitDisplay by @werdnum in https://github.com/google-gemini/gemini-cli/pull/13721",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.0-nightly.20251201.2fe609cb6",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.20.0-nightly.20251127.5bed97064",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.20.0-nightly.20251127.5bed97064",
+      "date": "2025-11-27T00:52:33Z",
+      "summary": "What's Changed  Add Databricks auth support and custom header option to gemini cli by @AarushiShah in https://github.com/google-gemini/gemini-cli/pull/11893",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.0-nightly.20251127.5bed97064",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.55",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -312,6 +522,76 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.18.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.4",
+      "date": "2025-11-26T21:42:19Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 030a5ac to release/v0.18.3-pr-13565 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13869",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.3",
+      "date": "2025-11-26T19:31:21Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d2a6cff to release/v0.18.2-pr-13827 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13863",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.2",
+      "date": "2025-11-26T18:29:05Z",
+      "summary": "What's Changed  fix(patch): cherry-pick fe67ef6 to release/v0.18.1-pr-13596 to patch version v0.18.1 and create version 0.18.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.1",
+      "date": "2025-11-26T17:44:02Z",
+      "summary": "What's Changed  fix(patch): cherry-pick bdf80ea to release/v0.18.0-pr-13600 to patch version v0.18.0 and create version 0.18.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-nightly.20251126.03845198c",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251126.03845198c",
+      "date": "2025-11-26T03:41:53Z",
+      "summary": "What's Changed  feat(config): add isModelAvailabilityServiceEnabled setting by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/13777",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251126.03845198c",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0",
+      "date": "2025-11-26T02:55:28Z",
+      "summary": "What's Changed  Remove obsolete reference to \"help wanted\" label in CONTRIBUTING.md by @aswinashok44 in https://github.com/google-gemini/gemini-cli/pull/13291",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-preview.0",
+      "date": "2025-11-26T02:49:32Z",
+      "summary": "What's Changed  Use lenient MCP output schema validator by @cornmander in https://github.com/google-gemini/gemini-cli/pull/13521",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-preview.0",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.54",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -319,6 +599,46 @@
       "date": "2025-11-25T23:52:47.226Z",
       "summary": "- Hooks: Enable PermissionRequest hooks to process 'always allow' suggestions and apply permission updates - Fix issue with excessive iTerm notifications",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-preview.4",
+      "date": "2025-11-25T22:06:53Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d8a3d08 to release/v0.18.0-preview.3-pr-13791 to patch version v0.18.0-preview.3 and create version 0.18.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-preview.3",
+      "date": "2025-11-25T19:37:03Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 3e50be1 to release/v0.18.0-preview.2-pr-13428 to patch version v0.18.0-preview.2 and create version 0.18.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-preview.2",
+      "date": "2025-11-25T18:22:34Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d351f07 to release/v0.18.0-preview.1-pr-12535 to patch version v0.18.0-preview.1 and create version 0.18.0-preview.2 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-nightly.20251125.f6d97d448",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251125.f6d97d448",
+      "date": "2025-11-25T02:33:04Z",
+      "summary": "What's Changed  chore/release: bump version to 0.19.0-nightly.20251124.e177314a4 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13713",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251125.f6d97d448",
       "type": "release"
     },
     {
@@ -339,6 +659,56 @@
       "date": "2025-11-24T18:27:18.026Z",
       "summary": "- Added Opus 4.5! https://www.anthropic.com/news/claude-opus-4-5 - Introducing Claude Code for Desktop: https://claude.com/download",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-nightly.20251124.e177314a4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251124.e177314a4",
+      "date": "2025-11-24T02:06:19Z",
+      "summary": "What's Changed  chore/release: bump version to 0.19.0-nightly.20251123.dadd606c0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13675",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251124.e177314a4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-nightly.20251123.dadd606c0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251123.dadd606c0",
+      "date": "2025-11-23T01:43:06Z",
+      "summary": "What's Changed  feat(core): Add BaseLlmClient.generateContent. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/13591",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251123.dadd606c0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.19.0-nightly.20251122.42c2e1b21",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251122.42c2e1b21",
+      "date": "2025-11-22T07:36:08Z",
+      "summary": "What's Changed  fix(core): correct bash @P prompt transformation detection by @pyrytakala in https://github.com/google-gemini/gemini-cli/pull/13544",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251122.42c2e1b21",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.1",
+      "date": "2025-11-22T02:22:04Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 5e218a5 to release/v0.17.0-pr-13623 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13625",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-preview.1",
+      "date": "2025-11-22T02:19:08Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 5e218a5 to release/v0.18.0-preview.0-pr-13623 to patch version v0.18.0-preview.0 and create version 0.18.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.1",
       "type": "release"
     },
     {
@@ -372,6 +742,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.19.0-nightly.20251121.5982abeff",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.19.0-nightly.20251121.5982abeff",
+      "date": "2025-11-21T02:43:20Z",
+      "summary": "What's Changed  Add User email detail to about box by @ptone in https://github.com/google-gemini/gemini-cli/pull/13459",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.19.0-nightly.20251121.5982abeff",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.49",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -382,6 +762,76 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.17.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0",
+      "date": "2025-11-20T22:33:07Z",
+      "summary": "What's Changed  chore(release): bump version to 0.17.0-nightly.20251113.48e3932f6 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13027",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-preview.0",
+      "date": "2025-11-20T22:24:15Z",
+      "summary": "What's Changed  Remove obsolete reference to \"help wanted\" label in CONTRIBUTING.md by @aswinashok44 in https://github.com/google-gemini/gemini-cli/pull/13291",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-preview.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-preview.5",
+      "date": "2025-11-20T21:54:49Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ade9dfe to release/v0.17.0-preview.4-pr-13515 to patch version v0.17.0-preview.4 and create version 0.17.0-preview.5 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-preview.5",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-preview.4",
+      "date": "2025-11-20T21:21:59Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 4adfdad to release/v0.17.0-preview.3-pr-13464 to patch version v0.17.0-preview.3 and create version 0.17.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-preview.3",
+      "date": "2025-11-20T20:19:21Z",
+      "summary": "What's Changed  fix(patch): cherry-pick c7b5dcd to release/v0.17.0-preview.2-pr-13517 to patch version v0.17.0-preview.2 and create version 0.17.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-preview.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-preview.2",
+      "date": "2025-11-20T19:04:53Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 049a299 to release/v0.17.0-preview.1-pr-13483 to patch version v0.17.0-preview.1 and create version 0.17.0-preview.2 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-preview.1",
+      "date": "2025-11-20T16:34:17Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ff725de to release/v0.17.0-preview.0-pr-13477 to patch version v0.17.0-preview.0 and create version 0.17.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-preview.1",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.61.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -389,6 +839,16 @@
       "date": "2025-11-20T16:14:58Z",
       "summary": "Highlights - ExecPolicy2 integration and exec-server prep: core now integrates ExecPolicy2 with exec-server refactors and cutover groundwork, plus quickstart docs to help teams adopt the new policy...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.61.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.18.0-nightly.20251120.2231497b1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-nightly.20251120.2231497b1",
+      "date": "2025-11-20T04:56:24Z",
+      "summary": "What's Changed  Fix links in Gemini 3 Pro documentation by @gmackall in https://github.com/google-gemini/gemini-cli/pull/13312",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-nightly.20251120.2231497b1",
       "type": "release"
     },
     {
@@ -432,6 +892,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.18.0-nightly.20251118.7cc5234b9",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.18.0-nightly.20251118.7cc5234b9",
+      "date": "2025-11-18T20:01:33Z",
+      "summary": "What's Changed  Fix: Animated scrollbar renders black in NOCOLOR mode by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/13188",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-nightly.20251118.7cc5234b9",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.45",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -439,6 +909,16 @@
       "date": "2025-11-18T16:31:06.710Z",
       "summary": "- Added support for Microsoft Foundry! See https://code.claude.com/docs/en/a",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0",
+      "date": "2025-11-18T16:04:08Z",
+      "summary": "What's Changed  feat: launch Gemini 3 in Gemini CLI 🚀🚀🚀 by @skeshive in https://github.com/google-gemini/gemini-cli/pull/13279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0",
       "type": "release"
     },
     {
@@ -452,6 +932,86 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.15.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.4",
+      "date": "2025-11-17T16:30:19Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 78a28bf to release/v0.15.3-pr-13188 to patch version v0.15.3 and create version 0.15.4 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.5",
+      "date": "2025-11-17T16:24:25Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 78a28bf to release/v0.16.0-preview.4-pr-13188 to patch version v0.16.0-preview.4 and create version 0.16.0-preview.5 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.5",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-nightly.20251117.cf8de02c6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-nightly.20251117.cf8de02c6",
+      "date": "2025-11-17T06:12:42Z",
+      "summary": "What's Changed  chore/release: bump version to 0.17.0-nightly.20251116.e650a4ee5 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13154",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-nightly.20251117.cf8de02c6",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-nightly.20251116.e650a4ee5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-nightly.20251116.e650a4ee5",
+      "date": "2025-11-16T01:11:49Z",
+      "summary": "What's Changed  Show model in history by @scidomino in https://github.com/google-gemini/gemini-cli/pull/13034",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-nightly.20251116.e650a4ee5",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.3",
+      "date": "2025-11-15T19:23:25Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d03496b to release/v0.15.2-pr-13099 to patch version v0.15.2 and create version 0.15.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.4",
+      "date": "2025-11-15T19:16:53Z",
+      "summary": "What's Changed  fix(patch): cherry-pick d03496b to release/v0.16.0-preview.3-pr-13099 to patch version v0.16.0-preview.3 and create version 0.16.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.2",
+      "date": "2025-11-15T04:52:32Z",
+      "summary": "What's Changed\r  fix(patch): cherry-pick ab6b229 to release/v0.15.1-pr-13101 to patch version v0.15.1 and create version 0.15.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/p...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.3",
+      "date": "2025-11-15T01:49:28Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ab6b229 to release/v0.16.0-preview.2-pr-13101 to patch version v0.16.0-preview.2 and create version 0.16.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.3",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.42",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -459,6 +1019,46 @@
       "date": "2025-11-14T23:00:23.267Z",
       "summary": "- Added agentid and agenttranscriptpath fields to SubagentStop hooks.",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.2",
+      "date": "2025-11-14T22:21:25Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ce56b4e to release/v0.16.0-preview.1-pr-13073 to patch version v0.16.0-preview.1 and create version 0.16.0-preview.2 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.1",
+      "date": "2025-11-14T21:33:27Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ba15eeb to release/v0.15.0-pr-13083 to patch version v0.15.0 and create version 0.15.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.1",
+      "date": "2025-11-14T21:31:02Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ba15eeb to release/v0.16.0-preview.0-pr-13083 to patch version v0.16.0-preview.0 and create version 0.16.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.17.0-nightly.20251114.0fcbff506",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.17.0-nightly.20251114.0fcbff506",
+      "date": "2025-11-14T03:48:37Z",
+      "summary": "What's Changed  Allow users to reset to auto when it's in fallback mode by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/12623",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-nightly.20251114.0fcbff506",
       "type": "release"
     },
     {
@@ -472,6 +1072,56 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.15.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0",
+      "date": "2025-11-14T00:07:23Z",
+      "summary": "What's Changed  fix(core): Handle null command in VSCode IDE detection by @skeshive in https://github.com/google-gemini/gemini-cli/pull/12689",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-preview.0",
+      "date": "2025-11-14T00:00:32Z",
+      "summary": "What's Changed  fix test to use faketimer by @scidomino in https://github.com/google-gemini/gemini-cli/pull/12913",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.7",
+      "date": "2025-11-13T23:32:10Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.15.0-preview.6...v0.15.0-preview.7",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.7",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.6",
+      "date": "2025-11-13T22:08:26Z",
+      "summary": "What's Changed  fix(patch): cherry-pick fb99b95 to release/v0.15.0-preview.5-pr-13018 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13022",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.6",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.5",
+      "date": "2025-11-13T18:14:46Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 13d8d94 to release/v0.15.0-preview.4-pr-12981 to patch version v0.15.0-preview.4 and create version 0.15.0-preview.5 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.5",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.58.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -482,6 +1132,96 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.15.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.4",
+      "date": "2025-11-13T17:32:41Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 102905b to release/v0.15.0-preview.3-pr-12991 to patch version v0.15.0-preview.3 and create version 0.15.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.3",
+      "date": "2025-11-13T08:44:04Z",
+      "summary": "What's Changed  fix(patch): cherry-pick fe1bfc6 to release/v0.15.0-preview.2-pr-12989 to patch version v0.15.0-preview.2 and create version 0.15.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-nightly.20251113.ad1f0d99",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-nightly.20251113.ad1f0d99",
+      "date": "2025-11-13T01:08:10Z",
+      "summary": "What's Changed  chore/release: bump version to 0.16.0-nightly.20251112.c961f274 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/12923",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-nightly.20251113.ad1f0d99",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.2",
+      "date": "2025-11-12T20:53:43Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 7ec7845 to release/v0.15.0-preview.1-pr-12905 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/12962",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.1",
+      "date": "2025-11-12T19:28:27Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 540f606 to release/v0.15.0-preview.0-pr-12949 to patch version v0.15.0-preview.0 and create version 0.15.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.16.0-nightly.20251112.c961f274",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.16.0-nightly.20251112.c961f274",
+      "date": "2025-11-12T05:51:15Z",
+      "summary": "What's Changed  feat(sessions): add resuming to geminiChat and add CLI flags for session management by @bl-ue in https://github.com/google-gemini/gemini-cli/pull/10719",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-nightly.20251112.c961f274",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.14.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.14.0",
+      "date": "2025-11-12T01:05:14Z",
+      "summary": "What's Changed  Scrollable support by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/12544",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.14.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-preview.0",
+      "date": "2025-11-12T00:59:06Z",
+      "summary": "What's Changed  fix(core): Handle null command in VSCode IDE detection by @skeshive in https://github.com/google-gemini/gemini-cli/pull/12689",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-nightly.20251111.51f952e7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-nightly.20251111.51f952e7",
+      "date": "2025-11-11T02:46:12Z",
+      "summary": "What's Changed  test: fix flaky file system integration test by @hritan in https://github.com/google-gemini/gemini-cli/pull/12724",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-nightly.20251111.51f952e7",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.37",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -489,6 +1229,16 @@
       "date": "2025-11-10T22:05:27.713Z",
       "summary": "- Fixed how idleness is computed for notifications - Hooks: Added matcher values for Notification hook events",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.15.0-nightly.20251110.c0b766ad",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-nightly.20251110.c0b766ad",
+      "date": "2025-11-10T15:49:03Z",
+      "summary": "What's Changed  Adds listCommands endpoint to a2a server by @cocosheng-g in https://github.com/google-gemini/gemini-cli/pull/12604",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-nightly.20251110.c0b766ad",
       "type": "release"
     },
     {
@@ -522,6 +1272,46 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.15.0-nightly.20251107.cd27cae8",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.15.0-nightly.20251107.cd27cae8",
+      "date": "2025-11-07T04:50:10Z",
+      "summary": "What's Changed  Scrollable support by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/12544",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-nightly.20251107.cd27cae8",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0",
+      "date": "2025-11-07T02:09:06Z",
+      "summary": "What's Changed  fix: enhance path handling in handleAtCommand to support relative paths by @lifefloating in https://github.com/google-gemini/gemini-cli/pull/9065",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.14.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.14.0-preview.0",
+      "date": "2025-11-07T01:56:13Z",
+      "summary": "What's Changed  Scrollable support by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/12544",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.14.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-preview.3",
+      "date": "2025-11-07T00:48:55Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 36feb73 to release/v0.13.0-preview.2-pr-12658 to patch version v0.13.0-preview.2 and create version 0.13.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-preview.3",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.35",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -542,6 +1332,56 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.13.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-preview.2",
+      "date": "2025-11-05T18:50:31Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 1611364 to release/v0.13.0-preview.1-pr-12587 to patch version v0.13.0-preview.1 and create version 0.13.0-preview.2 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-preview.1",
+      "date": "2025-11-05T17:30:39Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f51d745 to release/v0.13.0-preview.0-pr-12586 to patch version v0.13.0-preview.0 and create version 0.13.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0-nightly.20251105.da3da198",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-nightly.20251105.da3da198",
+      "date": "2025-11-05T16:42:21Z",
+      "summary": "What's Changed  feat(ui): add response semantic color by @cornmander in https://github.com/google-gemini/gemini-cli/pull/12450",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-nightly.20251105.da3da198",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-preview.0",
+      "date": "2025-11-05T16:18:43Z",
+      "summary": "What's Changed  fix: enhance path handling in handleAtCommand to support relative paths by @lifefloating in https://github.com/google-gemini/gemini-cli/pull/9065",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0",
+      "date": "2025-11-04T23:31:01Z",
+      "summary": "What's Changed\r  chore(release): bump version to 0.12.0-nightly.20251022.0542de95 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/11672",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.33",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -549,6 +1389,16 @@
       "date": "2025-11-04T22:27:11.403Z",
       "summary": "- Native binary installs now launch quicker. - Fixed claude doctor incorrectly detecting Homebrew vs npm-global installations by properly resolving symlinks",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.11",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.11",
+      "date": "2025-11-04T22:04:19Z",
+      "summary": "What's Changed  fix(patch): cherry-pick fd2cbac to release/v0.12.0-preview.9-pr-12399 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/12488",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.11",
       "type": "release"
     },
     {
@@ -582,6 +1432,36 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.13.0-nightly.20251103.9187f6f6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-nightly.20251103.9187f6f6",
+      "date": "2025-11-03T01:35:23Z",
+      "summary": "What's Changed  fix(core): combine .gitignore and .geminiignore logic for correct precedence by @EricRahm in https://github.com/google-gemini/gemini-cli/pull/11587",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-nightly.20251103.9187f6f6",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.13.0-nightly.20251101.caf2ca14",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-nightly.20251101.caf2ca14",
+      "date": "2025-11-01T00:44:16Z",
+      "summary": "What's Changed  chore/release: bump version to 0.13.0-nightly.20251031.c89bc30d by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/12330",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-nightly.20251101.caf2ca14",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.9",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.9",
+      "date": "2025-10-31T21:38:17Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.12.0-preview.8...v0.12.0-preview.9",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.9",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.31",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -589,6 +1469,66 @@
       "date": "2025-10-31T21:19:12.609Z",
       "summary": "- Windows: native installation uses shift+tab as shortcut for mode switching, instead of alt+m - Vertex: add support for Web Search on supported models",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.3",
+      "date": "2025-10-31T20:25:41Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.11.2...v0.11.3",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.8",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.8",
+      "date": "2025-10-31T16:49:28Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 11e1e98 to release/v0.12.0-preview.7-pr-12347 to patch version v0.12.0-preview.7 and create version 0.12.0-preview.8 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.8",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.7",
+      "date": "2025-10-31T15:33:27Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 135d981 to release/v0.12.0-preview.6-pr-12299 to patch version v0.12.0-preview.6 and create version 0.12.0-preview.7 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.7",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.2",
+      "date": "2025-10-31T02:36:38Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 643f2c0 to release/v0.11.1-pr-12300 to patch version v0.11.1 and create version 0.11.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.6",
+      "date": "2025-10-31T02:14:53Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 3332703 to release/v0.12.0-preview.5-pr-12317 to patch version v0.12.0-preview.5 and create version 0.12.0-preview.6 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.6",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.5",
+      "date": "2025-10-31T01:29:22Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 643f2c0 to release/v0.12.0-preview.4-pr-12300 to patch version v0.12.0-preview.4 and create version 0.12.0-preview.5 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.5",
       "type": "release"
     },
     {
@@ -602,6 +1542,46 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.13.0-nightly.20251031.c89bc30d",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-nightly.20251031.c89bc30d",
+      "date": "2025-10-31T00:39:19Z",
+      "summary": "What's Changed  Refactoring unit tests in packages/cli/src/ui by @IamRiddhi in https://github.com/google-gemini/gemini-cli/pull/12251",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-nightly.20251031.c89bc30d",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.4",
+      "date": "2025-10-30T23:53:20Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 68afb72 to release/v0.12.0-preview.3-pr-12306 to patch version v0.12.0-preview.3 and create version 0.12.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.1",
+      "date": "2025-10-30T23:15:20Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ee92db7 to release/v0.11.0-pr-11624 to patch version v0.11.0 and create version 0.11.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pu...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.3",
+      "date": "2025-10-30T22:48:04Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 82c1042 to release/v0.12.0-preview.2-pr-12231 to patch version v0.12.0-preview.2 and create version 0.12.0-preview.3 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.3",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.30",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -609,6 +1589,16 @@
       "date": "2025-10-30T22:23:48.671Z",
       "summary": "- Added helpful hint to run security unlock-keychain when encountering API key errors on macOS with locked keychain - Added allowUnsandboxedCommands sandbox setting to disable the dangerouslyDisabl...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.2",
+      "date": "2025-10-30T22:08:33Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.12.0-preview.0...v0.12.0-preview.2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.2",
       "type": "release"
     },
     {
@@ -622,6 +1612,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.13.0-nightly.20251030.42c79c64",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.13.0-nightly.20251030.42c79c64",
+      "date": "2025-10-30T06:20:54Z",
+      "summary": "What's Changed  (fix): appcontainer should not poll and footer should use currentModel from ui state by @psinha40898 in https://github.com/google-gemini/gemini-cli/pull/11923",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.13.0-nightly.20251030.42c79c64",
+      "type": "release"
+    },
+    {
       "id": "cursor-2.0",
       "tool": "cursor",
       "toolDisplayName": "Cursor",
@@ -629,6 +1629,46 @@
       "date": "2025-10-29T05:08:00.000Z",
       "summary": "New Coding Model and Agent Interface",
       "url": "https://www.cursor.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.0",
+      "date": "2025-10-29T01:21:11Z",
+      "summary": "What's Changed  chore(release): bump version to 0.11.0-nightly.20251015.203bad7c by @skeshive in https://github.com/google-gemini/gemini-cli/pull/11212",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-preview.0",
+      "date": "2025-10-29T01:01:42Z",
+      "summary": "What's Changed  chore(release): bump version to 0.12.0-nightly.20251022.0542de95 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/11672",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.0-preview.1",
+      "date": "2025-10-28T23:00:31Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 601a639 to release/v0.11.0-preview.0-pr-11889 to patch version v0.11.0-preview.0 and create version 0.11.0-preview.1 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-nightly.20251027.cb0947c5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-nightly.20251027.cb0947c5",
+      "date": "2025-10-27T21:45:57Z",
+      "summary": "What's Changed  fix(infra) - Fix merge queue skipper issues for chain e2e by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/11810",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-nightly.20251027.cb0947c5",
       "type": "release"
     },
     {
@@ -682,6 +1722,56 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.12.0-nightly.20251023.c4c0c0d1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-nightly.20251023.c4c0c0d1",
+      "date": "2025-10-23T20:23:22Z",
+      "summary": "What's Changed  extract console error to util func by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/11675",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-nightly.20251023.c4c0c0d1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.12.0-nightly.20251023.a7faa208",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.12.0-nightly.20251023.a7faa208",
+      "date": "2025-10-23T13:21:47Z",
+      "summary": "What's Changed  chore: renable test by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/11582",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.12.0-nightly.20251023.a7faa208",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0",
+      "date": "2025-10-22T17:26:26Z",
+      "summary": "What's Changed  [Part 4/6] feat(telemetry): add memory monitor with activity-aware recording and tests by @eLyiN in https://github.com/google-gemini/gemini-cli/pull/8122",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.0-preview.0",
+      "date": "2025-10-22T17:17:30Z",
+      "summary": "What's Changed  chore(release): bump version to 0.11.0-nightly.20251015.203bad7c by @skeshive in https://github.com/google-gemini/gemini-cli/pull/11212",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-preview.4",
+      "date": "2025-10-22T01:13:29Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 5b750f5 to release/v0.10.0-preview.3-pr-11615 to patch version v0.10.0-preview.3 and create version 0.10.0-preview.4 by @gemini-cli-robot in https://github.c...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.4",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.25",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -689,6 +1779,36 @@
       "date": "2025-10-21T21:03:51.747Z",
       "summary": "- Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: https://platform.claude.com/docs/en/agent-sdk/migration-guide",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.0-nightly.20251021.e72c00cf",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.0-nightly.20251021.e72c00cf",
+      "date": "2025-10-21T20:37:20Z",
+      "summary": "What's Changed  feat(infra) - Add base files for deflake workflow by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/11397",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0-nightly.20251021.e72c00cf",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-preview.3",
+      "date": "2025-10-21T18:31:52Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 8aace3a to release/v0.10.0-preview.2-pr-11549 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/11595",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.11.0-nightly.20251020.a96f0659",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.11.0-nightly.20251020.a96f0659",
+      "date": "2025-10-20T19:46:38Z",
+      "summary": "What's Changed  Enable Model Routing by @mrcabbage972 in https://github.com/google-gemini/gemini-cli/pull/11154",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0-nightly.20251020.a96f0659",
       "type": "release"
     },
     {
@@ -709,6 +1829,36 @@
       "date": "2025-10-17T21:40:29.277Z",
       "summary": "- Fixed content layout shift when scrolling through slash commands - IDE: Add toggle to enable/disable thinking.",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-preview.2",
+      "date": "2025-10-17T21:32:20Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 0ded546 to release/v0.10.0-preview.1-pr-11225 to patch version v0.10.0-preview.1 and create version 0.10.0-preview.2 by @skeshive in https://github.com/googl...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-preview.1",
+      "date": "2025-10-17T20:41:56Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 5aaa0e6 to release/v0.10.0-preview.0-pr-11259 to patch version v0.10.0-preview.0 and create version 0.10.0-preview.1 by @skeshive in https://github.com/googl...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-preview.0",
+      "date": "2025-10-17T20:40:07Z",
+      "summary": "What's Changed\r  [Part 4/6] feat(telemetry): add memory monitor with activity-aware recording and tests by @eLyiN in https://github.com/google-gemini/gemini-cli/pull/8122",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.0",
       "type": "release"
     },
     {
@@ -762,6 +1912,36 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.9.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0",
+      "date": "2025-10-15T15:04:09Z",
+      "summary": "What's Changed  chore(release): bump version to 0.9.0-nightly.20251001.163dba7e by @skeshive in https://github.com/google-gemini/gemini-cli/pull/10362",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-nightly.20251015.996c9f59",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-nightly.20251015.996c9f59",
+      "date": "2025-10-15T00:36:40Z",
+      "summary": "What's Changed  fix: set a2a-server publish to --no-tag by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/11138",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251015.996c9f59",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-nightly.20251014.0a3e492e",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-nightly.20251014.0a3e492e",
+      "date": "2025-10-14T18:58:31Z",
+      "summary": "What's Changed  fix(infra) - Create a step to calculate the inputs for the nightly-release by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/10825",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251014.0a3e492e",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.15",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -772,6 +1952,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.9.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-preview.2",
+      "date": "2025-10-11T00:12:38Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 0b6c020 to release/v0.9.0-preview.1-pr-10828 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/10920",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.2",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.14",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -779,6 +1969,56 @@
       "date": "2025-10-10T20:46:20.011Z",
       "summary": "- Fix @-mentioning MCP servers to toggle them on/off - Improve permission checks for bash with inline env vars",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-nightly.20251010.558be873",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-nightly.20251010.558be873",
+      "date": "2025-10-10T13:58:56Z",
+      "summary": "What's Changed  fix(doc) - Update doc for deflake command by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/10829",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251010.558be873",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.2",
+      "date": "2025-10-10T00:11:21Z",
+      "summary": "What's Changed  fix(patch): cherry-pick cce2457 to release/v0.8.1-pr-10856 to patch version v0.8.1 and create version 0.8.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-nightly.20251009.ae02236c",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-nightly.20251009.ae02236c",
+      "date": "2025-10-09T21:15:57Z",
+      "summary": "What's Changed  fix(doc) - Update doc for deflake command by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/10829",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251009.ae02236c",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-preview.1",
+      "date": "2025-10-09T18:40:46Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 467a305 to release/v0.9.0-preview.0-pr-10661 to patch version v0.9.0-preview.0 and create version 0.9.0-preview.1 by @gemini-cli-robot in https://github.com/...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.10.0-nightly.20251009.cd354aeb",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.10.0-nightly.20251009.cd354aeb",
+      "date": "2025-10-09T18:30:14Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251009.cd354aeb",
       "type": "release"
     },
     {
@@ -819,6 +2059,46 @@
       "date": "2025-10-08T20:13:03.929Z",
       "summary": "- Reduced system prompt si",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.1",
+      "date": "2025-10-08T03:40:42Z",
+      "summary": "What's Changed  fix(patch): cherry-pick a404fb8 to release/v0.8.0-pr-10280 to patch version v0.8.0 and create version 0.8.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0",
+      "date": "2025-10-07T21:50:53Z",
+      "summary": "What's Changed  Test workflow dispatch by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/9283",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-preview.0",
+      "date": "2025-10-07T21:49:09Z",
+      "summary": "What's Changed  chore(release): bump version to 0.9.0-nightly.20251001.163dba7e by @skeshive in https://github.com/google-gemini/gemini-cli/pull/10362",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-preview.2",
+      "date": "2025-10-07T20:47:40Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 69f93f8 to release/v0.8.0-preview.1-pr-10629 to patch version v0.8.0-preview.1 and create version 0.8.0-preview.2 by @gemini-cli-robot in https://github.com/...",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-preview.2",
       "type": "release"
     },
     {
@@ -872,6 +2152,56 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.0f465e88",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.0f465e88",
+      "date": "2025-10-02T18:46:29Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.0f465e88",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.a6af7bbb",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.a6af7bbb",
+      "date": "2025-10-02T18:34:57Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.a6af7bbb",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.4a70d6f2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.4a70d6f2",
+      "date": "2025-10-02T18:10:16Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.4a70d6f2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.460ec602",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.460ec602",
+      "date": "2025-10-02T17:58:04Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.460ec602",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.99958c68",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.99958c68",
+      "date": "2025-10-02T17:01:04Z",
+      "summary": "What's Changed  support giving a github repo URL with a trailing slash by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10360",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.99958c68",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.5",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -882,6 +2212,66 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.9.0-nightly.20251002.aa8b2abe",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251002.aa8b2abe",
+      "date": "2025-10-02T02:28:47Z",
+      "summary": "What's Changed  fix(core): add telemetry support for smart edit correction events by @agmsb in https://github.com/google-gemini/gemini-cli/pull/10378",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251002.aa8b2abe",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.9.0-nightly.20251001.14dbda91",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.9.0-nightly.20251001.14dbda91",
+      "date": "2025-10-01T23:48:37Z",
+      "summary": "What's Changed  fix(telemetry): Improve Cloud Shell surface type detection for telemetry purposes by @dlynx13 in https://github.com/google-gemini/gemini-cli/pull/10162",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.9.0-nightly.20251001.14dbda91",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-preview.1",
+      "date": "2025-10-01T20:02:37Z",
+      "summary": "What's Changed  Test workflow dispatch by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/9283",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-preview.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.7.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.7.0",
+      "date": "2025-10-01T19:37:27Z",
+      "summary": "What's Changed\r  fix: InputPrompt wrapped lines maintain highlighting, increase responsiveness in narrow cases  by @psinha40898 in https://github.com/google-gemini/gemini-cli/pull/7656",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.7.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.7.0-preview.2",
+      "date": "2025-10-01T15:53:13Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 4c5ab80 to release/v0.7.0-preview.1-pr-10283 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/10342",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250930.ddcbd0c2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250930.ddcbd0c2",
+      "date": "2025-09-30T08:49:46Z",
+      "summary": "What's Changed  chore(formatting): Fix formatting for math.ts by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/10216",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250930.ddcbd0c2",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.1",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -889,6 +2279,46 @@
       "date": "2025-09-30T01:53:50.434Z",
       "summary": "- Skip Sonnet 4.5 default model setting change for Bedrock and Vertex - Various bug fixes and presentation improvements",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250930.ae51bbda",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250930.ae51bbda",
+      "date": "2025-09-30T00:39:18Z",
+      "summary": "What's Changed  Add extension name auto-complete to /extensions update by @jakemac53 in https://github.com/google-gemini/gemini-cli/pull/10198",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250930.ae51bbda",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250929.ae387b61",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250929.ae387b61",
+      "date": "2025-09-29T23:38:43Z",
+      "summary": "What's Changed  ci(release): Skip tests by default in scheduled nightly workflow by @skeshive in https://github.com/google-gemini/gemini-cli/pull/10184",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250929.ae387b61",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250929.a49a09f1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250929.a49a09f1",
+      "date": "2025-09-29T20:36:52Z",
+      "summary": "What's Changed  feat(core): Add content-based retries for JSON generation by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/9264",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250929.a49a09f1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250929.042288e7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250929.042288e7",
+      "date": "2025-09-29T19:41:53Z",
+      "summary": "What's Changed  feat(iap support): Add service account impersonation provider to MCPServers to support IAP on Cloud Run by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/8505",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250929.042288e7",
       "type": "release"
     },
     {
@@ -912,6 +2342,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.8.0-nightly.20250927.19400ba8",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250927.19400ba8",
+      "date": "2025-09-27T01:42:33Z",
+      "summary": "What's Changed  refactor(core): Extract file filtering constants from Config to break circular dependency by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/9974",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250927.19400ba8",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.42.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -919,6 +2359,16 @@
       "date": "2025-09-26T18:42:34Z",
       "summary": "Notable Changes\r - Experimental Rust SDK–based MCP client introduced (4252)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.42.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.8.0-nightly.20250926.2defdcff",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.8.0-nightly.20250926.2defdcff",
+      "date": "2025-09-26T17:43:03Z",
+      "summary": "What's Changed  Add simple extensions release flow support by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/8498",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250926.2defdcff",
       "type": "release"
     },
     {
@@ -932,6 +2382,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.7.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.7.0-preview.1",
+      "date": "2025-09-25T21:02:54Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.7.0-preview.0...v0.7.0-preview.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0-preview.1",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.124",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -939,6 +2399,16 @@
       "date": "2025-09-25T01:37:53.959Z",
       "summary": "- Set CLAUDEBASHNOLOGIN environment variable to 1 or true to to skip login shell for BashTool - Fix Bedrock and Vertex environment variables evaluating all strings as truthy",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.1",
+      "date": "2025-09-25T00:21:15Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.6.0...v0.6.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.1",
       "type": "release"
     },
     {
@@ -952,6 +2422,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.6.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0",
+      "date": "2025-09-24T00:37:43Z",
+      "summary": "What's Changed  Release Process vNext by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/8152",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.7.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.7.0-preview.0",
+      "date": "2025-09-24T00:34:57Z",
+      "summary": "What's Changed  fix: InputPrompt wrapped lines maintain highlighting, increase responsiveness in narrow cases  by @psinha40898 in https://github.com/google-gemini/gemini-cli/pull/7656",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0-preview.0",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.123",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -959,6 +2449,36 @@
       "date": "2025-09-23T20:49:33.199Z",
       "summary": "- Bash permission rules now support output redirections when matching (e.g., Bash(python:) matches python script.py > output.txt) - Fixed thinking mode triggering on negation phrases like \"don't th...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.10",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.10",
+      "date": "2025-09-23T19:10:40Z",
+      "summary": "What's Changed  fix(patch): cherry-pick 31c609d to release/v0.6.0-preview.9 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/9251",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.10",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.9",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.9",
+      "date": "2025-09-23T18:16:21Z",
+      "summary": "What's Changed  fix(patch): cherry-pick c93eed6 to release/v0.6.0-preview.8 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/9244",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.9",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.8",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.8",
+      "date": "2025-09-23T17:41:20Z",
+      "summary": "What's Changed  Cherrypick extensions changes to v0.6.0 by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/9179",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.8",
       "type": "release"
     },
     {
@@ -972,6 +2492,46 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.6.0-preview.7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.7",
+      "date": "2025-09-22T23:07:11Z",
+      "summary": "What's Changed  Update .github directory from main branch by @scidomino in https://github.com/google-gemini/gemini-cli/pull/9155",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.7",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.5",
+      "date": "2025-09-22T22:40:54Z",
+      "summary": "What's Changed  Update .github directory from main branch by @scidomino in https://github.com/google-gemini/gemini-cli/pull/9155",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.5",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.5",
+      "date": "2025-09-20T01:01:08Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.5.4...v0.5.5",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.5",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.4",
+      "date": "2025-09-19T21:38:55Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f3abfb8 to release/v0.6.0-preview.2 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.4",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.120",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -979,6 +2539,46 @@
       "date": "2025-09-19T21:08:21.676Z",
       "summary": "- Fix input lag during typing, especially noticeable with large prompts - Improved VSCode extension command registry and sessions dialog user experience",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.0.88888",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.0.88888",
+      "date": "2025-09-19T20:16:16Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f3abfb8 to release/v0.6.0-preview.2 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.0.88888",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.0.88",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.0.88",
+      "date": "2025-09-19T18:58:31Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f3abfb8 to release/v0.6.0-preview.2 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.0.88",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.0.77",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.0.77",
+      "date": "2025-09-19T12:46:47Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f3abfb8 to release/v0.6.0-preview.2 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.0.77",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.3",
+      "date": "2025-09-19T11:51:02Z",
+      "summary": "What's Changed  fix(patch): cherry-pick f3abfb8 to release/v0.6.0-preview.2 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.3",
       "type": "release"
     },
     {
@@ -999,6 +2599,46 @@
       "date": "2025-09-18T21:03:38.113Z",
       "summary": "- Fix Windows issue where process visually free",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.4",
+      "date": "2025-09-18T18:48:27Z",
+      "summary": "What's Changed  fix(patch): cherry-pick ad21c10 to release/v0.5.3 by @gemini-cli[bot] in https://github.com/google-gemini/gemini-cli/pull/8719",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.7.0-nightly.20250918.2722473a",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.7.0-nightly.20250918.2722473a",
+      "date": "2025-09-18T00:11:16Z",
+      "summary": "What's Changed  Release Process vNext by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/8152",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0-nightly.20250918.2722473a",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.3",
+      "date": "2025-09-17T20:37:19Z",
+      "summary": "What's Changed  fix: Remove 'node-fetch' from externals by @swissspidy in https://github.com/google-gemini/gemini-cli/pull/7752",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.6.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-preview.2",
+      "date": "2025-09-17T20:35:47Z",
+      "summary": "What's Changed  Release Process vNext by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/8152",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-preview.2",
       "type": "release"
     },
     {
@@ -1072,6 +2712,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.5.0-preview-2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-preview-2",
+      "date": "2025-09-12T18:47:32Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.5.0-preview.1...v0.5.0-preview-2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-preview-2",
+      "type": "release"
+    },
+    {
       "id": "cursor-1.6",
       "tool": "cursor",
       "toolDisplayName": "Cursor",
@@ -1089,6 +2739,26 @@
       "date": "2025-09-12T00:07:45.734Z",
       "summary": "- Transcript mode (Ctrl+R): Added the model used to generate each assistant message - Addressed issue where some Claude Max users were incorrectly recogni",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.1",
+      "date": "2025-09-11T22:51:11Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.4.0...v0.4.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-preview.1",
+      "date": "2025-09-11T22:37:57Z",
+      "summary": "What's Changed  fix: Remove 'node-fetch' from externals by @swissspidy in https://github.com/google-gemini/gemini-cli/pull/7752",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-preview.1",
       "type": "release"
     },
     {
@@ -1132,6 +2802,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.6.0-nightly.20250910.a31830a3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.6.0-nightly.20250910.a31830a3",
+      "date": "2025-09-10T00:46:06Z",
+      "summary": "What's Changed  Remove org/repo install support by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/7815",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.6.0-nightly.20250910.a31830a3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.0-preview",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-preview",
+      "date": "2025-09-10T00:42:38Z",
+      "summary": "What's Changed  fix: Remove 'node-fetch' from externals by @swissspidy in https://github.com/google-gemini/gemini-cli/pull/7752",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-preview",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.110",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1139,6 +2829,36 @@
       "date": "2025-09-09T22:06:44.373Z",
       "summary": "- /terminal-setup command now supports We",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0",
+      "date": "2025-09-09T21:32:04Z",
+      "summary": "What's Changed  fix(ide): polyfill import.meta.url for cjs build by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.0-preview.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0-preview.4",
+      "date": "2025-09-09T21:00:04Z",
+      "summary": "What's Changed  fix(ide): polyfill import.meta.url for cjs build by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.0-nightly.20250909.2b05cf3b",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-nightly.20250909.2b05cf3b",
+      "date": "2025-09-09T00:15:37Z",
+      "summary": "What's Changed  feat(settings): Add support for settings enum options by @richieforeman in https://github.com/google-gemini/gemini-cli/pull/7719",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-nightly.20250909.2b05cf3b",
       "type": "release"
     },
     {
@@ -1162,6 +2882,66 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.5.0-nightly.20250908.4693137b",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-nightly.20250908.4693137b",
+      "date": "2025-09-08T00:15:14Z",
+      "summary": "What's Changed  fix(ci): fix windows e2e tests by @galz10 in https://github.com/google-gemini/gemini-cli/pull/7749",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-nightly.20250908.4693137b",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.4",
+      "date": "2025-09-06T18:56:54Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.3.3...v0.3.4",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0-preview.2",
+      "date": "2025-09-06T18:27:51Z",
+      "summary": "What's Changed  fix(ide): polyfill import.meta.url for cjs build by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.3",
+      "date": "2025-09-06T01:13:04Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.3.2...v0.3.3",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.5.0-nightly.20250906.968e9389",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.5.0-nightly.20250906.968e9389",
+      "date": "2025-09-06T00:14:53Z",
+      "summary": "What's Changed  Enhance json configuration docs by @paulirish in https://github.com/google-gemini/gemini-cli/pull/7628",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.5.0-nightly.20250906.968e9389",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0-preview.1",
+      "date": "2025-09-06T00:06:29Z",
+      "summary": "What's Changed  fix(ide): polyfill import.meta.url for cjs build by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0-preview.1",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.30.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1169,6 +2949,16 @@
       "date": "2025-09-05T22:07:26Z",
       "summary": "Codex 0.30.0\r - Breaking: Stop loading project .env files automatically.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.30.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.2",
+      "date": "2025-09-04T23:56:23Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.3.1...v0.3.2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.2",
       "type": "release"
     },
     {
@@ -1182,6 +2972,46 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.4.0-preview",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0-preview",
+      "date": "2025-09-04T21:29:23Z",
+      "summary": "What's Changed  fix(ide): polyfill import.meta.url for cjs build by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7279",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0-preview",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.1",
+      "date": "2025-09-04T19:51:07Z",
+      "summary": "What's Changed  Hotfix for issue 7730 by @skeshive in https://github.com/google-gemini/gemini-cli/pull/7739",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0",
+      "date": "2025-09-04T17:49:53Z",
+      "summary": "What's Changed  feat: update .gitignore in /setup-github by @jerop in https://github.com/google-gemini/gemini-cli/pull/6591",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.4.0-nightly.20250904.e133acd2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.4.0-nightly.20250904.e133acd2",
+      "date": "2025-09-04T00:16:07Z",
+      "summary": "What's Changed  fix(core): Skip loop check for dividers by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/6893",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.4.0-nightly.20250904.e133acd2",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.29.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1192,6 +3022,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.3.0-preview.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-preview.3",
+      "date": "2025-09-03T00:37:10Z",
+      "summary": "What's Changed  feat: update .gitignore in /setup-github by @jerop in https://github.com/google-gemini/gemini-cli/pull/6591",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-preview.3",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.28.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1199,6 +3039,16 @@
       "date": "2025-09-02T22:20:34Z",
       "summary": "- [Highlights]\r   - TUI polish and stability improvements: reduced typing lag, cleaner streamed message formatting, better error handling, and improved input behavior.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.28.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-preview.2",
+      "date": "2025-09-02T02:42:59Z",
+      "summary": "What's Changed  feat: update .gitignore in /setup-github by @jerop in https://github.com/google-gemini/gemini-cli/pull/6591",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-preview.2",
       "type": "release"
     },
     {
@@ -1222,6 +3072,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.2.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.2.2",
+      "date": "2025-08-28T15:59:44Z",
+      "summary": "What's Changed  Merge 6677 into release branch for hot fix. by @skeshive in https://github.com/google-gemini/gemini-cli/pull/6850",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.2.2",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.0-preview.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-preview.1",
+      "date": "2025-08-28T04:34:38Z",
+      "summary": "What's Changed  feat: update .gitignore in /setup-github by @jerop in https://github.com/google-gemini/gemini-cli/pull/6591",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-preview.1",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.94",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1242,6 +3112,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.2.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.2.1",
+      "date": "2025-08-27T06:55:42Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.2.0...v0.2.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.2.1",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.2.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.2.0",
+      "date": "2025-08-27T01:30:11Z",
+      "summary": "What's Changed  fix(docs): update authentication documentation to reflect available options by @bulkypanda in https://github.com/google-gemini/gemini-cli/pull/6361",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.2.0",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.93",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1249,6 +3139,16 @@
       "date": "2025-08-26T22:22:24.524Z",
       "summary": "- Windows: Add alt + v shortcut for pasting images from clipboard - Support NOPROXY environment variable to bypass proxy for specified hostnames and IPs",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.2.0-preview.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.2.0-preview.2",
+      "date": "2025-08-26T17:44:08Z",
+      "summary": "What's Changed  Merge 6677 into release branch for hot fix. by @skeshive in https://github.com/google-gemini/gemini-cli/pull/6850",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.2.0-preview.2",
       "type": "release"
     },
     {
@@ -1272,6 +3172,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.3.0-nightly.20250823.1a89d185",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-nightly.20250823.1a89d185",
+      "date": "2025-08-23T00:13:03Z",
+      "summary": "What's Changed  test(integration-tests): isolate user memory from test runs by @galz10 in https://github.com/google-gemini/gemini-cli/pull/6790",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-nightly.20250823.1a89d185",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.88",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1279,6 +3189,26 @@
       "date": "2025-08-22T00:43:54.508Z",
       "summary": "- Fixed issue causing \"OAuth authentication is currently not supported\" - Status line input now includes exceeds200ktokens",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.0-nightly.20250822.15c62bad",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-nightly.20250822.15c62bad",
+      "date": "2025-08-22T00:13:21Z",
+      "summary": "What's Changed  test(integration): add failing test for stdin context with prompt by @allenhutchison in https://github.com/google-gemini/gemini-cli/pull/6158",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-nightly.20250822.15c62bad",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.3.0-nightly.20250821.653267a6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.3.0-nightly.20250821.653267a6",
+      "date": "2025-08-21T00:11:11Z",
+      "summary": "What's Changed  refactor: remove modelCheck feature by @allenhutchison in https://github.com/google-gemini/gemini-cli/pull/6185",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.3.0-nightly.20250821.653267a6",
       "type": "release"
     },
     {
@@ -1302,6 +3232,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.2.0-preview.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.2.0-preview.0",
+      "date": "2025-08-20T02:18:38Z",
+      "summary": "What's Changed  fix(docs): update authentication documentation to reflect available options by @bulkypanda in https://github.com/google-gemini/gemini-cli/pull/6361",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.2.0-preview.0",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.85",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1319,6 +3259,16 @@
       "date": "2025-08-18T22:36:19.901Z",
       "summary": "- Fix tooluse/toolresult id mismatch error when network is unstable - Fix Claude sometimes ignoring real-time steering when wrapping up a task",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.22",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.22",
+      "date": "2025-08-18T21:36:47Z",
+      "summary": "What's Changed  chore(release): v0.1.21 by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/6207",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.22",
       "type": "release"
     },
     {
@@ -1362,6 +3312,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.21",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.21",
+      "date": "2025-08-14T05:38:15Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.21",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.19-nightly.250814.514e883a",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.19-nightly.250814.514e883a",
+      "date": "2025-08-14T00:11:14Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.19-nightly.250814.514e883a",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.80",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1369,6 +3339,26 @@
       "date": "2025-08-13T20:59:17.592Z",
       "summary": "- UI improvements: Fix text contrast for custom subagent colors and spinner rendering issues",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.20",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.20",
+      "date": "2025-08-13T03:17:03Z",
+      "summary": "What's Changed\r  ensure sandbox build script is cross-platform by @wldoooon in https://github.com/google-gemini/gemini-cli/pull/2603",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.20",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.19-nightly.250813.9d023be1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.19-nightly.250813.9d023be1",
+      "date": "2025-08-13T00:12:02Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.19-nightly.250813.9d023be1",
       "type": "release"
     },
     {
@@ -1382,6 +3372,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.19",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.19",
+      "date": "2025-08-12T18:21:50Z",
+      "summary": "What's Changed\r  Add tests for useAtCompletion reset logic by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/5639",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.19",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.21.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1389,6 +3389,16 @@
       "date": "2025-08-12T04:43:24Z",
       "summary": "Fixes abound!\r - https://github.com/openai/codex/pull/2200 send prompt cache key for better caching (should improve token efficiency!)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.21.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.18-nightly.250812.26fe587b",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.18-nightly.250812.26fe587b",
+      "date": "2025-08-12T00:14:06Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.18-nightly.250812.26fe587b",
       "type": "release"
     },
     {
@@ -1402,6 +3412,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.18-nightly.250811.2865a527",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.18-nightly.250811.2865a527",
+      "date": "2025-08-11T00:12:28Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.18-nightly.250811.2865a527",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.18-nightly.250810.c632ec8b",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.18-nightly.250810.c632ec8b",
+      "date": "2025-08-10T00:13:21Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.18-nightly.250810.c632ec8b",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.20.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1409,6 +3439,16 @@
       "date": "2025-08-09T00:29:51Z",
       "summary": "Some key fixes for Windows:\r - https://github.com/openai/codex/pull/2035 the npm release of @openai/codex now runs the Rust CLI instead of falling back to the old TypeScript CLI (TypeScript code wa...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.20.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.17-nightly.250809.f35921a7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.17-nightly.250809.f35921a7",
+      "date": "2025-08-09T00:13:11Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.17-nightly.250809.f35921a7",
       "type": "release"
     },
     {
@@ -1429,6 +3469,16 @@
       "date": "2025-08-08T01:40:16Z",
       "summary": "",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.19.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.17-nightly.250808.60362e03",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.17-nightly.250808.60362e03",
+      "date": "2025-08-08T00:21:19Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.17-nightly.250808.60362e03",
       "type": "release"
     },
     {
@@ -1482,6 +3532,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.18",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.18",
+      "date": "2025-08-06T00:59:16Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.18",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.17-nightly.250806.805114ae",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.17-nightly.250806.805114ae",
+      "date": "2025-08-06T00:12:23Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.17-nightly.250806.805114ae",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.13.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1512,6 +3582,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.17",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.17",
+      "date": "2025-08-05T00:30:42Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.17",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.16-nightly.250805.99ba2f64",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.16-nightly.250805.99ba2f64",
+      "date": "2025-08-05T00:13:05Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.16-nightly.250805.99ba2f64",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.68",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1519,6 +3609,36 @@
       "date": "2025-08-04T21:14:18.850Z",
       "summary": "- Fix incorrect model names being used for certain commands like /pr-comments - Windows: improve permissions checks for allow / deny tools and project trust. This may create a new project entry in ...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.16-nightly.250804.a8984a9b",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.16-nightly.250804.a8984a9b",
+      "date": "2025-08-04T00:12:45Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.16-nightly.250804.a8984a9b",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.15-nightly.250803.820169ba",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.15-nightly.250803.820169ba",
+      "date": "2025-08-03T00:12:39Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15-nightly.250803.820169ba",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.16",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.16",
+      "date": "2025-08-02T03:58:05Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.16",
       "type": "release"
     },
     {
@@ -1532,6 +3652,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.15-nightly.250802.15a1f1af",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.15-nightly.250802.15a1f1af",
+      "date": "2025-08-02T00:20:45Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15-nightly.250802.15a1f1af",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.15-nightly.250801.6f7beb41",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.15-nightly.250801.6f7beb41",
+      "date": "2025-08-01T00:11:04Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15-nightly.250801.6f7beb41",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.65",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1539,6 +3679,16 @@
       "date": "2025-07-31T21:44:51.996Z",
       "summary": "- IDE: Fixed connection stability issues and error handling for diagnostics - Windows: Fixed shell environment setup for users without .bashrc files",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.15-nightly.250731.0c6f7884",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.15-nightly.250731.0c6f7884",
+      "date": "2025-07-31T00:10:49Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15-nightly.250731.0c6f7884",
       "type": "release"
     },
     {
@@ -1552,6 +3702,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.15",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.15",
+      "date": "2025-07-30T04:49:35Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.13-nightly.250730.091804c7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13-nightly.250730.091804c7",
+      "date": "2025-07-30T00:10:58Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13-nightly.250730.091804c7",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.63",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1559,6 +3729,26 @@
       "date": "2025-07-29T21:27:31.493Z",
       "summary": "- Windows: Fixed file search, @agent mentions, and custom slash commands functionality",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.13-nightly.250729.83c4dddb",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13-nightly.250729.83c4dddb",
+      "date": "2025-07-29T00:11:00Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13-nightly.250729.83c4dddb",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.13-nightly.250728.9ed35126",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13-nightly.250728.9ed35126",
+      "date": "2025-07-28T22:38:56Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13-nightly.250728.9ed35126",
       "type": "release"
     },
     {
@@ -1572,6 +3762,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.13-nightly.250727.3e81359c",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13-nightly.250727.3e81359c",
+      "date": "2025-07-27T00:10:26Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13-nightly.250727.3e81359c",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.13-nightly.250726.fb751c54",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13-nightly.250726.fb751c54",
+      "date": "2025-07-26T00:09:26Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13-nightly.250726.fb751c54",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.61",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1579,6 +3789,16 @@
       "date": "2025-07-25T20:52:31.027Z",
       "summary": "- Transcript mode (Ctrl+R): Changed Esc to exit transcript mode rather than interrupt - Settings: Added --settings flag to load settings from a JSON file",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.14",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.14",
+      "date": "2025-07-25T20:39:55Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.14",
       "type": "release"
     },
     {
@@ -1639,6 +3859,16 @@
       "date": "2025-07-21T21:16:32.998Z",
       "summary": "- Added support for specifying a model in slash commands - Improved permission messages to help Claude understand allowed tools",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.13",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.13",
+      "date": "2025-07-19T20:26:04Z",
+      "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.13",
       "type": "release"
     },
     {
@@ -1712,6 +3942,26 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.12-nightly.250714.b018e2d3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.12-nightly.250714.b018e2d3",
+      "date": "2025-07-14T00:09:01Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.1.12...v0.1.12-nightly.250714.b018e2d3",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.12-nightly.250714.b018e2d3",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.11-nightly.250713.4442e893",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.11-nightly.250713.4442e893",
+      "date": "2025-07-13T00:08:40Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.11-nightly.250713.4442e893",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.6.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1729,6 +3979,26 @@
       "date": "2025-07-11T22:51:14.555Z",
       "summary": "- Added support for native Windows (requires Git for Windows) - Added support for Bedrock API keys through environment variable AWSBEARERTOKENBEDROCK",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.10",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.10",
+      "date": "2025-07-11T07:31:08Z",
+      "summary": "What's Changed\r  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.10",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.11",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.11",
+      "date": "2025-07-11T07:14:15Z",
+      "summary": "What's Changed\r  fix: Use Email for Clearcut Logging and Refactor User Info Fetching by @gsquared94 in https://github.com/google-gemini/gemini-cli/pull/3620",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.11",
       "type": "release"
     },
     {
@@ -1752,6 +4022,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.9-nightly.250710.da50a1ee",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250710.da50a1ee",
+      "date": "2025-07-10T00:08:47Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250710.da50a1ee",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.4.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1759,6 +4039,16 @@
       "date": "2025-07-09T07:06:51Z",
       "summary": "Honor the OPENAIBASEURL  environment variable for the built-in openai model provider: https://github.com/openai/codex/pull/1487\r  Support modelreasoningeffort and modelreasoningsummary when definin...",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.4.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.9-nightly.250709.c8cf954e",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250709.c8cf954e",
+      "date": "2025-07-09T00:08:45Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250709.c8cf954e",
       "type": "release"
     },
     {
@@ -1772,6 +4062,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.9-nightly.250708.137ffec3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250708.137ffec3",
+      "date": "2025-07-08T06:47:31Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250708.137ffec3",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.3.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1782,6 +4082,16 @@
       "type": "release"
     },
     {
+      "id": "gemini-cli-v0.1.9-nightly.250708.a4097ae6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250708.a4097ae6",
+      "date": "2025-07-08T00:08:42Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250708.a4097ae6",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.44",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1789,6 +4099,26 @@
       "date": "2025-07-07T20:55:13.221Z",
       "summary": "- New /export command lets you quickly export a conversation for sharing - MCP: resourcelink tool results are now supported",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.9-nightly.250707.d1c0a211",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250707.d1c0a211",
+      "date": "2025-07-07T01:35:50Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250707.d1c0a211",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.9-nightly.250704.23eea823",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9-nightly.250704.23eea823",
+      "date": "2025-07-04T19:35:32Z",
+      "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9-nightly.250704.23eea823",
       "type": "release"
     },
     {
@@ -1819,6 +4149,26 @@
       "date": "2025-07-02T17:45:22.596Z",
       "summary": "- Hooks: Split Stop hook triggering into Stop and SubagentStop - Hooks: Enabled optional timeout configuration for each command",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.9",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.9",
+      "date": "2025-07-02T00:29:03Z",
+      "summary": "Fast follow bug fixes from 0.1.8\r  Packages",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.9",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.8",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.8",
+      "date": "2025-07-01T22:52:01Z",
+      "summary": "What's Changed\r  Upgrade to Ink 6 and React 19 by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/2096",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.8",
       "type": "release"
     },
     {
@@ -1859,6 +4209,26 @@
       "date": "2025-06-30T19:25:11Z",
       "summary": "",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.2.0",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.7",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.7",
+      "date": "2025-06-28T00:28:03Z",
+      "summary": "- Fixes a bug with the sandbox container image in 0.1.6 (2302)\r - Release Notes for 0.1.6 at https://github.com/google-gemini/gemini-cli/discussions/2301",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.7",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.1.6",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.1.6",
+      "date": "2025-06-28T00:22:26Z",
+      "summary": "Release notes at: https://github.com/google-gemini/gemini-cli/discussions/2301",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.6",
       "type": "release"
     },
     {

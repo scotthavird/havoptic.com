@@ -1,4 +1,4 @@
-export type ToolId = 'claude-code' | 'openai-codex' | 'cursor';
+export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli';
 
 export interface Release {
   id: string;
@@ -31,5 +31,10 @@ export const TOOL_CONFIG: Record<ToolId, { displayName: string; color: string; b
     displayName: 'Cursor',
     color: 'text-cursor',
     bgColor: 'bg-cursor',
+  },
+  'gemini-cli': {
+    displayName: 'Gemini CLI',
+    color: 'text-gemini',
+    bgColor: 'bg-gemini',
   },
 };
