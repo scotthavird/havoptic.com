@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-29T19:28:41.711Z",
+  "lastUpdated": "2025-12-29T19:41:16.265Z",
   "releases": [
     {
       "id": "gemini-cli-v0.22.4",
@@ -129,6 +129,16 @@
       "date": "2025-12-18T18:08:47Z",
       "summary": "Highlights\r - Introducing gpt-5.2-codex our latest frontier model with improvements across knowledge, reasoning and coding. Learn more",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.74.0",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.23.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.23.0",
+      "date": "2025-12-18T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.23.0",
+      "url": "https://kiro.dev/changelog",
       "type": "release"
     },
     {
@@ -269,6 +279,16 @@
       "date": "2025-12-11T18:36:44Z",
       "summary": "Highlights\r - Introducing gpt-5.2 our latest frontier model with improvements across knowledge, reasoning and coding. Learn More",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.71.0",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.22.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.22.0",
+      "date": "2025-12-11T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.22.0",
+      "url": "https://kiro.dev/changelog",
       "type": "release"
     },
     {
@@ -632,6 +652,26 @@
       "type": "release"
     },
     {
+      "id": "kiro-1.21.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.21.0",
+      "date": "2025-11-25T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.21.0",
+      "url": "https://kiro.dev/changelog",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.20.2",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.20.2",
+      "date": "2025-11-25T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.20.2",
+      "url": "https://kiro.dev/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.19.0-nightly.20251125.f6d97d448",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -659,6 +699,16 @@
       "date": "2025-11-24T18:27:18.026Z",
       "summary": "- Added Opus 4.5! https://www.anthropic.com/news/claude-opus-4-5 - Introducing Claude Code for Desktop: https://claude.com/download",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.20.1",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.20.1",
+      "date": "2025-11-24T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.20.1",
+      "url": "https://kiro.dev/changelog",
       "type": "release"
     },
     {
@@ -952,16 +1002,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.19.7",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.7",
-      "date": "2025-11-17T15:55:17Z",
-      "summary": "What's Changed\r  add update announcement by @zixlin7 in https://github.com/aws/amazon-q-developer-cli/pull/3433",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.7",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.17.0-nightly.20251117.cf8de02c6",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1122,16 +1162,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.19.6",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.6",
-      "date": "2025-11-13T21:40:17Z",
-      "summary": "What's Changed\r  Revert \"added hint for multiline triple backtick code block detector\" by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/3439",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.6",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.15.0-preview.5",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1192,16 +1222,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.19.5",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.5",
-      "date": "2025-11-12T19:49:40Z",
-      "summary": "What's Changed\r  added hint for multiline triple backtick code block detector by @ekang7 in https://github.com/aws/amazon-q-developer-cli/pull/3327",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.5",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.15.0-preview.1",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1259,16 +1279,6 @@
       "date": "2025-11-10T22:05:27.713Z",
       "summary": "- Fixed how idleness is computed for notifications - Hooks: Added matcher values for Notification hook events",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.19.4",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.4",
-      "date": "2025-11-10T17:55:53Z",
-      "summary": "What's Changed\r  refactor: migrate from directories to hierarchical paths module by @dk19y in https://github.com/aws/amazon-q-developer-cli/pull/3309",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.4",
       "type": "release"
     },
     {
@@ -1662,16 +1672,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.19.3",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.3",
-      "date": "2025-10-30T00:08:45Z",
-      "summary": "What's Changed\r  fixe: racing condition on conduit when printing by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/3308",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.3",
-      "type": "release"
-    },
-    {
       "id": "cursor-2.0",
       "tool": "cursor",
       "toolDisplayName": "Cursor",
@@ -1712,26 +1712,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.19.2",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.2",
-      "date": "2025-10-28T05:55:34Z",
-      "summary": "What's Changed\r  Revert \"feat: Updates models to match latest, including endpoint resolver (3262)\" by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/3288",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.2",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.19.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.1",
-      "date": "2025-10-28T00:06:29Z",
-      "summary": "What's Changed\r  feat: Path based loading for agent by @mekza in https://github.com/aws/amazon-q-developer-cli/pull/2859",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.1",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.12.0-nightly.20251027.cb0947c5",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1759,16 +1739,6 @@
       "date": "2025-10-25T21:37:23Z",
       "summary": "Highlights\r - Improved /feedback to get better diagnostics. Please use it to report any issues. (5661, 5663).",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.19.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.19.0",
-      "date": "2025-10-24T22:51:34Z",
-      "summary": "What's Changed\r  fix: make q settings delete functionality user friendly by @nirajchowdhary in https://github.com/aws/amazon-q-developer-cli/pull/3042",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.19.0",
       "type": "release"
     },
     {
@@ -2022,16 +1992,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-1.18.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "1.18.1",
-      "date": "2025-10-14T18:45:46Z",
-      "summary": "Minor version reporting an old version",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/1.18.1",
-      "type": "release"
-    },
-    {
       "id": "claude-code-2.0.15",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2039,16 +1999,6 @@
       "date": "2025-10-14T17:18:10.785Z",
       "summary": "- Fixed bug with resuming where previously created files needed to be read again before writing - Fixed bug with -p mode where @-mentioned files needed to be read again before writing",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-1.18.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "1.18.0",
-      "date": "2025-10-13T21:33:57Z",
-      "summary": "[Experimental] Agent delegate tool\r  Stop hook functionality",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/1.18.0",
       "type": "release"
     },
     {
@@ -2362,16 +2312,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.17.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.17.1",
-      "date": "2025-10-01T00:02:05Z",
-      "summary": "What's Changed\r  chore: sync prod with main by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/3059",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.17.1",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.8.0-nightly.20250930.ddcbd0c2",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2409,16 +2349,6 @@
       "date": "2025-09-29T23:38:43Z",
       "summary": "What's Changed  ci(release): Skip tests by default in scheduled nightly workflow by @skeshive in https://github.com/google-gemini/gemini-cli/pull/10184",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250929.ae387b61",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.17.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.17.0",
-      "date": "2025-09-29T23:25:04Z",
-      "summary": "What's Changed\r  Improve error messages for dispatch failures by @kkashilk in https://github.com/aws/amazon-q-developer-cli/pull/2969",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.17.0",
       "type": "release"
     },
     {
@@ -2642,16 +2572,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.16.2",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.16.2",
-      "date": "2025-09-19T23:01:25Z",
-      "summary": "What's Changed\r  fix: CI format check by enforcing nightly cargo fmt by @evanliu048 in https://github.com/aws/amazon-q-developer-cli/pull/2895",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.16.2",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.6.0-preview.4",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2752,16 +2672,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.16.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.16.1",
-      "date": "2025-09-17T22:28:15Z",
-      "summary": "What's Changed\r  Bump up version for hotfix in Prod by @kkashilk in https://github.com/aws/amazon-q-developer-cli/pull/2917",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.16.1",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.5.3",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2799,16 +2709,6 @@
       "date": "2025-09-17T17:59:38Z",
       "summary": "Mostly small quality-of-life fixes in this release.\r  Highlights",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.37.0",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.16.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.16.0",
-      "date": "2025-09-17T00:15:57Z",
-      "summary": "What's Changed\r  Update knowledge base directory path to reflect actual location by @kensave in https://github.com/aws/amazon-q-developer-cli/pull/2763",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.16.0",
       "type": "release"
     },
     {
@@ -3192,16 +3092,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v.1.15.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v.1.15.0",
-      "date": "2025-09-02T21:33:40Z",
-      "summary": "What's Changed\r  feat: add tangent mode for isolated conversations by @abhraina-aws in https://github.com/aws/amazon-q-developer-cli/pull/2634",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v.1.15.0",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.3.0-preview.2",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -3362,16 +3252,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.14.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.14.1",
-      "date": "2025-08-21T22:13:47Z",
-      "summary": "What's Changed\r  feat: add github action for release notification by @abhraina-aws in https://github.com/aws/amazon-q-developer-cli/pull/2625",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.14.1",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.3.0-nightly.20250821.653267a6",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -3439,16 +3319,6 @@
       "date": "2025-08-18T21:36:47Z",
       "summary": "What's Changed  chore(release): v0.1.21 by @mattKorwel in https://github.com/google-gemini/gemini-cli/pull/6207",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.22",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.14.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.14.0",
-      "date": "2025-08-18T19:23:26Z",
-      "summary": "What's Changed\r  chore: integrate backend API and remove hardcoded model options by @evanliu048 in https://github.com/aws/amazon-q-developer-cli/pull/2419",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.14.0",
       "type": "release"
     },
     {
@@ -3582,16 +3452,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.13.3",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.13.3",
-      "date": "2025-08-12T00:13:36Z",
-      "summary": "What's Changed\r  feat(agent): adds globbing support for tool settings deny by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/2512",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.13.3",
-      "type": "release"
-    },
-    {
       "id": "claude-code-1.0.73",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3619,16 +3479,6 @@
       "date": "2025-08-10T00:13:21Z",
       "summary": "What's Changed  make tag required for /chat by @sethtroisi in https://github.com/google-gemini/gemini-cli/pull/2904",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.18-nightly.250810.c632ec8b",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.13.2",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.13.2",
-      "date": "2025-08-09T01:04:38Z",
-      "summary": "What's Changed\r  fix: Sanitize hidden Unicode characters from user and tool inputs by @evanliu048 in https://github.com/aws/amazon-q-developer-cli/pull/2435",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.13.2",
       "type": "release"
     },
     {
@@ -3812,16 +3662,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.13.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.13.1",
-      "date": "2025-08-04T17:46:58Z",
-      "summary": "What's Changed\r  fix: broken link in docs to built-in tools by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/2445",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.13.1",
-      "type": "release"
-    },
-    {
       "id": "gemini-cli-v0.1.16-nightly.250804.a8984a9b",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -3889,16 +3729,6 @@
       "date": "2025-07-31T21:44:51.996Z",
       "summary": "- IDE: Fixed connection stability issues and error handling for diagnostics - Windows: Fixed shell environment setup for users without .bashrc files",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.13.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.13.0",
-      "date": "2025-07-31T18:41:43Z",
-      "summary": "What's Changed\r  Persona enablement by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/2222",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.13.0",
       "type": "release"
     },
     {
@@ -4732,26 +4562,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.10.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.10.1",
-      "date": "2025-05-16T15:47:54Z",
-      "summary": "What's Changed\r  fix: migrations logic to appropriately handle all migrations by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/1862",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.10.1",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.10.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.10.0",
-      "date": "2025-05-16T00:04:32Z",
-      "summary": "What's Changed\r  fix: sets custom tool flag for custom tools by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/1423",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.10.0",
-      "type": "release"
-    },
-    {
       "id": "claude-code-0.2.108",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4842,46 +4652,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.9.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.9.1",
-      "date": "2025-04-29T08:14:28Z",
-      "summary": "What's Changed\r  fix: shortens tip message to avoid overflow subtraction by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/1412",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.9.1",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.9.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.9.0",
-      "date": "2025-04-29T03:06:58Z",
-      "summary": "What's Changed\r  Mcp enablement squashed by @dingfeli in https://github.com/aws/amazon-q-developer-cli/pull/1365",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.9.0",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.8.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.8.1",
-      "date": "2025-04-26T00:06:01Z",
-      "summary": "What's Changed\r  refactor(chat): move chat to a separate lib crate by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/1347",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.8.1",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.8.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.8.0",
-      "date": "2025-04-24T20:58:46Z",
-      "summary": "What's Changed\r  fix(/context ui): declutter and increase visual hierachy by @GoodluckH in https://github.com/aws/amazon-q-developer-cli/pull/1174",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.8.0",
-      "type": "release"
-    },
-    {
       "id": "claude-code-0.2.74",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4919,16 +4689,6 @@
       "date": "2025-04-11T22:30:28.481Z",
       "summary": "- Fixed UI glitches with improved Select component behavior - Enhanced terminal output display with better text truncation logic",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.7.3",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.7.3",
-      "date": "2025-04-10T20:43:58Z",
-      "summary": "What's Changed\r  feat: add rfc process by @chaynabors in https://github.com/aws/amazon-q-developer-cli/pull/881",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.7.3",
       "type": "release"
     },
     {
@@ -4992,16 +4752,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.7.2",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.7.2",
-      "date": "2025-03-21T05:15:13Z",
-      "summary": "What's Changed\r  chore: add env var override for the SendMessage API, for testing purposes by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/843",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.7.2",
-      "type": "release"
-    },
-    {
       "id": "claude-code-0.2.50",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5039,16 +4789,6 @@
       "date": "2025-03-15T01:04:24.513Z",
       "summary": "- Ask Claude to make a plan with thinking mode: just say 'think' or 'think harder' or even 'ultrathink'",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.7.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.7.1",
-      "date": "2025-03-14T23:18:11Z",
-      "summary": "What's Changed\r  ✨ feat(fswrite): Add append functionality to fswrite tool by @jsamuel1 in https://github.com/aws/amazon-q-developer-cli/pull/764",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.7.1",
       "type": "release"
     },
     {
@@ -5092,16 +4832,6 @@
       "type": "release"
     },
     {
-      "id": "amazon-q-v1.7.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.7.0",
-      "date": "2025-03-06T16:32:42Z",
-      "summary": "What's Changed\r  feat: Agentic chat by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/623",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.7.0",
-      "type": "release"
-    },
-    {
       "id": "claude-code-0.2.32",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5129,56 +4859,6 @@
       "date": "2025-03-04T18:47:05.839Z",
       "summary": "- Added ANSI color theme for better terminal compatibility - Fixed issue where slash command arguments weren't being sent properly",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.6.3",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.6.3",
-      "date": "2025-02-20T19:48:19Z",
-      "summary": "What's Changed\r  fix: remove unwrap in inline by @grant0417 in https://github.com/aws/amazon-q-developer-cli/pull/609",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.6.3",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.6.2",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.6.2",
-      "date": "2025-02-20T02:54:53Z",
-      "summary": "What's Changed\r  fix: Linux updating from the CLI by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/540",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.6.2",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.6.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.6.1",
-      "date": "2025-02-04T20:03:24Z",
-      "summary": "What's Changed\r  fix: migrate some of the codebase to objc2 by @grant0417 in https://github.com/aws/amazon-q-developer-cli/pull/339",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.6.1",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.6.0",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.6.0",
-      "date": "2025-01-09T19:05:06Z",
-      "summary": "What's Changed\r  build: use @amzn namespace for private packages by @grant0417 in https://github.com/aws/amazon-q-developer-cli/pull/245",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.6.0",
-      "type": "release"
-    },
-    {
-      "id": "amazon-q-v1.5.1",
-      "tool": "amazon-q",
-      "toolDisplayName": "Amazon Q CLI",
-      "version": "v1.5.1",
-      "date": "2024-12-13T00:51:45Z",
-      "summary": "What's Changed\r  Trigger build by @brandonskiser in https://github.com/aws/amazon-q-developer-cli/pull/33",
-      "url": "https://github.com/aws/amazon-q-developer-cli/releases/tag/v1.5.1",
       "type": "release"
     }
   ]

@@ -219,71 +219,76 @@ async function fetchGeminiCLI(existingIds) {
   return releases;
 }
 
-// Fetch Amazon Q CLI releases from GitHub API
-async function fetchAmazonQ(existingIds) {
-  console.log('Fetching Amazon Q CLI releases...');
+// Fetch Kiro CLI releases by scraping changelog page
+async function fetchKiro(existingIds) {
+  console.log('Fetching Kiro CLI releases...');
   const releases = [];
-  let page = 1;
-  const perPage = 100;
-
-  const headers = {
-    'Accept': 'application/vnd.github+json',
-    'User-Agent': 'havoptic-release-tracker',
-  };
-  if (GITHUB_TOKEN) {
-    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
-  }
+  const seenIds = new Set();
 
   try {
-    while (true) {
-      const url = `https://api.github.com/repos/aws/amazon-q-developer-cli/releases?per_page=${perPage}&page=${page}`;
-      const res = await fetch(url, { headers });
+    const res = await fetch('https://kiro.dev/changelog', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      },
+    });
 
-      if (!res.ok) {
-        if (res.status === 403) {
-          console.log('  Rate limited by GitHub API');
-          break;
-        }
-        throw new Error(`GitHub API returned ${res.status}`);
-      }
+    if (!res.ok) throw new Error(`Kiro changelog returned ${res.status}`);
 
-      const data = await res.json();
-      if (data.length === 0) break;
+    const html = await res.text();
 
-      for (const release of data) {
-        // Skip prereleases
-        if (release.prerelease) continue;
+    // Kiro uses React Server Components - extract version/date pairs
+    // Look for CLI version pattern and associated dates
+    const versionPattern = /(\d+\.\d+\.\d+)\s+CLI/g;
+    const datePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
 
-        const version = release.tag_name;
-        const id = `amazon-q-${version}`;
-
-        if (existingIds.has(id)) continue;
-
-        releases.push({
-          id,
-          tool: 'amazon-q',
-          toolDisplayName: 'Amazon Q CLI',
-          version,
-          date: release.published_at,
-          summary: extractSummary(release.body),
-          url: release.html_url,
-          type: release.prerelease ? 'prerelease' : 'release',
-        });
-      }
-
-      // Check if we've hit rate limit or end
-      const remaining = res.headers.get('x-ratelimit-remaining');
-      if (remaining && parseInt(remaining) < 5) {
-        console.log('  Approaching rate limit, stopping pagination');
-        break;
-      }
-
-      page++;
+    // Extract all CLI versions with their positions
+    const versions = [];
+    let match;
+    while ((match = versionPattern.exec(html)) !== null) {
+      versions.push({ version: match[1], index: match.index });
     }
 
-    console.log(`  Found ${releases.length} new Amazon Q CLI releases`);
+    // Extract all dates with their positions
+    const dates = [];
+    while ((match = datePattern.exec(html)) !== null) {
+      dates.push({ date: match[1], index: match.index });
+    }
+
+    // Match each version to the closest preceding date
+    for (const ver of versions) {
+      const id = `kiro-${ver.version}`;
+
+      if (seenIds.has(id) || existingIds.has(id)) continue;
+      seenIds.add(id);
+
+      // Find the closest date that appears before this version
+      let closestDate = null;
+      for (const d of dates) {
+        if (d.index < ver.index) {
+          closestDate = d.date;
+        } else {
+          break;
+        }
+      }
+
+      if (!closestDate) continue;
+
+      releases.push({
+        id,
+        tool: 'kiro',
+        toolDisplayName: 'Kiro CLI',
+        version: ver.version,
+        date: new Date(closestDate).toISOString(),
+        summary: `Kiro CLI version ${ver.version}`,
+        url: 'https://kiro.dev/changelog',
+        type: 'release',
+      });
+    }
+
+    console.log(`  Found ${releases.length} new Kiro CLI releases`);
   } catch (err) {
-    console.error('  Error fetching Amazon Q CLI:', err.message);
+    console.error('  Error fetching Kiro CLI:', err.message);
   }
 
   return releases;
@@ -377,16 +382,16 @@ async function main() {
   const existingIds = new Set(existingData.releases.map(r => r.id));
 
   // Fetch from all sources
-  const [claudeReleases, codexReleases, cursorReleases, geminiReleases, amazonQReleases] = await Promise.all([
+  const [claudeReleases, codexReleases, cursorReleases, geminiReleases, kiroReleases] = await Promise.all([
     fetchClaudeCode(existingIds),
     fetchOpenAICodex(existingIds),
     fetchCursor(existingIds),
     fetchGeminiCLI(existingIds),
-    fetchAmazonQ(existingIds),
+    fetchKiro(existingIds),
   ]);
 
   // Merge and sort
-  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases, ...geminiReleases, ...amazonQReleases];
+  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases, ...geminiReleases, ...kiroReleases];
   console.log(`\nTotal new releases found: ${allNew.length}`);
 
   if (allNew.length === 0) {
