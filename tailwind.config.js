@@ -11,6 +11,7 @@ export default {
         'codex': '#059669',
         'cursor': '#7C3AED',
         'gemini': '#00ACC1',
+        'amazonq': '#FF9900',
       },
     },
   },

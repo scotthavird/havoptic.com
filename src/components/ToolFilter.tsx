@@ -7,7 +7,7 @@ interface ToolFilterProps {
 }
 
 export function ToolFilter({ selectedTool, onSelect }: ToolFilterProps) {
-  const tools: (ToolId | 'all')[] = ['all', 'claude-code', 'openai-codex', 'cursor', 'gemini-cli'];
+  const tools: (ToolId | 'all')[] = ['all', 'claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'amazon-q'];
 
   return (
     <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter releases by tool">
