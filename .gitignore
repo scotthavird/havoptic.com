@@ -18,6 +18,10 @@ dist-ssr
 .env.local
 .env.*.local
 
+# Private notes
+BACKLINKS.md
+PR_DRAFTS.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
