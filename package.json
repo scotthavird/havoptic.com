@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "fetch-releases": "node scripts/fetch-releases.mjs",
     "check-prs": "node scripts/check-pr-status.mjs",
-    "discover-repos": "node scripts/discover-repos.mjs"
+    "discover-repos": "node scripts/discover-repos.mjs",
+    "generate-pr": "node scripts/generate-pr-draft.mjs",
+    "generate-prs": "node scripts/generate-pr-draft.mjs --batch"
   },
   "dependencies": {
     "react": "^18.3.1",
