@@ -21,6 +21,8 @@ dist-ssr
 # Private notes
 BACKLINKS.md
 PR_DRAFTS.md
+DISCOVERED_REPOS.md
+discovered-repos.json
 
 # Editor directories and files
 .vscode/*
