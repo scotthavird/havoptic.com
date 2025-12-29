@@ -23,6 +23,7 @@ BACKLINKS.md
 PR_DRAFTS.md
 DISCOVERED_REPOS.md
 discovered-repos.json
+pr-drafts/
 
 # Editor directories and files
 .vscode/*
