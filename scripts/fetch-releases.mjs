@@ -5,6 +5,7 @@ import { load } from 'cheerio';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
+const SITEMAP_PATH = path.join(__dirname, '..', 'public', 'sitemap.xml');
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
@@ -419,6 +420,25 @@ async function main() {
 
   await fs.writeFile(DATA_PATH, JSON.stringify(output, null, 2));
   console.log(`\nWritten ${combined.length} total releases to ${DATA_PATH}`);
+
+  // Update sitemap.xml with current date
+  await updateSitemap();
+}
+
+async function updateSitemap() {
+  const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://havoptic.com/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+`;
+  await fs.writeFile(SITEMAP_PATH, sitemapContent);
+  console.log(`Updated sitemap.xml with lastmod: ${today}`);
 }
 
 main().catch(err => {
