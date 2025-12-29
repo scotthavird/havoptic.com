@@ -23,7 +23,7 @@ export function Header({ lastUpdated }: HeaderProps) {
             AI Tool Releases
           </h1>
           <p className="text-slate-400 text-lg mb-2">
-            Track the latest releases from Claude Code, OpenAI Codex CLI, and Cursor.
+            Track the latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI.
           </p>
           {formattedDate && (
             <p className="text-slate-500 text-sm">

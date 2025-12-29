@@ -10,7 +10,7 @@ export function ShareButtons({ className = '' }: ShareButtonsProps) {
 
   const shareUrl = 'https://havoptic.com';
   const shareTitle = 'Havoptic - AI Tool Releases';
-  const shareText = 'Track the latest releases from Claude Code, OpenAI Codex CLI, and Cursor';
+  const shareText = 'Track the latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI';
 
   const handleShare = async () => {
     if (navigator.share) {
