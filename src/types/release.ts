@@ -1,4 +1,4 @@
-export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli';
+export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'amazon-q';
 
 export interface Release {
   id: string;
@@ -36,5 +36,10 @@ export const TOOL_CONFIG: Record<ToolId, { displayName: string; color: string; b
     displayName: 'Gemini CLI',
     color: 'text-gemini',
     bgColor: 'bg-gemini',
+  },
+  'amazon-q': {
+    displayName: 'Amazon Q CLI',
+    color: 'text-amazonq',
+    bgColor: 'bg-amazonq',
   },
 };
