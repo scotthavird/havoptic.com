@@ -16,22 +16,22 @@ export function Header({ lastUpdated }: HeaderProps) {
     : null;
 
   return (
-    <header className="mb-8">
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        <div>
-          <h1 className="text-4xl font-bold text-white mb-2">
+    <header className="mb-6 sm:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+        <div className="min-w-0 flex-1">
+          <h1 className="text-2xl sm:text-4xl font-bold text-white mb-2">
             AI Tool Releases
           </h1>
-          <p className="text-slate-400 text-lg mb-2">
+          <p className="text-slate-400 text-sm sm:text-lg mb-2">
             Track the latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI.
           </p>
           {formattedDate && (
-            <p className="text-slate-500 text-sm">
+            <p className="text-slate-500 text-xs sm:text-sm">
               Last updated: {formattedDate}
             </p>
           )}
         </div>
-        <ShareButtons className="sm:mt-1" />
+        <ShareButtons className="sm:mt-1 shrink-0" />
       </div>
     </header>
   );
