@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="480" height="260">
+  <defs>
+    <style>
+      .title { font: bold 28px system-ui, -apple-system, sans-serif; fill: #006064; }
+      .subtitle { font: 16px system-ui, -apple-system, sans-serif; fill: #00ACC1; }
+      .cell-text { font: 13px system-ui, -apple-system, sans-serif; fill: #006064; }
+      .cell-icon { font: 20px system-ui, sans-serif; }
+      .version-badge { font: bold 14px system-ui, -apple-system, sans-serif; fill: white; }
+    </style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="260" fill="#E0F7FA" rx="16"/>
+
+  <!-- Header -->
+  <text x="30" y="55" class="title">Gemini CLI</text>
+  <text x="30" y="80" class="subtitle">December 26, 2025</text>
+
+  <!-- Version badge -->
+  <rect x="340" y="30" width="110" height="32" rx="16" fill="#00ACC1"/>
+  <text x="395" y="52" class="version-badge" text-anchor="middle">v0.22.3</text>
+
+  <!-- Cell 1 -->
+  <rect x="30" y="120" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="42" y="148" class="cell-icon">🔧</text>
+  <text x="42" y="172" class="cell-text">cherry-pick 9cdb267 to</text>
+  <text x="42" y="190" class="cell-text">release/v0.22.2-pr-15494</text>
+  <text x="42" y="208" class="cell-text">to patch ...</text>
+
+  <!-- Footer -->
+  <text x="240" y="245" class="subtitle" text-anchor="middle" opacity="0.7">2 commits in this release</text>
+</svg>

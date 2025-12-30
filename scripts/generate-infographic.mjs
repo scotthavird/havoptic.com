@@ -97,32 +97,53 @@ function parseReleaseNotes(body) {
   for (const line of lines) {
     const trimmed = line.trim();
 
-    // Detect category headers
-    if (/feat|feature|new|add/i.test(trimmed) && trimmed.includes(':')) {
+    // Detect category headers (What's Changed, Features, Fixes, etc.)
+    if (/what'?s?\s*changed|feat|feature|new|add/i.test(trimmed)) {
       currentCategory = 'features';
-    } else if (/fix|bug|patch/i.test(trimmed) && trimmed.includes(':')) {
+      continue;
+    } else if (/fix|bug|patch/i.test(trimmed) && !trimmed.startsWith('-') && !trimmed.startsWith('*')) {
       currentCategory = 'fixes';
+      continue;
     }
 
-    // Extract bullet points
+    // Extract bullet points or list items
     const bulletMatch = trimmed.match(/^[-*]\s+(.+)/);
     if (bulletMatch) {
-      const item = bulletMatch[1]
+      let item = bulletMatch[1]
         .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links
         .replace(/`([^`]+)`/g, '$1') // Remove code formatting
         .replace(/by @[\w-]+.*$/i, '') // Remove author attribution
-        .replace(/\(#\d+\)$/, '') // Remove PR numbers
-        .replace(/https?:\/\/[^\s]+/g, '') // Remove URLs
+        .replace(/\s*\(#\d+\)$/, '') // Remove PR numbers
+        .replace(/\s*in\s+https?:\/\/[^\s]+/g, '') // Remove "in https://..." links
+        .replace(/https?:\/\/[^\s]+/g, '') // Remove remaining URLs
+        .replace(/^\*\*([^*]+)\*\*:?\s*/, '$1: ') // Convert **bold** to plain
         .trim();
 
-      if (item.length > 10 && item.length < 100) {
-        if (currentCategory === 'features') {
-          features.push(item);
-        } else if (currentCategory === 'fixes') {
+      // Clean up common patterns
+      item = item.replace(/^(feat|fix|chore|docs|refactor|test|ci)\([^)]*\):\s*/i, '');
+      item = item.replace(/^(feat|fix|chore|docs|refactor|test|ci):\s*/i, '');
+
+      if (item.length > 5 && item.length < 150) {
+        // Categorize based on content if not already in a category
+        if (/^fix|bugfix|patch/i.test(item) || currentCategory === 'fixes') {
           fixes.push(item);
+        } else if (/^feat|add|new|implement/i.test(item) || currentCategory === 'features') {
+          features.push(item);
         } else {
           other.push(item);
         }
+      }
+    }
+  }
+
+  // If no items found, try to extract from the summary
+  if (features.length === 0 && fixes.length === 0 && other.length === 0) {
+    // Try extracting meaningful sentences
+    const sentences = body.split(/[.!\n]/).filter(s => s.trim().length > 10);
+    for (const sentence of sentences.slice(0, 5)) {
+      const cleaned = sentence.trim();
+      if (cleaned.length > 10 && cleaned.length < 150 && !cleaned.includes('http')) {
+        other.push(cleaned);
       }
     }
   }

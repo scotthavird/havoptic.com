@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="920" height="500">
+  <defs>
+    <style>
+      .title { font: bold 28px system-ui, -apple-system, sans-serif; fill: #006064; }
+      .subtitle { font: 16px system-ui, -apple-system, sans-serif; fill: #00ACC1; }
+      .cell-text { font: 13px system-ui, -apple-system, sans-serif; fill: #006064; }
+      .cell-icon { font: 20px system-ui, sans-serif; }
+      .version-badge { font: bold 14px system-ui, -apple-system, sans-serif; fill: white; }
+    </style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="500" fill="#E0F7FA" rx="16"/>
+
+  <!-- Header -->
+  <text x="30" y="55" class="title">Gemini CLI</text>
+  <text x="30" y="80" class="subtitle">December 22, 2025</text>
+
+  <!-- Version badge -->
+  <rect x="780" y="30" width="110" height="32" rx="16" fill="#00ACC1"/>
+  <text x="835" y="52" class="version-badge" text-anchor="middle">v0.22.0</text>
+
+  <!-- Cell 1 -->
+  <rect x="30" y="120" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="42" y="148" class="cell-icon">✨</text>
+  <text x="42" y="172" class="cell-text">Send the model and CLI</text>
+  <text x="42" y="190" class="cell-text">version with the user</text>
+  <text x="42" y="208" class="cell-text">agent</text>
+
+  <!-- Cell 2 -->
+  <rect x="250" y="120" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="262" y="148" class="cell-icon">✨</text>
+  <text x="262" y="172" class="cell-text">move session summary</text>
+  <text x="262" y="190" class="cell-text">generation to startup</text>
+
+  <!-- Cell 3 -->
+  <rect x="470" y="120" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="482" y="148" class="cell-icon">✨</text>
+  <text x="482" y="172" class="cell-text">Limit search depth in</text>
+  <text x="482" y="190" class="cell-text">path corrector</text>
+
+  <!-- Cell 4 -->
+  <rect x="690" y="120" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="702" y="148" class="cell-icon">✨</text>
+  <text x="702" y="172" class="cell-text">Correct typo in code</text>
+  <text x="702" y="190" class="cell-text">comment</text>
+
+  <!-- Cell 5 -->
+  <rect x="30" y="240" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="42" y="268" class="cell-icon">✨</text>
+  <text x="42" y="292" class="cell-text">implement</text>
+  <text x="42" y="310" class="cell-text">DelegateToAgentTool with</text>
+  <text x="42" y="328" class="cell-text">discriminated union</text>
+
+  <!-- Cell 6 -->
+  <rect x="250" y="240" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="262" y="268" class="cell-icon">✨</text>
+  <text x="262" y="292" class="cell-text">chore/release: bump</text>
+  <text x="262" y="310" class="cell-text">version to</text>
+  <text x="262" y="328" class="cell-text">0.21.0-nightly.20251211.8c...</text>
+
+  <!-- Cell 7 -->
+  <rect x="470" y="240" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="482" y="268" class="cell-icon">✨</text>
+  <text x="482" y="292" class="cell-text">Correctly detect MCP tool</text>
+  <text x="482" y="310" class="cell-text">errors</text>
+
+  <!-- Cell 8 -->
+  <rect x="690" y="240" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="702" y="268" class="cell-icon">✨</text>
+  <text x="702" y="292" class="cell-text">increase labeler timeout</text>
+
+  <!-- Cell 9 -->
+  <rect x="30" y="360" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="42" y="388" class="cell-icon">✨</text>
+  <text x="42" y="412" class="cell-text">tool(cli): tweak the</text>
+  <text x="42" y="430" class="cell-text">frontend tool to be aware</text>
+  <text x="42" y="448" class="cell-text">of more co...</text>
+
+  <!-- Cell 10 -->
+  <rect x="250" y="360" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="262" y="388" class="cell-icon">✨</text>
+  <text x="262" y="412" class="cell-text">Update IDE extension to</text>
+  <text x="262" y="430" class="cell-text">write auth token in env</text>
+  <text x="262" y="448" class="cell-text">var</text>
+
+  <!-- Cell 11 -->
+  <rect x="470" y="360" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="482" y="388" class="cell-icon">✨</text>
+  <text x="482" y="412" class="cell-text">Revert &quot;chore(deps): bump</text>
+  <text x="482" y="430" class="cell-text">express from 5.1.0 to</text>
+  <text x="482" y="448" class="cell-text">5.2.0&quot;</text>
+
+  <!-- Cell 12 -->
+  <rect x="690" y="360" width="200" height="105" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="702" y="388" class="cell-icon">✨</text>
+  <text x="702" y="412" class="cell-text">allow</text>
+  <text x="702" y="430" class="cell-text">codebase_investigator by</text>
+  <text x="702" y="448" class="cell-text">default in read-only</text>
+  <text x="702" y="466" class="cell-text">policy</text>
+
+  <!-- Footer -->
+  <text x="460" y="485" class="subtitle" text-anchor="middle" opacity="0.7">74 commits in this release</text>
+</svg>
