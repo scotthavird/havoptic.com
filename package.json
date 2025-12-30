@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "fetch-releases": "node scripts/fetch-releases.mjs",
+    "generate-infographic": "node scripts/generate-infographic.mjs",
     "check-prs": "node scripts/check-pr-status.mjs",
     "discover-repos": "node scripts/discover-repos.mjs",
     "generate-pr": "node scripts/generate-pr-draft.mjs",
