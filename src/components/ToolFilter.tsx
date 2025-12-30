@@ -10,7 +10,7 @@ export function ToolFilter({ selectedTool, onSelect }: ToolFilterProps) {
   const tools: (ToolId | 'all')[] = ['all', 'claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro'];
 
   return (
-    <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter releases by tool">
+    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8" role="group" aria-label="Filter releases by tool">
       {tools.map((tool) => {
         const isSelected = selectedTool === tool;
         const config = tool === 'all' ? null : TOOL_CONFIG[tool];
@@ -26,7 +26,7 @@ export function ToolFilter({ selectedTool, onSelect }: ToolFilterProps) {
             aria-pressed={isSelected}
             aria-label={`Filter by ${label}`}
             className={`
-              px-4 py-2 rounded-full text-sm font-medium transition-all
+              px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all
               ${isSelected
                 ? tool === 'all'
                   ? 'bg-white text-slate-900'
