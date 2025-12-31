@@ -1,0 +1,64 @@
+name: Generate Infographic Prompts
+
+on:
+  workflow_run:
+    workflows: ["Fetch AI Tool Releases"]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      tool:
+        description: 'Tool ID to generate infographic for'
+        required: false
+        type: choice
+        options:
+          - all
+          - claude-code
+          - kiro
+          - openai-codex
+          - gemini-cli
+          - cursor
+          - aider
+
+jobs:
+  generate-prompts:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate infographic prompts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p generated-prompts
+
+          TOOL="${{ github.event.inputs.tool || 'all' }}"
+
+          if [ "$TOOL" = "all" ]; then
+            # Generate for all tools with releases
+            for tool in claude-code kiro openai-codex gemini-cli cursor aider; do
+              echo "Generating prompt for $tool..."
+              node scripts/generate-infographic-prompt.mjs --tool=$tool --all-formats || echo "Skipping $tool (no releases found)"
+            done
+          else
+            echo "Generating prompt for $TOOL..."
+            node scripts/generate-infographic-prompt.mjs --tool=$TOOL --all-formats
+          fi
+
+      - name: Upload prompts as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: infographic-prompts-${{ github.run_id }}
+          path: generated-prompts/
+          retention-days: 30
