@@ -56,6 +56,7 @@ function parseArgs() {
     allFormats: false,
     generateImage: false,
     updateReleases: false,
+    force: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -72,6 +73,8 @@ function parseArgs() {
       options.generateImage = true;
     } else if (arg === '--update-releases') {
       options.updateReleases = true;
+    } else if (arg === '--force') {
+      options.force = true;
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
 Usage: node generate-infographic-prompt.mjs [options]
@@ -83,6 +86,7 @@ Options:
   --all-formats        Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
   --generate-image     Generate images using Nano Banana Pro (requires GOOGLE_API_KEY)
   --update-releases    Save images to public/images/infographics/ and update releases.json
+  --force              Regenerate infographic even if one already exists
   --help, -h           Show this help message
 
 Environment Variables:
@@ -291,6 +295,12 @@ async function main() {
   if (!release) {
     console.error(`Error: No releases found for tool "${options.tool}"`);
     process.exit(1);
+  }
+
+  // Skip if release already has an infographic (unless forcing regeneration)
+  if (release.infographicUrl && options.generateImage && options.updateReleases && !options.force) {
+    console.log(`Skipping ${options.tool} v${release.version} - infographic already exists: ${release.infographicUrl}`);
+    process.exit(0);
   }
 
   console.log(`Latest release: ${release.version} (${release.date})`);

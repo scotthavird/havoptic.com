@@ -1,14 +1,14 @@
 Create a professional square (1080x1080) social media infographic for a developer tool release.
 
-Header: "CLAUDE CODE" with "December 2024 Release" subtitle
+Header: "CLAUDE CODE" with "v2.0.74 • December 19, 2025" subtitle
 Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
 Feature Cards:
-1. 🧠 "LSP Integration" - "Smart code navigation with go-to-definition support"
-2. 🔗 "Find References" - "Quickly locate all code references across projects"
-3. 📊 "Hover Documentation" - "Instant inline documentation and type information"
-4. 💻 "Terminal Setup" - "Enhanced support for Kitty, Alacritty, Zed"
-5. 🚀 "Code Intelligence" - "Advanced language server protocol capabilities"
-6. 🛠️ "Multi-Terminal Support" - "Seamless integration across popular terminal emulators"
+1. 🧠 "LSP Integration" - "Smart code intelligence with go-to-definition support"
+2. 🔗 "Find References" - "Quickly locate all code references instantly"
+3. 📊 "Hover Documentation" - "Get instant context and documentation tooltips"
+4. 💻 "Terminal Setup" - "Enhanced support for Kitty and Alacritty"
+5. 🛠️ "Zed Integration" - "Seamless workflow with modern code editor"
+6. ⚡ "Code Navigation" - "Lightning-fast codebase exploration and jumping"
 Footer: "havoptic.com" with "Track AI Tool Releases" tagline
 Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
-Highlight: "Major code intelligence upgrade with LSP integration bringing professional IDE features to Claude Code"
+Highlight: "Major code intelligence upgrade with LSP support brings professional IDE features to Claude Code, including smart navigation, reference finding, and contextual documentation."

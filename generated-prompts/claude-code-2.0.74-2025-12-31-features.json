@@ -3,34 +3,34 @@
     {
       "icon": "🧠",
       "name": "LSP Integration",
-      "description": "Smart code navigation with go-to-definition support"
+      "description": "Smart code intelligence with go-to-definition support"
     },
     {
       "icon": "🔗",
       "name": "Find References",
-      "description": "Quickly locate all code references across projects"
+      "description": "Quickly locate all code references instantly"
     },
     {
       "icon": "📊",
       "name": "Hover Documentation",
-      "description": "Instant inline documentation and type information"
+      "description": "Get instant context and documentation tooltips"
     },
     {
       "icon": "💻",
       "name": "Terminal Setup",
-      "description": "Enhanced support for Kitty, Alacritty, Zed"
-    },
-    {
-      "icon": "🚀",
-      "name": "Code Intelligence",
-      "description": "Advanced language server protocol capabilities"
+      "description": "Enhanced support for Kitty and Alacritty"
     },
     {
       "icon": "🛠️",
-      "name": "Multi-Terminal Support",
-      "description": "Seamless integration across popular terminal emulators"
+      "name": "Zed Integration",
+      "description": "Seamless workflow with modern code editor"
+    },
+    {
+      "icon": "⚡",
+      "name": "Code Navigation",
+      "description": "Lightning-fast codebase exploration and jumping"
     }
   ],
-  "releaseHighlight": "Major code intelligence upgrade with LSP integration bringing professional IDE features to Claude Code",
-  "releaseDate": "December 2024"
+  "releaseHighlight": "Major code intelligence upgrade with LSP support brings professional IDE features to Claude Code, including smart navigation, reference finding, and contextual documentation.",
+  "releaseInfo": "v2.0.74 • December 19, 2025"
 }
