@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🧠",
+      "name": "LSP Integration",
+      "description": "Smart code navigation with go-to-definition support"
+    },
+    {
+      "icon": "🔗",
+      "name": "Find References",
+      "description": "Quickly locate all code references across projects"
+    },
+    {
+      "icon": "📊",
+      "name": "Hover Documentation",
+      "description": "Instant inline documentation and type information"
+    },
+    {
+      "icon": "💻",
+      "name": "Terminal Setup",
+      "description": "Enhanced support for Kitty, Alacritty, Zed"
+    },
+    {
+      "icon": "🚀",
+      "name": "Code Intelligence",
+      "description": "Advanced language server protocol capabilities"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Multi-Terminal Support",
+      "description": "Seamless integration across popular terminal emulators"
+    }
+  ],
+  "releaseHighlight": "Major code intelligence upgrade with LSP integration bringing professional IDE features to Claude Code",
+  "releaseDate": "December 2024"
+}
