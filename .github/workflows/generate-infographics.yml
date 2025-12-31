@@ -57,7 +57,7 @@ jobs:
           # Build extra flags
           EXTRA_FLAGS="--all-formats"
           if [ "$GENERATE_IMAGES" = "true" ]; then
-            EXTRA_FLAGS="$EXTRA_FLAGS --generate-image"
+            EXTRA_FLAGS="$EXTRA_FLAGS --generate-image --update-releases"
           fi
 
           if [ "$TOOL" = "all" ]; then
@@ -70,6 +70,24 @@ jobs:
             echo "Generating prompt for $TOOL..."
             node scripts/generate-infographic-prompt.mjs --tool=$TOOL $EXTRA_FLAGS
           fi
+
+      - name: Check for infographic changes
+        id: infographic-changes
+        run: |
+          if [ -d "public/images/infographics" ] && [ -n "$(ls -A public/images/infographics 2>/dev/null)" ]; then
+            echo "has_infographics=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_infographics=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit infographics and releases.json updates
+        if: steps.infographic-changes.outputs.has_infographics == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/images/infographics/ public/data/releases.json
+          git diff --staged --quiet || git commit -m "chore: add generated infographics for releases"
+          git push
 
       - name: Upload prompts as artifacts
         uses: actions/upload-artifact@v4

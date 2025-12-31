@@ -9,6 +9,7 @@ export interface Release {
   summary: string;
   url: string;
   type: 'release' | 'prerelease';
+  infographicUrl?: string;
 }
 
 export interface ReleasesData {
