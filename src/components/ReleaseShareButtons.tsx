@@ -13,14 +13,16 @@ function buildShareText(release: Release, includeUrl: boolean): string {
   const version = `v${release.version}`;
 
   // Concise, compelling format: emoji + key info + hashtags + optional link
+  // Use /r/ path for dynamic OG image support
   const base = `🚀 ${release.toolDisplayName} ${version} just dropped!\n\n${hashtag} #AITools`;
-  return includeUrl ? `${base}\n\nhavoptic.com/#${release.id}` : base;
+  return includeUrl ? `${base}\n\nhavoptic.com/r/${release.id}` : base;
 }
 
 export function ReleaseShareButtons({ release, className = '' }: ReleaseShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
-  const shareUrl = `https://havoptic.com/#${release.id}`;
+  // Use /r/ path for sharing - enables dynamic OG meta tags
+  const shareUrl = `https://havoptic.com/r/${release.id}`;
   const shareTitle = `${release.toolDisplayName} v${release.version}`;
 
   const handleTwitterShare = () => {
