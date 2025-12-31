@@ -89,7 +89,8 @@
       "date": "2025-12-19T21:08:38.116Z",
       "summary": "- Added LSP (Language Server Protocol) tool for code intelligence features like go-to-definition, find references, and hover documentation - Added /terminal-setup support for Kitty, Alacritty, Zed,...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.0.74-2025-12-31-1x1.jpg"
     },
     {
       "id": "openai-codex-rust-v0.76.0",

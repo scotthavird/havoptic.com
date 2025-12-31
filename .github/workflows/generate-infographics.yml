@@ -53,10 +53,12 @@ jobs:
 
           TOOL="${{ github.event.inputs.tool || 'all' }}"
           GENERATE_IMAGES="${{ github.event.inputs.generate_images }}"
+          IS_WORKFLOW_RUN="${{ github.event_name == 'workflow_run' }}"
 
           # Build extra flags
+          # Always generate images when triggered by workflow_run (nightly), or when manually requested
           EXTRA_FLAGS="--all-formats"
-          if [ "$GENERATE_IMAGES" = "true" ]; then
+          if [ "$GENERATE_IMAGES" = "true" ] || [ "$IS_WORKFLOW_RUN" = "true" ]; then
             EXTRA_FLAGS="$EXTRA_FLAGS --generate-image --update-releases"
           fi
 

@@ -8,7 +8,7 @@ interface ReleaseCardProps {
 }
 
 export function ReleaseCard({ release }: ReleaseCardProps) {
-  const [showInfographic, setShowInfographic] = useState(false);
+  const [showInfographic, setShowInfographic] = useState(!!release.infographicUrl);
   const config = TOOL_CONFIG[release.tool];
   const formattedDate = new Date(release.date).toLocaleDateString('en-US', {
     month: 'short',
