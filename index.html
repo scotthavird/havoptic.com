@@ -102,6 +102,19 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Handle /r/{release-id} URLs - redirect to hash-based route
+      // This is a fallback for local dev; in production, the Cloudflare Function handles this
+      (function() {
+        const path = window.location.pathname;
+        if (path.startsWith('/r/')) {
+          const releaseId = path.slice(3); // Remove '/r/' prefix
+          if (releaseId) {
+            window.location.replace('/#' + releaseId);
+          }
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
