@@ -17,30 +17,35 @@ export interface ReleasesData {
   releases: Release[];
 }
 
-export const TOOL_CONFIG: Record<ToolId, { displayName: string; color: string; bgColor: string }> = {
+export const TOOL_CONFIG: Record<ToolId, { displayName: string; color: string; bgColor: string; hashtag: string }> = {
   'claude-code': {
     displayName: 'Claude Code',
     color: 'text-claude',
     bgColor: 'bg-claude',
+    hashtag: '#ClaudeCode',
   },
   'openai-codex': {
     displayName: 'OpenAI Codex CLI',
     color: 'text-codex',
     bgColor: 'bg-codex',
+    hashtag: '#CodexCLI',
   },
   'cursor': {
     displayName: 'Cursor',
     color: 'text-cursor',
     bgColor: 'bg-cursor',
+    hashtag: '#CursorAI',
   },
   'gemini-cli': {
     displayName: 'Gemini CLI',
     color: 'text-gemini',
     bgColor: 'bg-gemini',
+    hashtag: '#GeminiCLI',
   },
   'kiro': {
     displayName: 'Kiro CLI',
     color: 'text-kiro',
     bgColor: 'bg-kiro',
+    hashtag: '#KiroCLI',
   },
 };

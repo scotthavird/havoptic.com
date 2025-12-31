@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { trackShare } from '../utils/analytics';
 import type { Release } from '../types/release';
+import { TOOL_CONFIG } from '../types/release';
 
 interface ReleaseShareButtonsProps {
   release: Release;
   className?: string;
+}
+
+function buildShareText(release: Release, includeUrl: boolean): string {
+  const hashtag = TOOL_CONFIG[release.tool].hashtag;
+  const version = `v${release.version}`;
+
+  // Concise, compelling format: emoji + key info + hashtags + optional link
+  const base = `🚀 ${release.toolDisplayName} ${version} just dropped!\n\n${hashtag} #AITools`;
+  return includeUrl ? `${base}\n\nhavoptic.com/#${release.id}` : base;
 }
 
 export function ReleaseShareButtons({ release, className = '' }: ReleaseShareButtonsProps) {
@@ -12,10 +22,11 @@ export function ReleaseShareButtons({ release, className = '' }: ReleaseShareBut
 
   const shareUrl = `https://havoptic.com/#${release.id}`;
   const shareTitle = `${release.toolDisplayName} v${release.version}`;
-  const shareText = release.summary || `Check out ${release.toolDisplayName} v${release.version}`;
 
   const handleTwitterShare = () => {
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+    // Twitter adds the URL separately, so don't include it in text
+    const twitterText = buildShareText(release, false);
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}&url=${encodeURIComponent(shareUrl)}`;
     window.open(twitterUrl, '_blank', 'noopener,noreferrer');
     trackShare('twitter');
   };
@@ -27,15 +38,17 @@ export function ReleaseShareButtons({ release, className = '' }: ReleaseShareBut
   };
 
   const handleCopyLink = async () => {
+    // Copy full share text with URL for easy pasting
+    const fullShareText = buildShareText(release, true);
     try {
-      await navigator.clipboard.writeText(shareUrl);
+      await navigator.clipboard.writeText(fullShareText);
       setCopied(true);
       trackShare('copy');
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
-      textArea.value = shareUrl;
+      textArea.value = fullShareText;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand('copy');
@@ -49,9 +62,11 @@ export function ReleaseShareButtons({ release, className = '' }: ReleaseShareBut
   const handleNativeShare = async () => {
     if (navigator.share) {
       try {
+        // Native share: use text without URL since we pass URL separately
+        const nativeShareText = buildShareText(release, false);
         await navigator.share({
           title: shareTitle,
-          text: shareText,
+          text: nativeShareText,
           url: shareUrl,
         });
         trackShare('native');
