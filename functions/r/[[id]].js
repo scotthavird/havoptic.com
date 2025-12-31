@@ -4,11 +4,11 @@
  */
 
 const TOOL_CONFIG = {
-  'claude-code': { displayName: 'Claude Code', hashtag: '#ClaudeCode' },
-  'openai-codex': { displayName: 'OpenAI Codex CLI', hashtag: '#CodexCLI' },
-  'cursor': { displayName: 'Cursor', hashtag: '#CursorAI' },
-  'gemini-cli': { displayName: 'Gemini CLI', hashtag: '#GeminiCLI' },
-  'kiro': { displayName: 'Kiro CLI', hashtag: '#KiroCLI' },
+  'claude-code': { displayName: 'Claude Code', hashtag: '#claudecode' },
+  'openai-codex': { displayName: 'OpenAI Codex CLI', hashtag: '#codexcli' },
+  'cursor': { displayName: 'Cursor', hashtag: '#cursorai' },
+  'gemini-cli': { displayName: 'Gemini CLI', hashtag: '#geminicli' },
+  'kiro': { displayName: 'Kiro CLI', hashtag: '#kirocli' },
 };
 
 /**
