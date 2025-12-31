@@ -10,6 +10,26 @@ function App() {
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
   const { groupedReleases, lastUpdated, loading, error } = useReleases(selectedTool);
   const scrollMilestones = useRef(new Set<number>());
+  const hasScrolledToAnchor = useRef(false);
+
+  // Scroll to anchor element after data loads and renders
+  useEffect(() => {
+    if (!loading && !error && groupedReleases.length > 0 && !hasScrolledToAnchor.current) {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        // Use double requestAnimationFrame to ensure DOM has been painted after React render
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const element = document.getElementById(hash);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              hasScrolledToAnchor.current = true;
+            }
+          });
+        });
+      }
+    }
+  }, [loading, error, groupedReleases]);
 
   useEffect(() => {
     const handleScroll = () => {
