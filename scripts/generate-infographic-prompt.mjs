@@ -51,6 +51,7 @@ function parseArgs() {
   const args = process.argv.slice(2);
   const options = {
     tool: null,
+    version: null,
     count: 6,
     output: null,
     allFormats: false,
@@ -63,6 +64,8 @@ function parseArgs() {
     const arg = args[i];
     if (arg.startsWith('--tool=')) {
       options.tool = arg.split('=')[1];
+    } else if (arg.startsWith('--version=')) {
+      options.version = arg.split('=')[1];
     } else if (arg.startsWith('--count=')) {
       options.count = parseInt(arg.split('=')[1], 10);
     } else if (arg.startsWith('--output=')) {
@@ -81,6 +84,7 @@ Usage: node generate-infographic-prompt.mjs [options]
 
 Options:
   --tool=<id>          Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
+  --version=<ver>      Specific version to generate for (default: latest release)
   --count=<n>          Number of features to extract (default: 6)
   --output=<path>      Output directory for generated prompts (default: generated-prompts/)
   --all-formats        Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
@@ -97,6 +101,7 @@ Examples:
   node generate-infographic-prompt.mjs --tool=claude-code
   node generate-infographic-prompt.mjs --tool=gemini-cli --count=4 --all-formats
   node generate-infographic-prompt.mjs --tool=claude-code --generate-image --update-releases
+  node generate-infographic-prompt.mjs --tool=cursor --version=2.3 --generate-image --update-releases --force
 `);
       process.exit(0);
     }
@@ -111,8 +116,16 @@ async function loadReleases() {
   return JSON.parse(content);
 }
 
-// Get the latest release for a tool
-function getLatestRelease(releases, toolId) {
+// Get a release for a tool (latest or specific version)
+function getRelease(releases, toolId, version = null) {
+  if (version) {
+    // Find specific version (try with and without 'v' prefix)
+    return releases.find((r) =>
+      r.tool === toolId &&
+      (r.version === version || r.version === `v${version}` || r.version === version.replace(/^v/, ''))
+    );
+  }
+  // Get latest release for tool
   return releases.find((r) => r.tool === toolId);
 }
 
@@ -290,10 +303,11 @@ async function main() {
 
   // Load releases
   const data = await loadReleases();
-  const release = getLatestRelease(data.releases, options.tool);
+  const release = getRelease(data.releases, options.tool, options.version);
 
   if (!release) {
-    console.error(`Error: No releases found for tool "${options.tool}"`);
+    const versionMsg = options.version ? ` version ${options.version}` : '';
+    console.error(`Error: No releases found for tool "${options.tool}"${versionMsg}`);
     process.exit(1);
   }
 
