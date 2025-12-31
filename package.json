@@ -12,13 +12,16 @@
     "check-prs": "node scripts/check-pr-status.mjs",
     "discover-repos": "node scripts/discover-repos.mjs",
     "generate-pr": "node scripts/generate-pr-draft.mjs",
-    "generate-prs": "node scripts/generate-pr-draft.mjs --batch"
+    "generate-prs": "node scripts/generate-pr-draft.mjs --batch",
+    "generate:infographic": "node scripts/generate-infographic-prompt.mjs",
+    "generate:infographic:all": "node scripts/generate-infographic-prompt.mjs --all-formats"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
