@@ -107,20 +107,30 @@ function getLatestRelease(releases, toolId) {
   return releases.find((r) => r.tool === toolId);
 }
 
+// Format date as "Month Year"
+function formatReleaseDate(dateStr) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
 // Extract features using Claude SDK
 async function extractFeatures(client, release, count) {
+  const formattedDate = formatReleaseDate(release.date);
+
   const systemPrompt = `You extract features from release notes. For each feature provide:
 - icon (emoji from: ⚡🚀🧠🤖🔌🔗🔒🛠️💻📊👥🆕)
 - name (2-4 words)
 - description (5-8 words, benefit-focused)
 
-Return JSON only: {"features": [{icon, name, description}], "releaseHighlight": "...", "releaseDate": "Month Year"}`;
+Return JSON only: {"features": [{icon, name, description}], "releaseHighlight": "...", "releaseDate": "${formattedDate}"}
+
+IMPORTANT: Use the exact releaseDate provided above. Do not change the year.`;
 
   const userPrompt = `Extract the top ${count} features from this release:
 
 Tool: ${release.toolDisplayName}
 Version: ${release.version}
-Date: ${release.date}
+Release Date: ${formattedDate}
 Summary: ${release.summary}
 URL: ${release.url}
 
