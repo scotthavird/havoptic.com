@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
 const DEFAULT_OUTPUT_DIR = path.join(__dirname, '..', 'generated-prompts');
+const PUBLIC_IMAGES_DIR = path.join(__dirname, '..', 'public', 'images', 'infographics');
 
 // Gemini 3 Pro Image model (Nano Banana Pro)
 const GEMINI_IMAGE_MODEL = 'gemini-3-pro-image-preview';
@@ -54,6 +55,7 @@ function parseArgs() {
     output: null,
     allFormats: false,
     generateImage: false,
+    updateReleases: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -68,17 +70,20 @@ function parseArgs() {
       options.allFormats = true;
     } else if (arg === '--generate-image') {
       options.generateImage = true;
+    } else if (arg === '--update-releases') {
+      options.updateReleases = true;
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
 Usage: node generate-infographic-prompt.mjs [options]
 
 Options:
-  --tool=<id>        Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
-  --count=<n>        Number of features to extract (default: 6)
-  --output=<path>    Output directory for generated prompts (default: generated-prompts/)
-  --all-formats      Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
-  --generate-image   Generate images using Nano Banana Pro (requires GOOGLE_API_KEY)
-  --help, -h         Show this help message
+  --tool=<id>          Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
+  --count=<n>          Number of features to extract (default: 6)
+  --output=<path>      Output directory for generated prompts (default: generated-prompts/)
+  --all-formats        Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
+  --generate-image     Generate images using Nano Banana Pro (requires GOOGLE_API_KEY)
+  --update-releases    Save images to public/images/infographics/ and update releases.json
+  --help, -h           Show this help message
 
 Environment Variables:
   ANTHROPIC_API_KEY  Required for Claude feature extraction
@@ -87,7 +92,7 @@ Environment Variables:
 Examples:
   node generate-infographic-prompt.mjs --tool=claude-code
   node generate-infographic-prompt.mjs --tool=gemini-cli --count=4 --all-formats
-  node generate-infographic-prompt.mjs --tool=claude-code --generate-image
+  node generate-infographic-prompt.mjs --tool=claude-code --generate-image --update-releases
 `);
       process.exit(0);
     }
@@ -184,6 +189,30 @@ ${featureCards}
 Footer: "havoptic.com" with "Track AI Tool Releases" tagline
 Style: ${config.style}, brand color ${config.primaryColor}, high contrast, readable text, professional tech aesthetic
 Highlight: "${features.releaseHighlight}"`;
+}
+
+// Save infographic to public folder and update releases.json
+async function saveInfographicAndUpdateReleases(imagePath, releaseId, data) {
+  // Ensure public images directory exists
+  await fs.mkdir(PUBLIC_IMAGES_DIR, { recursive: true });
+
+  // Copy image to public folder with a clean name
+  const filename = path.basename(imagePath);
+  const publicPath = path.join(PUBLIC_IMAGES_DIR, filename);
+  await fs.copyFile(imagePath, publicPath);
+  console.log(`Copied to public: ${publicPath}`);
+
+  // Update the release in releases.json with the infographicUrl
+  const infographicUrl = `/images/infographics/${filename}`;
+  const releaseIndex = data.releases.findIndex((r) => r.id === releaseId);
+
+  if (releaseIndex !== -1) {
+    data.releases[releaseIndex].infographicUrl = infographicUrl;
+    await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2));
+    console.log(`Updated releases.json with infographicUrl: ${infographicUrl}`);
+  }
+
+  return infographicUrl;
 }
 
 // Generate image using Nano Banana Pro (Gemini)
@@ -301,7 +330,12 @@ async function main() {
     if (options.generateImage) {
       const imagePath = path.join(outputDir, `${baseFilename}-${formatSuffix}.png`);
       try {
-        await generateImage(prompt, imagePath);
+        const generatedPath = await generateImage(prompt, imagePath);
+
+        // If --update-releases is set and this is the 1:1 format, save to public and update releases.json
+        if (options.updateReleases && format === '1:1') {
+          await saveInfographicAndUpdateReleases(generatedPath, release.id, data);
+        }
       } catch (err) {
         console.error(`Failed to generate image for ${format}:`, err.message);
       }
