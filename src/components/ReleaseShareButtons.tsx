@@ -8,6 +8,26 @@ interface ReleaseShareButtonsProps {
   className?: string;
 }
 
+/**
+ * Get the base URL for sharing - uses current origin to support dev/prod environments
+ */
+function getShareBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    return window.location.origin;
+  }
+  return 'https://havoptic.com';
+}
+
+/**
+ * Get a display-friendly hostname (removes protocol, www prefix)
+ */
+function getDisplayHost(): string {
+  if (typeof window !== 'undefined') {
+    return window.location.host.replace(/^www\./, '');
+  }
+  return 'havoptic.com';
+}
+
 function buildShareText(release: Release, includeUrl: boolean): string {
   const hashtag = TOOL_CONFIG[release.tool].hashtag;
   const version = `v${release.version}`;
@@ -15,14 +35,14 @@ function buildShareText(release: Release, includeUrl: boolean): string {
   // Concise, compelling format: emoji + key info + hashtags + optional link
   // Use /r/ path for dynamic OG image support
   const base = `🚀 ${release.toolDisplayName} ${version} just dropped!\n\n${hashtag} #AITools`;
-  return includeUrl ? `${base}\n\nhavoptic.com/r/${release.id}` : base;
+  return includeUrl ? `${base}\n\n${getDisplayHost()}/r/${release.id}` : base;
 }
 
 export function ReleaseShareButtons({ release, className = '' }: ReleaseShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
   // Use /r/ path for sharing - enables dynamic OG meta tags
-  const shareUrl = `https://havoptic.com/r/${release.id}`;
+  const shareUrl = `${getShareBaseUrl()}/r/${release.id}`;
   const shareTitle = `${release.toolDisplayName} v${release.version}`;
 
   const handleTwitterShare = () => {
