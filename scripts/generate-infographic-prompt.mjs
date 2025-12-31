@@ -107,10 +107,10 @@ function getLatestRelease(releases, toolId) {
   return releases.find((r) => r.tool === toolId);
 }
 
-// Format date as "Month Year"
+// Format date as "Month Day, Year"
 function formatReleaseDate(dateStr) {
   const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
 // Extract features using Claude SDK
@@ -122,9 +122,9 @@ async function extractFeatures(client, release, count) {
 - name (2-4 words)
 - description (5-8 words, benefit-focused)
 
-Return JSON only: {"features": [{icon, name, description}], "releaseHighlight": "...", "releaseDate": "${formattedDate}"}
+Return JSON only: {"features": [{icon, name, description}], "releaseHighlight": "...", "releaseInfo": "v${release.version} • ${formattedDate}"}
 
-IMPORTANT: Use the exact releaseDate provided above. Do not change the year.`;
+IMPORTANT: Use the exact releaseInfo provided above. Do not change the version or date.`;
 
   const userPrompt = `Extract the top ${count} features from this release:
 
@@ -177,7 +177,7 @@ function generateImagePrompt(toolId, features, format = '1:1') {
 
   return `Create a professional ${aspectRatios[format]} social media infographic for a developer tool release.
 
-Header: "${config.displayName}" with "${features.releaseDate} Release" subtitle
+Header: "${config.displayName}" with "${features.releaseInfo}" subtitle
 Layout: Dark background, ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid with subtle glow effects
 Feature Cards:
 ${featureCards}
