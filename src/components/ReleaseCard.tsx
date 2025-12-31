@@ -30,6 +30,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
           <h3 className="text-white font-mono font-semibold text-sm sm:text-base truncate">
             v{release.version}
           </h3>
+          <ReleaseShareButtons release={release} />
         </div>
         <div className="flex items-center gap-2 shrink-0">
           {release.type === 'prerelease' && (
@@ -76,7 +77,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
         </div>
       )}
 
-      <footer className="flex items-center justify-between">
+      <footer>
         <a
           href={release.url}
           target="_blank"
@@ -90,8 +91,6 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
-
-        <ReleaseShareButtons release={release} />
       </footer>
     </article>
   );
