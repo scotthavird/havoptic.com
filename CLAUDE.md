@@ -2,6 +2,30 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git Workflow
+
+**IMPORTANT: Never commit directly to main.** Always use feature branches and pull requests.
+
+### Creating a Feature Branch
+```bash
+git checkout main
+git pull
+git checkout -b feature/<feature-name>
+```
+
+### Workflow Steps
+1. Create a feature branch from `main`
+2. Make incremental commits with descriptive messages
+3. Push to remote: `git push -u origin feature/<feature-name>`
+4. Create a PR via `gh pr create`
+5. Squash and merge via `gh pr merge <number> --squash --delete-branch`
+
+### Branch Naming
+- `feature/<name>` - New features
+- `fix/<name>` - Bug fixes
+- `docs/<name>` - Documentation updates
+- `refactor/<name>` - Code refactoring
+
 ## Project Overview
 
 Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
