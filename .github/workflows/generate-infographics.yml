@@ -19,6 +19,11 @@ on:
           - gemini-cli
           - cursor
           - aider
+      generate_images:
+        description: 'Generate images using Nano Banana Pro'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   generate-prompts:
@@ -40,20 +45,28 @@ jobs:
       - name: Generate infographic prompts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: |
           mkdir -p generated-prompts
 
           TOOL="${{ github.event.inputs.tool || 'all' }}"
+          GENERATE_IMAGES="${{ github.event.inputs.generate_images }}"
+
+          # Build extra flags
+          EXTRA_FLAGS="--all-formats"
+          if [ "$GENERATE_IMAGES" = "true" ]; then
+            EXTRA_FLAGS="$EXTRA_FLAGS --generate-image"
+          fi
 
           if [ "$TOOL" = "all" ]; then
             # Generate for all tools with releases
             for tool in claude-code kiro openai-codex gemini-cli cursor aider; do
               echo "Generating prompt for $tool..."
-              node scripts/generate-infographic-prompt.mjs --tool=$tool --all-formats || echo "Skipping $tool (no releases found)"
+              node scripts/generate-infographic-prompt.mjs --tool=$tool $EXTRA_FLAGS || echo "Skipping $tool (no releases found)"
             done
           else
             echo "Generating prompt for $TOOL..."
-            node scripts/generate-infographic-prompt.mjs --tool=$TOOL --all-formats
+            node scripts/generate-infographic-prompt.mjs --tool=$TOOL $EXTRA_FLAGS
           fi
 
       - name: Upload prompts as artifacts

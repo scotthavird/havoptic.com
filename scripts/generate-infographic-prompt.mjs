@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,6 +7,9 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
 const DEFAULT_OUTPUT_DIR = path.join(__dirname, '..', 'generated-prompts');
+
+// Gemini 3 Pro Image model (Nano Banana Pro)
+const GEMINI_IMAGE_MODEL = 'gemini-3-pro-image-preview';
 
 // Tool configurations for infographic styling
 const TOOL_CONFIGS = {
@@ -49,6 +53,7 @@ function parseArgs() {
     count: 6,
     output: null,
     allFormats: false,
+    generateImage: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -61,20 +66,28 @@ function parseArgs() {
       options.output = arg.split('=')[1];
     } else if (arg === '--all-formats') {
       options.allFormats = true;
+    } else if (arg === '--generate-image') {
+      options.generateImage = true;
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
 Usage: node generate-infographic-prompt.mjs [options]
 
 Options:
-  --tool=<id>      Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
-  --count=<n>      Number of features to extract (default: 6)
-  --output=<path>  Output directory for generated prompts (default: generated-prompts/)
-  --all-formats    Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
-  --help, -h       Show this help message
+  --tool=<id>        Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
+  --count=<n>        Number of features to extract (default: 6)
+  --output=<path>    Output directory for generated prompts (default: generated-prompts/)
+  --all-formats      Generate prompts for all aspect ratios (1:1, 16:9, 9:16)
+  --generate-image   Generate images using Nano Banana Pro (requires GOOGLE_API_KEY)
+  --help, -h         Show this help message
+
+Environment Variables:
+  ANTHROPIC_API_KEY  Required for Claude feature extraction
+  GOOGLE_API_KEY     Required for --generate-image (Nano Banana Pro)
 
 Examples:
   node generate-infographic-prompt.mjs --tool=claude-code
   node generate-infographic-prompt.mjs --tool=gemini-cli --count=4 --all-formats
+  node generate-infographic-prompt.mjs --tool=claude-code --generate-image
 `);
       process.exit(0);
     }
@@ -163,6 +176,51 @@ Style: ${config.style}, brand color ${config.primaryColor}, high contrast, reada
 Highlight: "${features.releaseHighlight}"`;
 }
 
+// Generate image using Nano Banana Pro (Gemini)
+async function generateImage(prompt, outputPath) {
+  const apiKey = process.env.GOOGLE_API_KEY;
+  if (!apiKey) {
+    throw new Error('GOOGLE_API_KEY environment variable is required for image generation');
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
+
+  console.log('Generating image with Nano Banana Pro...');
+
+  const response = await ai.models.generateContent({
+    model: GEMINI_IMAGE_MODEL,
+    contents: prompt,
+    config: {
+      responseModalities: ['TEXT', 'IMAGE'],
+    },
+  });
+
+  // Extract image from response
+  const parts = response.candidates?.[0]?.content?.parts || [];
+  let imageData = null;
+
+  for (const part of parts) {
+    if (part.inlineData) {
+      imageData = part.inlineData;
+      break;
+    }
+  }
+
+  if (!imageData) {
+    throw new Error('No image data returned from Gemini API');
+  }
+
+  // Decode base64 and save
+  const buffer = Buffer.from(imageData.data, 'base64');
+  const extension = imageData.mimeType?.includes('png') ? 'png' : 'jpg';
+  const finalPath = outputPath.replace(/\.[^.]+$/, `.${extension}`);
+
+  await fs.writeFile(finalPath, buffer);
+  console.log(`Generated image: ${finalPath}`);
+
+  return finalPath;
+}
+
 // Main function
 async function main() {
   const options = parseArgs();
@@ -228,6 +286,16 @@ async function main() {
     const filepath = path.join(outputDir, filename);
     await fs.writeFile(filepath, prompt);
     console.log(`Written: ${filepath}`);
+
+    // Generate image if requested
+    if (options.generateImage) {
+      const imagePath = path.join(outputDir, `${baseFilename}-${formatSuffix}.png`);
+      try {
+        await generateImage(prompt, imagePath);
+      } catch (err) {
+        console.error(`Failed to generate image for ${format}:`, err.message);
+      }
+    }
   }
 
   // Also output features JSON
@@ -240,6 +308,11 @@ async function main() {
   console.log(prompts['1:1']);
   console.log('\n--- Features ---\n');
   console.log(JSON.stringify(features, null, 2));
+
+  if (options.generateImage) {
+    console.log('\n--- Images Generated ---');
+    console.log('Check the output directory for generated infographic images.');
+  }
 }
 
 main().catch((err) => {
