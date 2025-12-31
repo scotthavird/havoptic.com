@@ -26,6 +26,15 @@ git checkout -b feature/<feature-name>
 - `docs/<name>` - Documentation updates
 - `refactor/<name>` - Code refactoring
 
+### Slash Commands
+
+Use these commands to streamline the Git workflow:
+
+- `/ship <description>` - Start a new feature: creates branch, tracks todos, commits incrementally
+- `/feature <branch: description>` - Create feature branch and implement with incremental commits
+- `/merge [pr-number]` - Squash merge PR to main, verify production deploy
+- `/prs` - Show status of all pull requests
+
 ## Project Overview
 
 Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
