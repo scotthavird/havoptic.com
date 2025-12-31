@@ -34,7 +34,7 @@ function buildShareText(release: Release, includeUrl: boolean): string {
 
   // Concise, compelling format: emoji + key info + hashtags + optional link
   // Use /r/ path for dynamic OG image support
-  const base = `🚀 ${release.toolDisplayName} ${version} just dropped!\n\n${hashtag} #AITools`;
+  const base = `🚀 ${release.toolDisplayName} ${version} just dropped!\n\n${hashtag} #aitools`;
   return includeUrl ? `${base}\n\n${getDisplayHost()}/r/${release.id}` : base;
 }
 
