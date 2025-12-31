@@ -3,5 +3,8 @@
     "frontend-design@claude-code-plugins": true,
     "code-review@claude-code-plugins": true,
     "ralph-wiggum@claude-code-plugins": true
+  },
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "88000"
   }
 }
