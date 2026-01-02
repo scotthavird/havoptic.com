@@ -70,6 +70,26 @@ node --env-file=.env scripts/generate-infographic-prompt.mjs \
 #   --all-formats        Generate 1:1, 16:9, and 9:16 formats
 ```
 
+### Infographic Validation
+
+Validate that generated infographic features match actual release notes:
+
+```bash
+# Validate a specific tool's infographic
+node --env-file=.env scripts/validate-infographic.mjs --tool=kiro
+
+# Validate a specific version
+node --env-file=.env scripts/validate-infographic.mjs --tool=gemini-cli --version=v0.22.0
+
+# Validate all releases with infographics
+node --env-file=.env scripts/validate-infographic.mjs --all
+```
+
+The validator compares extracted features against source URLs and reports:
+- ✅ VERIFIED: Feature clearly mentioned in source
+- 🟡 INFERRED: Reasonable inference from source
+- ❌ FABRICATED: Not supported by source
+
 ## Architecture
 
 ### Data Flow
@@ -90,8 +110,13 @@ node --env-file=.env scripts/generate-infographic-prompt.mjs \
 
 ### Key Types (`src/types/release.ts`)
 - `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro'`
-- `Release`: Individual release with id, tool, version, date, summary, url, type, infographicUrl
+- `Release`: Individual release with id, tool, version, date, summary, fullNotes, url, type, infographicUrl
 - `TOOL_CONFIG`: Display names and Tailwind color classes per tool
+
+### Release Notes Storage
+- `summary`: Short excerpt (max 200 chars) for UI display
+- `fullNotes`: Complete release notes for accurate infographic generation
+- If `fullNotes` is sparse (<100 chars), the infographic script fetches from the URL
 
 ### Component Structure
 - `App.tsx`: Root component with tool filter state

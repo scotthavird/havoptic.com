@@ -7,6 +7,7 @@ export interface Release {
   version: string;
   date: string;
   summary: string;
+  fullNotes?: string;
   url: string;
   type: 'release' | 'prerelease';
   infographicUrl?: string;
