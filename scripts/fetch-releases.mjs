@@ -9,20 +9,27 @@ const SITEMAP_PATH = path.join(__dirname, '..', 'public', 'sitemap.xml');
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
-// Utility: extract first N characters as summary, breaking at sentence/bullet
-function extractSummary(text, maxLength = 200) {
+// Utility: clean markdown text for storage
+function cleanMarkdown(text) {
   if (!text) return '';
-  // Remove markdown links
+  // Remove markdown links but keep text
   let clean = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
   // Remove markdown formatting
   clean = clean.replace(/[*_`#]/g, '');
-  // Take first paragraph or bullet points
-  const lines = clean.split('\n').filter(l => l.trim());
-  let summary = lines.slice(0, 2).join(' ').trim();
-  if (summary.length > maxLength) {
-    summary = summary.substring(0, maxLength - 3) + '...';
+  // Normalize whitespace
+  clean = clean.replace(/\s+/g, ' ').trim();
+  return clean;
+}
+
+// Utility: extract first N characters as summary, breaking at sentence/bullet
+function extractSummary(text, maxLength = 200) {
+  const clean = cleanMarkdown(text);
+  if (!clean) return '';
+  // Take first portion
+  if (clean.length > maxLength) {
+    return clean.substring(0, maxLength - 3) + '...';
   }
-  return summary;
+  return clean;
 }
 
 // Fetch Claude Code releases from npm + CHANGELOG.md
@@ -67,6 +74,7 @@ async function fetchClaudeCode(existingIds) {
         version,
         date,
         summary: extractSummary(content),
+        fullNotes: cleanMarkdown(content),
         url: 'https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md',
         type: version.includes('-') ? 'prerelease' : 'release',
       });
@@ -127,6 +135,7 @@ async function fetchOpenAICodex(existingIds) {
           version,
           date: release.published_at,
           summary: extractSummary(release.body),
+          fullNotes: cleanMarkdown(release.body),
           url: release.html_url,
           type: release.prerelease ? 'prerelease' : 'release',
         });
@@ -197,6 +206,7 @@ async function fetchGeminiCLI(existingIds) {
           version,
           date: release.published_at,
           summary: extractSummary(release.body),
+          fullNotes: cleanMarkdown(release.body),
           url: release.html_url,
           type: release.prerelease ? 'prerelease' : 'release',
         });
@@ -305,6 +315,7 @@ async function fetchKiro(existingIds) {
         version: ver.version,
         date: new Date(closestDate).toISOString(),
         summary: entryTitle,
+        fullNotes: entryTitle, // Full notes fetched at infographic generation time from URL
         url: entryUrl,
         type: 'release',
       });
@@ -374,6 +385,7 @@ async function fetchCursor(existingIds) {
         version,
         date: new Date(dateStr).toISOString(),
         summary: extractSummary(summary),
+        fullNotes: summary, // Full notes fetched at infographic generation time from URL
         url: 'https://www.cursor.com/changelog',
         type: 'release',
       });
