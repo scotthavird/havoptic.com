@@ -238,25 +238,32 @@ async function fetchKiro(existingIds) {
 
     const html = await res.text();
 
-    // Kiro uses React Server Components - extract version/date pairs
-    // Look for CLI version pattern and associated dates
-    const versionPattern = /(\d+\.\d+\.\d+)\s+CLI/g;
-    const datePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
-
-    // Extract all CLI versions with their positions
-    const versions = [];
+    // Extract changelog entry links with their titles
+    // Pattern: <a href="/changelog/[slug]/"...>[title content including version]</a>
+    const entryPattern = /<a\s+href="(\/changelog\/[^"]+\/)"[^>]*>[\s\S]*?<\/a>/g;
+    const entries = [];
     let match;
+    while ((match = entryPattern.exec(html)) !== null) {
+      const href = match[1];
+      const content = match[0];
+      entries.push({ href, content, index: match.index });
+    }
+
+    // Extract CLI versions with their positions
+    const versionPattern = /(\d+\.\d+\.\d+)\s+CLI/g;
+    const versions = [];
     while ((match = versionPattern.exec(html)) !== null) {
       versions.push({ version: match[1], index: match.index });
     }
 
-    // Extract all dates with their positions
+    // Extract dates with their positions
+    const datePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
     const dates = [];
     while ((match = datePattern.exec(html)) !== null) {
       dates.push({ date: match[1], index: match.index });
     }
 
-    // Match each version to the closest preceding date
+    // Match each version to the closest entry link and date
     for (const ver of versions) {
       const id = `kiro-${ver.version}`;
 
@@ -275,14 +282,30 @@ async function fetchKiro(existingIds) {
 
       if (!closestDate) continue;
 
+      // Find the closest entry link that contains this version
+      let entryUrl = 'https://kiro.dev/changelog';
+      let entryTitle = `Kiro CLI version ${ver.version}`;
+      for (const entry of entries) {
+        if (entry.content.includes(ver.version)) {
+          entryUrl = `https://kiro.dev${entry.href}`;
+          // Extract title from h2 content if present
+          const titleMatch = entry.content.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
+          if (titleMatch) {
+            // Clean up the title - remove HTML tags and extra whitespace
+            entryTitle = titleMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+          }
+          break;
+        }
+      }
+
       releases.push({
         id,
         tool: 'kiro',
         toolDisplayName: 'Kiro CLI',
         version: ver.version,
         date: new Date(closestDate).toISOString(),
-        summary: `Kiro CLI version ${ver.version}`,
-        url: 'https://kiro.dev/changelog',
+        summary: entryTitle,
+        url: entryUrl,
         type: 'release',
       });
     }
