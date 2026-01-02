@@ -9,8 +9,7 @@
       "date": "2025-12-30T23:22:18Z",
       "summary": "What's Changed  fix(patch): cherry-pick 07e597d to release/v0.22.4-pr-15684 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15733",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.5",
-      "type": "release",
-      "infographicUrl": "/images/infographics/gemini-cli-v0.22.5-2026-01-02-1x1.jpg"
+      "type": "release"
     },
     {
       "id": "gemini-cli-v0.22.4",
@@ -60,7 +59,8 @@
       "date": "2025-12-22T16:54:19Z",
       "summary": "What's Changed  feat(ide): fallback to GEMINICLIIDEAUTHTOKEN env var   by @skeshive in https://github.com/google-gemini/gemini-cli/pull/14843",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.0",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.22.0-2026-01-02-1x1.jpg"
     },
     {
       "id": "cursor-2.3",
@@ -150,8 +150,8 @@
       "toolDisplayName": "Kiro CLI",
       "version": "1.23.0",
       "date": "2025-12-18T05:00:00.000Z",
-      "summary": "Kiro CLI version 1.23.0",
-      "url": "https://kiro.dev/changelog",
+      "summary": "Subagents, Plan Agent, Grep/Glob Tools, and MCP Registry",
+      "url": "https://kiro.dev/changelog/subagents-plan-agent-grep-glob-tools-and-mcp-registry/",
       "type": "release",
       "infographicUrl": "/images/infographics/kiro-1.23.0-2026-01-02-1x1.jpg"
     },
