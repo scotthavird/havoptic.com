@@ -372,6 +372,19 @@ async function fetchCursor(existingIds) {
 
       if (!dateStr) return;
 
+      // Try to find the link to the detailed changelog page
+      // Pattern: /changelog/2-3 for version 2.3
+      const articleLink = $el.find('a[href^="/changelog/"]').first();
+      let releaseUrl = 'https://www.cursor.com/changelog';
+      if (articleLink.length) {
+        const href = articleLink.attr('href');
+        releaseUrl = `https://www.cursor.com${href}`;
+      } else {
+        // Construct URL from version: 2.3 -> /changelog/2-3
+        const versionSlug = version.replace(/\./g, '-');
+        releaseUrl = `https://www.cursor.com/changelog/${versionSlug}`;
+      }
+
       // Summary from h1.type-lg (feature headline)
       const headline = $el.find('h1').first().text().trim();
       // Or from h3 elements
@@ -386,7 +399,7 @@ async function fetchCursor(existingIds) {
         date: new Date(dateStr).toISOString(),
         summary: extractSummary(summary),
         fullNotes: summary, // Full notes fetched at infographic generation time from URL
-        url: 'https://www.cursor.com/changelog',
+        url: releaseUrl,
         type: 'release',
       });
     });
