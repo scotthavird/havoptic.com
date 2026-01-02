@@ -371,11 +371,25 @@ async function main() {
   // Initialize Anthropic client
   const client = new Anthropic();
 
-  // Fetch enriched release notes if summary is sparse (less than 200 chars)
+  // Use fullNotes if available, otherwise fall back to summary
+  const storedNotes = release.fullNotes || release.summary;
+  const MIN_CONTENT_LENGTH = 100; // Minimum characters for reliable feature extraction
+
+  // Fetch enriched release notes if content is sparse
   let enrichedNotes = null;
-  if (release.summary.length < 200 && release.url) {
-    console.log('Summary is sparse, fetching full release notes...');
+  if (storedNotes.length < MIN_CONTENT_LENGTH && release.url) {
+    console.log(`Content is sparse (${storedNotes.length} chars), fetching full release notes...`);
     enrichedNotes = await fetchReleaseNotes(client, release.url);
+
+    // If still sparse after fetching, warn user
+    if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
+      console.warn(`\n⚠️  WARNING: Release has minimal content (${enrichedNotes?.length || 0} chars).`);
+      console.warn('   Generated infographic may not be accurate.');
+      console.warn('   Consider using --force only for feature-rich releases.\n');
+    }
+  } else if (storedNotes.length >= MIN_CONTENT_LENGTH) {
+    console.log(`Using stored notes (${storedNotes.length} chars)`);
+    enrichedNotes = storedNotes;
   }
 
   // Extract features
