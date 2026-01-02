@@ -69,8 +69,10 @@
       "version": "2.3",
       "date": "2025-12-22T00:00:00.000Z",
       "summary": "Layout Customization and Stability Improvements",
-      "url": "https://www.cursor.com/changelog",
-      "type": "release"
+      "fullNotes": "Layout Customization and Stability Improvements",
+      "url": "https://www.cursor.com/changelog/2-3",
+      "type": "release",
+      "infographicUrl": "/images/infographics/cursor-2.3-2026-01-02-1x1.jpg"
     },
     {
       "id": "openai-codex-rust-v0.77.0",
