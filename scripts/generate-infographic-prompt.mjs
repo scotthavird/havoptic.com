@@ -135,8 +135,49 @@ function formatReleaseDate(dateStr) {
   return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
+// Fetch full release notes from URL using Claude
+async function fetchReleaseNotes(client, url) {
+  console.log(`Fetching release notes from: ${url}`);
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      },
+    });
+
+    if (!res.ok) {
+      console.log(`  Failed to fetch URL: ${res.status}`);
+      return null;
+    }
+
+    const html = await res.text();
+
+    // Use Claude to extract the release notes from the HTML
+    const response = await client.messages.create({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 2048,
+      messages: [
+        {
+          role: 'user',
+          content: `Extract the release notes content from this HTML page. Return only the features, changes, and improvements mentioned. Be comprehensive but concise. If this is a patch/bugfix release with minimal changes, say so clearly.\n\nHTML:\n${html.slice(0, 50000)}`,
+        },
+      ],
+    });
+
+    const notes = response.content[0].text;
+    console.log(`  Fetched ${notes.length} characters of release notes`);
+    return notes;
+  } catch (err) {
+    console.log(`  Error fetching release notes: ${err.message}`);
+    return null;
+  }
+}
+
 // Extract features using Claude SDK
-async function extractFeatures(client, release, count) {
+async function extractFeatures(client, release, count, enrichedNotes = null) {
   const formattedDate = formatReleaseDate(release.date);
 
   const systemPrompt = `You extract features from release notes. For each feature provide:
@@ -146,17 +187,24 @@ async function extractFeatures(client, release, count) {
 
 Return JSON only: {"features": [{icon, name, description}], "releaseHighlight": "...", "releaseInfo": "v${release.version} • ${formattedDate}"}
 
-IMPORTANT: Use the exact releaseInfo provided above. Do not change the version or date.`;
+IMPORTANT:
+- Use the exact releaseInfo provided above. Do not change the version or date.
+- Only extract features that are ACTUALLY mentioned in the release notes.
+- NEVER invent or hallucinate features that aren't explicitly described.
+- If there are fewer than ${count} features, return only what's available.`;
+
+  const notesContent = enrichedNotes || release.summary;
 
   const userPrompt = `Extract the top ${count} features from this release:
 
 Tool: ${release.toolDisplayName}
 Version: ${release.version}
 Release Date: ${formattedDate}
-Summary: ${release.summary}
-URL: ${release.url}
 
-Focus on the most impactful user-facing features. If the summary is limited, infer likely features based on the version number and tool type.`;
+Release Notes:
+${notesContent}
+
+Focus on the most impactful user-facing features. Only include features explicitly mentioned in the release notes above.`;
 
   const response = await client.messages.create({
     model: 'claude-sonnet-4-20250514',
@@ -323,9 +371,16 @@ async function main() {
   // Initialize Anthropic client
   const client = new Anthropic();
 
+  // Fetch enriched release notes if summary is sparse (less than 200 chars)
+  let enrichedNotes = null;
+  if (release.summary.length < 200 && release.url) {
+    console.log('Summary is sparse, fetching full release notes...');
+    enrichedNotes = await fetchReleaseNotes(client, release.url);
+  }
+
   // Extract features
   console.log('Extracting features with Claude...');
-  const features = await extractFeatures(client, release, options.count);
+  const features = await extractFeatures(client, release, options.count, enrichedNotes);
   console.log(`Extracted ${features.features.length} features\n`);
 
   // Generate prompts
