@@ -21,18 +21,18 @@ const TOOL_CONFIGS = {
   },
   'kiro': {
     displayName: 'KIRO',
-    primaryColor: '#FF9900',
-    style: 'AWS orange accent, navy blue background, cloud-native professional aesthetic',
+    primaryColor: '#8B5CF6',
+    style: 'Purple accent, dark gradient background, cloud-native professional aesthetic',
   },
   'openai-codex': {
     displayName: 'CODEX CLI',
-    primaryColor: '#10a37f',
-    style: 'OpenAI green accent, black background, minimalist terminal aesthetic',
+    primaryColor: '#059669',
+    style: 'Emerald green accent, black background, minimalist terminal aesthetic',
   },
   'gemini-cli': {
     displayName: 'GEMINI CLI',
-    primaryColor: '#4285f4',
-    style: 'Google blue/red/yellow/green accents, white background, clean Material Design',
+    primaryColor: '#00ACC1',
+    style: 'Teal/cyan accent, dark background, clean Material Design',
   },
   'cursor': {
     displayName: 'CURSOR',
