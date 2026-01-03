@@ -80,10 +80,12 @@ async function fetchReleaseNotes(url) {
 }
 
 // Validate features against source using Claude
-async function validateFeatures(client, features, sourceHtml, release) {
+async function validateFeatures(client, features, sourceContent, release, isFullNotes = false) {
   const featureList = features.features
     .map((f) => `- ${f.name}: ${f.description}`)
     .join('\n');
+
+  const sourceLabel = isFullNotes ? 'release notes' : 'release page HTML';
 
   const response = await client.messages.create({
     model: 'claude-sonnet-4-20250514',
@@ -96,8 +98,8 @@ async function validateFeatures(client, features, sourceHtml, release) {
 The infographic claims these features:
 ${featureList}
 
-Here is the actual release page HTML:
-${sourceHtml.slice(0, 30000)}
+Here is the actual ${sourceLabel}:
+${sourceContent.slice(0, 30000)}
 
 For each feature, determine if it is:
 - VERIFIED: Clearly mentioned in the source
@@ -146,16 +148,27 @@ async function validateRelease(client, release) {
   console.log(`  Features file: ${featureFile}`);
   console.log(`  Features count: ${features.features.length}`);
 
-  // Fetch source
-  const sourceHtml = await fetchReleaseNotes(release.url);
-  if (!sourceHtml) {
-    console.log('  ⚠️  Could not fetch source - skipping');
-    return null;
+  // Get source content - prefer fullNotes if available, otherwise fetch from URL
+  let sourceContent;
+  let isFullNotes = false;
+
+  if (release.fullNotes && release.fullNotes.length > 100) {
+    console.log(`  Using stored fullNotes (${release.fullNotes.length} chars)`);
+    sourceContent = release.fullNotes;
+    isFullNotes = true;
+  } else {
+    // Fetch from URL as fallback
+    console.log(`  Fetching from URL (no fullNotes available)`);
+    sourceContent = await fetchReleaseNotes(release.url);
+    if (!sourceContent) {
+      console.log('  ⚠️  Could not fetch source - skipping');
+      return null;
+    }
   }
 
   // Validate
   console.log('  Validating with Claude...');
-  const validation = await validateFeatures(client, features, sourceHtml, release);
+  const validation = await validateFeatures(client, features, sourceContent, release, isFullNotes);
 
   // Report results
   console.log(`\n  Accuracy: ${validation.accuracy}`);
