@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CURSOR" with "v2.3 • December 21, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🛠️ "Layout Customization" - "Four default layouts with easy switching"
+2. ⚡ "Keyboard Shortcuts" - "Quick layout navigation with hotkeys"
+3. 🔒 "Stability Improvements" - "Extensive bugfixes for core reliability"
+4. 🤖 "Agent Enhancements" - "Fifteen improvements for better performance"
+5. 👥 "Code Review" - "Four targeted improvements for workflows"
+6. 🔌 "MCP Fixes" - "Model Context Protocol stability updates"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple glassmorphism, dark gradient background, IDE-inspired modern aesthetic, brand color #7c3aed, high contrast, readable text, professional tech aesthetic
+Highlight: "Stability-focused maintenance release with layout customization and extensive bugfixes for reliable holiday coding"

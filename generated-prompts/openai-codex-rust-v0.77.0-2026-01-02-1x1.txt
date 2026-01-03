@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CODEX CLI" with "rust-v0.77.0 • December 21, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🖱️ "Scroll Normalization" - "Consistent mouse wheel scrolling across terminals"
+2. 🔒 "Sandbox Constraints" - "Control permitted sandbox modes via configuration"
+3. 🤖 "OAuth Simplified" - "Streamlined login without feature flags required"
+4. 🔍 "Search Display" - "Improved fuzzy file search consistency"
+5. 📊 "Model Metadata" - "Updated bundled model information database"
+6. ⚡ "Performance Boost" - "Reduced redundant redraws while scrolling"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Emerald green accent, black background, minimalist terminal aesthetic, brand color #059669, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced terminal experience with normalized scrolling and improved sandbox security controls"

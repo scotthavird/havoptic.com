@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "KIRO" with "v1.23.0 • December 18, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🤖 "Subagents" - "Delegate complex tasks with live progress tracking"
+2. 🧠 "Plan Agent" - "Transform ideas into structured implementation plans"
+3. 🔍 "Grep Tool" - "Fast regex-based content search capability"
+4. 📁 "Glob Tool" - "Fast file discovery using glob patterns"
+5. 💬 "Multi-Session Support" - "Interactive picker for multiple chat sessions"
+6. 🔌 "MCP Registry" - "Governance capabilities for organizational MCP tools"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple accent, dark gradient background, cloud-native professional aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Major enhancement to Kiro's agent capabilities with subagent delegation, specialized planning agent, and powerful new search tools for faster development workflows."

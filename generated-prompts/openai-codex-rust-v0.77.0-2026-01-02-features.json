@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🖱️",
+      "name": "Scroll Normalization",
+      "description": "Consistent mouse wheel scrolling across terminals"
+    },
+    {
+      "icon": "🔒",
+      "name": "Sandbox Constraints",
+      "description": "Control permitted sandbox modes via configuration"
+    },
+    {
+      "icon": "🤖",
+      "name": "OAuth Simplified",
+      "description": "Streamlined login without feature flags required"
+    },
+    {
+      "icon": "🔍",
+      "name": "Search Display",
+      "description": "Improved fuzzy file search consistency"
+    },
+    {
+      "icon": "📊",
+      "name": "Model Metadata",
+      "description": "Updated bundled model information database"
+    },
+    {
+      "icon": "⚡",
+      "name": "Performance Boost",
+      "description": "Reduced redundant redraws while scrolling"
+    }
+  ],
+  "releaseHighlight": "Enhanced terminal experience with normalized scrolling and improved sandbox security controls",
+  "releaseInfo": "rust-v0.77.0 • December 21, 2025"
+}

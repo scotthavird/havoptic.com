@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🤖",
+      "name": "Subagents",
+      "description": "Delegate complex tasks with live progress tracking"
+    },
+    {
+      "icon": "🧠",
+      "name": "Plan Agent",
+      "description": "Transform ideas into structured implementation plans"
+    },
+    {
+      "icon": "🔍",
+      "name": "Grep Tool",
+      "description": "Fast regex-based content search capability"
+    },
+    {
+      "icon": "📁",
+      "name": "Glob Tool",
+      "description": "Fast file discovery using glob patterns"
+    },
+    {
+      "icon": "💬",
+      "name": "Multi-Session Support",
+      "description": "Interactive picker for multiple chat sessions"
+    },
+    {
+      "icon": "🔌",
+      "name": "MCP Registry",
+      "description": "Governance capabilities for organizational MCP tools"
+    }
+  ],
+  "releaseHighlight": "Major enhancement to Kiro's agent capabilities with subagent delegation, specialized planning agent, and powerful new search tools for faster development workflows.",
+  "releaseInfo": "v1.23.0 • December 18, 2025"
+}

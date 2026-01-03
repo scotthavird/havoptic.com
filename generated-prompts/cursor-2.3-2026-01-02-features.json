@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🛠️",
+      "name": "Layout Customization",
+      "description": "Four default layouts with easy switching"
+    },
+    {
+      "icon": "⚡",
+      "name": "Keyboard Shortcuts",
+      "description": "Quick layout navigation with hotkeys"
+    },
+    {
+      "icon": "🔒",
+      "name": "Stability Improvements",
+      "description": "Extensive bugfixes for core reliability"
+    },
+    {
+      "icon": "🤖",
+      "name": "Agent Enhancements",
+      "description": "Fifteen improvements for better performance"
+    },
+    {
+      "icon": "👥",
+      "name": "Code Review",
+      "description": "Four targeted improvements for workflows"
+    },
+    {
+      "icon": "🔌",
+      "name": "MCP Fixes",
+      "description": "Model Context Protocol stability updates"
+    }
+  ],
+  "releaseHighlight": "Stability-focused maintenance release with layout customization and extensive bugfixes for reliable holiday coding",
+  "releaseInfo": "v2.3 • December 21, 2025"
+}

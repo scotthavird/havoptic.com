@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "GEMINI CLI" with "v0.22.0 • December 22, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🔒 "Persistent Policies" - "Always Allow policies with granular shell support"
+2. 📊 "Enhanced Stats" - "Display quota stats for unused models"
+3. 🖼️ "Multi-file Drag Drop" - "Support drag and drop for images"
+4. 🚀 "A2A Init Command" - "Introduce /init command for a2a server"
+5. 🛠️ "Settings Validation" - "Add validation for settings schema configuration"
+6. 🔌 "IDE Auth Token" - "Fallback to GEMINI_CLI_IDE_AUTH_TOKEN environment variable"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark background, clean Material Design, brand color #00ACC1, high contrast, readable text, professional tech aesthetic
+Highlight: "Major authentication improvements, persistent policies, and enhanced multi-file support"

@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🔒",
+      "name": "Persistent Policies",
+      "description": "Always Allow policies with granular shell support"
+    },
+    {
+      "icon": "📊",
+      "name": "Enhanced Stats",
+      "description": "Display quota stats for unused models"
+    },
+    {
+      "icon": "🖼️",
+      "name": "Multi-file Drag Drop",
+      "description": "Support drag and drop for images"
+    },
+    {
+      "icon": "🚀",
+      "name": "A2A Init Command",
+      "description": "Introduce /init command for a2a server"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Settings Validation",
+      "description": "Add validation for settings schema configuration"
+    },
+    {
+      "icon": "🔌",
+      "name": "IDE Auth Token",
+      "description": "Fallback to GEMINI_CLI_IDE_AUTH_TOKEN environment variable"
+    }
+  ],
+  "releaseHighlight": "Major authentication improvements, persistent policies, and enhanced multi-file support",
+  "releaseInfo": "v0.22.0 • December 22, 2025"
+}
