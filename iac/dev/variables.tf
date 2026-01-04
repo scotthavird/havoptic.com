@@ -36,16 +36,10 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "aws_access_key_id" {
-  description = "AWS Access Key ID"
+variable "aws_profile" {
+  description = "AWS credentials profile from ~/.aws/credentials"
   type        = string
-  sensitive   = true
-}
-
-variable "aws_secret_access_key" {
-  description = "AWS Secret Access Key"
-  type        = string
-  sensitive   = true
+  default     = "default"
 }
 
 variable "newsletter_from_email" {
