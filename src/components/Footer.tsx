@@ -1,8 +1,13 @@
+import { NewsletterSignup } from './NewsletterSignup';
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="mt-12 border-t border-slate-700 pt-6 pb-8">
+      <div className="mb-6">
+        <NewsletterSignup />
+      </div>
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-400">
         <div className="flex gap-4">
           <a
