@@ -6,11 +6,21 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 4.0"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
   }
 }
 
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
+}
+
+provider "aws" {
+  region     = var.aws_region
+  access_key = var.aws_access_key_id
+  secret_key = var.aws_secret_access_key
 }
 
 # Get zone information
