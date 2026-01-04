@@ -19,3 +19,8 @@ output "zone_id" {
   description = "Cloudflare Zone ID"
   value       = local.zone_id
 }
+
+output "newsletter_bucket_name" {
+  description = "R2 bucket name for newsletter subscribers"
+  value       = cloudflare_r2_bucket.newsletter.name
+}
