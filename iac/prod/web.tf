@@ -23,6 +23,19 @@ resource "cloudflare_pages_project" "main" {
       production_deployment_enabled = true
     }
   }
+
+  deployment_configs {
+    preview {
+      r2_buckets = {
+        NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
+      }
+    }
+    production {
+      r2_buckets = {
+        NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
+      }
+    }
+  }
 }
 
 # Custom domain for Pages (root domain)

@@ -10,5 +10,10 @@ domain = "havoptic.com"
 github_owner = "scotthavird"
 github_repo  = "havoptic.com"
 
-# API Token - set via environment variable:
+# AWS Configuration (for SES email sending)
+aws_region            = "us-east-1"
+aws_profile           = "default"  # AWS profile from ~/.aws/credentials
+newsletter_from_email = "newsletter@havoptic.com"
+
+# Sensitive tokens - set via environment variables:
 # export TF_VAR_cloudflare_api_token="your-token-here"

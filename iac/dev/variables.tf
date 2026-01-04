@@ -28,3 +28,22 @@ variable "github_repo" {
   type        = string
   default     = "havoptic.com"
 }
+
+# AWS Configuration
+variable "aws_region" {
+  description = "AWS region for SES"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "aws_profile" {
+  description = "AWS credentials profile from ~/.aws/credentials"
+  type        = string
+  default     = "default"
+}
+
+variable "newsletter_from_email" {
+  description = "Email address for sending newsletters"
+  type        = string
+  default     = "newsletter@havoptic.com"
+}

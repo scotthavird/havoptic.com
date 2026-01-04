@@ -20,10 +20,10 @@ export function Header({ lastUpdated }: HeaderProps) {
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl sm:text-4xl font-bold text-white mb-2">
-            AI Tool Releases
+            AI Coding Tool Releases
           </h1>
           <p className="text-slate-400 text-sm sm:text-lg mb-2">
-            Track the latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI.
+            Track every update from Claude Code, Cursor, Gemini CLI & more — in one place.
           </p>
           {formattedDate && (
             <p className="text-slate-500 text-xs sm:text-sm">
