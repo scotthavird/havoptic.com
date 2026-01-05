@@ -47,3 +47,9 @@ variable "newsletter_from_email" {
   type        = string
   default     = "newsletter@havoptic.com"
 }
+
+variable "notify_api_key" {
+  description = "API key for authenticating notification requests"
+  type        = string
+  sensitive   = true
+}

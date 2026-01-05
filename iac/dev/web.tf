@@ -29,10 +29,22 @@ resource "cloudflare_pages_project" "main" {
       r2_buckets = {
         NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
       }
+      secrets = {
+        AWS_ACCESS_KEY_ID     = aws_iam_access_key.ses_sender.id
+        AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
+        AWS_REGION            = var.aws_region
+        NOTIFY_API_KEY        = var.notify_api_key
+      }
     }
     production {
       r2_buckets = {
         NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
+      }
+      secrets = {
+        AWS_ACCESS_KEY_ID     = aws_iam_access_key.ses_sender.id
+        AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
+        AWS_REGION            = var.aws_region
+        NOTIFY_API_KEY        = var.notify_api_key
       }
     }
   }
