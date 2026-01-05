@@ -13,7 +13,8 @@ iac/
 ## Prerequisites
 
 1. **Domain in Cloudflare**: `havoptic.com` must be added to your Cloudflare account
-2. **API Token**: With permissions for Zone, DNS, and Cloudflare Pages
+2. **Cloudflare API Token**: With permissions for Zone, DNS, Cloudflare Pages, and R2 Storage
+3. **AWS Account**: For SES email sending (credentials in `~/.aws/credentials`)
 
 ## Quick Start
 
@@ -24,15 +25,16 @@ iac/
 3. Select Free plan
 4. Update nameservers at your domain registrar
 
-### 2. Create API Token
+### 2. Create Cloudflare API Token
 
 Go to Cloudflare Dashboard -> Profile -> API Tokens -> Create Token:
 
-| Permission | Resource | Access |
-|------------|----------|--------|
-| Account | Cloudflare Pages | Edit |
-| Zone | Zone | Read |
-| Zone | DNS | Edit |
+| Scope | Permission | Resource | Access |
+|-------|------------|----------|--------|
+| Account | Cloudflare Pages | All accounts | Edit |
+| Account | R2 Storage | All accounts | Edit |
+| Zone | Zone | havoptic.com | Read |
+| Zone | DNS | havoptic.com | Edit |
 
 Zone Resources: Include -> Specific zone -> `havoptic.com`
 
@@ -70,6 +72,10 @@ terraform apply
 |----------|-----|------|
 | Pages Project | havoptic-dev-web | havoptic-prod-web |
 | Web Domain | dev.havoptic.com | havoptic.com, www.havoptic.com |
+| R2 Bucket | havoptic-dev-newsletter | havoptic-prod-newsletter |
+| SES Domain Identity | havoptic.com | havoptic.com |
+| SES IAM User | havoptic-dev-ses-sender | havoptic-prod-ses-sender |
+| DNS Records | DKIM, SPF, Mail From | DKIM, SPF, Mail From |
 
 ## Final URLs
 
@@ -79,6 +85,29 @@ terraform apply
 
 **Development:**
 - https://dev.havoptic.com
+
+## Environment Variables
+
+### terraform.tfvars
+
+Copy `terraform.tfvars.example` to `terraform.tfvars` and fill in:
+
+```hcl
+cloudflare_api_token  = "your-cloudflare-api-token"
+cloudflare_account_id = "your-account-id"
+domain                = "havoptic.com"
+github_owner          = "scotthavird"
+github_repo           = "havoptic.com"
+notify_api_key        = "your-notify-api-key"  # Generate with: openssl rand -hex 32
+```
+
+### Pages Secrets (Set Automatically by Terraform)
+
+The following secrets are automatically configured on Cloudflare Pages:
+- `AWS_ACCESS_KEY_ID` - From IAM user created by Terraform
+- `AWS_SECRET_ACCESS_KEY` - From IAM user created by Terraform
+- `AWS_REGION` - SES region (us-east-1)
+- `NOTIFY_API_KEY` - API key for notification authentication
 
 ## Importing Existing Resources
 
