@@ -35,6 +35,7 @@ Go to Cloudflare Dashboard -> Profile -> API Tokens -> Create Token:
 | Account | R2 Storage | All accounts | Edit |
 | Zone | Zone | havoptic.com | Read |
 | Zone | DNS | havoptic.com | Edit |
+| Zone | Zone WAF | havoptic.com | Edit |
 
 Zone Resources: Include -> Specific zone -> `havoptic.com`
 
