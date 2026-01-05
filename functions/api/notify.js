@@ -14,8 +14,57 @@
  */
 
 const SUBSCRIBERS_KEY = 'subscribers.json';
+const RATE_LIMIT_KEY = 'rate-limits/notify.json';
 const FROM_EMAIL = 'newsletter@havoptic.com';
 const FROM_NAME = 'Havoptic';
+
+// Rate limiting: 10 requests per minute per IP
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in ms
+const RATE_LIMIT_MAX = 10;
+
+async function checkRateLimit(ip, env) {
+  try {
+    const object = await env.NEWSLETTER_BUCKET.get(RATE_LIMIT_KEY);
+    let limits = {};
+    if (object) {
+      limits = JSON.parse(await object.text());
+    }
+
+    const now = Date.now();
+    const windowStart = now - RATE_LIMIT_WINDOW;
+
+    // Clean old entries and get current count for this IP
+    const ipLimits = (limits[ip] || []).filter(ts => ts > windowStart);
+
+    if (ipLimits.length >= RATE_LIMIT_MAX) {
+      return { allowed: false, remaining: 0 };
+    }
+
+    // Add current request
+    ipLimits.push(now);
+    limits[ip] = ipLimits;
+
+    // Clean up old IPs (older than 5 minutes)
+    const cleanupThreshold = now - 5 * 60 * 1000;
+    for (const key of Object.keys(limits)) {
+      limits[key] = limits[key].filter(ts => ts > cleanupThreshold);
+      if (limits[key].length === 0) {
+        delete limits[key];
+      }
+    }
+
+    // Save updated limits
+    await env.NEWSLETTER_BUCKET.put(RATE_LIMIT_KEY, JSON.stringify(limits), {
+      httpMetadata: { contentType: 'application/json' },
+    });
+
+    return { allowed: true, remaining: RATE_LIMIT_MAX - ipLimits.length };
+  } catch (e) {
+    console.error('Rate limit check error:', e);
+    // Allow request if rate limiting fails
+    return { allowed: true, remaining: RATE_LIMIT_MAX };
+  }
+}
 
 // AWS Signature V4 implementation for SES API
 async function signRequest(method, url, headers, body, credentials, region, service) {
@@ -272,6 +321,24 @@ export async function onRequestPost(context) {
   };
 
   try {
+    // Rate limiting check
+    const clientIP = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const rateLimit = await checkRateLimit(clientIP, env);
+    if (!rateLimit.allowed) {
+      return new Response(
+        JSON.stringify({ error: 'Rate limit exceeded. Try again later.' }),
+        {
+          status: 429,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-RateLimit-Remaining': '0',
+            'Retry-After': '60',
+            ...corsHeaders,
+          },
+        }
+      );
+    }
+
     const body = await request.json();
     const { releases, apiKey } = body;
 
