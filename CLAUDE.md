@@ -106,7 +106,11 @@ The validator compares extracted features against source URLs and reports:
    - Uses Nano Banana Pro (Gemini) to generate infographic images
    - Saves images to `public/images/infographics/`
    - Updates `releases.json` with `infographicUrl` field
-5. React app fetches this JSON at runtime via `useReleases` hook
+5. `scripts/notify-subscribers.mjs` sends email notifications when new releases are detected:
+   - Compares old vs new releases to identify changes
+   - Calls `/api/notify` endpoint with new releases
+   - Endpoint reads subscribers from R2 and sends emails via AWS SES
+6. React app fetches this JSON at runtime via `useReleases` hook
 
 ### Key Types (`src/types/release.ts`)
 - `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro'`
@@ -145,6 +149,7 @@ GitHub Actions deploy on push to main. Requires secrets:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `ANTHROPIC_API_KEY` (for infographic feature extraction)
 - `GOOGLE_API_KEY` (for Nano Banana Pro image generation)
+- `NOTIFY_API_KEY` (for newsletter notification authentication)
 
 ### Environment Variables (Local Development)
 
@@ -153,6 +158,36 @@ Create a `.env` file in the project root:
 ANTHROPIC_API_KEY=sk-ant-...
 GOOGLE_API_KEY=AIza...
 ```
+
+## Newsletter System
+
+Subscribers receive email notifications when new AI tool releases are detected.
+
+### Components
+- **Subscribe API** (`functions/api/subscribe.js`): Handles newsletter signups, stores in R2
+- **Notify API** (`functions/api/notify.js`): Sends emails to subscribers via AWS SES
+- **Notify Script** (`scripts/notify-subscribers.mjs`): Detects new releases and triggers notifications
+
+### Infrastructure (Terraform)
+- **R2 Bucket**: Stores `subscribers.json` with subscriber data
+- **AWS SES**: Email sending with verified domain (havoptic.com)
+- **Cloudflare Pages Secrets**: AWS credentials and API key for notify endpoint
+
+### Testing Notifications Locally
+```bash
+# Test the notify endpoint
+curl -X POST "https://havoptic.com/api/notify" \
+  -H "Content-Type: application/json" \
+  -d '{"apiKey":"YOUR_NOTIFY_API_KEY","releases":[...]}'
+```
+
+### Environment Variables (Cloudflare Pages)
+Set via Terraform in `iac/*/web.tf`:
+- `AWS_ACCESS_KEY_ID` - SES sender credentials
+- `AWS_SECRET_ACCESS_KEY` - SES sender credentials
+- `AWS_REGION` - SES region (us-east-1)
+- `NOTIFY_API_KEY` - API authentication key
+- `NEWSLETTER_BUCKET` - R2 bucket binding
 
 ## Adding a New Tool
 
