@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-01-07T06:14:25.832Z",
+  "lastUpdated": "2026-01-08T06:14:30.208Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.0",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.0",
+      "date": "2026-01-07T02:43:04.533Z",
+      "summary": "- Added automatic skill hot-reload - skills created or modified in ~/.claude/skills or .claude/skills are now immediately available without restarting the session - Added support for running skills...",
+      "fullNotes": "- Added automatic skill hot-reload - skills created or modified in ~/.claude/skills or .claude/skills are now immediately available without restarting the session - Added support for running skills and slash commands in a forked sub-agent context using context: fork in skill frontmatter - Added support for agent field in skills to specify agent type for execution - Added language setting to configure Claude's response language (e.g., language: \"japanese\") - Changed Shift+Enter to work out of the box in iTerm2, We",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.23.0",
       "tool": "gemini-cli",
@@ -68,6 +79,17 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick 9cdb267 to release/v0.22.2-pr-15494 to patch version v0.22.2 and create version 0.22.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15591\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.22.2...v0.22.3"
     },
     {
+      "id": "claude-code-2.0.76",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.0.76",
+      "date": "2025-12-22T23:56:39.366Z",
+      "summary": "- Fixed issue with macOS code-sign warning when using Claude in Chrome integration",
+      "fullNotes": "- Fixed issue with macOS code-sign warning when using Claude in Chrome integration",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.22.2",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -124,6 +146,17 @@
       "type": "release",
       "infographicUrl": "/images/infographics/openai-codex-rust-v0.77.0-2026-01-02-1x1.jpg",
       "fullNotes": "## New Features\n  - TUI2: Normalize mouse wheel + trackpad scrolling across terminals; add `tui.scroll_*` config settings (PR #8357)\n  - Add `allowed_sandbox_modes` to `requirements.toml` to constrain permitted sandbox modes (PR #8298)\n  - MCP: OAuth login for streamable HTTP MCP servers no longer requires the `rmcp_client` feature flag (PR #8087)\n  - Improve fuzzy file search display/consistency by centralizing file-name derivation in `codex-file-search` (PR #8334)\n  - Update bundled model metadata (`models.json`) (PR #8168)\n\n  ## Bug Fixes\n  - Fix `/undo` interacting destructively with git staging / ghost commits (PR #8303)\n  - TUI2: Reduce redundant redraws while scrolling transcripts (PR #8295)\n  - Docs: Fix link to `contributing.md` in `experimental.md` (PR #8311)\n\n  Full Changelog: https://github.com/openai/codex/compare/rust-v0.76.0...rust-v0.77.0\n\n  Changelog (PRs merged in this tag range)\n\n  - #8374 Remove plan from system skills: https://github.com/openai/codex/pull/8374\n  - #8357 TUI2 scroll normalization + config knobs: https://github.com/openai/codex/pull/8357\n  - #8353 Thread config loading now receives cwd (internal plumbing): https://github.com/openai/codex/pull/8353\n  - #8346 Rename “OpenAI models” to “models manager” (internal refactor): https://github.com/openai/codex/pull/8346\n  - #8345 Bump cargo-deny-action version (CI): https://github.com/openai/codex/pull/8345\n  - #8334 Move file-name derivation into codex-file-search: https://github.com/openai/codex/pull/8334\n  - #8333 Enable resume_warning suite module (test coverage / wiring fix): https://github.com/openai/codex/pull/8333\n  - #8330 Make ConstraintError an enum (more structured errors): https://github.com/openai/codex/pull/8330\n  - #8303 Fix /undo staging interaction: https://github.com/openai/codex/pull/8303\n  - #8298 Add allowed_sandbox_modes in requirements.toml: https://github.com/openai/codex/pull/8298\n  - #8295 Coalesce transcript scroll redraws (TUI2 performance): https://github.com/openai/codex/pull/8295\n  - #8168 Update models.json: https://github.com/openai/codex/pull/8168\n  - #8087 Remove rmcp_client feature flag usage (no longer needed for OAuth login): https://github.com/openai/codex/pull/8087\n  - #8311 Fix docs link in experimental.md: https://github.com/openai/codex/pull/8311"
+    },
+    {
+      "id": "claude-code-2.0.75",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.0.75",
+      "date": "2025-12-20T17:19:09.800Z",
+      "summary": "- Minor bugfixes",
+      "fullNotes": "- Minor bugfixes",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
     },
     {
       "id": "claude-code-2.0.74",
