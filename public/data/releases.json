@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-01-08T06:14:30.208Z",
+  "lastUpdated": "2026-01-09T06:14:26.649Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.2",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.2",
+      "date": "2026-01-08T21:19:38.381Z",
+      "summary": "- Added source path metadata to images dragged onto the terminal, helping Claude understand where images originated - Added clickable hyperlinks for file paths in tool output in terminals that supp...",
+      "fullNotes": "- Added source path metadata to images dragged onto the terminal, helping Claude understand where images originated - Added clickable hyperlinks for file paths in tool output in terminals that support OSC 8 (like iTerm) - Added support for Windows Package Manager (winget) installations with automatic detection and update instructions - Added Shift+Tab keyboard shortcut in plan mode to quickly select \"auto-accept edits\" option - Added FORCEAUTOUPDATEPLUGINS environment variable to allow plugin autoupdate even when the main auto-updater is disabled - Added agenttype to SessionStart hook input, populated if --agent is specified - Fixed a command injection vulnerability in bash command processing where malformed input could execute arbitrary commands - Fixed a memory leak where tree-sitter parse trees were not being freed, causing WASM memory to grow unbounded over long sessions - Fixed binary files (images, PDFs, etc.) being accidentally included in memory when using @include directives in CLAUDE.md files - Fixed updates incorrectly claiming another installation is in progress - Fixed crash when socket files exist in watched directories (defense-in-depth for EOPNOTSUPP errors) - Fixed remote session URL and teleport being broken when using /tasks command - Fixed MCP tool names being exposed in analytics events by saniti",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.0",
       "tool": "claude-code",
