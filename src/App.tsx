@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
+import { NewsletterSignup } from './components/NewsletterSignup';
 import { useReleases } from './hooks/useReleases';
 import type { ToolId } from './types/release';
 import { trackScrollDepth } from './utils/analytics';
@@ -103,6 +104,10 @@ function App() {
     <Layout>
       <Header lastUpdated={lastUpdated} />
       <main role="main" aria-label="AI Tool Releases Timeline">
+        <section aria-label="Newsletter signup" className="mb-6">
+          <NewsletterSignup variant="hero" />
+        </section>
+
         <nav aria-label="Filter by tool">
           <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
         </nav>
