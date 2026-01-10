@@ -28,10 +28,17 @@ function generateOgTags(release, baseUrl) {
     ? release.summary.slice(0, 200) + (release.summary.length > 200 ? '...' : '')
     : `Check out ${release.toolDisplayName} v${release.version} release notes on Havoptic.`;
 
-  // Use release-specific infographic if available, otherwise fall back to default
-  const ogImage = release.infographicUrl
-    ? `${baseUrl}${release.infographicUrl}`
-    : `${baseUrl}/og-image.png`;
+  // Prefer 16:9 format for OG images (better for Twitter/LinkedIn), fall back to 1:1, then default
+  const ogImage = release.infographicUrl16x9
+    ? `${baseUrl}${release.infographicUrl16x9}`
+    : release.infographicUrl
+      ? `${baseUrl}${release.infographicUrl}`
+      : `${baseUrl}/og-image.jpg`;
+
+  // Determine dimensions based on which image we're using
+  const is16x9 = release.infographicUrl16x9;
+  const imageWidth = is16x9 ? '1200' : release.infographicUrl ? '1200' : '1200';
+  const imageHeight = is16x9 ? '630' : release.infographicUrl ? '1200' : '630';
 
   const releaseUrl = `${baseUrl}/r/${release.id}`;
 
@@ -42,8 +49,9 @@ function generateOgTags(release, baseUrl) {
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:image" content="${ogImage}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:width" content="${imageWidth}" />
+    <meta property="og:image:height" content="${imageHeight}" />
+    <meta property="og:image:alt" content="${escapeHtml(`${release.toolDisplayName} v${release.version} release infographic`)}" />
     <meta property="og:site_name" content="Havoptic" />
     <meta property="og:locale" content="en_US" />
 
@@ -53,6 +61,7 @@ function generateOgTags(release, baseUrl) {
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${ogImage}" />
+    <meta name="twitter:image:alt" content="${escapeHtml(`${release.toolDisplayName} v${release.version} release infographic`)}" />
   `;
 }
 

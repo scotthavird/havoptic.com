@@ -11,6 +11,7 @@ export interface Release {
   url: string;
   type: 'release' | 'prerelease';
   infographicUrl?: string;
+  infographicUrl16x9?: string;
 }
 
 export interface ReleasesData {

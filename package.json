@@ -16,7 +16,8 @@
     "generate-pr": "node scripts/generate-pr-draft.mjs",
     "generate-prs": "node scripts/generate-pr-draft.mjs --batch",
     "generate:infographic": "node scripts/generate-infographic-prompt.mjs",
-    "generate:infographic:all": "node scripts/generate-infographic-prompt.mjs --all-formats"
+    "generate:infographic:all": "node scripts/generate-infographic-prompt.mjs --all-formats",
+    "generate:og-image": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
