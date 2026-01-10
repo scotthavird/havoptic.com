@@ -18,6 +18,15 @@ const RATE_LIMIT_KEY = 'rate-limits/notify.json';
 const FROM_EMAIL = 'newsletter@havoptic.com';
 const FROM_NAME = 'Havoptic';
 
+// Tool brand colors for email styling
+const TOOL_COLORS = {
+  'claude-code': '#D97706',
+  'openai-codex': '#059669',
+  'cursor': '#7C3AED',
+  'gemini-cli': '#00ACC1',
+  'kiro': '#8B5CF6',
+};
+
 // Rate limiting: 10 requests per minute per IP
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in ms
 const RATE_LIMIT_MAX = 10;
@@ -200,28 +209,106 @@ async function sendEmail(to, subject, htmlBody, textBody, env) {
   return await response.json();
 }
 
-// Generate email content for new releases
+// Generate email content for new releases with infographics
 function generateEmailContent(releases) {
   const releaseCount = releases.length;
-  const toolNames = [...new Set(releases.map(r => r.toolDisplayName))].join(', ');
 
+  // More engaging subject lines
   const subject = releaseCount === 1
-    ? `New Release: ${releases[0].toolDisplayName} ${releases[0].version}`
-    : `${releaseCount} New AI Tool Releases`;
+    ? `New: ${releases[0].toolDisplayName} ${releases[0].version} Just Shipped`
+    : `${releaseCount} AI Tool Updates You Need to See`;
 
-  const releaseItems = releases.map(r => {
+  // Build release cards with infographics
+  const releaseCards = releases.map(r => {
+    const toolColor = TOOL_COLORS[r.tool] || '#D97706';
+    const hasInfographic = !!r.infographicUrl;
+    const infographicSrc = hasInfographic
+      ? `https://havoptic.com${r.infographicUrl}`
+      : null;
+
+    // Format the date
+    const releaseDate = new Date(r.date).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+
     return {
       html: `
+        <!-- Release Card -->
         <tr>
-          <td style="padding: 16px 0; border-bottom: 1px solid #334155;">
-            <div style="font-size: 12px; color: #94a3b8; margin-bottom: 4px;">${r.toolDisplayName}</div>
-            <div style="font-size: 18px; font-weight: bold; color: #f8fafc; margin-bottom: 8px;">Version ${r.version}</div>
-            <div style="font-size: 14px; color: #cbd5e1; margin-bottom: 12px;">${r.summary}</div>
-            <a href="${r.url}" style="color: #d97706; text-decoration: none; font-size: 14px;">View Release →</a>
+          <td style="padding: 0 0 32px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
+              <!-- Card Header with Tool Badge -->
+              <tr>
+                <td style="padding: 20px 24px 16px;">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>
+                        <span style="display: inline-block; background-color: ${toolColor}; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                          ${r.toolDisplayName}
+                        </span>
+                      </td>
+                      <td style="text-align: right;">
+                        <span style="color: #64748b; font-size: 13px;">${releaseDate}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <!-- Version -->
+              <tr>
+                <td style="padding: 0 24px 16px;">
+                  <h2 style="margin: 0; font-size: 28px; font-weight: 700; color: #f8fafc; font-family: 'SF Mono', Monaco, 'Courier New', monospace;">
+                    v${r.version}
+                  </h2>
+                </td>
+              </tr>
+
+              ${hasInfographic ? `
+              <!-- Infographic Image -->
+              <tr>
+                <td style="padding: 0 24px 20px;">
+                  <a href="${r.url}" target="_blank" style="display: block;">
+                    <img
+                      src="${infographicSrc}"
+                      alt="${r.toolDisplayName} v${r.version} release highlights"
+                      width="500"
+                      style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block;"
+                    />
+                  </a>
+                </td>
+              </tr>
+              ` : `
+              <!-- Summary (fallback when no infographic) -->
+              <tr>
+                <td style="padding: 0 24px 20px;">
+                  <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #cbd5e1;">
+                    ${r.summary}
+                  </p>
+                </td>
+              </tr>
+              `}
+
+              <!-- CTA Button -->
+              <tr>
+                <td style="padding: 0 24px 24px;">
+                  <a href="${r.url}" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: ${toolColor}; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+                    View Full Release Notes
+                  </a>
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
       `,
-      text: `${r.toolDisplayName} ${r.version}\n${r.summary}\n${r.url}\n`,
+      text: `
+${r.toolDisplayName} v${r.version}
+Released: ${releaseDate}
+${hasInfographic ? `Infographic: https://havoptic.com${r.infographicUrl}` : r.summary}
+View release: ${r.url}
+`,
     };
   });
 
@@ -231,43 +318,54 @@ function generateEmailContent(releases) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="supported-color-schemes" content="dark">
 </head>
 <body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px;">
+
           <!-- Header -->
           <tr>
-            <td style="padding-bottom: 32px;">
-              <h1 style="margin: 0; font-size: 24px; color: #f8fafc;">Havoptic</h1>
-              <p style="margin: 8px 0 0; font-size: 14px; color: #94a3b8;">AI Coding Tool Releases</p>
-            </td>
-          </tr>
-
-          <!-- Intro -->
-          <tr>
-            <td style="padding-bottom: 24px;">
-              <p style="margin: 0; font-size: 16px; color: #e2e8f0;">
-                ${releaseCount === 1 ? 'A new release is available:' : `${releaseCount} new releases are available:`}
+            <td style="padding-bottom: 40px; text-align: center;">
+              <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #f8fafc;">Havoptic</h1>
+              <p style="margin: 8px 0 0; font-size: 14px; color: #d97706; letter-spacing: 1px; text-transform: uppercase;">
+                Release Intelligence
               </p>
             </td>
           </tr>
 
-          <!-- Releases -->
+          <!-- Intro Section -->
           <tr>
-            <td>
-              <table width="100%" cellpadding="0" cellspacing="0">
-                ${releaseItems.map(r => r.html).join('')}
+            <td style="padding-bottom: 32px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1e293b; border-radius: 12px; border: 1px solid #334155;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <h2 style="margin: 0 0 12px; font-size: 22px; color: #f8fafc;">
+                      ${releaseCount === 1 ? 'Fresh Off the Wire' : `${releaseCount} Updates Just Dropped`}
+                    </h2>
+                    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #94a3b8;">
+                      ${releaseCount === 1
+                        ? `${releases[0].toolDisplayName} just shipped a new version. Here's what you need to know.`
+                        : `Your favorite AI coding tools have been busy. Here's everything that shipped.`
+                      }
+                    </p>
+                  </td>
+                </tr>
               </table>
             </td>
           </tr>
 
-          <!-- CTA -->
+          <!-- Release Cards -->
+          ${releaseCards.map(r => r.html).join('')}
+
+          <!-- View All CTA -->
           <tr>
-            <td style="padding: 32px 0;">
-              <a href="https://havoptic.com" style="display: inline-block; padding: 12px 24px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 500;">
-                View All Releases
+            <td style="padding: 16px 0 40px; text-align: center;">
+              <a href="https://havoptic.com" style="display: inline-block; padding: 16px 40px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                View Complete Timeline
               </a>
             </td>
           </tr>
@@ -275,13 +373,23 @@ function generateEmailContent(releases) {
           <!-- Footer -->
           <tr>
             <td style="padding-top: 32px; border-top: 1px solid #334155;">
-              <p style="margin: 0; font-size: 12px; color: #64748b;">
-                You're receiving this because you subscribed to Havoptic release notifications.
-                <br><br>
-                <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #64748b;">Unsubscribe</a>
-              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="text-align: center;">
+                    <p style="margin: 0 0 8px; font-size: 13px; color: #64748b;">
+                      You're receiving this because you subscribed to Havoptic release notifications.
+                    </p>
+                    <p style="margin: 0; font-size: 12px;">
+                      <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #64748b; text-decoration: underline;">Unsubscribe</a>
+                      <span style="color: #475569; padding: 0 8px;">|</span>
+                      <a href="https://havoptic.com" style="color: #64748b; text-decoration: underline;">Visit Havoptic</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
+
         </table>
       </td>
     </tr>
@@ -291,13 +399,22 @@ function generateEmailContent(releases) {
   `.trim();
 
   const textBody = `
-Havoptic - AI Coding Tool Releases
+HAVOPTIC - Release Intelligence
 
-${releaseCount === 1 ? 'A new release is available:' : `${releaseCount} new releases are available:`}
+${releaseCount === 1 ? 'Fresh Off the Wire' : `${releaseCount} Updates Just Dropped`}
 
-${releaseItems.map(r => r.text).join('\n')}
+${releaseCount === 1
+  ? `${releases[0].toolDisplayName} just shipped a new version. Here's what you need to know.`
+  : `Your favorite AI coding tools have been busy. Here's everything that shipped.`
+}
 
-View all releases: https://havoptic.com
+---
+
+${releaseCards.map(r => r.text).join('\n---\n')}
+
+---
+
+View Complete Timeline: https://havoptic.com
 
 ---
 You're receiving this because you subscribed to Havoptic release notifications.
@@ -444,3 +561,6 @@ export async function onRequestOptions() {
     },
   });
 }
+
+// Export for testing
+export { generateEmailContent, TOOL_COLORS };
