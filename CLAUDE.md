@@ -164,14 +164,24 @@ GOOGLE_API_KEY=AIza...
 Subscribers receive email notifications when new AI tool releases are detected.
 
 ### Components
-- **Subscribe API** (`functions/api/subscribe.js`): Handles newsletter signups, stores in R2
+- **Subscribe API** (`functions/api/subscribe.js`): Handles newsletter signups, stores in R2, sends admin notification
+- **Unsubscribe API** (`functions/api/unsubscribe.js`): Handles unsubscribe requests, logs to audit trail, sends admin notification
 - **Notify API** (`functions/api/notify.js`): Sends emails to subscribers via AWS SES
 - **Notify Script** (`scripts/notify-subscribers.mjs`): Detects new releases and triggers notifications
 
 ### Infrastructure (Terraform)
-- **R2 Bucket**: Stores `subscribers.json` with subscriber data
+- **R2 Bucket**: Stores `subscribers.json` with subscriber data and `newsletter-audit.json` for audit trail
 - **AWS SES**: Email sending with verified domain (havoptic.com)
 - **Cloudflare Pages Secrets**: AWS credentials and API key for notify endpoint
+
+### Audit Trail
+The `newsletter-audit.json` file in R2 tracks all subscribe/unsubscribe events:
+```json
+[
+  {"action": "subscribe", "email": "user@example.com", "timestamp": "2025-01-10T12:00:00.000Z", "source": "website"},
+  {"action": "unsubscribe", "email": "user@example.com", "timestamp": "2025-01-15T08:30:00.000Z", "originalSubscribedAt": "2025-01-10T12:00:00.000Z"}
+]
+```
 
 ### Testing Notifications Locally
 ```bash
@@ -187,6 +197,7 @@ Set via Terraform in `iac/*/web.tf`:
 - `AWS_SECRET_ACCESS_KEY` - SES sender credentials
 - `AWS_REGION` - SES region (us-east-1)
 - `NOTIFY_API_KEY` - API authentication key
+- `ADMIN_EMAIL` - Admin receives subscribe/unsubscribe notifications
 - `NEWSLETTER_BUCKET` - R2 bucket binding
 
 ## Adding a New Tool
