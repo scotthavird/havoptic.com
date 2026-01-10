@@ -9,9 +9,32 @@
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SUBSCRIBERS_KEY = 'subscribers.json';
+const AUDIT_LOG_KEY = 'newsletter-audit.json';
 const RATE_LIMIT_KEY = 'rate-limits/subscribe.json';
 const FROM_EMAIL = 'newsletter@havoptic.com';
 const FROM_NAME = 'Havoptic';
+
+// Admin notification email (set via environment variable)
+const getAdminEmail = (env) => env.ADMIN_EMAIL || null;
+
+// Append event to audit log
+async function logAuditEvent(env, event) {
+  try {
+    let auditLog = [];
+    const object = await env.NEWSLETTER_BUCKET.get(AUDIT_LOG_KEY);
+    if (object) {
+      auditLog = JSON.parse(await object.text());
+    }
+    auditLog.push(event);
+    await env.NEWSLETTER_BUCKET.put(
+      AUDIT_LOG_KEY,
+      JSON.stringify(auditLog, null, 2),
+      { httpMetadata: { contentType: 'application/json' } }
+    );
+  } catch (e) {
+    console.error('Audit log error:', e);
+  }
+}
 
 // Rate limiting: 5 requests per minute per IP
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in ms
@@ -348,6 +371,44 @@ Unsubscribe: https://havoptic.com/unsubscribe?email={{email}}
   return { subject, htmlBody, textBody };
 }
 
+// Generate admin notification email for new subscriber
+function generateAdminSubscribeNotification(subscriberEmail, totalSubscribers) {
+  const subject = `[Havoptic] New subscriber: ${subscriberEmail}`;
+
+  const htmlBody = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="margin: 0; padding: 20px; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="max-width: 500px; margin: 0 auto; background-color: #1e293b; border-radius: 8px; padding: 24px; border: 1px solid #334155;">
+    <h2 style="margin: 0 0 16px; color: #22c55e; font-size: 18px;">🎉 New Subscriber</h2>
+    <p style="margin: 0 0 12px; color: #e2e8f0; font-size: 15px;">
+      <strong>Email:</strong> ${subscriberEmail}
+    </p>
+    <p style="margin: 0 0 12px; color: #94a3b8; font-size: 14px;">
+      <strong>Time:</strong> ${new Date().toISOString()}
+    </p>
+    <p style="margin: 0; color: #64748b; font-size: 13px;">
+      Total subscribers: ${totalSubscribers}
+    </p>
+  </div>
+</body>
+</html>
+  `.trim();
+
+  const textBody = `
+New Havoptic subscriber!
+
+Email: ${subscriberEmail}
+Time: ${new Date().toISOString()}
+Total subscribers: ${totalSubscribers}
+  `.trim();
+
+  return { subject, htmlBody, textBody };
+}
+
 /**
  * @param {Request} request
  * @param {Object} env
@@ -440,6 +501,14 @@ export async function onRequestPost(context) {
       { httpMetadata: { contentType: 'application/json' } }
     );
 
+    // Log to audit trail
+    await logAuditEvent(env, {
+      action: 'subscribe',
+      email: normalizedEmail,
+      timestamp: newSubscriber.subscribedAt,
+      source: 'website',
+    });
+
     // Send welcome email (don't fail subscription if email fails)
     try {
       if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
@@ -450,6 +519,20 @@ export async function onRequestPost(context) {
       }
     } catch (emailError) {
       console.error('Welcome email failed:', emailError.message);
+    }
+
+    // Send admin notification (don't fail subscription if this fails)
+    try {
+      const adminEmail = getAdminEmail(env);
+      if (adminEmail && env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
+        const { subject, htmlBody, textBody } = generateAdminSubscribeNotification(
+          normalizedEmail,
+          subscribers.length
+        );
+        await sendEmail(adminEmail, subject, htmlBody, textBody, env);
+      }
+    } catch (adminEmailError) {
+      console.error('Admin notification failed:', adminEmailError.message);
     }
 
     return new Response(
