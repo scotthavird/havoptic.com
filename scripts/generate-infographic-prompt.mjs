@@ -256,8 +256,8 @@ Style: ${config.style}, brand color ${config.primaryColor}, high contrast, reada
 Highlight: "${features.releaseHighlight}"`;
 }
 
-// Save infographic to public folder and update releases.json
-async function saveInfographicAndUpdateReleases(imagePath, releaseId, data) {
+// Save infographic to public folder and update release data object (does not write to disk)
+async function saveInfographicToPublic(imagePath, releaseId, data, format = '1:1') {
   // Ensure public images directory exists
   await fs.mkdir(PUBLIC_IMAGES_DIR, { recursive: true });
 
@@ -267,17 +267,28 @@ async function saveInfographicAndUpdateReleases(imagePath, releaseId, data) {
   await fs.copyFile(imagePath, publicPath);
   console.log(`Copied to public: ${publicPath}`);
 
-  // Update the release in releases.json with the infographicUrl
+  // Update the release in data object with the infographicUrl
   const infographicUrl = `/images/infographics/${filename}`;
   const releaseIndex = data.releases.findIndex((r) => r.id === releaseId);
 
   if (releaseIndex !== -1) {
-    data.releases[releaseIndex].infographicUrl = infographicUrl;
-    await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2));
-    console.log(`Updated releases.json with infographicUrl: ${infographicUrl}`);
+    // Use different field for 16:9 format (used for OG images)
+    if (format === '16:9') {
+      data.releases[releaseIndex].infographicUrl16x9 = infographicUrl;
+      console.log(`Set infographicUrl16x9: ${infographicUrl}`);
+    } else {
+      data.releases[releaseIndex].infographicUrl = infographicUrl;
+      console.log(`Set infographicUrl: ${infographicUrl}`);
+    }
   }
 
   return infographicUrl;
+}
+
+// Write releases data to disk
+async function saveReleasesData(data) {
+  await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2));
+  console.log('Updated releases.json');
 }
 
 // Generate image using Nano Banana Pro (Gemini)
@@ -397,8 +408,12 @@ async function main() {
   const features = await extractFeatures(client, release, options.count, enrichedNotes);
   console.log(`Extracted ${features.features.length} features\n`);
 
-  // Generate prompts
-  const formats = options.allFormats ? ['1:1', '16:9', '9:16'] : ['1:1'];
+  // Generate prompts - always include 16:9 when updating releases (for OG images)
+  const formats = options.allFormats
+    ? ['1:1', '16:9', '9:16']
+    : options.updateReleases
+      ? ['1:1', '16:9']
+      : ['1:1'];
   const prompts = {};
 
   for (const format of formats) {
@@ -425,14 +440,20 @@ async function main() {
       try {
         const generatedPath = await generateImage(prompt, imagePath);
 
-        // If --update-releases is set and this is the 1:1 format, save to public and update releases.json
-        if (options.updateReleases && format === '1:1') {
-          await saveInfographicAndUpdateReleases(generatedPath, release.id, data);
+        // If --update-releases is set, save to public folder
+        // Save both 1:1 (for display) and 16:9 (for OG images)
+        if (options.updateReleases && (format === '1:1' || format === '16:9')) {
+          await saveInfographicToPublic(generatedPath, release.id, data, format);
         }
       } catch (err) {
         console.error(`Failed to generate image for ${format}:`, err.message);
       }
     }
+  }
+
+  // Write releases.json to disk after all formats are processed
+  if (options.updateReleases && options.generateImage) {
+    await saveReleasesData(data);
   }
 
   // Also output features JSON
