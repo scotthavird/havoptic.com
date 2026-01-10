@@ -34,6 +34,7 @@ resource "cloudflare_pages_project" "main" {
         AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
         AWS_REGION            = var.aws_region
         NOTIFY_API_KEY        = var.notify_api_key
+        ADMIN_EMAIL           = var.admin_email
       }
     }
     production {
@@ -45,6 +46,7 @@ resource "cloudflare_pages_project" "main" {
         AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
         AWS_REGION            = var.aws_region
         NOTIFY_API_KEY        = var.notify_api_key
+        ADMIN_EMAIL           = var.admin_email
       }
     }
   }
