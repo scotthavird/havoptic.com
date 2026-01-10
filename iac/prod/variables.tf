@@ -53,3 +53,9 @@ variable "notify_api_key" {
   type        = string
   sensitive   = true
 }
+
+variable "admin_email" {
+  description = "Admin email for receiving subscribe/unsubscribe notifications"
+  type        = string
+  sensitive   = true
+}
