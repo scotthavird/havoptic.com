@@ -11,6 +11,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket         = "havoptic-terraform-state"
+    key            = "prod/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "havoptic-terraform-locks"
+    encrypt        = true
+  }
 }
 
 provider "cloudflare" {
