@@ -59,3 +59,22 @@ variable "admin_email" {
   type        = string
   sensitive   = true
 }
+
+# GitHub OAuth Configuration
+variable "github_oauth_client_id" {
+  description = "GitHub OAuth App Client ID"
+  type        = string
+  sensitive   = true
+}
+
+variable "github_oauth_client_secret" {
+  description = "GitHub OAuth App Client Secret"
+  type        = string
+  sensitive   = true
+}
+
+variable "session_secret" {
+  description = "Secret key for signing session tokens"
+  type        = string
+  sensitive   = true
+}

@@ -26,27 +26,39 @@ resource "cloudflare_pages_project" "main" {
 
   deployment_configs {
     preview {
+      d1_databases = {
+        AUTH_DB = cloudflare_d1_database.auth.id
+      }
       r2_buckets = {
         NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
       }
       secrets = {
-        AWS_ACCESS_KEY_ID     = aws_iam_access_key.ses_sender.id
-        AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
-        AWS_REGION            = var.aws_region
-        NOTIFY_API_KEY        = var.notify_api_key
-        ADMIN_EMAIL           = var.admin_email
+        AWS_ACCESS_KEY_ID          = aws_iam_access_key.ses_sender.id
+        AWS_SECRET_ACCESS_KEY      = aws_iam_access_key.ses_sender.secret
+        AWS_REGION                 = var.aws_region
+        NOTIFY_API_KEY             = var.notify_api_key
+        ADMIN_EMAIL                = var.admin_email
+        GITHUB_OAUTH_CLIENT_ID     = var.github_oauth_client_id
+        GITHUB_OAUTH_CLIENT_SECRET = var.github_oauth_client_secret
+        SESSION_SECRET             = var.session_secret
       }
     }
     production {
+      d1_databases = {
+        AUTH_DB = cloudflare_d1_database.auth.id
+      }
       r2_buckets = {
         NEWSLETTER_BUCKET = cloudflare_r2_bucket.newsletter.name
       }
       secrets = {
-        AWS_ACCESS_KEY_ID     = aws_iam_access_key.ses_sender.id
-        AWS_SECRET_ACCESS_KEY = aws_iam_access_key.ses_sender.secret
-        AWS_REGION            = var.aws_region
-        NOTIFY_API_KEY        = var.notify_api_key
-        ADMIN_EMAIL           = var.admin_email
+        AWS_ACCESS_KEY_ID          = aws_iam_access_key.ses_sender.id
+        AWS_SECRET_ACCESS_KEY      = aws_iam_access_key.ses_sender.secret
+        AWS_REGION                 = var.aws_region
+        NOTIFY_API_KEY             = var.notify_api_key
+        ADMIN_EMAIL                = var.admin_email
+        GITHUB_OAUTH_CLIENT_ID     = var.github_oauth_client_id
+        GITHUB_OAUTH_CLIENT_SECRET = var.github_oauth_client_secret
+        SESSION_SECRET             = var.session_secret
       }
     }
   }

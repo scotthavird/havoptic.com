@@ -4,6 +4,7 @@ import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
 import { NewsletterSignup } from './components/NewsletterSignup';
+import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
 import type { ToolId } from './types/release';
 import { trackScrollDepth } from './utils/analytics';
@@ -22,7 +23,7 @@ function getPageFromHash(): Page {
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash);
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
-  const { groupedReleases, lastUpdated, loading, error } = useReleases(selectedTool);
+  const { groupedReleases, lastUpdated, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
   const scrollMilestones = useRef(new Set<number>());
   const hasScrolledToAnchor = useRef(false);
 
@@ -125,7 +126,15 @@ function App() {
         )}
 
         {!loading && !error && (
-          <Timeline key={selectedTool} groupedReleases={groupedReleases} />
+          <>
+            <Timeline key={selectedTool} groupedReleases={groupedReleases} />
+            {isLimited && (
+              <SignInPrompt
+                message={limitedMessage || undefined}
+                className="mt-8"
+              />
+            )}
+          </>
         )}
       </main>
     </Layout>
