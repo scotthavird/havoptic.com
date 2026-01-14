@@ -10,14 +10,35 @@ import type { ToolId } from './types/release';
 import { trackScrollDepth } from './utils/analytics';
 import { TermsOfService } from './pages/TermsOfService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Blog } from './pages/Blog';
+import { BlogPost } from './pages/BlogPost';
+import { Compare } from './pages/Compare';
+import { Tool } from './pages/Tool';
 
-type Page = 'home' | 'terms' | 'privacy';
+type Page =
+  | { type: 'home' }
+  | { type: 'terms' }
+  | { type: 'privacy' }
+  | { type: 'blog' }
+  | { type: 'blogPost'; slug: string }
+  | { type: 'compare' }
+  | { type: 'tool'; toolId: ToolId };
 
 function getPageFromHash(): Page {
   const hash = window.location.hash;
-  if (hash === '#/terms') return 'terms';
-  if (hash === '#/privacy') return 'privacy';
-  return 'home';
+  if (hash === '#/terms') return { type: 'terms' };
+  if (hash === '#/privacy') return { type: 'privacy' };
+  if (hash === '#/blog') return { type: 'blog' };
+  if (hash === '#/compare') return { type: 'compare' };
+  if (hash.startsWith('#/blog/')) {
+    const slug = hash.slice(7); // Remove '#/blog/'
+    return { type: 'blogPost', slug };
+  }
+  if (hash.startsWith('#/tools/')) {
+    const toolId = hash.slice(8) as ToolId; // Remove '#/tools/'
+    return { type: 'tool', toolId };
+  }
+  return { type: 'home' };
 }
 
 function App() {
@@ -33,7 +54,7 @@ function App() {
       const newPage = getPageFromHash();
       setCurrentPage(newPage);
       // Scroll to top when navigating to a new page
-      if (newPage !== 'home') {
+      if (newPage.type !== 'home') {
         window.scrollTo(0, 0);
       }
     };
@@ -44,7 +65,7 @@ function App() {
 
   // Scroll to anchor element after data loads and renders (only on home page)
   useEffect(() => {
-    if (currentPage !== 'home') return;
+    if (currentPage.type !== 'home') return;
     if (!loading && !error && groupedReleases.length > 0 && !hasScrolledToAnchor.current) {
       const hash = window.location.hash.slice(1);
       // Only scroll to anchor if it's not a route hash
@@ -83,8 +104,8 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Render legal pages
-  if (currentPage === 'terms') {
+  // Render pages based on currentPage type
+  if (currentPage.type === 'terms') {
     return (
       <Layout>
         <TermsOfService />
@@ -92,10 +113,42 @@ function App() {
     );
   }
 
-  if (currentPage === 'privacy') {
+  if (currentPage.type === 'privacy') {
     return (
       <Layout>
         <PrivacyPolicy />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'blog') {
+    return (
+      <Layout>
+        <Blog />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'blogPost') {
+    return (
+      <Layout>
+        <BlogPost slug={currentPage.slug} />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'compare') {
+    return (
+      <Layout>
+        <Compare />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'tool') {
+    return (
+      <Layout>
+        <Tool toolId={currentPage.toolId} />
       </Layout>
     );
   }

@@ -35,6 +35,5 @@ pr-drafts/
 *.njsproj
 *.sln
 *.sw?
-
 # Cloudflare Wrangler
 .wrangler
