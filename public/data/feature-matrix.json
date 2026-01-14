@@ -1,0 +1,31 @@
+{
+  "lastUpdated": null,
+  "categories": [
+    {
+      "id": "core-editing",
+      "name": "Core Editing",
+      "description": "Multi-file editing, streaming, undo capabilities"
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal Integration",
+      "description": "Shell and command execution support"
+    },
+    {
+      "id": "mcp",
+      "name": "MCP Support",
+      "description": "Model Context Protocol server and client capabilities"
+    },
+    {
+      "id": "ide",
+      "name": "IDE Integrations",
+      "description": "VS Code, JetBrains, and other editor support"
+    },
+    {
+      "id": "agentic",
+      "name": "Agentic Features",
+      "description": "Planning, tool use, and autonomous capabilities"
+    }
+  ],
+  "features": []
+}

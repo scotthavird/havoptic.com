@@ -4,9 +4,12 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RELEASES_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
+const BLOG_PATH = path.join(__dirname, '..', 'public', 'data', 'blog', 'posts.json');
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const SITE_URL = 'https://havoptic.com';
+
+const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro'];
 
 function escapeXml(str) {
   if (!str) return '';
@@ -18,23 +21,57 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;');
 }
 
-async function generateSitemap(lastUpdated) {
+async function generateSitemap(lastUpdated, releases, blogPosts) {
   const lastmod = lastUpdated
     ? new Date(lastUpdated).toISOString().split('T')[0]
     : new Date().toISOString().split('T')[0];
 
+  // Static pages
+  const staticPages = [
+    { loc: '/', priority: '1.0', changefreq: 'daily' },
+    { loc: '/blog', priority: '0.9', changefreq: 'daily' },
+    { loc: '/compare', priority: '0.8', changefreq: 'weekly' },
+  ];
+
+  // Tool pages
+  const toolPages = TOOL_IDS.map(toolId => ({
+    loc: `/tools/${toolId}`,
+    priority: '0.7',
+    changefreq: 'daily',
+  }));
+
+  // Blog post pages
+  const blogPages = blogPosts.map(post => ({
+    loc: `/blog/${post.slug}`,
+    priority: '0.6',
+    changefreq: 'monthly',
+    lastmod: new Date(post.publishedAt).toISOString().split('T')[0],
+  }));
+
+  // Release pages
+  const releasePages = releases.slice(0, 200).map(release => ({
+    loc: `/r/${release.id}`,
+    priority: '0.5',
+    changefreq: 'never',
+    lastmod: new Date(release.date).toISOString().split('T')[0],
+  }));
+
+  const allPages = [...staticPages, ...toolPages, ...blogPages, ...releasePages];
+
+  const urls = allPages.map(page => `  <url>
+    <loc>${SITE_URL}${page.loc}</loc>
+    <lastmod>${page.lastmod || lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('\n');
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${SITE_URL}/</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+${urls}
 </urlset>`;
 
   await fs.writeFile(path.join(DIST_DIR, 'sitemap.xml'), sitemap);
-  console.log(`Generated sitemap.xml with lastmod: ${lastmod}`);
+  console.log(`Generated sitemap.xml with ${allPages.length} URLs`);
 }
 
 async function generateRssFeed(releases, lastUpdated) {
@@ -110,10 +147,20 @@ async function main() {
   try {
     const content = await fs.readFile(RELEASES_PATH, 'utf-8');
     releasesData = JSON.parse(content);
-    console.log(`Loaded ${releasesData.releases.length} releases\n`);
+    console.log(`Loaded ${releasesData.releases.length} releases`);
   } catch (err) {
     console.error('Error reading releases data:', err.message);
-    console.log('Using empty data\n');
+    console.log('Using empty releases data');
+  }
+
+  // Load blog posts data
+  let blogData = { lastUpdated: null, posts: [] };
+  try {
+    const content = await fs.readFile(BLOG_PATH, 'utf-8');
+    blogData = JSON.parse(content);
+    console.log(`Loaded ${blogData.posts.length} blog posts\n`);
+  } catch (err) {
+    console.log('No blog posts found, using empty data\n');
   }
 
   // Ensure dist directory exists
@@ -121,7 +168,7 @@ async function main() {
 
   // Generate all assets
   await Promise.all([
-    generateSitemap(releasesData.lastUpdated),
+    generateSitemap(releasesData.lastUpdated, releasesData.releases, blogData.posts),
     generateRssFeed(releasesData.releases, releasesData.lastUpdated),
     generateStructuredData(releasesData.releases),
   ]);
