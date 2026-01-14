@@ -10,7 +10,9 @@
       "summary": "- Added showTurnDuration setting to hide turn duration messages (e.g., \"Cooked for 1m 6s\") - Added ability to provide feedback when accepting permission prompts - Added inline display of agent's fi...",
       "fullNotes": "- Added showTurnDuration setting to hide turn duration messages (e.g., \"Cooked for 1m 6s\") - Added ability to provide feedback when accepting permission prompts - Added inline display of agent's final response in task notifications, making it easier to see results without reading the full transcript file - Fixed security vulnerability where wildcard permission rules could match compound commands containing shell operators - Fixed false \"file modified\" errors on Windows when cloud sync tools, antivirus scanners, or Git touch file timestamps without changing content - Fixed orphaned toolresult errors when sibling tools fail during streaming execution - Fixed context window blocking limit being calculated using the full context window instead of the effective context window (which reserves space for max output tokens) - Fixed spinner briefly flashing when running local slash commands like /model or /theme - Fixed terminal title animation jitter by using fixed-width braille characters - Fixed plugins with git submodules not being fully initiali",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.7-2026-01-14-1x1.png",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.7-2026-01-14-16x9.png"
     },
     {
       "id": "claude-code-2.1.6",
