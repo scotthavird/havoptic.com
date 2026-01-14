@@ -9,8 +9,8 @@ const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
 const DEFAULT_OUTPUT_DIR = path.join(__dirname, '..', 'generated-prompts');
 const PUBLIC_IMAGES_DIR = path.join(__dirname, '..', 'public', 'images', 'infographics');
 
-// Gemini 3 Pro Image model (Nano Banana Pro)
-const GEMINI_IMAGE_MODEL = 'gemini-3-pro-image-preview';
+// Gemini 2.5 Flash Image model (recommended stable model for image generation)
+const GEMINI_IMAGE_MODEL = 'gemini-2.5-flash-image';
 
 // Tool configurations for infographic styling
 const TOOL_CONFIGS = {
@@ -300,13 +300,13 @@ async function generateImage(prompt, outputPath) {
 
   const ai = new GoogleGenAI({ apiKey });
 
-  console.log('Generating image with Nano Banana Pro...');
+  console.log('Generating image with Gemini 2.5 Flash Image...');
 
   const response = await ai.models.generateContent({
     model: GEMINI_IMAGE_MODEL,
     contents: prompt,
     config: {
-      responseModalities: ['TEXT', 'IMAGE'],
+      responseModalities: ['text', 'image'],
     },
   });
 
