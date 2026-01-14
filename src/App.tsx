@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Hero } from './components/Hero';
-import { TimelineHeader } from './components/TimelineHeader';
+import { Header } from './components/Header';
 import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
+import { NewsletterSignup } from './components/NewsletterSignup';
 import { useReleases } from './hooks/useReleases';
 import type { ToolId } from './types/release';
 import { trackScrollDepth } from './utils/analytics';
@@ -155,11 +155,13 @@ function App() {
   // Render home page
   return (
     <Layout>
-      <Hero />
+      <Header lastUpdated={lastUpdated} />
       <main role="main" aria-label="AI Tool Releases Timeline">
-        <TimelineHeader lastUpdated={lastUpdated} />
+        <section aria-label="Newsletter signup" className="mb-6">
+          <NewsletterSignup variant="hero" />
+        </section>
 
-        <nav aria-label="Filter by tool" className="mb-6">
+        <nav aria-label="Filter by tool">
           <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
         </nav>
 
