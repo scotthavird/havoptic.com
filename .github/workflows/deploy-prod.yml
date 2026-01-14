@@ -6,6 +6,8 @@ on:
     paths:
       - 'src/**'
       - 'public/**'
+      - 'functions/**'
+      - 'scripts/db-migrations/**'
       - 'index.html'
       - 'package.json'
       - 'vite.config.ts'
@@ -56,6 +58,13 @@ jobs:
 
       - name: Build
         run: pnpm run build
+
+      - name: Run D1 Database Migrations (Prod)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: d1 execute havoptic-prod-auth --remote --file=scripts/db-migrations/001-auth-tables.sql
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

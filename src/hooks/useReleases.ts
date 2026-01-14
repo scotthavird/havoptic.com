@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { Release, ReleasesData, ToolId } from '../types/release';
+import { useAuth } from '../context/AuthContext';
 
 interface GroupedReleases {
   year: number;
@@ -10,13 +11,19 @@ interface GroupedReleases {
   }[];
 }
 
+interface GatedReleasesData extends ReleasesData {
+  _limited?: boolean;
+  _message?: string;
+}
+
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
 export function useReleases(selectedTool: ToolId | 'all') {
-  const [data, setData] = useState<ReleasesData | null>(null);
+  const { user } = useAuth();
+  const [data, setData] = useState<GatedReleasesData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,14 +32,16 @@ export function useReleases(selectedTool: ToolId | 'all') {
 
     async function fetchReleases() {
       try {
-        const response = await fetch('/data/releases.json', {
+        // Use gated API endpoint instead of static file
+        const response = await fetch('/api/releases', {
           cache: 'no-store',
           signal: controller.signal,
+          credentials: 'include',
         });
         if (!response.ok) {
           throw new Error('Failed to fetch releases');
         }
-        const json: ReleasesData = await response.json();
+        const json: GatedReleasesData = await response.json();
 
         // Deduplicate releases by id (safety net)
         const seen = new Set<string>();
@@ -42,7 +51,12 @@ export function useReleases(selectedTool: ToolId | 'all') {
           return true;
         });
 
-        setData({ lastUpdated: json.lastUpdated, releases: uniqueReleases });
+        setData({
+          lastUpdated: json.lastUpdated,
+          releases: uniqueReleases,
+          _limited: json._limited,
+          _message: json._message,
+        });
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
         setError(err instanceof Error ? err.message : 'Unknown error');
@@ -50,10 +64,12 @@ export function useReleases(selectedTool: ToolId | 'all') {
         setLoading(false);
       }
     }
+
+    setLoading(true);
     fetchReleases();
 
     return () => controller.abort();
-  }, []);
+  }, [user]); // Re-fetch when user changes (login/logout)
 
   const filteredReleases = useMemo(() => {
     if (!data) return [];
@@ -104,5 +120,7 @@ export function useReleases(selectedTool: ToolId | 'all') {
     lastUpdated: data?.lastUpdated ?? null,
     loading,
     error,
+    isLimited: data?._limited ?? false,
+    limitedMessage: data?._message ?? null,
   };
 }
