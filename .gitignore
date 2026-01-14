@@ -35,3 +35,4 @@ pr-drafts/
 *.njsproj
 *.sln
 *.sw?
+/.wrangler
