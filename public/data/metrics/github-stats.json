@@ -1,4 +1,44 @@
 {
-  "lastUpdated": null,
-  "tools": {}
+  "lastUpdated": "2026-01-14T13:20:15.490Z",
+  "tools": {
+    "claude-code": {
+      "toolId": "claude-code",
+      "github": {
+        "stars": 56387,
+        "forks": 4112,
+        "openIssues": 4551,
+        "contributors": 47,
+        "lastCommitAt": "2026-01-14T01:59:42Z",
+        "starsThisWeek": 0,
+        "starsThisMonth": 0
+      },
+      "fetchedAt": "2026-01-14T13:20:12.385Z"
+    },
+    "openai-codex": {
+      "toolId": "openai-codex",
+      "github": {
+        "stars": 56114,
+        "forks": 7215,
+        "openIssues": 839,
+        "contributors": 305,
+        "lastCommitAt": "2026-01-14T11:13:48Z",
+        "starsThisWeek": 0,
+        "starsThisMonth": 0
+      },
+      "fetchedAt": "2026-01-14T13:20:13.147Z"
+    },
+    "gemini-cli": {
+      "toolId": "gemini-cli",
+      "github": {
+        "stars": 90864,
+        "forks": 10549,
+        "openIssues": 2612,
+        "contributors": 431,
+        "lastCommitAt": "2026-01-14T13:19:17Z",
+        "starsThisWeek": 0,
+        "starsThisMonth": 0
+      },
+      "fetchedAt": "2026-01-14T13:20:13.971Z"
+    }
+  }
 }
