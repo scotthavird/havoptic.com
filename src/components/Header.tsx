@@ -1,11 +1,13 @@
 import { ShareButtons } from './ShareButtons';
 import { HeaderBell } from './HeaderBell';
+import { useNewsletterBell } from '../context/NewsletterBellContext';
 
 interface HeaderProps {
   lastUpdated: string | null;
 }
 
 export function Header({ lastUpdated }: HeaderProps) {
+  const { showBellInHeader } = useNewsletterBell();
   const formattedDate = lastUpdated
     ? new Date(lastUpdated).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -32,7 +34,11 @@ export function Header({ lastUpdated }: HeaderProps) {
             </p>
           )}
         </div>
-        <div className="flex items-center gap-3 sm:mt-1 shrink-0">
+        {/* On mobile: buttons start left-aligned, slide right when bell appears */}
+        {/* On desktop (sm+): always right-aligned */}
+        <div className={`flex items-center gap-3 sm:mt-1 shrink-0 transition-all duration-500 ease-out ${
+          showBellInHeader ? 'justify-end' : 'justify-start sm:justify-end'
+        }`}>
           <HeaderBell />
           <ShareButtons />
         </div>
