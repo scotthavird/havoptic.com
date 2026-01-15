@@ -143,14 +143,19 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   const { triggerFlyAnimation } = useNewsletterBell();
   const [isDismissed, setIsDismissed] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+  const [isCollapsing, setIsCollapsing] = useState(false);
+  const [isFullyHidden, setIsFullyHidden] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsDismissed(getIsDismissed());
+    const dismissed = getIsDismissed();
+    setIsDismissed(dismissed);
+    setIsFullyHidden(dismissed);
   }, []);
 
   const handleDismiss = () => {
-    if (panelRef.current) {
+    if (panelRef.current && wrapperRef.current) {
       // Get the center position of the panel for the animation start
       const rect = panelRef.current.getBoundingClientRect();
       const startPos = {
@@ -158,23 +163,41 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
         y: rect.top + rect.height / 2,
       };
 
+      // Set explicit height before collapsing for smooth animation
+      const wrapperHeight = wrapperRef.current.offsetHeight;
+      wrapperRef.current.style.height = `${wrapperHeight}px`;
+
       // Start the shrink animation
       setIsAnimatingOut(true);
 
-      // After panel shrinks, trigger the flying bell
+      // After panel shrinks, trigger the flying bell and start collapse
       setTimeout(() => {
         triggerFlyAnimation(startPos);
-        setDismissed();
-        setIsDismissed(true);
+        setIsCollapsing(true);
+
+        // Force reflow then animate to 0
+        requestAnimationFrame(() => {
+          if (wrapperRef.current) {
+            wrapperRef.current.style.height = '0px';
+          }
+        });
+
+        // After collapse animation, fully hide
+        setTimeout(() => {
+          setDismissed();
+          setIsDismissed(true);
+          setIsFullyHidden(true);
+        }, 400);
       }, 300);
     } else {
       setDismissed();
       setIsDismissed(true);
+      setIsFullyHidden(true);
     }
   };
 
-  // Don't show hero variant if dismissed
-  if (variant === 'hero' && isDismissed) {
+  // Don't show hero variant if fully hidden
+  if (variant === 'hero' && isFullyHidden) {
     return null;
   }
 
@@ -182,30 +205,43 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   if (user) {
     if (variant === 'hero') {
       return (
-        <div className="w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group">
-          <button
-            onClick={handleDismiss}
-            className="absolute right-4 top-4 rounded-sm opacity-50 sm:opacity-0 sm:group-hover:opacity-70 hover:!opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:opacity-100"
-            aria-label="Close"
+        <div
+          ref={wrapperRef}
+          className={`overflow-hidden transition-[height,margin,opacity] ease-out ${
+            isCollapsing ? 'opacity-0' : ''
+          }`}
+          style={{ transitionDuration: '400ms' }}
+        >
+          <div
+            ref={panelRef}
+            className={`w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group transition-all duration-300 ${
+              isAnimatingOut ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+            }`}
           >
-            <svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            <span className="sr-only">Close</span>
-          </button>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pr-6">
-            <div className="text-center sm:text-left">
-              <p className="text-green-400 font-medium flex items-center gap-2 justify-center sm:justify-start">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                You're subscribed!
-              </p>
-              <p className="text-slate-400 text-sm mt-1">
-                Invite a fellow developer
-              </p>
+            <button
+              onClick={handleDismiss}
+              className="absolute right-4 top-4 rounded-sm opacity-50 sm:opacity-0 sm:group-hover:opacity-70 hover:!opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:opacity-100"
+              aria-label="Close"
+            >
+              <svg className="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span className="sr-only">Close</span>
+            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pr-6">
+              <div className="text-center sm:text-left">
+                <p className="text-green-400 font-medium flex items-center gap-2 justify-center sm:justify-start">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  You're subscribed!
+                </p>
+                <p className="text-slate-400 text-sm mt-1">
+                  Invite a fellow developer
+                </p>
+              </div>
+              <InviteButtons />
             </div>
-            <InviteButtons />
           </div>
         </div>
       );
@@ -228,11 +264,18 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   if (variant === 'hero') {
     return (
       <div
-        ref={panelRef}
-        className={`w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group transition-all duration-300 ${
-          isAnimatingOut ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+        ref={wrapperRef}
+        className={`overflow-hidden transition-[height,margin,opacity] duration-400 ease-out ${
+          isCollapsing ? 'opacity-0' : ''
         }`}
+        style={{ transitionDuration: '400ms' }}
       >
+        <div
+          ref={panelRef}
+          className={`w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group transition-all duration-300 ${
+            isAnimatingOut ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+          }`}
+        >
         <button
           onClick={handleDismiss}
           className="absolute right-4 top-4 rounded-sm opacity-50 sm:opacity-0 sm:group-hover:opacity-70 hover:!opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:opacity-100"
@@ -260,6 +303,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
           <p className="text-slate-500 text-xs mt-3">
             Also unlocks full release history
           </p>
+        </div>
         </div>
       </div>
     );
