@@ -141,7 +141,6 @@ interface NewsletterSignupProps {
 export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   const { user, login, loading } = useAuth();
   const { triggerFlyAnimation } = useNewsletterBell();
-  const [isDismissed, setIsDismissed] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [isCollapsing, setIsCollapsing] = useState(false);
   const [isFullyHidden, setIsFullyHidden] = useState(false);
@@ -150,7 +149,6 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
 
   useEffect(() => {
     const dismissed = getIsDismissed();
-    setIsDismissed(dismissed);
     setIsFullyHidden(dismissed);
   }, []);
 
@@ -185,13 +183,11 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
         // After collapse animation, fully hide
         setTimeout(() => {
           setDismissed();
-          setIsDismissed(true);
           setIsFullyHidden(true);
         }, 400);
       }, 300);
     } else {
       setDismissed();
-      setIsDismissed(true);
       setIsFullyHidden(true);
     }
   };
