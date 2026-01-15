@@ -32,7 +32,7 @@ export function Header({ lastUpdated }: HeaderProps) {
             </p>
           )}
         </div>
-        <div className="flex items-center gap-3 sm:mt-1 shrink-0">
+        <div className="flex items-center gap-3 sm:mt-1 shrink-0 w-full sm:w-auto justify-end">
           <HeaderBell />
           <ShareButtons />
         </div>
