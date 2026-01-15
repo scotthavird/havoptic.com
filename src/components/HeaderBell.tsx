@@ -39,7 +39,7 @@ export function HeaderBell() {
     setIsRinging(true);
     setTimeout(() => {
       setIsRinging(false);
-      login();
+      login({ subscribe: true });
     }, 500);
   };
 
