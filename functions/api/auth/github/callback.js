@@ -11,6 +11,7 @@ import {
   createSessionCookie,
   SESSION_DURATION_MS,
   isProduction,
+  autoSubscribeToNewsletter,
 } from '../_utils.js';
 
 /**
@@ -124,6 +125,14 @@ export async function onRequestGet(context) {
       now,
       now
     ).run();
+
+    // Auto-subscribe to newsletter on every login (fire and forget)
+    // This ensures users who signed up before this feature also get subscribed
+    if (email && env.NEWSLETTER_BUCKET) {
+      autoSubscribeToNewsletter(env.NEWSLETTER_BUCKET, email).catch(() => {
+        // Silently ignore subscription errors - don't block login
+      });
+    }
 
     // Get the actual user ID (may be existing user)
     const user = await env.AUTH_DB.prepare(
