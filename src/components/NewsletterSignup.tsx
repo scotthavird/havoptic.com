@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useNewsletterBell } from '../context/NewsletterBellContext';
 import { trackShare } from '../utils/analytics';
 
 const DISMISSED_KEY = 'havoptic_signup_dismissed';
@@ -139,15 +140,37 @@ interface NewsletterSignupProps {
 
 export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   const { user, login, loading } = useAuth();
+  const { triggerFlyAnimation, showBellInHeader } = useNewsletterBell();
   const [isDismissed, setIsDismissed] = useState(false);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsDismissed(getIsDismissed());
   }, []);
 
   const handleDismiss = () => {
-    setDismissed();
-    setIsDismissed(true);
+    if (panelRef.current) {
+      // Get the center position of the panel for the animation start
+      const rect = panelRef.current.getBoundingClientRect();
+      const startPos = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+      };
+
+      // Start the shrink animation
+      setIsAnimatingOut(true);
+
+      // After panel shrinks, trigger the flying bell
+      setTimeout(() => {
+        triggerFlyAnimation(startPos);
+        setDismissed();
+        setIsDismissed(true);
+      }, 300);
+    } else {
+      setDismissed();
+      setIsDismissed(true);
+    }
   };
 
   // Don't show hero variant if dismissed
@@ -204,7 +227,12 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   // Show GitHub sign-in CTA for anonymous users
   if (variant === 'hero') {
     return (
-      <div className="w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group">
+      <div
+        ref={panelRef}
+        className={`w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative group transition-all duration-300 ${
+          isAnimatingOut ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+        }`}
+      >
         <button
           onClick={handleDismiss}
           className="absolute right-4 top-4 rounded-sm opacity-50 sm:opacity-0 sm:group-hover:opacity-70 hover:!opacity-100 transition-opacity focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-900 focus:opacity-100"
