@@ -140,7 +140,7 @@ interface NewsletterSignupProps {
 
 export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   const { user, login, loading } = useAuth();
-  const { triggerFlyAnimation, showBellInHeader } = useNewsletterBell();
+  const { triggerFlyAnimation } = useNewsletterBell();
   const [isDismissed, setIsDismissed] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
