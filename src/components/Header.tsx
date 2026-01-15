@@ -1,5 +1,4 @@
 import { ShareButtons } from './ShareButtons';
-import { LoginButton } from './LoginButton';
 import { HeaderBell } from './HeaderBell';
 
 interface HeaderProps {
@@ -34,7 +33,6 @@ export function Header({ lastUpdated }: HeaderProps) {
           )}
         </div>
         <div className="flex items-center gap-3 sm:mt-1 shrink-0">
-          <LoginButton />
           <HeaderBell />
           <ShareButtons />
         </div>
