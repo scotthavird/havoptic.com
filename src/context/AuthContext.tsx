@@ -1,8 +1,12 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import type { AuthState } from '../types/auth';
 
+interface LoginOptions {
+  subscribe?: boolean;
+}
+
 interface AuthContextValue extends AuthState {
-  login: () => void;
+  login: (options?: LoginOptions) => void;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -51,12 +55,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     refreshUser();
   }, [refreshUser]);
 
-  const login = useCallback(() => {
+  const login = useCallback((options?: LoginOptions) => {
     // Get current path for redirect after auth
     const currentPath = window.location.hash.slice(1) || '/';
     // Remove any query params from path
     const cleanPath = currentPath.split('?')[0];
-    window.location.href = `/api/auth/github?redirect=${encodeURIComponent(cleanPath)}`;
+    const subscribeParam = options?.subscribe ? '&subscribe=true' : '';
+    window.location.href = `/api/auth/github?redirect=${encodeURIComponent(cleanPath)}${subscribeParam}`;
   }, []);
 
   const logout = useCallback(async () => {

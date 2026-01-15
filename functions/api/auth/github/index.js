@@ -19,6 +19,9 @@ export async function onRequestGet(context) {
   // Get redirect URL from query param or default to home
   const redirectAfter = url.searchParams.get('redirect') || '/';
 
+  // Get subscribe flag (only subscribe to newsletter if explicitly requested)
+  const subscribe = url.searchParams.get('subscribe') === 'true' ? 'true' : 'false';
+
   // Store state and redirect in cookies (10 min expiry)
   const cookieOptions = 'Path=/; HttpOnly; SameSite=Lax; Max-Age=600';
 
@@ -36,6 +39,7 @@ export async function onRequestGet(context) {
       'Set-Cookie': [
         `oauth_state=${state}; ${cookieOptions}`,
         `oauth_redirect=${encodeURIComponent(redirectAfter)}; ${cookieOptions}`,
+        `oauth_subscribe=${subscribe}; ${cookieOptions}`,
       ].join(', '),
     },
   });

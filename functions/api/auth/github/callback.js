@@ -126,9 +126,9 @@ export async function onRequestGet(context) {
       now
     ).run();
 
-    // Auto-subscribe to newsletter on every login (fire and forget)
-    // This ensures users who signed up before this feature also get subscribed
-    if (email && env.NEWSLETTER_BUCKET) {
+    // Only subscribe to newsletter if explicitly requested via subscribe parameter
+    const shouldSubscribe = parseCookie(cookies, 'oauth_subscribe') === 'true';
+    if (shouldSubscribe && email && env.NEWSLETTER_BUCKET) {
       autoSubscribeToNewsletter(env.NEWSLETTER_BUCKET, email).catch(() => {
         // Silently ignore subscription errors - don't block login
       });

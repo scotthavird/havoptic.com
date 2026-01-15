@@ -40,7 +40,7 @@ export function LoginButton({ variant = 'header', className = '' }: LoginButtonP
   if (variant === 'cta') {
     return (
       <button
-        onClick={login}
+        onClick={() => login()}
         className={`inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-lg text-white font-medium transition-colors ${className}`}
       >
         <GitHubIcon className="w-5 h-5" />
@@ -51,7 +51,7 @@ export function LoginButton({ variant = 'header', className = '' }: LoginButtonP
 
   return (
     <button
-      onClick={login}
+      onClick={() => login()}
       className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs sm:text-sm text-white transition-colors ${className}`}
     >
       <GitHubIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />

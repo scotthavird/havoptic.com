@@ -287,7 +287,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
             Get notified when your favorite AI tools ship new releases
           </p>
           <button
-            onClick={login}
+            onClick={() => login({ subscribe: true })}
             disabled={loading}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
@@ -312,7 +312,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
         Get notified when your favorite AI tools ship new releases
       </p>
       <button
-        onClick={login}
+        onClick={() => login({ subscribe: true })}
         disabled={loading}
         className="inline-flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
