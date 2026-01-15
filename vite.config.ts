@@ -7,4 +7,13 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://havoptic.com',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 })
