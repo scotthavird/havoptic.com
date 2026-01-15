@@ -79,3 +79,70 @@ export function isProduction(request) {
   const url = new URL(request.url);
   return url.hostname === 'havoptic.com' || url.hostname === 'www.havoptic.com';
 }
+
+/**
+ * Auto-subscribe user to newsletter on GitHub login
+ * Fire and forget - don't block login on subscription failure
+ */
+export async function autoSubscribeToNewsletter(bucket, email) {
+  if (!email || !bucket) return;
+
+  try {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    // Read existing subscribers
+    let subscribers = [];
+    try {
+      const existing = await bucket.get('subscribers.json');
+      if (existing) {
+        const text = await existing.text();
+        subscribers = JSON.parse(text);
+      }
+    } catch {
+      subscribers = [];
+    }
+
+    // Check if already subscribed
+    const isAlreadySubscribed = subscribers.some(
+      s => s.email.toLowerCase() === normalizedEmail
+    );
+    if (isAlreadySubscribed) return;
+
+    // Add new subscriber
+    subscribers.push({
+      email: normalizedEmail,
+      subscribedAt: new Date().toISOString(),
+      source: 'github',
+    });
+
+    // Save back to R2
+    await bucket.put('subscribers.json', JSON.stringify(subscribers, null, 2), {
+      httpMetadata: { contentType: 'application/json' },
+    });
+
+    // Log to audit trail
+    try {
+      let audit = [];
+      const existingAudit = await bucket.get('newsletter-audit.json');
+      if (existingAudit) {
+        audit = JSON.parse(await existingAudit.text());
+      }
+      audit.push({
+        action: 'subscribe',
+        email: normalizedEmail,
+        timestamp: new Date().toISOString(),
+        source: 'github',
+      });
+      await bucket.put('newsletter-audit.json', JSON.stringify(audit, null, 2), {
+        httpMetadata: { contentType: 'application/json' },
+      });
+    } catch {
+      // Audit logging is non-critical
+    }
+
+    console.log(`Auto-subscribed ${normalizedEmail} via GitHub login`);
+  } catch (error) {
+    console.error('Error auto-subscribing to newsletter:', error);
+    // Don't throw - subscription failure shouldn't block login
+  }
+}
