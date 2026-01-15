@@ -36,7 +36,7 @@ export function Header({ lastUpdated }: HeaderProps) {
         </div>
         {/* On mobile: buttons start left-aligned, slide right when bell appears */}
         {/* On desktop (sm+): always right-aligned */}
-        <div className={`flex items-center gap-3 sm:mt-1 shrink-0 transition-all duration-500 ease-out ${
+        <div className={`flex items-center gap-3 sm:mt-1 shrink-0 w-full sm:w-auto transition-all duration-500 ease-out ${
           showBellInHeader ? 'justify-end' : 'justify-start sm:justify-end'
         }`}>
           <HeaderBell />
