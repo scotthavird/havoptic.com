@@ -9,8 +9,8 @@ const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
 const DEFAULT_OUTPUT_DIR = path.join(__dirname, '..', 'generated-prompts');
 const PUBLIC_IMAGES_DIR = path.join(__dirname, '..', 'public', 'images', 'infographics');
 
-// Gemini 2.5 Flash Image model (recommended stable model for image generation)
-const GEMINI_IMAGE_MODEL = 'gemini-2.5-flash-image';
+// Nano Banana Pro (Gemini 3 Pro Image) - premium model for high-quality infographics
+const GEMINI_IMAGE_MODEL = 'gemini-3-pro-image-preview';
 
 // Tool configurations for infographic styling
 const TOOL_CONFIGS = {
@@ -292,7 +292,7 @@ async function saveReleasesData(data) {
 }
 
 // Generate image using Nano Banana Pro (Gemini)
-async function generateImage(prompt, outputPath) {
+async function generateImage(prompt, outputPath, format = '1:1') {
   const apiKey = process.env.GOOGLE_API_KEY;
   if (!apiKey) {
     throw new Error('GOOGLE_API_KEY environment variable is required for image generation');
@@ -300,13 +300,17 @@ async function generateImage(prompt, outputPath) {
 
   const ai = new GoogleGenAI({ apiKey });
 
-  console.log('Generating image with Gemini 2.5 Flash Image...');
+  console.log('Generating image with Nano Banana Pro...');
 
   const response = await ai.models.generateContent({
     model: GEMINI_IMAGE_MODEL,
     contents: prompt,
     config: {
-      responseModalities: ['text', 'image'],
+      responseModalities: ['TEXT', 'IMAGE'],
+      imageConfig: {
+        aspectRatio: format,
+        imageSize: '2K',
+      },
     },
   });
 
@@ -438,7 +442,7 @@ async function main() {
     if (options.generateImage) {
       const imagePath = path.join(outputDir, `${baseFilename}-${formatSuffix}.png`);
       try {
-        const generatedPath = await generateImage(prompt, imagePath);
+        const generatedPath = await generateImage(prompt, imagePath, format);
 
         // If --update-releases is set, save to public folder
         // Save both 1:1 (for display) and 16:9 (for OG images)
