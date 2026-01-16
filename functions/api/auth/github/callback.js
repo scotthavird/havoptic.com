@@ -126,14 +126,6 @@ export async function onRequestGet(context) {
       now
     ).run();
 
-    // Only subscribe to newsletter if explicitly requested via subscribe parameter
-    const shouldSubscribe = parseCookie(cookies, 'oauth_subscribe') === 'true';
-    if (shouldSubscribe && email && env.NEWSLETTER_BUCKET) {
-      autoSubscribeToNewsletter(env.NEWSLETTER_BUCKET, email).catch(() => {
-        // Silently ignore subscription errors - don't block login
-      });
-    }
-
     // Get the actual user ID (may be existing user)
     const user = await env.AUTH_DB.prepare(
       'SELECT id FROM users WHERE github_id = ?'
@@ -141,6 +133,14 @@ export async function onRequestGet(context) {
 
     if (!user) {
       return redirectWithError(url.origin, 'Failed to create user account');
+    }
+
+    // Subscribe to newsletter if explicitly requested via subscribe parameter
+    const shouldSubscribe = parseCookie(cookies, 'oauth_subscribe') === 'true';
+    if (shouldSubscribe && email) {
+      autoSubscribeToNewsletter(env.AUTH_DB, email, user.id).catch(() => {
+        // Silently ignore subscription errors - don't block login
+      });
     }
 
     // Create session

@@ -8,6 +8,7 @@
 import {
   parseSessionCookie,
   getUserFromSession,
+  checkIsSubscribed,
   corsHeaders,
 } from './_utils.js';
 
@@ -21,7 +22,15 @@ export async function onRequestGet(context) {
     const token = parseSessionCookie(request.headers.get('Cookie'));
     const user = await getUserFromSession(env.AUTH_DB, token);
 
-    return new Response(JSON.stringify({ user }), {
+    if (user) {
+      // Check if user is subscribed to newsletter
+      const isSubscribed = await checkIsSubscribed(env.AUTH_DB, user.email);
+      return new Response(JSON.stringify({ user: { ...user, isSubscribed } }), {
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      });
+    }
+
+    return new Response(JSON.stringify({ user: null }), {
       headers: { 'Content-Type': 'application/json', ...corsHeaders },
     });
   } catch (error) {
