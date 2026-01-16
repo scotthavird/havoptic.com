@@ -32,3 +32,15 @@ body {
     padding: 2rem;
   }
 }
+
+/* Image zoom modal utilities */
+.zoom-modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Prevent text selection during zoom/pan */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
