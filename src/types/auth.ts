@@ -9,6 +9,7 @@ export interface User {
   github_avatar_url: string | null;
   email: string | null;
   created_at: string;
+  isSubscribed: boolean;
 }
 
 export interface AuthState {

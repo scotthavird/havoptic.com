@@ -81,61 +81,64 @@ export function isProduction(request) {
 }
 
 /**
+ * Check if email is subscribed to newsletter
+ */
+export async function checkIsSubscribed(db, email) {
+  if (!email || !db) return false;
+
+  try {
+    const normalizedEmail = email.trim().toLowerCase();
+    const result = await db.prepare(
+      'SELECT id FROM subscribers WHERE email = ?'
+    ).bind(normalizedEmail).first();
+    return !!result;
+  } catch (error) {
+    console.error('Error checking subscription status:', error);
+    return false;
+  }
+}
+
+/**
  * Auto-subscribe user to newsletter on GitHub login
  * Fire and forget - don't block login on subscription failure
  */
-export async function autoSubscribeToNewsletter(bucket, email) {
-  if (!email || !bucket) return;
+export async function autoSubscribeToNewsletter(db, email, userId = null) {
+  if (!email || !db) return;
 
   try {
     const normalizedEmail = email.trim().toLowerCase();
 
-    // Read existing subscribers
-    let subscribers = [];
-    try {
-      const existing = await bucket.get('subscribers.json');
-      if (existing) {
-        const text = await existing.text();
-        subscribers = JSON.parse(text);
+    // Check if already subscribed
+    const existing = await db.prepare(
+      'SELECT id, user_id FROM subscribers WHERE email = ?'
+    ).bind(normalizedEmail).first();
+
+    if (existing) {
+      // If subscribed but not linked to user, link them now
+      if (userId && !existing.user_id) {
+        await db.prepare(
+          'UPDATE subscribers SET user_id = ? WHERE id = ?'
+        ).bind(userId, existing.id).run();
+        console.log(`Linked existing subscriber ${normalizedEmail} to user ${userId}`);
       }
-    } catch {
-      subscribers = [];
+      return;
     }
 
-    // Check if already subscribed
-    const isAlreadySubscribed = subscribers.some(
-      s => s.email.toLowerCase() === normalizedEmail
-    );
-    if (isAlreadySubscribed) return;
-
     // Add new subscriber
-    subscribers.push({
-      email: normalizedEmail,
-      subscribedAt: new Date().toISOString(),
-      source: 'github',
-    });
+    const subscriberId = crypto.randomUUID();
+    const subscribedAt = new Date().toISOString();
 
-    // Save back to R2
-    await bucket.put('subscribers.json', JSON.stringify(subscribers, null, 2), {
-      httpMetadata: { contentType: 'application/json' },
-    });
+    await db.prepare(`
+      INSERT INTO subscribers (id, email, subscribed_at, source, user_id)
+      VALUES (?, ?, ?, 'github', ?)
+    `).bind(subscriberId, normalizedEmail, subscribedAt, userId).run();
 
     // Log to audit trail
     try {
-      let audit = [];
-      const existingAudit = await bucket.get('newsletter-audit.json');
-      if (existingAudit) {
-        audit = JSON.parse(await existingAudit.text());
-      }
-      audit.push({
-        action: 'subscribe',
-        email: normalizedEmail,
-        timestamp: new Date().toISOString(),
-        source: 'github',
-      });
-      await bucket.put('newsletter-audit.json', JSON.stringify(audit, null, 2), {
-        httpMetadata: { contentType: 'application/json' },
-      });
+      await db.prepare(`
+        INSERT INTO newsletter_audit (action, email, timestamp, source)
+        VALUES ('subscribe', ?, ?, 'github')
+      `).bind(normalizedEmail, subscribedAt).run();
     } catch {
       // Audit logging is non-critical
     }
