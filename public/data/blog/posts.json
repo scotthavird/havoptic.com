@@ -1,4 +1,47 @@
 {
-  "lastUpdated": null,
-  "posts": []
+  "lastUpdated": "2026-01-16T00:00:00.000Z",
+  "posts": [
+    {
+      "id": "claude-code-vs-openai-codex-2026",
+      "type": "monthly-comparison",
+      "title": "Claude Code vs OpenAI Codex CLI: Which AI Coding Assistant Should You Use in 2026?",
+      "slug": "claude-code-vs-openai-codex-2026",
+      "publishedAt": "2026-01-16T00:00:00.000Z",
+      "summary": "A comprehensive comparison of Anthropic's Claude Code and OpenAI's Codex CLI - the two leading terminal-based AI coding assistants. We analyze features, release velocity, and help you decide which tool fits your workflow.",
+      "content": "Both Claude Code and OpenAI Codex CLI represent the cutting edge of AI-powered coding assistance. These terminal-based tools from two of the world's leading AI labs are transforming how developers write, debug, and ship code. But which one should you choose?\n\n## At a Glance\n\n| Feature | Claude Code | OpenAI Codex CLI |\n|---------|-------------|------------------|\n| Company | Anthropic | OpenAI |\n| Model | Claude Opus 4.5 | GPT-5.2 Codex |\n| Install | npm (Node.js) | Binary (Rust) |\n| Open Source | No | Yes |\n| IDE Integration | VSCode, JetBrains | VSCode |\n\n## Key Differentiators\n\n### Claude Code Strengths\n\n**Native Skill System with Hot-Reload**: Claude Code's skill system allows you to create custom commands and workflows that automatically reload when modified. No restart required.\n\n**Plan Mode**: A structured approach to complex tasks where Claude analyzes requirements, proposes a plan, and waits for approval before executing. Perfect for large refactors.\n\n**MCP Integration**: First-class support for Model Context Protocol, enabling seamless connections to databases, APIs, and external tools.\n\n**Multi-Model Support**: Switch between models within the same session using the /model command.\n\n### OpenAI Codex CLI Strengths\n\n**Multi-Agent Collaboration**: The \"agent control\" feature lets a session spawn or message other conversations programmatically - enabling complex multi-step workflows.\n\n**Elevated Sandbox**: Fine-grained permission controls with the /elevate-sandbox command for secure code execution.\n\n**Thread Forking and Rollback**: Branch conversations and undo the last N turns without losing context - a lifesaver when exploring different approaches.\n\n**Web Search Integration**: Built-in web search (cached or live) for up-to-date documentation and solutions.\n\n## Recent Release Velocity\n\nBoth tools are shipping at an impressive pace:\n\n- **Claude Code**: 10 releases in the past two weeks (v2.1.0 through v2.1.9)\n- **OpenAI Codex**: 7 releases in the past two weeks (v0.79.0 through v0.86.0)\n\nThis rapid iteration shows both teams are actively responding to user feedback and pushing new features.\n\n## Notable Features from January 2026\n\n### Claude Code Highlights\n\n1. **Automatic Skill Hot-Reload** (v2.1.0): Skills in ~/.claude/skills update instantly without restarting\n2. **MCP Tool Search Threshold** (v2.1.9): Configure auto-enable with auto:N syntax\n3. **Permission Rule Warnings** (v2.1.3): Detect unreachable rules with /doctor diagnostics\n4. **Background Task Improvements** (v2.1.4): Better control over auto-backgrounding\n\n### OpenAI Codex Highlights\n\n1. **SKILL.toml Metadata** (v0.86.0): Define skill names, icons, and brand colors\n2. **Multi-Conversation Agent Control** (v0.79.0): Programmatic conversation spawning\n3. **Thread Fork/Rollback** (v0.79.0): Branch and undo conversation turns\n4. **Elevated Sandbox NUX** (v0.80.0): Guided setup for secure sandbox permissions\n\n## Who Should Use Which?\n\n### Choose Claude Code if you:\n\n- Prefer npm-based installation and Node.js ecosystem\n- Want structured planning mode for complex refactoring\n- Use MCP integrations with databases or external tools\n- Value a polished, guided experience\n\n### Choose OpenAI Codex if you:\n\n- Want open-source code you can inspect and contribute to\n- Need multi-agent collaboration for complex workflows\n- Require granular sandbox controls for security\n- Value thread forking for exploring multiple approaches\n\n## The Bottom Line\n\nBoth Claude Code and OpenAI Codex CLI are excellent choices that will dramatically improve your coding workflow. The \"best\" tool depends on your specific needs:\n\n- For **structure and polish**, lean toward Claude Code\n- For **flexibility and control**, lean toward Codex CLI\n\nThe good news? Both are actively developed, well-documented, and improving weekly. Try both and see which fits your style.",
+      "tools": ["claude-code", "openai-codex"],
+      "metrics": {
+        "totalReleases": 17,
+        "releasesByTool": {
+          "claude-code": 10,
+          "openai-codex": 7,
+          "cursor": 0,
+          "gemini-cli": 0,
+          "kiro": 0
+        },
+        "topFeatures": [
+          { "tool": "claude-code", "feature": "Skill Hot-Reload", "description": "Skills automatically update without restart" },
+          { "tool": "claude-code", "feature": "MCP Threshold Config", "description": "auto:N syntax for tool search configuration" },
+          { "tool": "openai-codex", "feature": "SKILL.toml Metadata", "description": "Define skill names, icons, and brand colors" },
+          { "tool": "openai-codex", "feature": "Agent Control", "description": "Multi-conversation programmatic collaboration" },
+          { "tool": "openai-codex", "feature": "Thread Rollback", "description": "Undo the last N conversation turns" },
+          { "tool": "claude-code", "feature": "Plan Mode", "description": "Structured task planning and approval workflow" }
+        ],
+        "velocityChange": 25
+      },
+      "seo": {
+        "keywords": [
+          "claude code vs codex",
+          "openai codex cli",
+          "ai coding assistant comparison",
+          "anthropic claude code",
+          "best ai coding tool 2026",
+          "terminal ai assistant",
+          "claude code review",
+          "codex cli review"
+        ],
+        "canonicalUrl": "https://havoptic.com/#/blog/claude-code-vs-openai-codex-2026"
+      }
+    }
+  ]
 }
