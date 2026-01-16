@@ -72,12 +72,11 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Run D1 Database Migrations (Dev)
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: d1 execute havoptic-dev-auth --remote --file=scripts/db-migrations/001-auth-tables.sql
+      - name: Run D1 Database Migrations
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/run-migrations.mjs havoptic-dev-auth
         continue-on-error: true # Don't fail if DB doesn't exist yet (first Terraform apply pending)
 
       - name: Deploy to Cloudflare Pages (Preview)
