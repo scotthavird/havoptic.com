@@ -16,6 +16,7 @@ import {
   getSubscriberCount,
   sendEmail,
 } from './_newsletter-utils.js';
+import { parseSessionCookie, getUserFromSession } from './auth/_utils.js';
 
 // Admin notification email (set via environment variable)
 const getAdminEmail = (env) => env.ADMIN_EMAIL || null;
@@ -259,9 +260,26 @@ export async function onRequestPost(context) {
       );
     }
 
+    // Check if user is logged in (to link subscription to their account)
+    const cookieHeader = request.headers.get('Cookie');
+    const sessionToken = parseSessionCookie(cookieHeader);
+    let userId = null;
+    if (sessionToken) {
+      const user = await getUserFromSession(env.AUTH_DB, sessionToken);
+      if (user) {
+        userId = user.id;
+      }
+    }
+
     // Check if already subscribed
     const existingSubscriber = await getSubscriber(env.AUTH_DB, normalizedEmail);
     if (existingSubscriber) {
+      // If logged in and subscription isn't linked, link it now
+      if (userId && !existingSubscriber.user_id) {
+        await env.AUTH_DB.prepare(
+          'UPDATE subscribers SET user_id = ? WHERE id = ?'
+        ).bind(userId, existingSubscriber.id).run();
+      }
       return new Response(
         JSON.stringify({ message: 'Already subscribed', alreadySubscribed: true }),
         { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
@@ -273,9 +291,9 @@ export async function onRequestPost(context) {
     const subscribedAt = new Date().toISOString();
 
     await env.AUTH_DB.prepare(`
-      INSERT INTO subscribers (id, email, subscribed_at, source)
-      VALUES (?, ?, ?, 'website')
-    `).bind(subscriberId, normalizedEmail, subscribedAt).run();
+      INSERT INTO subscribers (id, email, subscribed_at, source, user_id)
+      VALUES (?, ?, ?, 'website', ?)
+    `).bind(subscriberId, normalizedEmail, subscribedAt, userId).run();
 
     // Log to audit trail
     await logAuditEvent(env.AUTH_DB, {
