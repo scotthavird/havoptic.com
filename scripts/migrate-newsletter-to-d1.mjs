@@ -79,9 +79,8 @@ console.log('-- Generated at:', new Date().toISOString());
 console.log('');
 
 // Migrate subscribers
+// Note: D1 auto-wraps each --file execution in a transaction, so we don't use BEGIN/COMMIT
 console.log('-- Subscribers');
-console.log('BEGIN TRANSACTION;');
-console.log('');
 
 for (const subscriber of subscribers) {
   const id = randomUUID();
@@ -91,17 +90,12 @@ for (const subscriber of subscribers) {
 
   console.log(`INSERT OR IGNORE INTO subscribers (id, email, subscribed_at, source, created_at)`);
   console.log(`VALUES (${escapeSql(id)}, ${escapeSql(email)}, ${escapeSql(subscribedAt)}, ${escapeSql(source)}, ${escapeSql(subscribedAt)});`);
-  console.log('');
 }
-
-console.log('COMMIT;');
 console.log('');
 
 // Migrate audit log
 if (auditLog.length > 0) {
   console.log('-- Audit Log');
-  console.log('BEGIN TRANSACTION;');
-  console.log('');
 
   for (const entry of auditLog) {
     const action = entry.action;
@@ -112,10 +106,7 @@ if (auditLog.length > 0) {
 
     console.log(`INSERT INTO newsletter_audit (action, email, timestamp, source, original_subscribed_at)`);
     console.log(`VALUES (${escapeSql(action)}, ${escapeSql(email)}, ${escapeSql(timestamp)}, ${escapeSql(source)}, ${escapeSql(originalSubscribedAt)});`);
-    console.log('');
   }
-
-  console.log('COMMIT;');
   console.log('');
 }
 
