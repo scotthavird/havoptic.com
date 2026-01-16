@@ -79,9 +79,11 @@ jobs:
         run: node scripts/run-migrations.mjs havoptic-dev-auth
         continue-on-error: true # Don't fail if DB doesn't exist yet (first Terraform apply pending)
 
-      - name: Deploy to Cloudflare Pages (Preview)
+      - name: Deploy to Cloudflare Pages (Dev)
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=havoptic-dev-web
+          # Deploy with --branch=main so PR builds appear at dev.havoptic.com
+          # (not just preview URLs) for testing before merge
+          command: pages deploy dist --project-name=havoptic-dev-web --branch=main
