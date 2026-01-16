@@ -10,7 +10,9 @@
       "summary": "New Features - Skill metadata can now be defined in SKILL.toml (names, descriptions, icons, brand color, default prompt) and surfaced in the app server and TUI (9125) - Clients can explicitly disab...",
       "fullNotes": "New Features - Skill metadata can now be defined in SKILL.toml (names, descriptions, icons, brand color, default prompt) and surfaced in the app server and TUI (9125) - Clients can explicitly disable web search and signal eligibility via a header to align with server-side rollout controls (9249) Bug Fixes - Accepting an MCP elicitation now sends an empty JSON payload instead of null to satisfy servers expecting content (9196) - Input prompt placeholder styling is back to non-italic to avoid terminal rendering issues (9307) - Empty paste events no longer trigger clipboard image reads (9318) - Unified exec cleans up background processes to prevent late End events after listeners stop (9304) Chores - Refresh the orchestrator prompt to improve internal routing behavior (9301) - Reduce noisy needsfollowup error logging (9272) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.85.0...rust-v0.86.0 - 9301 chore: better orchestrator prompt @jif-oai - 9304 nit: clean unified exec background processes @jif-oai - 9307 Revert recent styling change for input prompt placeholder text @etraut-openai - 9125 Support SKILL.toml file. @xl-openai - 9249 [search] allow explicitly disabling web search @sayan-oai - 9272 remove needsfollowup error log @pap-openai - 9318 Revert empty paste image handling @aibrahim-oai - 9196 fix: send non-null content on elicitation Accept @yuvrajangadsingh",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.86.0",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/openai-codex-rust-v0.86.0-2026-01-16-1x1.png",
+      "infographicUrl16x9": "/images/infographics/openai-codex-rust-v0.86.0-2026-01-16-16x9.png"
     },
     {
       "id": "claude-code-2.1.9",
@@ -21,7 +23,9 @@
       "summary": "- Added auto:N syntax for configuring the MCP tool search auto-enable threshold, where N is the context window percentage (0-100) - Added plansDirectory setting to customi",
       "fullNotes": "- Added auto:N syntax for configuring the MCP tool search auto-enable threshold, where N is the context window percentage (0-100) - Added plansDirectory setting to customi",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.9-2026-01-16-1x1.png",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.9-2026-01-16-16x9.png"
     },
     {
       "id": "openai-codex-rust-v0.85.0",
