@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { TOOL_CONFIG, type Release } from '../types/release';
 import { trackReleaseClick } from '../utils/analytics';
 import { ReleaseShareButtons } from './ReleaseShareButtons';
+import { ImageZoomModal } from './ImageZoomModal';
 
 interface ReleaseCardProps {
   release: Release;
@@ -9,7 +10,22 @@ interface ReleaseCardProps {
 
 export function ReleaseCard({ release }: ReleaseCardProps) {
   const [showInfographic, setShowInfographic] = useState(!!release.infographicUrl);
+  const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
+  const lastTapTime = useRef<number>(0);
   const config = TOOL_CONFIG[release.tool];
+
+  // Double-tap/double-click detection
+  const handleImageInteraction = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    const now = Date.now();
+    const timeDiff = now - lastTapTime.current;
+
+    if (timeDiff < 300 && timeDiff > 0) {
+      // Double tap/click detected - open zoom modal
+      e.preventDefault();
+      setIsZoomModalOpen(true);
+    }
+    lastTapTime.current = now;
+  }, []);
   const formattedDate = new Date(release.date).toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -66,13 +82,46 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
 
           {showInfographic && (
             <div className="mt-2 rounded-lg overflow-hidden border border-slate-600">
-              <img
-                src={release.infographicUrl}
-                alt={`${config.displayName} v${release.version} release infographic`}
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <div
+                className="relative cursor-pointer group"
+                onClick={handleImageInteraction}
+                onTouchEnd={handleImageInteraction}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setIsZoomModalOpen(true);
+                  }
+                }}
+                aria-label="Double-tap or double-click to zoom image"
+              >
+                <img
+                  src={release.infographicUrl}
+                  alt={`${config.displayName} v${release.version} release infographic`}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+                {/* Zoom hint overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
+                  <span className="text-white text-xs bg-black/60 px-2 py-1 rounded hidden sm:block">
+                    Double-click to zoom
+                  </span>
+                  <span className="text-white text-xs bg-black/60 px-2 py-1 rounded sm:hidden">
+                    Double-tap to zoom
+                  </span>
+                </div>
+              </div>
             </div>
+          )}
+
+          {/* Zoom modal */}
+          {release.infographicUrl && (
+            <ImageZoomModal
+              src={release.infographicUrl}
+              alt={`${config.displayName} v${release.version} release infographic`}
+              isOpen={isZoomModalOpen}
+              onClose={() => setIsZoomModalOpen(false)}
+            />
           )}
         </div>
       )}
