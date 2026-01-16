@@ -1,0 +1,113 @@
+name: Migrate Newsletter Data (R2 → D1)
+
+# One-time data migration workflow
+# Run this once after deploying the D1 schema to migrate existing R2 subscribers
+# Safe to run multiple times - uses INSERT OR IGNORE
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to migrate'
+        required: true
+        default: 'prod'
+        type: choice
+        options:
+          - prod
+          - dev
+      dry_run:
+        description: 'Dry run (show SQL without executing)'
+        required: true
+        default: true
+        type: boolean
+
+jobs:
+  migrate:
+    name: Migrate Newsletter Data
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment == 'prod' && 'production' || 'development' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Set environment variables
+        run: |
+          if [ "${{ inputs.environment }}" = "prod" ]; then
+            echo "R2_BUCKET=havoptic-prod-newsletter" >> $GITHUB_ENV
+            echo "D1_DATABASE=havoptic-prod-auth" >> $GITHUB_ENV
+          else
+            echo "R2_BUCKET=havoptic-dev-newsletter" >> $GITHUB_ENV
+            echo "D1_DATABASE=havoptic-dev-auth" >> $GITHUB_ENV
+          fi
+
+      - name: Download subscribers from R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Downloading subscribers.json from R2..."
+          npx wrangler r2 object get ${{ env.R2_BUCKET }}/subscribers.json --file=/tmp/subscribers.json || echo "[]" > /tmp/subscribers.json
+          echo "Downloaded $(wc -l < /tmp/subscribers.json) bytes"
+
+      - name: Download audit log from R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Downloading newsletter-audit.json from R2..."
+          npx wrangler r2 object get ${{ env.R2_BUCKET }}/newsletter-audit.json --file=/tmp/newsletter-audit.json || echo "[]" > /tmp/newsletter-audit.json
+          echo "Downloaded $(wc -l < /tmp/newsletter-audit.json) bytes"
+
+      - name: Generate migration SQL
+        run: |
+          echo "Generating migration SQL..."
+          node scripts/migrate-newsletter-to-d1.mjs \
+            --subscribers=/tmp/subscribers.json \
+            --audit=/tmp/newsletter-audit.json > /tmp/migration.sql
+          echo "Generated SQL file:"
+          cat /tmp/migration.sql
+
+      - name: Execute migration (dry run)
+        if: ${{ inputs.dry_run }}
+        run: |
+          echo "=========================================="
+          echo "DRY RUN - Migration SQL (not executed):"
+          echo "=========================================="
+          cat /tmp/migration.sql
+          echo ""
+          echo "To execute, run this workflow again with dry_run=false"
+
+      - name: Execute migration
+        if: ${{ !inputs.dry_run }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Executing migration against ${{ env.D1_DATABASE }}..."
+          npx wrangler d1 execute ${{ env.D1_DATABASE }} --file=/tmp/migration.sql --remote
+          echo "Migration complete!"
+
+      - name: Verify migration
+        if: ${{ !inputs.dry_run }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Verifying migration..."
+          echo "Subscriber count:"
+          npx wrangler d1 execute ${{ env.D1_DATABASE }} --remote --command="SELECT COUNT(*) as count FROM subscribers;"
+          echo ""
+          echo "Audit log count:"
+          npx wrangler d1 execute ${{ env.D1_DATABASE }} --remote --command="SELECT COUNT(*) as count FROM newsletter_audit;"
