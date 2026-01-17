@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   generate-prompts:
@@ -62,6 +63,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate infographic prompts
+        id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -79,15 +81,33 @@ jobs:
             EXTRA_FLAGS="$EXTRA_FLAGS --generate-image --update-releases"
           fi
 
+          # Track failures for issue creation
+          FAILURES=""
+
           if [ "$TOOL" = "all" ]; then
             # Generate for all tools with releases
             for tool in claude-code kiro openai-codex gemini-cli cursor aider; do
               echo "Generating prompt for $tool..."
-              node scripts/generate-infographic-prompt.mjs --tool=$tool $EXTRA_FLAGS || echo "Skipping $tool (no releases found)"
+              if ! node scripts/generate-infographic-prompt.mjs --tool=$tool $EXTRA_FLAGS; then
+                echo "Failed: $tool"
+                FAILURES="$FAILURES $tool"
+              fi
             done
           else
             echo "Generating prompt for $TOOL..."
-            node scripts/generate-infographic-prompt.mjs --tool=$TOOL $EXTRA_FLAGS
+            if ! node scripts/generate-infographic-prompt.mjs --tool=$TOOL $EXTRA_FLAGS; then
+              FAILURES="$TOOL"
+            fi
+          fi
+
+          # Check for any failure reports created
+          FAILURE_COUNT=$(ls -1 generated-prompts/failure-*.json 2>/dev/null | wc -l || echo "0")
+          echo "failure_count=$FAILURE_COUNT" >> $GITHUB_OUTPUT
+
+          if [ "$FAILURE_COUNT" -gt 0 ]; then
+            echo "has_failures=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_failures=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Check for infographic changes
@@ -108,6 +128,57 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: add generated infographics for releases"
           git pull --rebase origin main
           git push
+
+      - name: Create GitHub issues for failures
+        if: steps.generate.outputs.has_failures == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for FAILURE_FILE in generated-prompts/failure-*.json; do
+            if [ -f "$FAILURE_FILE" ]; then
+              TOOL=$(jq -r '.tool' "$FAILURE_FILE")
+              VERSION=$(jq -r '.version' "$FAILURE_FILE")
+              REASON=$(jq -r '.reason' "$FAILURE_FILE")
+              TIMESTAMP=$(jq -r '.timestamp' "$FAILURE_FILE")
+              SOURCE_URL=$(jq -r '.sourceUrl // "N/A"' "$FAILURE_FILE")
+              CONTENT_LENGTH=$(jq -r '.fetchedContentLength // 0' "$FAILURE_FILE")
+              RETRY_ATTEMPTS=$(jq -r '.retryAttempts // 0' "$FAILURE_FILE")
+
+              # Check if issue already exists for this tool/version
+              EXISTING=$(gh issue list --label "auto-remediation" --search "$TOOL $VERSION in:title" --json number -q 'length')
+              if [ "$EXISTING" -gt 0 ]; then
+                echo "Issue already exists for $TOOL $VERSION, skipping..."
+                continue
+              fi
+
+              echo "Creating issue for $TOOL $VERSION..."
+              gh issue create \
+                --title "🔴 Infographic generation failed: $TOOL $VERSION" \
+                --label "bug,auto-remediation" \
+                --body "$(cat <<EOF
+          ## Failure Details
+          - **Tool:** $TOOL
+          - **Version:** $VERSION
+          - **Timestamp:** $TIMESTAMP
+          - **Reason:** $REASON
+          - **Source URL:** $SOURCE_URL
+          - **Content Length:** $CONTENT_LENGTH chars
+          - **Retry Attempts:** $RETRY_ATTEMPTS
+          - **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          ## Full Context
+          \`\`\`json
+          $(cat "$FAILURE_FILE")
+          \`\`\`
+
+          ## Next Steps
+          This issue will trigger the auto-remediation workflow to investigate and attempt a fix.
+
+          If auto-remediation fails after 2 attempts, manual investigation will be required.
+          EOF
+          )"
+            fi
+          done
 
       - name: Upload prompts as artifacts
         uses: actions/upload-artifact@v4
