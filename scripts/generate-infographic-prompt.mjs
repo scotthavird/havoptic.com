@@ -46,6 +46,112 @@ const TOOL_CONFIGS = {
   },
 };
 
+// Retry configuration
+const RETRY_CONFIG = {
+  maxAttempts: 3,
+  baseDelayMs: 1000,
+};
+
+// Error patterns that indicate Claude returned an error message as a feature
+const ERROR_PATTERNS = [
+  /unable to extract/i,
+  /not available/i,
+  /could not find/i,
+  /no .* found/i,
+  /content not available/i,
+  /release notes content/i,
+  /cannot extract/i,
+  /insufficient .* content/i,
+];
+
+// Validate that extracted features are actual features, not error messages
+function validateFeatures(features) {
+  if (!features || !features.features || !Array.isArray(features.features)) {
+    return { valid: false, reason: 'Invalid features structure: missing features array' };
+  }
+
+  if (features.features.length === 0) {
+    return { valid: false, reason: 'No features extracted' };
+  }
+
+  for (const feature of features.features) {
+    if (!feature.name || !feature.description) {
+      return { valid: false, reason: `Feature missing name or description: ${JSON.stringify(feature)}` };
+    }
+
+    const text = `${feature.name} ${feature.description}`;
+
+    // Check for error patterns
+    for (const pattern of ERROR_PATTERNS) {
+      if (pattern.test(text)) {
+        return { valid: false, reason: `Feature contains error pattern: "${text}"` };
+      }
+    }
+
+    // Check for minimum meaningful content
+    if (feature.name.length < 3 || feature.description.length < 5) {
+      return { valid: false, reason: `Feature has insufficient content: name="${feature.name}", desc="${feature.description}"` };
+    }
+  }
+
+  return { valid: true };
+}
+
+// Retry wrapper with exponential backoff
+async function withRetry(fn, options = {}) {
+  const { maxAttempts = RETRY_CONFIG.maxAttempts, baseDelayMs = RETRY_CONFIG.baseDelayMs, name = 'operation' } = options;
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const result = await fn(attempt);
+      return result;
+    } catch (err) {
+      lastError = err;
+      console.log(`  ${name} attempt ${attempt}/${maxAttempts} failed: ${err.message}`);
+
+      if (attempt < maxAttempts) {
+        const delay = baseDelayMs * Math.pow(2, attempt - 1);
+        console.log(`  Retrying in ${delay}ms...`);
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+    }
+  }
+
+  throw new Error(`${name} failed after ${maxAttempts} attempts: ${lastError.message}`);
+}
+
+// Write failure report for downstream processing (GitHub issue creation)
+async function writeFailureReport(outputDir, tool, version, reason, context) {
+  const report = {
+    timestamp: new Date().toISOString(),
+    tool,
+    version,
+    reason,
+    releaseData: context.release
+      ? {
+          id: context.release.id,
+          tool: context.release.tool,
+          version: context.release.version,
+          date: context.release.date,
+          summary: context.release.summary,
+          url: context.release.url,
+        }
+      : null,
+    fetchedContentLength: context.enrichedNotes?.length || 0,
+    extractedFeatures: context.features || null,
+    sourceUrl: context.release?.url || null,
+    retryAttempts: context.retryAttempts || 0,
+  };
+
+  await fs.mkdir(outputDir, { recursive: true });
+  const filename = `failure-${tool}-${version}-${Date.now()}.json`;
+  const filepath = path.join(outputDir, filename);
+  await fs.writeFile(filepath, JSON.stringify(report, null, 2));
+  console.log(`\n📋 Failure report written: ${filepath}`);
+  return filename;
+}
+
 // Parse CLI arguments
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -140,44 +246,59 @@ function formatReleaseDate(dateStr) {
 }
 
 // Fetch full release notes from URL using Claude
-async function fetchReleaseNotes(client, url) {
-  console.log(`Fetching release notes from: ${url}`);
+async function fetchReleaseNotes(client, url, version = null) {
+  console.log(`Fetching release notes from: ${url}${version ? ` for version ${version}` : ''}`);
 
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      },
-    });
+  const res = await fetch(url, {
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    },
+  });
 
-    if (!res.ok) {
-      console.log(`  Failed to fetch URL: ${res.status}`);
-      return null;
-    }
-
-    const html = await res.text();
-
-    // Use Claude to extract the release notes from the HTML
-    const response = await client.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 2048,
-      messages: [
-        {
-          role: 'user',
-          content: `Extract the release notes content from this HTML page. Return only the features, changes, and improvements mentioned. Be comprehensive but concise. If this is a patch/bugfix release with minimal changes, say so clearly.\n\nHTML:\n${html.slice(0, 50000)}`,
-        },
-      ],
-    });
-
-    const notes = response.content[0].text;
-    console.log(`  Fetched ${notes.length} characters of release notes`);
-    return notes;
-  } catch (err) {
-    console.log(`  Error fetching release notes: ${err.message}`);
-    return null;
+  if (!res.ok) {
+    throw new Error(`Failed to fetch URL: ${res.status}`);
   }
+
+  const html = await res.text();
+
+  // Build version-specific prompt if version is provided
+  const versionContext = version
+    ? `I need the release notes specifically for version ${version}. Look for a section header like "## ${version}" or similar versioning format.`
+    : '';
+
+  // Use Claude to extract the release notes from the HTML
+  const response = await client.messages.create({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 2048,
+    messages: [
+      {
+        role: 'user',
+        content: `Extract the release notes content from this HTML page. ${versionContext}
+
+Return only the features, changes, and improvements mentioned. Be comprehensive but concise.
+
+IMPORTANT:
+- If the page is a changelog with multiple versions, extract ONLY the content for ${version ? `version ${version}` : 'the most recent version'}.
+- If you cannot find release notes for the specified version, respond with: "VERSION_NOT_FOUND: Could not locate release notes for version ${version || 'specified'}"
+- If this is a patch/bugfix release with minimal changes, list the specific fixes.
+
+HTML:
+${html.slice(0, 50000)}`,
+      },
+    ],
+  });
+
+  const notes = response.content[0].text;
+
+  // Check if Claude couldn't find the version
+  if (notes.includes('VERSION_NOT_FOUND')) {
+    throw new Error(`Could not find release notes for version ${version} in the HTML content`);
+  }
+
+  console.log(`  Fetched ${notes.length} characters of release notes`);
+  return notes;
 }
 
 // Extract features using Claude SDK
@@ -418,6 +539,7 @@ async function main() {
   // Fetch enriched release notes if content is sparse
   let enrichedNotes = null;
   let sourceOrigin = 'fullNotes'; // Track where content came from: 'fullNotes' | 'fetched' | 'stored'
+  let fetchRetryAttempts = 0;
 
   if (options.useStoredSource && existingFeatures?.sourceContent) {
     // Use stored content from previous extraction
@@ -426,8 +548,23 @@ async function main() {
     sourceOrigin = 'stored';
   } else if (storedNotes.length < MIN_CONTENT_LENGTH && release.url) {
     console.log(`Content is sparse (${storedNotes.length} chars), fetching full release notes...`);
-    enrichedNotes = await fetchReleaseNotes(client, release.url);
-    sourceOrigin = 'fetched';
+
+    // Use retry wrapper for fetching
+    try {
+      enrichedNotes = await withRetry(
+        async (attempt) => {
+          fetchRetryAttempts = attempt;
+          return fetchReleaseNotes(client, release.url, release.version);
+        },
+        { name: 'fetchReleaseNotes', maxAttempts: RETRY_CONFIG.maxAttempts }
+      );
+      sourceOrigin = 'fetched';
+    } catch (err) {
+      console.warn(`\n⚠️  WARNING: Failed to fetch release notes after ${fetchRetryAttempts} attempts: ${err.message}`);
+      // Fall back to stored notes even if sparse
+      enrichedNotes = storedNotes;
+      sourceOrigin = 'fullNotes';
+    }
 
     // If still sparse after fetching, warn user
     if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
@@ -441,9 +578,46 @@ async function main() {
     sourceOrigin = 'fullNotes';
   }
 
-  // Extract features
+  // Extract features with retry and validation
   console.log('Extracting features with Claude...');
-  const features = await extractFeatures(client, release, options.count, enrichedNotes);
+  let features = null;
+  let extractionRetryAttempts = 0;
+  let validationResult = null;
+
+  try {
+    features = await withRetry(
+      async (attempt) => {
+        extractionRetryAttempts = attempt;
+        const extracted = await extractFeatures(client, release, options.count, enrichedNotes);
+
+        // Validate the extracted features
+        validationResult = validateFeatures(extracted);
+        if (!validationResult.valid) {
+          throw new Error(`Validation failed: ${validationResult.reason}`);
+        }
+
+        return extracted;
+      },
+      { name: 'extractFeatures', maxAttempts: RETRY_CONFIG.maxAttempts }
+    );
+  } catch (err) {
+    console.error(`\n❌ FATAL: Feature extraction failed after ${extractionRetryAttempts} attempts`);
+    console.error(`   Error: ${err.message}\n`);
+
+    // Write failure report for downstream processing
+    const failureFile = await writeFailureReport(outputDir, options.tool, release.version, err.message, {
+      release,
+      enrichedNotes,
+      features,
+      retryAttempts: extractionRetryAttempts,
+    });
+
+    console.error('   This release may have insufficient content for infographic generation.');
+    console.error(`   Failure report: ${failureFile}`);
+    console.error('   A GitHub issue will be created for auto-remediation.\n');
+    process.exit(1);
+  }
+
   console.log(`Extracted ${features.features.length} features\n`);
 
   // Generate prompts - always include 16:9 when updating releases (for OG images)
