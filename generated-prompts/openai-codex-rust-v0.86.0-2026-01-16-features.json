@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "📊",
+      "name": "Skill Metadata",
+      "description": "Define skill names, descriptions, icons in SKILL.toml"
+    },
+    {
+      "icon": "🔒",
+      "name": "Web Search Control",
+      "description": "Explicitly disable web search via headers"
+    },
+    {
+      "icon": "🔌",
+      "name": "MCP Elicitation Fix",
+      "description": "Proper JSON payload for server compatibility"
+    },
+    {
+      "icon": "💻",
+      "name": "Input Styling Fix",
+      "description": "Non-italic placeholder text for terminals"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Paste Event Fix",
+      "description": "Prevents unnecessary clipboard image reads"
+    },
+    {
+      "icon": "⚡",
+      "name": "Process Cleanup",
+      "description": "Background processes cleaned up properly"
+    }
+  ],
+  "releaseHighlight": "Enhanced skill configuration with SKILL.toml metadata support and improved web search controls",
+  "releaseInfo": "rust-v0.86.0 • January 15, 2026"
+}

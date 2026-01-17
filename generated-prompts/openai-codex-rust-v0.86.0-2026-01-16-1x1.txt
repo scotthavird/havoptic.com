@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CODEX CLI" with "rust-v0.86.0 • January 15, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 📊 "Skill Metadata" - "Define skill names, descriptions, icons in SKILL.toml"
+2. 🔒 "Web Search Control" - "Explicitly disable web search via headers"
+3. 🔌 "MCP Elicitation Fix" - "Proper JSON payload for server compatibility"
+4. 💻 "Input Styling Fix" - "Non-italic placeholder text for terminals"
+5. 🛠️ "Paste Event Fix" - "Prevents unnecessary clipboard image reads"
+6. ⚡ "Process Cleanup" - "Background processes cleaned up properly"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Emerald green accent, black background, minimalist terminal aesthetic, brand color #059669, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced skill configuration with SKILL.toml metadata support and improved web search controls"

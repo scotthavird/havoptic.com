@@ -1,0 +1,26 @@
+{
+  "features": [
+    {
+      "icon": "🔌",
+      "name": "Text Metadata",
+      "description": "Enhanced text elements with richer metadata"
+    },
+    {
+      "icon": "🚀",
+      "name": "Client Rendering",
+      "description": "Improved rendering capabilities for better display"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Schema Evolution",
+      "description": "Support for evolving data structures"
+    },
+    {
+      "icon": "⚡",
+      "name": "Release Stability",
+      "description": "Reduced build pipeline failures and timeouts"
+    }
+  ],
+  "releaseHighlight": "Enhanced text elements with metadata support enable richer client rendering and improved schema evolution capabilities.",
+  "releaseInfo": "rust-v0.84.0 • January 14, 2026"
+}

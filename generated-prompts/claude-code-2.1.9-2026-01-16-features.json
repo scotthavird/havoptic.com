@@ -1,0 +1,16 @@
+{
+  "features": [
+    {
+      "icon": "⚡",
+      "name": "Auto Tool Search",
+      "description": "Configure MCP tool auto-enable with context thresholds"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Plans Directory Setting",
+      "description": "Customize directory location for plan storage"
+    }
+  ],
+  "releaseHighlight": "Enhanced MCP tool configuration with auto-enable thresholds and customizable plans directory",
+  "releaseInfo": "v2.1.9 • January 15, 2026"
+}
