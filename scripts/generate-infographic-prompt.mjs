@@ -383,11 +383,11 @@ function generateImagePrompt(toolId, features, format = '1:1') {
 
   return `Create a professional ${aspectRatios[format]} social media infographic for a developer tool release.
 
-Header: "${config.displayName}" with "${features.releaseInfo}" subtitle - position header text centered or slightly right to leave top-left corner empty for logo overlay
-Layout: Dark background, ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid with subtle glow effects. IMPORTANT: Keep top-left corner (roughly 25% width, 10% height) clear of any text or important elements - a logo will be composited there.
+Header: Version and date text only: "${features.releaseInfo}" - DO NOT include the tool name (a logo will be composited above). Center this subtitle text near the top.
+Layout: Dark background with space at top-center for a logo overlay (roughly 40% width, 12% height from top). Position ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid below the header area with subtle glow effects.
 Feature Cards:
 ${featureCards}
-Footer: Leave bottom 8% of image clear/minimal for branding overlay (no text in this area)
+Footer: Leave bottom 10% of image clear/minimal for branding overlay (no text in this area)
 Style: ${config.style}, brand color ${config.primaryColor}, high contrast, readable text, professional tech aesthetic
 Highlight: "${features.releaseHighlight}"`;
 }
@@ -500,11 +500,11 @@ async function overlayLogo(imagePath, toolId, format = '1:1') {
   const infographic = sharp(imagePath);
   const infographicMeta = await infographic.metadata();
 
-  // Calculate logo size based on format - keep it subtle and badge-like
+  // Calculate logo size based on format - make it prominent as main header
   const logoMaxWidth = format === '9:16'
-    ? Math.round(infographicMeta.width * 0.30)
-    : Math.round(infographicMeta.width * 0.18);
-  const logoMaxHeight = format === '9:16' ? 60 : 70;
+    ? Math.round(infographicMeta.width * 0.55)
+    : Math.round(infographicMeta.width * 0.45);
+  const logoMaxHeight = format === '9:16' ? 180 : 150;
 
   // Resize logo maintaining aspect ratio
   const resizedLogo = await sharp(logoPath)
@@ -519,55 +519,16 @@ async function overlayLogo(imagePath, toolId, format = '1:1') {
   // Get resized logo dimensions
   const logoMeta = await sharp(resizedLogo).metadata();
 
-  // Create a semi-transparent dark background for the logo (rounded rectangle effect)
-  const bgPadding = 8;
-  const bgWidth = logoMeta.width + bgPadding * 2;
-  const bgHeight = logoMeta.height + bgPadding * 2;
-  const cornerRadius = 8;
-
-  const logoBg = await sharp({
-    create: {
-      width: bgWidth,
-      height: bgHeight,
-      channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 0.6 },
-    },
-  })
-    .composite([
-      {
-        input: Buffer.from(
-          `<svg width="${bgWidth}" height="${bgHeight}">
-            <rect x="0" y="0" width="${bgWidth}" height="${bgHeight}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.6)"/>
-          </svg>`
-        ),
-        blend: 'dest-in',
-      },
-    ])
-    .png()
-    .toBuffer();
-
-  // Composite logo onto background
-  const logoWithBg = await sharp(logoBg)
-    .composite([
-      {
-        input: resizedLogo,
-        left: bgPadding,
-        top: bgPadding,
-        blend: 'over',
-      },
-    ])
-    .toBuffer();
-
-  // Position: top-left corner with padding
-  const padding = Math.round(infographicMeta.width * 0.025);
-  const left = padding;
-  const top = padding;
+  // Position: top-center with padding (no background, logo is main header)
+  const topPadding = Math.round(infographicMeta.height * 0.03);
+  const left = Math.round((infographicMeta.width - logoMeta.width) / 2);
+  const top = topPadding;
 
   // Composite logo onto infographic
   const outputBuffer = await sharp(imagePath)
     .composite([
       {
-        input: logoWithBg,
+        input: resizedLogo,
         left,
         top,
         blend: 'over',
@@ -597,11 +558,11 @@ async function overlayHavopticBranding(imagePath, format = '1:1') {
   const infographic = sharp(imagePath);
   const infographicMeta = await infographic.metadata();
 
-  // Calculate footer size based on format - make it more prominent
+  // Calculate footer size based on format - make it large and prominent
   const footerMaxWidth = format === '9:16'
-    ? Math.round(infographicMeta.width * 0.80)
-    : Math.round(infographicMeta.width * 0.50);
-  const footerMaxHeight = format === '9:16' ? 80 : 70;
+    ? Math.round(infographicMeta.width * 0.90)
+    : Math.round(infographicMeta.width * 0.75);
+  const footerMaxHeight = format === '9:16' ? 140 : 120;
 
   const resizedFooter = await sharp(HAVOPTIC_FOOTER_PATH)
     .resize({
