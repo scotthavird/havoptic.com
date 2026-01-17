@@ -58,6 +58,7 @@ function parseArgs() {
     generateImage: false,
     updateReleases: false,
     force: false,
+    useStoredSource: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -78,6 +79,8 @@ function parseArgs() {
       options.updateReleases = true;
     } else if (arg === '--force') {
       options.force = true;
+    } else if (arg === '--use-stored-source') {
+      options.useStoredSource = true;
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
 Usage: node generate-infographic-prompt.mjs [options]
@@ -91,6 +94,7 @@ Options:
   --generate-image     Generate images using Nano Banana Pro (requires GOOGLE_API_KEY)
   --update-releases    Save images to public/images/infographics/ and update releases.json
   --force              Regenerate infographic even if one already exists
+  --use-stored-source  Use source content from existing features.json instead of re-fetching
   --help, -h           Show this help message
 
 Environment Variables:
@@ -390,11 +394,40 @@ async function main() {
   const storedNotes = release.fullNotes || release.summary;
   const MIN_CONTENT_LENGTH = 100; // Minimum characters for reliable feature extraction
 
+  // Output directory for checking existing features
+  const outputDir = options.output || DEFAULT_OUTPUT_DIR;
+
+  // Try to load existing features.json if --use-stored-source is set
+  let existingFeatures = null;
+  if (options.useStoredSource) {
+    const files = await fs.readdir(outputDir).catch(() => []);
+    const featuresFile = files.find(
+      (f) => f.startsWith(`${options.tool}-${release.version}`) && f.endsWith('-features.json')
+    );
+    if (featuresFile) {
+      try {
+        const content = await fs.readFile(path.join(outputDir, featuresFile), 'utf-8');
+        existingFeatures = JSON.parse(content);
+        console.log(`Found existing features.json: ${featuresFile}`);
+      } catch (err) {
+        console.log(`Failed to load existing features.json: ${err.message}`);
+      }
+    }
+  }
+
   // Fetch enriched release notes if content is sparse
   let enrichedNotes = null;
-  if (storedNotes.length < MIN_CONTENT_LENGTH && release.url) {
+  let sourceOrigin = 'fullNotes'; // Track where content came from: 'fullNotes' | 'fetched' | 'stored'
+
+  if (options.useStoredSource && existingFeatures?.sourceContent) {
+    // Use stored content from previous extraction
+    console.log(`Using stored source content (${existingFeatures.sourceContent.length} chars)`);
+    enrichedNotes = existingFeatures.sourceContent;
+    sourceOrigin = 'stored';
+  } else if (storedNotes.length < MIN_CONTENT_LENGTH && release.url) {
     console.log(`Content is sparse (${storedNotes.length} chars), fetching full release notes...`);
     enrichedNotes = await fetchReleaseNotes(client, release.url);
+    sourceOrigin = 'fetched';
 
     // If still sparse after fetching, warn user
     if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
@@ -405,6 +438,7 @@ async function main() {
   } else if (storedNotes.length >= MIN_CONTENT_LENGTH) {
     console.log(`Using stored notes (${storedNotes.length} chars)`);
     enrichedNotes = storedNotes;
+    sourceOrigin = 'fullNotes';
   }
 
   // Extract features
@@ -424,8 +458,7 @@ async function main() {
     prompts[format] = generateImagePrompt(options.tool, features, format);
   }
 
-  // Output
-  const outputDir = options.output || DEFAULT_OUTPUT_DIR;
+  // Ensure output directory exists
   await fs.mkdir(outputDir, { recursive: true });
 
   const timestamp = new Date().toISOString().split('T')[0];
@@ -460,10 +493,17 @@ async function main() {
     await saveReleasesData(data);
   }
 
-  // Also output features JSON
+  // Also output features JSON with source metadata
   const featuresFilename = `${baseFilename}-features.json`;
   const featuresPath = path.join(outputDir, featuresFilename);
-  await fs.writeFile(featuresPath, JSON.stringify(features, null, 2));
+  const featuresWithMetadata = {
+    ...features,
+    sourceContent: enrichedNotes,
+    sourceUrl: release.url,
+    sourceOrigin: sourceOrigin,
+    extractedAt: new Date().toISOString(),
+  };
+  await fs.writeFile(featuresPath, JSON.stringify(featuresWithMetadata, null, 2));
   console.log(`Written: ${featuresPath}`);
 
   console.log('\n--- Generated Prompt (1:1) ---\n');
