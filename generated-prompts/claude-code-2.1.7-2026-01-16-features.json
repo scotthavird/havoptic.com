@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🔒",
+      "name": "Security Fix",
+      "description": "Fixed wildcard permission vulnerability with commands"
+    },
+    {
+      "icon": "📊",
+      "name": "Inline Results",
+      "description": "View agent responses directly in notifications"
+    },
+    {
+      "icon": "⚡",
+      "name": "Turn Duration",
+      "description": "Hide cooking time messages with setting"
+    },
+    {
+      "icon": "👥",
+      "name": "Permission Feedback",
+      "description": "Provide feedback when accepting permission prompts"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Windows Fix",
+      "description": "Resolved false file modification errors"
+    },
+    {
+      "icon": "💻",
+      "name": "UI Polish",
+      "description": "Fixed spinner flash and animation jitter"
+    }
+  ],
+  "releaseHighlight": "Enhanced security with permission vulnerability fix and improved user experience with inline result display",
+  "releaseInfo": "v2.1.7 • January 13, 2026"
+}

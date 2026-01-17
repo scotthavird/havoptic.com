@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CLAUDE CODE" with "v2.1.7 • January 13, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🔒 "Security Fix" - "Fixed wildcard permission vulnerability with commands"
+2. 📊 "Inline Results" - "View agent responses directly in notifications"
+3. ⚡ "Turn Duration" - "Hide cooking time messages with setting"
+4. 👥 "Permission Feedback" - "Provide feedback when accepting permission prompts"
+5. 🛠️ "Windows Fix" - "Resolved false file modification errors"
+6. 💻 "UI Polish" - "Fixed spinner flash and animation jitter"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced security with permission vulnerability fix and improved user experience with inline result display"

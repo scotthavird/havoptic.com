@@ -1,0 +1,14 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "GEMINI CLI" with "v0.24.0 • January 14, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🤖 "Agent Skills" - "Core infrastructure for autonomous skill discovery"
+2. 🔌 "Extension Management" - "Install and uninstall extensions within CLI"
+3. 🔒 "Folder Trust" - "Enhanced security with folder trust support"
+4. 🚀 "Remote Agents" - "Support for multi-agent TOML configuration files"
+5. 🛠️ "Hook Execution" - "Visual indicators and improved hook handling"
+6. 💻 "Model Persistence" - "Automatic model selection across CLI sessions"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark background, clean Material Design, brand color #00ACC1, high contrast, readable text, professional tech aesthetic
+Highlight: "Major Agent Skills infrastructure with autonomous skill discovery, extension management capabilities, and enhanced security through folder trust support."

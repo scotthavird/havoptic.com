@@ -1,0 +1,12 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CODEX CLI" with "rust-v0.84.0 • January 14, 2026" subtitle
+Layout: Dark background, 4 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🔌 "Text Metadata" - "Enhanced text elements with richer metadata"
+2. 🚀 "Client Rendering" - "Improved rendering capabilities for better display"
+3. 🛠️ "Schema Evolution" - "Support for evolving data structures"
+4. ⚡ "Release Stability" - "Reduced build pipeline failures and timeouts"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Emerald green accent, black background, minimalist terminal aesthetic, brand color #059669, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced text elements with metadata support enable richer client rendering and improved schema evolution capabilities."

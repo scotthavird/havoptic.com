@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+      "icon": "🤖",
+      "name": "Agent Skills",
+      "description": "Core infrastructure for autonomous skill discovery"
+    },
+    {
+      "icon": "🔌",
+      "name": "Extension Management",
+      "description": "Install and uninstall extensions within CLI"
+    },
+    {
+      "icon": "🔒",
+      "name": "Folder Trust",
+      "description": "Enhanced security with folder trust support"
+    },
+    {
+      "icon": "🚀",
+      "name": "Remote Agents",
+      "description": "Support for multi-agent TOML configuration files"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Hook Execution",
+      "description": "Visual indicators and improved hook handling"
+    },
+    {
+      "icon": "💻",
+      "name": "Model Persistence",
+      "description": "Automatic model selection across CLI sessions"
+    }
+  ],
+  "releaseHighlight": "Major Agent Skills infrastructure with autonomous skill discovery, extension management capabilities, and enhanced security through folder trust support.",
+  "releaseInfo": "v0.24.0 • January 14, 2026"
+}

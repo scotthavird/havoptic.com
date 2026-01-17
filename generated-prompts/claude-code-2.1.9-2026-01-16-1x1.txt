@@ -1,0 +1,10 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "CLAUDE CODE" with "v2.1.9 • January 15, 2026" subtitle
+Layout: Dark background, 2 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. ⚡ "Auto Tool Search" - "Configure MCP tool auto-enable with context thresholds"
+2. 🛠️ "Plans Directory Setting" - "Customize directory location for plan storage"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced MCP tool configuration with auto-enable thresholds and customizable plans directory"
