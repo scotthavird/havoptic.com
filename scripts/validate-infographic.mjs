@@ -148,17 +148,23 @@ async function validateRelease(client, release) {
   console.log(`  Features file: ${featureFile}`);
   console.log(`  Features count: ${features.features.length}`);
 
-  // Get source content - prefer fullNotes if available, otherwise fetch from URL
+  // Get source content - prefer stored sourceContent from features.json,
+  // then fullNotes from release, otherwise fetch from URL
   let sourceContent;
   let isFullNotes = false;
 
-  if (release.fullNotes && release.fullNotes.length > 100) {
+  if (features.sourceContent && features.sourceContent.length > 100) {
+    // Best option: use the exact source content that was used for feature extraction
+    console.log(`  Using stored sourceContent (${features.sourceContent.length} chars, origin: ${features.sourceOrigin || 'unknown'})`);
+    sourceContent = features.sourceContent;
+    isFullNotes = true;
+  } else if (release.fullNotes && release.fullNotes.length > 100) {
     console.log(`  Using stored fullNotes (${release.fullNotes.length} chars)`);
     sourceContent = release.fullNotes;
     isFullNotes = true;
   } else {
     // Fetch from URL as fallback
-    console.log(`  Fetching from URL (no fullNotes available)`);
+    console.log(`  Fetching from URL (no stored source available)`);
     sourceContent = await fetchReleaseNotes(release.url);
     if (!sourceContent) {
       console.log('  ⚠️  Could not fetch source - skipping');
