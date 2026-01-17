@@ -3,6 +3,7 @@ import { GoogleGenAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = path.join(__dirname, '..', 'public', 'data', 'releases.json');
@@ -12,37 +13,47 @@ const PUBLIC_IMAGES_DIR = path.join(__dirname, '..', 'public', 'images', 'infogr
 // Nano Banana Pro (Gemini 3 Pro Image) - premium model for high-quality infographics
 const GEMINI_IMAGE_MODEL = 'gemini-3-pro-image-preview';
 
+// Logo directory path
+const LOGOS_DIR = path.join(__dirname, '..', 'public', 'images', 'infographics', 'logos');
+const HAVOPTIC_FOOTER_PATH = path.join(LOGOS_DIR, 'havoptic-footer.jpg');
+
 // Tool configurations for infographic styling
 const TOOL_CONFIGS = {
   'claude-code': {
     displayName: 'CLAUDE CODE',
     primaryColor: '#8B5CF6',
     style: 'Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic',
+    logoFile: 'claude-code.jpg',
   },
   'kiro': {
     displayName: 'KIRO',
     primaryColor: '#8B5CF6',
     style: 'Purple accent, dark gradient background, cloud-native professional aesthetic',
+    logoFile: 'kiro-cli.jpg',
   },
   'openai-codex': {
     displayName: 'CODEX CLI',
     primaryColor: '#059669',
     style: 'Emerald green accent, black background, minimalist terminal aesthetic',
+    logoFile: 'openaicodex.jpg',
   },
   'gemini-cli': {
     displayName: 'GEMINI CLI',
     primaryColor: '#00ACC1',
     style: 'Teal/cyan accent, dark background, clean Material Design',
+    logoFile: 'gemini-cli.jpg',
   },
   'cursor': {
     displayName: 'CURSOR',
     primaryColor: '#7c3aed',
     style: 'Purple glassmorphism, dark gradient background, IDE-inspired modern aesthetic',
+    logoFile: 'cursor.jpg',
   },
   'aider': {
     displayName: 'AIDER',
     primaryColor: '#22c55e',
     style: 'Terminal green on dark background, retro-modern hacker aesthetic',
+    logoFile: null, // No logo yet
   },
 };
 
@@ -372,11 +383,11 @@ function generateImagePrompt(toolId, features, format = '1:1') {
 
   return `Create a professional ${aspectRatios[format]} social media infographic for a developer tool release.
 
-Header: "${config.displayName}" with "${features.releaseInfo}" subtitle
-Layout: Dark background, ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid with subtle glow effects
+Header: "${config.displayName}" with "${features.releaseInfo}" subtitle - position header text centered or slightly right to leave top-left corner empty for logo overlay
+Layout: Dark background, ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid with subtle glow effects. IMPORTANT: Keep top-left corner (roughly 25% width, 10% height) clear of any text or important elements - a logo will be composited there.
 Feature Cards:
 ${featureCards}
-Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Footer: Leave bottom 8% of image clear/minimal for branding overlay (no text in this area)
 Style: ${config.style}, brand color ${config.primaryColor}, high contrast, readable text, professional tech aesthetic
 Highlight: "${features.releaseHighlight}"`;
 }
@@ -463,6 +474,159 @@ async function generateImage(prompt, outputPath, format = '1:1') {
   console.log(`Generated image: ${finalPath}`);
 
   return finalPath;
+}
+
+// Overlay logo on generated infographic
+async function overlayLogo(imagePath, toolId, format = '1:1') {
+  const config = TOOL_CONFIGS[toolId];
+  if (!config?.logoFile) {
+    console.log(`  No logo configured for ${toolId}, skipping overlay`);
+    return imagePath;
+  }
+
+  const logoPath = path.join(LOGOS_DIR, config.logoFile);
+
+  // Check if logo exists
+  try {
+    await fs.access(logoPath);
+  } catch {
+    console.log(`  Logo not found: ${logoPath}, skipping overlay`);
+    return imagePath;
+  }
+
+  console.log(`  Overlaying logo from ${config.logoFile}...`);
+
+  // Get infographic dimensions
+  const infographic = sharp(imagePath);
+  const infographicMeta = await infographic.metadata();
+
+  // Calculate logo size based on format - keep it subtle and badge-like
+  const logoMaxWidth = format === '9:16'
+    ? Math.round(infographicMeta.width * 0.30)
+    : Math.round(infographicMeta.width * 0.18);
+  const logoMaxHeight = format === '9:16' ? 60 : 70;
+
+  // Resize logo maintaining aspect ratio
+  const resizedLogo = await sharp(logoPath)
+    .resize({
+      width: logoMaxWidth,
+      height: logoMaxHeight,
+      fit: 'inside',
+      withoutEnlargement: true,
+    })
+    .toBuffer();
+
+  // Get resized logo dimensions
+  const logoMeta = await sharp(resizedLogo).metadata();
+
+  // Create a semi-transparent dark background for the logo (rounded rectangle effect)
+  const bgPadding = 8;
+  const bgWidth = logoMeta.width + bgPadding * 2;
+  const bgHeight = logoMeta.height + bgPadding * 2;
+  const cornerRadius = 8;
+
+  const logoBg = await sharp({
+    create: {
+      width: bgWidth,
+      height: bgHeight,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0.6 },
+    },
+  })
+    .composite([
+      {
+        input: Buffer.from(
+          `<svg width="${bgWidth}" height="${bgHeight}">
+            <rect x="0" y="0" width="${bgWidth}" height="${bgHeight}" rx="${cornerRadius}" ry="${cornerRadius}" fill="rgba(0,0,0,0.6)"/>
+          </svg>`
+        ),
+        blend: 'dest-in',
+      },
+    ])
+    .png()
+    .toBuffer();
+
+  // Composite logo onto background
+  const logoWithBg = await sharp(logoBg)
+    .composite([
+      {
+        input: resizedLogo,
+        left: bgPadding,
+        top: bgPadding,
+        blend: 'over',
+      },
+    ])
+    .toBuffer();
+
+  // Position: top-left corner with padding
+  const padding = Math.round(infographicMeta.width * 0.025);
+  const left = padding;
+  const top = padding;
+
+  // Composite logo onto infographic
+  const outputBuffer = await sharp(imagePath)
+    .composite([
+      {
+        input: logoWithBg,
+        left,
+        top,
+        blend: 'over',
+      },
+    ])
+    .toBuffer();
+
+  // Write back to same path
+  await fs.writeFile(imagePath, outputBuffer);
+  console.log(`  Logo overlay complete (${logoMeta.width}x${logoMeta.height} at ${left},${top})`);
+
+  return imagePath;
+}
+
+// Overlay havoptic branding on footer
+async function overlayHavopticBranding(imagePath, format = '1:1') {
+  // Check if havoptic footer logo exists
+  try {
+    await fs.access(HAVOPTIC_FOOTER_PATH);
+  } catch {
+    console.log('  Havoptic footer logo not found, skipping overlay');
+    return imagePath;
+  }
+
+  console.log('  Overlaying havoptic branding...');
+
+  const infographic = sharp(imagePath);
+  const infographicMeta = await infographic.metadata();
+
+  // Calculate footer size based on format - make it more prominent
+  const footerMaxWidth = format === '9:16'
+    ? Math.round(infographicMeta.width * 0.80)
+    : Math.round(infographicMeta.width * 0.50);
+  const footerMaxHeight = format === '9:16' ? 80 : 70;
+
+  const resizedFooter = await sharp(HAVOPTIC_FOOTER_PATH)
+    .resize({
+      width: footerMaxWidth,
+      height: footerMaxHeight,
+      fit: 'inside',
+      withoutEnlargement: true,
+    })
+    .toBuffer();
+
+  const footerMeta = await sharp(resizedFooter).metadata();
+
+  // Position: bottom-center with padding
+  const bottomPadding = Math.round(infographicMeta.height * 0.025);
+  const left = Math.round((infographicMeta.width - footerMeta.width) / 2);
+  const top = infographicMeta.height - footerMeta.height - bottomPadding;
+
+  const outputBuffer = await sharp(imagePath)
+    .composite([{ input: resizedFooter, left, top, blend: 'over' }])
+    .toBuffer();
+
+  await fs.writeFile(imagePath, outputBuffer);
+  console.log(`  Havoptic branding overlay complete (${footerMeta.width}x${footerMeta.height} at ${left},${top})`);
+
+  return imagePath;
 }
 
 // Main function
@@ -650,6 +814,12 @@ async function main() {
       const imagePath = path.join(outputDir, `${baseFilename}-${formatSuffix}.png`);
       try {
         const generatedPath = await generateImage(prompt, imagePath, format);
+
+        // Overlay the tool logo on the generated infographic
+        await overlayLogo(generatedPath, options.tool, format);
+
+        // Overlay havoptic branding on footer
+        await overlayHavopticBranding(generatedPath, format);
 
         // If --update-releases is set, save to public folder
         // Save both 1:1 (for display) and 16:9 (for OG images)
