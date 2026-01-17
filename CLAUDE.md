@@ -68,6 +68,7 @@ node --env-file=.env scripts/generate-infographic-prompt.mjs \
 #   --update-releases    Save to public/ and update releases.json
 #   --force              Regenerate even if infographic exists
 #   --all-formats        Generate 1:1, 16:9, and 9:16 formats
+#   --use-stored-source  Use source content from existing features.json (offline regeneration)
 ```
 
 ### Infographic Validation
@@ -121,6 +122,13 @@ The validator compares extracted features against source URLs and reports:
 - `summary`: Short excerpt (max 200 chars) for UI display
 - `fullNotes`: Complete release notes for accurate infographic generation
 - If `fullNotes` is sparse (<100 chars), the infographic script fetches from the URL
+
+### Infographic Source Content Storage
+Generated `features.json` files in `generated-prompts/` include source metadata:
+- `sourceContent`: The exact text used for feature extraction (enables offline regeneration)
+- `sourceUrl`: URL where content was fetched from
+- `sourceOrigin`: Where content came from (`fullNotes`, `fetched`, or `stored`)
+- `extractedAt`: ISO timestamp when extraction was performed
 
 ### Component Structure
 - `App.tsx`: Root component with tool filter state
