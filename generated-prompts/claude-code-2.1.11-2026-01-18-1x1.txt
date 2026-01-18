@@ -1,9 +1,12 @@
-Create a professional square (1080x1080) social media infographic for a developer tool release.
+Create a professional square (1080x1080) social media infographic for a developer tool bug fix release.
 
 Header: "CLAUDE CODE" with "v2.1.11 • January 16, 2026" subtitle
-Layout: Dark background, 1 feature cards in 2x3 grid with subtle glow effects
-Feature Cards:
-1. 🔌 "MCP Connection Fix" - "Reduced excessive HTTP/SSE transport requests"
+Layout: Dark background with a single centered feature card (no grid, no empty boxes)
+Feature Card: Large, prominent card in the center with:
+  - Icon: 🔌
+  - Title: "MCP Connection Fix"
+  - Description: "Reduced excessive HTTP/SSE transport requests"
+  - Additional context: "Fixed excessive MCP connection requests for HTTP/SSE transports"
 Footer: "havoptic.com" with "Track AI Tool Releases" tagline
 Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
-Highlight: "Bug fix for MCP connection stability"
+Important: This is a focused bug fix release. Show ONLY ONE feature card, centered and prominent. Do NOT show empty placeholder boxes or a grid layout.
