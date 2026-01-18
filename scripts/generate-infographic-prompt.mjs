@@ -366,19 +366,50 @@ function generateImagePrompt(toolId, features, format = '1:1') {
     '9:16': 'portrait/story (1080x1920)',
   };
 
+  const featureCount = features.features.length;
+
+  // Single-feature releases get a focused layout (no empty grid boxes)
+  if (featureCount === 1) {
+    const feature = features.features[0];
+    return `Create a professional ${aspectRatios[format]} social media infographic for a developer tool bug fix release.
+
+Header: "${config.displayName}" with "${features.releaseInfo}" subtitle
+Layout: Dark background with a single centered feature card (no grid, no empty boxes)
+Feature Card: Large, prominent card in the center with:
+  - Icon: ${feature.icon}
+  - Title: "${feature.name}"
+  - Description: "${feature.description}"
+  - Additional context: "${features.releaseHighlight}"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: ${config.style}, brand color ${config.primaryColor}, high contrast, readable text, professional tech aesthetic
+Important: This is a focused bug fix release. Show ONLY ONE feature card, centered and prominent. Do NOT show empty placeholder boxes or a grid layout.`;
+  }
+
+  // Multi-feature releases use the grid layout
   const featureCards = features.features
     .map((f, i) => `${i + 1}. ${f.icon} "${f.name}" - "${f.description}"`)
     .join('\n');
 
+  // Determine optimal grid layout based on feature count
+  let gridLayout;
+  if (featureCount <= 2) {
+    gridLayout = '1x2 horizontal';
+  } else if (featureCount <= 4) {
+    gridLayout = '2x2';
+  } else {
+    gridLayout = format === '9:16' ? '2x3 vertical' : '2x3';
+  }
+
   return `Create a professional ${aspectRatios[format]} social media infographic for a developer tool release.
 
 Header: "${config.displayName}" with "${features.releaseInfo}" subtitle
-Layout: Dark background, ${features.features.length} feature cards in ${format === '9:16' ? '2x3 vertical' : '2x3'} grid with subtle glow effects
+Layout: Dark background, ${featureCount} feature cards in ${gridLayout} grid with subtle glow effects
 Feature Cards:
 ${featureCards}
 Footer: "havoptic.com" with "Track AI Tool Releases" tagline
 Style: ${config.style}, brand color ${config.primaryColor}, high contrast, readable text, professional tech aesthetic
-Highlight: "${features.releaseHighlight}"`;
+Highlight: "${features.releaseHighlight}"
+Important: Show EXACTLY ${featureCount} feature cards. Do NOT add empty placeholder boxes.`;
 }
 
 // Save infographic to public folder and update release data object (does not write to disk)
