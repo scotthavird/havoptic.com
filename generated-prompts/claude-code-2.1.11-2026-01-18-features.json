@@ -6,10 +6,10 @@
       "description": "Reduced excessive HTTP/SSE transport requests"
     }
   ],
-  "releaseHighlight": "Bug fix for MCP connection stability",
+  "releaseHighlight": "Fixed excessive MCP connection requests for HTTP/SSE transports",
   "releaseInfo": "v2.1.11 • January 16, 2026",
   "sourceContent": "- Fixed excessive MCP connection requests for HTTP/SSE transports",
   "sourceUrl": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
   "sourceOrigin": "fullNotes",
-  "extractedAt": "2026-01-18T22:46:06.576Z"
+  "extractedAt": "2026-01-18T22:53:22.800Z"
 }
