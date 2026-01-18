@@ -1,0 +1,9 @@
+Create a professional landscape (1920x1080) social media infographic for a developer tool release.
+
+Header: "CLAUDE CODE" with "v2.1.11 • January 16, 2026" subtitle
+Layout: Dark background, 1 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🔌 "MCP Connection Fix" - "Reduced excessive HTTP/SSE transport requests"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Bug fix for MCP connection stability"
