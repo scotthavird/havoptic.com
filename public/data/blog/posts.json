@@ -1,6 +1,62 @@
 {
-  "lastUpdated": "2026-01-16T00:00:00.000Z",
+  "lastUpdated": "2026-01-19T15:19:03.474Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w03",
+      "type": "weekly-digest",
+      "title": "Week 3 AI Coding Tools: Bug Squashing Season 🐛",
+      "slug": "weekly-digest-week-3-2026",
+      "publishedAt": "2026-01-19T15:09:33.349Z",
+      "summary": "Claude fixes pesky MCP bugs, OpenAI Codex adds collaboration features, Gemini refactors core logic. 12 releases push velocity up 33%.",
+      "content": "# Week 3 AI Coding Tools: Bug Squashing Season 🐛\n\n## TL;DR\n• **Claude patched up fast** with 6 releases fixing MCP connection spam and message rendering\n• **OpenAI Codex went deep** on collaboration features and skill metadata in 5 Rust releases\n\n## This Week's Releases\n\n### Claude Code (6 releases)\nClaude's team went into overdrive mode this week, pushing out **6 point releases** from v2.1.6 to v2.1.12. The big wins? They squashed that annoying message rendering bug that was breaking workflows and killed the excessive MCP connection requests that were hammering HTTP/SSE transports. Classic \"death by a thousand cuts\" fixes that actually matter.\n\n### OpenAI Codex CLI (5 releases) \nThe Rust releases kept coming with **5 versions** spanning v0.81.0 to v0.87.0. The standout feature: **user message metadata** now survives history rebuilds, meaning your UI annotations won't disappear into the void anymore. Plus, they added skill metadata support via `SKILL.toml` files—think names, descriptions, icons, and brand colors that surface in both app server and TUI.\n\n### Gemini CLI (1 release)\nGemini kept it simple with **v0.24.0**, focusing on housekeeping. They refactored model resolution and cleaned up fallback logic, plus added folder trust support to hooks. Not flashy, but the kind of foundational work that prevents headaches later.\n\n## Highlight Deep Dive 🔍\n\n**OpenAI Codex's collaboration metadata** is the sleeper hit of the week. The fact that user annotations and text elements now round-trip through the entire protocol stack (protocol → app-server → core) means teams can finally rely on persistent context during collaborative coding sessions. No more losing that crucial comment thread when someone rebuilds history—a workflow killer that's been plaguing dev teams for months.\n\n## Quick Stats\n\n**📊 This Week by Numbers:**\n- **Total releases:** 12 (up from 9 last week)\n- **Velocity trend:** +33% week-over-week\n- **Biggest mover:** Claude Code with 6 rapid-fire patches\n- **Most impactful:** OpenAI Codex collaboration features\n\nThe pace is picking up as we settle into 2026. Claude's aggressive patching shows they're prioritizing stability, while OpenAI's collaboration push signals they're serious about team workflows. Gemini's steady refactoring work might seem boring, but it's exactly what you want in production tooling.\n\n*Next week: Keep an eye on whether Claude's MCP fixes hold up under load, and if OpenAI's collaboration features make it to the main CLI release.*",
+      "coverImageUrl": null,
+      "tools": [
+        "claude-code",
+        "openai-codex",
+        "gemini-cli"
+      ],
+      "metrics": {
+        "totalReleases": 12,
+        "releasesByTool": {
+          "claude-code": 6,
+          "openai-codex": 5,
+          "gemini-cli": 1
+        },
+        "topFeatures": [
+          {
+            "tool": "claude-code",
+            "feature": "2.1.12",
+            "description": "- Fixed message rendering bug"
+          },
+          {
+            "tool": "claude-code",
+            "feature": "2.1.11",
+            "description": "- Fixed excessive MCP connection requests for HTTP/SSE transports"
+          },
+          {
+            "tool": "claude-code",
+            "feature": "2.1.10",
+            "description": "- Added new Setup hook event that can be triggered via --init, --init-only, or --maintenance CLI flags for repository setup and maintenance operations - Added keyboard shortcut 'c' to copy OAuth UR..."
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "ai coding tools",
+          "claude code",
+          "openai codex",
+          "gemini cli",
+          "mcp bug fixes",
+          "collaboration features",
+          "developer tools",
+          "weekly digest",
+          "coding ai",
+          "programmer productivity"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-3-2026"
+      }
+    },
     {
       "id": "claude-code-vs-openai-codex-2026",
       "type": "monthly-comparison",
@@ -9,7 +65,10 @@
       "publishedAt": "2026-01-16T00:00:00.000Z",
       "summary": "A comprehensive comparison of Anthropic's Claude Code and OpenAI's Codex CLI - the two leading terminal-based AI coding assistants. We analyze features, release velocity, and help you decide which tool fits your workflow.",
       "content": "Both Claude Code and OpenAI Codex CLI are terminal-based AI coding assistants from the world's leading AI labs. But which one should you choose? Let's break it down feature-by-feature.\n\n## Feature Comparison Matrix\n\n| Feature | Claude Code | Codex CLI | Winner |\n|---------|-------------|-----------|--------|\n| Custom Commands | Skills with hot-reload | SKILL.toml | Tie |\n| Planning Mode | Plan mode | Not available | Claude Code |\n| Multi-Agent | Not available | Agent control | Codex CLI |\n| Conversation Undo | Not available | Thread rollback | Codex CLI |\n| External Tools | MCP Protocol | Web search | Tie (different) |\n| Sandbox Security | Permission rules | Elevated sandbox | Codex CLI |\n| IDE Integration | VSCode + JetBrains | VSCode only | Claude Code |\n| Open Source | No | Yes | Codex CLI |\n| Installation | npm | Rust binary | Preference |\n\n## Where They Overlap\n\nBoth tools excel at these core capabilities:\n\n**Custom Commands/Skills**: Claude Code uses ~/.claude/skills/ with YAML frontmatter and auto hot-reload. Codex CLI uses SKILL.toml with metadata for names, icons, and colors. Both are excellent - Claude is slightly easier for quick iteration.\n\n**File Editing & Code Generation**: Both understand large codebases and make accurate multi-file edits. Comparable quality.\n\n**Context Understanding**: Both handle large codebases well and support @-mentions for files and folders.\n\n## Where Claude Code Wins\n\n**Plan Mode for Complex Tasks**: A structured workflow where Claude analyzes requirements, proposes a plan, and waits for approval before executing. Codex has no equivalent - you must manually manage multi-step tasks.\n\n**MCP Integration**: First-class support for Model Context Protocol enables connections to databases, APIs, and external tools. Codex only has web search.\n\n**IDE Coverage**: Native plugins for VSCode AND JetBrains (IntelliJ, PyCharm, WebStorm). Codex supports VSCode only.\n\n## Where Codex CLI Wins\n\n**Multi-Agent Collaboration**: Spawn child conversations programmatically and have agents message each other. Perfect for complex parallel workflows. Claude has background tasks but not true multi-agent.\n\n**Thread Forking & Rollback**: Branch conversations to explore alternatives and undo the last N turns without losing context. Claude requires /clear to start fresh.\n\n**Open Source**: Full Rust source code on GitHub - fork, modify, and self-host. Claude Code is closed source.\n\n**Elevated Sandbox**: Fine-grained permission policies with /elevate-sandbox for guided setup. More granular than Claude's permission rules.\n\n## Real-World Use Cases\n\n### Use Case 1: Large Codebase Refactor\n**Scenario**: Rename a core interface across 50+ files\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | Plan Mode reviews all changes before execution | Must review each file edit individually |\n| Advantage | See complete plan, approve once, execute all | More manual verification needed |\n| **Winner** | **Claude Code** | |\n\n### Use Case 2: Debugging with Multiple Approaches\n**Scenario**: Complex bug with uncertain root cause\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | Try approach A, /clear, start over | Fork thread for A, fork again for B, compare |\n| Advantage | Clean context each attempt | Keep all attempts, rollback if needed |\n| **Winner** | | **Codex CLI** |\n\n### Use Case 3: Database-Connected Development\n**Scenario**: Building features requiring live database queries\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | MCP connects directly to database | Copy/paste query results manually |\n| Advantage | Native integration via MCP servers | Web search for docs only |\n| **Winner** | **Claude Code** | |\n\n### Use Case 4: Security-Sensitive Environment\n**Scenario**: Strict execution policies required\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | Configure permission rules | Elevated sandbox with allow/deny policies |\n| Advantage | Good permission system | More granular control, better audit trail |\n| **Winner** | | **Codex CLI** |\n\n### Use Case 5: Contributing to the Tool\n**Scenario**: Want to customize or improve the tool itself\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | Limited to plugins/skills | Fork repo, modify source, submit PRs |\n| Advantage | Easy extension points | Full source access |\n| **Winner** | | **Codex CLI** |\n\n### Use Case 6: JetBrains Users\n**Scenario**: Primary IDE is IntelliJ, PyCharm, or WebStorm\n\n| Approach | Claude Code | Codex CLI |\n|----------|-------------|----------|\n| Method | Native JetBrains plugin | Terminal only |\n| Advantage | Full IDE integration | Must use separately |\n| **Winner** | **Claude Code** | |\n\n## Quick Decision Guide\n\n**Choose Claude Code for:**\n- Large refactors needing plan approval\n- Database/API integration via MCP\n- JetBrains IDE users\n- Teams wanting a polished, guided experience\n\n**Choose Codex CLI for:**\n- Exploratory debugging (thread forking)\n- Security-sensitive environments\n- Open source contributions\n- Multi-agent workflows\n\n**Either works great for:**\n- Day-to-day coding assistance\n- Custom commands/skills\n- File editing and generation\n- VSCode users\n\n## The Bottom Line\n\nBoth are excellent tools shipping weekly updates. The winner depends on your workflow - try both and see which fits.",
-      "tools": ["claude-code", "openai-codex"],
+      "tools": [
+        "claude-code",
+        "openai-codex"
+      ],
       "metrics": {
         "totalReleases": 17,
         "releasesByTool": {
@@ -20,12 +79,36 @@
           "kiro": 0
         },
         "topFeatures": [
-          { "tool": "claude-code", "feature": "Skill Hot-Reload", "description": "Skills automatically update without restart" },
-          { "tool": "claude-code", "feature": "MCP Threshold Config", "description": "auto:N syntax for tool search configuration" },
-          { "tool": "openai-codex", "feature": "SKILL.toml Metadata", "description": "Define skill names, icons, and brand colors" },
-          { "tool": "openai-codex", "feature": "Agent Control", "description": "Multi-conversation programmatic collaboration" },
-          { "tool": "openai-codex", "feature": "Thread Rollback", "description": "Undo the last N conversation turns" },
-          { "tool": "claude-code", "feature": "Plan Mode", "description": "Structured task planning and approval workflow" }
+          {
+            "tool": "claude-code",
+            "feature": "Skill Hot-Reload",
+            "description": "Skills automatically update without restart"
+          },
+          {
+            "tool": "claude-code",
+            "feature": "MCP Threshold Config",
+            "description": "auto:N syntax for tool search configuration"
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "SKILL.toml Metadata",
+            "description": "Define skill names, icons, and brand colors"
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "Agent Control",
+            "description": "Multi-conversation programmatic collaboration"
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "Thread Rollback",
+            "description": "Undo the last N conversation turns"
+          },
+          {
+            "tool": "claude-code",
+            "feature": "Plan Mode",
+            "description": "Structured task planning and approval workflow"
+          }
         ],
         "velocityChange": 25
       },
