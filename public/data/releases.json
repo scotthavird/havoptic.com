@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-01-17T13:14:07.322Z",
+  "lastUpdated": "2026-01-19T13:21:34.887Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.24.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.24.4",
+      "date": "2026-01-19T05:12:52Z",
+      "summary": "What's Changed fix(patch): cherry-pick 88f1ec8 to release/v0.24.0-pr-16179 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16783 Full Changelog: https://github....",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 88f1ec8 to release/v0.24.0-pr-16179 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16783 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.0...v0.24.4",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.24.4",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.12",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.12",
+      "date": "2026-01-17T15:40:35.547Z",
+      "summary": "- Fixed message rendering bug",
+      "fullNotes": "- Fixed message rendering bug",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.11",
       "tool": "claude-code",
