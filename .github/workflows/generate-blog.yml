@@ -85,9 +85,4 @@ jobs:
           git add public/data/blog/ public/data/feature-matrix.json
           git commit -m "chore: Generate blog content"
           git push
-
-      - name: Trigger production deploy
-        if: steps.changes.outputs.changed == 'true'
-        run: gh workflow run deploy-prod.yml
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Production deploy is triggered automatically via workflow_run event

@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   fetch-releases:
@@ -75,9 +74,4 @@ jobs:
           git add public/data/releases.json public/sitemap.xml
           git commit -m "chore: Update releases data and sitemap"
           git push
-
-      - name: Trigger production deploy
-        if: steps.changes.outputs.changed == 'true'
-        run: gh workflow run deploy-prod.yml
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Production deploy is triggered automatically via workflow_run event
