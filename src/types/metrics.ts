@@ -91,6 +91,7 @@ export const TOOL_GITHUB_REPOS: Record<ToolId, string | null> = {
   'cursor': null, // Closed source
   'gemini-cli': 'google-gemini/gemini-cli',
   'kiro': null, // Closed source
+  'github-copilot': 'github/copilot-cli',
 };
 
 export const TOOL_NPM_PACKAGES: Record<ToolId, string | null> = {
@@ -99,4 +100,5 @@ export const TOOL_NPM_PACKAGES: Record<ToolId, string | null> = {
   'cursor': null, // Not an npm package
   'gemini-cli': '@anthropic-ai/gemini-cli', // Placeholder - verify actual package name
   'kiro': null, // Not an npm package
+  'github-copilot': '@github/copilot',
 };
