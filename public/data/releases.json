@@ -10,7 +10,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 88f1ec8 to release/v0.24.0-pr-16179 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16783 Full Changelog: https://github....",
       "fullNotes": "What's Changed fix(patch): cherry-pick 88f1ec8 to release/v0.24.0-pr-16179 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16783 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.0...v0.24.4",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.24.4",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.24.4-2026-01-19-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.24.4-2026-01-19-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.12",
@@ -21,7 +23,9 @@
       "summary": "- Fixed message rendering bug",
       "fullNotes": "- Fixed message rendering bug",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.12-2026-01-19-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.12-2026-01-19-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.11",
