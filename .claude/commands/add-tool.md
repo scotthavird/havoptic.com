@@ -143,6 +143,52 @@ export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 
 },
 ```
 
+## Research Checklist
+
+When researching a new tool, gather the following information and present it to the user for approval:
+
+### Tool Identity
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Tool Name** | Official product name | GitHub Copilot CLI |
+| **Tool ID** | Kebab-case identifier for code | `github-copilot` |
+| **Display Name** | Human-readable name for UI | GitHub Copilot CLI |
+| **Maker** | Company or organization | GitHub (Microsoft) |
+| **Description** | One-sentence description | AI-powered coding assistant for the terminal |
+
+### Brand & Styling
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Brand Color** | Hex code from official branding | `#8534F3` |
+| **Color Source** | Where you found the color | Brand guidelines, logo, website |
+| **Hashtag** | Social media hashtag (lowercase) | `#githubcopilot` |
+| **Infographic Style** | Visual description for image gen | Purple accent, dark background, modern tech aesthetic |
+
+### Release Sources
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Primary Source** | Best source for release data | GitHub Releases API |
+| **Repository** | GitHub repo URL | github.com/github/copilot-cli |
+| **npm Package** | Package name (if applicable) | `@github/copilot` |
+| **Changelog URL** | Changelog page (if applicable) | N/A |
+| **Fetch Pattern** | Which existing fetcher to copy | `fetchOpenAICodex` (GitHub API) |
+
+### Links
+| Field | URL |
+|-------|-----|
+| **Official Website** | https://github.com/features/copilot/cli |
+| **Repository** | https://github.com/github/copilot-cli |
+| **Documentation** | https://docs.github.com/en/copilot/... |
+| **Brand Guidelines** | (if found) |
+
+### Existing Tool Colors (for contrast check)
+Reference when choosing brand color:
+- Claude Code: `#D97706` (amber)
+- OpenAI Codex: `#059669` (emerald)
+- Cursor: `#7C3AED` (violet)
+- Gemini CLI: `#00ACC1` (teal)
+- Kiro: `#8B5CF6` (purple)
+
 ## Tips
 - Research thoroughly before implementing - correct information saves rework
 - Use existing fetch functions as templates - they handle edge cases
