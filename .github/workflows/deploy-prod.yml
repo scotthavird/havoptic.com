@@ -13,6 +13,10 @@ on:
       - 'vite.config.ts'
       - 'tailwind.config.js'
       - '.github/workflows/deploy-prod.yml'
+  workflow_run:
+    workflows: ['Generate Blog Content', 'Fetch AI Tool Releases', 'Generate Infographic Prompts']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       branch:
@@ -26,6 +30,8 @@ jobs:
     name: Deploy to Production
     runs-on: ubuntu-latest
     environment: production
+    # Only run for push/dispatch, or when triggering workflow succeeded
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout code
