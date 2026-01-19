@@ -188,6 +188,7 @@ Reference when choosing brand color:
 - Cursor: `#7C3AED` (violet)
 - Gemini CLI: `#00ACC1` (teal)
 - Kiro: `#8B5CF6` (purple)
+- GitHub Copilot: `#8534F3` (copilot purple)
 
 ## Tips
 - Research thoroughly before implementing - correct information saves rework
