@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-01-19T13:21:34.887Z",
+  "lastUpdated": "2026-01-20T13:22:13.645Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.24.5",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.24.5",
+      "date": "2026-01-20T06:42:07Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.4...v0.24.5",
+      "fullNotes": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.4...v0.24.5",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.24.5",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.24.4",
       "tool": "gemini-cli",
