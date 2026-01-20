@@ -12,6 +12,7 @@ export default {
         'cursor': '#7C3AED',
         'gemini': '#00ACC1',
         'kiro': '#8B5CF6',
+        'copilot': '#8534F3',
       },
       animation: {
         'sparkle-fade': 'sparkleFade 0.8s ease-out forwards',

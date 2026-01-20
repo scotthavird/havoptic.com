@@ -227,6 +227,7 @@ export function useFeatureMatrix() {
       'cursor': 0,
       'gemini-cli': 0,
       'kiro': 0,
+      'github-copilot': 0,
     };
 
     if (!data?.features) return counts;
