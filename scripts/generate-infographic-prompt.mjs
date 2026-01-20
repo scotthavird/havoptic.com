@@ -44,6 +44,11 @@ const TOOL_CONFIGS = {
     primaryColor: '#22c55e',
     style: 'Terminal green on dark background, retro-modern hacker aesthetic',
   },
+  'github-copilot': {
+    displayName: 'GITHUB COPILOT CLI',
+    primaryColor: '#8534F3',
+    style: 'Copilot purple accent, dark gradient background, GitHub-inspired modern developer aesthetic',
+  },
 };
 
 // Retry configuration
