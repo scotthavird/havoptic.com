@@ -10,7 +10,9 @@
       "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.4...v0.24.5",
       "fullNotes": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.4...v0.24.5",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.24.5",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.24.5-2026-01-21-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.24.5-2026-01-21-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.24.4",
