@@ -306,6 +306,129 @@ ${html.slice(0, 50000)}`,
   return notes;
 }
 
+// Extract compare URL from release notes (e.g., "v0.24.4...v0.24.5")
+function extractCompareUrl(text) {
+  // Match GitHub compare URLs like:
+  // https://github.com/owner/repo/compare/v1.0.0...v1.0.1
+  // or relative references like v1.0.0...v1.0.1
+  const fullUrlMatch = text.match(/https:\/\/github\.com\/([^/]+)\/([^/]+)\/compare\/([^\s)]+)/);
+  if (fullUrlMatch) {
+    return {
+      owner: fullUrlMatch[1],
+      repo: fullUrlMatch[2],
+      range: fullUrlMatch[3],
+    };
+  }
+  return null;
+}
+
+// Fetch content from GitHub compare URL (commits and PRs)
+async function fetchCompareContent(owner, repo, range) {
+  console.log(`Fetching commit data from GitHub compare: ${owner}/${repo}/compare/${range}`);
+
+  // Use GitHub API to get compare data
+  const compareUrl = `https://api.github.com/repos/${owner}/${repo}/compare/${range}`;
+  const headers = {
+    Accept: 'application/vnd.github.v3+json',
+    'User-Agent': 'havoptic-infographic-generator',
+  };
+
+  // Add auth token if available (for higher rate limits)
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `token ${process.env.GITHUB_TOKEN}`;
+  }
+
+  const compareRes = await fetch(compareUrl, { headers });
+  if (!compareRes.ok) {
+    throw new Error(`GitHub API error: ${compareRes.status} ${compareRes.statusText}`);
+  }
+
+  const compareData = await compareRes.json();
+  const commits = compareData.commits || [];
+
+  if (commits.length === 0) {
+    throw new Error('No commits found in compare range');
+  }
+
+  console.log(`  Found ${commits.length} commits in compare range`);
+
+  // Extract commit messages and PR references
+  const changes = [];
+  const prNumbers = new Set();
+
+  for (const commit of commits) {
+    const message = commit.commit?.message || '';
+    const firstLine = message.split('\n')[0];
+
+    // Skip merge commits and release commits
+    if (firstLine.startsWith('Merge ') || firstLine.includes('chore(release)')) {
+      continue;
+    }
+
+    changes.push(firstLine);
+
+    // Extract PR numbers from commit message (e.g., "(#17043)")
+    const prMatches = message.match(/#(\d+)/g);
+    if (prMatches) {
+      prMatches.forEach((pr) => prNumbers.add(pr.replace('#', '')));
+    }
+  }
+
+  // Fetch PR details for richer context (limit to first 5 PRs to avoid rate limits)
+  const prDetails = [];
+  const prsToFetch = Array.from(prNumbers).slice(0, 5);
+
+  for (const prNum of prsToFetch) {
+    try {
+      const prUrl = `https://api.github.com/repos/${owner}/${repo}/pulls/${prNum}`;
+      const prRes = await fetch(prUrl, { headers });
+
+      if (prRes.ok) {
+        const prData = await prRes.json();
+        prDetails.push({
+          number: prNum,
+          title: prData.title,
+          body: prData.body?.slice(0, 500) || '', // Limit body length
+        });
+        console.log(`  Fetched PR #${prNum}: ${prData.title}`);
+      }
+    } catch {
+      // Ignore individual PR fetch failures
+      console.log(`  Could not fetch PR #${prNum}`);
+    }
+  }
+
+  // Build formatted content for feature extraction
+  let content = `## Changes in this release\n\n`;
+
+  if (prDetails.length > 0) {
+    content += `### Pull Requests\n\n`;
+    for (const pr of prDetails) {
+      content += `**${pr.title}** (PR #${pr.number})\n`;
+      if (pr.body) {
+        // Extract summary section if present
+        const summaryMatch = pr.body.match(/## Summary\s*([\s\S]*?)(?=##|$)/i);
+        if (summaryMatch) {
+          content += `${summaryMatch[1].trim()}\n`;
+        } else {
+          content += `${pr.body.slice(0, 200)}\n`;
+        }
+      }
+      content += '\n';
+    }
+  }
+
+  if (changes.length > 0) {
+    content += `### Commits\n\n`;
+    for (const change of changes) {
+      content += `- ${change}\n`;
+    }
+  }
+
+  console.log(`  Built ${content.length} chars of content from compare data`);
+  return content;
+}
+
 // Extract features using Claude SDK
 async function extractFeatures(client, release, count, enrichedNotes = null) {
   const formattedDate = formatReleaseDate(release.date);
@@ -574,7 +697,7 @@ async function main() {
 
   // Fetch enriched release notes if content is sparse
   let enrichedNotes = null;
-  let sourceOrigin = 'fullNotes'; // Track where content came from: 'fullNotes' | 'fetched' | 'stored'
+  let sourceOrigin = 'fullNotes'; // Track where content came from: 'fullNotes' | 'fetched' | 'stored' | 'compare'
   let fetchRetryAttempts = 0;
 
   if (options.useStoredSource && existingFeatures?.sourceContent) {
@@ -602,7 +725,34 @@ async function main() {
       sourceOrigin = 'fullNotes';
     }
 
-    // If still sparse after fetching, warn user
+    // If still sparse after fetching, try GitHub compare API fallback
+    if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
+      console.log(`\n📊 Content still sparse, trying GitHub compare API fallback...`);
+
+      // Check if there's a compare URL in the stored notes or summary
+      const compareInfo = extractCompareUrl(storedNotes) || extractCompareUrl(release.summary || '');
+
+      if (compareInfo) {
+        try {
+          const compareContent = await withRetry(
+            async () => fetchCompareContent(compareInfo.owner, compareInfo.repo, compareInfo.range),
+            { name: 'fetchCompareContent', maxAttempts: 2 }
+          );
+
+          if (compareContent && compareContent.length >= MIN_CONTENT_LENGTH) {
+            console.log(`✅ Successfully fetched content from GitHub compare API`);
+            enrichedNotes = compareContent;
+            sourceOrigin = 'compare';
+          }
+        } catch (compareErr) {
+          console.warn(`   Compare API fallback failed: ${compareErr.message}`);
+        }
+      } else {
+        console.log(`   No compare URL found in release notes`);
+      }
+    }
+
+    // If still sparse after all attempts, warn user
     if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
       console.warn(`\n⚠️  WARNING: Release has minimal content (${enrichedNotes?.length || 0} chars).`);
       console.warn('   Generated infographic may not be accurate.');
