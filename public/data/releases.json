@@ -1,6 +1,39 @@
 {
-  "lastUpdated": "2026-01-20T13:22:13.645Z",
+  "lastUpdated": "2026-01-21T13:21:35.537Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.25.0",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.25.0",
+      "date": "2026-01-21T05:15:12Z",
+      "summary": "What's Changed feat(core): improve activateskill tool and use lowercase XML tags by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16009 Add initiation method telemetry property...",
+      "fullNotes": "What's Changed feat(core): improve activateskill tool and use lowercase XML tags by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16009 Add initiation method telemetry property by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/15818 chore(release): bump version to 0.25.0-nightly.20260107.59a18e710 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16048 Hx support by @kevinfjiang in https://github.com/google-gemini/gemini-cli/pull/16032 [Skills] Foundation: Centralize management logic and feedback rendering by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/15952 Introduce GEMINICLIHOME for strict test isolation by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/15907 [Skills] Multi-scope skill enablement and shadowing fix by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/15953 policy: extract legacy policy from core tool scheduler to policy engine by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/15902 Enhance TestRig with process management and timeouts by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/15908 Update troubleshooting doc for UNABLETOGETISSUERCERTLOCALLY by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16069 Add keytar to dependencies by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/15928 Simplify extension settings command by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16001 feat(admin): implement extensions disabled by @skeshive in https://github.com/google-gemini/gemini-cli/pull/16024 Core data structure updates for Rewind functionality by @Adib234 in https://github.com/google-gemini/gemini-cli/pull/15714 feat(hooks): simplify hook firing with HookSystem wrapper methods by @ved015 in https://github.com/google-gemini/gemini-cli/pull/15982 Add exp.gwsexperiment field to LogEventEntry by @gsquared94 in https://github.com/google-gemini/gemini-cli/pull/16062 Revert \"feat(admin): implement extensions disabled\" by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16082 feat(core): Decouple enabling hooks UI from subsystem. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16074 docs: add docs for hooks + extensions by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16073 feat(core): Preliminary changes for subagent model routing. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16035 Optimize CI workflow: Parallelize jobs and cache linters by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16054 Add option to fallback for capacity errors in ProQuotaDi… by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16050 feat: add confirmation details support + jsonrpc vs http rest support by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16079 fix(workflows): fix and limit labels for pr-triage.sh script by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/16096 Fix and rename introspection agent -> cli help agent by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16097 Docs: Changelogs update 20260105 by @jkcinouye in https://github.com/google-gemini/gemini-cli/pull/15937 enable clihelp agent by default by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16100 Optimize json-output tests with mock responses by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16102 Fix CI for forks by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16113 Reduce nags about PRs that reference issues but don't fix them. by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/16112 feat(cli): add filepath autosuggestion after slash commands by @jasmeetsb in https://github.com/google-gemini/gemini-cli/pull/14738 Add upgrade option for paid users by @cayden-google in https://github.com/google-gemini/gemini-cli/pull/15978 [Skills] UX Polishing: Transparent feedback and CLI refinements by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/15954 Polish: Move 'Failed to load skills' warning to debug logs by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16142 feat(cli): export chat history in /bug and prefill GitHub issue by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16115 bug(core): fix issue with overrides to bases. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/15255 enableInteractiveShell for external tooling relying on a2a server by @DavidAPierce in https://github.com/google-gemini/gemini-cli/pull/16080 Reapply \"feat(admin): implement extensions disabled\" (16082) by @skeshive in https://github.com/google-gemini/gemini-cli/pull/16109 bug(core): Fix spewie getter in hookTranslator.ts by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16108 feat(hooks): add mcpcontext to BeforeTool and AfterTool hook inputs by @vrv in https://github.com/google-gemini/gemini-cli/pull/15656 Add extension linking capabilities in cli by @kevinjwang1 in https://github.com/google-gemini/gemini-cli/pull/16040 Update the page's title to be consistent and show in site. by @kschaab in https://github.com/google-gemini/gemini-cli/pull/16174 docs: correct typo in bufferFastReturn JSDoc (\"accomodate\" → \"accommodate\") by @minglu7 in https://github.com/google-gemini/gemini-cli/pull/16056 fix: typo in MCP servers settings description by @alphanota in https://github.com/google-gemini/gemini-cli/pull/15929 fix: yolo should auto allow redirection by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16183 fix(cli): disableYoloMode shouldn't enforce default approval mode against args by @psinha40898 in https://github.com/google-gemini/gemini-cli/pull/16155 feat: add native Sublime Text support to IDE detection by @phreakocious in https://github.com/google-gemini/gemini-cli/pull/16083 refactor(core): extract ToolModificationHandler from scheduler by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16118 Add support for Antigravity terminal in terminal setup utility by @raky291 in https://github.com/google-gemini/gemini-cli/pull/16051 feat(core): Wire up model routing to subagents. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16043 feat(cli): add /agents slash command to list available agents by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16182 docs(cli): fix includeDirectories nesting in configuration.md by @maru0804 in https://github.com/google-gemini/gemini-cli/pull/15067 feat: implement file system reversion utilities for rewind by @Adib234 in https://github.com/google-gemini/gemini-cli/pull/15715 Always enable redaction in GitHub actions. by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16200 fix: remove unsupported 'enabled' key from workflow config by @Han5991 in https://github.com/google-gemini/gemini-cli/pull/15611 docs: Remove redundant and duplicate documentation files by @liqzheng in https://github.com/google-gemini/gemini-cli/pull/14699 docs: shorten run command and use published version by @dsherret in https://github.com/google-gemini/gemini-cli/pull/16172 test(command-registry): increase initialization test timeout by @wszqkzqk in https://github.com/google-gemini/gemini-cli/pull/15979 Ensure TERM is set to xterm-256color by @falouu in https://github.com/google-gemini/gemini-cli/pull/15828 The telemetry.js script should handle paths that contain spaces by @JohnJAS in https://github.com/google-gemini/gemini-cli/pull/12078 ci: guard links workflow from running on forks by @wtanaka in https://github.com/google-gemini/gemini-cli/pull/15461 ci: guard nightly release workflow from running on forks by @wtanaka in https://github.com/google-gemini/gemini-cli/pull/15463 Support @ suggestions for subagenets by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16201 feat(hooks): Support explicit stop and block execution control in model hooks by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/15947 Refine Gemini 3 system instructions to reduce model verbosity by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16139 chore: clean up unused models and use consts by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16246 Always enable bracketed paste by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16179 refactor: migrate clearCommand hook calls to HookSystem by @ved015 in https://github.com/google-gemini/gemini-cli/pull/16157 refactor: migrate app containter hook calls to hook system by @ishaanxgupta in https://github.com/google-gemini/gemini-cli/pull/16161 Show settings source in extensions lists by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16207 feat(skills): add pr-creator skill and enable skills by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16232 fix: handle Shift+Space in Kitty keyboard protocol terminals by @tt-a1i in https://github.com/google-gemini/gemini-cli/pull/15767 feat(core, ui): Add /agents refresh command. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16204 feat(core): add local experiments override via GEMINIEXP by @kevin-ramdass in https://github.com/google-gemini/gemini-cli/pull/16181 feat(ui): reduce home directory warning noise and add opt-out setting by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16229 refactor: migrate chatCompressionService to use HookSystem by @ved015 in https://github.com/google-gemini/gemini-cli/pull/16259 fix: properly use systemMessage for hooks in UI by @jackwotherspoon in https://github.com/google-gemini/gemini-cli/pull/16250 Infer modifyOtherKeys support by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16270 feat(core): Cache ignore instances for performance by @EricRahm in https://github.com/google-gemini/gemini-cli/pull/16185 feat: apply remote admin settings (no-op) by @skeshive in https://github.com/google-gemini/gemini-cli/pull/16106 Autogenerate docs/cli/settings.md docs/getting-started/configuration.md was already autogenerated but settings.md was not. by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/14408 refactor(config): remove legacy V1 settings migration logic by @galz10 in https://github.com/google-gemini/gemini-cli/pull/16252 Fix an issue where the agent stops prematurely by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16269 Update system prompt to prefer non-interactive commands by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16117 Update ink version to 6.4.7 by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/16284 Support for Built-in Agent Skills by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16045 fix(skills): remove \"Restart required\" message from non-interactive commands by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16307 remove unused sessionHookTriggers and exports by @ved015 in https://github.com/google-gemini/gemini-cli/pull/16324 Triage action cleanup by @bdmorgan in https://github.com/google-gemini/gemini-cli/pull/16319 fix: Add event-driven trigger to issue triage workflow by @bdmorgan in https://github.com/google-gemini/gemini-cli/pull/16334 fix(workflows): resolve triage workflow failures and actionlint errors by @bdmorgan in https://github.com/google-gemini/gemini-cli/pull/16338 docs: add note about experimental hooks by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16337 feat(cli): implement passive activity logger for session analysis by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/15829 feat(cli): add /chat debug command for nightly builds by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16339 style: format pr-creator skill by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16381 feat(cli): Hooks enable-all/disable-all feature with dynamic status by @AbdulTawabJuly in https://github.com/google-gemini/gemini-cli/pull/15552 fix(core): ensure silent local subagent delegation while allowing remote confirmation by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16395 Markdown w/ Frontmatter Agent Parser by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16094 Fix crash on unicode character by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16420 Attempt to resolve OOM w/ useMemo on history items by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16424 fix(core): ensure sub-agent schema and prompt refresh during runtime by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16409 Update extension examples by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16274 revert the change that was recently added from a fix by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16390 Add other hook wrapper methods to hooksystem by @ved015 in https://github.com/google-gemini/gemini-cli/pull/16361 feat: introduce useRewindLogic hook for conversation history navigation by @Adib234 in https://github.com/google-gemini/gemini-cli/pull/15716 docs: Fix formatting issue in memport documentation by @wanglc02 in https://github.com/google-gemini/gemini-cli/pull/14774 fix(policy): enhance shell command safety and parsing by @allenhutchison in https://github.com/google-gemini/gemini-cli/pull/15034 fix(core): avoid 'activateskill' re-registration warning by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16398 perf(workflows): optimize PR triage script for faster execution by @bdmorgan in https://github.com/google-gemini/gemini-cli/pull/16355 feat(admin): prompt user to restart the CLI if they change auth to oauth mid-session or don't have auth type selected at start of session by @skeshive in https://github.com/google-gemini/gemini-cli/pull/16426 Update cli-help agent's system prompt in sub-agents section by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16441 Revert \"Update extension examples\" by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16442 Fix: add back fastreturn support by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16440 feat(a2a): Introduce /memory command for a2a server by @cocosheng-g in https://github.com/google-gemini/gemini-cli/pull/14456 docs: fix broken internal link by using relative path by @Gong-Mi in https://github.com/google-gemini/gemini-cli/pull/15371 migrate yolo/auto-edit keybindings by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16457 feat(cli): add install and uninstall commands for skills by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16377 feat(ui): use Tab to switch focus between shell and input by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/14332 feat(core): support shipping built-in skills with the CLI by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16300 Collect hardware details telemetry. by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16119 feat(agents): improve UI feedback and parser reliability by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16459 Migrate keybindings by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16460 feat(cli): cleanup activity logs alongside session files by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/16399 feat(cli): implement dynamic terminal tab titles for CLI status by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16378 feat(core): add disableLLMCorrection setting to skip auto-correction in edit tools by @SandyTao520 in https://github.com/google-gemini/gemini-cli/pull/16000 fix: Set both tab and window title instead of just window title by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16464 fix(policy): ensure MCP policies match unqualified names in non-interactive mode by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16490 fix(cli): refine 'Action Required' indicator and focus hints by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16497 Refactor beforeAgent and afterAgent hookEvents to follow desired output by @ved015 in https://github.com/google-gemini/gemini-cli/pull/16495 feat(agents): clarify mandatory YAML frontmatter for sub-agents by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16515 docs(telemetry): add Google Cloud Monitoring dashboard documentation by @jerop in https://github.com/google-gemini/gemini-cli/pull/16520 Implement support for subagents as extensions. by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16473 refactor: make baseTimestamp optional in addItem and remove redundant calls by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16471 Improve key binding names and descriptions by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16529 feat(core, cli): Add support for agents in settings.json. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16433 fix(cli): fix 'gemini skills install' unknown argument error by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16537 chore(ui): optimize AgentsStatus layout with dense list style and group separation by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16545 fix(cli): allow @ file selector on slash command lines by @galz10 in https://github.com/google-gemini/gemini-cli/pull/16370 fix(ui): resolve sticky header regression in tool messages by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/16514 feat(core): Align internal agent settings with configs exposed through settings.json by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/16458 fix(cli): copy uses OSC52 only in SSH/WSL by @assagman in https://github.com/google-gemini/gemini-cli/pull/16554 docs(skills): clarify skill directory structure and file location by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16532 Fix: make ctrl+x use preferred editor by @scidomino in https://github.com/google-gemini/gemini-cli/pull/16556 fix(core): Resolve race condition in tool response reporting by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/16557 feat(ui): highlight persist mode status in ModelDialog by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16483 refactor: clean up A2A task output for users and LLMs by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/16561 feat(core/ui): enhance retry mechanism and UX by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/16489 Modernize MaxSizedBox to use <Box maxHeight> and ResizeObservers by @jacob314 in https://github.com/google-gemini/gemini-cli/pull/16565 Behavioral evals framework. by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16047 Aggregate test results. by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/16581 feat(admin): support admin-enforced settings for Agent Skills by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16406 fix(patch): cherry-pick cfdc4cf to release/v0.25.0-preview.0-pr-16759 to patch version v0.25.0-preview.0 and create version 0.25.0-preview.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/16866 Patch 16730 into v0.25.0 preview by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/16882 fix(patch): cherry-pick 3b55581 to release/v0.25.0-preview.2-pr-16506 to patch version v0.25.0-preview.2 and create version 0.25.0-preview.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/17098 New Contributors @kevinfjiang made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16032 @jasmeetsb made their first contribution in https://github.com/google-gemini/gemini-cli/pull/14738 @cayden-google made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15978 @vrv made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15656 @minglu7 made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16056 @alphanota made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15929 @phreakocious made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16083 @raky291 made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16051 @liqzheng made their first contribution in https://github.com/google-gemini/gemini-cli/pull/14699 @dsherret made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16172 @wszqkzqk made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15979 @falouu made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15828 @JohnJAS made their first contribution in https://github.com/google-gemini/gemini-cli/pull/12078 @wtanaka made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15461 @tt-a1i made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15767 @AbdulTawabJuly made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15552 @wanglc02 made their first contribution in https://github.com/google-gemini/gemini-cli/pull/14774 @Gong-Mi made their first contribution in https://github.com/google-gemini/gemini-cli/pull/15371 @assagman made their first contribution in https://github.com/google-gemini/gemini-cli/pull/16554 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.24.5...v0.25.0",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.25.0",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.14",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.14",
+      "date": "2026-01-20T22:37:25.754Z",
+      "summary": "- Added history-based autocomplete in bash mode (!) - type a partial command and press Tab to complete from your bash command history - Added search to installed plugins list - type to filter by na...",
+      "fullNotes": "- Added history-based autocomplete in bash mode (!) - type a partial command and press Tab to complete from your bash command history - Added search to installed plugins list - type to filter by name or description - Added support for pinning plugins to specific git commit SHAs, allowing marketplace entries to install exact versions - Fixed a regression where the context window blocking limit was calculated too aggressively, blocking users at ~65% context usage instead of the intended ~98% - Fixed memory issues that could cause crashes when running parallel subagents - Fixed memory leak in long-running sessions where stream resources were not cleaned up after shell commands completed - Fixed @ symbol incorrectly triggering file autocomplete suggestions in bash mode - Fixed @-mention menu folder click behavior to navigate into directories instead of selecting them - Fixed /feedback command generating invalid GitHub issue URLs when description is very long - Fixed /context command to show the same token count and percentage as the status line in verbose mode - Fixed an issue where /config, /context, /model, and /todos command overlays could close unexpectedly - Fixed slash command autocomplete selecting wrong command when typing similar commands (e.g., /context vs /compact) - Fixed inconsistent back navigation in plugin marketplace when only one marketplace is configured - Fixed iTerm2 progress bar not clearing properly on exit, preventing lingering indicators and bell sounds - Improved backspace to delete pasted text as a single token instead of one character at a time - [VSCode] Added /usage command to display current plan usage",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.388",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.388",
+      "date": "2026-01-20T20:30:08Z",
+      "summary": "2026-01-20 - Add /review command to analyze code changes - Make session event messages more concise and visually clean - Clean up old package versions during auto-update check to free disk space - ...",
+      "fullNotes": "2026-01-20 - Add /review command to analyze code changes - Make session event messages more concise and visually clean - Clean up old package versions during auto-update check to free disk space - --enable-all-github-mcp-tools flag now enables read-write GitHub MCP tools - /share gist shows helpful error on GitHub Enterprise Cloud with data residency - Remove commit hash from CLI header - Redesign CLI header with branded mascot and streamlined welcome message",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.388",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.24.5",
       "tool": "gemini-cli",
@@ -13,6 +46,39 @@
       "type": "release",
       "infographicUrl": "/images/infographics/gemini-cli-v0.24.5-2026-01-21-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/gemini-cli-v0.24.5-2026-01-21-16x9.jpg"
+    },
+    {
+      "id": "github-copilot-v0.0.387",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.387",
+      "date": "2026-01-20T01:27:40Z",
+      "summary": "2026-01-20 - Skill tool handles large directories without exceeding context limits - Add askuser tool for interactive clarification questions - Add plan mode with dedicated panel for viewing implem...",
+      "fullNotes": "2026-01-20 - Skill tool handles large directories without exceeding context limits - Add askuser tool for interactive clarification questions - Add plan mode with dedicated panel for viewing implementation plans",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.387",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.386",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.386",
+      "date": "2026-01-19T21:33:19Z",
+      "summary": "2026-01-19 - Background compaction preserves tool call sequences correctly - Add /resume command to switch sessions",
+      "fullNotes": "2026-01-19 - Background compaction preserves tool call sequences correctly - Add /resume command to switch sessions",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.386",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.385",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.385",
+      "date": "2026-01-19T18:54:45Z",
+      "summary": "2026-01-19 - The storememory tool is only included when memory is enabled for the user - Input placeholder now says \"Type\" instead of \"Enter\" to avoid confusion with Enter key - Cursor now correctl...",
+      "fullNotes": "2026-01-19 - The storememory tool is only included when memory is enabled for the user - Input placeholder now says \"Type\" instead of \"Enter\" to avoid confusion with Enter key - Cursor now correctly positioned at end of line when navigating history with down arrow - The new memory feature gracefully handles Copilot running without a repository - Control-C message now displays for 5 seconds instead of 1 second - Display current intent in terminal tab title - Combine all custom instruction files instead of using priority-based fallbacks - Enable infinite sessions with automatic long-running context management through compaction checkpoints - MCP server management when swapping between custom agents with /agent - Press Escape to cancel manual /compact command - Model switching from Codex to Opus preserves conversation history correctly",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.385",
+      "type": "release"
     },
     {
       "id": "gemini-cli-v0.24.4",
@@ -78,6 +144,17 @@
       "infographicUrl16x9": "/images/infographics/openai-codex-rust-v0.87.0-2026-01-17-16x9.jpg"
     },
     {
+      "id": "github-copilot-v0.0.384",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.384",
+      "date": "2026-01-16T06:41:28Z",
+      "summary": "2026-01-16 - Add & prefix shortcut for delegating prompts to run in background (equivalent to /delegate) - Tab completion cycles correctly based on typed prefix, not completed text - Allow users to...",
+      "fullNotes": "2026-01-16 - Add & prefix shortcut for delegating prompts to run in background (equivalent to /delegate) - Tab completion cycles correctly based on typed prefix, not completed text - Allow users to configure the reasoning effort for gpt models - MCP servers now start correctly for custom agents - Shell commands now display error output when they fail - Fixed bug causing model call failures after compaction in some scenarios - Login flow respects OAuth slowdown interval and includes debug logging - Custom agent discovery now follows symbolic links to agent definition files - Add additional prompting for custom agent delegation - Add /cd as an alias for /cwd command - Files created by the CLI are available for @-mention - Enable extended thinking for Anthropic Claude models - Screen reader mode shows static text instead of animated spinners during login - Selecting 'approve for session' now auto-approves pending parallel permission requests of the same type - Reasoning view setting persists across sessions - Provide clearer error messages when repository is not found or access is denied - Inject repo memories in the prompt and add memory storage tool to remember facts across sessions - Show delay time when Copilot reads shell output with a delay - Support proxy URLs without scheme (e.g., localhost:9999)",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.384",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.86.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -128,6 +205,17 @@
       "infographicUrl16x9": "/images/infographics/openai-codex-rust-v0.84.0-2026-01-16-16x9.jpg"
     },
     {
+      "id": "github-copilot-v0.0.382",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.382",
+      "date": "2026-01-14T19:27:34Z",
+      "summary": "2026-01-14 - Add support for GPT-5.2-Codex model - Add --config-dir flag to override default configuration directory location",
+      "fullNotes": "2026-01-14 - Add support for GPT-5.2-Codex model - Add --config-dir flag to override default configuration directory location",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.382",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.81.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -163,6 +251,28 @@
       "type": "release",
       "infographicUrl": "/images/infographics/claude-code-2.1.7-2026-01-16-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/claude-code-2.1.7-2026-01-16-16x9.jpg"
+    },
+    {
+      "id": "github-copilot-v0.0.381",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.381",
+      "date": "2026-01-13T18:58:23Z",
+      "summary": "2026-01-13 - Add --allow-all and --yolo flags to enable all permissions at once - Ghost text and tab completion show correct alias when typing slash commands like '/q' for '/quit' - Add /new as an ...",
+      "fullNotes": "2026-01-13 - Add --allow-all and --yolo flags to enable all permissions at once - Ghost text and tab completion show correct alias when typing slash commands like '/q' for '/quit' - Add /new as an alias for /clear command - Shell mode history navigation now filters by prefix - typing !git and pressing up arrow cycles only through previous git commands",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.381",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.380",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.380",
+      "date": "2026-01-13T02:45:16Z",
+      "summary": "2026-01-13 - Retrieving models handles network errors from firewalled routes gracefully, raises errors appropriately - Bash command text aligns with output in timeline events - Large output hints n...",
+      "fullNotes": "2026-01-13 - Retrieving models handles network errors from firewalled routes gracefully, raises errors appropriately - Bash command text aligns with output in timeline events - Large output hints now suggest appropriate tools for different content types including JSON - The --agent flag now works in interactive mode - Provide inline feedback when rejecting tool permission requests so agents don't have to stop due to denying permissions - web-fetch tool now rejects file:// URLs and suggests using view tool instead - Terminal escape sequences no longer appear as text input - Auto-compaction runs in background without blocking the conversation. - Abort signals now propagate to sub-agents, allowing task cancellation to stop all nested agent work - Custom agent tool aliasing for the task tool - Allow reading files >10MB when using viewrange parameter - Sessions with large conversation history load faster on startup - Send messages while Copilot is thinking to steer or queue",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.380",
+      "type": "release"
     },
     {
       "id": "claude-code-2.1.6",
@@ -226,6 +336,17 @@
       "infographicUrl": "/images/infographics/openai-codex-rust-v0.80.0-2026-01-10-1x1.jpg"
     },
     {
+      "id": "github-copilot-v0.0.377",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.377",
+      "date": "2026-01-08T23:01:29Z",
+      "summary": "2026-01-08 - Large file messages now encourage incremental reading with viewrange instead of discouraging all reading",
+      "fullNotes": "2026-01-08 - Large file messages now encourage incremental reading with viewrange instead of discouraging all reading",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.377",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.1.2",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -236,6 +357,28 @@
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "type": "release",
       "infographicUrl": "/images/infographics/claude-code-2.1.2-2026-01-09-1x1.jpg"
+    },
+    {
+      "id": "github-copilot-v0.0.376",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.376",
+      "date": "2026-01-08T15:06:15Z",
+      "summary": "2026-01-08 - Loading remote sessions using GraphQL ID or session picker - Task tool subagents can now process images - Downgrading CLI version no longer requires manually clearing downloaded packag...",
+      "fullNotes": "2026-01-08 - Loading remote sessions using GraphQL ID or session picker - Task tool subagents can now process images - Downgrading CLI version no longer requires manually clearing downloaded packages - Large tool outputs are written to disk and models are encouraged to use efficient search tools",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.376",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.375",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.375",
+      "date": "2026-01-07T16:11:21Z",
+      "summary": "2026-01-07 - Add Ctrl+T to toggle reasoning summaries for supported models - Add --share and --share-gist flags for session sharing in non-interactive mode - File edits no longer hang when approvin...",
+      "fullNotes": "2026-01-07 - Add Ctrl+T to toggle reasoning summaries for supported models - Add --share and --share-gist flags for session sharing in non-interactive mode - File edits no longer hang when approving multiple concurrent edits - Responses with reasoning no longer cause duplicate assistant messages - Shutdown MCP servers after subagent execution completes - SVG files are now treated as text files instead of binary images - Fix 'Connection Error' issues due to subscription-based route used in chat completions",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.375",
+      "type": "release"
     },
     {
       "id": "claude-code-2.1.0",
@@ -284,6 +427,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.374",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.374",
+      "date": "2026-01-02T20:06:50Z",
+      "summary": "2026-01-02 - MCP server type help text displays correct options - Model picker shows clearer message with settings link when models are unavailable - Add auto-compaction at 95% token limit and /com...",
+      "fullNotes": "2026-01-02 - MCP server type help text displays correct options - Model picker shows clearer message with settings link when models are unavailable - Add auto-compaction at 95% token limit and /compact command - Built-in subagents for exploring and managing tasks - Built in webfetch tool for fetching web content",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.374",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.22.5",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -293,6 +447,17 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.5",
       "type": "release",
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick 07e597d to release/v0.22.4-pr-15684 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15733\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.22.4...v0.22.5"
+    },
+    {
+      "id": "github-copilot-v0.0.373",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.373",
+      "date": "2025-12-30T15:19:10Z",
+      "summary": "2025-12-30 - Tab completion for path arguments in slash commands like /cwd and /add-dir - Enable Copilot Spaces tools in GitHub MCP Server - GitHub URL resolves correctly for GHE - Kill command fil...",
+      "fullNotes": "2025-12-30 - Tab completion for path arguments in slash commands like /cwd and /add-dir - Enable Copilot Spaces tools in GitHub MCP Server - GitHub URL resolves correctly for GHE - Kill command filtering now allows commands when 'kill' appears as an argument - Device code authorization polling begins immediately instead of waiting for clipboard and browser",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.373",
+      "type": "release"
     },
     {
       "id": "gemini-cli-v0.22.4",
@@ -397,6 +562,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.372",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.372",
+      "date": "2025-12-19T23:04:42Z",
+      "summary": "2025-12-19 - Enable disabled models directly in CLI when selecting or specifying them - Add /context command to visualize token usage - Add --resume flag to continue remote sessions locally - Add U...",
+      "fullNotes": "2025-12-19 - Enable disabled models directly in CLI when selecting or specifying them - Add /context command to visualize token usage - Add --resume flag to continue remote sessions locally - Add URL permission controls which affect common shell commands which access the web - Long commands no longer show duplicate intention headers when wrapping",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.372",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.74",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -430,6 +606,17 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick 9e6914d to release/v0.21.2-pr-15288 to patch version v0.21.2 and create version 0.21.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15295\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.21.2...v0.21.3"
     },
     {
+      "id": "github-copilot-v0.0.371",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.371",
+      "date": "2025-12-18T23:51:56Z",
+      "summary": "2025-12-18 - Normal text respects terminal's default foreground color - Update skills help text to reference correct ~/.copilot/skills/ directory",
+      "fullNotes": "2025-12-18 - Normal text respects terminal's default foreground color - Update skills help text to reference correct ~/.copilot/skills/ directory",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.371",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.73",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -460,6 +647,17 @@
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.74.0",
       "type": "release",
       "fullNotes": "### Highlights\n- Introducing gpt-5.2-codex our latest frontier model with improvements across knowledge, reasoning and coding. [Learn more](https://openai.com/index/introducing-gpt-5-2-codex)\n- Add new slash command `/experimental` for trying out `experimental` features\n- Ghost snapshot warning disable toggle (#8178)\n- UI polish (background terminals, picker cleanup) (#8255, #8232).\n\n### PRs Merged\n- #8266 feat: add name to beta features\n- #8265 caribou\n- #8264 docs: clarify codex resume --all (CWD column & filtering)\n- #8255 nit: ui background terminals\n- #8249 chore: prefer AsRef<Path> to &Path\n- #8248 chore: simplify loading of Mac-specific logic in config_loader\n- #8244 Reintroduce feature flags for skills.\n- #8243 Make loading malformed skills fail-open\n- #8235 fix: introduce ConfigBuilder\n- #8232 chores: clean picker\n- #8228 Show migration link\n- #8226 chore: cleanup Config instantiation codepaths\n- #8221 Change “Team” to “Buisness” and add Education\n- #8220 Support SYSTEM skills.\n- #8216 speed and reliability improvements for setting reads ACLs\n- #8209 feat: model picker\n- #8205 fix: PathBuf -> AbsolutePathBuf in ConfigToml struct\n- #8203 download new windows binaries when staging npm package\n- #8201 chore: add beta features\n- #8199 chore: move back stuff out of beta program\n- #8198 feat: make list_models non-blocking\n- #8196 fix: session downgrade\n- #8194 fix: proper skills dir cleanup\n- #8186 nit: doc\n- #8182 nit: drop dead branch with unified_exec tool\n- #8181 nit: prevent race in event rendering\n- #8178 feat: add config to disable warnings around ghost snapshot\n- #8175 fix: flaky test 6\n- #8163 fix the models script\n- #8153 Load models from static file\n- #8152 [app-server] add new RawResponseItem v2 event\n- #8151 chore: update listMcpServerStatus to be non-blocking\n- #8149 Add user_agent header\n- #8141 chore(apply-patch) unicode scenario\n- #8140 include new windows binaries in npm package.\n- #8127 Revert “chore: review in read-only (#7593)”\n- #8124 fix tui2 compile error\n- #8122 docs: refine tui2 viewport roadmap\n- #8118 Add a workflow for a hardcoded version of models\n- #8117 feat: unified exec footer\n- #8114 chore: update listMcpServers to listMcpServerStatus\n- #8111 chore(apply-patch) move invocation tests\n- #8109 Revert “feat: unified exec footer”\n- #8108 feat(sdk): add xhigh reasoning effort support to TypeScript SDK\n- #8102 Upgrade GitHub Actions for Node 24 compatibility\n- #8098 Add public skills + improve repo skill discovery and error UX\n- #8095 feat: change ConfigLayerName into a disjoint union rather than a simple enum\n- #8094 bug fixes and perf improvements for elevated sandbox setup\n- #8089 refactor(tui2): make transcript line metadata explicit\n- #8088 feat: if .codex is a sub-folder of a writable root, then make it read-only to the sandbox\n- #8086 chore(app-server): remove stubbed thread/compact API\n- #8085 chore: mac codesign refactor\n- #8084 chore(ci): drop Homebrew origin/main workaround for macOS runners\n- #8079 docs: fix gpt-5.2 typo in config.md\n- #8077 better name for windows sandbox features\n- #8075 feat: fallback unified_exec to shell_command\n- #8071 feat: experimental menu\n- #8067 feat: unified exec footer\n- #8060 feat: do not compact on last user turn\n- #8057 chore: dedup review result duplication\n- #8053 nit: trace span for regular task\n- #8052 feat: close unified_exec at end of turn\n- #8020 Fixes mcp elicitation test that fails for me when run locally\n- #8004 Fix: Detect Bun global install via path check\n- #8000 Fixed resume matching to respect case insensitivity when using WSL mount points\n- #7997 feat: merge remote models instead of destructing\n- #7969 Fix: Skip Option<()> schema generation to avoid invalid Windows filenames (#7479)\n- #7961 refactor TUI event loop to enable dropping + recreating crossterm event stream\n- #7956 fix parallel tool calls\n- #7935 exec-server: additional context for errors\n- #7931 chore: persist comments in edit\n- #7791 chore(shell_command) fix freeform timeout output\n- #7778 feat: Constrain values for approval_policy\n- #7601 WIP: Rework TUI viewport, history printing, and selection/copy"
+    },
+    {
+      "id": "github-copilot-v0.0.370",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.370",
+      "date": "2025-12-18T15:41:30Z",
+      "summary": "2025-12-18 - Disabled MCP servers are now properly ignored when using --disable-mcp-server - Shared sessions correctly render nested markdown codeblocks - Log levels now output all messages of that...",
+      "fullNotes": "2025-12-18 - Disabled MCP servers are now properly ignored when using --disable-mcp-server - Shared sessions correctly render nested markdown codeblocks - Log levels now output all messages of that level and higher severity - Load CA certificates from system and environment variables - Improve /model error messages to show available and unavailable models - Model picker uses two-column layout with aligned multipliers and clearer visual indicators - Add STDIO type as synonymous for Local for MCP servers in CLI configuration UI - Diff display uses your configured git pager (delta, diff-so-fancy) - Use platform-specific executable from npm install when available - Publish SHA256 checksums for CLI executables in releases - Add --available-tools and --excluded-tools to filter which tools the model can use - Ensure animated or non-animated banner is displayed based on banner and screen reader preferences - Fix truncation logic for codex models",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.370",
+      "type": "release"
     },
     {
       "id": "kiro-1.23.0",
@@ -610,6 +808,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.369",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.369",
+      "date": "2025-12-11T20:00:46Z",
+      "summary": "2025-12-11 - Add support for GPT-5.2",
+      "fullNotes": "2025-12-11 - Add support for GPT-5.2",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.369",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.71.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -650,6 +859,17 @@
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.69.0",
       "type": "release",
       "fullNotes": "### Highlights\n\n  - Skills: Explicit skill selections now inject SKILL.md content into the turn; skills load once per session and warn if a file\n    can’t be read (#7763).\n  - Config API: config/read is fully typed; config writes preserve comments/order; model is optional to match real configs (#7658,\n    #7789, #7769).\n  - TUI/UX: Log files drop ANSI codes; vim navigation for option selection and transcript pager; transcript continuity fix; slash-\n    command popup no longer triggers on invalid input; experimental tui2 frontend behind a flag (#7836, #7784, #7550, #7363,\n    #7704, #7793).\n  - Exec & sandbox: Shell snapshotting, reworked unified-exec events, elevated sandbox allowances (sendmsg/recvmsg), clearer rate-\n    limit warnings, better request-id logging, and safer escalations (#7641, #7775, #7788, #7779, #7795, #7830, #7750).\n  - Platform/auth/build: MCP in-session login, remote-branch review support, Windows signing toggles, ConPty vendoring, Nix hash\n    fixes, and safer release guardrails (#7751, #7813, #7757/#7804/#7806, #7656, #7762, #7834).\n  - Misc fixes: Unsupported images error cleanly, absolute config paths, parallel test stability, duplicated feature spec removal,\n    experimental-model prompt/tools, and more (#7478, #7796, #7589, #7818, #7826, #7823, #7765).\n\n  ### PRs Merged\n\n  - #7836 Disable ansi codes in TUI log file\n  - #7834 Error when trying to push a release while another release is in progress\n  - #7830 Remove conversation_id and bring back request ID logging\n  - #7826 fix: flaky tests 3\n  - #7823 fix: remove duplicated parallel FeatureSpec\n  - #7818 fix: flaky test 2\n  - #7817 fix: Upgrade @modelcontextprotocol/sdk to ^1.24.0\n  - #7813 feat: use remote branch for review is local trails\n  - #7807 chore: disable trusted signing pkg cache hit\n  - #7806 Revert \"Revert \"feat: windows codesign with Azure trusted signing\"\"\n  - #7804 Revert \"feat: windows codesign with Azure trusted signing\"\n  - #7799 Removed experimental \"command risk assessment\" feature\n  - #7797 parse rg | head a search\n  - #7796 fix: introduce AbsolutePathBuf and resolve relative paths in config.toml\n  - #7795 Express rate limit warning as % remaining\n  - #7793 feat(tui2): add feature-flagged tui2 frontend\n  - #7789 [app-server] Preserve comments & order in config writes\n  - #7788 Elevated Sandbox 1\n  - #7787 fix more typos in execpolicy.md\n  - #7784 Add vim-style navigation for CLI option selection\n  - #7779 allow sendmsg/recvmsg syscalls in Linux sandbox\n  - #7775 chore: rework unified exec events\n  - #7769 make model optional in config\n  - #7765 Use codex-max prompt/tools for experimental models\n  - #7763 Inject SKILL.md when it’s explicitly mentioned\n  - #7762 Fix Nix cargo output hashes for rmcp and filedescriptor\n  - #7757 Revert \"Revert \"feat: windows codesign with Azure trusted signing\"\"\n  - #7756 Vendor ConPtySystem\n  - #7751 feat: support mcp in-session login\n  - #7750 refactor with_escalated_permissions to use SandboxPermissions\n  - #7704 fix: Prevent slash command popup from activating on invalid inputs\n  - #7658 [app-server-protocol] Add types for config\n  - #7641 feat: shell snapshotting\n  - #7589 chore: enable parallel tc\n  - #7550 Add vim navigation keys to transcript pager\n  - #7478 Fix: gracefully error out for unsupported images\n  - #7363 Fix transcript pager page continuity\n  - #7779 allow sendmsg/recvmsg syscalls in Linux sandbox (already listed; ensure single entry)\n  - #7788 Elevated Sandbox 1 (already listed)\n  - #7784 Add vim-style navigation for CLI option selection (already listed)\n  - #7807/7806/7804 Windows signing toggles (grouped above)"
+    },
+    {
+      "id": "github-copilot-v0.0.368",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.368",
+      "date": "2025-12-10T21:09:32Z",
+      "summary": "2025-12-10 - PRU usage rates now displayed correctly - Fix checkmark and x icon rendering - Add grep tool Codex models - Numpad keys work in prompts with Kitty keyboard protocol",
+      "fullNotes": "2025-12-10 - PRU usage rates now displayed correctly - Fix checkmark and x icon rendering - Add grep tool Codex models - Numpad keys work in prompts with Kitty keyboard protocol",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.368",
+      "type": "release"
     },
     {
       "id": "claude-code-2.0.64",
@@ -757,6 +977,17 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick d284fa6 to release/v0.19.1-pr-14545 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/14558\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.19.1...v0.19.2"
     },
     {
+      "id": "github-copilot-v0.0.367",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.367",
+      "date": "2025-12-05T00:56:03Z",
+      "summary": "2025-12-04 - GPT-5.1-Codex-Max is now available in GitHub Copilot CLI",
+      "fullNotes": "2025-12-04 - GPT-5.1-Codex-Max is now available in GitHub Copilot CLI",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.367",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.59",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -776,6 +1007,17 @@
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.65.0",
       "type": "release",
       "fullNotes": "### Highlights\n- Codex Max as default (#7566): Codex Max is now the default model, and a TUI panic related to async-in-sync code was fixed.\n- Better resume UX (#7302, #7303): Added a /resume slash command and improved resume performance so picking work back up is snappier.\n- Tooltips & tips UX (#7557, #7440): Tips/tooltips are rendered via markdown with a bold “Tip” label and richer Codex tooltips across the app.\n- TUI quality-of-life (#7530, #7448, #7514, #7461): TUI gets Ctrl‑P/N navigation, screen-line-capped shell output, restored Windows clipboard image paste, and a refactor for cleaner layout.\n- History and context hygiene (#6242, #7483, #7545, #7431, #7483): history.jsonl is trimmed by history.max_bytes, common junk dirs (incl. __pycache__) are ignored by default, and paste placeholders stay distinct.\n\n# PRs Merged\n- use markdown for rendering tips #7557 @[Jeremy Rose]  \n- Migrate codex max #7566 @[Ahmed Ibrahim]  \n- Remove test from #7481 that doesn't add much value #7558 @[Eric Traut]  \n- [app-server] make `file_path` for config optional #7560 @[Celia Chen]  \n- Migrate model family to models manager #7565 @[Ahmed Ibrahim]  \n- Migrate `tui` to use models manager #7555 @[Ahmed Ibrahim]  \n- Introduce `ModelsManager` and migrate `app-server` to use it. #7552 @[Ahmed Ibrahim]  \n- fix: wrap long exec lines in transcript overlay #7481 @[muyuanjin]  \n- fix: Features should be immutable over the lifetime of a session/thread #7540 @[Michael Bolin]  \n- feat: Support listing and selecting skills via $ or /skills #7506 @[xl-openai]  \n- [app-server] fix: add thread_id to turn/plan/updated #7553 @[Owen Lin]  \n- feat(tui): map Ctrl-P/N to arrow navigation in textarea #7530 @[Aofei Sheng]  \n- fix(tui): limit user shell output by screen lines #7448 @[muyuanjin]  \n- Migrate model preset #7542 @[Ahmed Ibrahim]  \n- fix: main #7546 @[jif-oai]  \n- feat: add pycache to excluded directories #7545 @[jif-oai]  \n- chore: update unified exec sandboxing detection #7541 @[jif-oai]  \n- add slash resume #7302 @[Ahmed Ibrahim]  \n- chore: conversation_id -> thread_id in app-server feedback/upload #7538 @[Owen Lin]  \n- chore: delete unused TodoList item from app-server #7537 @[Owen Lin]  \n- chore: update app-server README #7510 @[Owen Lin]  \n- chore: remove bun env var detect #7534 @[Shijie Rao]  \n- feat: support list mcp servers in app server #7505 @[Shijie Rao]  \n- seatbelt: allow openpty() #7507 @[Jeremy Rose]  \n- feat: codex tool tips #7440 @[jif-oai]  \n- feat: retroactive image placeholder to prevent poisoning #6774 @[jif-oai]  \n- feat: model warning in case of apply patch #7494 @[jif-oai]  \n- fix(tui) Support image paste from clipboard on native Windows #7514 @[Dylan Hurd]  \n- fix(unified_exec): use platform default shell when unified_exec shell… #7486 @[Robby He]  \n- Update device code auth strings. #7498 @[Matthew Zeng]  \n- fix: inline function marked as dead code #7508 @[Michael Bolin]  \n- improve resume performance #7303 @[Ahmed Ibrahim]  \n- fix: path resolution bug in npx #7134 @[Michael Bolin]  \n- Ensure duplicate-length paste placeholders stay distinct #7431 @[Joshua Sutton]  \n- feat: support --version flag for @openai/codex-shell-tool-mcp #7504 @[Michael Bolin]  \n- refactor: tui.rs extract several pieces #7461 @[Josh McKinney]  \n- chore: make create_approval_requirement_for_command an async fn #7501 @[Michael Bolin]  \n- Trim `history.jsonl` when `history.max_bytes` is set #6242 @[liam]  \n- fix: remove serde(flatten) annotation for TurnError #7499 @[Owen Lin]  \n- persisting credits if new snapshot does not contain credit info #7490 @[zhao-oai]  \n- fix: drop lock once it is no longer needed #7500 @[Michael Bolin]  \n- execpolicy helpers #7032 @[zhao-oai]  \n- Show token used when context window is unknown #7497 @[Ahmed Ibrahim]  \n- Use non-blocking mutex #7467 @[Ahmed Ibrahim]  \n- Fix: track only untracked paths in ghost snapshots #7470 @[lionel-oai]  \n- feat: ignore standard directories #7483 @[jif-oai]  \n- fix: add ts number annotations for app-server v2 types #7492 @[Owen Lin]  \n- feat: intercept apply_patch for unified_exec #7446 @[jif-oai]  \n- chore: remove mention of experimental/unstable from app-server README #7474 @[Owen Lin]  \n- Add request logging back #7471 @[pakrym-oai]  \n- feat: add one off commands to app-server v2 #7452 @[jif-oai]  \n- feat: add warning message for the model #7445 @[jif-oai]  \n- chore: review everywhere #7444 @[jif-oai]  \n- feat: alias compaction #7442 @[jif-oai]  \n- feat: experimental support for skills.md #7412 @[Thibault Sottiaux]"
+    },
+    {
+      "id": "github-copilot-v0.0.366",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.366",
+      "date": "2025-12-03T22:56:36Z",
+      "summary": "2025-12-03 - Add infer property to control custom agent tool visibility - Add CLI executables to GitHub release artifacts - Add applypatch toolchain for OpenAI Codex models",
+      "fullNotes": "2025-12-03 - Add infer property to control custom agent tool visibility - Add CLI executables to GitHub release artifacts - Add applypatch toolchain for OpenAI Codex models",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.366",
+      "type": "release"
     },
     {
       "id": "claude-code-2.0.58",
@@ -939,6 +1181,17 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick bdf80ea to release/v0.18.0-pr-13600 to patch version v0.18.0 and create version 0.18.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13861\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.18.0...v0.18.1"
     },
     {
+      "id": "github-copilot-v0.0.365",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.365",
+      "date": "2025-11-26T16:05:53Z",
+      "summary": "2025-11-25 - Add --silent option to suppress stats output for scripting",
+      "fullNotes": "2025-11-25 - Add --silent option to suppress stats output for scripting",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.365",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.19.0-nightly.20251126.03845198c",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -991,6 +1244,17 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.18.0-preview.4",
       "type": "release",
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick d8a3d08 to release/v0.18.0-preview.3-pr-13791 to patch version v0.18.0-preview.3 and create version 0.18.0-preview.4 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13826\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.18.0-preview.3...v0.18.0-preview.4"
+    },
+    {
+      "id": "github-copilot-v0.0.364",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.364",
+      "date": "2025-11-25T20:15:17Z",
+      "summary": "2025-11-25 - Add syntax highlighting for diffs - Fix light theme markdown rendering",
+      "fullNotes": "2025-11-25 - Add syntax highlighting for diffs - Fix light theme markdown rendering",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.364",
+      "type": "release"
     },
     {
       "id": "gemini-cli-v0.18.0-preview.3",
@@ -1053,6 +1317,17 @@
       "date": "2025-11-24T23:01:06.778Z",
       "summary": "- Fixed duplicate message display when starting Claude with a command line argument - Fixed /usage command progress bars to fill up as usage increases (instead of showing remaining percentage)",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.363",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.363",
+      "date": "2025-11-24T21:17:46Z",
+      "summary": "2025-11-24 - Opus 4.5, GPT-4.1 and GPT-5-Mini are now available in GitHub Copilot CLI - Image data paste now prioritizes pasting contents of image files instead of their file icons. - Improved time...",
+      "fullNotes": "2025-11-24 - Opus 4.5, GPT-4.1 and GPT-5-Mini are now available in GitHub Copilot CLI - Image data paste now prioritizes pasting contents of image files instead of their file icons. - Improved timeline rendering of shell tool names - Add support for GITHUBASKPASS environment variable for authentication - MCP servers work in --prompt mode",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.363",
       "type": "release"
     },
     {
@@ -1216,6 +1491,17 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick ade9dfe to release/v0.17.0-preview.4-pr-13515 to patch version v0.17.0-preview.4 and create version 0.17.0-preview.5 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/13536\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.17.0-preview.4...v0.17.0-preview.5"
     },
     {
+      "id": "github-copilot-v0.0.362",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.362",
+      "date": "2025-11-20T21:41:29Z",
+      "summary": "2025-11-20 - Fix issues with image drag and drop on Windows - Shell commands are no longer included in Bash and PowerShell history files - Paste image data from your clipboard directly into the CLI...",
+      "fullNotes": "2025-11-20 - Fix issues with image drag and drop on Windows - Shell commands are no longer included in Bash and PowerShell history files - Paste image data from your clipboard directly into the CLI - Cleanup and update prompts and tool instructions to be more fluid",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.362",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.17.0-preview.4",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1332,6 +1618,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.361",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.361",
+      "date": "2025-11-18T16:37:14Z",
+      "summary": "2025-11-18 - Gemini 3 Pro is now available in GitHub Copilot CLI",
+      "fullNotes": "2025-11-18 - Gemini 3 Pro is now available in GitHub Copilot CLI",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.361",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.45",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -1349,6 +1646,28 @@
       "date": "2025-11-18T16:04:08Z",
       "summary": "What's Changed  feat: launch Gemini 3 in Gemini CLI 🚀🚀🚀 by @skeshive in https://github.com/google-gemini/gemini-cli/pull/13279",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.360",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.360",
+      "date": "2025-11-18T03:27:19Z",
+      "summary": "2025-11-18 - Fix file operations timing out while waiting for user permission",
+      "fullNotes": "2025-11-18 - Fix file operations timing out while waiting for user permission",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.360",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.359",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.359",
+      "date": "2025-11-17T23:15:16Z",
+      "summary": "2025-11-17 - Support adding images to context via drag & dropping and pasting paths to image files. Improved how image slugs are rendered in the input box - Add /share command to save session as ma...",
+      "fullNotes": "2025-11-17 - Support adding images to context via drag & dropping and pasting paths to image files. Improved how image slugs are rendered in the input box - Add /share command to save session as markdown file or GitHub gist - Fix a bug where cached tokens were displaying as zero at the end of the session - Enable USEBUILTINRIPGREP environment variable to optionally use ripgrep from PATH - Fix an issue where sourcing custom agents from the remote repository's default branch led to confusions about whether the local copy of the agent was being used - Fix custom agents configuration issues - Improve Ctrl+C performance - Improve tool argument parsing safety - Distinguish tool names from paths and improve tool success/error icons - copilot -p will no longer interactively prompt for permission requests - Remove unnecessary whitespace from tool descriptions",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.359",
       "type": "release"
     },
     {
@@ -1482,6 +1801,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.358",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.358",
+      "date": "2025-11-14T15:19:53Z",
+      "summary": "0.0.358 - 2025-11-14 Recovery release to fix availability of GPT-5.1, GPT-5.1-Codex, and GPT-5.1-Codex-Mini models.",
+      "fullNotes": "0.0.358 - 2025-11-14 Recovery release to fix availability of GPT-5.1, GPT-5.1-Codex, and GPT-5.1-Codex-Mini models.",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.358",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.17.0-nightly.20251114.0fcbff506",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1489,6 +1819,17 @@
       "date": "2025-11-14T03:48:37Z",
       "summary": "What's Changed  Allow users to reset to auto when it's in fallback mode by @sehoon38 in https://github.com/google-gemini/gemini-cli/pull/12623",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.17.0-nightly.20251114.0fcbff506",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.357",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.357",
+      "date": "2025-11-14T02:18:09Z",
+      "summary": "0.0.357 - 2025-11-13 Recovery release to fix an issue with image resizing.",
+      "fullNotes": "0.0.357 - 2025-11-13 Recovery release to fix an issue with image resizing.",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.357",
       "type": "release"
     },
     {
@@ -1542,6 +1883,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.356",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.356",
+      "date": "2025-11-13T19:08:45Z",
+      "summary": "0.0.356 - 2025-11-13 - GPT-5.1, GPT-5.1-Codex, and GPT-5.1-Codex-Mini are now available in GitHub Copilot CLI. See the GitHub Changelog for more details",
+      "fullNotes": "0.0.356 - 2025-11-13 - GPT-5.1, GPT-5.1-Codex, and GPT-5.1-Codex-Mini are now available in GitHub Copilot CLI. See the GitHub Changelog for more details",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.356",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.15.0-preview.5",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1589,6 +1941,17 @@
       "date": "2025-11-13T01:08:10Z",
       "summary": "What's Changed  chore/release: bump version to 0.16.0-nightly.20251112.c961f274 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/12923",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.16.0-nightly.20251113.ad1f0d99",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.355",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.355",
+      "date": "2025-11-12T22:27:57Z",
+      "summary": "0.0.355 - 2025-11-12 - Enabled the CLI agent to read its own /help and README to answer questions about its capabilities - Improved parsing of VSCode-formatted custom agents with the .agent.md suff...",
+      "fullNotes": "0.0.355 - 2025-11-12 - Enabled the CLI agent to read its own /help and README to answer questions about its capabilities - Improved parsing of VSCode-formatted custom agents with the .agent.md suffix - Sanitize tool names to fix issues like https://github.com/github/copilot-cli/issues/456 - Bundled ripgrep and added grep and glob tools for more performant searching of codebases - Fixed malformed tool call handling before it reaches the UI (partially addresses https://github.com/github/copilot-cli/issues/393) - Prevent double line wraps in markdown messages - Fixed a bug where the file selector was used in multi-line input that led to unexpected up/down arrow behavior (fixes https://github.com/github/copilot-cli/issues/350) - Fixed a bug where remote MCP server configuration in custom agents was not fetched properly - Added more detail and improved the styling of the /session command's output - Removed the internal NODEENV variable from the shell tool's environment (fixes https://github.com/github/copilot-cli/issues/151) - Fixed a memory leak when using the interactive shell tool - Improved line number formatting in file view output (fixes https://github.com/github/copilot-cli/issues/471) - Lowered the default shell tool timeout and updated prompt language to not imply that timeout means failure - Ensured that we query the terminal background color before rendering (fixes https://github.com/github/copilot-cli/issues/36) - Ensured that the agent won't run pkill on its own PID - Fixed a bug where copilot would not quit after an abort signal (fixes https://github.com/github/copilot-cli/issues/529) - Ensure ! commands on Windows use PowerShell when available (fixes https://github.com/github/copilot-cli/issues/504) - Fixed a bug in Windows Terminal where keyboard input was not accepted",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.355",
       "type": "release"
     },
     {
@@ -1862,6 +2225,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.354",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.354",
+      "date": "2025-11-03T23:04:05Z",
+      "summary": "2025-11-03 - Exit with nonzero code when -p mode fails due to LLM backend errors (auth failures, quota exhaustion, network issues) - Support for MCP server tool notifications - Support for COPILOTG...",
+      "fullNotes": "2025-11-03 - Exit with nonzero code when -p mode fails due to LLM backend errors (auth failures, quota exhaustion, network issues) - Support for MCP server tool notifications - Support for COPILOTGITHUBTOKEN environment variable for authentication (takes precedence over GHTOKEN) - Improved shell command safety with better heredoc handling outside of commands - Diff hunk lines now properly fill the width of the diff box - MCP servers in GitHub Actions environments automatically use GITHUBWORKSPACE as working directory - /delegate command now works correctly when no local changes exist - Custom agents with special characters in filenames no longer fail - Better error messages when using unsupported models with /model command",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.354",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.13.0-nightly.20251103.9187f6f6",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2092,6 +2466,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.353",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.353",
+      "date": "2025-10-28T17:07:14Z",
+      "summary": "0.0.353 - 2025-10-28 - Added support for custom agents. Custom agent definitions are pulled from ~/.copilot/agents, .github/agents in your repository, or your organization's .github repository. You...",
+      "fullNotes": "0.0.353 - 2025-10-28 - Added support for custom agents. Custom agent definitions are pulled from ~/.copilot/agents, .github/agents in your repository, or your organization's .github repository. You can explicitly invoke an agent with the /agent slash command interactively or --agent <agent> noninteractively. Agents are also provided as tools that the model can call during completion of a task - Added a /delegate command to delegate a task asynchronously to Copilot coding agent. Any unstaged changes will be committed to a new branch, a PR will be opened in your GitHub repository, and Copilot will complete work in the background.",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.353",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.12.0-nightly.20251027.cb0947c5",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2112,6 +2497,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.352",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.352",
+      "date": "2025-10-27T20:01:07Z",
+      "summary": "0.0.352 - 2025-10-27 - Improve handling of MCP tools containing slashes - Improve error message from /model <model> command when using an unsupported model",
+      "fullNotes": "0.0.352 - 2025-10-27 - Improve handling of MCP tools containing slashes - Improve error message from /model <model> command when using an unsupported model",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.352",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.50.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2119,6 +2515,17 @@
       "date": "2025-10-25T21:37:23Z",
       "summary": "Highlights\r - Improved /feedback to get better diagnostics. Please use it to report any issues. (5661, 5663).",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.50.0",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.351",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.351",
+      "date": "2025-10-24T22:48:08Z",
+      "summary": "0.0.351 - 2025-10-24 - Improved our path detection heuristic to avoid various annoying, unnecessary permissions requests: - Running many standard bash/PowerShell commands that are known to be reado...",
+      "fullNotes": "0.0.351 - 2025-10-24 - Improved our path detection heuristic to avoid various annoying, unnecessary permissions requests: - Running many standard bash/PowerShell commands that are known to be readonly - Commands like npm test -- --something in PowerShell - Shell redirections like > somefile.txt in paths you've already granted write permissions, > /dev/null, and 2>&1 (Fixes https://github.com/github/copilot-cli/issues/211) - Arguments to gh api like gh api /repos/user/repo/ec (Fixes https://github.com/github/copilot-cli/issues/216) - Code comments including / - Improved prompting for Sonnet 4.5 to reduce the number of intermediate markdown files left in the workspace - 👀 ...see you at GitHub Universe! Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.351",
       "type": "release"
     },
     {
@@ -2139,6 +2546,17 @@
       "date": "2025-10-24T18:58:35Z",
       "summary": "Highlights\r  No major changes comparing to v0.48.0 - v0.49.0 is used for testing homebrew upgrade script.",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.49.0",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.350",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.350",
+      "date": "2025-10-24T00:32:55Z",
+      "summary": "0.0.350 - 2025-10-23 - To conserve context window space, we've limited the list of tools available to the default GitHub MCP server. In our tests, the model will use the GitHub CLI, gh (if installe...",
+      "fullNotes": "0.0.350 - 2025-10-23 - To conserve context window space, we've limited the list of tools available to the default GitHub MCP server. In our tests, the model will use the GitHub CLI, gh (if installed) in lieu of missing MCP tools. We added an --enable-all-github-mcp-tools if you wish to turn on all available tools. Default available tools are: - Code & Repo navigation - getfilecontents - searchcode - searchrepositories - listbranches - listcommits - getcommit - Issue Management - getissue - listissues - getissuecomments - searchissues - PR Management - pullrequestread - listpullrequests - searchpullrequests - Workflow Info - listworkflows - listworkflowruns - getworkflowrun - getjoblogs - getworkflowrunlogs - Misc search - usersearch - Bundled sharp dependency into the CLI package -- we're one step closer to implementing https://github.com/github/copilot-cli/issues/16, and this fixes some startup blockers on Windows (fixes https://github.com/github/copilot-cli/issues/309 & https://github.com/github/copilot-cli/issues/287) - Fixed a bug where input tokens were not tracked properly (Fixes https://github.com/github/copilot-cli/issues/337) - Fixed a bug where MCP tools with arguments would fail with streaming enabled - Added additional debug logging that will help us investigate https://github.com/github/copilot-cli/issues/346 Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.350",
       "type": "release"
     },
     {
@@ -2172,6 +2590,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.349",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.349",
+      "date": "2025-10-22T22:06:22Z",
+      "summary": "0.0.349 - 2025-10-22 - The model can now call multiple tools in parallel. Each tool must be confirmed in advance. This behavior can be disabled with the --disable-parallel-tools-execution flag - Ad...",
+      "fullNotes": "0.0.349 - 2025-10-22 - The model can now call multiple tools in parallel. Each tool must be confirmed in advance. This behavior can be disabled with the --disable-parallel-tools-execution flag - Added /quit as an alias of /exit (fixes https://github.com/github/copilot-cli/issues/357) - Fixed a bug where every streamed output chunk was sent back to the model as part of the conversation (fixes https://github.com/github/copilot-cli/issues/379) - Ensure that environment variables are expanded before running path permission checks - Fixed a bug where Ctrl+K deleted to the end of the visual line in the input box rather than the logical line - Added the temp directory to the paths that the model has access to by default. This can be disabled with the --disallow-temp-dir flag (fixes https://github.com/github/copilot-cli/issues/306) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.349",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.10.0",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2199,6 +2628,17 @@
       "date": "2025-10-22T01:13:29Z",
       "summary": "What's Changed  fix(patch): cherry-pick 5b750f5 to release/v0.10.0-preview.3-pr-11615 to patch version v0.10.0-preview.3 and create version 0.10.0-preview.4 by @gemini-cli-robot in https://github.c...",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-preview.4",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.348",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.348",
+      "date": "2025-10-22T00:52:27Z",
+      "summary": "0.0.348 - 2025-10-21 - Copilot's output now streams in token-by-token! This can be disabled with --stream off - Made improvements to the memory footprint of Copilot CLI, especially when dealing wit...",
+      "fullNotes": "0.0.348 - 2025-10-21 - Copilot's output now streams in token-by-token! This can be disabled with --stream off - Made improvements to the memory footprint of Copilot CLI, especially when dealing with shell commands that produce very large outputs - Ensured we preserve comments in VSCode config files when using /terminal-setup (fixes https://github.com/github/copilot-cli/issues/325) - Bundled node-pty into the CLI package -- we're one step closer to implementing https://github.com/github/copilot-cli/issues/16 - Fixed an issue where local tool calling broke sessions (fixes https://github.com/github/copilot-cli/issues/365, https://github.com/github/copilot-cli/issues/364, https://github.com/github/copilot-cli/issues/366) - Added our LICENSE.md to our Node package (fixes https://github.com/github/copilot-cli/issues/371) - Added debug logging to authentication status changes to get to the bottom of https://github.com/github/copilot-cli/issues/346 Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.348",
       "type": "release"
     },
     {
@@ -2232,6 +2672,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.347",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.347",
+      "date": "2025-10-21T01:20:44Z",
+      "summary": "0.0.347 - 2025-10-20 - Fixed more bugs where incorrect PRU consumption stats were displayed on the frontend For more information, see https://github.com/github/copilot-cli/issues/351issuecomment-34...",
+      "fullNotes": "0.0.347 - 2025-10-20 - Fixed more bugs where incorrect PRU consumption stats were displayed on the frontend For more information, see https://github.com/github/copilot-cli/issues/351issuecomment-3423735333 - Fixed a bug where pasted input content that was backspaced away was still sent to the model - Improved line wrapping and alignment when rendering file diffs",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.347",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.11.0-nightly.20251020.a96f0659",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2249,6 +2700,39 @@
       "date": "2025-10-20T18:36:49.330Z",
       "summary": "- Fixed a bug where project-level skills were not loading when --setting-sources 'project' was specified - Claude Code Web: Support for Web -> CLI teleport",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.346",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.346",
+      "date": "2025-10-19T18:14:22Z",
+      "summary": "0.0.346 - 2025-10-19 - Fixed a bug where model sourced from configuration file was not accounted for correctly in estimating premium request usage For more information, see https://github.com/githu...",
+      "fullNotes": "0.0.346 - 2025-10-19 - Fixed a bug where model sourced from configuration file was not accounted for correctly in estimating premium request usage For more information, see https://github.com/github/copilot-cli/issues/351issuecomment-3419045411",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.346",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.345",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.345",
+      "date": "2025-10-18T20:13:35Z",
+      "summary": "0.0.345 - 2025-10-18 - Fixed a bug where premium requests were being overcounted for some users (https://github.com/github/copilot-cli/issues/351). If you were affected, we are working on refunding...",
+      "fullNotes": "0.0.345 - 2025-10-18 - Fixed a bug where premium requests were being overcounted for some users (https://github.com/github/copilot-cli/issues/351). If you were affected, we are working on refunding your overcharged premium requests!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.345",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.344",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.344",
+      "date": "2025-10-18T00:49:26Z",
+      "summary": "0.0.344 - 2025-10-17 - Enabled GitHub MCP server in prompt mode - Added support to the bash tool for executing detached processes - Added list of supported models as part of copilot help config tex...",
+      "fullNotes": "0.0.344 - 2025-10-17 - Enabled GitHub MCP server in prompt mode - Added support to the bash tool for executing detached processes - Added list of supported models as part of copilot help config text - Fixed session abort handling to properly clean up orphaned tool call when pressing <kbd>Esc</kbd> or force-quitting - Enforced minimum Node version requirement at launch - Simplified messaging for /terminal-setup",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.344",
       "type": "release"
     },
     {
@@ -2312,6 +2796,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.343",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.343",
+      "date": "2025-10-16T21:40:25Z",
+      "summary": "0.0.343 - 2025-10-16 - Added new model: Run slash model to equip Haiku 4.5. - Added a flag to augment MCP server configuration to temporarily add or override server configuration per session: --add...",
+      "fullNotes": "0.0.343 - 2025-10-16 - Added new model: Run slash model to equip Haiku 4.5. - Added a flag to augment MCP server configuration to temporarily add or override server configuration per session: --additional-mcp-config (fixes https://github.com/github/copilot-cli/issues/288) - You can pass MCP server configuration in two ways: - Inline JSON: copilot --additional-mcp-config '{\"mcpServers\": {\"my-tool\": {...}}}' - From a file (prefix with @): copilot --additional-mcp-config @/path/to/config.json - You can also pass the flag multiple times (later values override earlier ones): copilot --additional-mcp-config @base.json --additional-mcp-config @overrides.json - Improved our prompts to ensure the agent uses Windows-style paths on Windows (fixes https://github.com/github/copilot-cli/issues/261) - Added a prompt for users to run /terminal-setup if needed to enable multi-line input - Various visual improvements: - Added a shimmer effect to the \"Thinking...\" indicator - Removed the box around user messages in the timeline - Increased the contrast of removed intraline highlights in diffs - Allow cycling through slash commands (from the bottom of the list back to the top) - Aligned permission/confirmation prompts to ensure all use the same visual style Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.343",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.20",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2319,6 +2814,17 @@
       "date": "2025-10-16T16:01:05.689Z",
       "summary": "- Added support for Claude Skills",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.342",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.342",
+      "date": "2025-10-16T01:15:20Z",
+      "summary": "0.0.342 - 2025-10-15 - Overhauled our session logging format: - Introduced a new session logging format that decouples how we store sessions from how we display them in the timeline. The new format...",
+      "fullNotes": "0.0.342 - 2025-10-15 - Overhauled our session logging format: - Introduced a new session logging format that decouples how we store sessions from how we display them in the timeline. The new format is cleaner, more concise, and scalable, and will allow us to more easily implement new features down the line. - New sessions are stored in ~/.copilot/session-state - Legacy sessions are stored in ~/.copilot/history-session-state -- these will be migrated to the new format & location as you resume them from copilot --resume - Enabled the Kitty protocol by default. Multi-line input is now supported via Shift+Ctrl on terminal that support the Kitty protocol. Multi-line input is also supported in VSCode and its forks by running the /terminal-setup command (fixes https://github.com/github/copilot-cli/issues/14) - Enabled non-interactive GHE logins by respecting the GHHOST environment variable for PAT and gh authentication modes (fixes https://github.com/github/copilot-cli/issues/296) - Improved debug log collection convenience by adding a persistent loglevel option in ~/.copilot/config. Possible values: [\"none\", \"error\", \"warning\", \"info\", \"debug\", \"all\", \"default\"] - Added debug logging when calls to /model result in Copilot API errors. This should help us diagnose some policy/model access edge cases like https://github.com/github/copilot-cli/issues/268 and https://github.com/github/copilot-cli/issues/116 - Added gradlew to the list of commands whose subcommands can be whitelisted (fixes https://github.com/github/copilot-cli/issues/217issuecomment-3393844685) - Fixed a bug where sessions could enter a stuck state after a failed MCP tool call (fixes https://github.com/github/copilot-cli/issues/312) - Made the output of --help text more concise Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.342",
       "type": "release"
     },
     {
@@ -2352,6 +2858,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.341",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.341",
+      "date": "2025-10-15T03:04:02Z",
+      "summary": "0.0.341 - 2025-10-14 - Added /terminal-setup command to set up multi-line input on terminals not implementing the kitty protocol - Fixed a bug where rejecting an MCP tool call would reject all futu...",
+      "fullNotes": "0.0.341 - 2025-10-14 - Added /terminal-setup command to set up multi-line input on terminals not implementing the kitty protocol - Fixed a bug where rejecting an MCP tool call would reject all future tool calls (fixes https://github.com/github/copilot-cli/issues/290) - Fixed a regression where calling /model with an argument did not work properly - Added each model's premium request multiplier to the /model list (currently, all our supported models are 1x) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.341",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.10.0-nightly.20251015.996c9f59",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2382,6 +2899,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.340",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.340",
+      "date": "2025-10-13T21:36:48Z",
+      "summary": "- Removed the \"Windows support is experimental\" warning -- we've made some big strides in improving Windows support the last two weeks! Please continue to report any issues/feedback - Improved debu...",
+      "fullNotes": "- Removed the \"Windows support is experimental\" warning -- we've made some big strides in improving Windows support the last two weeks! Please continue to report any issues/feedback - Improved debugging by including the Copilot API request ID for model calls errors and stack traces for client errors - Fixed an issue where consecutive orphaned tool calls led to a \"Each tooluse block must have a corresponding toolresult block in the next message\" message (fixes https://github.com/github/copilot-cli/issues/102) - Added a prompt to approve new paths in -p mode. Also added --allow-all-paths argument that approves access to all paths. - Changed parsing of environment variables in MCP server configuration to treat the value of the env section as literal values (fixes https://github.com/github/copilot-cli/issues/26). Customers who have configured MCP Servers for use with the CLI will need to make a slight modification to their ~/.copilot/mcp-config.json. For any servers they have added with an env section, they will need to go add a $ to the start of the \"value\" pair of the key value pair of each entry in the env-block, so to have the values treated as references to environment variables. For example: Before: json { \"env\": { \"GITHUBACCESSTOKEN\": \"GITHUBTOKEN\" } } Before this change, the CLI would read the value of GITHUBTOKEN from the environment of the CLI and set the environment varaible named GITHUBACCESSTOKEN in the MCP process to that value. With this change, GITHUBACCESSTOKEN would now be set to the literal value GITHUBTOKEN. To get the old behavior, change to this: json { \"env\": { \"GITHUBACCESSTOKEN\": \"${GITHUBTOKEN}\" } } Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.340",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.9.0-preview.2",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2402,6 +2930,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.339",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.339",
+      "date": "2025-10-10T20:17:17Z",
+      "summary": "- Improved argument input to MCP servers in /mcp add -- previously, users had to use comma-separated syntax to specify arguments. Now, the \"Command\" field allows users to input the full command to ...",
+      "fullNotes": "- Improved argument input to MCP servers in /mcp add -- previously, users had to use comma-separated syntax to specify arguments. Now, the \"Command\" field allows users to input the full command to start the server as if they were running it in a shell - Fixed a bug when using the Kitty protocol that led to text containing u to not paste correctly. Kitty protocol support is still behind the COPILOTKITTY environment variable. (Fixes https://github.com/github/copilot-cli/issues/259) - Fixed a bug when using the Kitty protocol that led to the process hanging in VSCode terminal on Windows. Kitty protocol support is still behind the COPILOTKITTY environment variable. (Fixes https://github.com/github/copilot-cli/issues/257) - Improved the error handling in the /model picker when no models are available (fixes https://github.com/github/copilot-cli/issues/229) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.339",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.10.0-nightly.20251010.558be873",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2419,6 +2958,17 @@
       "date": "2025-10-10T00:11:21Z",
       "summary": "What's Changed  fix(patch): cherry-pick cce2457 to release/v0.8.1-pr-10856 to patch version v0.8.1 and create version 0.8.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/...",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.2",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.338",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.338",
+      "date": "2025-10-09T21:26:53Z",
+      "summary": "0.0.338 - 2025-10-09 - Moved Kitty protocol support behind the COPILOTKITTY environment variable due to observed regressions (https://github.com/github/copilot-cli/issues/257, https://github.com/gi...",
+      "fullNotes": "0.0.338 - 2025-10-09 - Moved Kitty protocol support behind the COPILOTKITTY environment variable due to observed regressions (https://github.com/github/copilot-cli/issues/257, https://github.com/github/copilot-cli/issues/259) - Fixed a wrapping issue in multi-line prompts with empty lines Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.338",
       "type": "release"
     },
     {
@@ -2482,6 +3032,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.337",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.337",
+      "date": "2025-10-08T21:36:11Z",
+      "summary": "0.0.337 - 2025-10-08 - Added validation for MCP server names (fixes https://github.com/github/copilot-cli/issues/110) - Added support for Ctrl+B and Ctrl+F for moving cursor back and forward (fixes...",
+      "fullNotes": "0.0.337 - 2025-10-08 - Added validation for MCP server names (fixes https://github.com/github/copilot-cli/issues/110) - Added support for Ctrl+B and Ctrl+F for moving cursor back and forward (fixes https://github.com/github/copilot-cli/issues/214) - Added support for multi-line input for terminals that support the Kitty protocol (partially fixes https://github.com/github/copilot-cli/issues/14 -- broader terminal support coming soon!) - Updated the OAuth login UI to begin polling as soon as the device code is generated (this will more solidly fix SSH edge-cases as described in https://github.com/github/copilot-cli/issues/89) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.337",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.11",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2522,6 +3083,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.336",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.336",
+      "date": "2025-10-07T21:28:11Z",
+      "summary": "0.0.336 - 2025-10-07 - Enabled proxy support via HTTPSPROXY/HTTPPROXY environment variables regardless of Node version (Fixes https://github.com/github/copilot-cli/issues/41) - Significantly reduce...",
+      "fullNotes": "0.0.336 - 2025-10-07 - Enabled proxy support via HTTPSPROXY/HTTPPROXY environment variables regardless of Node version (Fixes https://github.com/github/copilot-cli/issues/41) - Significantly reduced token consumption, round trips per problem, and time to result. We'll share more specific data in our weekly changelog on Friday! - Improved file write performances (especially on Windows) by not relying on the shell to fetch the current working directory - Fixed a bug where /clear did not properly reset the context truncation tracking state - Hid the \"Welcome to GitHub Copilot CLI\" welcome message on session resumption and /clear for a cleaner look - Improved the alignment of tables where the scrollbar is present - Improved the output of --help by making it more concise - Added a prompt for users who launch with --screen-reader to persistently save this preference - Potentially improved flickering in some cases; we're still working on this! Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.336",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.8.0-preview.2",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2539,6 +3111,17 @@
       "date": "2025-10-07T19:53:56.866Z",
       "summary": "- Rewrote terminal renderer for buttery smooth UI - Enable/disable MCP servers by @mentioning, or in /mcp",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.335",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.335",
+      "date": "2025-10-06T22:06:46Z",
+      "summary": "- Improved visibility into file edits by showing file diffs in the timeline by default, without the need to Ctrl+R - Improved slash command input by showing argument hints in the input box - Improv...",
+      "fullNotes": "- Improved visibility into file edits by showing file diffs in the timeline by default, without the need to Ctrl+R - Improved slash command input by showing argument hints in the input box - Improved the display of the interface in windows less than 80 columns wide - Reduced the number of colors and improved the spacing of Markdown rendering - Added a warning when attempting to use proxy support in an environment where it won't work (Node <24, required environment variables not set) (A more permanent fix for https://github.com/github/copilot-cli/issues/41 is coming ~tomorrow) - Updated the context truncation message's color from an error color to a warning color - Fixed a bug where copilot logs might not have been properly created on Windows - Fixed a bug where Powershell users with custom profiles might have had issues running commands (Fixes https://github.com/github/copilot-cli/issues/196) - Fixed a bug where prompts were truncated after pasting and other edge cases (Fixes https://github.com/github/copilot-cli/issues/208, https://github.com/github/copilot-cli/issues/218) - Fixed a bug where users would see a login prompt on startup despite being logged in (fixes https://github.com/github/copilot-cli/issues/202) - Fixed a bug where some SSH users in certain environments were unable to get the OAuth login link and had their processes hang trying to open a browser (fixes https://github.com/github/copilot-cli/issues/89) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.335",
       "type": "release"
     },
     {
@@ -2572,6 +3155,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.334",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.334",
+      "date": "2025-10-03T23:06:17Z",
+      "summary": "0.0.334 - 2025-10-03 - Improved the experience of pasting large content: when pasting more than 10 lines, it's displayed as a compact token like [Paste 1 - 15 lines] instead of flooding the termina...",
+      "fullNotes": "0.0.334 - 2025-10-03 - Improved the experience of pasting large content: when pasting more than 10 lines, it's displayed as a compact token like [Paste 1 - 15 lines] instead of flooding the terminal. - Added a warning when conversation context approaches ≤20% remaining of the model's limit that truncation will soon occur. At this point, we recommend you begin a new session (improves https://github.com/github/copilot-cli/issues/29) - Removed the on-exit usage stats from the persisted session history - Added the current version to startup logs to aid in bug reporting - Removed cycling through TAB autocomplete items if an argument is present. This prevents running /cwd /path/to/whatever, hitting TAB, then seeing /clear autocomplete Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.334",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.44.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2579,6 +3173,17 @@
       "date": "2025-10-03T17:01:36Z",
       "summary": "Highlights:\r - New UI refresh! Updated chat composer, bottom pane, model picker, and upgrade nudge (4240, 4316, 4178, 4405)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.44.0",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.333",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.333",
+      "date": "2025-10-02T21:51:01Z",
+      "summary": "0.0.333 - 2025-10-02 - Added image support! @-mention files to add them as input to the model. - Improved proxy support for users on Node.JS v24+. See this comment for more details (Fixes https://g...",
+      "fullNotes": "0.0.333 - 2025-10-02 - Added image support! @-mention files to add them as input to the model. - Improved proxy support for users on Node.JS v24+. See this comment for more details (Fixes https://github.com/github/copilot-cli/issues/41) - Added support for directly executing shell commands and bypassing the model by prepending input with ! (fixes https://github.com/github/copilot-cli/issues/186, https://github.com/github/copilot-cli/issues/12) - Added /usage slash command to provide stats about Premium request usage, session time, code changes, and per-model token use. This information is also printed at the conclusion of a session (Fixes https://github.com/github/copilot-cli/issues/27, https://github.com/github/copilot-cli/issues/121) - Improved --screen-reader mode by replacing icons in the timeline with informative labels - Added a --continue flag to resume the most recently closed session - Updated the /clear command to properly clear old timeline entries/session information (Fixes https://github.com/github/copilot-cli/issues/170) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.333",
       "type": "release"
     },
     {
@@ -2662,6 +3267,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.332",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.332",
+      "date": "2025-10-01T21:45:16Z",
+      "summary": "0.0.332 - 2025-10-01 - Switched to using per-subscription Copilot API endpoints in accordance with GitHub's docs (fixes https://github.com/github/copilot-cli/issues/76) - Fixed a bug where /user [l...",
+      "fullNotes": "0.0.332 - 2025-10-01 - Switched to using per-subscription Copilot API endpoints in accordance with GitHub's docs (fixes https://github.com/github/copilot-cli/issues/76) - Fixed a bug where /user [list | show | swtich] did not include users signed in from all authentication modes (fixes https://github.com/github/copilot-cli/issues/58) - Fixed a bug where switching to another user with /user switch did not take effect in the GitHub MCP server - Improved the screenreader experience by disabling the scrollbar in the @ file picker, the --resume session picker, and the / command picker - Improved the polish of the scrollbar container (increased the width, reduced the opacity of the gutter) - Minor visual improvements to the input area (moved the current model indicator to the right so it's not cramped with the CWD, improved the positioning of the file picker's \"indexing\" indicator, improved hint formatting in completion menus) - Improved Markdown legibility by excluding prefixes in headings - Improved how we extract paths from shell commands for permission handling (might fix https://github.com/github/copilot-cli/issues/159, https://github.com/github/copilot-cli/issues/67) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.332",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.8.0-preview.1",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2689,6 +3305,17 @@
       "date": "2025-10-01T15:53:13Z",
       "summary": "What's Changed  fix(patch): cherry-pick 4c5ab80 to release/v0.7.0-preview.1-pr-10283 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/10342",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.7.0-preview.2",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.331",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.331",
+      "date": "2025-10-01T12:42:35Z",
+      "summary": "0.0.331 - 2025-10-01 - Improved the information density of file read/edit timeline events - Fixed an inaccuracy in the --banner help text; it previously implied that it would persistently change th...",
+      "fullNotes": "0.0.331 - 2025-10-01 - Improved the information density of file read/edit timeline events - Fixed an inaccuracy in the --banner help text; it previously implied that it would persistently change the configuration to always show the startup banner - Improved the /models list to ensure that a user only sees models they have access to use -- previously, if a user tries to use a model they do not have access to (because of their Copilot plan, their geographic region, etc), they received a modelnotsupported error. This should prevent that by not even showing such models as options in the list (Fixes https://github.com/github/copilot-cli/issues/112, https://github.com/github/copilot-cli/issues/85, https://github.com/github/copilot-cli/issues/40) - Fixed a bug where pressing down arrow in a multi-line prompt would wrap around to the first line (This is on the way to implementing https://github.com/github/copilot-cli/issues/14) - Added a scrollbar to the @ file mentioning picker and increased the size of the active buffer to 10 items - Improved the experience of writing prompts while the agent is running -- up/down arrows will now correctly navigate between options in the @ and / menus Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.331",
       "type": "release"
     },
     {
@@ -2742,6 +3369,17 @@
       "type": "release"
     },
     {
+      "id": "github-copilot-v0.0.330",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.330",
+      "date": "2025-09-29T20:22:08Z",
+      "summary": "0.0.330 - 2025-09-29 - Changed the default model back to Sonnet 4 since Sonnet 4.5 hasn't rolled out to all users yet. Sonnet 4.5 is still available from the /model slash command This is our second...",
+      "fullNotes": "0.0.330 - 2025-09-29 - Changed the default model back to Sonnet 4 since Sonnet 4.5 hasn't rolled out to all users yet. Sonnet 4.5 is still available from the /model slash command This is our second release today -- be sure to check out the list of changes in 0.0.329 if you haven't already!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.330",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.8.0-nightly.20250929.042288e7",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2749,6 +3387,17 @@
       "date": "2025-09-29T19:41:53Z",
       "summary": "What's Changed  feat(iap support): Add service account impersonation provider to MCPServers to support IAP on Cloud Run by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/8505",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250929.042288e7",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.329",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.329",
+      "date": "2025-09-29T18:59:51Z",
+      "summary": "0.0.329 - 2025-09-29 - Added support for Claude Sonnet 4.5 and made it the default model - Added /model slash command to easily change the model (fixes https://github.com/github/copilot-cli/issues/...",
+      "fullNotes": "0.0.329 - 2025-09-29 - Added support for Claude Sonnet 4.5 and made it the default model - Added /model slash command to easily change the model (fixes https://github.com/github/copilot-cli/issues/10) - /model will open a picker to change the model - /model <model> will set the model to the parameter provided - Added display of currently selected model above the input text box (Addresses feedback in https://github.com/github/copilot-cli/issues/120, https://github.com/github/copilot-cli/issues/108, ) - Improved error messages when users provide incorrect command-line arguments. (Addresses feedback of the discoverability of non-interactive mode from https://github.com/github/copilot-cli/issues/96) - Changed the behavior of Ctrl+r to expand only recent timeline items. After running Ctrl+r, you can use Ctrl+e to expand all - Improved word motion logic to better detect newlines: using word motion keys will now correctly move to the first word on a line - Improved the handling of multi-line inputs in the input box: the input text box is scrollable, limited to 10 lines. Long prompts won't take up the whole screen anymore! (This is on the way to implementing https://github.com/github/copilot-cli/issues/14) - Removed the left and right boarders from the input box. This makes it easier to copy text out of it! - Added glob matching to shell rules. When using --allow-tool and --deny-tool, you can now specify things like shell(npm run test:) to match any shell commands beginning with npm run test - Improved the copilot --resume interface with relative time display, session message count, (Fixes https://github.com/github/copilot-cli/issues/97) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.329",
       "type": "release"
     },
     {
@@ -2779,6 +3428,17 @@
       "date": "2025-09-27T01:42:33Z",
       "summary": "What's Changed  refactor(core): Extract file filtering constants from Config to break circular dependency by @abhipatel12 in https://github.com/google-gemini/gemini-cli/pull/9974",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250927.19400ba8",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.328",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.328",
+      "date": "2025-09-26T21:51:46Z",
+      "summary": "0.0.328 - 2025-09-26 - Improved error message received when Copilot CLI is blocked by organization policy (fixes https://github.com/github/copilot-cli/issues/18 ) - Improved the error message recei...",
+      "fullNotes": "0.0.328 - 2025-09-26 - Improved error message received when Copilot CLI is blocked by organization policy (fixes https://github.com/github/copilot-cli/issues/18 ) - Improved the error message received when using a PAT that is missing the \"Copilot Requests\" permission (fixes https://github.com/github/copilot-cli/issues/46 ) - Improved the output of /user list to make it clearer which is the current user - Improved PowerShell parsing of ForEach-Object and detection of command name expressions (e.g.,& $someCommand) Run npm install -g @github/copilot@latest to update!",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.328",
       "type": "release"
     },
     {
