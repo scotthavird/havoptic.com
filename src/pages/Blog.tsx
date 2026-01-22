@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
+import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
 import { BLOG_POST_TYPE_CONFIG, type BlogPostType } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -59,6 +60,7 @@ export function Blog() {
 
   return (
     <div className="py-8">
+      <BreadcrumbSchema items={BREADCRUMBS.blog} />
       <a
         href="#/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"

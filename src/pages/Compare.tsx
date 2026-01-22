@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useFeatureMatrix, useVelocityMetrics } from '../hooks/useMetrics';
 import { useReleases } from '../hooks/useReleases';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
+import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import { ToolSearchSelector } from '../components/ToolSearchSelector';
@@ -99,6 +100,7 @@ export function Compare() {
 
   return (
     <div className="py-8">
+      <BreadcrumbSchema items={BREADCRUMBS.compare} />
       <a
         href="#/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
