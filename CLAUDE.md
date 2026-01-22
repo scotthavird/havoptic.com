@@ -37,7 +37,7 @@ Use these commands to streamline the Git workflow:
 
 ## Project Overview
 
-Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and Kiro CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
+Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro CLI, and GitHub Copilot CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
 
 ## Commands
 
@@ -62,7 +62,7 @@ node --env-file=.env scripts/generate-infographic-prompt.mjs \
   --tool=cursor --version=2.3 --generate-image --update-releases --force
 
 # Available flags:
-#   --tool=<id>          Tool ID (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
+#   --tool=<id>          Tool ID (claude-code, kiro, openai-codex, gemini-cli, cursor, aider, github-copilot)
 #   --version=<ver>      Specific version (default: latest)
 #   --generate-image     Generate image via Nano Banana Pro API
 #   --update-releases    Save to public/ and update releases.json
@@ -100,6 +100,7 @@ The validator compares extracted features against source URLs and reports:
    - Cursor: Scrapes changelog page HTML
    - Gemini CLI: GitHub Releases API
    - Kiro CLI: Scrapes changelog page HTML
+   - GitHub Copilot CLI: GitHub Releases API
 2. Results are written to `public/data/releases.json`
 3. Sitemap is auto-updated with current date
 4. `scripts/generate-infographic-prompt.mjs` runs after fetch to generate infographics:
@@ -114,7 +115,7 @@ The validator compares extracted features against source URLs and reports:
 6. React app fetches this JSON at runtime via `useReleases` hook
 
 ### Key Types (`src/types/release.ts`)
-- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro'`
+- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot'`
 - `Release`: Individual release with id, tool, version, date, summary, fullNotes, url, type, infographicUrl
 - `TOOL_CONFIG`: Display names and Tailwind color classes per tool
 
@@ -145,6 +146,7 @@ Defined in `tailwind.config.js`:
 - `cursor`: #7C3AED (violet)
 - `gemini`: #00ACC1 (teal)
 - `kiro`: #8B5CF6 (purple)
+- `copilot`: #8534F3 (purple)
 
 ## Infrastructure
 
@@ -210,6 +212,8 @@ Set via Terraform in `iac/*/web.tf`:
 
 ## Adding a New Tool
 
+**CRITICAL: All 7 locations must be updated or infographics won't generate.**
+
 1. Add tool ID to `ToolId` type in `src/types/release.ts`
 2. Add display config to `TOOL_CONFIG` in same file
 3. Add Tailwind color in `tailwind.config.js`
@@ -219,3 +223,6 @@ Set via Terraform in `iac/*/web.tf`:
    - `displayName`: Uppercase tool name for infographic header
    - `primaryColor`: Brand color hex code
    - `style`: Description of visual style for image generation
+7. **Add tool to `.github/workflows/generate-infographics.yml`** in TWO places:
+   - The `options` list under `workflow_dispatch.inputs.tool` (for manual runs)
+   - The `for tool in ...` loop in the generate step (for automated runs)

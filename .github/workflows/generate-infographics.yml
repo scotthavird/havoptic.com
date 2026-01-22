@@ -19,6 +19,7 @@ on:
           - gemini-cli
           - cursor
           - aider
+          - github-copilot
       generate_images:
         description: 'Generate images using Nano Banana Pro'
         required: false
@@ -86,7 +87,7 @@ jobs:
 
           if [ "$TOOL" = "all" ]; then
             # Generate for all tools with releases
-            for tool in claude-code kiro openai-codex gemini-cli cursor aider; do
+            for tool in claude-code kiro openai-codex gemini-cli cursor aider github-copilot; do
               echo "Generating prompt for $tool..."
               if ! node scripts/generate-infographic-prompt.mjs --tool=$tool $EXTRA_FLAGS; then
                 echo "Failed: $tool"
