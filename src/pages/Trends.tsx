@@ -3,7 +3,7 @@ import { useGitHubStats, useNpmDownloads, useVelocityMetrics } from '../hooks/us
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
 
-const TOOL_IDS: ToolId[] = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider'];
+const TOOL_IDS: ToolId[] = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider', 'windsurf'];
 
 function formatNumber(num: number): string {
   if (num >= 1_000_000) {

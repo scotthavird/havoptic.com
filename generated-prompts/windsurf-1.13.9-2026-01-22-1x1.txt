@@ -1,0 +1,11 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "WINDSURF" with "v1.13.9 • January 16, 2026" subtitle
+Layout: Dark background, 2 feature cards in 1x2 horizontal grid with subtle glow effects
+Feature Cards:
+1. 🤖 "GPT-5.2-Codex Enhancement" - "Improved AI model integration framework"
+2. 🔒 "Windows Group Policy" - "Enterprise admin configuration and restrictions"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark gradient background, modern IDE-inspired aesthetic with wave motif, brand color #00D4AA, high contrast, readable text, professional tech aesthetic
+Highlight: "Infrastructure improvements with enhanced AI model framework and enterprise Windows Group Policy support for better administrative control."
+Important: Show EXACTLY 2 feature cards. Do NOT add empty placeholder boxes.

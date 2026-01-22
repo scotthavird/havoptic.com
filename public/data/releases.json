@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-22T16:23:48.400Z",
+  "lastUpdated": "2026-01-22T17:04:24.432Z",
   "releases": [
     {
       "id": "github-copilot-v0.0.389",
@@ -198,6 +198,19 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.13.9",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.9",
+      "date": "2026-01-16T05:00:00.000Z",
+      "summary": "Windsurf version 1.13.9",
+      "fullNotes": "Windsurf version 1.13.9",
+      "url": "https://windsurf.com/changelog",
+      "type": "release",
+      "infographicUrl": "/images/infographics/windsurf-1.13.9-2026-01-22-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/windsurf-1.13.9-2026-01-22-16x9.jpg"
+    },
+    {
       "id": "openai-codex-rust-v0.86.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -283,6 +296,17 @@
       "infographicUrl16x9": "/images/infographics/gemini-cli-v0.24.0-2026-01-16-16x9.jpg"
     },
     {
+      "id": "windsurf-1.13.8",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.8",
+      "date": "2026-01-14T05:00:00.000Z",
+      "summary": "Windsurf version 1.13.8",
+      "fullNotes": "Windsurf version 1.13.8",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.1.7",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -329,6 +353,17 @@
       "type": "release",
       "infographicUrl": "/images/infographics/claude-code-2.1.6-2026-01-13-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/claude-code-2.1.6-2026-01-13-16x9.jpg"
+    },
+    {
+      "id": "windsurf-1.13.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.6",
+      "date": "2026-01-12T05:00:00.000Z",
+      "summary": "Windsurf version 1.13.6",
+      "fullNotes": "Windsurf version 1.13.6",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
     },
     {
       "id": "claude-code-2.1.5",
@@ -503,6 +538,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.13.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.5",
+      "date": "2025-12-27T05:00:00.000Z",
+      "summary": "Windsurf version 1.13.5",
+      "fullNotes": "Windsurf version 1.13.5",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.22.4",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -523,6 +569,17 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.22.3",
       "type": "release",
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick 9cdb267 to release/v0.22.2-pr-15494 to patch version v0.22.2 and create version 0.22.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15591\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.22.2...v0.22.3"
+    },
+    {
+      "id": "windsurf-1.13.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.3",
+      "date": "2025-12-24T05:00:00.000Z",
+      "summary": "Windsurf version 1.13.3",
+      "fullNotes": "Windsurf version 1.13.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
     },
     {
       "id": "claude-code-2.0.76",
@@ -841,6 +898,28 @@
       "fullNotes": "## What's Changed\n* fix(patch): cherry-pick 3f5f030 to release/v0.20.0-pr-14843 to patch version v0.20.0 and create version 0.20.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/15002\n\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.20.0...v0.20.1"
     },
     {
+      "id": "windsurf-1.12.47",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.47",
+      "date": "2025-12-12T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.47",
+      "fullNotes": "Windsurf version 1.12.47",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.44",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.44",
+      "date": "2025-12-12T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.44",
+      "fullNotes": "Windsurf version 1.12.44",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.67",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -883,6 +962,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.43",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.43",
+      "date": "2025-12-11T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.43",
+      "fullNotes": "Windsurf version 1.12.43",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.65",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -912,6 +1002,17 @@
       "summary": "2025-12-10 - PRU usage rates now displayed correctly - Fix checkmark and x icon rendering - Add grep tool Codex models - Numpad keys work in prompts with Kitty keyboard protocol",
       "fullNotes": "2025-12-10 - PRU usage rates now displayed correctly - Fix checkmark and x icon rendering - Add grep tool Codex models - Numpad keys work in prompts with Kitty keyboard protocol",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.368",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.41",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.41",
+      "date": "2025-12-10T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.41",
+      "fullNotes": "Windsurf version 1.12.41",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -1052,6 +1153,17 @@
       "fullNotes": "### Highlights\n- Codex Max as default (#7566): Codex Max is now the default model, and a TUI panic related to async-in-sync code was fixed.\n- Better resume UX (#7302, #7303): Added a /resume slash command and improved resume performance so picking work back up is snappier.\n- Tooltips & tips UX (#7557, #7440): Tips/tooltips are rendered via markdown with a bold “Tip” label and richer Codex tooltips across the app.\n- TUI quality-of-life (#7530, #7448, #7514, #7461): TUI gets Ctrl‑P/N navigation, screen-line-capped shell output, restored Windows clipboard image paste, and a refactor for cleaner layout.\n- History and context hygiene (#6242, #7483, #7545, #7431, #7483): history.jsonl is trimmed by history.max_bytes, common junk dirs (incl. __pycache__) are ignored by default, and paste placeholders stay distinct.\n\n# PRs Merged\n- use markdown for rendering tips #7557 @[Jeremy Rose]  \n- Migrate codex max #7566 @[Ahmed Ibrahim]  \n- Remove test from #7481 that doesn't add much value #7558 @[Eric Traut]  \n- [app-server] make `file_path` for config optional #7560 @[Celia Chen]  \n- Migrate model family to models manager #7565 @[Ahmed Ibrahim]  \n- Migrate `tui` to use models manager #7555 @[Ahmed Ibrahim]  \n- Introduce `ModelsManager` and migrate `app-server` to use it. #7552 @[Ahmed Ibrahim]  \n- fix: wrap long exec lines in transcript overlay #7481 @[muyuanjin]  \n- fix: Features should be immutable over the lifetime of a session/thread #7540 @[Michael Bolin]  \n- feat: Support listing and selecting skills via $ or /skills #7506 @[xl-openai]  \n- [app-server] fix: add thread_id to turn/plan/updated #7553 @[Owen Lin]  \n- feat(tui): map Ctrl-P/N to arrow navigation in textarea #7530 @[Aofei Sheng]  \n- fix(tui): limit user shell output by screen lines #7448 @[muyuanjin]  \n- Migrate model preset #7542 @[Ahmed Ibrahim]  \n- fix: main #7546 @[jif-oai]  \n- feat: add pycache to excluded directories #7545 @[jif-oai]  \n- chore: update unified exec sandboxing detection #7541 @[jif-oai]  \n- add slash resume #7302 @[Ahmed Ibrahim]  \n- chore: conversation_id -> thread_id in app-server feedback/upload #7538 @[Owen Lin]  \n- chore: delete unused TodoList item from app-server #7537 @[Owen Lin]  \n- chore: update app-server README #7510 @[Owen Lin]  \n- chore: remove bun env var detect #7534 @[Shijie Rao]  \n- feat: support list mcp servers in app server #7505 @[Shijie Rao]  \n- seatbelt: allow openpty() #7507 @[Jeremy Rose]  \n- feat: codex tool tips #7440 @[jif-oai]  \n- feat: retroactive image placeholder to prevent poisoning #6774 @[jif-oai]  \n- feat: model warning in case of apply patch #7494 @[jif-oai]  \n- fix(tui) Support image paste from clipboard on native Windows #7514 @[Dylan Hurd]  \n- fix(unified_exec): use platform default shell when unified_exec shell… #7486 @[Robby He]  \n- Update device code auth strings. #7498 @[Matthew Zeng]  \n- fix: inline function marked as dead code #7508 @[Michael Bolin]  \n- improve resume performance #7303 @[Ahmed Ibrahim]  \n- fix: path resolution bug in npx #7134 @[Michael Bolin]  \n- Ensure duplicate-length paste placeholders stay distinct #7431 @[Joshua Sutton]  \n- feat: support --version flag for @openai/codex-shell-tool-mcp #7504 @[Michael Bolin]  \n- refactor: tui.rs extract several pieces #7461 @[Josh McKinney]  \n- chore: make create_approval_requirement_for_command an async fn #7501 @[Michael Bolin]  \n- Trim `history.jsonl` when `history.max_bytes` is set #6242 @[liam]  \n- fix: remove serde(flatten) annotation for TurnError #7499 @[Owen Lin]  \n- persisting credits if new snapshot does not contain credit info #7490 @[zhao-oai]  \n- fix: drop lock once it is no longer needed #7500 @[Michael Bolin]  \n- execpolicy helpers #7032 @[zhao-oai]  \n- Show token used when context window is unknown #7497 @[Ahmed Ibrahim]  \n- Use non-blocking mutex #7467 @[Ahmed Ibrahim]  \n- Fix: track only untracked paths in ghost snapshots #7470 @[lionel-oai]  \n- feat: ignore standard directories #7483 @[jif-oai]  \n- fix: add ts number annotations for app-server v2 types #7492 @[Owen Lin]  \n- feat: intercept apply_patch for unified_exec #7446 @[jif-oai]  \n- chore: remove mention of experimental/unstable from app-server README #7474 @[Owen Lin]  \n- Add request logging back #7471 @[pakrym-oai]  \n- feat: add one off commands to app-server v2 #7452 @[jif-oai]  \n- feat: add warning message for the model #7445 @[jif-oai]  \n- chore: review everywhere #7444 @[jif-oai]  \n- feat: alias compaction #7442 @[jif-oai]  \n- feat: experimental support for skills.md #7412 @[Thibault Sottiaux]"
     },
     {
+      "id": "windsurf-1.12.39",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.39",
+      "date": "2025-12-04T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.39",
+      "fullNotes": "Windsurf version 1.12.39",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "github-copilot-v0.0.366",
       "tool": "github-copilot",
       "toolDisplayName": "GitHub Copilot CLI",
@@ -1136,6 +1248,17 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.20.0-nightly.20251202.29920b16d",
       "type": "release",
       "fullNotes": "## What's Changed\n* fix: Exclude web-fetch tool from executing in default non-interactive mode to avoid CLI hang. by @MayV in https://github.com/google-gemini/gemini-cli/pull/14244\n* Always use MCP server instructions by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/14297\n* feat: auto-execute simple slash commands on Enter by @jackwotherspoon in https://github.com/google-gemini/gemini-cli/pull/13985\n* chore/release: bump version to 0.20.0-nightly.20251201.2fe609cb6 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/14304\n* feat: Add startup profiler to measure and record application initialization phases. by @kevin-ramdass in https://github.com/google-gemini/gemini-cli/pull/13638\n* bug(core): Avoid stateful tool use in `executor`. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/14305\n* feat(themes): add built-in holiday theme 🎁 by @jackwotherspoon in https://github.com/google-gemini/gemini-cli/pull/14301\n* Updated ToC on docs intro; updated title casing to match Google style by @pcoet in https://github.com/google-gemini/gemini-cli/pull/13717\n* feat(a2a): Urgent fix - Process modelInfo agent message by @cocosheng-g in https://github.com/google-gemini/gemini-cli/pull/14315\n* feat(core): enhance availability routing with wrapped fallback and single-model policies by @adamfweidman in https://github.com/google-gemini/gemini-cli/pull/13874\n* chore(logging): log the problematic event for #12122 by @briandealwis in https://github.com/google-gemini/gemini-cli/pull/14092\n* fix: remove invalid type key in bug_report.yml by @fancive in https://github.com/google-gemini/gemini-cli/pull/13576\n* update screenshot by @Transient-Onlooker in https://github.com/google-gemini/gemini-cli/pull/13976\n* docs: Fix grammar error in Release Cadence (Nightly section) by @JuanCS-Dev in https://github.com/google-gemini/gemini-cli/pull/13866\n* fix(async): prevent missed async errors from bypassing catch handlers by @amsminn in https://github.com/google-gemini/gemini-cli/pull/13714\n* fix(zed-integration): remove extra field from acp auth request by @marcocondrache in https://github.com/google-gemini/gemini-cli/pull/13646\n* feat(cli): Documentation for model configs. by @joshualitt in https://github.com/google-gemini/gemini-cli/pull/12967\n* fix(ui): misaligned markdown table rendering by @dumbbellcode in https://github.com/google-gemini/gemini-cli/pull/8336\n* docs: Update 4 files by @g-samroberts in https://github.com/google-gemini/gemini-cli/pull/13628\n\n## New Contributors\n* @pcoet made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13717\n* @Transient-Onlooker made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13976\n* @JuanCS-Dev made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13866\n* @amsminn made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13714\n* @marcocondrache made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13646\n* @g-samroberts made their first contribution in https://github.com/google-gemini/gemini-cli/pull/13628\n\n**Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.20.0-nightly.20251201.2fe609cb6...v0.20.0-nightly.20251202.29920b16d"
+    },
+    {
+      "id": "windsurf-1.12.37",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.37",
+      "date": "2025-12-02T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.37",
+      "fullNotes": "Windsurf version 1.12.37",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
     },
     {
       "id": "claude-code-2.0.56",
@@ -1342,6 +1465,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.36",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.36",
+      "date": "2025-11-25T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.36",
+      "fullNotes": "Windsurf version 1.12.36",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.19.0-nightly.20251125.f6d97d448",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1477,6 +1611,17 @@
       "date": "2025-11-21T17:13:30.845Z",
       "summary": "- Fixed bug preventing calling MCP tools that have nested references in their input schemas - Silenced a noisy but harmless error during upgrades",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.35",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.35",
+      "date": "2025-11-21T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.35",
+      "fullNotes": "Windsurf version 1.12.35",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -1692,6 +1837,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.33",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.33",
+      "date": "2025-11-18T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.33",
+      "fullNotes": "Windsurf version 1.12.33",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "github-copilot-v0.0.360",
       "tool": "github-copilot",
       "toolDisplayName": "GitHub Copilot CLI",
@@ -1855,6 +2011,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.32",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.32",
+      "date": "2025-11-14T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.32",
+      "fullNotes": "Windsurf version 1.12.32",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.17.0-nightly.20251114.0fcbff506",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -1974,6 +2141,17 @@
       "date": "2025-11-13T08:44:04Z",
       "summary": "What's Changed  fix(patch): cherry-pick fe1bfc6 to release/v0.15.0-preview.2-pr-12989 to patch version v0.15.0-preview.2 and create version 0.15.0-preview.3 by @gemini-cli-robot in https://github.c...",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.15.0-preview.3",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.31",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.31",
+      "date": "2025-11-13T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.31",
+      "fullNotes": "Windsurf version 1.12.31",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -2279,6 +2457,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.28",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.28",
+      "date": "2025-11-03T05:00:00.000Z",
+      "summary": "Windsurf version 1.12.28",
+      "fullNotes": "Windsurf version 1.12.28",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.13.0-nightly.20251103.9187f6f6",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -2551,6 +2740,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.27",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.27",
+      "date": "2025-10-26T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.27",
+      "fullNotes": "Windsurf version 1.12.27",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.50.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -2661,6 +2861,17 @@
       "date": "2025-10-22T17:17:30Z",
       "summary": "What's Changed  chore(release): bump version to 0.11.0-nightly.20251015.203bad7c by @skeshive in https://github.com/google-gemini/gemini-cli/pull/11212",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.11.0-preview.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.25",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.25",
+      "date": "2025-10-22T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.25",
+      "fullNotes": "Windsurf version 1.12.25",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -2829,6 +3040,50 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.105.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.105.0",
+      "date": "2025-10-17T04:00:00.000Z",
+      "summary": "Windsurf version 1.105.0",
+      "fullNotes": "Windsurf version 1.105.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-37.6.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "37.6.0",
+      "date": "2025-10-17T04:00:00.000Z",
+      "summary": "Windsurf version 37.6.0",
+      "fullNotes": "Windsurf version 37.6.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-138.0.7204",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "138.0.7204",
+      "date": "2025-10-17T04:00:00.000Z",
+      "summary": "Windsurf version 138.0.7204",
+      "fullNotes": "Windsurf version 138.0.7204",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.21",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.21",
+      "date": "2025-10-17T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.21",
+      "fullNotes": "Windsurf version 1.12.21",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-2.0.21",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -2857,6 +3112,17 @@
       "date": "2025-10-16T16:01:05.689Z",
       "summary": "- Added support for Claude Skills",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.20",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.20",
+      "date": "2025-10-16T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.20",
+      "fullNotes": "Windsurf version 1.12.20",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -2942,6 +3208,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.18",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.18",
+      "date": "2025-10-14T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.18",
+      "fullNotes": "Windsurf version 1.12.18",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "github-copilot-v0.0.340",
       "tool": "github-copilot",
       "toolDisplayName": "GitHub Copilot CLI",
@@ -2991,6 +3268,17 @@
       "date": "2025-10-10T13:58:56Z",
       "summary": "What's Changed  fix(doc) - Update doc for deflake command by @shishu314 in https://github.com/google-gemini/gemini-cli/pull/10829",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.10.0-nightly.20251010.558be873",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.16",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.16",
+      "date": "2025-10-10T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.16",
+      "fullNotes": "Windsurf version 1.12.16",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -3464,6 +3752,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.12",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.12",
+      "date": "2025-09-29T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.12",
+      "fullNotes": "Windsurf version 1.12.12",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.8.0-nightly.20250927.19400ba8",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -3502,6 +3801,17 @@
       "date": "2025-09-26T17:43:03Z",
       "summary": "What's Changed  Add simple extensions release flow support by @chrstnb in https://github.com/google-gemini/gemini-cli/pull/8498",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.8.0-nightly.20250926.2defdcff",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.11",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.11",
+      "date": "2025-09-26T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.11",
+      "fullNotes": "Windsurf version 1.12.11",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -3552,6 +3862,17 @@
       "date": "2025-09-24T17:10:52Z",
       "summary": "Highlights:\r - Rate limits visibility: You can see when is your limits resetting (4111) and see your usage when rate limited (4102)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.41.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.9",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.9",
+      "date": "2025-09-24T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.9",
+      "fullNotes": "Windsurf version 1.12.9",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -3622,6 +3943,17 @@
       "date": "2025-09-23T16:28:39Z",
       "summary": "Notable Changes\r - Default model is now gpt-5-codex (4076)",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.40.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.8",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.8",
+      "date": "2025-09-23T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.8",
+      "fullNotes": "Windsurf version 1.12.8",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -3805,6 +4137,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.6",
+      "date": "2025-09-16T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.6",
+      "fullNotes": "Windsurf version 1.12.6",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.115",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -3985,6 +4328,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.5",
+      "date": "2025-09-09T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.5",
+      "fullNotes": "Windsurf version 1.12.5",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.5.0-nightly.20250909.2b05cf3b",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -4155,6 +4509,28 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.12.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.4",
+      "date": "2025-09-03T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.4",
+      "fullNotes": "Windsurf version 1.12.4",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.3",
+      "date": "2025-09-03T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.3",
+      "fullNotes": "Windsurf version 1.12.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.3.0-preview.3",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -4292,6 +4668,17 @@
       "date": "2025-08-26T17:40:56Z",
       "summary": "Highlights:\r  New Features",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.24.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.2",
+      "date": "2025-08-25T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.2",
+      "fullNotes": "Windsurf version 1.12.2",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -4452,6 +4839,17 @@
       "date": "2025-08-14T05:38:15Z",
       "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.21",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.12.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.12.1",
+      "date": "2025-08-14T04:00:00.000Z",
+      "summary": "Windsurf version 1.12.1",
+      "fullNotes": "Windsurf version 1.12.1",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -4658,6 +5056,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.11.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.11.5",
+      "date": "2025-08-07T04:00:00.000Z",
+      "summary": "Windsurf version 1.11.5",
+      "fullNotes": "Windsurf version 1.11.5",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.70",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -4758,6 +5167,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.11.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.11.3",
+      "date": "2025-08-04T04:00:00.000Z",
+      "summary": "Windsurf version 1.11.3",
+      "fullNotes": "Windsurf version 1.11.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "gemini-cli-v0.1.16-nightly.250804.a8984a9b",
       "tool": "gemini-cli",
       "toolDisplayName": "Gemini CLI",
@@ -4855,6 +5275,17 @@
       "date": "2025-07-30T04:49:35Z",
       "summary": "What's Changed  feat(cli): add hideBanner setting to disable startup banner by @krikera in https://github.com/google-gemini/gemini-cli/pull/2803",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.1.15",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.11.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.11.2",
+      "date": "2025-07-30T04:00:00.000Z",
+      "summary": "Windsurf version 1.11.2",
+      "fullNotes": "Windsurf version 1.11.2",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -4978,6 +5409,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.11.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.11.1",
+      "date": "2025-07-23T04:00:00.000Z",
+      "summary": "Windsurf version 1.11.1",
+      "fullNotes": "Windsurf version 1.11.1",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.9.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -5048,6 +5490,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.11.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.11.0",
+      "date": "2025-07-17T04:00:00.000Z",
+      "summary": "Windsurf version 1.11.0",
+      "fullNotes": "Windsurf version 1.11.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.54",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5075,6 +5528,17 @@
       "date": "2025-07-15T04:45:35.705Z",
       "summary": "- Added support for MCP server instructions",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.10.8",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.8",
+      "date": "2025-07-15T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.8",
+      "fullNotes": "Windsurf version 1.10.8",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5288,6 +5752,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.10.7",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.7",
+      "date": "2025-07-03T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.7",
+      "fullNotes": "Windsurf version 1.10.7",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.41",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5295,6 +5770,17 @@
       "date": "2025-07-02T17:45:22.596Z",
       "summary": "- Hooks: Split Stop hook triggering into Stop and SubagentStop - Hooks: Enabled optional timeout configuration for each command",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.10.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.6",
+      "date": "2025-07-02T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.6",
+      "fullNotes": "Windsurf version 1.10.6",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5459,6 +5945,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.10.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.5",
+      "date": "2025-06-19T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.5",
+      "fullNotes": "Windsurf version 1.10.5",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.30",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5486,6 +5983,17 @@
       "date": "2025-06-18T17:37:33.722Z",
       "summary": "- Slash commands: Fix selector display during history navigation - Resi",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.10.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.4",
+      "date": "2025-06-18T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.4",
+      "fullNotes": "Windsurf version 1.10.4",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5539,6 +6047,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.10.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.3",
+      "date": "2025-06-12T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.3",
+      "fullNotes": "Windsurf version 1.10.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-1.0.21",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5546,6 +6065,17 @@
       "date": "2025-06-11T20:06:48.186Z",
       "summary": "- Improved editing of files with tab-based indentation - Fix for tooluse without matching toolresult errors",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.10.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.10.1",
+      "date": "2025-06-10T04:00:00.000Z",
+      "summary": "Windsurf version 1.10.1",
+      "fullNotes": "Windsurf version 1.10.1",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5586,6 +6116,17 @@
       "date": "2025-06-03T18:01:21.056Z",
       "summary": "- Added markdown table support - Improved streaming performance",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.9.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9.4",
+      "date": "2025-06-03T04:00:00.000Z",
+      "summary": "Windsurf version 1.9.4",
+      "fullNotes": "Windsurf version 1.9.4",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5660,6 +6201,28 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.99.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.99.3",
+      "date": "2025-05-22T04:00:00.000Z",
+      "summary": "Windsurf version 1.99.3",
+      "fullNotes": "Windsurf version 1.99.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.9.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9.2",
+      "date": "2025-05-22T04:00:00.000Z",
+      "summary": "Windsurf version 1.9.2",
+      "fullNotes": "Windsurf version 1.9.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.125",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5670,6 +6233,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.9.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9.1",
+      "date": "2025-05-21T04:00:00.000Z",
+      "summary": "Windsurf version 1.9.1",
+      "fullNotes": "Windsurf version 1.9.1",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.117",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5677,6 +6251,17 @@
       "date": "2025-05-17T23:51:27.284Z",
       "summary": "- Breaking change: --print JSON output now returns nested message objects, for forwards-compatibility as we introduce new metadata fields - Introduced settings.cleanupPeriodDays",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.9.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9.0",
+      "date": "2025-05-15T04:00:00.000Z",
+      "summary": "Windsurf version 1.9.0",
+      "fullNotes": "Windsurf version 1.9.0",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5731,6 +6316,28 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.8.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.8.2",
+      "date": "2025-05-06T04:00:00.000Z",
+      "summary": "Windsurf version 1.8.2",
+      "fullNotes": "Windsurf version 1.8.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.8.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.8.0",
+      "date": "2025-05-06T04:00:00.000Z",
+      "summary": "Windsurf version 1.8.0",
+      "fullNotes": "Windsurf version 1.8.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.102",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5781,6 +6388,61 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.99.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.99.1",
+      "date": "2025-04-29T04:00:00.000Z",
+      "summary": "Windsurf version 1.99.1",
+      "fullNotes": "Windsurf version 1.99.1",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.7.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.7.3",
+      "date": "2025-04-29T04:00:00.000Z",
+      "summary": "Windsurf version 1.7.3",
+      "fullNotes": "Windsurf version 1.7.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.7.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.7.2",
+      "date": "2025-04-28T04:00:00.000Z",
+      "summary": "Windsurf version 1.7.2",
+      "fullNotes": "Windsurf version 1.7.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.7.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.7.1",
+      "date": "2025-04-24T04:00:00.000Z",
+      "summary": "Windsurf version 1.7.1",
+      "fullNotes": "Windsurf version 1.7.1",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.7.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.7.0",
+      "date": "2025-04-21T04:00:00.000Z",
+      "summary": "Windsurf version 1.7.0",
+      "fullNotes": "Windsurf version 1.7.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.74",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5798,6 +6460,17 @@
       "date": "2025-04-17T14:21:16.372Z",
       "summary": "- Updated spinner to indicate tokens loaded and tool usage",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.6.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.6.5",
+      "date": "2025-04-16T04:00:00.000Z",
+      "summary": "Windsurf version 1.6.5",
+      "fullNotes": "Windsurf version 1.6.5",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5819,6 +6492,17 @@
       "summary": "- Support for GPT 4.1, mini and nano. - Improved support for using architect mode with Gemini 2.5 Pro. - Add support for xai/grok-3-beta, xai/grok-3-mini-beta, openrouter/x-ai/grok-3-beta, openrout...",
       "fullNotes": "- Support for GPT 4.1, mini and nano. - Improved support for using architect mode with Gemini 2.5 Pro. - Add support for xai/grok-3-beta, xai/grok-3-mini-beta, openrouter/x-ai/grok-3-beta, openrouter/x-ai/grok-3-mini-beta, and openrouter/openrouter/optimus-alpha models. - Added support for grok-3-fast-beta and grok-3-mini-fast-beta models. - Added new patch edit format for OpenAI's GPT-4.1 model. - Added new editor-diff, editor-whole, and editor-diff-fenced edit formats. - Bugfix for automatically selecting the best edit format to use in architect mode. - Add alias \"grok3\" for xai/grok-3-beta. - Add alias \"optimus\" for openrouter/openrouter/optimus-alpha. - Fix URL extraction from error messages. - Allow adding files by full path even if a file with the same basename is already in the chat. - Fix quoting of values containing '' in the sample aider.conf.yml. - Add support for Fireworks AI model 'deepseek-v3-0324', by Felix Lisczyk. - Aider wrote 92% of the code in this release. <img width=\"730\" alt=\"2025-04-1416-22-29\" src=\"https://github.com/user-attachments/assets/e4bd30b4-7fa4-4784-a10c-50315d7cbac6\" />",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.82.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.6.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.6.4",
+      "date": "2025-04-14T04:00:00.000Z",
+      "summary": "Windsurf version 1.6.4",
+      "fullNotes": "Windsurf version 1.6.4",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5852,6 +6536,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.6.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.6.3",
+      "date": "2025-04-07T04:00:00.000Z",
+      "summary": "Windsurf version 1.6.3",
+      "fullNotes": "Windsurf version 1.6.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.81.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -5863,6 +6558,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.6.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.6.2",
+      "date": "2025-04-03T04:00:00.000Z",
+      "summary": "Windsurf version 1.6.2",
+      "fullNotes": "Windsurf version 1.6.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.61",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -5870,6 +6576,17 @@
       "date": "2025-04-03T01:04:19.442Z",
       "summary": "- Navigate menus with vim-style keys (j/k) or bash/emacs shortcuts (Ctrl+n/p) for faster interaction - Enhanced image detection for more reliable clipboard paste functionality",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.6.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.6.1",
+      "date": "2025-04-02T04:00:00.000Z",
+      "summary": "Windsurf version 1.6.1",
+      "fullNotes": "Windsurf version 1.6.1",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -5915,6 +6632,39 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.97.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.97.0",
+      "date": "2025-03-25T04:00:00.000Z",
+      "summary": "Windsurf version 1.97.0",
+      "fullNotes": "Windsurf version 1.97.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.5.9",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.5.9",
+      "date": "2025-03-25T04:00:00.000Z",
+      "summary": "Windsurf version 1.5.9",
+      "fullNotes": "Windsurf version 1.5.9",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.5.8",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.5.8",
+      "date": "2025-03-24T04:00:00.000Z",
+      "summary": "Windsurf version 1.5.8",
+      "fullNotes": "Windsurf version 1.5.8",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.78.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -5953,6 +6703,17 @@
       "date": "2025-03-18T19:18:21.616Z",
       "summary": "- Previous MCP server scopes have been renamed: previous \"project\" scope is now \"local\" and \"global\" scope is now \"user\"",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.5.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.5.6",
+      "date": "2025-03-18T04:00:00.000Z",
+      "summary": "Windsurf version 1.5.6",
+      "fullNotes": "Windsurf version 1.5.6",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6028,6 +6789,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.4.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.4.6",
+      "date": "2025-03-10T04:00:00.000Z",
+      "summary": "Windsurf version 1.4.6",
+      "fullNotes": "Windsurf version 1.4.6",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "claude-code-0.2.34",
       "tool": "claude-code",
       "toolDisplayName": "Claude Code",
@@ -6035,6 +6807,17 @@
       "date": "2025-03-08T00:48:44.306Z",
       "summary": "- Vim bindings for text input - enable with /vim or /config",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.4.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.4.4",
+      "date": "2025-03-06T05:00:00.000Z",
+      "summary": "Windsurf version 1.4.4",
+      "fullNotes": "Windsurf version 1.4.4",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6055,6 +6838,17 @@
       "date": "2025-03-05T17:48:20.869Z",
       "summary": "- Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation - MCP debug mode: Run with --mcp-debug flag to ...",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.4.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.4.3",
+      "date": "2025-03-05T05:00:00.000Z",
+      "summary": "Windsurf version 1.4.3",
+      "fullNotes": "Windsurf version 1.4.3",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6079,6 +6873,61 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.3.11",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.3.11",
+      "date": "2025-03-03T05:00:00.000Z",
+      "summary": "Windsurf version 1.3.11",
+      "fullNotes": "Windsurf version 1.3.11",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.3.10",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.3.10",
+      "date": "2025-02-28T05:00:00.000Z",
+      "summary": "Windsurf version 1.3.10",
+      "fullNotes": "Windsurf version 1.3.10",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.3.9",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.3.9",
+      "date": "2025-02-25T05:00:00.000Z",
+      "summary": "Windsurf version 1.3.9",
+      "fullNotes": "Windsurf version 1.3.9",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.3.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.3.4",
+      "date": "2025-02-14T05:00:00.000Z",
+      "summary": "Windsurf version 1.3.4",
+      "fullNotes": "Windsurf version 1.3.4",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.3.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.3.3",
+      "date": "2025-02-13T05:00:00.000Z",
+      "summary": "Windsurf version 1.3.3",
+      "fullNotes": "Windsurf version 1.3.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.74.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6087,6 +6936,17 @@
       "summary": "- Dynamically changes the Ollama context window to hold the current chat. - Better support for o3-mini, DeepSeek V3 & R1, o1-mini, o1 via secondary API providers. - Remove <think> tags from R1 resp...",
       "fullNotes": "- Dynamically changes the Ollama context window to hold the current chat. - Better support for o3-mini, DeepSeek V3 & R1, o1-mini, o1 via secondary API providers. - Remove <think> tags from R1 responses for commit messages (and other weak model uses). - Can now specify usetemperature: <float> in model settings, not just true/false. - The full docker container now includes boto3 for Bedrock. - Docker containers now set HOME=/app which is the normal project mount-point, to persist ~/.aider. - Bugfix to prevent creating incorrect filenames like python, php, etc. - Bugfix for --timeout - Bugfix so that /model now correctly reports that the weak model is not changed. - Bugfix so that multi-line mode persists through ^C at confirmation prompts. - Watch files now fully ignores top-level directories named in ignore files, to reduce the chance of hitting OS watch limits. Helpful to ignore giant subtrees like nodemodules. - Fast startup with more providers and when model metadata provided in local files. - Improved .gitignore handling: - Honor ignores already in effect regardless of how they've been configured. - Check for .env only when the file exists. - Yes/No prompts now accept All/Skip as alias for Y/N even when not processing a group of confirmations. - Aider wrote 77% of the code in this release. https://aider.chat/HISTORY.html",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.74.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.2.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.2.6",
+      "date": "2025-02-05T05:00:00.000Z",
+      "summary": "Windsurf version 1.2.6",
+      "fullNotes": "Windsurf version 1.2.6",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6101,6 +6961,39 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.2.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.2.5",
+      "date": "2025-01-31T05:00:00.000Z",
+      "summary": "Windsurf version 1.2.5",
+      "fullNotes": "Windsurf version 1.2.5",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.2.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.2.4",
+      "date": "2025-01-31T05:00:00.000Z",
+      "summary": "Windsurf version 1.2.4",
+      "fullNotes": "Windsurf version 1.2.4",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.2.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.2.2",
+      "date": "2025-01-24T05:00:00.000Z",
+      "summary": "Windsurf version 1.2.2",
+      "fullNotes": "Windsurf version 1.2.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.72.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6109,6 +7002,17 @@
       "summary": "- Support for DeepSeek R1. - Use shortcut: --model r1 - Also via OpenRouter: --model openrouter/deepseek/deepseek-r1 - Added Kotlin syntax support to repo map, by Paul Walker. - Added --line-ending...",
       "fullNotes": "- Support for DeepSeek R1. - Use shortcut: --model r1 - Also via OpenRouter: --model openrouter/deepseek/deepseek-r1 - Added Kotlin syntax support to repo map, by Paul Walker. - Added --line-endings for file writing, by Titusz Pan. - Added examplesassysmsg=True for GPT-4o models, improves benchmark scores. - Bumped all dependencies, to pick up litellm support for o1 system messages. - Bugfix for turn taking when reflecting lint/test errors. - Fix permissions issue in Docker images. - Added read-only file announcements. - Bugfix: ASCII fallback for unicode errors. - Bugfix: integer indices for list slicing in repomap calculations. - Aider wrote 52% of the code in this release. <img width=\"898\" alt=\"2025-01-2011-39-50\" src=\"https://github.com/user-attachments/assets/1de1f960-699b-444d-ba6c-28a3aedd0ea3\" />",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.72.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.2.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.2.1",
+      "date": "2025-01-17T05:00:00.000Z",
+      "summary": "Windsurf version 1.2.1",
+      "fullNotes": "Windsurf version 1.2.1",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6123,6 +7027,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.1.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.1.3",
+      "date": "2025-01-09T05:00:00.000Z",
+      "summary": "Windsurf version 1.1.3",
+      "fullNotes": "Windsurf version 1.1.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.70.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6131,6 +7046,28 @@
       "summary": "- Full support for o1 models. - Watch files now honors --subtree-only, and only watches that subtree. - Improved prompting for watch files, to work more reliably with more models. - New install met...",
       "fullNotes": "- Full support for o1 models. - Watch files now honors --subtree-only, and only watches that subtree. - Improved prompting for watch files, to work more reliably with more models. - New install methods via uv, including one-liners. - Support for openrouter/deepseek/deepseek-chat model. - Better error handling when interactive commands are attempted via /load or --load. - Display read-only files with abs path if its shorter than rel path. - Ask 10% of users to opt-in to analytics. - Bugfix for auto-suggest. - Gracefully handle unicode errors in git path names. - Fix for gemini model names in model metadata. - Show hints about AI! and AI? when user makes AI comments. - Support for running without git installed. - Improved environment variable setup messages on Windows. - Aider wrote 74% of the code in this release. https://aider.chat/HISTORY.html",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.70.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.1.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.1.2",
+      "date": "2024-12-22T05:00:00.000Z",
+      "summary": "Windsurf version 1.1.2",
+      "fullNotes": "Windsurf version 1.1.2",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.1.1",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.1.1",
+      "date": "2024-12-19T05:00:00.000Z",
+      "summary": "Windsurf version 1.1.1",
+      "fullNotes": "Windsurf version 1.1.1",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6145,6 +7082,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.1.0",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.1.0",
+      "date": "2024-12-11T05:00:00.000Z",
+      "summary": "Windsurf version 1.1.0",
+      "fullNotes": "Windsurf version 1.1.0",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.68.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6153,6 +7101,17 @@
       "summary": "- Aider works with LLM web chat UIs. - New --copy-paste mode. - New /copy-context command. - Set API keys and other environment variables for all providers from command line or yaml conf file. - Ne...",
       "fullNotes": "- Aider works with LLM web chat UIs. - New --copy-paste mode. - New /copy-context command. - Set API keys and other environment variables for all providers from command line or yaml conf file. - New --api-key provider=key setting. - New --set-env VAR=value setting. - Added bash and zsh support to --watch-files. - Better error messages when missing dependencies for Gemini and Bedrock models. - Control-D now properly exits the program. - Don't count token costs when API provider returns a hard error. - Bugfix so watch files works with files that don't have tree-sitter support. - Bugfix so o1 models can be used as weak model. - Updated shell command prompt. - Added docstrings for all Coders. - Reorganized command line arguments with improved help messages and grouping. - Use the exact sys.python for self-upgrades. - Added experimental Gemini models. - Aider wrote 71% of the code in this release. https://github.com/user-attachments/assets/a8dca5f6-a1f8-4282-9cbd-e8219f4a23b6",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.68.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.0.7",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.7",
+      "date": "2024-12-07T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.7",
+      "fullNotes": "Windsurf version 1.0.7",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6167,6 +7126,17 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.0.6",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.6",
+      "date": "2024-12-06T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.6",
+      "fullNotes": "Windsurf version 1.0.6",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.66.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6175,6 +7145,17 @@
       "summary": "- PDF support for Sonnet and Gemini models. - Added --voice-input-device to select audio input device for voice recording, by @preynal. - Added --timeout option to configure API call timeouts. - Se...",
       "fullNotes": "- PDF support for Sonnet and Gemini models. - Added --voice-input-device to select audio input device for voice recording, by @preynal. - Added --timeout option to configure API call timeouts. - Set cwd to repo root when running shell commands. - Added Ctrl-Up/Down keyboard shortcuts for per-message history navigation. - Improved error handling for failed .gitignore file operations. - Improved error handling for input history file permissions. - Improved error handling for analytics file access. - Removed spurious warning about disabling pretty in VSCode. - Removed broken support for Dart. - Bugfix when scraping URLs found in chat messages. - Better handling of version import errors. - Improved /drop command to support substring matching for non-glob patterns. - Bugfix to --alias. - Aider wrote 82% of the code in this release. https://github.com/user-attachments/assets/4d9b5187-45e5-47c2-a8ff-1e00542c8b06",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.66.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.0.5",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.5",
+      "date": "2024-11-27T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.5",
+      "fullNotes": "Windsurf version 1.0.5",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {
@@ -6200,6 +7181,28 @@
       "type": "release"
     },
     {
+      "id": "windsurf-1.0.4",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.4",
+      "date": "2024-11-21T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.4",
+      "fullNotes": "Windsurf version 1.0.4",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.0.3",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.3",
+      "date": "2024-11-19T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.3",
+      "fullNotes": "Windsurf version 1.0.3",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
       "id": "aider-v0.63.0",
       "tool": "aider",
       "toolDisplayName": "Aider",
@@ -6208,6 +7211,17 @@
       "summary": "- Support for Qwen 2.5 Coder 32B. - /web command just adds the page to the chat, without triggering an LLM response. - Improved prompting for the user's preferred chat language. - Improved handling...",
       "fullNotes": "- Support for Qwen 2.5 Coder 32B. - /web command just adds the page to the chat, without triggering an LLM response. - Improved prompting for the user's preferred chat language. - Improved handling of LiteLLM exceptions. - Bugfix for double-counting tokens when reporting cache stats. - Bugfix for the LLM creating new files. - Other small bug fixes. - Aider wrote 55% of the code in this release.",
       "url": "https://github.com/Aider-AI/aider/releases/tag/v0.63.0",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.0.2",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.0.2",
+      "date": "2024-11-13T05:00:00.000Z",
+      "summary": "Windsurf version 1.0.2",
+      "fullNotes": "Windsurf version 1.0.2",
+      "url": "https://windsurf.com/changelog",
       "type": "release"
     },
     {

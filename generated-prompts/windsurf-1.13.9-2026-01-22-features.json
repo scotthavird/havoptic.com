@@ -1,0 +1,20 @@
+{
+  "features": [
+    {
+      "icon": "🤖",
+      "name": "GPT-5.2-Codex Enhancement",
+      "description": "Improved AI model integration framework"
+    },
+    {
+      "icon": "🔒",
+      "name": "Windows Group Policy",
+      "description": "Enterprise admin configuration and restrictions"
+    }
+  ],
+  "releaseHighlight": "Infrastructure improvements with enhanced AI model framework and enterprise Windows Group Policy support for better administrative control.",
+  "releaseInfo": "v1.13.9 • January 16, 2026",
+  "sourceContent": "Looking at the HTML content for the Windsurf Editor Changelog, I can find version 1.13.9:\n\n## Version 1.13.9 Release Notes (January 16, 2026)\n\n### Bug Fixes and Improvements\n\n- **GPT-5.2-Codex harness improvements**: Enhanced the underlying framework for GPT-5.2-Codex model integration\n- **Windows Group Policy support**: Administrators can now manage Windsurf restrictions and configurations through Windows Group Policy for enterprise deployments\n\nThis appears to be a maintenance release focused on infrastructure improvements and enterprise management capabilities.",
+  "sourceUrl": "https://windsurf.com/changelog",
+  "sourceOrigin": "fetched",
+  "extractedAt": "2026-01-22T17:05:54.586Z"
+}

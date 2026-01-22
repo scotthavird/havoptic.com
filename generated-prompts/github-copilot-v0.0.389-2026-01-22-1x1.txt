@@ -1,0 +1,15 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "GITHUB COPILOT CLI" with "v0.0.389 • January 21, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🤖 "OAuth MCP Authentication" - "Automatic token management and refresh support"
+2. ⚡ "Skill Slash Commands" - "Invoke skills using /skill-name command syntax"
+3. 📊 "/diff Command" - "Review all changes made during session"
+4. 🔌 "Bundled MCP Servers" - "Plugins automatically load included MCP servers"
+5. 💻 "Windows MSI Installer" - "Easy installation package for Windows users"
+6. 🛠️ "Hidden Files Search" - "grep and glob now find dotfiles"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Copilot purple accent, dark gradient background, GitHub-inspired modern developer aesthetic, brand color #8534F3, high contrast, readable text, professional tech aesthetic
+Highlight: "Major improvements to MCP authentication, skill invocation, and session management with new diff tracking capabilities."
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.
