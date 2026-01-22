@@ -1,35 +1,35 @@
 {
-  "lastUpdated": "2026-01-21T14:14:26.559Z",
+  "lastUpdated": "2026-01-22T13:22:19.174Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "npm": {
-        "weeklyDownloads": 6383576,
-        "monthlyDownloads": 18797486,
-        "totalDownloads": 18797486,
-        "downloadsTrend": -6.2
+        "weeklyDownloads": 6562330,
+        "monthlyDownloads": 19667263,
+        "totalDownloads": 19667263,
+        "downloadsTrend": -4.3
       },
-      "fetchedAt": "2026-01-21T14:14:24.589Z"
+      "fetchedAt": "2026-01-22T13:22:18.050Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "npm": {
-        "weeklyDownloads": 567313,
-        "monthlyDownloads": 1863374,
-        "totalDownloads": 1863374,
-        "downloadsTrend": 13
+        "weeklyDownloads": 576428,
+        "monthlyDownloads": 1858017,
+        "totalDownloads": 1858017,
+        "downloadsTrend": 21
       },
-      "fetchedAt": "2026-01-21T14:14:25.727Z"
+      "fetchedAt": "2026-01-22T13:22:18.582Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "npm": {
-        "weeklyDownloads": 503973,
-        "monthlyDownloads": 1580567,
-        "totalDownloads": 1580567,
-        "downloadsTrend": 29
+        "weeklyDownloads": 536490,
+        "monthlyDownloads": 1626100,
+        "totalDownloads": 1626100,
+        "downloadsTrend": 42.3
       },
-      "fetchedAt": "2026-01-21T14:14:26.553Z"
+      "fetchedAt": "2026-01-22T13:22:19.168Z"
     }
   }
 }
