@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics } from '../hooks/useMetrics';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
+import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
@@ -190,6 +191,7 @@ export function Trends() {
 
   return (
     <div className="py-8">
+      <BreadcrumbSchema items={BREADCRUMBS.trends} />
       <a
         href="#/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"

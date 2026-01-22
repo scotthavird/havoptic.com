@@ -1,5 +1,6 @@
 import { useBlogPost } from '../hooks/useBlogPosts';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { BreadcrumbSchema, getBlogPostBreadcrumbs } from '../components/BreadcrumbSchema';
 import { BLOG_POST_TYPE_CONFIG } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -121,6 +122,7 @@ export function BlogPost({ slug }: BlogPostProps) {
 
   return (
     <div className="py-8">
+      <BreadcrumbSchema items={getBlogPostBreadcrumbs(post.title, post.slug)} />
       <a
         href="#/blog"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"

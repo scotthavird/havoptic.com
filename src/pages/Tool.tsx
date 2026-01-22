@@ -2,6 +2,7 @@ import { useReleases } from '../hooks/useReleases';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics, useFeatureMatrix } from '../hooks/useMetrics';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { BreadcrumbSchema, getToolBreadcrumbs } from '../components/BreadcrumbSchema';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getSimilarTools } from '../utils/toolRegistry';
 import { Timeline } from '../components/Timeline';
@@ -75,6 +76,7 @@ export function Tool({ toolId }: ToolProps) {
 
   return (
     <div className="py-8">
+      <BreadcrumbSchema items={getToolBreadcrumbs(config.displayName, toolId)} />
       <a
         href="#/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
