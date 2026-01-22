@@ -229,6 +229,7 @@ export function useFeatureMatrix() {
       'kiro': 0,
       'github-copilot': 0,
       'aider': 0,
+      'windsurf': 0,
     };
 
     if (!data?.features) return counts;
