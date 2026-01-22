@@ -13,6 +13,7 @@ export default {
         'gemini': '#00ACC1',
         'kiro': '#8B5CF6',
         'copilot': '#8534F3',
+        'aider': '#22c55e',
       },
       animation: {
         'sparkle-fade': 'sparkleFade 0.8s ease-out forwards',
