@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { ToolId } from '../types/release';
+import { getAllToolIds } from '../utils/toolRegistry';
 import type {
   MetricsData,
   VelocityData,
@@ -221,21 +222,18 @@ export function useFeatureMatrix() {
 
   // Count supported features per tool
   const featureCountByTool = useMemo((): Record<ToolId, number> => {
-    const counts: Record<ToolId, number> = {
-      'claude-code': 0,
-      'openai-codex': 0,
-      'cursor': 0,
-      'gemini-cli': 0,
-      'kiro': 0,
-      'github-copilot': 0,
-      'aider': 0,
-      'windsurf': 0,
-    };
+    const allTools = getAllToolIds();
+    const counts = {} as Record<ToolId, number>;
+
+    // Initialize all tools to 0
+    for (const toolId of allTools) {
+      counts[toolId] = 0;
+    }
 
     if (!data?.features) return counts;
 
     for (const feature of data.features) {
-      for (const toolId of Object.keys(counts) as ToolId[]) {
+      for (const toolId of allTools) {
         if (feature.tools[toolId]?.supported) {
           counts[toolId]++;
         }

@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics } from '../hooks/useMetrics';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
+import { getAllToolIds } from '../utils/toolRegistry';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
 
-const TOOL_IDS: ToolId[] = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider', 'windsurf'];
+const TOOL_IDS: ToolId[] = getAllToolIds();
 
 function formatNumber(num: number): string {
   if (num >= 1_000_000) {
