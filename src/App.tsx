@@ -14,6 +14,7 @@ import { Blog } from './pages/Blog';
 import { BlogPost } from './pages/BlogPost';
 import { Compare } from './pages/Compare';
 import { Tool } from './pages/Tool';
+import { Trends } from './pages/Trends';
 
 type Page =
   | { type: 'home' }
@@ -22,6 +23,7 @@ type Page =
   | { type: 'blog' }
   | { type: 'blogPost'; slug: string }
   | { type: 'compare' }
+  | { type: 'trends' }
   | { type: 'tool'; toolId: ToolId };
 
 function getPageFromHash(): Page {
@@ -30,6 +32,7 @@ function getPageFromHash(): Page {
   if (hash === '#/privacy') return { type: 'privacy' };
   if (hash === '#/blog') return { type: 'blog' };
   if (hash === '#/compare') return { type: 'compare' };
+  if (hash === '#/trends') return { type: 'trends' };
   if (hash.startsWith('#/blog/')) {
     const slug = hash.slice(7); // Remove '#/blog/'
     return { type: 'blogPost', slug };
@@ -141,6 +144,14 @@ function App() {
     return (
       <Layout>
         <Compare />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'trends') {
+    return (
+      <Layout>
+        <Trends />
       </Layout>
     );
   }
