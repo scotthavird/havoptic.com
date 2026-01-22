@@ -1,0 +1,80 @@
+# Havoptic - AI Coding Tool Release Tracker
+# https://havoptic.com
+# LLM-friendly site description (llms.txt standard)
+
+> Havoptic is a comprehensive release tracking platform for AI coding tools.
+> We track version updates, changelogs, and new features from leading AI-powered
+> development assistants. Updated daily via automated pipelines.
+
+## Tracked AI Coding Tools
+
+1. **Claude Code** - Anthropic's CLI tool for AI-assisted coding
+2. **OpenAI Codex CLI** - OpenAI's command-line coding assistant
+3. **Cursor** - AI-first code editor with built-in AI assistance
+4. **Gemini CLI** - Google's AI coding assistant for the terminal
+5. **Kiro CLI** - Amazon's spec-driven AI coding agent
+6. **GitHub Copilot CLI** - GitHub's AI pair programmer CLI
+7. **Aider** - AI pair programming in your terminal
+8. **Windsurf** - Codeium's AI-powered IDE (formerly Codeium)
+
+## Data Endpoints
+
+- **Release Data (JSON)**: https://havoptic.com/data/releases.json
+  - Contains all tracked releases with version, date, summary, and full notes
+  - Updated daily when new releases are detected
+
+- **Feature Matrix (JSON)**: https://havoptic.com/data/feature-matrix.json
+  - Comparison data across all tracked tools
+  - Includes pricing, platforms, language support, and capabilities
+
+- **RSS Feed**: https://havoptic.com/feed.xml
+  - RSS 2.0 format for feed readers
+
+- **JSON Feed**: https://havoptic.com/feed.json
+  - JSON Feed 1.1 format for programmatic access
+
+## Key Pages
+
+- **Home (Timeline)**: https://havoptic.com/
+  - Chronological timeline of all releases, filterable by tool
+
+- **Tool Comparison**: https://havoptic.com/#/compare
+  - Side-by-side comparison of all tools with feature matrix
+
+- **Trends & Insights**: https://havoptic.com/#/trends
+  - Release frequency analysis and version history charts
+
+- **Blog**: https://havoptic.com/#/blog
+  - Analysis and insights about AI coding tools
+
+### Individual Tool Pages
+
+- Claude Code: https://havoptic.com/#/tools/claude-code
+- OpenAI Codex CLI: https://havoptic.com/#/tools/openai-codex
+- Cursor: https://havoptic.com/#/tools/cursor
+- Gemini CLI: https://havoptic.com/#/tools/gemini-cli
+- Kiro CLI: https://havoptic.com/#/tools/kiro
+- GitHub Copilot CLI: https://havoptic.com/#/tools/github-copilot
+- Aider: https://havoptic.com/#/tools/aider
+- Windsurf: https://havoptic.com/#/tools/windsurf
+
+## API Usage Notes
+
+- All data is publicly accessible without authentication
+- Please respect rate limits and cache responses where possible
+- Data is typically updated once per day via GitHub Actions
+- For programmatic access, prefer the JSON endpoints over scraping HTML
+
+## Structured Data
+
+The site includes JSON-LD structured data on all pages for enhanced search
+engine understanding. Release pages include SoftwareApplication schema.
+
+## Contact
+
+For questions or data requests, visit the GitHub repository or contact
+through the website.
+
+---
+Last updated: Auto-generated
+Site maintained by: Havoptic

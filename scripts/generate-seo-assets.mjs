@@ -9,7 +9,7 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const SITE_URL = 'https://havoptic.com';
 
-const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro'];
+const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider', 'windsurf'];
 
 function escapeXml(str) {
   if (!str) return '';
@@ -31,6 +31,7 @@ async function generateSitemap(lastUpdated, releases, blogPosts) {
     { loc: '/', priority: '1.0', changefreq: 'daily' },
     { loc: '/blog', priority: '0.9', changefreq: 'daily' },
     { loc: '/compare', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/trends', priority: '0.8', changefreq: 'weekly' },
   ];
 
   // Tool pages
@@ -74,6 +75,47 @@ ${urls}
   console.log(`Generated sitemap.xml with ${allPages.length} URLs`);
 }
 
+async function generateImageSitemap(releases) {
+  // Filter releases that have infographic images
+  const releasesWithImages = releases.filter(r => r.infographicUrl || r.infographicUrl16x9);
+
+  const urls = releasesWithImages.map(release => {
+    const images = [];
+
+    // Add 1:1 infographic if exists
+    if (release.infographicUrl) {
+      images.push(`      <image:image>
+        <image:loc>${SITE_URL}${release.infographicUrl}</image:loc>
+        <image:title>${escapeXml(`${release.toolDisplayName} v${release.version} Release Infographic`)}</image:title>
+        <image:caption>${escapeXml(release.summary || `${release.toolDisplayName} version ${release.version} release highlights`)}</image:caption>
+      </image:image>`);
+    }
+
+    // Add 16:9 infographic if exists
+    if (release.infographicUrl16x9) {
+      images.push(`      <image:image>
+        <image:loc>${SITE_URL}${release.infographicUrl16x9}</image:loc>
+        <image:title>${escapeXml(`${release.toolDisplayName} v${release.version} Release Infographic (16:9)`)}</image:title>
+        <image:caption>${escapeXml(release.summary || `${release.toolDisplayName} version ${release.version} release highlights`)}</image:caption>
+      </image:image>`);
+    }
+
+    return `  <url>
+    <loc>${SITE_URL}/r/${release.id}</loc>
+${images.join('\n')}
+  </url>`;
+  }).join('\n');
+
+  const imageSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls}
+</urlset>`;
+
+  await fs.writeFile(path.join(DIST_DIR, 'sitemap-images.xml'), imageSitemap);
+  console.log(`Generated sitemap-images.xml with ${releasesWithImages.length} releases containing images`);
+}
+
 async function generateRssFeed(releases, lastUpdated) {
   const recentReleases = releases.slice(0, 50);
 
@@ -94,7 +136,7 @@ async function generateRssFeed(releases, lastUpdated) {
   <channel>
     <title>Havoptic - AI Tool Releases</title>
     <link>${SITE_URL}/</link>
-    <description>Latest releases from Claude Code, OpenAI Codex CLI, and Cursor</description>
+    <description>Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf</description>
     <language>en-us</language>
     <lastBuildDate>${new Date(lastUpdated || Date.now()).toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
@@ -106,6 +148,52 @@ ${items}
   console.log(`Generated feed.xml with ${recentReleases.length} items`);
 }
 
+async function generateJsonFeed(releases, lastUpdated) {
+  const recentReleases = releases.slice(0, 50);
+
+  const feed = {
+    version: 'https://jsonfeed.org/version/1.1',
+    title: 'Havoptic - AI Tool Releases',
+    home_page_url: SITE_URL,
+    feed_url: `${SITE_URL}/feed.json`,
+    description: 'Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf',
+    language: 'en-US',
+    authors: [
+      {
+        name: 'Havoptic',
+        url: SITE_URL,
+      }
+    ],
+    items: recentReleases.map(release => {
+      const item = {
+        id: release.id,
+        url: release.url,
+        title: `${release.toolDisplayName} v${release.version}`,
+        content_text: release.summary || `${release.toolDisplayName} version ${release.version} released.`,
+        date_published: new Date(release.date).toISOString(),
+        tags: [release.tool, release.toolDisplayName],
+      };
+
+      // Add infographic image if available
+      if (release.infographicUrl16x9) {
+        item.image = `${SITE_URL}${release.infographicUrl16x9}`;
+      } else if (release.infographicUrl) {
+        item.image = `${SITE_URL}${release.infographicUrl}`;
+      }
+
+      // Add full notes if available
+      if (release.fullNotes) {
+        item.content_html = `<p>${release.summary || ''}</p><pre>${release.fullNotes}</pre>`;
+      }
+
+      return item;
+    }),
+  };
+
+  await fs.writeFile(path.join(DIST_DIR, 'feed.json'), JSON.stringify(feed, null, 2));
+  console.log(`Generated feed.json with ${recentReleases.length} items`);
+}
+
 async function generateStructuredData(releases) {
   const recentReleases = releases.slice(0, 100);
 
@@ -113,7 +201,7 @@ async function generateStructuredData(releases) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "AI Coding Tool Releases",
-    "description": "Timeline of releases from Claude Code, OpenAI Codex CLI, and Cursor",
+    "description": "Timeline of releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf",
     "numberOfItems": recentReleases.length,
     "itemListElement": recentReleases.map((release, index) => ({
       "@type": "ListItem",
@@ -169,7 +257,9 @@ async function main() {
   // Generate all assets
   await Promise.all([
     generateSitemap(releasesData.lastUpdated, releasesData.releases, blogData.posts),
+    generateImageSitemap(releasesData.releases),
     generateRssFeed(releasesData.releases, releasesData.lastUpdated),
+    generateJsonFeed(releasesData.releases, releasesData.lastUpdated),
     generateStructuredData(releasesData.releases),
   ]);
 

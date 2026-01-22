@@ -1,6 +1,7 @@
 import { useReleases } from '../hooks/useReleases';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics, useFeatureMatrix } from '../hooks/useMetrics';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getSimilarTools } from '../utils/toolRegistry';
 import { Timeline } from '../components/Timeline';
@@ -27,6 +28,14 @@ interface ToolProps {
 
 export function Tool({ toolId }: ToolProps) {
   const config = TOOL_CONFIG[toolId];
+
+  usePageMeta({
+    title: config ? `${config.displayName} Releases | Havoptic` : 'Tool | Havoptic',
+    description: config
+      ? `Track ${config.displayName} releases, features, and updates. Compare with other AI coding tools.`
+      : 'Track AI coding tool releases on Havoptic.',
+  });
+
   const { groupedReleases, releases, loading: releasesLoading, error: releasesError } = useReleases(toolId);
   const { posts: relatedPosts } = useBlogPosts({ tool: toolId, limit: 5 });
   const { getToolStats } = useGitHubStats();

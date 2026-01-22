@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useBlogPosts } from '../hooks/useBlogPosts';
+import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { BLOG_POST_TYPE_CONFIG, type BlogPostType } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -49,6 +50,8 @@ function BlogCard({ post }: { post: ReturnType<typeof useBlogPosts>['posts'][0] 
 }
 
 export function Blog() {
+  usePageMeta(PAGE_META.blog);
+
   const [selectedType, setSelectedType] = useState<BlogPostType | 'all'>('all');
   const { posts, groupedByType, loading, error } = useBlogPosts(
     selectedType === 'all' ? {} : { type: selectedType }

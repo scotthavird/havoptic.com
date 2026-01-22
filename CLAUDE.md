@@ -216,8 +216,9 @@ Set via Terraform in `iac/*/web.tf`:
 
 ## Adding a New Tool
 
-**CRITICAL: All 7 locations must be updated or infographics won't generate.**
+**CRITICAL: All 12 locations must be updated for full functionality.**
 
+### Core Functionality (required for releases and infographics)
 1. Add tool ID to `ToolId` type in `src/types/release.ts`
 2. Add display config to `TOOL_CONFIG` in same file
 3. Add Tailwind color in `tailwind.config.js`
@@ -230,3 +231,10 @@ Set via Terraform in `iac/*/web.tf`:
 7. **Add tool to `.github/workflows/generate-infographics.yml`** in TWO places:
    - The `options` list under `workflow_dispatch.inputs.tool` (for manual runs)
    - The `for tool in ...` loop in the generate step (for automated runs)
+
+### SEO & Discoverability (required for search engines and LLMs)
+8. Add tool to `TOOL_IDS` array in `scripts/generate-seo-assets.mjs`
+9. Add tool to `TOOL_CONFIG` in `functions/tools/[[id]].js`
+10. Add tool to `TOOL_CONFIG` in `functions/r/[[id]].js`
+11. Update meta descriptions in `index.html` (title, description, keywords, OG tags, Twitter tags, structured data)
+12. Add tool to `public/llms.txt` tracked tools list

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics } from '../hooks/useMetrics';
+import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
@@ -93,6 +94,8 @@ function StatCard({ title, value, subtitle, trend, icon }: StatCardProps) {
 }
 
 export function Trends() {
+  usePageMeta(PAGE_META.trends);
+
   const { stats: githubStats, loading: githubLoading } = useGitHubStats();
   const { stats: npmStats, loading: npmLoading } = useNpmDownloads();
   const { metrics: velocityMetrics, loading: velocityLoading } = useVelocityMetrics();
