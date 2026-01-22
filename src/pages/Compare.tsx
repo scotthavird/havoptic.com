@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useFeatureMatrix, useVelocityMetrics } from '../hooks/useMetrics';
 import { useReleases } from '../hooks/useReleases';
+import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import { ToolSearchSelector } from '../components/ToolSearchSelector';
@@ -32,6 +33,8 @@ function updateUrl(tools: ToolId[]) {
 }
 
 export function Compare() {
+  usePageMeta(PAGE_META.compare);
+
   const [selectedTools, setSelectedTools] = useState<ToolId[]>(getToolsFromUrl);
   const [selectedCategory, setSelectedCategory] = useState<string | 'all'>('all');
 

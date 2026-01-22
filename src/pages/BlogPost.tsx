@@ -1,4 +1,5 @@
 import { useBlogPost } from '../hooks/useBlogPosts';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { BLOG_POST_TYPE_CONFIG } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -75,6 +76,11 @@ interface BlogPostProps {
 
 export function BlogPost({ slug }: BlogPostProps) {
   const { post, loading, error } = useBlogPost(slug);
+
+  usePageMeta({
+    title: post ? `${post.title} | Havoptic Blog` : 'Loading... | Havoptic Blog',
+    description: post?.summary || 'Read insights about AI coding tools on Havoptic.',
+  });
 
   if (loading) {
     return (
