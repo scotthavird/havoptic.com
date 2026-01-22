@@ -1,14 +1,45 @@
 # Robots.txt for havoptic.com
 # https://www.robotstxt.org/robotstxt.html
 
+# Default rules for all crawlers
 User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Disallow development/build artifacts
+Disallow: /assets/*.map
+
+# LLM and AI Crawlers - Explicitly allowed
+# These crawlers index content for AI assistants and search
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap location
 Sitemap: https://havoptic.com/sitemap.xml
 
-# Crawl-delay for polite crawling (optional)
-Crawl-delay: 1
-
-# Disallow development/build artifacts
-Disallow: /assets/*.map
+# LLM-specific content file
+# See https://llmstxt.org for the llms.txt standard
+# Contains structured site description for AI assistants
+LLMs-txt: https://havoptic.com/llms.txt
