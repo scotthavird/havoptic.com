@@ -471,6 +471,108 @@ async function fetchAider(existingIds) {
   return releases;
 }
 
+// Fetch Windsurf releases by scraping changelog page
+async function fetchWindsurf(existingIds) {
+  console.log('Fetching Windsurf releases...');
+  const releases = [];
+  const seenIds = new Set();
+
+  try {
+    const res = await fetch('https://windsurf.com/changelog', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      },
+    });
+
+    if (!res.ok) throw new Error(`Windsurf changelog returned ${res.status}`);
+
+    const html = await res.text();
+    const $ = load(html);
+
+    // Windsurf changelog has entries with version numbers and dates
+    // Look for version patterns like "1.13.9" and dates like "January 16, 2026"
+
+    // Extract version entries - they appear to be in sections with version numbers and dates
+    const versionPattern = /(\d+\.\d+\.\d+)/g;
+    const datePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
+
+    // Find all sections that look like changelog entries
+    // Try different selectors that commonly hold changelog entries
+    const entries = [];
+
+    // Look for elements containing version numbers
+    $('*').each((_, el) => {
+      const text = $(el).text();
+      const versionMatch = text.match(/^(\d+\.\d+\.\d+)$/);
+      if (versionMatch) {
+        entries.push({
+          element: el,
+          version: versionMatch[1],
+          text: text
+        });
+      }
+    });
+
+    // Also try to parse from raw HTML using regex for more reliable extraction
+    const htmlMatches = [];
+    let match;
+
+    // Find all versions with their approximate positions
+    const versions = [];
+    const tempVersionPattern = /(\d+\.\d+\.\d+)/g;
+    while ((match = tempVersionPattern.exec(html)) !== null) {
+      versions.push({ version: match[1], index: match.index });
+    }
+
+    // Find all dates with their approximate positions
+    const dates = [];
+    const tempDatePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
+    while ((match = tempDatePattern.exec(html)) !== null) {
+      dates.push({ date: match[1], index: match.index });
+    }
+
+    // Match versions to their nearest dates
+    for (const ver of versions) {
+      const id = `windsurf-${ver.version}`;
+
+      if (seenIds.has(id) || existingIds.has(id)) continue;
+      seenIds.add(id);
+
+      // Find the closest date that appears near this version (within 500 chars)
+      let closestDate = null;
+      let minDist = Infinity;
+      for (const d of dates) {
+        const dist = Math.abs(d.index - ver.index);
+        if (dist < minDist && dist < 500) {
+          minDist = dist;
+          closestDate = d.date;
+        }
+      }
+
+      if (!closestDate) continue;
+
+      releases.push({
+        id,
+        tool: 'windsurf',
+        toolDisplayName: 'Windsurf',
+        version: ver.version,
+        date: new Date(closestDate).toISOString(),
+        summary: `Windsurf version ${ver.version}`,
+        fullNotes: `Windsurf version ${ver.version}`, // Full notes fetched at infographic generation time
+        url: 'https://windsurf.com/changelog',
+        type: 'release',
+      });
+    }
+
+    console.log(`  Found ${releases.length} new Windsurf releases`);
+  } catch (err) {
+    console.error('  Error fetching Windsurf:', err.message);
+  }
+
+  return releases;
+}
+
 // Fetch Cursor releases by scraping changelog page
 async function fetchCursor(existingIds) {
   console.log('Fetching Cursor releases...');
@@ -573,7 +675,7 @@ async function main() {
   const existingIds = new Set(existingData.releases.map(r => r.id));
 
   // Fetch from all sources
-  const [claudeReleases, codexReleases, cursorReleases, geminiReleases, kiroReleases, copilotReleases, aiderReleases] = await Promise.all([
+  const [claudeReleases, codexReleases, cursorReleases, geminiReleases, kiroReleases, copilotReleases, aiderReleases, windsurfReleases] = await Promise.all([
     fetchClaudeCode(existingIds),
     fetchOpenAICodex(existingIds),
     fetchCursor(existingIds),
@@ -581,10 +683,11 @@ async function main() {
     fetchKiro(existingIds),
     fetchGitHubCopilot(existingIds),
     fetchAider(existingIds),
+    fetchWindsurf(existingIds),
   ]);
 
   // Merge and sort
-  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases, ...geminiReleases, ...kiroReleases, ...copilotReleases, ...aiderReleases];
+  const allNew = [...claudeReleases, ...codexReleases, ...cursorReleases, ...geminiReleases, ...kiroReleases, ...copilotReleases, ...aiderReleases, ...windsurfReleases];
   console.log(`\nTotal new releases found: ${allNew.length}`);
 
   if (allNew.length === 0) {

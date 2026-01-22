@@ -14,6 +14,7 @@ export default {
         'kiro': '#8B5CF6',
         'copilot': '#8534F3',
         'aider': '#22c55e',
+        'windsurf': '#00D4AA',
       },
       animation: {
         'sparkle-fade': 'sparkleFade 0.8s ease-out forwards',

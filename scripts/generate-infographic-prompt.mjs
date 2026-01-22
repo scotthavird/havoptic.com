@@ -49,6 +49,11 @@ const TOOL_CONFIGS = {
     primaryColor: '#8534F3',
     style: 'Copilot purple accent, dark gradient background, GitHub-inspired modern developer aesthetic',
   },
+  'windsurf': {
+    displayName: 'WINDSURF',
+    primaryColor: '#00D4AA',
+    style: 'Teal/cyan accent, dark gradient background, modern IDE-inspired aesthetic with wave motif',
+  },
 };
 
 // Retry configuration
@@ -197,7 +202,7 @@ function parseArgs() {
 Usage: node generate-infographic-prompt.mjs [options]
 
 Options:
-  --tool=<id>          Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider)
+  --tool=<id>          Tool ID to generate prompt for (claude-code, kiro, openai-codex, gemini-cli, cursor, aider, github-copilot, windsurf)
   --version=<ver>      Specific version to generate for (default: latest release)
   --count=<n>          Number of features to extract (default: 6)
   --output=<path>      Output directory for generated prompts (default: generated-prompts/)

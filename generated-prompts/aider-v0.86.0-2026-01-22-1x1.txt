@@ -1,0 +1,15 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "AIDER" with "v0.86.0 • August 9, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🧠 "GPT-5 Support" - "Access latest OpenAI GPT-5 models"
+2. 🤖 "Grok-4 Integration" - "Connect with xAI's advanced language model"
+3. ⚡ "Gemini Flash Lite" - "Fast Google Gemini 2.5 model support"
+4. 🔗 "Kimi-K2 Model" - "Moonshot AI model via OpenRouter"
+5. 💻 "Clear Confirmation" - "Visual feedback when clearing chat history"
+6. 📊 "Model Announcements" - "View important model updates easily"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Terminal green on dark background, retro-modern hacker aesthetic, brand color #22c55e, high contrast, readable text, professional tech aesthetic
+Highlight: "Major AI model expansion with GPT-5 and Grok-4 support"
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.
