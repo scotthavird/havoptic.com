@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-19T15:09:33.355Z",
+  "lastUpdated": "2026-01-22T00:00:00.000Z",
   "categories": [
     {
       "id": "core-editing",
@@ -51,9 +51,21 @@
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Multi-file workspace editing via agent mode"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Aider can edit multiple files in a single session"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade can edit multiple files across a project"
         }
       },
-      "lastUpdated": "2026-01-19T15:09:33.355Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "core-editing",
@@ -72,16 +84,31 @@
           "addedAt": "2026-01-15T18:38:22Z"
         },
         "cursor": {
-          "supported": false
+          "supported": true,
+          "notes": "Real-time streaming in composer and chat"
         },
         "gemini-cli": {
-          "supported": false
+          "supported": true,
+          "notes": "CLI streams responses in real-time"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "IDE streams responses"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Streams suggestions and chat responses"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Streams model responses in terminal"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade streams responses in IDE"
         }
       },
-      "lastUpdated": "2026-01-19T15:10:02.244Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "core-editing",
@@ -100,7 +127,8 @@
           "addedAt": "2026-01-16T01:18:52Z"
         },
         "cursor": {
-          "supported": false
+          "supported": true,
+          "notes": "Standard editor undo/redo support"
         },
         "gemini-cli": {
           "supported": true,
@@ -108,10 +136,23 @@
           "addedAt": "2026-01-14T13:27:15Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "IDE undo/redo support"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Uses editor's native undo/redo"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Git-based undo via /undo command"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "IDE undo/redo with AI change tracking"
         }
       },
-      "lastUpdated": "2026-01-19T15:10:34.016Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "core-editing",
@@ -139,10 +180,23 @@
           "addedAt": "2026-01-19T05:12:52Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "IDE diff view for proposed changes"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Shows diffs for suggested edits"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Shows diffs before applying changes"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade shows diffs for proposed changes"
         }
       },
-      "lastUpdated": "2026-01-19T15:11:02.791Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "terminal",
@@ -171,10 +225,23 @@
           "addedAt": "2026-01-14T13:27:15Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "Integrated terminal support"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "CLI executes shell commands"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Can execute shell commands via /run"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade can run terminal commands"
         }
       },
-      "lastUpdated": "2026-01-19T15:11:34.325Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "terminal",
@@ -195,13 +262,27 @@
           "notes": "v1.6 references 'Agent terminal' suggesting shell integration features"
         },
         "gemini-cli": {
-          "supported": false
+          "supported": true,
+          "notes": "CLI tool with shell environment access"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "IDE terminal integration"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "CLI integrates with user shell"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Runs in user's shell with full environment access"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "IDE terminal integration"
         }
       },
-      "lastUpdated": "2026-01-19T15:12:07.006Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "terminal",
@@ -220,7 +301,8 @@
           "addedAt": "2026-01-16T01:18:52Z"
         },
         "cursor": {
-          "supported": false
+          "supported": true,
+          "notes": "Background indexing and processing"
         },
         "gemini-cli": {
           "supported": true,
@@ -229,9 +311,19 @@
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": false
+        },
+        "aider": {
+          "supported": false
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade supports background processing"
         }
       },
-      "lastUpdated": "2026-01-19T15:12:43.634Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "mcp",
@@ -250,7 +342,8 @@
           "addedAt": "2026-01-16T15:37:42Z"
         },
         "cursor": {
-          "supported": false
+          "supported": true,
+          "notes": "MCP support added in recent versions"
         },
         "gemini-cli": {
           "supported": true,
@@ -261,9 +354,19 @@
           "supported": true,
           "addedInVersion": "1.23.0",
           "addedAt": "2025-12-18T05:00:00.000Z"
+        },
+        "github-copilot": {
+          "supported": false
+        },
+        "aider": {
+          "supported": false
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "MCP support for tool integration"
         }
       },
-      "lastUpdated": "2026-01-19T15:13:15.505Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "mcp",
@@ -291,9 +394,18 @@
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": false
+        },
+        "aider": {
+          "supported": false
+        },
+        "windsurf": {
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-19T15:13:48.686Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "mcp",
@@ -321,9 +433,21 @@
         "kiro": {
           "supported": true,
           "notes": "v1.23.0 explicitly mentions 'Grep/Glob Tools' indicating custom tool support"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Extensible via GitHub Apps and Actions"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Custom commands and integrations supported"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade supports custom tool integration"
         }
       },
-      "lastUpdated": "2026-01-19T15:14:19.501Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "ide",
@@ -349,10 +473,22 @@
           "addedAt": "2025-12-22T16:54:19Z"
         },
         "kiro": {
+          "supported": true,
+          "notes": "Kiro is a VS Code-based IDE"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Primary VS Code extension"
+        },
+        "aider": {
           "supported": false
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Windsurf is built on VS Code"
         }
       },
-      "lastUpdated": "2026-01-19T15:14:52.960Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "ide",
@@ -375,9 +511,19 @@
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "JetBrains plugin available"
+        },
+        "aider": {
+          "supported": false
+        },
+        "windsurf": {
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-19T15:15:23.438Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "ide",
@@ -396,16 +542,29 @@
           "addedAt": "2025-12-10T22:28:39Z"
         },
         "cursor": {
-          "supported": false
+          "supported": true,
+          "notes": "Vim keybindings supported"
         },
         "gemini-cli": {
           "supported": false
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Neovim plugin available"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Works with any editor, integrates with $EDITOR"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Vim keybindings supported"
         }
       },
-      "lastUpdated": "2026-01-19T15:15:56.262Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "ide",
@@ -435,9 +594,20 @@
         },
         "kiro": {
           "supported": false
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "GitHub.com integration and Copilot Chat web"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Browser-based UI available"
+        },
+        "windsurf": {
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-19T15:16:26.013Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "agentic",
@@ -467,9 +637,20 @@
           "supported": true,
           "addedInVersion": "1.23.0",
           "addedAt": "2025-12-18T05:00:00.000Z"
+        },
+        "github-copilot": {
+          "supported": false
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Architect mode for planning"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade supports planning workflows"
         }
       },
-      "lastUpdated": "2026-01-19T15:16:57.573Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "agentic",
@@ -497,10 +678,23 @@
           "addedAt": "2026-01-14T13:27:15Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "Autonomous agent capabilities"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Agent mode for autonomous tasks"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Autonomous coding with auto-apply"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade autonomous agent"
         }
       },
-      "lastUpdated": "2026-01-19T15:17:29.489Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "agentic",
@@ -530,9 +724,21 @@
         "kiro": {
           "supported": true,
           "notes": "v1.23.0 mentions 'Subagents' which suggests ability to break down tasks into subtasks handled by different agents"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Agent mode breaks down tasks"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Breaks complex requests into steps"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade decomposes tasks"
         }
       },
-      "lastUpdated": "2026-01-19T15:18:00.322Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     },
     {
       "categoryId": "agentic",
@@ -560,10 +766,23 @@
           "addedAt": "2026-01-14T13:27:15Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "notes": "Session persistence and context tracking"
+        },
+        "github-copilot": {
+          "supported": true,
+          "notes": "Workspace context awareness"
+        },
+        "aider": {
+          "supported": true,
+          "notes": "Git-aware context and file tracking"
+        },
+        "windsurf": {
+          "supported": true,
+          "notes": "Cascade maintains conversation context"
         }
       },
-      "lastUpdated": "2026-01-19T15:18:30.084Z"
+      "lastUpdated": "2026-01-22T00:00:00.000Z"
     }
   ]
 }
