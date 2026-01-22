@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://havoptic.com/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/github-copilot-v0.0.389</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/claude-code-2.1.15</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/openai-codex-rust-v0.88.0</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://havoptic.com/r/gemini-cli-v0.25.0</loc>
