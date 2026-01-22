@@ -37,7 +37,7 @@ Use these commands to streamline the Git workflow:
 
 ## Project Overview
 
-Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro CLI, and GitHub Copilot CLI). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
+Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro CLI, GitHub Copilot CLI, and Aider). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
 
 ## Commands
 
@@ -101,6 +101,7 @@ The validator compares extracted features against source URLs and reports:
    - Gemini CLI: GitHub Releases API
    - Kiro CLI: Scrapes changelog page HTML
    - GitHub Copilot CLI: GitHub Releases API
+   - Aider: GitHub Releases API
 2. Results are written to `public/data/releases.json`
 3. Sitemap is auto-updated with current date
 4. `scripts/generate-infographic-prompt.mjs` runs after fetch to generate infographics:
@@ -115,7 +116,7 @@ The validator compares extracted features against source URLs and reports:
 6. React app fetches this JSON at runtime via `useReleases` hook
 
 ### Key Types (`src/types/release.ts`)
-- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot'`
+- `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot' | 'aider'`
 - `Release`: Individual release with id, tool, version, date, summary, fullNotes, url, type, infographicUrl
 - `TOOL_CONFIG`: Display names and Tailwind color classes per tool
 
@@ -147,6 +148,7 @@ Defined in `tailwind.config.js`:
 - `gemini`: #00ACC1 (teal)
 - `kiro`: #8B5CF6 (purple)
 - `copilot`: #8534F3 (purple)
+- `aider`: #22c55e (green)
 
 ## Infrastructure
 

@@ -1,4 +1,4 @@
-export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot';
+export type ToolId = 'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot' | 'aider';
 
 export interface Release {
   id: string;
@@ -55,5 +55,11 @@ export const TOOL_CONFIG: Record<ToolId, { displayName: string; color: string; b
     color: 'text-copilot',
     bgColor: 'bg-copilot',
     hashtag: '#githubcopilot',
+  },
+  'aider': {
+    displayName: 'Aider',
+    color: 'text-aider',
+    bgColor: 'bg-aider',
+    hashtag: '#aider',
   },
 };
