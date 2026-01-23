@@ -1,41 +1,41 @@
 {
-  "lastUpdated": "2026-01-22T14:15:21.893Z",
+  "lastUpdated": "2026-01-23T13:20:54.809Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 6,
-      "releasesThisMonth": 13,
-      "releasesThisQuarter": 54,
-      "averageDaysBetweenReleases": 1.2,
+      "releasesThisWeek": 7,
+      "releasesThisMonth": 15,
+      "releasesThisQuarter": 55,
+      "averageDaysBetweenReleases": 1.1,
       "featuresPerRelease": 0.6,
-      "lastReleaseAt": "2026-01-21T21:25:20.551Z"
+      "lastReleaseAt": "2026-01-22T21:01:58.555Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
-      "releasesThisWeek": 4,
-      "releasesThisMonth": 9,
+      "releasesThisWeek": 3,
+      "releasesThisMonth": 10,
       "releasesThisQuarter": 33,
-      "averageDaysBetweenReleases": 3.5,
-      "featuresPerRelease": 10.3,
-      "lastReleaseAt": "2026-01-21T19:19:10Z"
+      "averageDaysBetweenReleases": 1.8,
+      "featuresPerRelease": 10.6,
+      "lastReleaseAt": "2026-01-22T21:35:51Z"
     },
     "cursor": {
       "toolId": "cursor",
-      "releasesThisWeek": 0,
-      "releasesThisMonth": 0,
-      "releasesThisQuarter": 4,
-      "averageDaysBetweenReleases": 20.2,
+      "releasesThisWeek": 1,
+      "releasesThisMonth": 1,
+      "releasesThisQuarter": 5,
+      "averageDaysBetweenReleases": 22,
       "featuresPerRelease": 0.1,
-      "lastReleaseAt": "2025-12-22T00:00:00.000Z"
+      "lastReleaseAt": "2026-01-22T00:00:00.000Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
-      "releasesThisWeek": 3,
-      "releasesThisMonth": 8,
-      "releasesThisQuarter": 110,
-      "averageDaysBetweenReleases": 3.3,
-      "featuresPerRelease": 6,
-      "lastReleaseAt": "2026-01-21T05:15:12Z"
+      "releasesThisWeek": 4,
+      "releasesThisMonth": 9,
+      "releasesThisQuarter": 111,
+      "averageDaysBetweenReleases": 3.4,
+      "featuresPerRelease": 5.9,
+      "lastReleaseAt": "2026-01-22T19:18:49Z"
     },
     "kiro": {
       "toolId": "kiro",
