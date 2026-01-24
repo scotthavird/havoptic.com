@@ -2,12 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://havoptic.com/</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://havoptic.com/r/github-copilot-v0.0.394</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/gemini-cli-v0.25.2</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/claude-code-2.1.19</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/github-copilot-v0.0.393</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://havoptic.com/r/github-copilot-v0.0.392</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://havoptic.com/r/claude-code-2.1.18</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
