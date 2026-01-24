@@ -1,12 +1,14 @@
+import { Link } from '../components/Link';
+
 export function PrivacyPolicy() {
   return (
     <div className="py-8">
-      <a
-        href="#/"
+      <Link
+        href="/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
       >
         &larr; Back to Home
-      </a>
+      </Link>
 
       <h1 className="text-3xl font-bold text-white mb-8">Privacy Policy</h1>
 

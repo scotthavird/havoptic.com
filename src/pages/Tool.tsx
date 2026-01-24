@@ -3,6 +3,7 @@ import { useBlogPosts } from '../hooks/useBlogPosts';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics, useFeatureMatrix } from '../hooks/useMetrics';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { BreadcrumbSchema, getToolBreadcrumbs } from '../components/BreadcrumbSchema';
+import { Link } from '../components/Link';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getSimilarTools } from '../utils/toolRegistry';
 import { Timeline } from '../components/Timeline';
@@ -60,12 +61,12 @@ export function Tool({ toolId }: ToolProps) {
   if (!config) {
     return (
       <div className="py-8">
-        <a
-          href="#/"
+        <Link
+          href="/"
           className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
         >
           &larr; Back to Timeline
-        </a>
+        </Link>
         <div className="text-center py-12 text-slate-400">
           <p className="text-xl mb-4">Tool not found</p>
           <p className="text-sm">The tool you're looking for doesn't exist.</p>
@@ -77,12 +78,12 @@ export function Tool({ toolId }: ToolProps) {
   return (
     <div className="py-8">
       <BreadcrumbSchema items={getToolBreadcrumbs(config.displayName, toolId)} />
-      <a
-        href="#/"
+      <Link
+        href="/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
       >
         &larr; Back to Timeline
-      </a>
+      </Link>
 
       {/* Header */}
       <div className="mb-8">
@@ -159,9 +160,9 @@ export function Tool({ toolId }: ToolProps) {
               const otherFeatureCount = featureCountByTool[otherToolId] || 0;
 
               return (
-                <a
+                <Link
                   key={otherToolId}
-                  href={`#/compare?tools=${toolId},${otherToolId}`}
+                  href={`/compare?tools=${toolId},${otherToolId}`}
                   className="bg-slate-800/50 rounded-lg p-4 hover:bg-slate-800 transition-colors border border-slate-700"
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -179,7 +180,7 @@ export function Tool({ toolId }: ToolProps) {
                     </div>
                   </div>
                   <div className="mt-2 text-xs text-blue-400">Compare →</div>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -291,12 +292,12 @@ export function Tool({ toolId }: ToolProps) {
               <ul className="space-y-3">
                 {relatedPosts.map((post) => (
                   <li key={post.id}>
-                    <a
-                      href={`#/blog/${post.slug}`}
+                    <Link
+                      href={`/blog/${post.slug}`}
                       className="text-blue-400 hover:text-blue-300 text-sm transition-colors block"
                     >
                       {post.title}
-                    </a>
+                    </Link>
                     <span className="text-xs text-slate-500">{formatDate(post.publishedAt)}</span>
                   </li>
                 ))}
@@ -308,24 +309,24 @@ export function Tool({ toolId }: ToolProps) {
           <div className="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <div className="space-y-2">
-              <a
-                href={`#/compare?tools=${toolId},cursor,claude-code`}
+              <Link
+                href={`/compare?tools=${toolId},cursor,claude-code`}
                 className="text-blue-400 hover:text-blue-300 text-sm transition-colors block"
               >
                 Compare with other tools →
-              </a>
-              <a
-                href="#/trends"
+              </Link>
+              <Link
+                href="/trends"
                 className="text-blue-400 hover:text-blue-300 text-sm transition-colors block"
               >
                 View trends & insights →
-              </a>
-              <a
-                href="#/blog"
+              </Link>
+              <Link
+                href="/blog"
                 className="text-blue-400 hover:text-blue-300 text-sm transition-colors block"
               >
                 Read analysis & insights →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
