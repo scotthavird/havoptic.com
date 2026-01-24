@@ -99,25 +99,16 @@ function escapeHtml(str) {
 /**
  * Inject OG tags into the HTML by replacing existing OG tags
  */
-function injectOgTags(html, ogTags, toolId) {
+function injectOgTags(html, ogTags) {
   // Remove existing OG and Twitter meta tags
   let modifiedHtml = html
     .replace(/<meta property="og:[^"]*"[^>]*>/g, '')
     .replace(/<meta name="twitter:[^"]*"[^>]*>/g, '');
 
-  // Add redirect script for browser users
-  const redirectScript = `
-    <script>
-      if (typeof window !== 'undefined' && !window.__ogCrawler) {
-        window.location.replace('/#/tools/${toolId}');
-      }
-    </script>
-  `;
-
-  // Inject new OG tags and redirect script before </head>
+  // Inject new OG tags before </head>
   modifiedHtml = modifiedHtml.replace(
     '</head>',
-    `${ogTags}${redirectScript}</head>`
+    `${ogTags}</head>`
   );
 
   return modifiedHtml;
@@ -154,7 +145,7 @@ export async function onRequest(context) {
 
     // Generate and inject OG tags
     const ogTags = generateOgTags(toolId, releaseCount, baseUrl);
-    html = injectOgTags(html, ogTags, toolId);
+    html = injectOgTags(html, ogTags);
 
     return new Response(html, {
       headers: {

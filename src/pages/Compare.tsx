@@ -3,6 +3,7 @@ import { useFeatureMatrix, useVelocityMetrics } from '../hooks/useMetrics';
 import { useReleases } from '../hooks/useReleases';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
+import { Link } from '../components/Link';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import { ToolSearchSelector } from '../components/ToolSearchSelector';
@@ -10,12 +11,22 @@ import { FeatureComparisonCard } from '../components/FeatureComparisonCard';
 import { ReleaseVelocityChart } from '../components/ReleaseVelocityChart';
 import { FeatureTimeline } from '../components/FeatureTimeline';
 
-// Parse tools from URL hash
+// Parse tools from URL (supports both path and hash)
 function getToolsFromUrl(): ToolId[] {
-  const hash = window.location.hash;
-  const match = hash.match(/[?&]tools=([^&]+)/);
-  if (match) {
-    const toolsParam = decodeURIComponent(match[1]);
+  // Check pathname first (path-based routing)
+  const searchParams = new URLSearchParams(window.location.search);
+  let toolsParam = searchParams.get('tools');
+
+  // Fall back to hash for backwards compatibility
+  if (!toolsParam) {
+    const hash = window.location.hash;
+    const match = hash.match(/[?&]tools=([^&]+)/);
+    if (match) {
+      toolsParam = decodeURIComponent(match[1]);
+    }
+  }
+
+  if (toolsParam) {
     const tools = toolsParam.split(',').filter((t) => getAllToolIds().includes(t as ToolId)) as ToolId[];
     if (tools.length >= 1) {
       return tools.slice(0, 4); // Max 4 tools
@@ -26,10 +37,11 @@ function getToolsFromUrl(): ToolId[] {
 
 // Update URL with selected tools
 function updateUrl(tools: ToolId[]) {
-  const baseHash = '#/compare';
-  const newHash = tools.length > 0 ? `${baseHash}?tools=${tools.join(',')}` : baseHash;
-  if (window.location.hash !== newHash) {
-    window.history.replaceState(null, '', newHash);
+  const basePath = '/compare';
+  const newUrl = tools.length > 0 ? `${basePath}?tools=${tools.join(',')}` : basePath;
+  const currentUrl = window.location.pathname + window.location.search;
+  if (currentUrl !== newUrl) {
+    window.history.replaceState(null, '', newUrl);
   }
 }
 
@@ -51,12 +63,16 @@ export function Compare() {
 
   // Listen for URL changes (browser back/forward)
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleUrlChange = () => {
       const urlTools = getToolsFromUrl();
       setSelectedTools(urlTools);
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
   }, []);
 
   const displayedFeatures = useMemo(() => {
@@ -101,12 +117,12 @@ export function Compare() {
   return (
     <div className="py-8">
       <BreadcrumbSchema items={BREADCRUMBS.compare} />
-      <a
-        href="#/"
+      <Link
+        href="/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
       >
         &larr; Back to Timeline
-      </a>
+      </Link>
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">Feature Comparison</h1>
@@ -241,7 +257,7 @@ export function Compare() {
         <p className="text-xs text-slate-500">
           Share this comparison:{' '}
           <code className="bg-slate-800 px-2 py-1 rounded text-slate-400">
-            {window.location.origin}/#/compare?tools={selectedTools.join(',')}
+            {window.location.origin}/compare?tools={selectedTools.join(',')}
           </code>
         </p>
       </div>

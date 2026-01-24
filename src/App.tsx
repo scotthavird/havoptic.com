@@ -26,7 +26,23 @@ type Page =
   | { type: 'trends' }
   | { type: 'tool'; toolId: ToolId };
 
-function getPageFromHash(): Page {
+function getPageFromLocation(): Page {
+  const pathname = window.location.pathname;
+
+  // Path-based routing (primary)
+  if (pathname === '/terms') return { type: 'terms' };
+  if (pathname === '/privacy') return { type: 'privacy' };
+  if (pathname === '/blog') return { type: 'blog' };
+  if (pathname === '/compare') return { type: 'compare' };
+  if (pathname === '/trends') return { type: 'trends' };
+  if (pathname.startsWith('/blog/')) {
+    return { type: 'blogPost', slug: pathname.slice(6) };
+  }
+  if (pathname.startsWith('/tools/')) {
+    return { type: 'tool', toolId: pathname.slice(7) as ToolId };
+  }
+
+  // Hash-based fallback (backwards compatibility)
   const hash = window.location.hash;
   if (hash === '#/terms') return { type: 'terms' };
   if (hash === '#/privacy') return { type: 'privacy' };
@@ -34,27 +50,26 @@ function getPageFromHash(): Page {
   if (hash === '#/compare') return { type: 'compare' };
   if (hash === '#/trends') return { type: 'trends' };
   if (hash.startsWith('#/blog/')) {
-    const slug = hash.slice(7); // Remove '#/blog/'
-    return { type: 'blogPost', slug };
+    return { type: 'blogPost', slug: hash.slice(7) };
   }
   if (hash.startsWith('#/tools/')) {
-    const toolId = hash.slice(8) as ToolId; // Remove '#/tools/'
-    return { type: 'tool', toolId };
+    return { type: 'tool', toolId: hash.slice(8) as ToolId };
   }
+
   return { type: 'home' };
 }
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>(getPageFromHash);
+  const [currentPage, setCurrentPage] = useState<Page>(getPageFromLocation);
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
   const { groupedReleases, lastUpdated, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
   const scrollMilestones = useRef(new Set<number>());
   const hasScrolledToAnchor = useRef(false);
 
-  // Handle hash changes for routing
+  // Handle navigation changes (both path and hash)
   useEffect(() => {
-    const handleHashChange = () => {
-      const newPage = getPageFromHash();
+    const handleNavigation = () => {
+      const newPage = getPageFromLocation();
       setCurrentPage(newPage);
       // Scroll to top when navigating to a new page
       if (newPage.type !== 'home') {
@@ -62,8 +77,12 @@ function App() {
       }
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleNavigation);
+    window.addEventListener('hashchange', handleNavigation);
+    return () => {
+      window.removeEventListener('popstate', handleNavigation);
+      window.removeEventListener('hashchange', handleNavigation);
+    };
   }, []);
 
   // Scroll to anchor element after data loads and renders (only on home page)

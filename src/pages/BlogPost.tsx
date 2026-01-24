@@ -1,6 +1,7 @@
 import { useBlogPost } from '../hooks/useBlogPosts';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { BreadcrumbSchema, getBlogPostBreadcrumbs } from '../components/BreadcrumbSchema';
+import { Link } from '../components/Link';
 import { BLOG_POST_TYPE_CONFIG } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -104,12 +105,12 @@ export function BlogPost({ slug }: BlogPostProps) {
   if (!post) {
     return (
       <div className="py-8">
-        <a
-          href="#/blog"
+        <Link
+          href="/blog"
           className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
         >
           &larr; Back to Blog
-        </a>
+        </Link>
         <div className="text-center py-12 text-slate-400">
           <p className="text-xl mb-4">Post not found</p>
           <p className="text-sm">The blog post you're looking for doesn't exist.</p>
@@ -123,12 +124,12 @@ export function BlogPost({ slug }: BlogPostProps) {
   return (
     <div className="py-8">
       <BreadcrumbSchema items={getBlogPostBreadcrumbs(post.title, post.slug)} />
-      <a
-        href="#/blog"
+      <Link
+        href="/blog"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
       >
         &larr; Back to Blog
-      </a>
+      </Link>
 
       <article className="max-w-3xl">
         {/* Header */}
@@ -151,13 +152,13 @@ export function BlogPost({ slug }: BlogPostProps) {
             {post.tools.map((toolId) => {
               const config = TOOL_CONFIG[toolId as ToolId];
               return (
-                <a
+                <Link
                   key={toolId}
-                  href={`#/tools/${toolId}`}
+                  href={`/tools/${toolId}`}
                   className={`text-sm px-3 py-1 rounded ${config?.bgColor || 'bg-slate-600'} text-white hover:opacity-80 transition-opacity`}
                 >
                   {config?.displayName || toolId}
-                </a>
+                </Link>
               );
             })}
           </div>
