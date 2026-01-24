@@ -10,7 +10,9 @@
       "summary": "2026-01-24 - Deduplicate identical model instruction files to save context - Exit summary displays accurate usage metrics instead of zeros - Getting git branch works in repositories with no commits...",
       "fullNotes": "2026-01-24 - Deduplicate identical model instruction files to save context - Exit summary displays accurate usage metrics instead of zeros - Getting git branch works in repositories with no commits - Add support for GitHub Enterprise Cloud (\\.ghe.com) in /delegate command - Directory path uses consistent muted text color with git branch and model display - Plugin skills work in agent responses - Timeline hides startup messages to reduce noise - Fixed timeline entry regression where readagent and other tools showed incorrect content - Git status updates on-demand instead of polling every 15 seconds - SDK supports infinite sessions with automatic context compaction - Memory loading errors are handled gracefully without user warnings - /delegate command accepts optional prompt, uses conversation context - Auto-update no longer removes old CLI package versions - Improve task completion with clearer detached process guidance - Simplified bottom bar by hiding some keyboard hints - Queue slash commands alongside messages using Ctrl+D - Press / to search sessions in /resume",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.394",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.394-2026-01-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.394-2026-01-24-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.25.2",
@@ -21,7 +23,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 9866eb0 to release/v0.25.1-pr-17166 to patch version v0.25.1 and create version 0.25.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick 9866eb0 to release/v0.25.1-pr-17166 to patch version v0.25.1 and create version 0.25.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/17419 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.25.1...v0.25.2",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.25.2",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.25.2-2026-01-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.25.2-2026-01-24-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.19",
@@ -32,7 +36,9 @@
       "summary": "- Added env var CLAUDECODEENABLETASKS, set to false to keep the old system temporarily - Added shorthand $0, $1, etc. for accessing individual arguments in custom commands - Fixed crashes on proces...",
       "fullNotes": "- Added env var CLAUDECODEENABLETASKS, set to false to keep the old system temporarily - Added shorthand $0, $1, etc. for accessing individual arguments in custom commands - Fixed crashes on processors without AVX instruction support - Fixed dangling Claude Code processes when terminal is closed by catching EIO errors from process.exit() and using SIGKILL as fallback - Fixed /rename and /tag not updating the correct session when resuming from a different directory (e.g., git worktrees) - Fixed resuming sessions by custom title not working when run from a different directory - Fixed pasted text content being lost when using prompt stash (Ctrl+S) and restore - Fixed agent list displaying \"Sonnet (default)\" instead of \"Inherit (default)\" for agents without an explicit model setting - Fixed backgrounded hook commands not returning early, potentially causing the session to wait on a process that was intentionally backgrounded - Fixed file write preview omitting empty lines - Changed skills without additional permissions or hooks to be allowed without requiring approval - Changed indexed argument syntax from $ARGUMENTS.0 to $ARGUMENTS[0] (bracket syntax) - [SDK] Added replay of queuedcommand attachment messages as SDKUserMessageReplay events when replayUserMessages is enabled - [VSCode] Enabled session forking and rewind functionality for all users",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.19-2026-01-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.19-2026-01-24-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.393",
