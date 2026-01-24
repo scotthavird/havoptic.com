@@ -17,6 +17,7 @@ import {
   corsHeaders,
   checkRateLimit,
   getAllSubscribers,
+  getSubscribersForNotification,
   sendEmail,
 } from './_newsletter-utils.js';
 
@@ -525,12 +526,27 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Get subscribers from D1
-    const subscribers = await getAllSubscribers(env.AUTH_DB);
+    // Determine content type and tools for preference filtering
+    let contentType;
+    let toolIds = [];
+
+    if (hasBlogPost) {
+      // Map blog post type to content preference type
+      contentType = blogPost.type; // 'weekly-digest' or 'monthly-comparison'
+      toolIds = blogPost.tools || [];
+    } else {
+      // Release notifications
+      contentType = 'release';
+      toolIds = [...new Set(releases.map(r => r.tool))];
+    }
+
+    // Get subscribers filtered by preferences (opt-out model)
+    // Returns subscribers who haven't disabled this content type AND at least one of the tools
+    const subscribers = await getSubscribersForNotification(env.AUTH_DB, toolIds, contentType);
 
     if (subscribers.length === 0) {
       return new Response(
-        JSON.stringify({ message: 'No subscribers to notify', sent: 0 }),
+        JSON.stringify({ message: 'No subscribers to notify (all opted out)', sent: 0, contentType, toolIds }),
         { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
