@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-01-23T14:10:36.869Z",
+  "lastUpdated": "2026-01-24T13:15:36.441Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 7,
-      "releasesThisMonth": 15,
-      "releasesThisQuarter": 55,
-      "averageDaysBetweenReleases": 1.1,
-      "featuresPerRelease": 0.6,
-      "lastReleaseAt": "2026-01-22T21:01:58.555Z"
+      "releasesThisMonth": 17,
+      "releasesThisQuarter": 57,
+      "averageDaysBetweenReleases": 0.9,
+      "featuresPerRelease": 0.7,
+      "lastReleaseAt": "2026-01-23T21:14:31.264Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
-      "releasesThisWeek": 3,
+      "releasesThisWeek": 2,
       "releasesThisMonth": 10,
-      "releasesThisQuarter": 33,
+      "releasesThisQuarter": 32,
       "averageDaysBetweenReleases": 1.8,
       "featuresPerRelease": 10.6,
       "lastReleaseAt": "2026-01-22T21:35:51Z"
@@ -30,12 +30,12 @@
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
-      "releasesThisWeek": 4,
-      "releasesThisMonth": 9,
-      "releasesThisQuarter": 111,
-      "averageDaysBetweenReleases": 3.4,
+      "releasesThisWeek": 5,
+      "releasesThisMonth": 10,
+      "releasesThisQuarter": 112,
+      "averageDaysBetweenReleases": 3.1,
       "featuresPerRelease": 5.9,
-      "lastReleaseAt": "2026-01-22T19:18:49Z"
+      "lastReleaseAt": "2026-01-23T23:57:28Z"
     },
     "kiro": {
       "toolId": "kiro",
