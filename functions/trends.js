@@ -59,19 +59,10 @@ function injectOgTags(html, ogTags) {
     .replace(/<meta property="og:[^"]*"[^>]*>/g, '')
     .replace(/<meta name="twitter:[^"]*"[^>]*>/g, '');
 
-  // Add redirect script for browser users
-  const redirectScript = `
-    <script>
-      if (typeof window !== 'undefined' && !window.__ogCrawler) {
-        window.location.replace('/#/trends');
-      }
-    </script>
-  `;
-
-  // Inject new OG tags and redirect script before </head>
+  // Inject new OG tags before </head>
   modifiedHtml = modifiedHtml.replace(
     '</head>',
-    `${ogTags}${redirectScript}</head>`
+    `${ogTags}</head>`
   );
 
   return modifiedHtml;

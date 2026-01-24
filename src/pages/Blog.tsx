@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useBlogPosts } from '../hooks/useBlogPosts';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
+import { Link } from '../components/Link';
 import { BLOG_POST_TYPE_CONFIG, type BlogPostType } from '../types/blog';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 
@@ -18,7 +19,7 @@ function BlogCard({ post }: { post: ReturnType<typeof useBlogPosts>['posts'][0] 
 
   return (
     <article className="bg-slate-800/50 rounded-lg border border-slate-700 p-6 hover:border-slate-600 transition-colors">
-      <a href={`#/blog/${post.slug}`} className="block">
+      <Link href={`/blog/${post.slug}`} className="block">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-medium px-2 py-1 rounded-full bg-slate-700 text-slate-300">
             {typeConfig.displayName}
@@ -45,7 +46,7 @@ function BlogCard({ post }: { post: ReturnType<typeof useBlogPosts>['posts'][0] 
             );
           })}
         </div>
-      </a>
+      </Link>
     </article>
   );
 }
@@ -61,12 +62,12 @@ export function Blog() {
   return (
     <div className="py-8">
       <BreadcrumbSchema items={BREADCRUMBS.blog} />
-      <a
-        href="#/"
+      <Link
+        href="/"
         className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
       >
         &larr; Back to Timeline
-      </a>
+      </Link>
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">Insights</h1>

@@ -39,15 +39,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // Check for auth errors in URL (from OAuth callback)
   useEffect(() => {
-    const hash = window.location.hash;
-    const params = new URLSearchParams(hash.split('?')[1] || '');
-    const authError = params.get('auth_error');
+    // Check both search params and hash params for backwards compatibility
+    const searchParams = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
+    const authError = searchParams.get('auth_error') || hashParams.get('auth_error');
 
     if (authError) {
       setState(prev => ({ ...prev, error: decodeURIComponent(authError) }));
-      // Clean up URL
-      const cleanHash = hash.split('?')[0] || '#/';
-      window.history.replaceState(null, '', cleanHash);
+      // Clean up URL - preserve the path
+      const cleanUrl = window.location.pathname;
+      window.history.replaceState(null, '', cleanUrl);
     }
   }, []);
 
@@ -56,8 +57,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [refreshUser]);
 
   const login = useCallback((options?: LoginOptions) => {
-    // Get current path for redirect after auth
-    const currentPath = window.location.hash.slice(1) || '/';
+    // Get current path for redirect after auth (prefer pathname, fallback to hash)
+    const pathname = window.location.pathname;
+    const hashPath = window.location.hash.slice(1);
+    const currentPath = pathname !== '/' ? pathname : (hashPath || '/');
     // Remove any query params from path
     const cleanPath = currentPath.split('?')[0];
     const subscribeParam = options?.subscribe ? '&subscribe=true' : '';

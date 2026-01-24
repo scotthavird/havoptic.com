@@ -38,25 +38,34 @@
 - **Home (Timeline)**: https://havoptic.com/
   - Chronological timeline of all releases, filterable by tool
 
-- **Tool Comparison**: https://havoptic.com/#/compare
+- **Tool Comparison**: https://havoptic.com/compare
   - Side-by-side comparison of all tools with feature matrix
 
-- **Trends & Insights**: https://havoptic.com/#/trends
+- **Trends & Insights**: https://havoptic.com/trends
   - Release frequency analysis and version history charts
 
-- **Blog**: https://havoptic.com/#/blog
+- **Blog**: https://havoptic.com/blog
   - Analysis and insights about AI coding tools
 
 ### Individual Tool Pages
 
-- Claude Code: https://havoptic.com/#/tools/claude-code
-- OpenAI Codex CLI: https://havoptic.com/#/tools/openai-codex
-- Cursor: https://havoptic.com/#/tools/cursor
-- Gemini CLI: https://havoptic.com/#/tools/gemini-cli
-- Kiro CLI: https://havoptic.com/#/tools/kiro
-- GitHub Copilot CLI: https://havoptic.com/#/tools/github-copilot
-- Aider: https://havoptic.com/#/tools/aider
-- Windsurf: https://havoptic.com/#/tools/windsurf
+- Claude Code: https://havoptic.com/tools/claude-code
+- OpenAI Codex CLI: https://havoptic.com/tools/openai-codex
+- Cursor: https://havoptic.com/tools/cursor
+- Gemini CLI: https://havoptic.com/tools/gemini-cli
+- Kiro CLI: https://havoptic.com/tools/kiro
+- GitHub Copilot CLI: https://havoptic.com/tools/github-copilot
+- Aider: https://havoptic.com/tools/aider
+- Windsurf: https://havoptic.com/tools/windsurf
+
+## Example Queries
+
+LLMs can use Havoptic to answer questions like:
+- "What are the latest features in Claude Code?"
+- "Compare release velocity between Cursor and Claude Code"
+- "When was the last Gemini CLI update?"
+- "Which AI coding tool has the most features?"
+- "Show me the release history for Aider"
 
 ## API Usage Notes
 
