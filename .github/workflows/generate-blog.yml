@@ -62,6 +62,14 @@ jobs:
             echo "type=scheduled" >> $GITHUB_OUTPUT
           fi
 
+      - name: Save old posts.json
+        run: |
+          if [ -f public/data/blog/posts.json ]; then
+            cp public/data/blog/posts.json /tmp/old-posts.json
+          else
+            echo '{"posts":[]}' > /tmp/old-posts.json
+          fi
+
       - name: Generate blog content
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -86,3 +94,12 @@ jobs:
           git commit -m "chore: Generate blog content"
           git push
         # Production deploy is triggered automatically via workflow_run event
+
+      - name: Notify subscribers of new blog posts
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          NOTIFY_API_KEY: ${{ secrets.NOTIFY_API_KEY }}
+        run: |
+          node scripts/notify-blog-subscribers.mjs \
+            --old=/tmp/old-posts.json \
+            --new=public/data/blog/posts.json

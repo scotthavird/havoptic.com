@@ -6,8 +6,9 @@ import { Layout } from './components/Layout';
 import { NewsletterSignup } from './components/NewsletterSignup';
 import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
-import type { ToolId } from './types/release';
+import { TOOL_CONFIG, type ToolId } from './types/release';
 import { trackScrollDepth } from './utils/analytics';
+import { CompareVs } from './pages/CompareVs';
 import { TermsOfService } from './pages/TermsOfService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { Blog } from './pages/Blog';
@@ -23,8 +24,23 @@ type Page =
   | { type: 'blog' }
   | { type: 'blogPost'; slug: string }
   | { type: 'compare' }
+  | { type: 'compareVs'; tool1: ToolId; tool2: ToolId }
   | { type: 'trends' }
   | { type: 'tool'; toolId: ToolId };
+
+// Parse "tool1-vs-tool2" pattern for comparison pages
+function parseCompareVsSlug(slug: string): { tool1: ToolId; tool2: ToolId } | null {
+  const match = slug.match(/^([a-z-]+)-vs-([a-z-]+)$/);
+  if (!match) return null;
+
+  const tool1 = match[1] as ToolId;
+  const tool2 = match[2] as ToolId;
+
+  // Validate both tools exist
+  if (!TOOL_CONFIG[tool1] || !TOOL_CONFIG[tool2]) return null;
+
+  return { tool1, tool2 };
+}
 
 function getPageFromLocation(): Page {
   const pathname = window.location.pathname;
@@ -41,6 +57,14 @@ function getPageFromLocation(): Page {
   if (pathname.startsWith('/tools/')) {
     return { type: 'tool', toolId: pathname.slice(7) as ToolId };
   }
+  // Handle /compare/tool1-vs-tool2 pattern
+  if (pathname.startsWith('/compare/')) {
+    const slug = pathname.slice(9);
+    const tools = parseCompareVsSlug(slug);
+    if (tools) {
+      return { type: 'compareVs', tool1: tools.tool1, tool2: tools.tool2 };
+    }
+  }
 
   // Hash-based fallback (backwards compatibility)
   const hash = window.location.hash;
@@ -54,6 +78,14 @@ function getPageFromLocation(): Page {
   }
   if (hash.startsWith('#/tools/')) {
     return { type: 'tool', toolId: hash.slice(8) as ToolId };
+  }
+  // Handle #/compare/tool1-vs-tool2 pattern
+  if (hash.startsWith('#/compare/')) {
+    const slug = hash.slice(10);
+    const tools = parseCompareVsSlug(slug);
+    if (tools) {
+      return { type: 'compareVs', tool1: tools.tool1, tool2: tools.tool2 };
+    }
   }
 
   return { type: 'home' };
@@ -163,6 +195,14 @@ function App() {
     return (
       <Layout>
         <Compare />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'compareVs') {
+    return (
+      <Layout>
+        <CompareVs tool1={currentPage.tool1} tool2={currentPage.tool2} />
       </Layout>
     );
   }

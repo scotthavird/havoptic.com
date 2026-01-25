@@ -197,12 +197,37 @@ The `newsletter-audit.json` file in R2 tracks all subscribe/unsubscribe events:
 ]
 ```
 
+### Subscriber Preferences (Opt-Out Model)
+Subscribers can control which tools and content types they receive notifications for.
+
+**Tables** (see `scripts/db-migrations/003-subscriber-preferences.sql`):
+- `subscriber_tool_preferences`: Per-tool opt-out (e.g., disable Claude Code updates)
+- `subscriber_content_preferences`: Per-content-type opt-out (release, weekly-digest, monthly-comparison)
+
+**Opt-Out Model**: No preference rows = receive everything. Only explicit opt-outs are stored.
+
+**API** (`/api/preferences`):
+```bash
+# Get preferences
+curl "https://havoptic.com/api/preferences?email=user@example.com"
+
+# Update preferences (disable cursor and weekly-digest)
+curl -X POST "https://havoptic.com/api/preferences" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"user@example.com","tools":{"cursor":false},"content":{"weekly-digest":false}}'
+```
+
 ### Testing Notifications Locally
 ```bash
-# Test the notify endpoint
+# Test release notification
 curl -X POST "https://havoptic.com/api/notify" \
   -H "Content-Type: application/json" \
   -d '{"apiKey":"YOUR_NOTIFY_API_KEY","releases":[...]}'
+
+# Test blog post notification
+curl -X POST "https://havoptic.com/api/notify" \
+  -H "Content-Type: application/json" \
+  -d '{"apiKey":"YOUR_NOTIFY_API_KEY","blogPost":{"id":"weekly-digest-2026-w04","type":"weekly-digest","title":"...","tools":["claude-code"],"summary":"...","slug":"..."}}'
 ```
 
 ### Environment Variables (Cloudflare Pages)
