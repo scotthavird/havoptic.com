@@ -21,6 +21,20 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;');
 }
 
+// Generate all unique tool pair comparisons for sitemap
+function generateComparisonPairs() {
+  const pairs = [];
+  for (let i = 0; i < TOOL_IDS.length; i++) {
+    for (let j = i + 1; j < TOOL_IDS.length; j++) {
+      pairs.push({
+        tool1: TOOL_IDS[i],
+        tool2: TOOL_IDS[j],
+      });
+    }
+  }
+  return pairs;
+}
+
 async function generateSitemap(lastUpdated, releases, blogPosts) {
   const lastmod = lastUpdated
     ? new Date(lastUpdated).toISOString().split('T')[0]
@@ -41,6 +55,14 @@ async function generateSitemap(lastUpdated, releases, blogPosts) {
     changefreq: 'daily',
   }));
 
+  // Comparison pages (X vs Y)
+  const comparisonPairs = generateComparisonPairs();
+  const comparisonPages = comparisonPairs.map(({ tool1, tool2 }) => ({
+    loc: `/compare/${tool1}-vs-${tool2}`,
+    priority: '0.6',
+    changefreq: 'weekly',
+  }));
+
   // Blog post pages
   const blogPages = blogPosts.map(post => ({
     loc: `/blog/${post.slug}`,
@@ -57,7 +79,7 @@ async function generateSitemap(lastUpdated, releases, blogPosts) {
     lastmod: new Date(release.date).toISOString().split('T')[0],
   }));
 
-  const allPages = [...staticPages, ...toolPages, ...blogPages, ...releasePages];
+  const allPages = [...staticPages, ...toolPages, ...comparisonPages, ...blogPages, ...releasePages];
 
   const urls = allPages.map(page => `  <url>
     <loc>${SITE_URL}${page.loc}</loc>

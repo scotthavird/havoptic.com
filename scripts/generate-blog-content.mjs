@@ -9,7 +9,7 @@ import { updateFeatureMatrix } from './generators/feature-matrix.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BLOG_PATH = path.join(__dirname, '..', 'public', 'data', 'blog', 'posts.json');
 
-const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro'];
+const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider', 'windsurf'];
 
 // Load existing blog posts
 async function loadBlogPosts() {

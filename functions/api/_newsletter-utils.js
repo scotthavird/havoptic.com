@@ -103,8 +103,174 @@ export async function getSubscriber(db, email) {
  * Get all subscribers
  */
 export async function getAllSubscribers(db) {
-  const result = await db.prepare('SELECT email FROM subscribers').all();
+  const result = await db.prepare('SELECT id, email FROM subscribers').all();
   return result.results || [];
+}
+
+/**
+ * Get subscribers filtered by tool preferences (opt-out model)
+ * Returns subscribers who have NOT explicitly disabled the given tools
+ * @param {D1Database} db
+ * @param {string[]} toolIds - Array of tool IDs (e.g., ['claude-code', 'cursor'])
+ * @returns {Promise<Array<{id: string, email: string}>>}
+ */
+export async function getSubscribersForTools(db, toolIds) {
+  if (!toolIds || toolIds.length === 0) {
+    return getAllSubscribers(db);
+  }
+
+  // Get all subscribers, then filter out those who have opted out of ALL the specified tools
+  // A subscriber receives the notification if they haven't opted out of at least one tool
+  const placeholders = toolIds.map(() => '?').join(',');
+
+  const result = await db.prepare(`
+    SELECT DISTINCT s.id, s.email
+    FROM subscribers s
+    WHERE NOT EXISTS (
+      -- Check if subscriber has opted out of ALL specified tools
+      SELECT 1 FROM (
+        SELECT ? as tool_count
+      ) tc
+      WHERE tc.tool_count = (
+        SELECT COUNT(*)
+        FROM subscriber_tool_preferences stp
+        WHERE stp.subscriber_id = s.id
+          AND stp.tool_id IN (${placeholders})
+          AND stp.enabled = 0
+      )
+    )
+  `).bind(toolIds.length, ...toolIds).all();
+
+  return result.results || [];
+}
+
+/**
+ * Get subscribers filtered by content type preference (opt-out model)
+ * Returns subscribers who have NOT explicitly disabled the given content type
+ * @param {D1Database} db
+ * @param {string} contentType - Content type: 'release', 'weekly-digest', 'monthly-comparison'
+ * @returns {Promise<Array<{id: string, email: string}>>}
+ */
+export async function getSubscribersForContentType(db, contentType) {
+  const result = await db.prepare(`
+    SELECT s.id, s.email
+    FROM subscribers s
+    WHERE NOT EXISTS (
+      SELECT 1
+      FROM subscriber_content_preferences scp
+      WHERE scp.subscriber_id = s.id
+        AND scp.content_type = ?
+        AND scp.enabled = 0
+    )
+  `).bind(contentType).all();
+
+  return result.results || [];
+}
+
+/**
+ * Get subscribers filtered by both tool and content type preferences
+ * @param {D1Database} db
+ * @param {string[]} toolIds - Array of tool IDs
+ * @param {string} contentType - Content type
+ * @returns {Promise<Array<{id: string, email: string}>>}
+ */
+export async function getSubscribersForNotification(db, toolIds, contentType) {
+  if (!toolIds || toolIds.length === 0) {
+    return getSubscribersForContentType(db, contentType);
+  }
+
+  const placeholders = toolIds.map(() => '?').join(',');
+
+  const result = await db.prepare(`
+    SELECT DISTINCT s.id, s.email
+    FROM subscribers s
+    WHERE
+      -- Content type not disabled
+      NOT EXISTS (
+        SELECT 1
+        FROM subscriber_content_preferences scp
+        WHERE scp.subscriber_id = s.id
+          AND scp.content_type = ?
+          AND scp.enabled = 0
+      )
+      AND
+      -- At least one of the tools not disabled (subscriber hasn't opted out of ALL)
+      NOT EXISTS (
+        SELECT 1 FROM (
+          SELECT ? as tool_count
+        ) tc
+        WHERE tc.tool_count = (
+          SELECT COUNT(*)
+          FROM subscriber_tool_preferences stp
+          WHERE stp.subscriber_id = s.id
+            AND stp.tool_id IN (${placeholders})
+            AND stp.enabled = 0
+        )
+      )
+  `).bind(contentType, toolIds.length, ...toolIds).all();
+
+  return result.results || [];
+}
+
+/**
+ * Get subscriber preferences
+ * @param {D1Database} db
+ * @param {string} subscriberId
+ * @returns {Promise<{tools: Record<string, boolean>, content: Record<string, boolean>}>}
+ */
+export async function getSubscriberPreferences(db, subscriberId) {
+  const [toolPrefs, contentPrefs] = await Promise.all([
+    db.prepare(
+      'SELECT tool_id, enabled FROM subscriber_tool_preferences WHERE subscriber_id = ?'
+    ).bind(subscriberId).all(),
+    db.prepare(
+      'SELECT content_type, enabled FROM subscriber_content_preferences WHERE subscriber_id = ?'
+    ).bind(subscriberId).all(),
+  ]);
+
+  const tools = {};
+  for (const row of (toolPrefs.results || [])) {
+    tools[row.tool_id] = row.enabled === 1;
+  }
+
+  const content = {};
+  for (const row of (contentPrefs.results || [])) {
+    content[row.content_type] = row.enabled === 1;
+  }
+
+  return { tools, content };
+}
+
+/**
+ * Update subscriber tool preference
+ * @param {D1Database} db
+ * @param {string} subscriberId
+ * @param {string} toolId
+ * @param {boolean} enabled
+ */
+export async function updateToolPreference(db, subscriberId, toolId, enabled) {
+  await db.prepare(`
+    INSERT INTO subscriber_tool_preferences (subscriber_id, tool_id, enabled, updated_at)
+    VALUES (?, ?, ?, datetime('now'))
+    ON CONFLICT (subscriber_id, tool_id)
+    DO UPDATE SET enabled = ?, updated_at = datetime('now')
+  `).bind(subscriberId, toolId, enabled ? 1 : 0, enabled ? 1 : 0).run();
+}
+
+/**
+ * Update subscriber content type preference
+ * @param {D1Database} db
+ * @param {string} subscriberId
+ * @param {string} contentType
+ * @param {boolean} enabled
+ */
+export async function updateContentPreference(db, subscriberId, contentType, enabled) {
+  await db.prepare(`
+    INSERT INTO subscriber_content_preferences (subscriber_id, content_type, enabled, updated_at)
+    VALUES (?, ?, ?, datetime('now'))
+    ON CONFLICT (subscriber_id, content_type)
+    DO UPDATE SET enabled = ?, updated_at = datetime('now')
+  `).bind(subscriberId, contentType, enabled ? 1 : 0, enabled ? 1 : 0).run();
 }
 
 /**
