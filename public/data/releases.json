@@ -10,7 +10,9 @@
       "summary": "Chores - Reduced the maximum allowed number of sub-agents to 6 to tighten resource usage and guardrails in agent fan-out behavior (9861) Changelog Full Changelog: https://github.com/openai/codex/co...",
       "fullNotes": "Chores - Reduced the maximum allowed number of sub-agents to 6 to tighten resource usage and guardrails in agent fan-out behavior (9861) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.90.0...rust-v0.91.0 - 9861 chore: half max number of sub-agents @jif-oai",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.91.0",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/openai-codex-rust-v0.91.0-2026-01-26-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/openai-codex-rust-v0.91.0-2026-01-26-16x9.jpg"
     },
     {
       "id": "openai-codex-rust-v0.90.0",
@@ -32,7 +34,9 @@
       "summary": "Windsurf version 1.13.12",
       "fullNotes": "Windsurf version 1.13.12",
       "url": "https://windsurf.com/changelog",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/windsurf-1.13.12-2026-01-26-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/windsurf-1.13.12-2026-01-26-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.394",
