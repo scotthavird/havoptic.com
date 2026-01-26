@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-22T00:00:00.000Z",
+  "lastUpdated": "2026-01-26T15:10:43.766Z",
   "categories": [
     {
       "id": "core-editing",
@@ -42,7 +42,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Multi-file editing capabilities implied through multi-agent judging and improved coding model features"
+          "notes": "Multi-Agent Judging in v2.2 and Agent Interface in v2.0 suggest multi-file capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -51,21 +51,9 @@
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Multi-file workspace editing via agent mode"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Aider can edit multiple files in a single session"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade can edit multiple files across a project"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:10:43.766Z"
     },
     {
       "categoryId": "core-editing",
@@ -75,8 +63,8 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.7",
-          "addedAt": "2026-01-13T22:55:49.806Z"
+          "addedInVersion": "2.1.14",
+          "addedAt": "2026-01-20T22:37:25.754Z"
         },
         "openai-codex": {
           "supported": true,
@@ -84,31 +72,16 @@
           "addedAt": "2026-01-15T18:38:22Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "Real-time streaming in composer and chat"
+          "supported": false
         },
         "gemini-cli": {
-          "supported": true,
-          "notes": "CLI streams responses in real-time"
+          "supported": false
         },
         "kiro": {
-          "supported": true,
-          "notes": "IDE streams responses"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Streams suggestions and chat responses"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Streams model responses in terminal"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade streams responses in IDE"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:11:14.024Z"
     },
     {
       "categoryId": "core-editing",
@@ -123,36 +96,22 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.86.0",
-          "addedAt": "2026-01-16T01:18:52Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "Standard editor undo/redo support"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.0",
-          "addedAt": "2026-01-14T13:27:15Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "IDE undo/redo support"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Uses editor's native undo/redo"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Git-based undo via /undo command"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "IDE undo/redo with AI change tracking"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:11:43.602Z"
     },
     {
       "categoryId": "core-editing",
@@ -162,41 +121,27 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.6",
-          "addedAt": "2026-01-13T01:42:47.331Z"
+          "addedInVersion": "2.1.19",
+          "addedAt": "2026-01-23T21:14:31.264Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.87.0",
-          "addedAt": "2026-01-16T15:37:42Z"
+          "addedInVersion": "rust-v0.91.0",
+          "addedAt": "2026-01-25T17:33:33Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "v2.1 mentions 'AI Code Review in Editor' which would require diff visualization capabilities"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.4",
-          "addedAt": "2026-01-19T05:12:52Z"
+          "addedInVersion": "v0.25.2",
+          "addedAt": "2026-01-23T23:57:28Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "IDE diff view for proposed changes"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Shows diffs for suggested edits"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Shows diffs before applying changes"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade shows diffs for proposed changes"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:12:12.445Z"
     },
     {
       "categoryId": "terminal",
@@ -206,13 +151,13 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.10",
-          "addedAt": "2026-01-17T00:11:29.352Z"
+          "addedInVersion": "2.1.19",
+          "addedAt": "2026-01-23T21:14:31.264Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.87.0",
-          "addedAt": "2026-01-16T15:37:42Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
           "supported": true,
@@ -221,27 +166,14 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.0",
-          "addedAt": "2026-01-14T13:27:15Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "Integrated terminal support"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "CLI executes shell commands"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Can execute shell commands via /run"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade can run terminal commands"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:12:42.222Z"
     },
     {
       "categoryId": "terminal",
@@ -251,38 +183,23 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "v2.1.2 mentions clickable hyperlinks for file paths in tool output 'in terminals that support it', indicating terminal/shell integration"
+          "notes": "Added history-based autocomplete in bash mode - type partial command and press Tab to complete from bash command history"
         },
         "openai-codex": {
-          "supported": true,
-          "notes": "v0.78.0 mentions external editor integration with '$VISUAL/$EDITOR' environment variables, suggesting shell integration"
+          "supported": false
         },
         "cursor": {
           "supported": true,
-          "notes": "v1.6 references 'Agent terminal' suggesting shell integration features"
+          "notes": "Agent terminal improvements in v1.6 suggest shell integration"
         },
         "gemini-cli": {
-          "supported": true,
-          "notes": "CLI tool with shell environment access"
+          "supported": false
         },
         "kiro": {
-          "supported": true,
-          "notes": "IDE terminal integration"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "CLI integrates with user shell"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Runs in user's shell with full environment access"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "IDE terminal integration"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:13:11.154Z"
     },
     {
       "categoryId": "terminal",
@@ -292,38 +209,27 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.6",
-          "addedAt": "2026-01-13T01:42:47.331Z"
+          "addedInVersion": "2.1.19",
+          "addedAt": "2026-01-23T21:14:31.264Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.86.0",
-          "addedAt": "2026-01-16T01:18:52Z"
+          "addedInVersion": "rust-v0.88.0",
+          "addedAt": "2026-01-21T19:19:10Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "Background indexing and processing"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.23.0",
-          "addedAt": "2026-01-07T02:07:44Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": false
-        },
-        "aider": {
-          "supported": false
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade supports background processing"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:13:40.596Z"
     },
     {
       "categoryId": "mcp",
@@ -333,40 +239,29 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.11",
-          "addedAt": "2026-01-17T01:19:37.165Z"
+          "addedInVersion": "2.1.15",
+          "addedAt": "2026-01-21T21:25:20.551Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.87.0",
-          "addedAt": "2026-01-16T15:37:42Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "MCP support added in recent versions"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.0",
-          "addedAt": "2026-01-14T13:27:15Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
           "supported": true,
           "addedInVersion": "1.23.0",
           "addedAt": "2025-12-18T05:00:00.000Z"
-        },
-        "github-copilot": {
-          "supported": false
-        },
-        "aider": {
-          "supported": false
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "MCP support for tool integration"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:14:14.022Z"
     },
     {
       "categoryId": "mcp",
@@ -389,23 +284,14 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.23.0",
-          "addedAt": "2026-01-07T02:07:44Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": false
-        },
-        "aider": {
-          "supported": false
-        },
-        "windsurf": {
-          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:14:47.960Z"
     },
     {
       "categoryId": "mcp",
@@ -415,15 +301,14 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "v2.1.9 mentions MCP tool search configuration, indicating support for custom tools via MCP"
+          "notes": "Custom commands with shorthand $0, $1 argument access (v2.1.19) and MCP tool search auto-enable threshold configuration (v2.1.9)"
         },
         "openai-codex": {
           "supported": true,
-          "notes": "v0.86.0 adds 'Skill metadata can now be defined in SKILL.toml' and v0.85.0 mentions 'Collaboration tools', indicating custom tool capabilities"
+          "notes": "v0.89.0 adds '/skill UI to enable or disable individual skills' and v0.86.0 mentions 'Skill metadata can now be defined in SKILL.toml', indicating custom tool/skill support"
         },
         "cursor": {
-          "supported": true,
-          "notes": "v1.6 introduces 'Slash commands' which suggests custom tool definition capabilities"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
@@ -432,22 +317,10 @@
         },
         "kiro": {
           "supported": true,
-          "notes": "v1.23.0 explicitly mentions 'Grep/Glob Tools' indicating custom tool support"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Extensible via GitHub Apps and Actions"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Custom commands and integrations supported"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade supports custom tool integration"
+          "notes": "v1.23.0 specifically mentions 'Grep/Glob Tools' indicating custom tool support"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:15:16.933Z"
     },
     {
       "categoryId": "ide",
@@ -457,15 +330,14 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.10",
-          "addedAt": "2026-01-17T00:11:29.352Z"
+          "addedInVersion": "2.1.19",
+          "addedAt": "2026-01-23T21:14:31.264Z"
         },
         "openai-codex": {
           "supported": false
         },
         "cursor": {
-          "supported": true,
-          "notes": "Cursor is built on VS Code architecture, with editor-based features like 'AI Code Review in Editor' in v2.1"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
@@ -473,22 +345,10 @@
           "addedAt": "2025-12-22T16:54:19Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "Kiro is a VS Code-based IDE"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Primary VS Code extension"
-        },
-        "aider": {
           "supported": false
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Windsurf is built on VS Code"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:15:51.915Z"
     },
     {
       "categoryId": "ide",
@@ -506,24 +366,13 @@
           "supported": false
         },
         "gemini-cli": {
-          "supported": true,
-          "notes": "IDE authentication token fallback suggests support for JetBrains IDEs alongside VS Code"
+          "supported": false
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "JetBrains plugin available"
-        },
-        "aider": {
-          "supported": false
-        },
-        "windsurf": {
-          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:16:34.785Z"
     },
     {
       "categoryId": "ide",
@@ -542,29 +391,16 @@
           "addedAt": "2025-12-10T22:28:39Z"
         },
         "cursor": {
-          "supported": true,
-          "notes": "Vim keybindings supported"
+          "supported": false
         },
         "gemini-cli": {
           "supported": false
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Neovim plugin available"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Works with any editor, integrates with $EDITOR"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Vim keybindings supported"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:17:02.806Z"
     },
     {
       "categoryId": "ide",
@@ -579,8 +415,8 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.86.0",
-          "addedAt": "2026-01-16T01:18:52Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
           "supported": true,
@@ -594,20 +430,9 @@
         },
         "kiro": {
           "supported": false
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "GitHub.com integration and Copilot Chat web"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Browser-based UI available"
-        },
-        "windsurf": {
-          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:17:31.846Z"
     },
     {
       "categoryId": "agentic",
@@ -617,13 +442,13 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.9",
-          "addedAt": "2026-01-15T23:59:29.275Z"
+          "addedInVersion": "2.1.14",
+          "addedAt": "2026-01-20T22:37:25.754Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.77.0",
-          "addedAt": "2025-12-21T05:37:01Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
           "supported": true,
@@ -637,20 +462,9 @@
           "supported": true,
           "addedInVersion": "1.23.0",
           "addedAt": "2025-12-18T05:00:00.000Z"
-        },
-        "github-copilot": {
-          "supported": false
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Architect mode for planning"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade supports planning workflows"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:18:03.542Z"
     },
     {
       "categoryId": "agentic",
@@ -660,41 +474,28 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.10",
-          "addedAt": "2026-01-17T00:11:29.352Z"
+          "addedInVersion": "2.1.15",
+          "addedAt": "2026-01-21T21:25:20.551Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.81.0",
-          "addedAt": "2026-01-14T18:12:36Z"
+          "addedInVersion": "rust-v0.88.0",
+          "addedAt": "2026-01-21T19:19:10Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Multi-Agent Judging (v2.2) and Agent Interface (v2.0) suggest autonomous operation capabilities"
+          "notes": "Agent Interface in v2.0, Subagents in v2.4, and Multi-Agent Judging in v2.2 indicate autonomous capabilities"
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.0",
-          "addedAt": "2026-01-14T13:27:15Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "Autonomous agent capabilities"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Agent mode for autonomous tasks"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Autonomous coding with auto-apply"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade autonomous agent"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:18:31.945Z"
     },
     {
       "categoryId": "agentic",
@@ -704,41 +505,29 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.7",
-          "addedAt": "2026-01-13T22:55:49.806Z"
+          "addedInVersion": "2.1.19",
+          "addedAt": "2026-01-23T21:14:31.264Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.81.0",
-          "addedAt": "2026-01-14T18:12:36Z"
+          "addedInVersion": "rust-v0.90.0",
+          "addedAt": "2026-01-25T16:37:37Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Plan Mode improvements and multi-agent system suggest task breakdown capabilities"
+          "notes": "Plan Mode improvements and Multi-Agent Judging in v2.2 suggest task breakdown capabilities"
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.21.0",
-          "addedAt": "2025-12-16T18:48:03Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
           "supported": true,
-          "notes": "v1.23.0 mentions 'Subagents' which suggests ability to break down tasks into subtasks handled by different agents"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Agent mode breaks down tasks"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Breaks complex requests into steps"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade decomposes tasks"
+          "notes": "v1.23.0 mentions 'Subagents' which suggests task decomposition capabilities"
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:19:02.174Z"
     },
     {
       "categoryId": "agentic",
@@ -748,41 +537,28 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.9",
-          "addedAt": "2026-01-15T23:59:29.275Z"
+          "addedInVersion": "2.1.16",
+          "addedAt": "2026-01-22T19:03:08.904Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.78.0",
-          "addedAt": "2026-01-06T18:47:47Z"
+          "addedInVersion": "rust-v0.89.0",
+          "addedAt": "2026-01-22T21:35:51Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Pinned chats in v2.2 and improved plan mode suggest context management across conversations"
+          "notes": "Pinned Chats in v2.2 suggests context management across conversations"
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.24.0",
-          "addedAt": "2026-01-14T13:27:15Z"
+          "addedInVersion": "v0.25.0",
+          "addedAt": "2026-01-21T05:15:12Z"
         },
         "kiro": {
-          "supported": true,
-          "notes": "Session persistence and context tracking"
-        },
-        "github-copilot": {
-          "supported": true,
-          "notes": "Workspace context awareness"
-        },
-        "aider": {
-          "supported": true,
-          "notes": "Git-aware context and file tracking"
-        },
-        "windsurf": {
-          "supported": true,
-          "notes": "Cascade maintains conversation context"
+          "supported": false
         }
       },
-      "lastUpdated": "2026-01-22T00:00:00.000Z"
+      "lastUpdated": "2026-01-26T15:19:39.499Z"
     }
   ]
 }
