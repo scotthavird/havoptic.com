@@ -1,6 +1,68 @@
 {
-  "lastUpdated": "2026-01-19T15:19:03.474Z",
+  "lastUpdated": "2026-01-26T15:20:11.810Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w04",
+      "type": "weekly-digest",
+      "title": "AI Coding Tools Weekly: Week 4 2026 - Release Velocity Surges 37%",
+      "slug": "weekly-digest-week-4-2026",
+      "publishedAt": "2026-01-26T15:10:43.758Z",
+      "summary": "26 new releases this week! OpenAI Codex tightens agent controls, Cursor adds subagents, and Gemini CLI hits v0.25. Release velocity up 37% over last week.",
+      "content": "# AI Coding Tools Weekly: Week 4 2026\n\n## TL;DR 🎯\n- **Release frenzy**: 26 total releases across major tools, up 37% from last week\n- **Agent evolution**: OpenAI Codex limits sub-agents to 6 for better resource control, while Cursor adds subagent support\n\n## This Week's Releases\n\n### OpenAI Codex CLI\n**4 releases** (v0.88.0 - v0.91.0)\n- Capped sub-agents at 6 max to prevent resource bloat\n- New network sandbox proxy with policy enforcement\n- First phase of MCP connector support via app server\n\n### Cursor\n**1 major release** (v2.4)\n- Added subagents functionality\n- Image generation capabilities\n- Continuing the AI-first IDE evolution\n\n### Gemini CLI\n**5 releases** (v0.24.4 - v0.25.2)\n- Improved activateskill tool with lowercase XML tags\n- Added initiation method telemetry\n- Multiple patch fixes and cherry-picks\n\n### Claude Code\n**6 releases** (v2.1.14 - v2.1.19)\n- New env var `CLAUDECODEENABLETASKS` for backward compatibility\n- Shorthand argument access ($0, $1, etc.) in custom commands\n- Fixed process crash issues\n\n### Windsurf\n**1 release** (v1.13.12)\n- Standard maintenance update\n\n### Mystery Tool\n**9 rapid-fire releases** (v0.0.385 - v0.0.394)\n- Deduplicated model instruction files to save context\n- Accurate usage metrics in exit summaries\n- Git branch support for repos without commits\n- Conversation compaction status improvements\n- GitHub Enterprise Cloud support\n\n## Highlight Deep Dive 🔍\n\n**OpenAI Codex's agent guardrails** represent a maturation of AI coding tools. The decision to limit sub-agents to 6 max isn't just about resource management—it's about preventing the chaotic fan-out behavior that can make AI assistance unpredictable. Combined with the new network sandbox proxy, OpenAI is clearly prioritizing controlled, secure AI interactions over raw capability. This mirrors broader industry trends toward \"responsible AI\" in development environments, where reliability often trumps raw power.\n\n## Quick Stats 📊\n\n- **Total releases**: 26 (vs 19 last week)\n- **Velocity trend**: +37% week-over-week\n- **Biggest mover**: Mystery tool with 9 releases in 7 days\n- **Most stable**: Windsurf and Cursor with single releases\n\n*That's a wrap for Week 4! The pace is heating up as tools mature and competition intensifies. Next week: keep an eye on whether this release velocity is sustainable or if we'll see a cooldown.*",
+      "coverImageUrl": null,
+      "tools": [
+        "openai-codex",
+        "windsurf",
+        "github-copilot",
+        "gemini-cli",
+        "claude-code",
+        "cursor"
+      ],
+      "metrics": {
+        "totalReleases": 26,
+        "releasesByTool": {
+          "openai-codex": 4,
+          "windsurf": 1,
+          "github-copilot": 9,
+          "gemini-cli": 5,
+          "claude-code": 6,
+          "cursor": 1
+        },
+        "topFeatures": [
+          {
+            "tool": "openai-codex",
+            "feature": "rust-v0.91.0",
+            "description": "Chores - Reduced the maximum allowed number of sub-agents to 6 to tighten resource usage and guardrails in agent fan-out behavior (9861) Changelog Full Changelog: https://github.com/openai/codex/co..."
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "rust-v0.90.0",
+            "description": "New Features - Added a network sandbox proxy with policy enforcement to better control outbound network access. (8442) - Introduced the first phase of connectors support via the app server and MCP ..."
+          },
+          {
+            "tool": "windsurf",
+            "feature": "1.13.12",
+            "description": "Windsurf version 1.13.12"
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "OpenAI Codex",
+          "Cursor",
+          "Gemini CLI",
+          "Claude Code",
+          "Windsurf",
+          "developer tools",
+          "release notes",
+          "AI agents",
+          "coding assistants"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-4-2026"
+      }
+    },
     {
       "id": "weekly-digest-2026-w03",
       "type": "weekly-digest",
