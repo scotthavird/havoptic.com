@@ -1,6 +1,50 @@
 {
-  "lastUpdated": "2026-01-26T13:21:39.143Z",
+  "lastUpdated": "2026-01-27T13:22:11.898Z",
   "releases": [
+    {
+      "id": "openai-codex-rust-v0.92.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.92.0",
+      "date": "2026-01-27T11:50:52Z",
+      "summary": "New Features - API v2 threads can now inject dynamic tools at startup and route their calls/responses end-to-end through the server and core tool pipeline. (9539) - Added filtering on the thread li...",
+      "fullNotes": "New Features - API v2 threads can now inject dynamic tools at startup and route their calls/responses end-to-end through the server and core tool pipeline. (9539) - Added filtering on the thread list in the app server to make large thread sets easier to browse. (9897) - Introduced a thread/unarchive RPC to restore archived rollouts back into active sessions. (9843) - MCP servers can now define OAuth scopes in config.toml, reducing the need to pass --scopes on each login. (9647) - Multi-agent collaboration is more capable and safer, with an explorer role, better collab event mapping, and max-depth guardrails. (9817, 9818, 9918, 9899) - Cached websearch is now the default client behavior. (9974) Bug Fixes - Fixed a TUI deadlock/freeze under high streaming throughput by avoiding blocking sends on the main Tokio thread. (9951) - The websearch tool now handles and displays all action types, and shows in-progress activity instead of appearing stuck. (9960) - Reduced high CPU usage in collaboration flows by eliminating busy-waiting on subagents. (9776) - Fixed codex resume --last --json so prompts parse correctly without conflicting argument errors. (9475) - Windows sandbox logging now handles UTF-8 safely, preventing failures when truncating multibyte content. (8647) - requestuserinput is now rejected outside Plan/Pair modes to prevent invalid tool calls. (9955) Documentation - Updated the contribution guidelines for clearer onboarding and workflow expectations. (9933) - Refreshed protocol/MCP docs to reflect thread/unarchive and the updated requestuserinput question shape. (9843, 9890) Chores - Self-update via Homebrew now uses an explicit cask upgrade command to avoid warnings and ambiguity. (9823) - Release packaging now consistently writes the bundle zip to dist/. (9934) - Updated key dependencies in the Rust workspace (including axum, tracing, globset, and tokio-test). (9880, 9882, 9883, 9884) - Aligned feature stage naming with public maturity stages and added clearer warnings for underdevelopment features. (9929, 9954) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.91.0...rust-v0.92.0 - 9850 chore: remove extra newline in println @SohailRaoufi - 9868 Adjust modes masks @aibrahim-oai - 9874 Prompt @aibrahim-oai - 9877 Plan prompt @aibrahim-oai - 9718 feat(tui) /personality @dylan-hurd-oai - 9871 chore(core) move modelinstructionstemplate config @dylan-hurd-oai - 9539 feat: dynamic tools injection @jif-oai - 9818 feat: rebase multi-agent tui on configsnapshot @jif-oai - 9789 Fix flakey resume test @gt-oai - 9784 Fix flakey conversation flow test @gt-oai - 9918 feat: explorer collab @jif-oai - 9899 feat: disable collab at max depth @jif-oai - 9916 Fix up config disabled err msg @gt-oai - 9890 Feat: add isOther to question returned by request user input tool @shijie-oai - 9817 feat: codex exec mapping of collab tools @jif-oai - 9919 Fix flakey shell snapshot test @gt-oai - 9776 fix: attempt to reduce high cpu usage when using collab @eugeneoden - 9928 prompt @aibrahim-oai - 9925 chore: update interrupt message @jif-oai - 9843 Add thread/unarchive to restore archived rollouts @charley-oai - 9929 Aligned feature stage names with public feature maturity stages @etraut-openai - 9934 ensure codex bundle zip is created in dist/ @iceweasel-oai - 9897 [app-server] feat: add filtering on thread list @jif-oai - 9647 Add MCP server scopes config and use it as fallback for OAuth login @blevy-oai - 9943 plan prompt @aibrahim-oai - 8647 fix: handle utf-8 in windows sandbox logs @davidgilbertson - 9891 Add composer config and shared menu surface helpers @aibrahim-oai - 9880 chore(deps): bump tracing from 0.1.43 to 0.1.44 in /codex-rs @dependabot - 9882 chore(deps): bump tokio-test from 0.4.4 to 0.4.5 in /codex-rs @dependabot - 9883 chore(deps): bump axum from 0.8.4 to 0.8.8 in /codex-rs @dependabot - 9884 chore(deps): bump globset from 0.4.16 to 0.4.18 in /codex-rs @dependabot - 9901 fix: remove cli tooltip references to custom prompts @mattridley - 9823 fix: use brew upgrade --cask codex to avoid warnings and ambiguity @JBallin - 9951 fix: try to fix freezes 2 @jif-oai - 9955 Reject requestuserinput outside Plan/Pair @charley-oai - 9933 Updated contribution guidelines @etraut-openai - 9892 Reuse ChatComposer in requestuserinput overlay @aibrahim-oai - 9957 NIT larger buffer @jif-oai - 9953 feat: load interface metadata from SKILL.json @alexsong-oai - 9954 Warn users on enabling underdevelopment features @aibrahim-oai - 9961 Use testcodex more @pakrym-oai - 9960 fix: handle all websearch actions and in progress invocations @sayan-oai - 9966 plan prompt v7 @aibrahim-oai - 9968 Improve plan mode prompt @aibrahim-oai - 9969 prompt final @aibrahim-oai - 9475 Fix resume --last with --json option @etraut-openai - 9970 prompt @aibrahim-oai - 9975 plan prompt @aibrahim-oai - 9974 make cached websearch client-side default @sayan-oai - 9971 tui: wrapping user input questions @aibrahim-oai - 9977 make plan prompt less detailed @aibrahim-oai - 9980 Fixing main and make plan mode reasoning effort medium @aibrahim-oai - 9759 Fix: cap aggregated exec output consistently @Kbediako",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.92.0",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.20",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.20",
+      "date": "2026-01-27T00:39:43.153Z",
+      "summary": "- Added arrow key history navigation in vim normal mode when cursor cannot move further - Added external editor shortcut (Ctrl+G) to the help menu for better discoverability - Added PR review statu...",
+      "fullNotes": "- Added arrow key history navigation in vim normal mode when cursor cannot move further - Added external editor shortcut (Ctrl+G) to the help menu for better discoverability - Added PR review status indicator to the prompt footer, showing the current branch's PR state (approved, changes requested, pending, or draft) as a colored dot with a clickable link - Added support for loading CLAUDE.md files from additional directories specified via --add-dir flag (requires setting CLAUDECODEADDITIONALDIRECTORIESCLAUDEMD=1) - Added ability to delete tasks via the TaskUpdate tool - Fixed session compaction issues that could cause resume to load full history instead of the compact summary - Fixed agents sometimes ignoring user messages sent while actively working on a task - Fixed wide character (emoji, CJK) rendering artifacts where trailing columns were not cleared when replaced by narrower characters - Fixed JSON parsing errors when MCP tool responses contain special Unicode characters - Fixed up/down arrow keys in multi-line and wrapped text input to prioriti",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.395",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.395",
+      "date": "2026-01-26T18:09:55Z",
+      "summary": "2026-01-26 - Select escape item shows blinking cursor to indicate text input - /mcp show displays all configured MCP servers including defaults and servers from additional configuration. - /mcp sho...",
+      "fullNotes": "2026-01-26 - Select escape item shows blinking cursor to indicate text input - /mcp show displays all configured MCP servers including defaults and servers from additional configuration. - /mcp show displays servers from installed plugins - Rewind shows clear warning in non-git repos or repos without commits - Cursor hides when terminal loses focus - Formatted text and links display correctly when wrapping - Load local shell configuration in agent sessions - Plugin skills are now usable by the agent - CLI handles missing tree-sitter files gracefully instead of crashing - Completed tool calls display in prompt mode - Add commenting to /diff mode for line-specific feedback",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.395",
+      "type": "release"
+    },
+    {
+      "id": "windsurf-1.13.13",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.13.13",
+      "date": "2026-01-26T00:00:00.000Z",
+      "summary": "Windsurf version 1.13.13",
+      "fullNotes": "Windsurf version 1.13.13",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.91.0",
       "tool": "openai-codex",
