@@ -1,6 +1,39 @@
 {
-  "lastUpdated": "2026-01-28T13:23:04.485Z",
+  "lastUpdated": "2026-01-29T13:28:45.155Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.23",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.23",
+      "date": "2026-01-29T00:19:09.656Z",
+      "summary": "- Added customi",
+      "fullNotes": "- Added customi",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.398",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.398",
+      "date": "2026-01-28T19:53:38Z",
+      "summary": "2026-01-28 - Fix a regression that caused \"Invalid session id\" errors for agent shell calls - CLI header uses middle-truncation for paths in narrow terminals, preserving first and last folders - Sk...",
+      "fullNotes": "2026-01-28 - Fix a regression that caused \"Invalid session id\" errors for agent shell calls - CLI header uses middle-truncation for paths in narrow terminals, preserving first and last folders - Skills from parent directories are now invocable and work in non-git directories",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.398",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.397",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.397",
+      "date": "2026-01-28T17:19:07Z",
+      "summary": "2026-01-28 - /mcp show <server-name> displays server details and available tools - Header layout adapts better to narrow terminal widths - Plan mode input text is more readable - Content pasted int...",
+      "fullNotes": "2026-01-28 - /mcp show <server-name> displays server details and available tools - Header layout adapts better to narrow terminal widths - Plan mode input text is more readable - Content pasted into the prompt over 30 KB is automatically saved to workspace files - Homebrew tools work correctly on macOS with zsh as default shell - Add --acp flag to start as Agent Client Protocol server - Directories now appear in @mention autocomplete - Session summary displays accurate line counts",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.397",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.22",
       "tool": "claude-code",
