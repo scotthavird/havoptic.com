@@ -87,14 +87,11 @@ jobs:
           FAILURES=""
 
           if [ "$TOOL" = "all" ]; then
-            # Generate for all tools with releases
-            for tool in claude-code kiro openai-codex gemini-cli cursor aider github-copilot windsurf; do
-              echo "Generating prompt for $tool..."
-              if ! node scripts/generate-infographic-prompt.mjs --tool=$tool $EXTRA_FLAGS; then
-                echo "Failed: $tool"
-                FAILURES="$FAILURES $tool"
-              fi
-            done
+            # Generate for ALL releases missing infographics (from last 7 days)
+            echo "Generating infographics for all recent releases missing them..."
+            if ! node scripts/generate-infographic-prompt.mjs --all-missing $EXTRA_FLAGS; then
+              FAILURES="all-missing"
+            fi
           else
             echo "Generating prompt for $TOOL..."
             if ! node scripts/generate-infographic-prompt.mjs --tool=$TOOL $EXTRA_FLAGS; then
