@@ -10,7 +10,9 @@
       "summary": "- Fixed beta header validation error for gateway users on Bedrock and Vertex, ensuring CLAUDECODEDISABLEEXPERIMENTALBETAS=1 avoids the error",
       "fullNotes": "- Fixed beta header validation error for gateway users on Bedrock and Vertex, ensuring CLAUDECODEDISABLEEXPERIMENTALBETAS=1 avoids the error",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.25-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.25-2026-01-30-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.399",
@@ -21,7 +23,9 @@
       "summary": "2026-01-29 - Compaction messages show clearer command hints to view checkpoint summaries - Press Ctrl+X then / to run slash commands without losing your input - Improve /diff command with better vi...",
       "fullNotes": "2026-01-29 - Compaction messages show clearer command hints to view checkpoint summaries - Press Ctrl+X then / to run slash commands without losing your input - Improve /diff command with better visual indicators and scroll acceleration - Add /allow-all and /yolo commands to auto-approve all permissions during a session - Add Copilot option for agent creation wizard to generate name, description, and instructions based on initial agent description - Add LSP (Language Server Protocol) tool for code intelligence (requires staff flag) - Sessions get AI-generated names from first message - Skills remain effective after conversation history is compacted - /usage now includes token consumption from sub-agents (e.g., the general-purpose agent) - Support .claude/commands/ single-file commands as simpler alternative to skills - Skills load correctly on Windows - Add /diff command to review session changes - Undo/rewind to previous states with double-Esc",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.399",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.399-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.399-2026-01-30-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.23",
@@ -56,7 +60,9 @@
       "summary": "2026-01-28 - /mcp show <server-name> displays server details and available tools - Header layout adapts better to narrow terminal widths - Plan mode input text is more readable - Content pasted int...",
       "fullNotes": "2026-01-28 - /mcp show <server-name> displays server details and available tools - Header layout adapts better to narrow terminal widths - Plan mode input text is more readable - Content pasted into the prompt over 30 KB is automatically saved to workspace files - Homebrew tools work correctly on macOS with zsh as default shell - Add --acp flag to start as Agent Client Protocol server - Directories now appear in @mention autocomplete - Session summary displays accurate line counts",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.397",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.397-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.397-2026-01-30-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.22",
@@ -93,7 +99,9 @@
       "summary": "- Added support for full-width (",
       "fullNotes": "- Added support for full-width (",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.21-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.21-2026-01-30-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.396",
@@ -195,7 +203,9 @@
       "summary": "New Features - Added a network sandbox proxy with policy enforcement to better control outbound network access. (8442) - Introduced the first phase of connectors support via the app server and MCP ...",
       "fullNotes": "New Features - Added a network sandbox proxy with policy enforcement to better control outbound network access. (8442) - Introduced the first phase of connectors support via the app server and MCP integration, including new config/docs updates. (9667) - Shipped collaboration mode as beta in the TUI, with a clearer plan → execute handoff and simplified mode selection (Coding vs Plan). (9690, 9712, 9802, 9834) - Added ephemeral threads and improved collaboration tool provenance metadata for spawned threads. (9765, 9769) - WebSocket connections now support proxy configuration. (9719) - More strict limitation on multi-agents Bug Fixes - Fixed exec policy parsing for multiline quoted arguments. (9565) - --yolo now skips the git repository check instead of failing outside a repo. (9590) - Improved resume reliability by handling out-of-order events and prompting for the working directory when it differs. (9512, 9731) - Backspace no longer deletes a text element when the cursor is at the element’s left edge. (9630) - Config loading errors are clearer and more actionable across surfaces. (9746) - Default model selection now respects filtered presets to avoid invalid defaults. (9782) Documentation - Corrected a typo in the experimental collaboration prompt template. (9716) - Added documentation for the new connectors configuration surface. (9667) Chores - Refreshed the bundled model catalog/presets. (9726) - Updated GitHub Actions for Node 24 compatibility. (9722) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.89.0...rust-v0.90.0 - 9715 feat: fix formatting of codex features list @bolinfest - 9716 Fix typo in experimentalprompt.md @iudizm - 9719 feat: support proxy for ws connection @apanasenko-oai - 9712 TUI: prompt to implement plan and switch to Execute @charley-oai - 9713 use machine scope instead of user scope for dpapi. @iceweasel-oai - 9726 Update models.json @github-actions - 9667 [connectors] Support connectors part 1 - App server & MCP @mzeng-openai - 9674 feat(app-server) Expose personality @dylan-hurd-oai - 9733 Change the prompt for planning and reasoning effort @aibrahim-oai - 9730 Hide mode cycle hint while a task is running @charley-oai - 9720 feat: add session source as otel metadata tag @alexsong-oai - 9565 Fix execpolicy parsing for multiline quoted args @jdsalasca - 9745 chore: use some raw strings to reduce quoting @bolinfest - 9753 nit: exclude PWD for rc sourcing @jif-oai - 9690 feat: tui beta for collab @jif-oai - 9116 Persist text element ranges and attached images across history/resume @charley-oai - 9777 plan mode prompt change @aibrahim-oai - 9590 fix(exec): skip git repo check when --yolo flag is used @zerone0x - 9722 Upgrade GitHub Actions for Node 24 compatibility @salmanmkc - 9611 Print warning if we skip config loading @gt-oai - 9782 Select default model from filtered presets @aibrahim-oai - 9512 Fix resume picker when user event appears after head @jdsalasca - 9787 Remove stale TODO comment from defs.bzl @jcoens-openai - 9700 still load skills @gt-oai - 9791 Load untrusted rules @gt-oai - 9707 bundle sandbox helper binaries in main zip, for winget. @iceweasel-oai - 9792 Chore: remove mode from header @aibrahim-oai - 9793 change collaboration mode to struct @aibrahim-oai - 8442 feat: introducing a network sandbox proxy @viyatb-oai - 9802 Have a coding mode and only show coding and plan @aibrahim-oai - 9746 Another round of improvements for config error messages @etraut-openai - 9812 Remove batman reference from experimental prompt @charley-oai - 9769 feat: add thread spawn source for collab tools @jif-oai - 9765 feat: ephemeral threads @jif-oai - 9819 fix: libcc link @jif-oai - 9820 fix: musl build @jif-oai - 9316 fix(windows-sandbox): remove request files after read @MaxMiksa - 9630 Prevent backspace from removing a text element when the cursor is at the element’s left edge @charley-oai - 9840 Revert \"fix: musl build\" @aibrahim-oai - 9778 Raise welcome animation breakpoint to 37 rows @mzeng-openai - 9731 Ask for cwd choice when resuming session from different cwd @charley-oai - 9841 Revert \"fix: libcc link\" @aibrahim-oai - 9806 Use collaboration mode masks without mutating base settings @aibrahim-oai - 9834 Mark collab as beta @pakrym-oai - 9847 Revert \"Revert \"fix: musl build\"\" @jif-oai - 9855 feat: cap number of agents @jif-oai",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.90.0",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/openai-codex-rust-v0.90.0-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/openai-codex-rust-v0.90.0-2026-01-30-16x9.jpg"
     },
     {
       "id": "windsurf-1.13.12",
@@ -258,7 +268,9 @@
       "summary": "2026-01-23 - Show conversation compaction status as timeline messages instead of header indicator - Memory loading no longer warns when outside a Git repository - Add support for GHE Cloud (\\.ghe.c...",
       "fullNotes": "2026-01-23 - Show conversation compaction status as timeline messages instead of header indicator - Memory loading no longer warns when outside a Git repository - Add support for GHE Cloud (\\.ghe.com) remote custom agents - Plugin uninstall now works correctly - Expose MCP server and tool names in tool.executionstart events for better error handling - Add Esc-Esc to undo file changes to any previous snapshot",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.393",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.393-2026-01-30-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.393-2026-01-30-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.392",
