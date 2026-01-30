@@ -2,8 +2,8 @@ name: Fetch AI Tool Releases
 
 on:
   schedule:
-    # Run daily at 8 AM EST (13:00 UTC)
-    - cron: '0 13 * * *'
+    # Run daily at 5 AM EST (10:00 UTC)
+    - cron: '0 10 * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
