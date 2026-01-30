@@ -220,6 +220,13 @@ curl -X POST "https://havoptic.com/api/preferences" \
 ```
 
 ### Testing Notifications Locally
+
+**Send test email directly via AWS SES** (uses default AWS credentials from `~/.aws/credentials`):
+```bash
+node scripts/send-test-email.mjs your-email@example.com
+```
+
+**Test via production API** (requires NOTIFY_API_KEY):
 ```bash
 # Test release notification
 curl -X POST "https://havoptic.com/api/notify" \
