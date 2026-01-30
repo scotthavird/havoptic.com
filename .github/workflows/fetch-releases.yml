@@ -39,9 +39,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Save old releases
-        run: cp public/data/releases.json /tmp/old-releases.json || echo '{"releases":[]}' > /tmp/old-releases.json
-
       - name: Fetch new releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,12 +53,19 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Notify subscribers
+      - name: Save old releases for notification (used by infographics workflow)
         if: steps.changes.outputs.changed == 'true'
-        env:
-          NOTIFY_API_KEY: ${{ secrets.NOTIFY_API_KEY }}
-          NOTIFY_API_URL: https://havoptic.com/api/notify
-        run: node scripts/notify-subscribers.mjs --old=/tmp/old-releases.json --new=public/data/releases.json
+        run: |
+          # Save the OLD releases (before this fetch) for comparison in the infographics workflow
+          git show HEAD:public/data/releases.json > /tmp/old-releases.json || echo '{"releases":[]}' > /tmp/old-releases.json
+
+      - name: Upload old releases artifact
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: old-releases-for-notification
+          path: /tmp/old-releases.json
+          retention-days: 1
 
       - name: Commit and push changes
         if: steps.changes.outputs.changed == 'true'
