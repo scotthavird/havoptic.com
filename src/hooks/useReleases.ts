@@ -2,6 +2,23 @@ import { useState, useEffect, useMemo } from 'react';
 import type { Release, ReleasesData, ToolId } from '../types/release';
 import { useAuth } from '../context/AuthContext';
 
+async function fetchWithRetry(
+  url: string,
+  options: RequestInit,
+  maxRetries = 3
+): Promise<Response> {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    const response = await fetch(url, options);
+    if (response.ok) return response;
+    if (response.status >= 500 && attempt < maxRetries - 1) {
+      await new Promise((r) => setTimeout(r, Math.pow(2, attempt) * 500));
+      continue;
+    }
+    throw new Error(`Failed to fetch: ${response.status}`);
+  }
+  throw new Error('Failed to fetch after retries');
+}
+
 interface GroupedReleases {
   year: number;
   months: {
@@ -33,14 +50,15 @@ export function useReleases(selectedTool: ToolId | 'all') {
     async function fetchReleases() {
       try {
         // Use gated API endpoint instead of static file
-        const response = await fetch('/api/releases', {
-          cache: 'no-store',
-          signal: controller.signal,
-          credentials: 'include',
-        });
-        if (!response.ok) {
-          throw new Error('Failed to fetch releases');
-        }
+        const response = await fetchWithRetry(
+          '/api/releases',
+          {
+            cache: 'no-store',
+            signal: controller.signal,
+            credentials: 'include',
+          },
+          3
+        );
         const json: GatedReleasesData = await response.json();
 
         // Deduplicate releases by id (safety net)

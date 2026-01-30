@@ -3,6 +3,7 @@ import { TOOL_CONFIG, type Release } from '../types/release';
 import { trackReleaseClick } from '../utils/analytics';
 import { ReleaseShareButtons } from './ReleaseShareButtons';
 import { ImageZoomModal } from './ImageZoomModal';
+import { LazyImage } from './LazyImage';
 
 interface ReleaseCardProps {
   release: Release;
@@ -95,11 +96,10 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
                 }}
                 aria-label="Double-tap or double-click to zoom image"
               >
-                <img
+                <LazyImage
                   src={release.infographicUrl}
                   alt={`${config.displayName} v${release.version} release infographic`}
                   className="w-full h-auto"
-                  loading="lazy"
                 />
                 {/* Zoom hint overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
