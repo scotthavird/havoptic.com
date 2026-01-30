@@ -45,13 +45,20 @@ const TOOL_DISPLAY_NAMES = {
   'windsurf': 'Windsurf',
 };
 
+// Normalize version string to always have single 'v' prefix
+const normalizeVersion = (v) => {
+  if (!v) return 'v0.0.0';
+  const cleaned = v.replace(/^v+/, '');
+  return `v${cleaned}`;
+};
+
 // Generate email content for new releases with infographics
 function generateEmailContent(releases) {
   const releaseCount = releases.length;
 
   // More engaging subject lines
   const subject = releaseCount === 1
-    ? `New: ${releases[0].toolDisplayName} ${releases[0].version} Just Shipped`
+    ? `New: ${releases[0].toolDisplayName} ${normalizeVersion(releases[0].version)} Just Shipped`
     : `${releaseCount} AI Tool Updates You Need to See`;
 
   // Build release cards with infographics
@@ -61,6 +68,7 @@ function generateEmailContent(releases) {
     const infographicSrc = hasInfographic
       ? `https://havoptic.com${r.infographicUrl}`
       : null;
+    const version = normalizeVersion(r.version);
 
     // Format the date
     const releaseDate = new Date(r.date).toLocaleDateString('en-US', {
@@ -69,70 +77,81 @@ function generateEmailContent(releases) {
       year: 'numeric'
     });
 
+    // Link to havoptic.com release page (drives traffic to our site)
+    const releasePageUrl = `https://havoptic.com/r/${r.id}`;
+
     return {
       html: `
         <!-- Release Card -->
         <tr>
-          <td style="padding: 0 0 32px 0;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
-              <!-- Card Header with Tool Badge -->
+          <td style="padding: 0 0 24px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
               <tr>
-                <td style="padding: 20px 24px 16px;">
+                <!-- Left Border Accent -->
+                <td width="4" style="background-color: ${toolColor}; width: 4px;"></td>
+                <td style="background-color: #ffffff;">
                   <table width="100%" cellpadding="0" cellspacing="0">
+                    <!-- Card Header with Tool Badge -->
                     <tr>
-                      <td>
-                        <span style="display: inline-block; background-color: ${toolColor}; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
-                          ${r.toolDisplayName}
-                        </span>
+                      <td style="padding: 20px 24px 12px;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td>
+                              <span style="display: inline-block; background-color: ${toolColor}; color: #ffffff; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                ${r.toolDisplayName}
+                              </span>
+                            </td>
+                            <td style="text-align: right;">
+                              <span style="color: #64748b; font-size: 13px; font-weight: 500;">${releaseDate}</span>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
-                      <td style="text-align: right;">
-                        <span style="color: #64748b; font-size: 13px;">${releaseDate}</span>
+                    </tr>
+
+                    <!-- Version -->
+                    <tr>
+                      <td style="padding: 0 24px 16px;">
+                        <h2 style="margin: 0; font-size: 32px; font-weight: 800; color: #0f172a; font-family: 'SF Mono', Monaco, 'Courier New', monospace;">
+                          ${version}
+                        </h2>
+                      </td>
+                    </tr>
+
+                    ${hasInfographic ? `
+                    <!-- Infographic Image -->
+                    <tr>
+                      <td style="padding: 0 24px 20px;">
+                        <a href="${releasePageUrl}" target="_blank" style="display: block;">
+                          <img
+                            src="${infographicSrc}"
+                            alt="${r.toolDisplayName} ${version} release highlights"
+                            width="500"
+                            style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block; border: 1px solid #e2e8f0;"
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                    ` : `
+                    <!-- Summary (fallback when no infographic) -->
+                    <tr>
+                      <td style="padding: 0 24px 20px;">
+                        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
+                          ${r.summary}
+                        </p>
+                      </td>
+                    </tr>
+                    `}
+
+                    <!-- CTA Button -->
+                    <tr>
+                      <td style="padding: 0 24px 24px;">
+                        <a href="${releasePageUrl}" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: ${toolColor}; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+                          View on Havoptic &rarr;
+                        </a>
                       </td>
                     </tr>
                   </table>
-                </td>
-              </tr>
-
-              <!-- Version -->
-              <tr>
-                <td style="padding: 0 24px 16px;">
-                  <h2 style="margin: 0; font-size: 28px; font-weight: 700; color: #f8fafc; font-family: 'SF Mono', Monaco, 'Courier New', monospace;">
-                    v${r.version}
-                  </h2>
-                </td>
-              </tr>
-
-              ${hasInfographic ? `
-              <!-- Infographic Image -->
-              <tr>
-                <td style="padding: 0 24px 20px;">
-                  <a href="${r.url}" target="_blank" style="display: block;">
-                    <img
-                      src="${infographicSrc}"
-                      alt="${r.toolDisplayName} v${r.version} release highlights"
-                      width="500"
-                      style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block;"
-                    />
-                  </a>
-                </td>
-              </tr>
-              ` : `
-              <!-- Summary (fallback when no infographic) -->
-              <tr>
-                <td style="padding: 0 24px 20px;">
-                  <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #cbd5e1;">
-                    ${r.summary}
-                  </p>
-                </td>
-              </tr>
-              `}
-
-              <!-- CTA Button -->
-              <tr>
-                <td style="padding: 0 24px 24px;">
-                  <a href="${r.url}" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: ${toolColor}; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
-                    View Full Release Notes
-                  </a>
                 </td>
               </tr>
             </table>
@@ -140,10 +159,10 @@ function generateEmailContent(releases) {
         </tr>
       `,
       text: `
-${r.toolDisplayName} v${r.version}
+${r.toolDisplayName} ${version}
 Released: ${releaseDate}
 ${hasInfographic ? `Infographic: https://havoptic.com${r.infographicUrl}` : r.summary}
-View release: ${r.url}
+View on Havoptic: ${releasePageUrl}
 `,
     };
   });
@@ -154,35 +173,49 @@ View release: ${r.url}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
 </head>
-<body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff;">
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px;">
 
           <!-- Header -->
           <tr>
-            <td style="padding-bottom: 40px; text-align: center;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #f8fafc;">Havoptic</h1>
-              <p style="margin: 8px 0 0; font-size: 14px; color: #d97706; letter-spacing: 1px; text-transform: uppercase;">
+            <td style="padding-bottom: 12px; text-align: center;">
+              <h1 style="margin: 0; font-size: 32px; font-weight: 800; color: #0f172a;">Havoptic</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 8px; text-align: center;">
+              <p style="margin: 0; font-size: 14px; color: #64748b; letter-spacing: 1px; text-transform: uppercase;">
                 Release Intelligence
               </p>
+            </td>
+          </tr>
+          <!-- Amber accent bar -->
+          <tr>
+            <td style="padding-bottom: 40px; text-align: center;">
+              <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="width: 60px; height: 3px; background-color: #d97706; border-radius: 2px;"></td>
+                </tr>
+              </table>
             </td>
           </tr>
 
           <!-- Intro Section -->
           <tr>
             <td style="padding-bottom: 32px;">
-              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1e293b; border-radius: 12px; border: 1px solid #334155;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
                 <tr>
                   <td style="padding: 24px;">
-                    <h2 style="margin: 0 0 12px; font-size: 22px; color: #f8fafc;">
+                    <h2 style="margin: 0 0 12px; font-size: 22px; font-weight: 700; color: #0f172a;">
                       ${releaseCount === 1 ? 'Fresh Off the Wire' : `${releaseCount} Updates Just Dropped`}
                     </h2>
-                    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #94a3b8;">
+                    <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569;">
                       ${releaseCount === 1
                         ? `${releases[0].toolDisplayName} just shipped a new version. Here's what you need to know.`
                         : `Your favorite AI coding tools have been busy. Here's everything that shipped.`
@@ -200,25 +233,25 @@ View release: ${r.url}
           <!-- View All CTA -->
           <tr>
             <td style="padding: 16px 0 40px; text-align: center;">
-              <a href="https://havoptic.com" style="display: inline-block; padding: 16px 40px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
-                View Complete Timeline
+              <a href="https://havoptic.com" style="display: inline-block; padding: 16px 40px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px;">
+                View Complete Timeline &rarr;
               </a>
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="padding-top: 32px; border-top: 1px solid #334155;">
+            <td style="padding-top: 32px; border-top: 1px solid #e2e8f0;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="text-align: center;">
-                    <p style="margin: 0 0 8px; font-size: 13px; color: #64748b;">
+                    <p style="margin: 0 0 12px; font-size: 13px; color: #64748b;">
                       You're receiving this because you subscribed to Havoptic release notifications.
                     </p>
-                    <p style="margin: 0; font-size: 12px;">
-                      <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #64748b; text-decoration: underline;">Unsubscribe</a>
-                      <span style="color: #475569; padding: 0 8px;">|</span>
-                      <a href="https://havoptic.com" style="color: #64748b; text-decoration: underline;">Visit Havoptic</a>
+                    <p style="margin: 0; font-size: 13px;">
+                      <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #d97706; text-decoration: underline; font-weight: 500;">Unsubscribe</a>
+                      <span style="color: #cbd5e1; padding: 0 12px;">|</span>
+                      <a href="https://havoptic.com" style="color: #d97706; text-decoration: underline; font-weight: 500;">Visit Havoptic</a>
                     </p>
                   </td>
                 </tr>
@@ -275,7 +308,7 @@ function generateBlogEmailContent(post) {
     const color = TOOL_COLORS[toolId] || '#D97706';
     const name = TOOL_DISPLAY_NAMES[toolId] || toolId;
     return {
-      html: `<span style="display: inline-block; background-color: ${color}; color: #ffffff; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 16px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; margin-bottom: 6px;">${name}</span>`,
+      html: `<span style="display: inline-block; background-color: ${color}; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 16px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; margin-bottom: 6px;">${name}</span>`,
       text: name,
     };
   });
@@ -294,19 +327,19 @@ function generateBlogEmailContent(post) {
   const metricsHtml = post.metrics ? `
     <tr>
       <td style="padding: 0 24px 20px;">
-        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a; border-radius: 8px; border: 1px solid #334155;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
           <tr>
-            <td style="padding: 16px; text-align: center; border-right: 1px solid #334155;">
-              <div style="font-size: 24px; font-weight: 700; color: #d97706;">${post.metrics.totalReleases || 0}</div>
-              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Releases</div>
+            <td style="padding: 16px; text-align: center; border-right: 1px solid #e2e8f0;">
+              <div style="font-size: 28px; font-weight: 800; color: #d97706;">${post.metrics.totalReleases || 0}</div>
+              <div style="font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Releases</div>
             </td>
-            <td style="padding: 16px; text-align: center; border-right: 1px solid #334155;">
-              <div style="font-size: 24px; font-weight: 700; color: #22c55e;">${Object.keys(post.metrics.releasesByTool || {}).length}</div>
-              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Tools Active</div>
+            <td style="padding: 16px; text-align: center; border-right: 1px solid #e2e8f0;">
+              <div style="font-size: 28px; font-weight: 800; color: #059669;">${Object.keys(post.metrics.releasesByTool || {}).length}</div>
+              <div style="font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Tools Active</div>
             </td>
             <td style="padding: 16px; text-align: center;">
-              <div style="font-size: 24px; font-weight: 700; color: ${(post.metrics.velocityChange || 0) >= 0 ? '#22c55e' : '#ef4444'};">${(post.metrics.velocityChange || 0) >= 0 ? '+' : ''}${post.metrics.velocityChange || 0}%</div>
-              <div style="font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Velocity</div>
+              <div style="font-size: 28px; font-weight: 800; color: ${(post.metrics.velocityChange || 0) >= 0 ? '#059669' : '#dc2626'};">${(post.metrics.velocityChange || 0) >= 0 ? '+' : ''}${post.metrics.velocityChange || 0}%</div>
+              <div style="font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Velocity</div>
             </td>
           </tr>
         </table>
@@ -324,83 +357,105 @@ function generateBlogEmailContent(post) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <meta name="supported-color-schemes" content="dark">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
 </head>
-<body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #0f172a;">
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #ffffff;">
     <tr>
       <td align="center" style="padding: 40px 20px;">
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px;">
 
           <!-- Header -->
           <tr>
-            <td style="padding-bottom: 40px; text-align: center;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: 700; color: #f8fafc;">Havoptic</h1>
-              <p style="margin: 8px 0 0; font-size: 14px; color: #d97706; letter-spacing: 1px; text-transform: uppercase;">
+            <td style="padding-bottom: 12px; text-align: center;">
+              <h1 style="margin: 0; font-size: 32px; font-weight: 800; color: #0f172a;">Havoptic</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-bottom: 8px; text-align: center;">
+              <p style="margin: 0; font-size: 14px; color: #64748b; letter-spacing: 1px; text-transform: uppercase;">
                 ${isWeeklyDigest ? 'Weekly Digest' : 'Analysis'}
               </p>
+            </td>
+          </tr>
+          <!-- Amber accent bar -->
+          <tr>
+            <td style="padding-bottom: 40px; text-align: center;">
+              <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="width: 60px; height: 3px; background-color: #d97706; border-radius: 2px;"></td>
+                </tr>
+              </table>
             </td>
           </tr>
 
           <!-- Main Content Card -->
           <tr>
             <td style="padding: 0 0 32px 0;">
-              <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
-                <!-- Card Header with Date -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                 <tr>
-                  <td style="padding: 20px 24px 16px;">
+                  <!-- Left Border Accent -->
+                  <td width="4" style="background-color: #d97706; width: 4px;"></td>
+                  <td style="background-color: #ffffff;">
                     <table width="100%" cellpadding="0" cellspacing="0">
+                      <!-- Card Header with Date -->
                       <tr>
-                        <td>
-                          <span style="display: inline-block; background-color: #d97706; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
-                            ${isWeeklyDigest ? 'Weekly Digest' : 'Monthly Comparison'}
-                          </span>
+                        <td style="padding: 20px 24px 16px;">
+                          <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <span style="display: inline-block; background-color: #d97706; color: #ffffff; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                  ${isWeeklyDigest ? 'Weekly Digest' : 'Monthly Comparison'}
+                                </span>
+                              </td>
+                              <td style="text-align: right;">
+                                <span style="color: #64748b; font-size: 13px; font-weight: 500;">${publishDate}</span>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
-                        <td style="text-align: right;">
-                          <span style="color: #64748b; font-size: 13px;">${publishDate}</span>
+                      </tr>
+
+                      <!-- Title -->
+                      <tr>
+                        <td style="padding: 0 24px 16px;">
+                          <h2 style="margin: 0; font-size: 26px; font-weight: 800; color: #0f172a; line-height: 1.3;">
+                            ${post.title}
+                          </h2>
+                        </td>
+                      </tr>
+
+                      <!-- Tool Badges -->
+                      ${toolBadges.length > 0 ? `
+                      <tr>
+                        <td style="padding: 0 24px 16px;">
+                          ${toolBadges.map(b => b.html).join('')}
+                        </td>
+                      </tr>
+                      ` : ''}
+
+                      <!-- Metrics -->
+                      ${metricsHtml}
+
+                      <!-- Summary -->
+                      <tr>
+                        <td style="padding: 0 24px 20px;">
+                          <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
+                            ${post.summary}
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA Button -->
+                      <tr>
+                        <td style="padding: 0 24px 24px;">
+                          <a href="${postUrl}" target="_blank" style="display: inline-block; padding: 14px 28px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 15px;">
+                            Read Full Post &rarr;
+                          </a>
                         </td>
                       </tr>
                     </table>
-                  </td>
-                </tr>
-
-                <!-- Title -->
-                <tr>
-                  <td style="padding: 0 24px 16px;">
-                    <h2 style="margin: 0; font-size: 24px; font-weight: 700; color: #f8fafc; line-height: 1.3;">
-                      ${post.title}
-                    </h2>
-                  </td>
-                </tr>
-
-                <!-- Tool Badges -->
-                ${toolBadges.length > 0 ? `
-                <tr>
-                  <td style="padding: 0 24px 16px;">
-                    ${toolBadges.map(b => b.html).join('')}
-                  </td>
-                </tr>
-                ` : ''}
-
-                <!-- Metrics -->
-                ${metricsHtml}
-
-                <!-- Summary -->
-                <tr>
-                  <td style="padding: 0 24px 20px;">
-                    <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #cbd5e1;">
-                      ${post.summary}
-                    </p>
-                  </td>
-                </tr>
-
-                <!-- CTA Button -->
-                <tr>
-                  <td style="padding: 0 24px 24px;">
-                    <a href="${postUrl}" target="_blank" style="display: inline-block; padding: 14px 28px; background-color: #d97706; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px;">
-                      Read Full Post
-                    </a>
                   </td>
                 </tr>
               </table>
@@ -410,25 +465,25 @@ function generateBlogEmailContent(post) {
           <!-- View Timeline CTA -->
           <tr>
             <td style="padding: 16px 0 40px; text-align: center;">
-              <a href="https://havoptic.com" style="display: inline-block; padding: 12px 32px; background-color: transparent; color: #d97706; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; border: 2px solid #d97706;">
-                View Complete Timeline
+              <a href="https://havoptic.com" style="display: inline-block; padding: 12px 32px; background-color: transparent; color: #d97706; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 14px; border: 2px solid #d97706;">
+                View Complete Timeline &rarr;
               </a>
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="padding-top: 32px; border-top: 1px solid #334155;">
+            <td style="padding-top: 32px; border-top: 1px solid #e2e8f0;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="text-align: center;">
-                    <p style="margin: 0 0 8px; font-size: 13px; color: #64748b;">
+                    <p style="margin: 0 0 12px; font-size: 13px; color: #64748b;">
                       You're receiving this because you subscribed to Havoptic notifications.
                     </p>
-                    <p style="margin: 0; font-size: 12px;">
-                      <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #64748b; text-decoration: underline;">Unsubscribe</a>
-                      <span style="color: #475569; padding: 0 8px;">|</span>
-                      <a href="https://havoptic.com" style="color: #64748b; text-decoration: underline;">Visit Havoptic</a>
+                    <p style="margin: 0; font-size: 13px;">
+                      <a href="https://havoptic.com/unsubscribe?email={{email}}" style="color: #d97706; text-decoration: underline; font-weight: 500;">Unsubscribe</a>
+                      <span style="color: #cbd5e1; padding: 0 12px;">|</span>
+                      <a href="https://havoptic.com" style="color: #d97706; text-decoration: underline; font-weight: 500;">Visit Havoptic</a>
                     </p>
                   </td>
                 </tr>
