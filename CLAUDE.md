@@ -69,6 +69,8 @@ node --env-file=.env scripts/generate-infographic-prompt.mjs \
 #   --force              Regenerate even if infographic exists
 #   --all-formats        Generate 1:1, 16:9, and 9:16 formats
 #   --use-stored-source  Use source content from existing features.json (offline regeneration)
+#   --all-missing        Generate for all recent releases missing infographics (ignores --tool)
+#   --max-age-days=<n>   With --all-missing, limit to releases from last N days (default: 7)
 ```
 
 ### Infographic Validation

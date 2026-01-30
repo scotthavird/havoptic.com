@@ -175,6 +175,8 @@ function parseArgs() {
     updateReleases: false,
     force: false,
     useStoredSource: false,
+    allMissing: false,
+    maxAgeDays: 7, // Default: only process releases from last 7 days
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -197,6 +199,10 @@ function parseArgs() {
       options.force = true;
     } else if (arg === '--use-stored-source') {
       options.useStoredSource = true;
+    } else if (arg === '--all-missing') {
+      options.allMissing = true;
+    } else if (arg.startsWith('--max-age-days=')) {
+      options.maxAgeDays = parseInt(arg.split('=')[1], 10);
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
 Usage: node generate-infographic-prompt.mjs [options]
@@ -211,6 +217,8 @@ Options:
   --update-releases    Save images to public/images/infographics/ and update releases.json
   --force              Regenerate infographic even if one already exists
   --use-stored-source  Use source content from existing features.json instead of re-fetching
+  --all-missing        Generate infographics for all recent releases missing them (ignores --tool/--version)
+  --max-age-days=<n>   With --all-missing, only process releases from last N days (default: 7)
   --help, -h           Show this help message
 
 Environment Variables:
@@ -222,6 +230,7 @@ Examples:
   node generate-infographic-prompt.mjs --tool=gemini-cli --count=4 --all-formats
   node generate-infographic-prompt.mjs --tool=claude-code --generate-image --update-releases
   node generate-infographic-prompt.mjs --tool=cursor --version=2.3 --generate-image --update-releases --force
+  node generate-infographic-prompt.mjs --all-missing --generate-image --update-releases
 `);
       process.exit(0);
     }
@@ -629,65 +638,39 @@ async function generateImage(prompt, outputPath, format = '1:1') {
   return finalPath;
 }
 
-// Main function
-async function main() {
-  const options = parseArgs();
+// Generate infographic for a single release
+// Returns { success: true } or { success: false, error: string }
+async function generateForRelease(release, data, client, options, outputDir) {
+  const MIN_CONTENT_LENGTH = 100;
 
-  if (!options.tool) {
-    console.error('Error: --tool argument is required');
-    console.error('Run with --help for usage information');
-    process.exit(1);
-  }
-
-  if (!TOOL_CONFIGS[options.tool]) {
-    console.error(`Error: Unknown tool "${options.tool}"`);
-    console.error('Available tools:', Object.keys(TOOL_CONFIGS).join(', '));
-    process.exit(1);
-  }
-
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    console.error('Error: ANTHROPIC_API_KEY environment variable is required');
-    process.exit(1);
-  }
-
-  console.log(`\nGenerating infographic prompt for ${options.tool}...\n`);
-
-  // Load releases
-  const data = await loadReleases();
-  const release = getRelease(data.releases, options.tool, options.version);
-
-  if (!release) {
-    const versionMsg = options.version ? ` version ${options.version}` : '';
-    console.error(`Error: No releases found for tool "${options.tool}"${versionMsg}`);
-    process.exit(1);
-  }
+  console.log(`\n${'='.repeat(60)}`);
+  console.log(`Processing: ${release.tool} ${release.version}`);
+  console.log(`${'='.repeat(60)}`);
 
   // Skip if release already has an infographic (unless forcing regeneration)
   if (release.infographicUrl && options.generateImage && options.updateReleases && !options.force) {
-    console.log(`Skipping ${options.tool} v${release.version} - infographic already exists: ${release.infographicUrl}`);
-    process.exit(0);
+    console.log(`Skipping - infographic already exists: ${release.infographicUrl}`);
+    return { success: true, skipped: true };
   }
 
-  console.log(`Latest release: ${release.version} (${release.date})`);
-  console.log(`Summary: ${release.summary}\n`);
+  // Verify tool config exists
+  if (!TOOL_CONFIGS[release.tool]) {
+    console.error(`Unknown tool: ${release.tool}`);
+    return { success: false, error: `Unknown tool: ${release.tool}` };
+  }
 
-  // Initialize Anthropic client
-  const client = new Anthropic();
+  console.log(`Date: ${release.date}`);
+  console.log(`Summary: ${release.summary}\n`);
 
   // Use fullNotes if available, otherwise fall back to summary
   const storedNotes = release.fullNotes || release.summary;
-  const MIN_CONTENT_LENGTH = 100; // Minimum characters for reliable feature extraction
-
-  // Output directory for checking existing features
-  const outputDir = options.output || DEFAULT_OUTPUT_DIR;
 
   // Try to load existing features.json if --use-stored-source is set
   let existingFeatures = null;
   if (options.useStoredSource) {
     const files = await fs.readdir(outputDir).catch(() => []);
     const featuresFile = files.find(
-      (f) => f.startsWith(`${options.tool}-${release.version}`) && f.endsWith('-features.json')
+      (f) => f.startsWith(`${release.tool}-${release.version}`) && f.endsWith('-features.json')
     );
     if (featuresFile) {
       try {
@@ -702,18 +685,16 @@ async function main() {
 
   // Fetch enriched release notes if content is sparse
   let enrichedNotes = null;
-  let sourceOrigin = 'fullNotes'; // Track where content came from: 'fullNotes' | 'fetched' | 'stored' | 'compare'
+  let sourceOrigin = 'fullNotes';
   let fetchRetryAttempts = 0;
 
   if (options.useStoredSource && existingFeatures?.sourceContent) {
-    // Use stored content from previous extraction
     console.log(`Using stored source content (${existingFeatures.sourceContent.length} chars)`);
     enrichedNotes = existingFeatures.sourceContent;
     sourceOrigin = 'stored';
   } else if (storedNotes.length < MIN_CONTENT_LENGTH && release.url) {
     console.log(`Content is sparse (${storedNotes.length} chars), fetching full release notes...`);
 
-    // Use retry wrapper for fetching
     try {
       enrichedNotes = await withRetry(
         async (attempt) => {
@@ -725,16 +706,13 @@ async function main() {
       sourceOrigin = 'fetched';
     } catch (err) {
       console.warn(`\n⚠️  WARNING: Failed to fetch release notes after ${fetchRetryAttempts} attempts: ${err.message}`);
-      // Fall back to stored notes even if sparse
       enrichedNotes = storedNotes;
       sourceOrigin = 'fullNotes';
     }
 
-    // If still sparse after fetching, try GitHub compare API fallback
+    // Try GitHub compare API fallback
     if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
       console.log(`\n📊 Content still sparse, trying GitHub compare API fallback...`);
-
-      // Check if there's a compare URL in the stored notes or summary
       const compareInfo = extractCompareUrl(storedNotes) || extractCompareUrl(release.summary || '');
 
       if (compareInfo) {
@@ -757,11 +735,9 @@ async function main() {
       }
     }
 
-    // If still sparse after all attempts, warn user
     if (!enrichedNotes || enrichedNotes.length < MIN_CONTENT_LENGTH) {
       console.warn(`\n⚠️  WARNING: Release has minimal content (${enrichedNotes?.length || 0} chars).`);
-      console.warn('   Generated infographic may not be accurate.');
-      console.warn('   Consider using --force only for feature-rich releases.\n');
+      console.warn('   Generated infographic may not be accurate.\n');
     }
   } else if (storedNotes.length >= MIN_CONTENT_LENGTH) {
     console.log(`Using stored notes (${storedNotes.length} chars)`);
@@ -773,7 +749,6 @@ async function main() {
   console.log('Extracting features with Claude...');
   let features = null;
   let extractionRetryAttempts = 0;
-  let validationResult = null;
 
   try {
     features = await withRetry(
@@ -781,8 +756,7 @@ async function main() {
         extractionRetryAttempts = attempt;
         const extracted = await extractFeatures(client, release, options.count, enrichedNotes);
 
-        // Validate the extracted features
-        validationResult = validateFeatures(extracted);
+        const validationResult = validateFeatures(extracted);
         if (!validationResult.valid) {
           throw new Error(`Validation failed: ${validationResult.reason}`);
         }
@@ -795,23 +769,19 @@ async function main() {
     console.error(`\n❌ FATAL: Feature extraction failed after ${extractionRetryAttempts} attempts`);
     console.error(`   Error: ${err.message}\n`);
 
-    // Write failure report for downstream processing
-    const failureFile = await writeFailureReport(outputDir, options.tool, release.version, err.message, {
+    await writeFailureReport(outputDir, release.tool, release.version, err.message, {
       release,
       enrichedNotes,
       features,
       retryAttempts: extractionRetryAttempts,
     });
 
-    console.error('   This release may have insufficient content for infographic generation.');
-    console.error(`   Failure report: ${failureFile}`);
-    console.error('   A GitHub issue will be created for auto-remediation.\n');
-    process.exit(1);
+    return { success: false, error: err.message };
   }
 
   console.log(`Extracted ${features.features.length} features\n`);
 
-  // Generate prompts - always include 16:9 when updating releases (for OG images)
+  // Generate prompts
   const formats = options.allFormats
     ? ['1:1', '16:9', '9:16']
     : options.updateReleases
@@ -820,14 +790,14 @@ async function main() {
   const prompts = {};
 
   for (const format of formats) {
-    prompts[format] = generateImagePrompt(options.tool, features, format);
+    prompts[format] = generateImagePrompt(release.tool, features, format);
   }
 
   // Ensure output directory exists
   await fs.mkdir(outputDir, { recursive: true });
 
   const timestamp = new Date().toISOString().split('T')[0];
-  const baseFilename = `${options.tool}-${release.version}-${timestamp}`;
+  const baseFilename = `${release.tool}-${release.version}-${timestamp}`;
 
   for (const [format, prompt] of Object.entries(prompts)) {
     const formatSuffix = format.replace(':', 'x');
@@ -836,29 +806,22 @@ async function main() {
     await fs.writeFile(filepath, prompt);
     console.log(`Written: ${filepath}`);
 
-    // Generate image if requested
     if (options.generateImage) {
       const imagePath = path.join(outputDir, `${baseFilename}-${formatSuffix}.png`);
       try {
         const generatedPath = await generateImage(prompt, imagePath, format);
 
-        // If --update-releases is set, save to public folder
-        // Save both 1:1 (for display) and 16:9 (for OG images)
         if (options.updateReleases && (format === '1:1' || format === '16:9')) {
           await saveInfographicToPublic(generatedPath, release.id, data, format);
         }
       } catch (err) {
         console.error(`Failed to generate image for ${format}:`, err.message);
+        return { success: false, error: `Image generation failed: ${err.message}` };
       }
     }
   }
 
-  // Write releases.json to disk after all formats are processed
-  if (options.updateReleases && options.generateImage) {
-    await saveReleasesData(data);
-  }
-
-  // Also output features JSON with source metadata
+  // Save features JSON with metadata
   const featuresFilename = `${baseFilename}-features.json`;
   const featuresPath = path.join(outputDir, featuresFilename);
   const featuresWithMetadata = {
@@ -871,14 +834,138 @@ async function main() {
   await fs.writeFile(featuresPath, JSON.stringify(featuresWithMetadata, null, 2));
   console.log(`Written: ${featuresPath}`);
 
-  console.log('\n--- Generated Prompt (1:1) ---\n');
-  console.log(prompts['1:1']);
-  console.log('\n--- Features ---\n');
-  console.log(JSON.stringify(features, null, 2));
+  return { success: true };
+}
 
-  if (options.generateImage) {
-    console.log('\n--- Images Generated ---');
-    console.log('Check the output directory for generated infographic images.');
+// Main function
+async function main() {
+  const options = parseArgs();
+
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.error('Error: ANTHROPIC_API_KEY environment variable is required');
+    process.exit(1);
+  }
+
+  // Load releases data
+  const data = await loadReleases();
+  const outputDir = options.output || DEFAULT_OUTPUT_DIR;
+
+  // Initialize Anthropic client
+  const client = new Anthropic();
+
+  // Handle --all-missing mode: generate for all recent releases without infographics
+  if (options.allMissing) {
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - options.maxAgeDays);
+
+    console.log(`\n🔍 Finding releases missing infographics (last ${options.maxAgeDays} days)...\n`);
+
+    const missingReleases = data.releases.filter((r) => {
+      if (r.infographicUrl) return false;
+      if (!TOOL_CONFIGS[r.tool]) return false;
+      const releaseDate = new Date(r.date);
+      return releaseDate >= cutoffDate;
+    });
+
+    if (missingReleases.length === 0) {
+      console.log('✅ All releases have infographics!');
+      process.exit(0);
+    }
+
+    console.log(`Found ${missingReleases.length} releases missing infographics:`);
+    for (const r of missingReleases) {
+      console.log(`  - ${r.tool} ${r.version} (${r.date})`);
+    }
+
+    const results = { success: [], failed: [], skipped: [] };
+
+    for (const release of missingReleases) {
+      const result = await generateForRelease(release, data, client, options, outputDir);
+
+      if (result.skipped) {
+        results.skipped.push({ tool: release.tool, version: release.version });
+      } else if (result.success) {
+        results.success.push({ tool: release.tool, version: release.version });
+      } else {
+        results.failed.push({ tool: release.tool, version: release.version, error: result.error });
+      }
+    }
+
+    // Save releases.json once at the end (if any were generated)
+    if (options.updateReleases && options.generateImage && results.success.length > 0) {
+      await saveReleasesData(data);
+    }
+
+    // Print summary
+    console.log('\n' + '='.repeat(60));
+    console.log('SUMMARY');
+    console.log('='.repeat(60));
+    console.log(`✅ Success: ${results.success.length}`);
+    for (const r of results.success) {
+      console.log(`   - ${r.tool} v${r.version}`);
+    }
+    if (results.skipped.length > 0) {
+      console.log(`⏭️  Skipped: ${results.skipped.length}`);
+    }
+    if (results.failed.length > 0) {
+      console.log(`❌ Failed: ${results.failed.length}`);
+      for (const r of results.failed) {
+        console.log(`   - ${r.tool} v${r.version}: ${r.error}`);
+      }
+    }
+
+    // Exit with error if any failed
+    if (results.failed.length > 0) {
+      process.exit(1);
+    }
+    process.exit(0);
+  }
+
+  // Single release mode (original behavior)
+  if (!options.tool) {
+    console.error('Error: --tool argument is required (or use --all-missing)');
+    console.error('Run with --help for usage information');
+    process.exit(1);
+  }
+
+  if (!TOOL_CONFIGS[options.tool]) {
+    console.error(`Error: Unknown tool "${options.tool}"`);
+    console.error('Available tools:', Object.keys(TOOL_CONFIGS).join(', '));
+    process.exit(1);
+  }
+
+  const release = getRelease(data.releases, options.tool, options.version);
+
+  if (!release) {
+    const versionMsg = options.version ? ` version ${options.version}` : '';
+    console.error(`Error: No releases found for tool "${options.tool}"${versionMsg}`);
+    process.exit(1);
+  }
+
+  const result = await generateForRelease(release, data, client, options, outputDir);
+
+  // Save releases.json
+  if (options.updateReleases && options.generateImage && result.success && !result.skipped) {
+    await saveReleasesData(data);
+  }
+
+  if (!result.success) {
+    process.exit(1);
+  }
+
+  // Print prompt for single release mode (original behavior)
+  if (!options.generateImage) {
+    const formats = options.allFormats ? ['1:1', '16:9', '9:16'] : ['1:1'];
+    for (const format of formats) {
+      const prompt = generateImagePrompt(options.tool, {
+        features: [],
+        releaseInfo: `v${release.version}`,
+        releaseHighlight: '',
+      }, format);
+      console.log(`\n--- Generated Prompt (${format}) ---\n`);
+      console.log(prompt);
+    }
   }
 }
 
