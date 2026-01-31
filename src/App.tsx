@@ -40,8 +40,22 @@ function parseCompareVsSlug(slug: string): { tool1: ToolId; tool2: ToolId } | nu
   return { tool1, tool2 };
 }
 
+/** Extract release ID from /r/{releaseId} path */
+function getSharedReleaseId(): string | null {
+  const pathname = window.location.pathname;
+  if (pathname.startsWith('/r/')) {
+    return pathname.slice(3);
+  }
+  return null;
+}
+
 function getPageFromLocation(): Page {
   const pathname = window.location.pathname;
+
+  // /r/ paths are handled as home page with a scroll target
+  if (pathname.startsWith('/r/')) {
+    return { type: 'home' };
+  }
 
   // Path-based routing (primary)
   if (pathname === '/terms') return { type: 'terms' };
@@ -92,9 +106,11 @@ function getPageFromLocation(): Page {
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromLocation);
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
+  const [highlightedReleaseId, setHighlightedReleaseId] = useState<string | null>(null);
   const { groupedReleases, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
   const scrollMilestones = useRef(new Set<number>());
   const hasScrolledToAnchor = useRef(false);
+  const sharedReleaseId = useRef<string | null>(getSharedReleaseId());
 
   // Handle navigation changes (both path and hash)
   useEffect(() => {
@@ -119,16 +135,28 @@ function App() {
   useEffect(() => {
     if (currentPage.type !== 'home') return;
     if (!loading && !error && groupedReleases.length > 0 && !hasScrolledToAnchor.current) {
-      const hash = window.location.hash.slice(1);
-      // Only scroll to anchor if it's not a route hash
-      if (hash && !hash.startsWith('/')) {
+      // Check for shared release link (/r/{releaseId}) first
+      const targetId = sharedReleaseId.current || (() => {
+        const hash = window.location.hash.slice(1);
+        // Only use hash if it's not a route hash
+        return hash && !hash.startsWith('/') ? hash : null;
+      })();
+
+      if (targetId) {
         // Use double requestAnimationFrame to ensure DOM has been painted after React render
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            const element = document.getElementById(hash);
+            const element = document.getElementById(targetId);
             if (element) {
               element.scrollIntoView({ behavior: 'smooth', block: 'center' });
               hasScrolledToAnchor.current = true;
+
+              // Apply highlight effect for shared links
+              if (sharedReleaseId.current) {
+                setHighlightedReleaseId(targetId);
+                // Remove highlight after animation completes
+                setTimeout(() => setHighlightedReleaseId(null), 3000);
+              }
             }
           });
         });
@@ -243,7 +271,11 @@ function App() {
 
         {!loading && !error && (
           <>
-            <Timeline key={selectedTool} groupedReleases={groupedReleases} />
+            <Timeline
+              key={selectedTool}
+              groupedReleases={groupedReleases}
+              highlightedReleaseId={highlightedReleaseId}
+            />
             {isLimited && (
               <SignInPrompt
                 message={limitedMessage || undefined}
