@@ -32,7 +32,7 @@ export function ToolFilter({ selectedTool, onSelect }: ToolFilterProps) {
   }, []);
 
   return (
-    <div className="relative mb-6 sm:mb-8">
+    <div className="relative mb-3 sm:mb-4">
       {/* Left fade indicator */}
       {showLeftFade && (
         <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
