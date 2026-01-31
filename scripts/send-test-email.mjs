@@ -23,7 +23,6 @@ const TOOL_COLORS = {
   'gemini-cli': '#00ACC1',
   'kiro': '#8B5CF6',
   'github-copilot': '#8534F3',
-  'aider': '#22c55e',
   'windsurf': '#00D4AA',
 };
 

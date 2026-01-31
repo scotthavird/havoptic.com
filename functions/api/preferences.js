@@ -28,7 +28,6 @@ const VALID_TOOLS = [
   'gemini-cli',
   'kiro',
   'github-copilot',
-  'aider',
   'windsurf',
 ];
 

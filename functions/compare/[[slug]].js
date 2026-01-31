@@ -28,10 +28,6 @@ const TOOL_CONFIG = {
     displayName: 'GitHub Copilot CLI',
     shortName: 'Copilot',
   },
-  'aider': {
-    displayName: 'Aider',
-    shortName: 'Aider',
-  },
   'windsurf': {
     displayName: 'Windsurf',
     shortName: 'Windsurf',

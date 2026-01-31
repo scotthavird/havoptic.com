@@ -5,8 +5,8 @@ interface PageMeta {
   description: string;
 }
 
-const DEFAULT_TITLE = 'Havoptic - AI Tool Releases | Track Claude Code, Cursor, Gemini CLI, Copilot, Aider & Windsurf Updates';
-const DEFAULT_DESCRIPTION = 'Stay up-to-date with the latest releases from top AI coding tools. Track version updates, changelogs, and new features from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf in one place.';
+const DEFAULT_TITLE = 'Havoptic - AI Tool Releases | Track Claude Code, Cursor, Gemini CLI, Copilot & Windsurf Updates';
+const DEFAULT_DESCRIPTION = 'Stay up-to-date with the latest releases from top AI coding tools. Track version updates, changelogs, and new features from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, and Windsurf in one place.';
 
 /**
  * Hook to dynamically update page title and meta description.
@@ -47,11 +47,11 @@ export const PAGE_META = {
   },
   blog: {
     title: 'Blog | Havoptic - AI Coding Tool Insights',
-    description: 'In-depth analysis, comparisons, and insights about AI coding tools including Claude Code, Cursor, Gemini CLI, GitHub Copilot, Aider, and Windsurf.',
+    description: 'In-depth analysis, comparisons, and insights about AI coding tools including Claude Code, Cursor, Gemini CLI, GitHub Copilot, and Windsurf.',
   },
   compare: {
     title: 'Compare AI Coding Tools | Havoptic',
-    description: 'Side-by-side comparison of AI coding tools: Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf. Compare features, pricing, and capabilities.',
+    description: 'Side-by-side comparison of AI coding tools: Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, and Windsurf. Compare features, pricing, and capabilities.',
   },
   trends: {
     title: 'Trends & Insights | Havoptic',
