@@ -41,6 +41,16 @@ jobs:
         with:
           ref: main  # Always get latest to include newly fetched releases
 
+      - name: Download old releases artifact (for notification comparison)
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: old-releases-for-notification
+          path: /tmp
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+        continue-on-error: true  # May not exist if no new releases
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -127,6 +137,20 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: add generated infographics for releases"
           git pull --rebase origin main
           git push
+
+      - name: Notify subscribers about new releases (with infographics)
+        if: github.event_name == 'workflow_run' && steps.infographic-changes.outputs.has_infographics == 'true'
+        env:
+          NOTIFY_API_KEY: ${{ secrets.NOTIFY_API_KEY }}
+          NOTIFY_API_URL: https://havoptic.com/api/notify
+        run: |
+          # Only notify if we have the old releases artifact
+          if [ -f /tmp/old-releases.json ]; then
+            echo "Sending notifications with infographics included..."
+            node scripts/notify-subscribers.mjs --old=/tmp/old-releases.json --new=public/data/releases.json
+          else
+            echo "No old releases artifact found, skipping notification"
+          fi
 
       - name: Create GitHub issues for failures
         if: steps.generate.outputs.has_failures == 'true'
