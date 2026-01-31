@@ -51,12 +51,6 @@ const TOOL_CONFIGS = {
     style: 'Purple glassmorphism, dark gradient background, IDE-inspired modern aesthetic',
     alternativeUrls: ['https://www.cursor.com/changelog'],
   },
-  aider: {
-    displayName: 'AIDER',
-    primaryColor: '#22c55e',
-    style: 'Terminal green on dark background, retro-modern hacker aesthetic',
-    alternativeUrls: ['https://aider.chat/HISTORY.html'],
-  },
 };
 
 // Track API calls for cost control

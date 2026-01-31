@@ -10,7 +10,6 @@ const TOOL_CONFIG = {
   'gemini-cli': { displayName: 'Gemini CLI', hashtag: '#geminicli' },
   'kiro': { displayName: 'Kiro CLI', hashtag: '#kirocli' },
   'github-copilot': { displayName: 'GitHub Copilot CLI', hashtag: '#githubcopilot' },
-  'aider': { displayName: 'Aider', hashtag: '#aider' },
   'windsurf': { displayName: 'Windsurf', hashtag: '#windsurf' },
 };
 
