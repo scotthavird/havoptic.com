@@ -47,6 +47,8 @@ export function trackShare(
     | 'rss'
     | 'twitter'
     | 'linkedin'
+    | 'slack'
+    | 'teams'
     | 'email_invite'
     | 'twitter_invite'
     | 'linkedin_invite'
