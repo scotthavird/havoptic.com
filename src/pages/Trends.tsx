@@ -184,23 +184,23 @@ export function Trends() {
 
   if (loading) {
     return (
-      <div className="py-8">
+      <div className="py-2 sm:py-4">
         <div className="text-center py-12 text-slate-400">Loading trends data...</div>
       </div>
     );
   }
 
   return (
-    <div className="py-8">
+    <div className="py-2 sm:py-4">
       <BreadcrumbSchema items={BREADCRUMBS.trends} />
       <Link
         href="/"
-        className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
+        className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-3 inline-block"
       >
         &larr; Back to Timeline
       </Link>
 
-      <div className="mb-8">
+      <div className="mb-3 sm:mb-4">
         <h1 className="text-3xl font-bold text-white mb-2">Trends & Insights</h1>
         <p className="text-slate-400">
           Compare growth, popularity, and release velocity across AI coding tools
