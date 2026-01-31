@@ -9,7 +9,7 @@ interface LayoutProps {
 
 function Header() {
   return (
-    <header className="border-b border-slate-800 py-4 mb-6">
+    <header className="border-b border-slate-800 py-2 mb-3">
       <nav className="flex items-center justify-between">
         <Link href="/" className="text-xl font-bold text-white hover:text-slate-200 transition-colors">
           Havoptic

@@ -41,10 +41,10 @@ export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProp
         const showYearHeader = !(isFirstYear && isCurrentYear);
 
         return (
-          <section key={year} className="mb-6 sm:mb-8" aria-label={`${year} releases`}>
+          <section key={year} className="mb-3 sm:mb-4" aria-label={`${year} releases`}>
             {/* Year header - hidden for current year at the top */}
             {showYearHeader && (
-              <header className="mb-4 sm:mb-6">
+              <header className="mb-2 sm:mb-3">
                 <h2 className="text-xl sm:text-2xl font-bold text-white">{year}</h2>
               </header>
             )}
@@ -65,10 +65,10 @@ export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProp
               const showMonthHeader = !(isFirstMonth && isCurrentMonth);
 
               return (
-                <div key={`${year}-${month}`} className="mb-4 sm:mb-6" role="group" aria-label={`${monthName} ${year} releases`}>
+                <div key={`${year}-${month}`} className="mb-2 sm:mb-3" role="group" aria-label={`${monthName} ${year} releases`}>
                   {/* Month label - hidden for current month at the top */}
                   {showMonthHeader && (
-                    <div className="mb-3">
+                    <div className="mb-1.5">
                       <span className="text-xs sm:text-sm font-medium text-slate-400">
                         {monthName}
                       </span>

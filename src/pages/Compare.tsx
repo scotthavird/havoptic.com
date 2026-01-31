@@ -98,7 +98,7 @@ export function Compare() {
 
   if (loading) {
     return (
-      <div className="py-8">
+      <div className="py-2 sm:py-4">
         <div className="text-center py-12 text-slate-400">Loading feature comparison...</div>
       </div>
     );
@@ -106,7 +106,7 @@ export function Compare() {
 
   if (error) {
     return (
-      <div className="py-8">
+      <div className="py-2 sm:py-4">
         <div className="text-center py-12 text-red-400" role="alert">
           Error: {error}
         </div>
@@ -115,16 +115,16 @@ export function Compare() {
   }
 
   return (
-    <div className="py-8">
+    <div className="py-2 sm:py-4">
       <BreadcrumbSchema items={BREADCRUMBS.compare} />
       <Link
         href="/"
-        className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-6 inline-block"
+        className="text-blue-400 hover:text-blue-300 transition-colors text-sm mb-3 inline-block"
       >
         &larr; Back to Timeline
       </Link>
 
-      <div className="mb-8">
+      <div className="mb-3 sm:mb-4">
         <h1 className="text-3xl font-bold text-white mb-2">Feature Comparison</h1>
         <p className="text-slate-400">
           Compare capabilities and release velocity across AI coding tools
@@ -137,8 +137,8 @@ export function Compare() {
       </div>
 
       {/* Tool selector */}
-      <div className="mb-8">
-        <h2 className="text-sm font-medium text-slate-400 mb-3">Select tools to compare (max 4)</h2>
+      <div className="mb-3 sm:mb-4">
+        <h2 className="text-sm font-medium text-slate-400 mb-2">Select tools to compare (max 4)</h2>
         <ToolSearchSelector
           selectedTools={selectedTools}
           onChange={setSelectedTools}
