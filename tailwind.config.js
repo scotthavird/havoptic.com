@@ -24,6 +24,7 @@ export default {
         'bell-pulse': 'bellPulse 2s ease-in-out infinite',
         'bell-ring': 'bellRing 0.5s ease-in-out',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+        'pulse-subtle': 'pulseSubtle 1.5s ease-in-out 2',
       },
       keyframes: {
         sparkleFade: {
@@ -62,6 +63,16 @@ export default {
         glowPulse: {
           '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
           '50%': { opacity: '0.7', transform: 'scale(1.1)' },
+        },
+        pulseSubtle: {
+          '0%, 100%': {
+            boxShadow: '0 0 0 0 rgba(96, 165, 250, 0)',
+            borderColor: 'rgba(96, 165, 250, 1)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px 4px rgba(96, 165, 250, 0.4)',
+            borderColor: 'rgba(96, 165, 250, 1)',
+          },
         },
       },
     },

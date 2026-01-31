@@ -12,9 +12,10 @@ function formatVersion(version: string): string {
 
 interface ReleaseCardProps {
   release: Release;
+  isHighlighted?: boolean;
 }
 
-export function ReleaseCard({ release }: ReleaseCardProps) {
+export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps) {
   const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
   const lastTapTime = useRef<number>(0);
   const config = TOOL_CONFIG[release.tool];
@@ -35,7 +36,11 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
   return (
     <article
       id={release.id}
-      className="-mx-4 sm:mx-0 bg-slate-800/50 sm:rounded-lg overflow-hidden border-y sm:border border-slate-700 hover:border-slate-600 transition-colors"
+      className={`-mx-4 sm:mx-0 bg-slate-800/50 sm:rounded-lg overflow-hidden border-y sm:border transition-all duration-300 ${
+        isHighlighted
+          ? 'border-blue-400 ring-2 ring-blue-400/50 animate-pulse-subtle'
+          : 'border-slate-700 hover:border-slate-600'
+      }`}
       aria-label={`${config.displayName} version ${release.version} release`}
     >
       {/* Infographic */}

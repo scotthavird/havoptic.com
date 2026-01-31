@@ -12,9 +12,10 @@ interface GroupedReleases {
 
 interface TimelineProps {
   groupedReleases: GroupedReleases[];
+  highlightedReleaseId?: string | null;
 }
 
-export function Timeline({ groupedReleases }: TimelineProps) {
+export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProps) {
   if (groupedReleases.length === 0) {
     return (
       <div className="text-center py-12 text-slate-500">
@@ -77,7 +78,11 @@ export function Timeline({ groupedReleases }: TimelineProps) {
                   {/* Release cards */}
                   <div className="space-y-3 sm:space-y-4">
                     {uniqueReleases.map((release) => (
-                      <ReleaseCard key={release.id} release={release} />
+                      <ReleaseCard
+                        key={release.id}
+                        release={release}
+                        isHighlighted={release.id === highlightedReleaseId}
+                      />
                     ))}
                   </div>
                 </div>
