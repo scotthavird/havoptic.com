@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Footer } from './Footer';
 import { Link } from './Link';
+import { SettingsDropdown } from './SettingsDropdown';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,31 +14,28 @@ function Header() {
         <Link href="/" className="text-xl font-bold text-white hover:text-slate-200 transition-colors">
           Havoptic
         </Link>
-        <div className="flex items-center gap-6 text-sm">
-          <Link
-            href="/"
-            className="text-slate-400 hover:text-white transition-colors"
-          >
-            Timeline
-          </Link>
-          <Link
-            href="/trends"
-            className="text-slate-400 hover:text-white transition-colors"
-          >
-            Trends
-          </Link>
-          <Link
-            href="/blog"
-            className="text-slate-400 hover:text-white transition-colors"
-          >
-            Insights
-          </Link>
-          <Link
-            href="/compare"
-            className="text-slate-400 hover:text-white transition-colors"
-          >
-            Compare
-          </Link>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 text-sm">
+            <Link
+              href="/trends"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Trends
+            </Link>
+            <Link
+              href="/blog"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Insights
+            </Link>
+            <Link
+              href="/compare"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Compare
+            </Link>
+          </div>
+          <SettingsDropdown />
         </div>
       </nav>
     </header>
