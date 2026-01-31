@@ -34,11 +34,6 @@ const TOOL_CONFIG = {
     description: 'Track GitHub Copilot CLI releases, features, and updates. Compare with other AI coding tools.',
     hashtag: '#githubcopilot',
   },
-  'aider': {
-    displayName: 'Aider',
-    description: 'Track Aider releases, features, and updates. AI pair programming in your terminal.',
-    hashtag: '#aider',
-  },
   'windsurf': {
     displayName: 'Windsurf',
     description: 'Track Windsurf releases, features, and updates. Codeium AI-powered IDE.',

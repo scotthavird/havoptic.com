@@ -9,7 +9,7 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const SITE_URL = 'https://havoptic.com';
 
-const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'aider', 'windsurf'];
+const TOOL_IDS = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro', 'github-copilot', 'windsurf'];
 
 function escapeXml(str) {
   if (!str) return '';
@@ -158,7 +158,7 @@ async function generateRssFeed(releases, lastUpdated) {
   <channel>
     <title>Havoptic - AI Tool Releases</title>
     <link>${SITE_URL}/</link>
-    <description>Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf</description>
+    <description>Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, and Windsurf</description>
     <language>en-us</language>
     <lastBuildDate>${new Date(lastUpdated || Date.now()).toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
@@ -178,7 +178,7 @@ async function generateJsonFeed(releases, lastUpdated) {
     title: 'Havoptic - AI Tool Releases',
     home_page_url: SITE_URL,
     feed_url: `${SITE_URL}/feed.json`,
-    description: 'Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf',
+    description: 'Latest releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, and Windsurf',
     language: 'en-US',
     authors: [
       {
@@ -223,7 +223,7 @@ async function generateStructuredData(releases) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "AI Coding Tool Releases",
-    "description": "Timeline of releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, Aider, and Windsurf",
+    "description": "Timeline of releases from Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro, GitHub Copilot CLI, and Windsurf",
     "numberOfItems": recentReleases.length,
     "itemListElement": recentReleases.map((release, index) => ({
       "@type": "ListItem",

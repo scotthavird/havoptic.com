@@ -18,7 +18,6 @@ on:
           - openai-codex
           - gemini-cli
           - cursor
-          - aider
           - github-copilot
           - windsurf
       generate_images:

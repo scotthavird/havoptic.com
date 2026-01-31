@@ -92,7 +92,6 @@ export const TOOL_GITHUB_REPOS: Record<ToolId, string | null> = {
   'gemini-cli': 'google-gemini/gemini-cli',
   'kiro': null, // Closed source
   'github-copilot': 'github/copilot-cli',
-  'aider': 'Aider-AI/aider',
   'windsurf': null, // Closed source (Codeium)
 };
 
@@ -103,6 +102,5 @@ export const TOOL_NPM_PACKAGES: Record<ToolId, string | null> = {
   'gemini-cli': '@anthropic-ai/gemini-cli', // Placeholder - verify actual package name
   'kiro': null, // Not an npm package
   'github-copilot': '@github/copilot',
-  'aider': 'aider-chat', // pip package, not npm
   'windsurf': null, // Desktop app, not an npm package
 };

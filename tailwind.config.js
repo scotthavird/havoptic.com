@@ -13,7 +13,6 @@ export default {
         'gemini': '#00ACC1',
         'kiro': '#8B5CF6',
         'copilot': '#8534F3',
-        'aider': '#22c55e',
         'windsurf': '#00D4AA',
       },
       animation: {

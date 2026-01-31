@@ -141,7 +141,6 @@ export function ReleaseVelocityChart({ releases, selectedTools, months = 6 }: Re
                   'bg-gemini': '#00ACC1',
                   'bg-kiro': '#8B5CF6',
                   'bg-copilot': '#8534F3',
-                  'bg-aider': '#22c55e',
                   'bg-windsurf': '#00D4AA',
                 };
                 const fill = colorMap[config.bgColor] || '#6B7280';

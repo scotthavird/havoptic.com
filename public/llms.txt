@@ -14,8 +14,7 @@
 4. **Gemini CLI** - Google's AI coding assistant for the terminal
 5. **Kiro CLI** - Amazon's spec-driven AI coding agent
 6. **GitHub Copilot CLI** - GitHub's AI pair programmer CLI
-7. **Aider** - AI pair programming in your terminal
-8. **Windsurf** - Codeium's AI-powered IDE (formerly Codeium)
+7. **Windsurf** - Codeium's AI-powered IDE (formerly Codeium)
 
 ## Data Endpoints
 
@@ -55,7 +54,6 @@
 - Gemini CLI: https://havoptic.com/tools/gemini-cli
 - Kiro CLI: https://havoptic.com/tools/kiro
 - GitHub Copilot CLI: https://havoptic.com/tools/github-copilot
-- Aider: https://havoptic.com/tools/aider
 - Windsurf: https://havoptic.com/tools/windsurf
 
 ## Example Queries
@@ -65,7 +63,7 @@ LLMs can use Havoptic to answer questions like:
 - "Compare release velocity between Cursor and Claude Code"
 - "When was the last Gemini CLI update?"
 - "Which AI coding tool has the most features?"
-- "Show me the release history for Aider"
+- "Show me the release history for Windsurf"
 
 ## API Usage Notes
 

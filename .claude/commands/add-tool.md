@@ -3,7 +3,7 @@
 Add a new AI coding tool to the Havoptic timeline. This command guides through research, implementation, and integration of a new CLI tool.
 
 ## Arguments
-- `$ARGUMENTS` - The name of the tool to add (e.g., "GitHub Copilot CLI", "Aider", "Continue")
+- `$ARGUMENTS` - The name of the tool to add (e.g., "GitHub Copilot CLI", "Codestory", "Continue")
 
 ## Instructions
 
