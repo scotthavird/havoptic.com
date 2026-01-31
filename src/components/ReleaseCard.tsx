@@ -5,6 +5,11 @@ import { ReleaseShareButtons } from './ReleaseShareButtons';
 import { ImageZoomModal } from './ImageZoomModal';
 import { LazyImage } from './LazyImage';
 
+/** Format version with v prefix, avoiding double-v if version already starts with v */
+function formatVersion(version: string): string {
+  return version.startsWith('v') ? version : `v${version}`;
+}
+
 interface ReleaseCardProps {
   release: Release;
 }
@@ -45,7 +50,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
             {config.displayName}
           </span>
           <h3 className="text-white font-mono font-semibold text-sm sm:text-base truncate">
-            v{release.version}
+            {formatVersion(release.version)}
           </h3>
           <ReleaseShareButtons release={release} />
         </div>
@@ -98,7 +103,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
               >
                 <LazyImage
                   src={release.infographicUrl}
-                  alt={`${config.displayName} v${release.version} release infographic`}
+                  alt={`${config.displayName} ${formatVersion(release.version)} release infographic`}
                   className="w-full h-auto"
                 />
                 {/* Zoom hint overlay */}
@@ -118,7 +123,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
           {release.infographicUrl && (
             <ImageZoomModal
               src={release.infographicUrl}
-              alt={`${config.displayName} v${release.version} release infographic`}
+              alt={`${config.displayName} ${formatVersion(release.version)} release infographic`}
               isOpen={isZoomModalOpen}
               onClose={() => setIsZoomModalOpen(false)}
             />
@@ -133,7 +138,7 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
           rel="noopener noreferrer"
           onClick={() => trackReleaseClick(release.tool, release.version, release.url)}
           className="inline-flex items-center text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors"
-          aria-label={`View ${config.displayName} v${release.version} release on GitHub`}
+          aria-label={`View ${config.displayName} ${formatVersion(release.version)} release on GitHub`}
         >
           View Release
           <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

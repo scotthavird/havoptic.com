@@ -3,6 +3,11 @@ import { trackShare } from '../utils/analytics';
 import type { Release } from '../types/release';
 import { TOOL_CONFIG } from '../types/release';
 
+/** Format version with v prefix, avoiding double-v if version already starts with v */
+function formatVersion(version: string): string {
+  return version.startsWith('v') ? version : `v${version}`;
+}
+
 interface ReleaseShareButtonsProps {
   release: Release;
   className?: string;
@@ -30,7 +35,7 @@ function getDisplayHost(): string {
 
 function buildShareText(release: Release, includeUrl: boolean): string {
   const hashtag = TOOL_CONFIG[release.tool].hashtag;
-  const version = `v${release.version}`;
+  const version = formatVersion(release.version);
 
   // Concise, compelling format: emoji + key info + hashtags + optional link
   // Use /r/ path for dynamic OG image support
@@ -43,7 +48,7 @@ export function ReleaseShareButtons({ release, className = '' }: ReleaseShareBut
 
   // Use /r/ path for sharing - enables dynamic OG meta tags
   const shareUrl = `${getShareBaseUrl()}/r/${release.id}`;
-  const shareTitle = `${release.toolDisplayName} v${release.version}`;
+  const shareTitle = `${release.toolDisplayName} ${formatVersion(release.version)}`;
 
   const handleTwitterShare = () => {
     // Twitter adds the URL separately, so don't include it in text
