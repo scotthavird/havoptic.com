@@ -4,6 +4,7 @@ import { trackReleaseClick } from '../utils/analytics';
 import { ReleaseShareButtons } from './ReleaseShareButtons';
 import { ImageZoomModal } from './ImageZoomModal';
 import { LazyImage } from './LazyImage';
+import { ReleaseInfoFallback } from './ReleaseInfoFallback';
 
 /** Format version with v prefix, avoiding double-v if version already starts with v */
 function formatVersion(version: string): string {
@@ -43,8 +44,8 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
       }`}
       aria-label={`${config.displayName} version ${release.version} release`}
     >
-      {/* Infographic */}
-      {release.infographicUrl && (
+      {/* Infographic or fallback info */}
+      {release.infographicUrl ? (
         <div
           className="relative cursor-pointer group"
           onClick={handleImageInteraction}
@@ -73,6 +74,8 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
             </span>
           </div>
         </div>
+      ) : (
+        <ReleaseInfoFallback release={release} />
       )}
 
       {/* Zoom modal */}
