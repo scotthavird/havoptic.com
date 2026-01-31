@@ -32,6 +32,7 @@ Use these commands to streamline the Git workflow:
 
 - `/ship <description>` - Start a new feature: creates branch, tracks todos, commits incrementally
 - `/feature <branch: description>` - Create feature branch and implement with incremental commits
+- `/quick <branch: description>` - End-to-end: create branch, implement, PR, wait for CI, merge, verify deploy
 - `/merge [pr-number]` - Squash merge PR to main, verify production deploy
 - `/prs` - Show status of all pull requests
 
