@@ -121,6 +121,12 @@ function App() {
       if (newPage.type !== 'home') {
         window.scrollTo(0, 0);
       }
+      // Reset scroll flag and update shared release ID on navigation
+      const newSharedReleaseId = getSharedReleaseId();
+      if (newSharedReleaseId) {
+        sharedReleaseId.current = newSharedReleaseId;
+        hasScrolledToAnchor.current = false;
+      }
     };
 
     window.addEventListener('popstate', handleNavigation);
