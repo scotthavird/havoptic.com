@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
 import { TOOL_CONFIG, type Release } from '../types/release';
-import { trackReleaseClick } from '../utils/analytics';
+import { trackReleaseClick, trackOutboundClick, trackInfographicZoom } from '../utils/analytics';
 import { ReleaseShareButtons } from './ReleaseShareButtons';
 import { ImageZoomModal } from './ImageZoomModal';
 import { LazyImage } from './LazyImage';
@@ -30,9 +30,10 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
       // Double tap/click detected - open zoom modal
       e.preventDefault();
       setIsZoomModalOpen(true);
+      trackInfographicZoom(release.tool, release.version);
     }
     lastTapTime.current = now;
-  }, []);
+  }, [release.tool, release.version]);
 
   return (
     <article
@@ -93,7 +94,10 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
           href={release.url}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackReleaseClick(release.tool, release.version, release.url)}
+          onClick={() => {
+            trackReleaseClick(release.tool, release.version, release.url);
+            trackOutboundClick(release.url, release.tool);
+          }}
           className="inline-flex items-center text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors"
           aria-label={`View ${config.displayName} ${formatVersion(release.version)} release on GitHub`}
         >

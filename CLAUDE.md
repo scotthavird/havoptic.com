@@ -49,7 +49,27 @@ npm run lint         # Run ESLint
 npm run preview      # Preview production build locally
 npm run fetch-releases  # Fetch latest releases from sources (requires GITHUB_TOKEN)
 npm run generate:infographic -- --tool=<id>  # Generate infographic for a tool
+npm run setup:ga4 -- --property=<id>  # Configure GA4 via Admin API
 ```
+
+### GA4 Setup
+
+Configure Google Analytics 4 via the Admin API to create key events and custom dimensions:
+
+```bash
+# Prerequisites: Service account with Editor access on GA4 property
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
+
+# Dry run (preview changes)
+npm run setup:ga4 -- --property=YOUR_PROPERTY_ID
+
+# Apply changes
+npm run setup:ga4 -- --property=YOUR_PROPERTY_ID --apply
+```
+
+The script creates:
+- Key event: `newsletter_success` (conversion tracking)
+- Custom dimensions: `tool_name`, `event_category`, `version`, `method`, `link_url`, `percent_scrolled`
 
 ### Infographic Generation
 

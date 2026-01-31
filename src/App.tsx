@@ -5,7 +5,7 @@ import { Layout } from './components/Layout';
 import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
 import { TOOL_CONFIG, type ToolId } from './types/release';
-import { trackScrollDepth } from './utils/analytics';
+import { trackScrollDepth, trackPageView } from './utils/analytics';
 import { CompareVs } from './pages/CompareVs';
 import { TermsOfService } from './pages/TermsOfService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
@@ -136,6 +136,44 @@ function App() {
       window.removeEventListener('hashchange', handleNavigation);
     };
   }, []);
+
+  // Track SPA page views
+  useEffect(() => {
+    const pagePath = window.location.pathname;
+    let pageTitle = 'Havoptic';
+
+    switch (currentPage.type) {
+      case 'home':
+        pageTitle = 'AI Tool Releases | Havoptic';
+        break;
+      case 'blog':
+        pageTitle = 'Blog | Havoptic';
+        break;
+      case 'blogPost':
+        pageTitle = `${currentPage.slug} | Havoptic Blog`;
+        break;
+      case 'compare':
+        pageTitle = 'Compare AI Tools | Havoptic';
+        break;
+      case 'compareVs':
+        pageTitle = `${TOOL_CONFIG[currentPage.tool1]?.displayName || currentPage.tool1} vs ${TOOL_CONFIG[currentPage.tool2]?.displayName || currentPage.tool2} | Havoptic`;
+        break;
+      case 'trends':
+        pageTitle = 'AI Tool Trends | Havoptic';
+        break;
+      case 'tool':
+        pageTitle = `${TOOL_CONFIG[currentPage.toolId]?.displayName || currentPage.toolId} Releases | Havoptic`;
+        break;
+      case 'terms':
+        pageTitle = 'Terms of Service | Havoptic';
+        break;
+      case 'privacy':
+        pageTitle = 'Privacy Policy | Havoptic';
+        break;
+    }
+
+    trackPageView(pagePath, pageTitle);
+  }, [currentPage]);
 
   // Scroll to anchor element after data loads and renders (only on home page)
   useEffect(() => {

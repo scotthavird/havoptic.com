@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNewsletterBell } from '../context/NewsletterBellContext';
-import { trackShare } from '../utils/analytics';
+import { trackShare, trackNewsletterEvent } from '../utils/analytics';
 
 const DISMISSED_KEY = 'havoptic_signup_dismissed';
 const SUBSCRIBED_KEY = 'havoptic_subscribed';
@@ -174,6 +174,13 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   useEffect(() => {
     const dismissed = getIsDismissed();
     setIsFullyHidden(dismissed);
+
+    // Track form view when component mounts and is visible
+    if (!dismissed && !isSubscribed && variant === 'hero') {
+      trackNewsletterEvent('form_view', { variant });
+    }
+    // Only run on mount - isSubscribed and variant are stable
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Pre-fill email when user logs in
@@ -184,6 +191,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   }, [user?.email, email]);
 
   const handleDismiss = () => {
+    trackNewsletterEvent('dismiss', { variant });
     if (panelRef.current && wrapperRef.current) {
       // Get the center position of the panel for the animation start
       const rect = panelRef.current.getBoundingClientRect();
@@ -230,6 +238,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
+    trackNewsletterEvent('submit', { variant });
 
     try {
       const response = await fetch('/api/subscribe', {
@@ -243,17 +252,21 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
       if (response.ok) {
         if (data.alreadySubscribed) {
           setSubmitStatus('already');
+          trackNewsletterEvent('already_subscribed', { variant });
         } else {
           setSubmitStatus('success');
           setLocalSubscribed();
+          trackNewsletterEvent('success', { variant });
         }
       } else {
         setSubmitStatus('error');
         setErrorMessage(data.error || 'Something went wrong');
+        trackNewsletterEvent('error', { variant, error: data.error || 'unknown' });
       }
     } catch {
       setSubmitStatus('error');
       setErrorMessage('Network error. Please try again.');
+      trackNewsletterEvent('error', { variant, error: 'network_error' });
     } finally {
       setIsSubmitting(false);
     }
