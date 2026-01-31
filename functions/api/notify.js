@@ -52,7 +52,7 @@ const normalizeVersion = (v) => {
   return `v${cleaned}`;
 };
 
-// Generate email content for new releases with infographics
+// Generate email content for new releases (teaser with CTA to drive site traffic)
 function generateEmailContent(releases) {
   const releaseCount = releases.length;
 
@@ -61,13 +61,9 @@ function generateEmailContent(releases) {
     ? `New: ${releases[0].toolDisplayName} ${normalizeVersion(releases[0].version)} Just Shipped`
     : `${releaseCount} AI Tool Updates You Need to See`;
 
-  // Build release cards with infographics
+  // Build release cards with summary text and CTA
   const releaseCards = releases.map(r => {
     const toolColor = TOOL_COLORS[r.tool] || '#D97706';
-    const hasInfographic = !!r.infographicUrl;
-    const infographicSrc = hasInfographic
-      ? `https://havoptic.com${r.infographicUrl}`
-      : null;
     const version = normalizeVersion(r.version);
 
     // Format the date
@@ -118,22 +114,7 @@ function generateEmailContent(releases) {
                       </td>
                     </tr>
 
-                    ${hasInfographic ? `
-                    <!-- Infographic Image -->
-                    <tr>
-                      <td style="padding: 0 24px 20px;">
-                        <a href="${releasePageUrl}" target="_blank" style="display: block;">
-                          <img
-                            src="${infographicSrc}"
-                            alt="${r.toolDisplayName} ${version} release highlights"
-                            width="500"
-                            style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block; border: 1px solid #e2e8f0;"
-                          />
-                        </a>
-                      </td>
-                    </tr>
-                    ` : `
-                    <!-- Summary (fallback when no infographic) -->
+                    <!-- Summary -->
                     <tr>
                       <td style="padding: 0 24px 20px;">
                         <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #475569;">
@@ -141,13 +122,12 @@ function generateEmailContent(releases) {
                         </p>
                       </td>
                     </tr>
-                    `}
 
                     <!-- CTA Button -->
                     <tr>
                       <td style="padding: 0 24px 24px;">
                         <a href="${releasePageUrl}" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: ${toolColor}; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
-                          View on Havoptic &rarr;
+                          View Infographic &rarr;
                         </a>
                       </td>
                     </tr>
@@ -161,8 +141,8 @@ function generateEmailContent(releases) {
       text: `
 ${r.toolDisplayName} ${version}
 Released: ${releaseDate}
-${hasInfographic ? `Infographic: https://havoptic.com${r.infographicUrl}` : r.summary}
-View on Havoptic: ${releasePageUrl}
+${r.summary}
+View Infographic: ${releasePageUrl}
 `,
     };
   });
