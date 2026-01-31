@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Header } from './components/Header';
 import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
-import { NewsletterSignup } from './components/NewsletterSignup';
 import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
 import { TOOL_CONFIG, type ToolId } from './types/release';
@@ -94,7 +92,7 @@ function getPageFromLocation(): Page {
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromLocation);
   const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
-  const { groupedReleases, lastUpdated, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
+  const { groupedReleases, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
   const scrollMilestones = useRef(new Set<number>());
   const hasScrolledToAnchor = useRef(false);
 
@@ -226,12 +224,7 @@ function App() {
   // Render home page
   return (
     <Layout>
-      <Header lastUpdated={lastUpdated} />
       <main role="main" aria-label="AI Tool Releases Timeline">
-        <section aria-label="Newsletter signup" className="mb-6">
-          <NewsletterSignup variant="hero" />
-        </section>
-
         <nav aria-label="Filter by tool">
           <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
         </nav>
