@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "icon": "🛠️",
+      "name": "Customizable Spinner Verbs",
+      "description": "Personalize loading indicators with custom messages"
+    },
+    {
+      "icon": "🔒",
+      "name": "mTLS Proxy Support",
+      "description": "Enhanced corporate network connectivity and security"
+    },
+    {
+      "icon": "👥",
+      "name": "User Directory Isolation",
+      "description": "Prevents permission conflicts on shared systems"
+    },
+    {
+      "icon": "⚡",
+      "name": "Terminal Performance Boost",
+      "description": "Faster rendering with optimized screen layout"
+    },
+    {
+      "icon": "💻",
+      "name": "Smart Tab Completion",
+      "description": "Fixed input field updates when accepting"
+    },
+    {
+      "icon": "🔗",
+      "name": "Purple PR Status",
+      "description": "Visual indicator for merged pull requests"
+    }
+  ],
+  "releaseHighlight": "Enhanced corporate network support with mTLS and proxy connectivity fixes, plus improved terminal performance and customizable spinner verbs for better user experience.",
+  "releaseInfo": "v2.1.23 • January 28, 2026",
+  "sourceContent": "- Added customizable spinner verbs setting (spinnerVerbs)\n- Fixed mTLS and proxy connectivity for users behind corporate proxies or using client certificates\n- Fixed per-user temp directory isolation to prevent permission conflicts on shared systems\n- Fixed a race condition that could cause 400 errors when prompt caching scope was enabled\n- Fixed pending async hooks not being cancelled when headless streaming sessions ended\n- Fixed tab completion not updating the input field when accepting a suggestion\n- Fixed ripgrep search timeouts silently returning empty results instead of reporting errors\n- Improved terminal rendering performance with optimized screen data layout\n- Changed Bash commands to show timeout duration alongside elapsed time\n- Changed merged pull requests to show a purple status indicator in the prompt footer\n- [IDE] Fixed model options displaying incorrect region strings for Bedrock users in headless mode",
+  "sourceUrl": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+  "sourceOrigin": "fullNotes",
+  "extractedAt": "2026-02-01T15:06:46.331Z"
+}
