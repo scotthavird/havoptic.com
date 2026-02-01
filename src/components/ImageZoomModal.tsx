@@ -9,7 +9,7 @@ interface ImageZoomModalProps {
 }
 
 export function ImageZoomModal({ src, alt, isOpen, onClose }: ImageZoomModalProps) {
-  const { scale, position, handlers, resetZoom, isZoomed } = usePinchZoom({
+  const { scale, position, handlers, resetZoom, toggleZoom, isZoomed } = usePinchZoom({
     minScale: 1,
     maxScale: 4,
     zoomStep: 0.3,
@@ -63,16 +63,19 @@ export function ImageZoomModal({ src, alt, isOpen, onClose }: ImageZoomModalProp
       const timeDiff = now - lastTapTime.current;
 
       if (timeDiff < 300 && timeDiff > 0) {
-        // Double tap detected - toggle zoom
+        // Double tap detected - toggle zoom centered on tap point
         e.preventDefault();
-        if (isZoomed) {
-          resetZoom();
+        const touch = e.changedTouches[0];
+        const rect = containerRef.current?.getBoundingClientRect();
+        if (rect && touch) {
+          const centerX = touch.clientX - rect.left;
+          const centerY = touch.clientY - rect.top;
+          toggleZoom(centerX, centerY, rect.width, rect.height);
         }
-        // Note: zoom in on double-tap is handled by the image itself expanding
       }
       lastTapTime.current = now;
     },
-    [isZoomed, resetZoom]
+    [toggleZoom]
   );
 
   if (!isOpen) {
@@ -107,11 +110,6 @@ export function ImageZoomModal({ src, alt, isOpen, onClose }: ImageZoomModalProp
           />
         </svg>
       </button>
-
-      {/* Zoom hint */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-white/60 text-xs sm:text-sm text-center pointer-events-none">
-        {isZoomed ? 'Pinch or scroll to zoom, drag to pan' : 'Pinch or scroll to zoom in'}
-      </div>
 
       {/* Image container */}
       <div

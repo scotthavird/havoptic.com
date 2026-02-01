@@ -24,6 +24,7 @@ interface UsePinchZoomReturn {
     onWheel: (e: React.WheelEvent) => void;
   };
   resetZoom: () => void;
+  toggleZoom: (centerX: number, centerY: number, containerWidth: number, containerHeight: number) => void;
   isZoomed: boolean;
 }
 
@@ -98,13 +99,15 @@ export function usePinchZoom(options: UsePinchZoomOptions = {}): UsePinchZoomRet
 
   const onTouchEnd = useCallback((e: React.TouchEvent) => {
     if (e.touches.length < 2) {
+      // Preserve the achieved scale for subsequent gestures
+      initialScale.current = scale;
       initialDistance.current = null;
     }
     if (e.touches.length === 0) {
       isDragging.current = false;
       lastPosition.current = position;
     }
-  }, [position]);
+  }, [position, scale]);
 
   // Mouse handlers for desktop
   const onMouseDown = useCallback((e: React.MouseEvent) => {
@@ -143,6 +146,28 @@ export function usePinchZoom(options: UsePinchZoomOptions = {}): UsePinchZoomRet
     }
   }, [scale, zoomStep, clampScale]);
 
+  // Toggle zoom centered on a specific point (for double-tap)
+  const toggleZoom = useCallback(
+    (centerX: number, centerY: number, containerWidth: number, containerHeight: number) => {
+      if (scale > 1) {
+        // Zoomed in - reset to 1x
+        resetZoom();
+      } else {
+        // At 1x - zoom to 2x centered on tap point
+        const targetScale = 2;
+        // Calculate offset to center the zoom on the tap point
+        // The tap point should stay in the same visual position after zoom
+        const offsetX = (containerWidth / 2 - centerX) * (targetScale - 1);
+        const offsetY = (containerHeight / 2 - centerY) * (targetScale - 1);
+
+        setScale(targetScale);
+        setPosition({ x: offsetX, y: offsetY });
+        initialScale.current = targetScale;
+      }
+    },
+    [scale, resetZoom]
+  );
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
@@ -163,6 +188,7 @@ export function usePinchZoom(options: UsePinchZoomOptions = {}): UsePinchZoomRet
       onWheel,
     },
     resetZoom,
+    toggleZoom,
     isZoomed: scale > 1,
   };
 }
