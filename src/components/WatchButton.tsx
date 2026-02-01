@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import type { ToolId } from '../types/release';
 import { TOOL_CONFIG } from '../types/release';
-import { useWatchlist } from '../hooks/useWatchlist';
-import { trackWatchlistAction } from '../utils/analytics';
+import { useWatchlist } from '../context/WatchlistContext';
 
 interface WatchButtonProps {
   toolId: ToolId;
@@ -45,16 +44,9 @@ export function WatchButton({
 
     if (loading || isToggling) return;
 
-    // Guest users can still use watchlist (stored in localStorage)
-    // but we show a subtle prompt after a few uses
     setIsToggling(true);
-
     try {
-      const success = await toggleTool(toolId);
-      if (success) {
-        const action = watching ? 'remove' : 'add';
-        trackWatchlistAction(action, toolId);
-      }
+      await toggleTool(toolId);
     } finally {
       setIsToggling(false);
     }

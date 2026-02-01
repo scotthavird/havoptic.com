@@ -4,7 +4,7 @@ import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
 import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
-import { useWatchlist } from './hooks/useWatchlist';
+import { useWatchlist } from './context/WatchlistContext';
 import { TOOL_CONFIG, type ToolId } from './types/release';
 import { trackScrollDepth, trackPageView } from './utils/analytics';
 import { CompareVs } from './pages/CompareVs';

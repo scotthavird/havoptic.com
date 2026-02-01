@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import type { ToolId } from '../types/release';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from './AuthContext';
+import { trackWatchlistAction } from '../utils/analytics';
 
 const STORAGE_KEY = 'havoptic_watchlist';
 
@@ -9,31 +10,35 @@ interface WatchedTool {
   addedAt: string;
 }
 
-interface WatchlistState {
+interface WatchlistContextValue {
   tools: WatchedTool[];
+  watchedToolIds: ToolId[];
+  watchCount: number;
   loading: boolean;
   error: string | null;
+  toggleTool: (toolId: ToolId) => Promise<boolean>;
+  isWatching: (toolId: ToolId) => boolean;
 }
 
-/**
- * Hook for managing user's tool watchlist
- * - For authenticated users: syncs with server via API
- * - For guests: persists to localStorage
- */
-export function useWatchlist() {
+const WatchlistContext = createContext<WatchlistContextValue | null>(null);
+
+interface WatchlistProviderProps {
+  children: ReactNode;
+}
+
+export function WatchlistProvider({ children }: WatchlistProviderProps) {
   const { user, loading: authLoading } = useAuth();
-  const [state, setState] = useState<WatchlistState>({
-    tools: [],
-    loading: true,
-    error: null,
-  });
+  const [tools, setTools] = useState<WatchedTool[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Load watchlist on mount and when auth changes
   useEffect(() => {
     if (authLoading) return;
 
     async function loadWatchlist() {
-      setState(prev => ({ ...prev, loading: true, error: null }));
+      setLoading(true);
+      setError(null);
 
       if (user) {
         // Authenticated: fetch from API
@@ -44,29 +49,31 @@ export function useWatchlist() {
           const data = await response.json();
 
           if (response.ok) {
-            setState({ tools: data.tools || [], loading: false, error: null });
+            setTools(data.tools || []);
             // Also update localStorage as backup
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data.tools || []));
           } else {
-            setState({ tools: [], loading: false, error: data.error || 'Failed to load watchlist' });
+            setError(data.error || 'Failed to load watchlist');
+            setTools([]);
           }
         } catch (err) {
           console.error('Error fetching watchlist:', err);
           // Fall back to localStorage on network error
           const stored = localStorage.getItem(STORAGE_KEY);
-          const tools = stored ? JSON.parse(stored) : [];
-          setState({ tools, loading: false, error: null });
+          const storedTools = stored ? JSON.parse(stored) : [];
+          setTools(storedTools);
         }
       } else {
         // Guest: load from localStorage
         try {
           const stored = localStorage.getItem(STORAGE_KEY);
-          const tools = stored ? JSON.parse(stored) : [];
-          setState({ tools, loading: false, error: null });
+          const storedTools = stored ? JSON.parse(stored) : [];
+          setTools(storedTools);
         } catch {
-          setState({ tools: [], loading: false, error: null });
+          setTools([]);
         }
       }
+      setLoading(false);
     }
 
     loadWatchlist();
@@ -100,7 +107,7 @@ export function useWatchlist() {
         });
         const data = await response.json();
         if (response.ok) {
-          setState(prev => ({ ...prev, tools: data.tools || [] }));
+          setTools(data.tools || []);
           localStorage.setItem(STORAGE_KEY, JSON.stringify(data.tools || []));
         }
       } catch (err) {
@@ -112,16 +119,19 @@ export function useWatchlist() {
   }, [user, authLoading]);
 
   const toggleTool = useCallback(async (toolId: ToolId): Promise<boolean> => {
-    const isCurrentlyWatching = state.tools.some(t => t.toolId === toolId);
+    const isCurrentlyWatching = tools.some(t => t.toolId === toolId);
     const action = isCurrentlyWatching ? 'remove' : 'add';
 
     // Optimistic update
-    setState(prev => {
-      const newTools = isCurrentlyWatching
-        ? prev.tools.filter(t => t.toolId !== toolId)
-        : [...prev.tools, { toolId, addedAt: new Date().toISOString() }];
-      return { ...prev, tools: newTools };
-    });
+    const newTools = isCurrentlyWatching
+      ? tools.filter(t => t.toolId !== toolId)
+      : [...tools, { toolId, addedAt: new Date().toISOString() }];
+
+    setTools(newTools);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newTools));
+
+    // Track analytics
+    trackWatchlistAction(action, toolId);
 
     if (user) {
       // Authenticated: sync to server
@@ -135,57 +145,57 @@ export function useWatchlist() {
         const data = await response.json();
 
         if (response.ok) {
-          setState(prev => ({ ...prev, tools: data.tools || [] }));
+          setTools(data.tools || []);
           localStorage.setItem(STORAGE_KEY, JSON.stringify(data.tools || []));
           return true;
         } else {
           // Revert on error
-          setState(prev => {
-            const revertedTools = isCurrentlyWatching
-              ? [...prev.tools, { toolId, addedAt: new Date().toISOString() }]
-              : prev.tools.filter(t => t.toolId !== toolId);
-            return { ...prev, tools: revertedTools, error: data.error };
-          });
+          setTools(tools);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(tools));
+          setError(data.error);
           return false;
         }
       } catch (err) {
         console.error('Error updating watchlist:', err);
         // Keep optimistic update for offline support
-        const newTools = isCurrentlyWatching
-          ? state.tools.filter(t => t.toolId !== toolId)
-          : [...state.tools, { toolId, addedAt: new Date().toISOString() }];
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(newTools));
         return true;
       }
-    } else {
-      // Guest: save to localStorage only
-      const newTools = isCurrentlyWatching
-        ? state.tools.filter(t => t.toolId !== toolId)
-        : [...state.tools, { toolId, addedAt: new Date().toISOString() }];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newTools));
-      return true;
     }
-  }, [user, state.tools]);
+
+    return true;
+  }, [user, tools]);
 
   const isWatching = useCallback((toolId: ToolId): boolean => {
-    return state.tools.some(t => t.toolId === toolId);
-  }, [state.tools]);
+    return tools.some(t => t.toolId === toolId);
+  }, [tools]);
 
   const watchedToolIds = useMemo((): ToolId[] => {
-    return state.tools.map(t => t.toolId);
-  }, [state.tools]);
+    return tools.map(t => t.toolId);
+  }, [tools]);
 
   const watchCount = useMemo((): number => {
-    return state.tools.length;
-  }, [state.tools]);
+    return tools.length;
+  }, [tools]);
 
-  return {
-    tools: state.tools,
-    watchedToolIds,
-    watchCount,
-    loading: state.loading || authLoading,
-    error: state.error,
-    toggleTool,
-    isWatching,
-  };
+  return (
+    <WatchlistContext.Provider value={{
+      tools,
+      watchedToolIds,
+      watchCount,
+      loading: loading || authLoading,
+      error,
+      toggleTool,
+      isWatching,
+    }}>
+      {children}
+    </WatchlistContext.Provider>
+  );
+}
+
+export function useWatchlist() {
+  const context = useContext(WatchlistContext);
+  if (!context) {
+    throw new Error('useWatchlist must be used within WatchlistProvider');
+  }
+  return context;
 }

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import { trackToolFilterClick, trackWatchlistFilterClick } from '../utils/analytics';
-import { useWatchlist } from '../hooks/useWatchlist';
+import { useWatchlist } from '../context/WatchlistContext';
 import { WatchToggle } from './WatchButton';
 
 interface ToolFilterProps {
