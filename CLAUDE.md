@@ -266,6 +266,54 @@ Set via Terraform in `iac/*/web.tf`:
 - `NOTIFY_API_KEY` - API authentication key
 - `ADMIN_EMAIL` - Admin receives subscribe/unsubscribe notifications
 - `NEWSLETTER_BUCKET` - R2 bucket binding
+- `VAPID_PUBLIC_KEY` - Web Push VAPID public key (base64url)
+- `VAPID_PRIVATE_KEY` - Web Push VAPID private key (base64url PKCS8)
+
+## Browser Push Notifications
+
+Logged-in users can enable browser push notifications to receive alerts when watched AI tools ship new releases.
+
+### How It Works
+1. User watches tools via the Watchlist feature (already implemented)
+2. User clicks the bell icon in the header to enable browser notifications
+3. Browser prompts for notification permission
+4. When a watched tool ships a new release, browser notification appears
+5. Clicking notification opens `havoptic.com/r/{releaseId}`
+
+### Components
+- **Service Worker** (`public/sw.js`): Handles push events and notification clicks
+- **Push Subscribe API** (`functions/api/push/subscribe.js`): Registers push subscriptions
+- **Push Unsubscribe API** (`functions/api/push/unsubscribe.js`): Removes subscriptions
+- **VAPID Key API** (`functions/api/push/vapid-public-key.js`): Returns public key for subscription
+- **Push Utilities** (`functions/api/_push-utils.js`): RFC 8291 encryption, D1 operations
+- **React Hook** (`src/hooks/usePushNotifications.ts`): Permission and subscription management
+- **Toggle Component** (`src/components/PushNotificationToggle.tsx`): UI bell icon
+
+### Database
+Push subscriptions stored in D1 (see `scripts/db-migrations/005-push-subscriptions.sql`):
+- `endpoint` - Push service URL
+- `p256dh`, `auth` - Encryption keys
+- `tool_filters` - JSON array synced with user's watchlist
+- `failed_attempts` - Auto-cleanup after 3 failures
+
+### VAPID Key Generation
+Generate a new VAPID key pair (run once during initial setup):
+```bash
+node scripts/generate-vapid-keys.mjs
+```
+Add the generated keys to your Terraform variables (`terraform.tfvars`).
+
+### Testing Push Notifications
+Push notifications are sent automatically by `/api/notify` when new releases are detected.
+The notification payload includes:
+- `title`: Tool name + version
+- `body`: Release summary (first 200 chars)
+- `url`: Link to release page on Havoptic
+
+### Browser Support
+- Chrome, Edge, Firefox: Full support
+- Safari (macOS 13+): Supported with limitations
+- iOS Safari: Not supported (Apple restriction)
 
 ## Adding a New Tool
 

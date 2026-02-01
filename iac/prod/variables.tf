@@ -78,3 +78,16 @@ variable "session_secret" {
   type        = string
   sensitive   = true
 }
+
+# Web Push VAPID Configuration
+variable "vapid_public_key" {
+  description = "VAPID public key for Web Push notifications (base64url encoded)"
+  type        = string
+  sensitive   = false
+}
+
+variable "vapid_private_key" {
+  description = "VAPID private key for Web Push notifications (base64url encoded PKCS8)"
+  type        = string
+  sensitive   = true
+}

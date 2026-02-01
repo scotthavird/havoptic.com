@@ -41,6 +41,8 @@ resource "cloudflare_pages_project" "main" {
         GITHUB_OAUTH_CLIENT_ID     = var.github_oauth_client_id
         GITHUB_OAUTH_CLIENT_SECRET = var.github_oauth_client_secret
         SESSION_SECRET             = var.session_secret
+        VAPID_PUBLIC_KEY           = var.vapid_public_key
+        VAPID_PRIVATE_KEY          = var.vapid_private_key
       }
     }
     production {
@@ -59,6 +61,8 @@ resource "cloudflare_pages_project" "main" {
         GITHUB_OAUTH_CLIENT_ID     = var.github_oauth_client_id
         GITHUB_OAUTH_CLIENT_SECRET = var.github_oauth_client_secret
         SESSION_SECRET             = var.session_secret
+        VAPID_PUBLIC_KEY           = var.vapid_public_key
+        VAPID_PRIVATE_KEY          = var.vapid_private_key
       }
     }
   }
