@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { ToolId } from '../types/release';
 import { TOOL_CONFIG } from '../types/release';
 import { useWatchlist } from '../context/WatchlistContext';
+import { usePushNotificationContext } from '../context/PushNotificationContext';
 
 interface WatchButtonProps {
   toolId: ToolId;
@@ -21,6 +22,7 @@ export function WatchButton({
   className = '',
 }: WatchButtonProps) {
   const { isWatching, toggleTool, loading } = useWatchlist();
+  const { triggerWatchlistPrompt } = usePushNotificationContext();
   const [isToggling, setIsToggling] = useState(false);
 
   const watching = isWatching(toolId);
@@ -44,9 +46,17 @@ export function WatchButton({
 
     if (loading || isToggling) return;
 
+    const wasWatching = watching;
     setIsToggling(true);
     try {
-      await toggleTool(toolId);
+      const success = await toggleTool(toolId);
+      // If we just added a tool (not removed), prompt for push notifications
+      if (success && !wasWatching) {
+        // Small delay so the watch animation completes first
+        setTimeout(() => {
+          triggerWatchlistPrompt(toolId);
+        }, 500);
+      }
     } finally {
       setIsToggling(false);
     }
