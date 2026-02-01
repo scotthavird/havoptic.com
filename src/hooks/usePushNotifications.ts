@@ -60,10 +60,13 @@ export function usePushNotifications(): UsePushNotificationsResult {
       setPermission(notifPermission as PushPermissionState);
 
       // Check if we have an active subscription
+      // Only check if a service worker is already registered (don't wait for one)
       try {
-        const registration = await navigator.serviceWorker.ready;
-        const subscription = await registration.pushManager.getSubscription();
-        setIsSubscribed(!!subscription);
+        const registration = await navigator.serviceWorker.getRegistration('/');
+        if (registration?.active) {
+          const subscription = await registration.pushManager.getSubscription();
+          setIsSubscribed(!!subscription);
+        }
       } catch (err) {
         console.error('Error checking push subscription:', err);
       }
