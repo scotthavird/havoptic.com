@@ -1,6 +1,72 @@
 {
-  "lastUpdated": "2026-01-26T15:20:11.810Z",
+  "lastUpdated": "2026-02-01T16:13:21.857Z",
   "posts": [
+    {
+      "id": "monthly-comparison-2026-01",
+      "type": "monthly-comparison",
+      "title": "AI Coding Tools Report: January 2026 - Claude Code Dominates with 24 Releases",
+      "slug": "monthly-comparison-january-2026",
+      "publishedAt": "2026-02-01T16:04:42.112Z",
+      "summary": "January 2026 AI coding tools analysis: Claude Code leads with 24 releases, npm downloads hit 7.4M weekly, while innovation focuses on configuration and proxy features.",
+      "content": "# AI Coding Tools Monthly Report: January 2026\n\n## Executive Summary\n\nJanuary 2026 maintained steady momentum in the AI coding tools ecosystem with 77 total releases across major platforms, showing 0% velocity change from December 2025. Claude Code emerged as the clear leader with 24 releases and dominated npm adoption with 7.4M weekly downloads, while GitHub star counts revealed Gemini CLI's strong community presence at 93,196 stars.\n\n## Velocity Leaderboard\n\n| Tool | Releases | Market Share | Status |\n|------|----------|--------------|--------|\n| **Claude Code** 🏆 | 24 | 31.2% | **Winner** |\n| OpenAI Codex CLI | 14 | 18.2% | Active |\n| Gemini CLI | 8 | 10.4% | Steady |\n| Cursor | 1 | 1.3% | Minimal |\n| Others | 30 | 39.0% | Various |\n\n**Winner: Claude Code** - Dominating with nearly one-third of all releases, demonstrating aggressive development cycles and feature velocity.\n\n## Feature Highlights\n\n### Claude Code\n- **Enhanced Configuration Management**: New search functionality in `/config` command enables rapid setting filtering, addressing developer productivity pain points\n- **Improved Updates Section**: Streamlined update notifications and version management capabilities\n\n### OpenAI Codex CLI\n- **Enterprise-Ready Networking**: Optional SOCKS5 proxy listener with policy enforcement and configuration gating targets enterprise security requirements\n- **Advanced Access Controls**: New config gating mechanisms provide granular permission management\n\n### Cursor\n- **AI Agent Evolution**: Subagents functionality expands autonomous coding capabilities\n- **Visual AI Integration**: Image generation features bridge the gap between design and development workflows\n\n### Gemini CLI\n- **Core Improvements**: Enhanced `activateskill` tool with lowercase XML tag standardization improves parsing reliability\n- **Developer Experience**: Focus on code quality and consistency improvements\n\n## GitHub Pulse\n\n| Tool | Stars | Community Health |\n|------|-------|------------------|\n| Gemini CLI | 93,196 | 🔥 Highest community engagement |\n| Claude Code | 62,883 | 🌟 Strong developer adoption |\n| OpenAI Codex CLI | 58,312 | 📈 Steady growth trajectory |\n\n**Community Insight**: Gemini CLI's star leadership (93K+) suggests strong developer interest, though Claude Code's release velocity indicates more active development investment.\n\n## npm Trends\n\n| Tool | Weekly Downloads | Market Position |\n|------|------------------|----------------|\n| **Claude Code** | 7,457,871 | 🚀 **Dominant** (91.7% share) |\n| OpenAI Codex CLI | 617,795 | 📊 Secondary (7.6% share) |\n| Gemini CLI | 548,273 | 📈 Growing (6.7% share) |\n\n**Download Analysis**: Claude Code's massive 7.4M weekly downloads represent a 12:1 ratio over competitors, indicating either superior developer experience or significant enterprise adoption. The 91.7% market share in npm downloads is particularly striking given the competitive GitHub star landscape.\n\n## Looking Ahead\n\nBased on January patterns, expect:\n\n- **Claude Code**: Continued feature expansion with likely focus on enterprise tooling given current market dominance\n- **OpenAI Codex CLI**: Enterprise security features suggest targeting organizational deployment scenarios\n- **Cursor**: Minimal release activity may indicate major version preparation or strategic pivot\n- **Gemini CLI**: High GitHub engagement vs. lower npm adoption suggests potential for breakthrough features\n\n**Key Watch**: The disconnect between GitHub stars and npm downloads across tools indicates a market still defining itself—February may reveal which metrics predict long-term success in AI coding assistance.",
+      "coverImageUrl": null,
+      "tools": [
+        "claude-code",
+        "openai-codex",
+        "cursor",
+        "gemini-cli"
+      ],
+      "metrics": {
+        "totalReleases": 77,
+        "releasesByTool": {
+          "claude-code": 24,
+          "openai-codex": 14,
+          "cursor": 1,
+          "gemini-cli": 8,
+          "kiro": 0
+        },
+        "topFeatures": [
+          {
+            "tool": "claude-code",
+            "feature": "- Added search functionality to /config command for quickly filtering settings - Added Updates secti",
+            "description": "- Added search functionality to /config command for quickly filtering settings - Added Updates section to /doctor showing auto-update channel and available npm versions (stable/latest) - Added date ra"
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "New Features - Added an optional SOCKS5 proxy listener with policy enforcement and config gating. (9",
+            "description": "New Features - Added an optional SOCKS5 proxy listener with policy enforcement and config gating. (9803) - Plan mode now streams proposed plans into a dedicated TUI view, plus a feature-gated /plan sh"
+          },
+          {
+            "tool": "cursor",
+            "feature": "Subagents and Image Generation",
+            "description": "Subagents and Image Generation"
+          },
+          {
+            "tool": "gemini-cli",
+            "feature": "What's Changed feat(core): improve activateskill tool and use lowercase XML tags by @NTaylorMullen i",
+            "description": "What's Changed feat(core): improve activateskill tool and use lowercase XML tags by @NTaylorMullen in https://github.com/google-gemini/gemini-cli/pull/16009 Add initiation method telemetry property by"
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "OpenAI Codex",
+          "Cursor",
+          "Gemini CLI",
+          "developer tools",
+          "npm downloads",
+          "GitHub stars",
+          "coding assistant",
+          "AI development",
+          "January 2026",
+          "software development"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/monthly-comparison-january-2026"
+      }
+    },
     {
       "id": "weekly-digest-2026-w04",
       "type": "weekly-digest",
