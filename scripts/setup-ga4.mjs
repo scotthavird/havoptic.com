@@ -235,7 +235,7 @@ async function createCustomDimension(client, propertyPath, dimConfig, dryRun) {
         parameterName,
         displayName,
         description,
-        scope: `DIMENSION_SCOPE_${scope}`,
+        scope: scope,
       },
     });
     console.log('    ✓ Created custom dimension');
