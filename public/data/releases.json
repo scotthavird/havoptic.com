@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-01-31T10:04:44.731Z",
+  "lastUpdated": "2026-02-01T10:05:01.845Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.29",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.29",
+      "date": "2026-01-31T20:13:22.486Z",
+      "summary": "- Fixed startup performance issues when resuming sessions that have savedhookcontext",
+      "fullNotes": "- Fixed startup performance issues when resuming sessions that have savedhookcontext",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.93.0",
       "tool": "openai-codex",
