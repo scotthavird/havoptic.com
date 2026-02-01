@@ -2,7 +2,6 @@ import { useState } from 'react';
 import type { ToolId } from '../types/release';
 import { TOOL_CONFIG } from '../types/release';
 import { useWatchlist } from '../hooks/useWatchlist';
-import { useAuth } from '../context/AuthContext';
 import { trackWatchlistAction } from '../utils/analytics';
 
 interface WatchButtonProps {
@@ -22,7 +21,6 @@ export function WatchButton({
   showLabel = false,
   className = '',
 }: WatchButtonProps) {
-  const { user, login } = useAuth();
   const { isWatching, toggleTool, loading } = useWatchlist();
   const [isToggling, setIsToggling] = useState(false);
 

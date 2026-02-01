@@ -9,6 +9,7 @@ import { getSimilarTools } from '../utils/toolRegistry';
 import { Timeline } from '../components/Timeline';
 import { ReleaseHistoryChart } from '../components/ReleaseHistoryChart';
 import { FeatureHighlights } from '../components/FeatureHighlights';
+import { WatchButton } from '../components/WatchButton';
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-US', {
@@ -89,6 +90,7 @@ export function Tool({ toolId }: ToolProps) {
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-4">
           <h1 className={`text-3xl font-bold ${config.color}`}>{config.displayName}</h1>
+          <WatchButton toolId={toolId} size="md" showLabel />
           <span className="text-sm text-slate-500">{config.hashtag}</span>
           <span className={`px-2 py-0.5 rounded text-xs ${config.bgColor} text-white`}>
             {config.category.toUpperCase()}

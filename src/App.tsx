@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
 import { SignInPrompt } from './components/SignInPrompt';
 import { useReleases } from './hooks/useReleases';
+import { useWatchlist } from './hooks/useWatchlist';
 import { TOOL_CONFIG, type ToolId } from './types/release';
 import { trackScrollDepth, trackPageView } from './utils/analytics';
 import { CompareVs } from './pages/CompareVs';
@@ -105,9 +106,30 @@ function getPageFromLocation(): Page {
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(getPageFromLocation);
-  const [selectedTool, setSelectedTool] = useState<ToolId | 'all'>('all');
+  const [selectedTool, setSelectedTool] = useState<ToolId | 'all' | 'watching'>('all');
   const [highlightedReleaseId, setHighlightedReleaseId] = useState<string | null>(null);
-  const { groupedReleases, loading, error, isLimited, limitedMessage } = useReleases(selectedTool);
+  const { watchedToolIds } = useWatchlist();
+
+  // When "watching" is selected, fetch all releases and filter client-side
+  const apiSelectedTool = selectedTool === 'watching' ? 'all' : selectedTool;
+  const { groupedReleases: rawGroupedReleases, loading, error, isLimited, limitedMessage } = useReleases(apiSelectedTool);
+
+  // Filter releases for "watching" filter
+  const groupedReleases = useMemo(() => {
+    if (selectedTool !== 'watching') return rawGroupedReleases;
+
+    // Filter each month's releases to only include watched tools
+    return rawGroupedReleases.map(yearGroup => ({
+      ...yearGroup,
+      months: yearGroup.months.map(monthGroup => ({
+        ...monthGroup,
+        releases: monthGroup.releases.filter(release =>
+          watchedToolIds.includes(release.tool)
+        ),
+      })).filter(monthGroup => monthGroup.releases.length > 0),
+    })).filter(yearGroup => yearGroup.months.length > 0);
+  }, [selectedTool, rawGroupedReleases, watchedToolIds]);
+
   const scrollMilestones = useRef(new Set<number>());
   const hasScrolledToAnchor = useRef(false);
   const sharedReleaseId = useRef<string | null>(getSharedReleaseId());
