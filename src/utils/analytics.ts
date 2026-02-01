@@ -119,3 +119,25 @@ export function trackShare(
     event_category: 'engagement',
   });
 }
+
+/**
+ * Track watchlist actions (add/remove tools).
+ */
+export function trackWatchlistAction(
+  action: 'add' | 'remove',
+  toolId: string
+): void {
+  trackEvent(`watchlist_${action}`, {
+    tool_name: toolId,
+    event_category: 'watchlist',
+  });
+}
+
+/**
+ * Track when user clicks the "Watching" filter.
+ */
+export function trackWatchlistFilterClick(): void {
+  trackEvent('watchlist_filter_click', {
+    event_category: 'watchlist',
+  });
+}
