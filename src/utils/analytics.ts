@@ -141,3 +141,16 @@ export function trackWatchlistFilterClick(): void {
     event_category: 'watchlist',
   });
 }
+
+/**
+ * Track push notification events.
+ */
+export function trackPushNotificationEvent(
+  action: 'permission_granted' | 'permission_denied' | 'subscribed' | 'unsubscribed' | 'error',
+  params?: Record<string, string | number | boolean>
+): void {
+  trackEvent(`push_${action}`, {
+    event_category: 'push',
+    ...params,
+  });
+}

@@ -20,6 +20,12 @@ import {
   getSubscribersForNotification,
   sendEmail,
 } from './_newsletter-utils.js';
+import {
+  sendPushNotification,
+  getPushSubscriptionsForTools,
+  incrementFailedAttempt,
+  deletePushSubscription,
+} from './_push-utils.js';
 
 // Tool brand colors for email styling
 const TOOL_COLORS = {
@@ -614,10 +620,65 @@ export async function onRequestPost(context) {
       }
     }
 
+    // Send push notifications (only for releases, not blog posts)
+    const pushResults = {
+      sent: 0,
+      failed: 0,
+      expired: 0,
+    };
+
+    if (hasReleases && env.VAPID_PUBLIC_KEY && env.VAPID_PRIVATE_KEY) {
+      try {
+        const pushSubscriptions = await getPushSubscriptionsForTools(env.AUTH_DB, toolIds);
+        const vapidKeys = {
+          publicKey: env.VAPID_PUBLIC_KEY,
+          privateKey: env.VAPID_PRIVATE_KEY,
+        };
+
+        for (const sub of pushSubscriptions) {
+          // Build push payload for each release
+          for (const release of releases) {
+            const payload = {
+              title: `${TOOL_DISPLAY_NAMES[release.tool] || release.tool} ${release.version}`,
+              body: release.summary?.substring(0, 200) || 'New release available',
+              releaseId: release.id,
+              url: `https://havoptic.com/r/${release.id}`,
+              tool: release.tool,
+              version: release.version,
+              tag: `release-${release.id}`,
+            };
+
+            const subscription = {
+              endpoint: sub.endpoint,
+              keys: {
+                p256dh: sub.p256dh,
+                auth: sub.auth,
+              },
+            };
+
+            const result = await sendPushNotification(subscription, payload, vapidKeys);
+
+            if (result.success) {
+              pushResults.sent++;
+            } else if (result.error === 'subscription_expired') {
+              pushResults.expired++;
+              await deletePushSubscription(env.AUTH_DB, sub.id);
+            } else {
+              pushResults.failed++;
+              await incrementFailedAttempt(env.AUTH_DB, sub.id);
+            }
+          }
+        }
+      } catch (pushError) {
+        console.error('Push notification error:', pushError);
+      }
+    }
+
     return new Response(
       JSON.stringify({
-        message: `Sent ${results.sent} notifications`,
-        ...results,
+        message: `Sent ${results.sent} email notifications`,
+        email: results,
+        push: pushResults,
       }),
       { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
     );
