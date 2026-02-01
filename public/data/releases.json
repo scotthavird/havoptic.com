@@ -10,7 +10,9 @@
       "summary": "- Fixed startup performance issues when resuming sessions that have savedhookcontext",
       "fullNotes": "- Fixed startup performance issues when resuming sessions that have savedhookcontext",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.29-2026-02-01-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.29-2026-02-01-16x9.jpg"
     },
     {
       "id": "openai-codex-rust-v0.93.0",
