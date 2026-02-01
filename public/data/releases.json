@@ -98,10 +98,12 @@
       "toolDisplayName": "Claude Code",
       "version": "2.1.23",
       "date": "2026-01-29T00:19:09.656Z",
-      "summary": "- Added customi",
-      "fullNotes": "- Added customi",
+      "summary": "- Added customizable spinner verbs setting (spinnerVerbs)\n- Fixed mTLS and proxy connectivity for users behind corporate proxies or using client certificates\n- Fixed per-user temp directory isolati...",
+      "fullNotes": "- Added customizable spinner verbs setting (spinnerVerbs)\n- Fixed mTLS and proxy connectivity for users behind corporate proxies or using client certificates\n- Fixed per-user temp directory isolation to prevent permission conflicts on shared systems\n- Fixed a race condition that could cause 400 errors when prompt caching scope was enabled\n- Fixed pending async hooks not being cancelled when headless streaming sessions ended\n- Fixed tab completion not updating the input field when accepting a suggestion\n- Fixed ripgrep search timeouts silently returning empty results instead of reporting errors\n- Improved terminal rendering performance with optimized screen data layout\n- Changed Bash commands to show timeout duration alongside elapsed time\n- Changed merged pull requests to show a purple status indicator in the prompt footer\n- [IDE] Fixed model options displaying incorrect region strings for Bedrock users in headless mode",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.23-2026-02-01-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.23-2026-02-01-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.398",
