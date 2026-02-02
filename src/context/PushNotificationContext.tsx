@@ -4,20 +4,17 @@ import { useAuth } from './AuthContext';
 import { useWatchlist } from './WatchlistContext';
 import type { ToolId } from '../types/release';
 
-const SEEN_ANNOUNCEMENT_KEY = 'havoptic_push_announcement_seen';
 const SEEN_WATCHLIST_PROMPT_KEY = 'havoptic_push_watchlist_prompt_seen';
 
 interface PushNotificationContextValue {
   // State
   showWatchlistPrompt: boolean;
-  showAnnouncementBanner: boolean;
   showSuccessModal: boolean;
   subscribedTools: string[];
   promptToolId: ToolId | null;
 
   // Actions
   dismissWatchlistPrompt: () => void;
-  dismissAnnouncementBanner: () => void;
   dismissSuccessModal: () => void;
   triggerWatchlistPrompt: (toolId: ToolId) => void;
 
@@ -43,28 +40,10 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
   const pushHook = usePushNotifications();
 
   const [showWatchlistPrompt, setShowWatchlistPrompt] = useState(false);
-  const [showAnnouncementBanner, setShowAnnouncementBanner] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [subscribedTools, setSubscribedTools] = useState<string[]>([]);
   const [wasSubscribed, setWasSubscribed] = useState(false);
   const [promptToolId, setPromptToolId] = useState<ToolId | null>(null);
-
-  // Check if user should see announcement banner (one-time for logged-in users)
-  useEffect(() => {
-    if (!user || !pushHook.isSupported || pushHook.isSubscribed || pushHook.permission === 'denied') {
-      setShowAnnouncementBanner(false);
-      return;
-    }
-
-    const seen = localStorage.getItem(SEEN_ANNOUNCEMENT_KEY);
-    if (!seen) {
-      // Small delay so it doesn't appear immediately on page load
-      const timer = setTimeout(() => {
-        setShowAnnouncementBanner(true);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [user, pushHook.isSupported, pushHook.isSubscribed, pushHook.permission]);
 
   // Track subscription state changes to show success modal
   useEffect(() => {
@@ -73,7 +52,6 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
       setSubscribedTools([...watchedToolIds]);
       setShowSuccessModal(true);
       setShowWatchlistPrompt(false);
-      setShowAnnouncementBanner(false);
     }
     setWasSubscribed(pushHook.isSubscribed);
   }, [pushHook.isSubscribed, wasSubscribed, watchedToolIds]);
@@ -81,11 +59,6 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
   const dismissWatchlistPrompt = useCallback(() => {
     setShowWatchlistPrompt(false);
     localStorage.setItem(SEEN_WATCHLIST_PROMPT_KEY, 'true');
-  }, []);
-
-  const dismissAnnouncementBanner = useCallback(() => {
-    setShowAnnouncementBanner(false);
-    localStorage.setItem(SEEN_ANNOUNCEMENT_KEY, 'true');
   }, []);
 
   const dismissSuccessModal = useCallback(() => {
@@ -116,12 +89,10 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
     <PushNotificationContext.Provider
       value={{
         showWatchlistPrompt,
-        showAnnouncementBanner,
         showSuccessModal,
         subscribedTools,
         promptToolId,
         dismissWatchlistPrompt,
-        dismissAnnouncementBanner,
         dismissSuccessModal,
         triggerWatchlistPrompt,
         permission: pushHook.permission,
