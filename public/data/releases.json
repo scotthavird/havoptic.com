@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-01T10:05:01.845Z",
+  "lastUpdated": "2026-02-02T04:02:55.644Z",
   "releases": [
     {
       "id": "claude-code-2.1.29",
@@ -647,6 +647,17 @@
       "infographicUrl16x9": "/images/infographics/windsurf-1.13.9-2026-01-22-16x9.jpg"
     },
     {
+      "id": "kiro-1.24.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.24.0",
+      "date": "2026-01-16T00:00-05:00",
+      "summary": "Kiro CLI version 1.24.0",
+      "fullNotes": "Kiro CLI version 1.24.0",
+      "url": "https://kiro.dev/changelog/cli/1-24/",
+      "type": "release"
+    },
+    {
       "id": "openai-codex-rust-v0.86.0",
       "tool": "openai-codex",
       "toolDisplayName": "OpenAI Codex CLI",
@@ -1015,6 +1026,17 @@
       "summary": "Windsurf version 1.13.3",
       "fullNotes": "Windsurf version 1.13.3",
       "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.23.1",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.23.1",
+      "date": "2025-12-23T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.23.1",
+      "fullNotes": "Kiro CLI version 1.23.1",
+      "url": "https://kiro.dev/changelog/cli/1-23/#patch-1-23-1",
       "type": "release"
     },
     {
@@ -1909,6 +1931,17 @@
       "summary": "Windsurf version 1.12.36",
       "fullNotes": "Windsurf version 1.12.36",
       "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
+    {
+      "id": "kiro-1.20.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.20.0",
+      "date": "2025-11-25T05:00:00.000Z",
+      "summary": "Kiro CLI version 1.20.0",
+      "fullNotes": "Kiro CLI version 1.20.0",
+      "url": "https://kiro.dev/changelog/cli/1-20/",
       "type": "release"
     },
     {
