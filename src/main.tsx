@@ -4,7 +4,6 @@ import { WatchlistProvider } from './context/WatchlistContext'
 import { NewsletterBellProvider } from './context/NewsletterBellContext'
 import { PushNotificationProvider } from './context/PushNotificationContext'
 import { FlyingBell } from './components/FlyingBell'
-import { PushAnnouncementBanner } from './components/PushAnnouncementBanner'
 import { PushSuccessModal } from './components/PushSuccessModal'
 import { PushWatchlistPrompt } from './components/PushWatchlistPrompt'
 import './index.css'
@@ -17,7 +16,6 @@ createRoot(document.getElementById('root')!).render(
         <PushNotificationProvider>
           <App />
           <FlyingBell />
-          <PushAnnouncementBanner />
           <PushSuccessModal />
           <PushWatchlistPrompt />
         </PushNotificationProvider>

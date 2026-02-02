@@ -341,6 +341,7 @@ function App() {
               key={selectedTool}
               groupedReleases={groupedReleases}
               highlightedReleaseId={highlightedReleaseId}
+              selectedTool={selectedTool}
             />
             {isLimited && (
               <SignInPrompt

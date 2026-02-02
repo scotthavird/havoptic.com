@@ -1,5 +1,6 @@
-import type { Release } from '../types/release';
+import type { Release, ToolId } from '../types/release';
 import { ReleaseCard } from './ReleaseCard';
+import { PushInlinePrompt } from './PushInlinePrompt';
 
 interface GroupedReleases {
   year: number;
@@ -13,9 +14,11 @@ interface GroupedReleases {
 interface TimelineProps {
   groupedReleases: GroupedReleases[];
   highlightedReleaseId?: string | null;
+  /** The currently selected tool filter */
+  selectedTool?: ToolId | 'all' | 'watching';
 }
 
-export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProps) {
+export function Timeline({ groupedReleases, highlightedReleaseId, selectedTool }: TimelineProps) {
   if (groupedReleases.length === 0) {
     return (
       <div className="text-center py-12 text-slate-500">
@@ -26,6 +29,14 @@ export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProp
 
   // Track rendered IDs to prevent duplicates at render time
   const renderedIds = new Set<string>();
+  // Track total releases rendered to insert inline prompt at right position
+  let totalReleasesRendered = 0;
+  const PROMPT_AFTER_RELEASE = 3; // Show prompt after 3rd release
+
+  // Determine tool context for the prompt
+  const promptToolId = selectedTool && selectedTool !== 'all' && selectedTool !== 'watching'
+    ? selectedTool
+    : null;
 
   // Get current year/month to hide headers for the most recent period
   const now = new Date();
@@ -77,13 +88,24 @@ export function Timeline({ groupedReleases, highlightedReleaseId }: TimelineProp
 
                   {/* Release cards */}
                   <div className="space-y-3 sm:space-y-4">
-                    {uniqueReleases.map((release) => (
-                      <ReleaseCard
-                        key={release.id}
-                        release={release}
-                        isHighlighted={release.id === highlightedReleaseId}
-                      />
-                    ))}
+                    {uniqueReleases.map((release) => {
+                      totalReleasesRendered++;
+                      const showPromptAfterThis = totalReleasesRendered === PROMPT_AFTER_RELEASE;
+
+                      return (
+                        <div key={release.id}>
+                          <ReleaseCard
+                            release={release}
+                            isHighlighted={release.id === highlightedReleaseId}
+                          />
+                          {showPromptAfterThis && (
+                            <div className="mt-3 sm:mt-4">
+                              <PushInlinePrompt toolId={promptToolId} />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               );
