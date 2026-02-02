@@ -5,6 +5,7 @@ import { useWatchlist } from './WatchlistContext';
 import type { ToolId } from '../types/release';
 
 const SEEN_WATCHLIST_PROMPT_KEY = 'havoptic_push_watchlist_prompt_seen';
+const SEEN_SUCCESS_MODAL_KEY = 'havoptic_push_success_modal_seen';
 
 interface PushNotificationContextValue {
   // State
@@ -48,10 +49,13 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
   // Track subscription state changes to show success modal
   useEffect(() => {
     if (pushHook.isSubscribed && !wasSubscribed) {
-      // Just subscribed!
-      setSubscribedTools([...watchedToolIds]);
-      setShowSuccessModal(true);
-      setShowWatchlistPrompt(false);
+      // Only show modal if user hasn't seen it before (fresh subscription)
+      const hasSeenModal = localStorage.getItem(SEEN_SUCCESS_MODAL_KEY);
+      if (!hasSeenModal) {
+        setSubscribedTools([...watchedToolIds]);
+        setShowSuccessModal(true);
+        setShowWatchlistPrompt(false);
+      }
     }
     setWasSubscribed(pushHook.isSubscribed);
   }, [pushHook.isSubscribed, wasSubscribed, watchedToolIds]);
@@ -63,6 +67,7 @@ export function PushNotificationProvider({ children }: PushNotificationProviderP
 
   const dismissSuccessModal = useCallback(() => {
     setShowSuccessModal(false);
+    localStorage.setItem(SEEN_SUCCESS_MODAL_KEY, 'true');
   }, []);
 
   const triggerWatchlistPrompt = useCallback((toolId: ToolId) => {
