@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-01T16:04:42.121Z",
+  "lastUpdated": "2026-02-02T15:19:34.386Z",
   "categories": [
     {
       "id": "core-editing",
@@ -42,7 +42,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Multi-Agent Judging in v2.2 and Agent Interface in v2.0 suggest multi-file capabilities"
+          "notes": "Multi-Agent functionality in v2.2 and improved Agent interface in v2.0 suggest multi-file editing capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -53,7 +53,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:04:42.121Z"
+      "lastUpdated": "2026-02-02T15:19:34.386Z"
     },
     {
       "categoryId": "core-editing",
@@ -83,7 +83,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:05:11.903Z"
+      "lastUpdated": "2026-02-02T15:20:06.270Z"
     },
     {
       "categoryId": "core-editing",
@@ -113,7 +113,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:05:42.296Z"
+      "lastUpdated": "2026-02-02T15:20:31.194Z"
     },
     {
       "categoryId": "core-editing",
@@ -133,7 +133,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "AI Code Review in Editor feature in v2.1 likely includes diff visualization"
+          "notes": "AI Code Review in Editor in v2.1 likely includes diff visualization"
         },
         "gemini-cli": {
           "supported": true,
@@ -144,7 +144,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:06:09.800Z"
+      "lastUpdated": "2026-02-02T15:21:00.929Z"
     },
     {
       "categoryId": "terminal",
@@ -173,10 +173,12 @@
           "addedAt": "2026-01-28T01:49:18Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "addedInVersion": "1.23.1",
+          "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-01T16:06:42.259Z"
+      "lastUpdated": "2026-02-02T15:21:30.136Z"
     },
     {
       "categoryId": "terminal",
@@ -186,14 +188,14 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "Evidence of shell environment integration through custom commands and argument handling"
+          "notes": "Arrow key history navigation in vim normal mode and shell-like argument handling indicates shell integration"
         },
         "openai-codex": {
           "supported": false
         },
         "cursor": {
           "supported": true,
-          "notes": "Agent terminal in v1.6 suggests shell integration capabilities"
+          "notes": "Agent terminal in v1.6 suggests shell integration functionality"
         },
         "gemini-cli": {
           "supported": false
@@ -202,7 +204,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:07:15.629Z"
+      "lastUpdated": "2026-02-02T15:21:57.188Z"
     },
     {
       "categoryId": "terminal",
@@ -232,7 +234,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:07:42.847Z"
+      "lastUpdated": "2026-02-02T15:22:25.667Z"
     },
     {
       "categoryId": "mcp",
@@ -260,11 +262,11 @@
         },
         "kiro": {
           "supported": true,
-          "addedInVersion": "1.23.0",
-          "addedAt": "2025-12-18T05:00:00.000Z"
+          "addedInVersion": "1.23.1",
+          "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-01T16:08:07.772Z"
+      "lastUpdated": "2026-02-02T15:22:54.221Z"
     },
     {
       "categoryId": "mcp",
@@ -291,10 +293,12 @@
           "addedAt": "2026-01-28T01:49:18Z"
         },
         "kiro": {
-          "supported": false
+          "supported": true,
+          "addedInVersion": "1.23.1",
+          "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-01T16:08:36.552Z"
+      "lastUpdated": "2026-02-02T15:23:18.475Z"
     },
     {
       "categoryId": "mcp",
@@ -304,15 +308,15 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "v2.1.27 mentions 'tool call failures and denials' in debug logs, indicating custom tool support"
+          "notes": "References to 'custom commands' and 'tool call failures and denials' in debug logs suggest custom tool support"
         },
         "openai-codex": {
           "supported": true,
-          "notes": "v0.92.0 adds 'dynamic tools at startup and route their calls/responses end-to-end through the server and core tool pipeline'"
+          "notes": "v0.92.0: API v2 threads can now inject dynamic tools at startup and route their calls/responses end-to-end through the server and core tool pipeline"
         },
         "cursor": {
           "supported": true,
-          "notes": "Slash commands in v1.6 and Hooks in v1.7 indicate custom tool capabilities"
+          "notes": "Slash commands in v1.6 and Hooks in v1.7 suggest custom tool definition capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -321,10 +325,10 @@
         },
         "kiro": {
           "supported": true,
-          "notes": "v1.23.0 mentions 'Grep/Glob Tools' indicating custom tool support"
+          "notes": "v1.23.0 mentions 'Grep/Glob Tools' indicating custom tool functionality"
         }
       },
-      "lastUpdated": "2026-02-01T16:09:04.713Z"
+      "lastUpdated": "2026-02-02T15:23:44.093Z"
     },
     {
       "categoryId": "ide",
@@ -352,7 +356,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:09:35.050Z"
+      "lastUpdated": "2026-02-02T15:24:14.721Z"
     },
     {
       "categoryId": "ide",
@@ -376,7 +380,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:09:59.416Z"
+      "lastUpdated": "2026-02-02T15:24:45.548Z"
     },
     {
       "categoryId": "ide",
@@ -404,7 +408,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:10:29.982Z"
+      "lastUpdated": "2026-02-02T15:25:15.002Z"
     },
     {
       "categoryId": "ide",
@@ -436,7 +440,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:10:55.477Z"
+      "lastUpdated": "2026-02-02T15:25:40.275Z"
     },
     {
       "categoryId": "agentic",
@@ -466,11 +470,11 @@
         },
         "kiro": {
           "supported": true,
-          "addedInVersion": "1.23.0",
-          "addedAt": "2025-12-18T05:00:00.000Z"
+          "addedInVersion": "1.23.1",
+          "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-01T16:11:23.697Z"
+      "lastUpdated": "2026-02-02T15:26:07.764Z"
     },
     {
       "categoryId": "agentic",
@@ -490,7 +494,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Subagents in v2.4, Multi-Agent system in v2.2, and Agent Interface in v2.0 indicate autonomous capabilities"
+          "notes": "Agent Interface in v2.0, Subagents in v2.4, and Multi-Agent system in v2.2 indicate autonomous capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -501,7 +505,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:11:53.572Z"
+      "lastUpdated": "2026-02-02T15:26:36.471Z"
     },
     {
       "categoryId": "agentic",
@@ -521,7 +525,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Plan Mode features across multiple versions (v1.7, v2.1, v2.2) suggest task breakdown capabilities"
+          "notes": "Plan Mode (v1.7, improved v2.1, v2.2) suggests task breakdown functionality"
         },
         "gemini-cli": {
           "supported": true,
@@ -533,7 +537,7 @@
           "notes": "v1.23.0 mentions 'Subagents' which suggests task decomposition capabilities"
         }
       },
-      "lastUpdated": "2026-02-01T16:12:23.092Z"
+      "lastUpdated": "2026-02-02T15:27:06.134Z"
     },
     {
       "categoryId": "agentic",
@@ -553,7 +557,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Pinned Chats feature in v2.2 and summarization in v1.6 indicate context management"
+          "notes": "Pinned Chats in v2.2 and summarization in v1.6 indicate context management"
         },
         "gemini-cli": {
           "supported": true,
@@ -564,7 +568,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-01T16:12:52.666Z"
+      "lastUpdated": "2026-02-02T15:27:34.541Z"
     }
   ]
 }

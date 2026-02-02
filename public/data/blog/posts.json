@@ -1,6 +1,66 @@
 {
-  "lastUpdated": "2026-02-01T16:13:21.857Z",
+  "lastUpdated": "2026-02-02T15:28:02.895Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w05",
+      "type": "weekly-digest",
+      "title": "AI Coding Tools Week 5: Claude Code Dominates, Releases Slow Down 27%",
+      "slug": "weekly-digest-week-5-2026",
+      "publishedAt": "2026-02-02T15:19:34.378Z",
+      "summary": "Claude Code pushed 7 updates with major performance fixes, while overall AI tool releases dropped 27% this week. Gemini CLI's PDF improvements lead highlights.",
+      "content": "# AI Coding Tools Week 5: Claude Code Dominates, Releases Slow Down 27%\n\n## TL;DR 📊\n- Claude Code shipped 7 performance-focused updates, fixing startup issues and improving context management\n- Overall release velocity dropped 27% (19 vs 26 last week) as tools consolidate after holiday sprint\n\n## This Week's Releases\n\n### Claude Code (7 releases)\nThe clear winner this week with versions 2.1.20-2.1.29. Major fixes include startup performance improvements for saved sessions, better debug logging for tool call failures, and context management validation fixes for gateway users. The `CLAUDECODEDISABLEEXPERIMENTALBETAS=1` flag now properly prevents validation errors.\n\n### OpenAI Codex CLI (2 releases)\nRust versions 0.92.0 and 0.93.0 brought SOCKS5 proxy support with policy enforcement and a new streaming plan mode with dedicated TUI. API v2 threads can now inject dynamic tools at startup and route calls through the server pipeline.\n\n### Windsurf (3 releases)\nVersions 1.13.13, 1.13.14, and 1.9544.24 shipped with minimal feature details disclosed.\n\n### Mystery Tool Updates (6 releases)\nSix rapid-fire releases (0.0.395-0.0.400) added MCP server instructions support, improved timeline displays for user responses, switched ordered lists to numbers, and added a theme picker. Compaction messages now show clearer command hints, plus Ctrl+X then / lets you run slash commands without losing input.\n\n### Gemini CLI (1 release)\nVersion 0.26.0 focused on PDF token estimation fixes, addressing a critical issue for document processing workflows.\n\n## Highlight Deep Dive 🔍\n\nGemini CLI's PDF token estimation fix might seem minor, but it's actually huge for developers working with document AI. Accurate token counting is critical for cost management and context window planning when processing PDFs. This fix by @korade-krushna addresses a long-standing issue where token estimates were wildly off, leading to unexpected API costs and failed requests when documents exceeded context limits. For teams building document processing pipelines, this update eliminates a major pain point in production workflows.\n\n## Quick Stats\n- **Total Releases:** 19 (down from 26 last week)\n- **Biggest Mover:** Claude Code with 7 releases focused on performance and stability\n- **Velocity Trend:** -27% week-over-week, suggesting tools are stabilizing after holiday feature rushes\n- **Focus Areas:** Performance optimization, context management, and developer experience improvements\n\nThe slowdown in releases suggests the AI coding tool ecosystem is entering a consolidation phase, focusing on stability over new features. Claude Code's dominance this week shows Anthropic is prioritizing user experience issues, while other tools seem to be taking a breather after intense holiday development cycles.",
+      "coverImageUrl": null,
+      "tools": [
+        "claude-code",
+        "openai-codex",
+        "github-copilot",
+        "windsurf",
+        "gemini-cli"
+      ],
+      "metrics": {
+        "totalReleases": 19,
+        "releasesByTool": {
+          "claude-code": 7,
+          "openai-codex": 2,
+          "github-copilot": 6,
+          "windsurf": 3,
+          "gemini-cli": 1
+        },
+        "topFeatures": [
+          {
+            "tool": "claude-code",
+            "feature": "2.1.29",
+            "description": "- Fixed startup performance issues when resuming sessions that have savedhookcontext"
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "rust-v0.93.0",
+            "description": "New Features - Added an optional SOCKS5 proxy listener with policy enforcement and config gating. (9803) - Plan mode now streams proposed plans into a dedicated TUI view, plus a feature-gated /plan..."
+          },
+          {
+            "tool": "github-copilot",
+            "feature": "v0.0.400",
+            "description": "2026-01-30 - Add MCP server instructions support - Timeline displays user responses to askuser tool prompts with username - Ordered lists display with numbers instead of dashes - Add theme picker w..."
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "OpenAI Codex",
+          "Gemini CLI",
+          "Windsurf",
+          "developer tools",
+          "weekly digest",
+          "release notes",
+          "programming",
+          "artificial intelligence"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-5-2026"
+      }
+    },
     {
       "id": "monthly-comparison-2026-01",
       "type": "monthly-comparison",
