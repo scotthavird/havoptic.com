@@ -1,15 +1,12 @@
 import { ShareButtons } from './ShareButtons';
 import { LoginButton } from './LoginButton';
 import { HeaderBell } from './HeaderBell';
-import { PushNotificationToggle } from './PushNotificationToggle';
-import { useAuth } from '../context/AuthContext';
 
 interface HeaderProps {
   lastUpdated: string | null;
 }
 
 export function Header({ lastUpdated }: HeaderProps) {
-  const { user } = useAuth();
   const formattedDate = lastUpdated
     ? new Date(lastUpdated).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -38,8 +35,6 @@ export function Header({ lastUpdated }: HeaderProps) {
         </div>
         <div className="flex items-center gap-3 sm:mt-1 shrink-0 w-full sm:w-auto justify-end">
           <HeaderBell />
-          {/* Show push notification toggle for logged-in users */}
-          {user && <PushNotificationToggle />}
           <LoginButton />
           <ShareButtons />
         </div>

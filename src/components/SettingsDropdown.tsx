@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { usePushNotificationContext } from '../context/PushNotificationContext';
 import { trackShare } from '../utils/analytics';
 
 const SUBSCRIBED_KEY = 'havoptic_subscribed';
@@ -22,15 +23,25 @@ function setLocalSubscribed(): void {
 
 export function SettingsDropdown() {
   const { user, loading: authLoading, login, logout } = useAuth();
+  const {
+    isSubscribed: isPushSubscribed,
+    isSupported: isPushSupported,
+    permission: pushPermission,
+    isLoading: isPushLoading,
+    subscribe: subscribePush,
+    unsubscribe: unsubscribePush,
+  } = usePushNotificationContext();
+
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error' | 'already'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [copied, setCopied] = useState(false);
+  const [showEmailInput, setShowEmailInput] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const isSubscribed = user?.isSubscribed || getLocalSubscribed();
+  const isEmailSubscribed = user?.isSubscribed || getLocalSubscribed();
 
   // Pre-fill email when user logs in
   useEffect(() => {
@@ -61,7 +72,7 @@ export function SettingsDropdown() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleEmailSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
 
@@ -85,6 +96,7 @@ export function SettingsDropdown() {
           setSubmitStatus('success');
           setLocalSubscribed();
         }
+        setShowEmailInput(false);
       } else {
         setSubmitStatus('error');
         setErrorMessage(data.error || 'Something went wrong');
@@ -94,6 +106,14 @@ export function SettingsDropdown() {
       setErrorMessage('Network error. Please try again.');
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handlePushToggle = async () => {
+    if (isPushSubscribed) {
+      await unsubscribePush();
+    } else {
+      await subscribePush();
     }
   };
 
@@ -127,7 +147,6 @@ export function SettingsDropdown() {
       trackShare('copy');
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = url;
       document.body.appendChild(textArea);
@@ -143,6 +162,10 @@ export function SettingsDropdown() {
   const handleRssClick = () => {
     trackShare('rss');
   };
+
+  // Determine push toggle state
+  const showPushToggle = isPushSupported && pushPermission !== 'denied';
+  const isPushDenied = pushPermission === 'denied';
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -199,44 +222,106 @@ export function SettingsDropdown() {
             )}
           </div>
 
-          {/* Newsletter Section */}
-          {!isSubscribed && submitStatus !== 'success' && submitStatus !== 'already' && (
-            <div className="p-4 border-b border-slate-700">
-              <p className="text-xs text-slate-400 mb-2">Get notified of new releases</p>
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
-                  required
-                  disabled={isSubmitting}
-                />
+          {/* Notifications Section */}
+          <div className="p-4 border-b border-slate-700">
+            <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-3">Notifications</p>
+
+            {/* Email Notifications */}
+            <div className="flex items-center justify-between py-2">
+              <div className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <span className="text-sm text-slate-300">Email</span>
+              </div>
+              {isEmailSubscribed || submitStatus === 'success' || submitStatus === 'already' ? (
+                <span className="text-xs text-green-400 flex items-center gap-1">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Subscribed
+                </span>
+              ) : (
                 <button
-                  type="submit"
-                  disabled={isSubmitting || !email}
-                  className="px-3 py-2 bg-amber-600 hover:bg-amber-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={() => setShowEmailInput(!showEmailInput)}
+                  className="text-xs text-amber-400 hover:text-amber-300 transition-colors"
                 >
-                  {isSubmitting ? '...' : 'Go'}
+                  {showEmailInput ? 'Cancel' : 'Enable'}
                 </button>
-              </form>
-              {submitStatus === 'error' && (
-                <p className="text-red-400 text-xs mt-1">{errorMessage}</p>
               )}
             </div>
-          )}
 
-          {(isSubscribed || submitStatus === 'success' || submitStatus === 'already') && (
-            <div className="p-4 border-b border-slate-700">
-              <p className="text-green-400 text-sm flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Subscribed to updates
-              </p>
-            </div>
-          )}
+            {/* Email Input Form */}
+            {showEmailInput && !isEmailSubscribed && (
+              <form onSubmit={handleEmailSubmit} className="mt-2 mb-3">
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm"
+                    required
+                    disabled={isSubmitting}
+                    autoFocus
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || !email}
+                    className="px-3 py-2 bg-amber-600 hover:bg-amber-500 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? '...' : 'Go'}
+                  </button>
+                </div>
+                {submitStatus === 'error' && (
+                  <p className="text-red-400 text-xs mt-1">{errorMessage}</p>
+                )}
+              </form>
+            )}
+
+            {/* Browser Notifications */}
+            {showPushToggle && (
+              <div className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                  </svg>
+                  <span className="text-sm text-slate-300">Browser</span>
+                </div>
+                {!user ? (
+                  <span className="text-xs text-slate-500">Sign in required</span>
+                ) : (
+                  <button
+                    onClick={handlePushToggle}
+                    disabled={isPushLoading}
+                    className={`relative w-11 h-6 rounded-full transition-colors ${
+                      isPushSubscribed ? 'bg-amber-500' : 'bg-slate-600'
+                    } ${isPushLoading ? 'opacity-50 cursor-wait' : 'cursor-pointer'}`}
+                    aria-label={isPushSubscribed ? 'Disable browser notifications' : 'Enable browser notifications'}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
+                        isPushSubscribed ? 'translate-x-5' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Push denied message */}
+            {isPushDenied && (
+              <div className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                  </svg>
+                  <span className="text-sm text-slate-300">Browser</span>
+                </div>
+                <span className="text-xs text-slate-500">Blocked in browser</span>
+              </div>
+            )}
+          </div>
 
           {/* Quick Actions */}
           <div className="p-2">
