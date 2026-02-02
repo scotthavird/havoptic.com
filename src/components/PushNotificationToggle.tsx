@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePushNotificationContext } from '../context/PushNotificationContext';
 import { useWatchlist } from '../context/WatchlistContext';
+
+const SEEN_KEY = 'havoptic_push_badge_seen';
 
 interface PushNotificationToggleProps {
   className?: string;
@@ -11,6 +13,23 @@ export function PushNotificationToggle({ className = '' }: PushNotificationToggl
     usePushNotificationContext();
   const { watchCount } = useWatchlist();
   const [showTooltip, setShowTooltip] = useState(false);
+  const [showNewBadge, setShowNewBadge] = useState(false);
+
+  // Check if user has seen the badge before
+  useEffect(() => {
+    if (!isSubscribed && isSupported && permission !== 'denied') {
+      const seen = localStorage.getItem(SEEN_KEY);
+      if (!seen) {
+        setShowNewBadge(true);
+      }
+    }
+  }, [isSubscribed, isSupported, permission]);
+
+  // Mark as seen when user hovers or subscribes
+  const markAsSeen = () => {
+    localStorage.setItem(SEEN_KEY, 'true');
+    setShowNewBadge(false);
+  };
 
   // Don't render if push is not supported
   if (!isSupported) {
@@ -23,10 +42,19 @@ export function PushNotificationToggle({ className = '' }: PushNotificationToggl
   }
 
   const handleClick = async () => {
+    markAsSeen();
     if (isSubscribed) {
       await unsubscribe();
     } else {
       await subscribe();
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setShowTooltip(true);
+    // Mark as seen after hovering (they've discovered the feature)
+    if (showNewBadge) {
+      setTimeout(markAsSeen, 1500);
     }
   };
 
@@ -40,7 +68,7 @@ export function PushNotificationToggle({ className = '' }: PushNotificationToggl
     <div className={`relative ${className}`}>
       <button
         onClick={handleClick}
-        onMouseEnter={() => setShowTooltip(true)}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setShowTooltip(false)}
         disabled={isLoading}
         className={`relative p-2 rounded-lg transition-all duration-200 ${
@@ -75,9 +103,16 @@ export function PushNotificationToggle({ className = '' }: PushNotificationToggl
           )}
         </svg>
 
-        {/* Active indicator dot */}
+        {/* Active indicator dot when subscribed */}
         {isSubscribed && (
           <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-slate-900" />
+        )}
+
+        {/* "New" badge when not subscribed and hasn't been seen */}
+        {showNewBadge && !isSubscribed && (
+          <span className="absolute -top-1 -right-1 px-1 py-0.5 text-[9px] font-bold bg-amber-500 text-white rounded shadow-lg animate-pulse">
+            NEW
+          </span>
         )}
       </button>
 
