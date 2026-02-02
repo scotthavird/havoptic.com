@@ -237,7 +237,7 @@ async function fetchKiro(existingIds) {
   const seenIds = new Set();
 
   try {
-    const res = await fetch('https://kiro.dev/changelog', {
+    const res = await fetch('https://kiro.dev/changelog/', {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -248,75 +248,115 @@ async function fetchKiro(existingIds) {
 
     const html = await res.text();
 
-    // Extract changelog entry links with their titles
-    // Pattern: <a href="/changelog/[slug]/"...>[title content including version]</a>
-    const entryPattern = /<a\s+href="(\/changelog\/[^"]+\/)"[^>]*>[\s\S]*?<\/a>/g;
-    const entries = [];
+    // Strategy 1: Extract from CLI changelog URLs (most reliable)
+    // Pattern: /changelog/cli/X-YY/ -> version X.YY.0
+    const cliUrlPattern = /\/changelog\/cli\/(\d+)-(\d+)\//g;
+    const cliVersions = new Map(); // version -> url
     let match;
-    while ((match = entryPattern.exec(html)) !== null) {
-      const href = match[1];
-      const content = match[0];
-      entries.push({ href, content, index: match.index });
+    while ((match = cliUrlPattern.exec(html)) !== null) {
+      const major = match[1];
+      const minor = match[2];
+      const version = `${major}.${minor}.0`;
+      const url = `https://kiro.dev/changelog/cli/${major}-${minor}/`;
+      if (!cliVersions.has(version)) {
+        cliVersions.set(version, url);
+      }
     }
 
-    // Extract CLI versions with their positions
-    const versionPattern = /(\d+\.\d+\.\d+)\s+CLI/g;
-    const versions = [];
-    while ((match = versionPattern.exec(html)) !== null) {
-      versions.push({ version: match[1], index: match.index });
+    // Strategy 2: Also look for patch versions (X.YY.Z pattern with publishedDate)
+    // Pattern handles both escaped (JSON) and unescaped quotes: "X.YY.Z","publishedDate":"YYYY-MM-DD..."
+    // The HTML contains escaped JSON like: \"1.24.0\",\"publishedDate\":\"2026-01-16T00:00-05:00\"
+    const jsonVersionPattern = /\\?"(\d+\.\d+\.\d+)\\?",\\?"publishedDate\\?":\\?"([^"\\]+)/g;
+    const versionDates = new Map(); // version -> date
+    while ((match = jsonVersionPattern.exec(html)) !== null) {
+      const version = match[1];
+      const date = match[2];
+      // Only track versions that look like CLI versions (1.x.x range)
+      if (version.startsWith('1.') && parseInt(version.split('.')[1]) >= 20) {
+        versionDates.set(version, date);
+      }
     }
 
-    // Extract dates with their positions
-    const datePattern = /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4})/g;
-    const dates = [];
-    while ((match = datePattern.exec(html)) !== null) {
-      dates.push({ date: match[1], index: match.index });
+    // Strategy 3: Check for patch version URLs (e.g., #patch-1-23-1)
+    const patchUrlPattern = /#patch-(\d+)-(\d+)-(\d+)/g;
+    while ((match = patchUrlPattern.exec(html)) !== null) {
+      const major = match[1];
+      const minor = match[2];
+      const patch = match[3];
+      const version = `${major}.${minor}.${patch}`;
+      const url = `https://kiro.dev/changelog/cli/${major}-${minor}/#patch-${major}-${minor}-${patch}`;
+      if (!cliVersions.has(version)) {
+        cliVersions.set(version, url);
+      }
     }
 
-    // Match each version to the closest entry link and date
-    for (const ver of versions) {
-      const id = `kiro-${ver.version}`;
+    // Also extract dates from "Month DD, YYYY" format (full and abbreviated) near versions
+    const fullMonths = 'January|February|March|April|May|June|July|August|September|October|November|December';
+    const abbrMonths = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
+    const textDatePattern = new RegExp(`((?:${fullMonths}|${abbrMonths})\\s+\\d{1,2},?\\s+\\d{4})`, 'g');
+    const textDates = [];
+    while ((match = textDatePattern.exec(html)) !== null) {
+      textDates.push({ date: match[1], index: match.index });
+    }
+
+    // Strategy 4: Look for patch versions with nearby dates in HTML
+    // Pattern: version number followed by abbreviated date like ">1.23.1</span><span...>Dec 23, 2025"
+    // Use a more flexible pattern that allows HTML tags between version and date
+    const patchDatePattern = />(\d+\.\d+\.\d+)<\/span>[\s\S]{0,200}>((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2},?\s+\d{4})/g;
+    while ((match = patchDatePattern.exec(html)) !== null) {
+      const version = match[1];
+      const dateStr = match[2];
+      if (version.startsWith('1.') && parseInt(version.split('.')[1]) >= 20) {
+        if (!versionDates.has(version)) {
+          versionDates.set(version, dateStr);
+        }
+      }
+    }
+
+    // Build releases from collected data
+    for (const [version, url] of cliVersions) {
+      const id = `kiro-${version}`;
 
       if (seenIds.has(id) || existingIds.has(id)) continue;
       seenIds.add(id);
 
-      // Find the closest date that appears before this version
-      let closestDate = null;
-      for (const d of dates) {
-        if (d.index < ver.index) {
-          closestDate = d.date;
-        } else {
-          break;
+      // Try to find date from JSON data first
+      let releaseDate = versionDates.get(version);
+
+      // If no JSON date found, look for text date near the URL in HTML
+      if (!releaseDate) {
+        const urlIndex = html.indexOf(url.replace('https://kiro.dev', ''));
+        if (urlIndex > -1) {
+          // Find closest date within 2000 chars before the URL
+          for (let i = textDates.length - 1; i >= 0; i--) {
+            const d = textDates[i];
+            if (d.index < urlIndex && urlIndex - d.index < 2000) {
+              releaseDate = new Date(d.date).toISOString();
+              break;
+            }
+          }
         }
       }
 
-      if (!closestDate) continue;
+      // Parse date string to ISO format if needed
+      if (releaseDate && !releaseDate.includes('T')) {
+        releaseDate = new Date(releaseDate).toISOString();
+      }
 
-      // Find the closest entry link that contains this version
-      let entryUrl = 'https://kiro.dev/changelog';
-      let entryTitle = `Kiro CLI version ${ver.version}`;
-      for (const entry of entries) {
-        if (entry.content.includes(ver.version)) {
-          entryUrl = `https://kiro.dev${entry.href}`;
-          // Extract title from h2 content if present
-          const titleMatch = entry.content.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
-          if (titleMatch) {
-            // Clean up the title - remove HTML tags and extra whitespace
-            entryTitle = titleMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-          }
-          break;
-        }
+      if (!releaseDate) {
+        console.log(`  Skipping ${version} - no date found`);
+        continue;
       }
 
       releases.push({
         id,
         tool: 'kiro',
         toolDisplayName: 'Kiro CLI',
-        version: ver.version,
-        date: new Date(closestDate).toISOString(),
-        summary: entryTitle,
-        fullNotes: entryTitle, // Full notes fetched at infographic generation time from URL
-        url: entryUrl,
+        version,
+        date: releaseDate,
+        summary: `Kiro CLI version ${version}`,
+        fullNotes: `Kiro CLI version ${version}`, // Full notes fetched at infographic generation time from URL
+        url,
         type: 'release',
       });
     }
