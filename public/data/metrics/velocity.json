@@ -1,18 +1,18 @@
 {
-  "lastUpdated": "2026-02-01T11:05:02.145Z",
+  "lastUpdated": "2026-02-02T10:17:44.964Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 7,
       "releasesThisMonth": 24,
-      "releasesThisQuarter": 61,
+      "releasesThisQuarter": 60,
       "averageDaysBetweenReleases": 1,
-      "featuresPerRelease": 0.7,
+      "featuresPerRelease": 0.8,
       "lastReleaseAt": "2026-01-31T20:13:22.486Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
-      "releasesThisWeek": 4,
+      "releasesThisWeek": 2,
       "releasesThisMonth": 14,
       "releasesThisQuarter": 34,
       "averageDaysBetweenReleases": 1.8,
@@ -40,11 +40,11 @@
     "kiro": {
       "toolId": "kiro",
       "releasesThisWeek": 0,
-      "releasesThisMonth": 0,
-      "releasesThisQuarter": 5,
-      "averageDaysBetweenReleases": 6,
-      "featuresPerRelease": 0,
-      "lastReleaseAt": "2025-12-18T05:00:00.000Z"
+      "releasesThisMonth": 1,
+      "releasesThisQuarter": 8,
+      "averageDaysBetweenReleases": 7.6,
+      "featuresPerRelease": 0.5,
+      "lastReleaseAt": "2026-01-16T00:00-05:00"
     }
   }
 }
