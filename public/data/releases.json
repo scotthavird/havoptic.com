@@ -655,7 +655,9 @@
       "summary": "Kiro CLI version 1.24.0",
       "fullNotes": "Kiro CLI version 1.24.0",
       "url": "https://kiro.dev/changelog/cli/1-24/",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/kiro-1.24.0-2026-02-02-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/kiro-1.24.0-2026-02-02-16x9.jpg"
     },
     {
       "id": "openai-codex-rust-v0.86.0",
@@ -1035,9 +1037,11 @@
       "version": "1.23.1",
       "date": "2025-12-23T05:00:00.000Z",
       "summary": "Kiro CLI version 1.23.1",
-      "fullNotes": "Kiro CLI version 1.23.1",
+      "fullNotes": "Kiro CLI version 1.23.1 patch release (Dec 23, 2025).\n\n## Changes\n- Added execution details for grep and glob tools\n- Made subagent tool in default agent not trusted by default\n\n## Bug Fixes\n- Fixed planning agent write access issues\n- Fixed command parameters handling\n- Fixed MCP server initialization\n- Fixed tool name parsing",
       "url": "https://kiro.dev/changelog/cli/1-23/#patch-1-23-1",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/kiro-1.23.1-2026-02-02-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/kiro-1.23.1-2026-02-02-16x9.jpg"
     },
     {
       "id": "claude-code-2.0.76",
