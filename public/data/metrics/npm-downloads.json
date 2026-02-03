@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-03T15:25:50.668Z",
+  "lastUpdated": "2026-02-03T20:17:25.673Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
@@ -9,7 +9,7 @@
         "totalDownloads": 28193557,
         "downloadsTrend": 8.3
       },
-      "fetchedAt": "2026-02-03T15:25:49.443Z"
+      "fetchedAt": "2026-02-03T20:17:24.636Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
@@ -19,7 +19,7 @@
         "totalDownloads": 2360826,
         "downloadsTrend": 0.6
       },
-      "fetchedAt": "2026-02-03T15:25:50.264Z"
+      "fetchedAt": "2026-02-03T20:17:25.186Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
@@ -29,7 +29,7 @@
         "totalDownloads": 2043971,
         "downloadsTrend": -12.8
       },
-      "fetchedAt": "2026-02-03T15:25:50.661Z"
+      "fetchedAt": "2026-02-03T20:17:25.666Z"
     }
   }
 }
