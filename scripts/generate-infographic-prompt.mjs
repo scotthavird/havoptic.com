@@ -255,17 +255,24 @@ function getRelease(releases, toolId, version = null) {
 
 // Format date as "Month Day, Year" in US Eastern Time
 function formatReleaseDate(dateStr) {
-  // Parse the date string as local date components to avoid UTC offset issues
-  // Input format: "YYYY-MM-DD" or ISO string
-  const parts = dateStr.split('T')[0].split('-');
-  const year = parseInt(parts[0], 10);
-  const month = parseInt(parts[1], 10) - 1; // JS months are 0-indexed
-  const day = parseInt(parts[2], 10);
+  // Check if this is a midnight placeholder (T00:00:00) - used by Windsurf/Cursor
+  // These mean "this date" without a specific time, so we preserve the date as-is
+  const isMidnightPlaceholder = /T00:00:00/.test(dateStr);
 
-  // Create date using local components (treated as midnight local time)
-  const date = new Date(year, month, day);
+  if (isMidnightPlaceholder) {
+    // Extract date components and format without timezone conversion
+    const [datePart] = dateStr.split('T');
+    const [year, month, day] = datePart.split('-').map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  }
 
-  // Format in US Eastern timezone to ensure consistent display
+  // Full timestamp with actual time - convert to US Eastern Time
+  // e.g., "2026-02-04T00:25:09Z" (00:25 UTC) displays as "February 3, 2026" (EST)
+  const date = new Date(dateStr);
   return date.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
