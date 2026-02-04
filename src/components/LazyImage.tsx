@@ -4,12 +4,16 @@ interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
+  onError?: () => void;
+  timeout?: number;
 }
 
-export function LazyImage({ src, alt, className }: LazyImageProps) {
+export function LazyImage({ src, alt, className, onError, timeout = 8000 }: LazyImageProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,6 +33,42 @@ export function LazyImage({ src, alt, className }: LazyImageProps) {
     return () => observer.disconnect();
   }, []);
 
+  // Timeout for slow-loading images
+  useEffect(() => {
+    if (isVisible && !isLoaded && !hasError) {
+      timeoutRef.current = window.setTimeout(() => {
+        setHasError(true);
+        onError?.();
+      }, timeout);
+    }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [isVisible, isLoaded, hasError, timeout, onError]);
+
+  const handleLoad = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsLoaded(true);
+  };
+
+  const handleError = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setHasError(true);
+    onError?.();
+  };
+
+  // Let parent show fallback when image fails
+  if (hasError) {
+    return null;
+  }
+
   return (
     <div ref={imgRef} className="relative">
       {/* Placeholder with aspect ratio to prevent layout shift */}
@@ -40,7 +80,8 @@ export function LazyImage({ src, alt, className }: LazyImageProps) {
           src={src}
           alt={alt}
           className={className}
-          onLoad={() => setIsLoaded(true)}
+          onLoad={handleLoad}
+          onError={handleError}
           style={{ display: isLoaded ? 'block' : 'none' }}
         />
       )}

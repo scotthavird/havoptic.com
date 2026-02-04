@@ -18,8 +18,10 @@ interface ReleaseCardProps {
 
 export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps) {
   const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
+  const [infographicFailed, setInfographicFailed] = useState(false);
   const lastTapTime = useRef<number>(0);
   const config = TOOL_CONFIG[release.tool];
+  const infographicUrl = !infographicFailed ? release.infographicUrl : undefined;
 
   // Double-tap/double-click detection
   const handleImageInteraction = useCallback((e: React.MouseEvent | React.TouchEvent) => {
@@ -46,7 +48,7 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
       aria-label={`${config.displayName} version ${release.version} release`}
     >
       {/* Infographic or fallback info */}
-      {release.infographicUrl ? (
+      {infographicUrl ? (
         <div
           className="relative cursor-pointer"
           onClick={handleImageInteraction}
@@ -61,9 +63,10 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
           aria-label="Double-tap or double-click to zoom image"
         >
           <LazyImage
-            src={release.infographicUrl}
+            src={infographicUrl}
             alt={`${config.displayName} ${formatVersion(release.version)} release infographic`}
             className="w-full h-auto"
+            onError={() => setInfographicFailed(true)}
           />
         </div>
       ) : (
@@ -71,9 +74,9 @@ export function ReleaseCard({ release, isHighlighted = false }: ReleaseCardProps
       )}
 
       {/* Zoom modal */}
-      {release.infographicUrl && (
+      {infographicUrl && (
         <ImageZoomModal
-          src={release.infographicUrl}
+          src={infographicUrl}
           alt={`${config.displayName} ${formatVersion(release.version)} release infographic`}
           isOpen={isZoomModalOpen}
           onClose={() => setIsZoomModalOpen(false)}
