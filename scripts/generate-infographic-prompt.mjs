@@ -253,10 +253,25 @@ function getRelease(releases, toolId, version = null) {
   return releases.find((r) => r.tool === toolId);
 }
 
-// Format date as "Month Day, Year"
+// Format date as "Month Day, Year" in US Eastern Time
 function formatReleaseDate(dateStr) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  // Parse the date string as local date components to avoid UTC offset issues
+  // Input format: "YYYY-MM-DD" or ISO string
+  const parts = dateStr.split('T')[0].split('-');
+  const year = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1; // JS months are 0-indexed
+  const day = parseInt(parts[2], 10);
+
+  // Create date using local components (treated as midnight local time)
+  const date = new Date(year, month, day);
+
+  // Format in US Eastern timezone to ensure consistent display
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'America/New_York'
+  });
 }
 
 // Fetch full release notes from URL using Claude
