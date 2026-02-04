@@ -15,6 +15,7 @@ import { BlogPost } from './pages/BlogPost';
 import { Compare } from './pages/Compare';
 import { Tool } from './pages/Tool';
 import { Trends } from './pages/Trends';
+import { ConfirmationResult } from './pages/ConfirmationResult';
 
 type Page =
   | { type: 'home' }
@@ -25,7 +26,8 @@ type Page =
   | { type: 'compare' }
   | { type: 'compareVs'; tool1: ToolId; tool2: ToolId }
   | { type: 'trends' }
-  | { type: 'tool'; toolId: ToolId };
+  | { type: 'tool'; toolId: ToolId }
+  | { type: 'confirmed' };
 
 // Parse "tool1-vs-tool2" pattern for comparison pages
 function parseCompareVsSlug(slug: string): { tool1: ToolId; tool2: ToolId } | null {
@@ -64,6 +66,7 @@ function getPageFromLocation(): Page {
   if (pathname === '/blog') return { type: 'blog' };
   if (pathname === '/compare') return { type: 'compare' };
   if (pathname === '/trends') return { type: 'trends' };
+  if (pathname === '/confirmed') return { type: 'confirmed' };
   if (pathname.startsWith('/blog/')) {
     return { type: 'blogPost', slug: pathname.slice(6) };
   }
@@ -303,6 +306,14 @@ function App() {
     return (
       <Layout>
         <Trends />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'confirmed') {
+    return (
+      <Layout>
+        <ConfirmationResult />
       </Layout>
     );
   }

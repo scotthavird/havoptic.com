@@ -198,22 +198,42 @@ GOOGLE_API_KEY=AIza...
 
 Subscribers receive email notifications when new AI tool releases are detected.
 
+### Double Opt-In Flow
+The newsletter uses double opt-in to prevent abuse and ensure valid emails:
+
+1. **User submits email** → Stored as `status: 'pending'` with `confirmation_token`
+2. **Confirmation email sent** → Contains link to `/api/confirm?token=xxx`
+3. **User clicks link** → Token validated, status changed to `'confirmed'`, welcome email sent
+4. **Notifications only sent** to subscribers with `status: 'confirmed'`
+
+Token expiration: 24 hours. Expired tokens require re-subscribing.
+
 ### Components
-- **Subscribe API** (`functions/api/subscribe.js`): Handles newsletter signups, stores in R2, sends admin notification
-- **Unsubscribe API** (`functions/api/unsubscribe.js`): Handles unsubscribe requests, logs to audit trail, sends admin notification
-- **Notify API** (`functions/api/notify.js`): Sends emails to subscribers via AWS SES
+- **Subscribe API** (`functions/api/subscribe.js`): Stores pending subscriber, sends confirmation email
+- **Confirm API** (`functions/api/confirm.js`): Validates token, confirms subscriber, sends welcome email
+- **Unsubscribe API** (`functions/api/unsubscribe.js`): Handles unsubscribe requests, logs to audit trail
+- **Notify API** (`functions/api/notify.js`): Sends emails to confirmed subscribers via AWS SES
 - **Notify Script** (`scripts/notify-subscribers.mjs`): Detects new releases and triggers notifications
+- **Confirmation Page** (`src/pages/ConfirmationResult.tsx`): Shows success/error states after email confirmation
+
+### Database Schema (D1)
+See `scripts/db-migrations/006-double-opt-in.sql` for the double opt-in migration:
+- `subscribers.status`: 'pending' or 'confirmed'
+- `subscribers.confirmation_token`: Unique token for email verification
+- `subscribers.token_expires_at`: Token expiration timestamp
+- `subscribers.confirmed_at`: When email was verified
 
 ### Infrastructure (Terraform)
-- **R2 Bucket**: Stores `subscribers.json` with subscriber data and `newsletter-audit.json` for audit trail
+- **D1 Database**: Stores subscribers with status, preferences, and audit trail
 - **AWS SES**: Email sending with verified domain (havoptic.com)
 - **Cloudflare Pages Secrets**: AWS credentials and API key for notify endpoint
 
 ### Audit Trail
-The `newsletter-audit.json` file in R2 tracks all subscribe/unsubscribe events:
+The `newsletter_audit` table tracks all subscription events:
 ```json
 [
   {"action": "subscribe", "email": "user@example.com", "timestamp": "2025-01-10T12:00:00.000Z", "source": "website"},
+  {"action": "confirm", "email": "user@example.com", "timestamp": "2025-01-10T12:05:00.000Z", "source": "email-verification"},
   {"action": "unsubscribe", "email": "user@example.com", "timestamp": "2025-01-15T08:30:00.000Z", "originalSubscribedAt": "2025-01-10T12:00:00.000Z"}
 ]
 ```

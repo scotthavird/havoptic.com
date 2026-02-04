@@ -163,7 +163,7 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   const [isFullyHidden, setIsFullyHidden] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error' | 'already'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'pending' | 'error' | 'already'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const panelRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -253,6 +253,9 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
         if (data.alreadySubscribed) {
           setSubmitStatus('already');
           trackNewsletterEvent('already_subscribed', { variant });
+        } else if (data.pending) {
+          setSubmitStatus('pending');
+          trackNewsletterEvent('pending_confirmation', { variant });
         } else {
           setSubmitStatus('success');
           setLocalSubscribed();
@@ -275,6 +278,44 @@ export function NewsletterSignup({ variant = 'hero' }: NewsletterSignupProps) {
   // Don't show hero variant if fully hidden
   if (variant === 'hero' && isFullyHidden) {
     return null;
+  }
+
+  // Show "check your email" for pending confirmation
+  if (submitStatus === 'pending') {
+    if (variant === 'hero') {
+      return (
+        <div
+          ref={wrapperRef}
+          className="overflow-hidden transition-[height,margin,opacity] ease-out"
+          style={{ transitionDuration: '400ms' }}
+        >
+          <div
+            ref={panelRef}
+            className="w-full max-w-lg mx-auto bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-5 border border-slate-600/50 relative"
+          >
+            <div className="text-center">
+              <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <p className="text-white font-medium mb-1">Check your email</p>
+              <p className="text-slate-400 text-sm">
+                Click the confirmation link to complete your subscription.
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // Footer variant
+    return (
+      <div className="text-center">
+        <p className="text-amber-400 text-sm font-medium">Check your email</p>
+        <p className="text-slate-400 text-xs mt-1">Click the confirmation link to complete your subscription.</p>
+      </div>
+    );
   }
 
   // Show invite CTA for subscribed users

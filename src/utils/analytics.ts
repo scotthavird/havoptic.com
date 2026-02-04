@@ -33,7 +33,7 @@ export function trackPageView(pagePath: string, pageTitle: string): void {
  * These events help understand conversion from form view to subscription.
  */
 export function trackNewsletterEvent(
-  action: 'form_view' | 'form_focus' | 'submit' | 'success' | 'error' | 'already_subscribed' | 'dismiss',
+  action: 'form_view' | 'form_focus' | 'submit' | 'success' | 'pending_confirmation' | 'error' | 'already_subscribed' | 'dismiss',
   params?: Record<string, string | number | boolean>
 ): void {
   trackEvent(`newsletter_${action}`, {
