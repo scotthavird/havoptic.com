@@ -7,6 +7,9 @@ export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const FROM_EMAIL = 'newsletter@havoptic.com';
 export const FROM_NAME = 'Havoptic';
 
+// Token expiration time (24 hours in milliseconds)
+export const TOKEN_EXPIRY_MS = 24 * 60 * 60 * 1000;
+
 // Rate limiting constants
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute in ms
 const RATE_LIMIT_MAX_DEFAULT = 5;
@@ -100,16 +103,61 @@ export async function getSubscriber(db, email) {
 }
 
 /**
- * Get all subscribers
+ * Get all confirmed subscribers (for sending notifications)
  */
 export async function getAllSubscribers(db) {
-  const result = await db.prepare('SELECT id, email FROM subscribers').all();
+  const result = await db.prepare(
+    "SELECT id, email FROM subscribers WHERE status = 'confirmed'"
+  ).all();
   return result.results || [];
 }
 
 /**
+ * Generate a secure confirmation token
+ */
+export function generateConfirmationToken() {
+  const array = new Uint8Array(32);
+  crypto.getRandomValues(array);
+  return Array.from(array, b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/**
+ * Get subscriber by confirmation token
+ */
+export async function getSubscriberByToken(db, token) {
+  if (!token) return null;
+  return await db.prepare(
+    'SELECT * FROM subscribers WHERE confirmation_token = ?'
+  ).bind(token).first();
+}
+
+/**
+ * Confirm a subscriber (verify their email)
+ */
+export async function confirmSubscriber(db, subscriberId) {
+  const confirmedAt = new Date().toISOString();
+  await db.prepare(`
+    UPDATE subscribers
+    SET status = 'confirmed',
+        confirmed_at = ?,
+        confirmation_token = NULL,
+        token_expires_at = NULL
+    WHERE id = ?
+  `).bind(confirmedAt, subscriberId).run();
+  return confirmedAt;
+}
+
+/**
+ * Check if confirmation token is expired
+ */
+export function isTokenExpired(tokenExpiresAt) {
+  if (!tokenExpiresAt) return true;
+  return new Date(tokenExpiresAt) < new Date();
+}
+
+/**
  * Get subscribers filtered by tool preferences (opt-out model)
- * Returns subscribers who have NOT explicitly disabled the given tools
+ * Returns CONFIRMED subscribers who have NOT explicitly disabled the given tools
  * @param {D1Database} db
  * @param {string[]} toolIds - Array of tool IDs (e.g., ['claude-code', 'cursor'])
  * @returns {Promise<Array<{id: string, email: string}>>}
@@ -119,26 +167,27 @@ export async function getSubscribersForTools(db, toolIds) {
     return getAllSubscribers(db);
   }
 
-  // Get all subscribers, then filter out those who have opted out of ALL the specified tools
+  // Get all confirmed subscribers, then filter out those who have opted out of ALL the specified tools
   // A subscriber receives the notification if they haven't opted out of at least one tool
   const placeholders = toolIds.map(() => '?').join(',');
 
   const result = await db.prepare(`
     SELECT DISTINCT s.id, s.email
     FROM subscribers s
-    WHERE NOT EXISTS (
-      -- Check if subscriber has opted out of ALL specified tools
-      SELECT 1 FROM (
-        SELECT ? as tool_count
-      ) tc
-      WHERE tc.tool_count = (
-        SELECT COUNT(*)
-        FROM subscriber_tool_preferences stp
-        WHERE stp.subscriber_id = s.id
-          AND stp.tool_id IN (${placeholders})
-          AND stp.enabled = 0
+    WHERE s.status = 'confirmed'
+      AND NOT EXISTS (
+        -- Check if subscriber has opted out of ALL specified tools
+        SELECT 1 FROM (
+          SELECT ? as tool_count
+        ) tc
+        WHERE tc.tool_count = (
+          SELECT COUNT(*)
+          FROM subscriber_tool_preferences stp
+          WHERE stp.subscriber_id = s.id
+            AND stp.tool_id IN (${placeholders})
+            AND stp.enabled = 0
+        )
       )
-    )
   `).bind(toolIds.length, ...toolIds).all();
 
   return result.results || [];
@@ -146,7 +195,7 @@ export async function getSubscribersForTools(db, toolIds) {
 
 /**
  * Get subscribers filtered by content type preference (opt-out model)
- * Returns subscribers who have NOT explicitly disabled the given content type
+ * Returns CONFIRMED subscribers who have NOT explicitly disabled the given content type
  * @param {D1Database} db
  * @param {string} contentType - Content type: 'release', 'weekly-digest', 'monthly-comparison'
  * @returns {Promise<Array<{id: string, email: string}>>}
@@ -155,13 +204,14 @@ export async function getSubscribersForContentType(db, contentType) {
   const result = await db.prepare(`
     SELECT s.id, s.email
     FROM subscribers s
-    WHERE NOT EXISTS (
-      SELECT 1
-      FROM subscriber_content_preferences scp
-      WHERE scp.subscriber_id = s.id
-        AND scp.content_type = ?
-        AND scp.enabled = 0
-    )
+    WHERE s.status = 'confirmed'
+      AND NOT EXISTS (
+        SELECT 1
+        FROM subscriber_content_preferences scp
+        WHERE scp.subscriber_id = s.id
+          AND scp.content_type = ?
+          AND scp.enabled = 0
+      )
   `).bind(contentType).all();
 
   return result.results || [];
@@ -169,6 +219,7 @@ export async function getSubscribersForContentType(db, contentType) {
 
 /**
  * Get subscribers filtered by both tool and content type preferences
+ * Returns only CONFIRMED subscribers
  * @param {D1Database} db
  * @param {string[]} toolIds - Array of tool IDs
  * @param {string} contentType - Content type
@@ -184,7 +235,8 @@ export async function getSubscribersForNotification(db, toolIds, contentType) {
   const result = await db.prepare(`
     SELECT DISTINCT s.id, s.email
     FROM subscribers s
-    WHERE
+    WHERE s.status = 'confirmed'
+      AND
       -- Content type not disabled
       NOT EXISTS (
         SELECT 1
@@ -274,10 +326,12 @@ export async function updateContentPreference(db, subscriberId, contentType, ena
 }
 
 /**
- * Get subscriber count
+ * Get confirmed subscriber count
  */
 export async function getSubscriberCount(db) {
-  const result = await db.prepare('SELECT COUNT(*) as count FROM subscribers').first();
+  const result = await db.prepare(
+    "SELECT COUNT(*) as count FROM subscribers WHERE status = 'confirmed'"
+  ).first();
   return result?.count || 0;
 }
 

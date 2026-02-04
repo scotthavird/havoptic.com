@@ -15,13 +15,118 @@ import {
   getSubscriber,
   getSubscriberCount,
   sendEmail,
+  generateConfirmationToken,
+  TOKEN_EXPIRY_MS,
 } from './_newsletter-utils.js';
 import { parseSessionCookie, getUserFromSession } from './auth/_utils.js';
 
 // Admin notification email (set via environment variable)
 const getAdminEmail = (env) => env.ADMIN_EMAIL || null;
 
-// Generate welcome email content
+// Generate confirmation email content
+function generateConfirmationEmailContent(confirmUrl) {
+  const subject = "Confirm your Havoptic subscription";
+
+  const htmlBody = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+  <!-- Preheader text -->
+  <div style="display: none; max-height: 0; overflow: hidden;">
+    Please confirm your email to start receiving AI coding tool release notifications.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc;">
+    <tr>
+      <td align="center" style="padding: 32px 16px;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 560px;">
+
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%); border-radius: 16px 16px 0 0; padding: 40px 32px; text-align: center;">
+              <div style="font-size: 24px; margin-bottom: 8px;">📬</div>
+              <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px;">One more step...</h1>
+              <p style="margin: 12px 0 0; font-size: 15px; color: #c4b5fd; font-weight: 500;">Confirm your email to get started</p>
+            </td>
+          </tr>
+
+          <!-- Main content -->
+          <tr>
+            <td style="background-color: #ffffff; padding: 32px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+              <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.7; color: #334155;">
+                You requested to subscribe to Havoptic's AI coding tool release notifications. Click the button below to confirm your email address.
+              </p>
+
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="padding: 16px 0;">
+                    <a href="${confirmUrl}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);">
+                      Confirm my subscription
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 24px 0 0; font-size: 14px; color: #64748b; text-align: center;">
+                This link expires in 24 hours.
+              </p>
+
+              <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #e2e8f0;">
+                <p style="margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.6;">
+                  If you didn't request this, you can safely ignore this email. You won't receive any notifications without confirming.
+                </p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8fafc; padding: 24px 32px; border-radius: 0 0 16px 16px; border: 1px solid #e2e8f0; border-top: none; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #94a3b8;">
+                Havoptic · AI Coding Tool Release Tracker
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim();
+
+  const textBody = `
+CONFIRM YOUR HAVOPTIC SUBSCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You requested to subscribe to Havoptic's AI coding tool release notifications.
+
+Click the link below to confirm your email address:
+
+${confirmUrl}
+
+This link expires in 24 hours.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If you didn't request this, you can safely ignore this email.
+You won't receive any notifications without confirming.
+
+Havoptic · AI Coding Tool Release Tracker
+  `.trim();
+
+  return { subject, htmlBody, textBody };
+}
+
+// Generate welcome email content (sent after confirmation)
 function generateWelcomeEmailContent() {
   const subject = "You're In! Welcome to Havoptic";
 
@@ -370,26 +475,61 @@ export async function onRequestPost(context) {
     // Check if already subscribed
     const existingSubscriber = await getSubscriber(env.AUTH_DB, normalizedEmail);
     if (existingSubscriber) {
-      // If logged in and subscription isn't linked, link it now
-      if (userId && !existingSubscriber.user_id) {
-        await env.AUTH_DB.prepare(
-          'UPDATE subscribers SET user_id = ? WHERE id = ?'
-        ).bind(userId, existingSubscriber.id).run();
+      // If already confirmed, they're subscribed
+      if (existingSubscriber.status === 'confirmed') {
+        // If logged in and subscription isn't linked, link it now
+        if (userId && !existingSubscriber.user_id) {
+          await env.AUTH_DB.prepare(
+            'UPDATE subscribers SET user_id = ? WHERE id = ?'
+          ).bind(userId, existingSubscriber.id).run();
+        }
+        return new Response(
+          JSON.stringify({ message: 'Already subscribed', alreadySubscribed: true }),
+          { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        );
       }
+
+      // If pending, resend confirmation email
+      const token = generateConfirmationToken();
+      const tokenExpiresAt = new Date(Date.now() + TOKEN_EXPIRY_MS).toISOString();
+
+      await env.AUTH_DB.prepare(`
+        UPDATE subscribers
+        SET confirmation_token = ?, token_expires_at = ?
+        WHERE id = ?
+      `).bind(token, tokenExpiresAt, existingSubscriber.id).run();
+
+      // Send new confirmation email
+      try {
+        if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
+          const confirmUrl = `https://havoptic.com/api/confirm?token=${token}`;
+          const { subject, htmlBody, textBody } = generateConfirmationEmailContent(confirmUrl);
+          await sendEmail(normalizedEmail, subject, htmlBody, textBody, env);
+        }
+      } catch (emailError) {
+        console.error('Confirmation email failed:', emailError.message);
+      }
+
       return new Response(
-        JSON.stringify({ message: 'Already subscribed', alreadySubscribed: true }),
+        JSON.stringify({
+          message: 'Confirmation email sent. Please check your inbox.',
+          success: true,
+          pending: true,
+        }),
         { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
 
-    // Add new subscriber to D1
+    // Add new subscriber as pending
     const subscriberId = crypto.randomUUID();
     const subscribedAt = new Date().toISOString();
+    const token = generateConfirmationToken();
+    const tokenExpiresAt = new Date(Date.now() + TOKEN_EXPIRY_MS).toISOString();
 
     await env.AUTH_DB.prepare(`
-      INSERT INTO subscribers (id, email, subscribed_at, source, user_id)
-      VALUES (?, ?, ?, 'website', ?)
-    `).bind(subscriberId, normalizedEmail, subscribedAt, userId).run();
+      INSERT INTO subscribers (id, email, subscribed_at, source, user_id, status, confirmation_token, token_expires_at)
+      VALUES (?, ?, ?, 'website', ?, 'pending', ?, ?)
+    `).bind(subscriberId, normalizedEmail, subscribedAt, userId, token, tokenExpiresAt).run();
 
     // Log to audit trail
     await logAuditEvent(env.AUTH_DB, {
@@ -401,25 +541,22 @@ export async function onRequestPost(context) {
       userAgent: request.headers.get('User-Agent'),
     });
 
-    // Get total subscriber count for admin notification
-    const totalSubscribers = await getSubscriberCount(env.AUTH_DB);
-
-    // Send welcome email (don't fail subscription if email fails)
+    // Send confirmation email (don't fail subscription if email fails)
     try {
       if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
-        const { subject, htmlBody, textBody } = generateWelcomeEmailContent();
-        const personalizedHtml = htmlBody.replace(/\{\{email\}\}/g, encodeURIComponent(normalizedEmail));
-        const personalizedText = textBody.replace(/\{\{email\}\}/g, encodeURIComponent(normalizedEmail));
-        await sendEmail(normalizedEmail, subject, personalizedHtml, personalizedText, env);
+        const confirmUrl = `https://havoptic.com/api/confirm?token=${token}`;
+        const { subject, htmlBody, textBody } = generateConfirmationEmailContent(confirmUrl);
+        await sendEmail(normalizedEmail, subject, htmlBody, textBody, env);
       }
     } catch (emailError) {
-      console.error('Welcome email failed:', emailError.message);
+      console.error('Confirmation email failed:', emailError.message);
     }
 
     // Send admin notification (don't fail subscription if this fails)
     try {
       const adminEmail = getAdminEmail(env);
       if (adminEmail && env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
+        const totalSubscribers = await getSubscriberCount(env.AUTH_DB);
         const { subject, htmlBody, textBody } = generateAdminSubscribeNotification(
           normalizedEmail,
           totalSubscribers
@@ -431,7 +568,11 @@ export async function onRequestPost(context) {
     }
 
     return new Response(
-      JSON.stringify({ message: 'Successfully subscribed', success: true }),
+      JSON.stringify({
+        message: 'Please check your email to confirm your subscription.',
+        success: true,
+        pending: true,
+      }),
       { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
     );
 
