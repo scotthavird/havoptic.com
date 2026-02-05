@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-05T05:31:26.672Z",
+  "lastUpdated": "2026-02-05T10:21:40.337Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.403",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.403",
+      "date": "2026-02-05T08:43:23Z",
+      "summary": "2026-02-04 - Windows Task Manager displays correct application name - Introduce security check preventing use of modules outside of application bundle - ACP model info includes usage multiplier and...",
+      "fullNotes": "2026-02-04 - Windows Task Manager displays correct application name - Introduce security check preventing use of modules outside of application bundle - ACP model info includes usage multiplier and enablement status - Fix logic checking user organization membership - Stop MCP servers before updating plugins - Detached shell processes work on vanilla macOS installations - Escape key consistently aborts permission dialogs regardless of selection - Plugin skills work in prompt mode - Config files preserve custom fields when CLI updates them - Reasoning summaries enabled by default for supporting models - Support comma-separated tools in custom agent frontmatter - Skills with unknown frontmatter fields now load with warnings instead of being silently skipped",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.403",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.97.0",
       "tool": "openai-codex",
@@ -78,6 +89,17 @@
       "type": "release",
       "infographicUrl": "/images/infographics/windsurf-1.9544.35-2026-02-05-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/windsurf-1.9544.35-2026-02-05-16x9.jpg"
+    },
+    {
+      "id": "kiro-1.25.0",
+      "tool": "kiro",
+      "toolDisplayName": "Kiro CLI",
+      "version": "1.25.0",
+      "date": "2026-02-04T00:00:00.000Z",
+      "summary": "Kiro CLI version 1.25.0",
+      "fullNotes": "Kiro CLI version 1.25.0",
+      "url": "https://kiro.dev/changelog/cli/1-25/",
+      "type": "release"
     },
     {
       "id": "github-copilot-v0.0.402",
