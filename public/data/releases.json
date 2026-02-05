@@ -1,6 +1,50 @@
 {
-  "lastUpdated": "2026-02-05T15:20:27.666Z",
+  "lastUpdated": "2026-02-05T20:13:58.336Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.27.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.27.1",
+      "date": "2026-02-05T19:55:15Z",
+      "summary": "What's Changed fix(patch): cherry-pick a8b4c38 to release/v0.27.0-pr-18161 to patch version v0.27.0 and create version 0.27.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick a8b4c38 to release/v0.27.0-pr-18161 to patch version v0.27.0 and create version 0.27.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18393 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.27.0...v0.27.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.27.1",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v0.0.404",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.404",
+      "date": "2026-02-05T19:08:11Z",
+      "summary": "2026-02-05 - Add support for claude-opus-4.6 model - /allow-all and /yolo execute immediately - MCP servers shut down concurrently for improved performance - Cancel --resume session picker to start...",
+      "fullNotes": "2026-02-05 - Add support for claude-opus-4.6 model - /allow-all and /yolo execute immediately - MCP servers shut down concurrently for improved performance - Cancel --resume session picker to start a new session - MCP server configurations default to all tools when tools parameter not specified - Add /tasks command to view and manage background tasks - Enable background agents for all users - Simplify and clarify /delegate command messaging - GITHUBTOKEN environment variable now accessible in agent shell sessions",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.404",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.32",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.32",
+      "date": "2026-02-05T17:03:20.616Z",
+      "summary": "- Claude Opus 4.6 is now available! - Added research preview agent teams feature for multi-agent collaboration (token-intensive feature, requires setting CLAUDECODEEXPERIMENTALAGENTTEAMS=1) - Claud...",
+      "fullNotes": "- Claude Opus 4.6 is now available! - Added research preview agent teams feature for multi-agent collaboration (token-intensive feature, requires setting CLAUDECODEEXPERIMENTALAGENTTEAMS=1) - Claude now automatically records and recalls memories as it works - Added \"Summari",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "openai-codex-rust-v0.98.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.98.0",
+      "date": "2026-02-05T17:00:36Z",
+      "summary": "New Features - Introducing GPT-5.3-Codex. Learn More - Steer mode is now stable and enabled by default, so Enter sends immediately during running tasks while Tab explicitly queues follow-up input. ...",
+      "fullNotes": "New Features - Introducing GPT-5.3-Codex. Learn More - Steer mode is now stable and enabled by default, so Enter sends immediately during running tasks while Tab explicitly queues follow-up input. (10690) Bug Fixes - Fixed resumeThread() argument ordering in the TypeScript SDK so resuming with local images no longer starts an unintended new session. (10709) - Fixed model-instruction handling when changing models mid-conversation or resuming with a different model, ensuring the correct developer instructions are applied. (10651, 10719) - Fixed a remote compaction mismatch where token pre-estimation and compact payload generation could use different base instructions, improving trim accuracy and avoiding context overflows. (10692) - Cloud requirements now reload immediately after login instead of requiring a later refresh path to take effect. (10725) Chores - Restored the default assistant personality to Pragmatic across config and related tests/UI snapshots. (10705) - Unified collaboration mode naming and metadata across prompts, tools, protocol types, and TUI labels for more consistent mode behavior and messaging. (10666) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.97.0...rust-v0.98.0 - 10709 fix: ensure resume args precede image args @cryptonerdcn - 10705 chore(config) Default Personality Pragmatic @dylan-hurd-oai - 10651 fix(core) switching model appends model instructions @dylan-hurd-oai - 10666 Sync collaboration mode naming across Default prompt, tools, and TUI @charley-oai - 10690 Make steer stable by default @aibrahim-oai - 10692 Fix remote compaction estimator/payload instruction small mismatch @charley-oai - 10725 Reload cloud requirements after user login @xl-openai - 10719 fix(core,app-server) resume with different model @dylan-hurd-oai",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.98.0",
+      "type": "release"
+    },
     {
       "id": "github-copilot-v0.0.403",
       "tool": "github-copilot",
