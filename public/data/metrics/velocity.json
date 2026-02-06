@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-02-06T00:41:25.898Z",
+  "lastUpdated": "2026-02-06T05:31:06.609Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 5,
+      "releasesThisWeek": 6,
       "releasesThisMonth": 27,
-      "releasesThisQuarter": 59,
-      "averageDaysBetweenReleases": 1.1,
+      "releasesThisQuarter": 60,
+      "averageDaysBetweenReleases": 1,
       "featuresPerRelease": 0.9,
-      "lastReleaseAt": "2026-02-05T17:03:20.616Z"
+      "lastReleaseAt": "2026-02-06T00:16:13.218Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "releasesThisWeek": 6,
-      "releasesThisMonth": 18,
+      "releasesThisMonth": 17,
       "releasesThisQuarter": 36,
       "averageDaysBetweenReleases": 1.5,
       "featuresPerRelease": 13.7,
@@ -31,7 +31,7 @@
     "gemini-cli": {
       "toolId": "gemini-cli",
       "releasesThisWeek": 3,
-      "releasesThisMonth": 11,
+      "releasesThisMonth": 10,
       "releasesThisQuarter": 87,
       "averageDaysBetweenReleases": 2.5,
       "featuresPerRelease": 7.7,
