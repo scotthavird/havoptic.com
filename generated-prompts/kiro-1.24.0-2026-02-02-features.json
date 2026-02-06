@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "icon": "🧠",
+      "name": "Progressive Context Loading",
+      "description": "Load documentation metadata first, content on-demand"
+    },
+    {
+      "icon": "🔗",
+      "name": "Custom Diff Tools",
+      "description": "External diff tools with syntax highlighting"
+    },
+    {
+      "icon": "🔍",
+      "name": "AST Pattern Tools",
+      "description": "Syntax-tree pattern matching eliminates false matches"
+    },
+    {
+      "icon": "💻",
+      "name": "Code Intelligence",
+      "description": "Built-in support for 18 languages without LSP"
+    },
+    {
+      "icon": "⚡",
+      "name": "Conversation Compaction",
+      "description": "Free up context space automatically or manually"
+    },
+    {
+      "icon": "🔒",
+      "name": "Web Fetch Permissions",
+      "description": "Granular URL access control with regex patterns"
+    }
+  ],
+  "releaseHighlight": "Major improvements to code intelligence with built-in language support, smart context management, and enhanced security controls",
+  "releaseInfo": "v1.24.0 • January 16, 2026",
+  "sourceContent": "## Version 1.24.0 Release Notes\n\n**Skills: Progressive Context Loading**\n- New resource type for large documentation sets\n- Only metadata (name/description) loads at startup, full content loads on-demand\n- Requires YAML frontmatter with descriptive metadata for reliable agent selection\n\n**Custom Diff Tools**\n- Support for external diff tools (delta, difftastic, VS Code)\n- Configure via `chat.diffTool` setting\n- Options include syntax highlighting, side-by-side view, structural diffs, and GUI tools\n\n**AST Pattern Tools**\n- New `pattern-search` and `pattern-rewrite` tools\n- Syntax-tree pattern matching instead of text regex\n- Eliminates false matches on string literals or comments\n\n**Improved Code Intelligence**\n- Built-in support for 18 languages without LSP setup\n- Languages: Bash, C, C++, C#, Elixir, Go, Java, JavaScript, Kotlin, Lua, PHP, Python, Ruby, Rust, Scala, Swift, TSX, TypeScript\n- Symbol search, definition navigation, structural code searches\n- New `/code overview` command with `--silent` option\n\n**Conversation Compaction**\n- `/compact` command to free up context space\n- Automatic compaction when context window overflows\n- Configurable retention via `compaction.excludeMessages` and `compaction.excludeContextWindowPercent`\n- Creates new session while preserving ability to resume original\n\n**Granular Web Fetch Permissions**\n- URL access control through agent configuration\n- Regex patterns for trusted domains and blocked sites\n- Prompt for approval on non-trusted URLs\n\n**Remote Authentication**\n- Google and GitHub sign-in support for remote machines\n- Works with SSH, SSM, containers via port forwarding\n- Device code authentication for Builder ID and IAM Identity Center",
+  "sourceUrl": "https://kiro.dev/changelog/cli/1-24/",
+  "sourceOrigin": "fetched",
+  "extractedAt": "2026-02-02T05:41:22.669Z"
+}

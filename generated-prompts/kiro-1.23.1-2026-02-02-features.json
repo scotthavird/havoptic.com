@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "icon": "📊",
+      "name": "Execution Details",
+      "description": "Enhanced grep and glob tool visibility"
+    },
+    {
+      "icon": "🔒",
+      "name": "Security Enhancement",
+      "description": "Untrusted subagent tool by default"
+    },
+    {
+      "icon": "🛠️",
+      "name": "Planning Agent Fix",
+      "description": "Resolved write access issues completely"
+    },
+    {
+      "icon": "⚡",
+      "name": "Command Parameters",
+      "description": "Fixed handling for better performance"
+    },
+    {
+      "icon": "🔌",
+      "name": "MCP Server Fix",
+      "description": "Improved initialization and startup reliability"
+    },
+    {
+      "icon": "🧠",
+      "name": "Tool Name Parsing",
+      "description": "Enhanced parsing accuracy and stability"
+    }
+  ],
+  "releaseHighlight": "Security improvements and critical bug fixes for better CLI stability",
+  "releaseInfo": "v1.23.1 • December 23, 2025",
+  "sourceContent": "Kiro CLI version 1.23.1 patch release (Dec 23, 2025).\n\n## Changes\n- Added execution details for grep and glob tools\n- Made subagent tool in default agent not trusted by default\n\n## Bug Fixes\n- Fixed planning agent write access issues\n- Fixed command parameters handling\n- Fixed MCP server initialization\n- Fixed tool name parsing",
+  "sourceUrl": "https://kiro.dev/changelog/cli/1-23/#patch-1-23-1",
+  "sourceOrigin": "fullNotes",
+  "extractedAt": "2026-02-02T05:45:56.604Z"
+}

@@ -1,0 +1,15 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "KIRO" with "v1.24.0 • January 16, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🧠 "Progressive Context Loading" - "Load documentation metadata first, content on-demand"
+2. 🔗 "Custom Diff Tools" - "External diff tools with syntax highlighting"
+3. 🔍 "AST Pattern Tools" - "Syntax-tree pattern matching eliminates false matches"
+4. 💻 "Code Intelligence" - "Built-in support for 18 languages without LSP"
+5. ⚡ "Conversation Compaction" - "Free up context space automatically or manually"
+6. 🔒 "Web Fetch Permissions" - "Granular URL access control with regex patterns"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple accent, dark gradient background, cloud-native professional aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Major improvements to code intelligence with built-in language support, smart context management, and enhanced security controls"
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.

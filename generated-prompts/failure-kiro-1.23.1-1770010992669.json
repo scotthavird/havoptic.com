@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-02T05:43:12.667Z",
+  "tool": "kiro",
+  "version": "1.23.1",
+  "reason": "extractFeatures failed after 3 attempts: Validation failed: No features extracted",
+  "releaseData": {
+    "id": "kiro-1.23.1",
+    "tool": "kiro",
+    "version": "1.23.1",
+    "date": "2025-12-23T05:00:00.000Z",
+    "summary": "Kiro CLI version 1.23.1",
+    "url": "https://kiro.dev/changelog/cli/1-23/#patch-1-23-1"
+  },
+  "fetchedContentLength": 23,
+  "extractedFeatures": null,
+  "sourceUrl": "https://kiro.dev/changelog/cli/1-23/#patch-1-23-1",
+  "retryAttempts": 3
+}

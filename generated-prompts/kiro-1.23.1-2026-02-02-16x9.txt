@@ -1,0 +1,15 @@
+Create a professional landscape (1920x1080) social media infographic for a developer tool release.
+
+Header: "KIRO" with "v1.23.1 • December 23, 2025" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 📊 "Execution Details" - "Enhanced grep and glob tool visibility"
+2. 🔒 "Security Enhancement" - "Untrusted subagent tool by default"
+3. 🛠️ "Planning Agent Fix" - "Resolved write access issues completely"
+4. ⚡ "Command Parameters" - "Fixed handling for better performance"
+5. 🔌 "MCP Server Fix" - "Improved initialization and startup reliability"
+6. 🧠 "Tool Name Parsing" - "Enhanced parsing accuracy and stability"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple accent, dark gradient background, cloud-native professional aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Security improvements and critical bug fixes for better CLI stability"
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.

@@ -1,0 +1,15 @@
+Create a professional square (1080x1080) social media infographic for a developer tool release.
+
+Header: "GEMINI CLI" with "v0.27.0 • February 3, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. ⚡ "Event-driven Scheduler" - "Improved tool execution performance and reliability"
+2. 🧠 "AskUser Tool" - "Interactive dialogs for clarifying user questions"
+3. 🔌 "Skills Promotion" - "Agent skills moved from experimental to stable"
+4. 📊 "Plan Mode" - "Enhanced planning workflow with persistent storage"
+5. 🛠️ "Rewind Command" - "Navigate and restore previous conversation states"
+6. 🖼️ "Image Paste" - "Linux clipboard support for Wayland and X11"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark background, clean Material Design, brand color #00ACC1, high contrast, readable text, professional tech aesthetic
+Highlight: "Major stability improvements with event-driven scheduler and promotion of agent skills to stable release status."
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.
