@@ -10,7 +10,9 @@
       "summary": "2026-02-05 - Plugin and marketplace names support uppercase letters - /experimental shows help screen listing experimental features - Fix SQL tool disconnects - Plugins can bundle LSP server config...",
       "fullNotes": "2026-02-05 - Plugin and marketplace names support uppercase letters - /experimental shows help screen listing experimental features - Fix SQL tool disconnects - Plugins can bundle LSP server configurations",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.405",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.405-2026-02-06-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.405-2026-02-06-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.27.2",
@@ -21,7 +23,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 9ca7300 to release/v0.27.1-pr-18395 to patch version v0.27.1 and create version 0.27.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick 9ca7300 to release/v0.27.1-pr-18395 to patch version v0.27.1 and create version 0.27.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18399 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.27.1...v0.27.2",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.27.2",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.27.2-2026-02-06-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.27.2-2026-02-06-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.27.1",
