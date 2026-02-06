@@ -3,6 +3,7 @@ import { Timeline } from './components/Timeline';
 import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
 import { SignInPrompt } from './components/SignInPrompt';
+import { NewsletterSignup } from './components/NewsletterSignup';
 import { useReleases } from './hooks/useReleases';
 import { useWatchlist } from './context/WatchlistContext';
 import { TOOL_CONFIG, type ToolId } from './types/release';
@@ -333,6 +334,10 @@ function App() {
         <nav aria-label="Filter by tool">
           <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
         </nav>
+
+        <div className="my-4">
+          <NewsletterSignup variant="hero" />
+        </div>
 
         {loading && (
           <div className="text-center py-12 text-slate-400" aria-live="polite" aria-busy="true">
