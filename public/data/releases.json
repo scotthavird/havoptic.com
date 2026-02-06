@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-05T20:13:58.336Z",
+  "lastUpdated": "2026-02-06T00:40:44.304Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.405",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.405",
+      "date": "2026-02-05T22:47:57Z",
+      "summary": "2026-02-05 - Plugin and marketplace names support uppercase letters - /experimental shows help screen listing experimental features - Fix SQL tool disconnects - Plugins can bundle LSP server config...",
+      "fullNotes": "2026-02-05 - Plugin and marketplace names support uppercase letters - /experimental shows help screen listing experimental features - Fix SQL tool disconnects - Plugins can bundle LSP server configurations",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.405",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.27.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.27.2",
+      "date": "2026-02-05T21:21:48Z",
+      "summary": "What's Changed fix(patch): cherry-pick 9ca7300 to release/v0.27.1-pr-18395 to patch version v0.27.1 and create version 0.27.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 9ca7300 to release/v0.27.1-pr-18395 to patch version v0.27.1 and create version 0.27.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18399 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.27.1...v0.27.2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.27.2",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.27.1",
       "tool": "gemini-cli",
