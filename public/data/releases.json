@@ -10,7 +10,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 1cae5ab to release/v0.27.2-pr-18376 to patch version v0.27.2 and create version 0.27.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick 1cae5ab to release/v0.27.2-pr-18376 to patch version v0.27.2 and create version 0.27.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18464 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.27.2...v0.27.3",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.27.3",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.27.3-2026-02-07-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.27.3-2026-02-07-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.34",
