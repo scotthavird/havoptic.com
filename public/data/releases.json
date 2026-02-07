@@ -10,7 +10,9 @@
       "summary": "2026-02-07 - Add support for Claude Opus 4.6 Fast (Preview) - Markdown formatting displays in non-interactive mode output - Display warning when user has no Copilot subscription - Commands from plu...",
       "fullNotes": "2026-02-07 - Add support for Claude Opus 4.6 Fast (Preview) - Markdown formatting displays in non-interactive mode output - Display warning when user has no Copilot subscription - Commands from plugins are now translated into skills - Add /changelog command to view release notes - plugin marketplace add accepts URLs as sources - --no-experimental flag disables experimental features - CLI interface renders without extra blank line - /mcp show displays enabled/disabled status for MCP tools - MCP tool responses now include structured content (images, resources) for richer UI display in VS Code",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.406",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.406-2026-02-07-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.406-2026-02-07-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.37",
@@ -21,7 +23,9 @@
       "summary": "- Fixed an issue where /fast was not immediately available after enabling /extra-usage",
       "fullNotes": "- Fixed an issue where /fast was not immediately available after enabling /extra-usage",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.37-2026-02-07-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.37-2026-02-07-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.36",
@@ -32,7 +36,9 @@
       "summary": "- Fast mode is now available for Opus 4.6. Learn more at https://code.claude.com/docs/en/fast-mode",
       "fullNotes": "- Fast mode is now available for Opus 4.6. Learn more at https://code.claude.com/docs/en/fast-mode",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.36-2026-02-07-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.36-2026-02-07-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.27.3",
