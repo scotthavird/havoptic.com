@@ -1,6 +1,39 @@
 {
-  "lastUpdated": "2026-02-07T15:10:45.135Z",
+  "lastUpdated": "2026-02-07T20:10:02.535Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.406",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.406",
+      "date": "2026-02-07T19:10:25Z",
+      "summary": "2026-02-07 - Add support for Claude Opus 4.6 Fast (Preview) - Markdown formatting displays in non-interactive mode output - Display warning when user has no Copilot subscription - Commands from plu...",
+      "fullNotes": "2026-02-07 - Add support for Claude Opus 4.6 Fast (Preview) - Markdown formatting displays in non-interactive mode output - Display warning when user has no Copilot subscription - Commands from plugins are now translated into skills - Add /changelog command to view release notes - plugin marketplace add accepts URLs as sources - --no-experimental flag disables experimental features - CLI interface renders without extra blank line - /mcp show displays enabled/disabled status for MCP tools - MCP tool responses now include structured content (images, resources) for richer UI display in VS Code",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.406",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.37",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.37",
+      "date": "2026-02-07T18:39:35.597Z",
+      "summary": "- Fixed an issue where /fast was not immediately available after enabling /extra-usage",
+      "fullNotes": "- Fixed an issue where /fast was not immediately available after enabling /extra-usage",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.36",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.36",
+      "date": "2026-02-07T17:25:00.190Z",
+      "summary": "- Fast mode is now available for Opus 4.6. Learn more at https://code.claude.com/docs/en/fast-mode",
+      "fullNotes": "- Fast mode is now available for Opus 4.6. Learn more at https://code.claude.com/docs/en/fast-mode",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.27.3",
       "tool": "gemini-cli",
