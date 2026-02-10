@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-02-09T20:19:58.120Z",
+  "lastUpdated": "2026-02-10T00:51:05.769Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 7,
-      "releasesThisMonth": 28,
+      "releasesThisMonth": 27,
       "releasesThisQuarter": 62,
       "averageDaysBetweenReleases": 1,
       "featuresPerRelease": 0.9,
