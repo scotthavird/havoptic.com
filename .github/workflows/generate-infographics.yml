@@ -43,6 +43,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main  # Always get latest to include newly fetched releases
+          fetch-depth: 0
 
       - name: Download old releases artifact (for notification comparison)
         if: github.event_name == 'workflow_run'
