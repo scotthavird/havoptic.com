@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 jobs:
   fetch-metrics:
     runs-on: ubuntu-latest
