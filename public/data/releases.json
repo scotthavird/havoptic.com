@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-11T15:27:38.136Z",
+  "lastUpdated": "2026-02-11T20:16:55.915Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.407",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.407",
+      "date": "2026-02-11T20:16:29Z",
+      "summary": "2026-02-11 - Improve authentication error messages in prompt mode - Quota exceeded error links to Copilot settings with actionable guidance - Theme picker shows live preview of diffs and markdown, ...",
+      "fullNotes": "2026-02-11 - Improve authentication error messages in prompt mode - Quota exceeded error links to Copilot settings with actionable guidance - Theme picker shows live preview of diffs and markdown, adds colorblind and tritanopia theme variants - Add /on-air mode to hide model names and quota details for streaming - Show agent type and description in readagent timeline entries - /tasks shows Recent Activity for background agents - Add experimental alternate screen buffer mode: --alt-screen - Interactive programs that query terminal state work in shell - Subagents fall back to session model when default model blocked by policy - Expose session context in session.list SDK response - Keyboard shortcut hints display consistently with bold styling throughout the CLI - Add tools.list RPC to query available built-in tools - Streaming responses automatically retry when interrupted by server errors - Add option to approve tool permissions permanently for a location - Add /instructions command to view and toggle custom instruction files - Ctrl-b and ctrl-f cursor movement now available on all platforms - Ctrl+d now favors deleting character after cursor, with queueing moved to ctrl+q (or ctrl+enter) - Editing MCP servers shows existing configuration values - --resume creates new sessions with provided UUID - Add workspace-local MCP configuration via .vscode/mcp.json - Skill changes from /skills commands take effect immediately - /session usage string only shows available subcommands - Slash commands which take prompts now work when immediately followed by a new-line - Remove unintended characters from status bar - Autopilot mode works with custom agents that specify explicit tools - Updated node-pty to fix file descriptor leaks - Windows slash flags (e.g., dir /B) are no longer treated as file paths - Diff mode no longer flickers when navigating files - /mcp disable and /mcp enable show clear error when server name doesn't exist - MCP servers using Microsoft OAuth configure automatically without manual client ID setup - Tab cycles modes forward, Shift+Tab backward; shell is now a mode - Ctrl+P runs slash commands while preserving input (replaces Ctrl+X → /) - Terminal title works on all TTY terminals, not just select few - Help text notes auto-update is disabled in CI environments by default - Terminal tab shows session title when idle - askuser tool asks one question at a time for clearer interaction",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.407",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.28.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.28.1",
+      "date": "2026-02-11T17:14:33Z",
+      "summary": "What's Changed fix(patch): cherry-pick 37f128a to release/v0.28.0-pr-18478 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18821 Full Changelog: https://github.com/google-g...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 37f128a to release/v0.28.0-pr-18478 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18821 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.28.0...v0.28.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.28.1",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.28.0",
       "tool": "gemini-cli",
