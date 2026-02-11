@@ -1,0 +1,12 @@
+Create a professional square (1080x1080) social media infographic for a developer tool bug fix release.
+
+Header: "GEMINI CLI" with "v0.27.4 • February 10, 2026" subtitle
+Layout: Dark background with a single centered feature card (no grid, no empty boxes)
+Feature Card: Large, prominent card in the center with:
+  - Icon: 🛠️
+  - Title: "Cherry-pick Fix"
+  - Description: "Critical patch applied to release branch"
+  - Additional context: "This patch release includes a critical cherry-pick fix to resolve conflicts in the release branch, ensuring stability and compatibility."
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark background, clean Material Design, brand color #00ACC1, high contrast, readable text, professional tech aesthetic
+Important: This is a focused bug fix release. Show ONLY ONE feature card, centered and prominent. Do NOT show empty placeholder boxes or a grid layout.

@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "icon": "🔒",
+      "name": "Session Guard",
+      "description": "Prevents launching Claude Code within existing sessions"
+    },
+    {
+      "icon": "🤖",
+      "name": "Agent Teams Fix",
+      "description": "Corrected model identifiers for cloud providers"
+    },
+    {
+      "icon": "🛠️",
+      "name": "MCP Tool Stability",
+      "description": "Fixed crashes with image content streaming"
+    },
+    {
+      "icon": "💻",
+      "name": "Session Preview",
+      "description": "Readable command names in resume previews"
+    },
+    {
+      "icon": "⚡",
+      "name": "Terminal Performance",
+      "description": "Faster and smoother terminal rendering"
+    },
+    {
+      "icon": "🔌",
+      "name": "Error Handling",
+      "description": "Better error messages with fallback suggestions"
+    }
+  ],
+  "releaseHighlight": "Enhanced session management and terminal performance with improved error handling across cloud platforms",
+  "releaseInfo": "v2.1.39 • February 10, 2026",
+  "sourceContent": "- Added guard against launching Claude Code inside another Claude Code session - Fixed Agent Teams using wrong model identifier for Bedrock, Vertex, and Foundry customers - Fixed a crash when MCP tools return image content during streaming - Fixed /resume session previews showing raw XML tags instead of readable command names - Improved model error messages for Bedrock/Vertex/Foundry users with fallback suggestions - Improved terminal rendering performance - Fixed fatal errors being swallowed instead of displayed - Fixed process hanging after session close - Fixed character loss at terminal screen boundary - Fixed blank lines in verbose transcript view",
+  "sourceUrl": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+  "sourceOrigin": "fullNotes",
+  "extractedAt": "2026-02-11T13:37:40.581Z"
+}

@@ -1,0 +1,15 @@
+Create a professional landscape (1920x1080) social media infographic for a developer tool release.
+
+Header: "CLAUDE CODE" with "v2.1.39 • February 10, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. 🔒 "Session Guard" - "Prevents launching Claude Code within existing sessions"
+2. 🤖 "Agent Teams Fix" - "Corrected model identifiers for cloud providers"
+3. 🛠️ "MCP Tool Stability" - "Fixed crashes with image content streaming"
+4. 💻 "Session Preview" - "Readable command names in resume previews"
+5. ⚡ "Terminal Performance" - "Faster and smoother terminal rendering"
+6. 🔌 "Error Handling" - "Better error messages with fallback suggestions"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Purple/coral gradient, dark background with subtle grid pattern, modern tech aesthetic, brand color #8B5CF6, high contrast, readable text, professional tech aesthetic
+Highlight: "Enhanced session management and terminal performance with improved error handling across cloud platforms"
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.
