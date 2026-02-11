@@ -1,0 +1,15 @@
+Create a professional landscape (1920x1080) social media infographic for a developer tool release.
+
+Header: "GEMINI CLI" with "v0.28.0 • February 10, 2026" subtitle
+Layout: Dark background, 6 feature cards in 2x3 grid with subtle glow effects
+Feature Cards:
+1. ⚡ "/prompt-suggest Command" - "Get AI-powered prompt suggestions instantly"
+2. 🎨 "Custom Extension Themes" - "Personalize CLI with custom visual themes"
+3. 🔄 "Background Shell Commands" - "Run commands asynchronously in background"
+4. 🤖 "Automatic Theme Switching" - "Adapts theme based on terminal background"
+5. 👥 "User Identity Display" - "Shows auth status and tier information"
+6. 📊 "Enhanced Policy Rules" - "Custom deny messages for better compliance"
+Footer: "havoptic.com" with "Track AI Tool Releases" tagline
+Style: Teal/cyan accent, dark background, clean Material Design, brand color #00ACC1, high contrast, readable text, professional tech aesthetic
+Highlight: "Introduces intelligent prompt suggestions, background command execution, and enhanced user experience with automatic theming and identity management."
+Important: Show EXACTLY 6 feature cards. Do NOT add empty placeholder boxes.

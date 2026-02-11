@@ -1,0 +1,15 @@
+{
+  "features": [
+    {
+      "icon": "🛠️",
+      "name": "Cherry-pick Fix",
+      "description": "Critical patch applied to release branch"
+    }
+  ],
+  "releaseHighlight": "This patch release includes a critical cherry-pick fix to resolve conflicts in the release branch, ensuring stability and compatibility.",
+  "releaseInfo": "v0.27.4 • February 10, 2026",
+  "sourceContent": "What's Changed fix(patch): cherry-pick 37f128a to release/v0.27.3-pr-18478 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/18743 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.27.3...v0.27.4",
+  "sourceUrl": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.27.4",
+  "sourceOrigin": "fullNotes",
+  "extractedAt": "2026-02-11T13:38:49.050Z"
+}
