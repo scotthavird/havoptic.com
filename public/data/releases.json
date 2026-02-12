@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-12T10:23:39.981Z",
+  "lastUpdated": "2026-02-12T15:24:09.935Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.408",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.408",
+      "date": "2026-02-12T12:28:28Z",
+      "summary": "2026-02-12 - Add /streamer-mode to hide preview model names and quota details for streaming - Makes shellId more flexible to not error when a number is passed - Background tasks hint updates when d...",
+      "fullNotes": "2026-02-12 - Add /streamer-mode to hide preview model names and quota details for streaming - Makes shellId more flexible to not error when a number is passed - Background tasks hint updates when detached shells are killed or removed - Add mouse text selection in --alt-screen mode - ! commands with large output no longer crash the CLI - Fix duplicate/ghost lines appearing when resizing the terminal in alt-screen mode - MCP servers respect the cwd working directory property - Add substring matching to slash command autocomplete - Change run command shortcut from ctrl+p to ctrl+s",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.408",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.28.2",
       "tool": "gemini-cli",
