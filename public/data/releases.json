@@ -62,7 +62,9 @@
       "summary": "Windsurf version 1.9552.21",
       "fullNotes": "Windsurf version 1.9552.21",
       "url": "https://windsurf.com/changelog",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/windsurf-1.9552.21-2026-02-13-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/windsurf-1.9552.21-2026-02-13-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.28.2",
