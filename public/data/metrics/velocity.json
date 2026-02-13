@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-02-13T05:34:29.442Z",
+  "lastUpdated": "2026-02-13T10:21:31.539Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 5,
-      "releasesThisMonth": 26,
-      "releasesThisQuarter": 62,
-      "averageDaysBetweenReleases": 1.1,
+      "releasesThisMonth": 27,
+      "releasesThisQuarter": 63,
+      "averageDaysBetweenReleases": 1,
       "featuresPerRelease": 1,
-      "lastReleaseAt": "2026-02-10T21:12:16.378Z"
+      "lastReleaseAt": "2026-02-13T01:12:41.057Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
