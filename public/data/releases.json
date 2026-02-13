@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-12T20:15:59.674Z",
+  "lastUpdated": "2026-02-13T00:46:23.868Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.409",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.409",
+      "date": "2026-02-12T22:09:48Z",
+      "summary": "2026-02-12 - /diff uses full screen in alt-screen mode - Quick help overlay: press ? to see grouped shortcuts and commands, navigate with arrow keys - Theme preview appears above theme list in scre...",
+      "fullNotes": "2026-02-12 - /diff uses full screen in alt-screen mode - Quick help overlay: press ? to see grouped shortcuts and commands, navigate with arrow keys - Theme preview appears above theme list in screen reader mode - Add listcopilotspaces tool to default GitHub MCP config - Subagents return complete responses - CLI now integrates with VS Code, use /ide for more information. - Permission prompts with long diffs are scrollable in alt-screen mode - Include default plugin marketplaces (copilot-plugins, awesome-copilot) for easier plugin discovery",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.409",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.101.0",
       "tool": "openai-codex",
