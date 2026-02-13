@@ -10,7 +10,9 @@
       "summary": "2026-02-12 - /diff uses full screen in alt-screen mode - Quick help overlay: press ? to see grouped shortcuts and commands, navigate with arrow keys - Theme preview appears above theme list in scre...",
       "fullNotes": "2026-02-12 - /diff uses full screen in alt-screen mode - Quick help overlay: press ? to see grouped shortcuts and commands, navigate with arrow keys - Theme preview appears above theme list in screen reader mode - Add listcopilotspaces tool to default GitHub MCP config - Subagents return complete responses - CLI now integrates with VS Code, use /ide for more information. - Permission prompts with long diffs are scrollable in alt-screen mode - Include default plugin marketplaces (copilot-plugins, awesome-copilot) for easier plugin discovery",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.409",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.409-2026-02-13-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.409-2026-02-13-16x9.jpg"
     },
     {
       "id": "openai-codex-rust-v0.101.0",
