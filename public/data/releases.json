@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-13T00:46:23.868Z",
+  "lastUpdated": "2026-02-13T05:33:55.506Z",
   "releases": [
     {
       "id": "github-copilot-v0.0.409",
@@ -52,6 +52,17 @@
       "type": "release",
       "infographicUrl": "/images/infographics/github-copilot-v0.0.408-2026-02-12-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.408-2026-02-12-16x9.jpg"
+    },
+    {
+      "id": "windsurf-1.9552.21",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9552.21",
+      "date": "2026-02-12T00:00:00.000Z",
+      "summary": "Windsurf version 1.9552.21",
+      "fullNotes": "Windsurf version 1.9552.21",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
     },
     {
       "id": "gemini-cli-v0.28.2",
