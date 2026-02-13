@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-13T15:21:54.906Z",
+  "lastUpdated": "2026-02-13T20:16:32.395Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.42",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.42",
+      "date": "2026-02-13T18:56:56.084Z",
+      "summary": "- Improved startup performance by deferring Zod schema construction - Improved prompt cache hit rates by moving date out of system prompt - Added one-time Opus 4.6 effort callout for eligible users...",
+      "fullNotes": "- Improved startup performance by deferring Zod schema construction - Improved prompt cache hit rates by moving date out of system prompt - Added one-time Opus 4.6 effort callout for eligible users - Fixed /resume showing interrupt messages as session titles - Fixed image dimension limit errors to suggest /compact",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.41",
       "tool": "claude-code",
