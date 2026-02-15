@@ -21,6 +21,11 @@
     <meta name="theme-color" content="#0f172a" />
     <meta name="color-scheme" content="dark" />
 
+    <!-- Apple PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Havoptic" />
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YTYK7XWSLL"></script>
     <script>
@@ -112,5 +117,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' });
+        });
+      }
+    </script>
   </body>
 </html>
