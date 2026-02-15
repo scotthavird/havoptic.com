@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-15T00:47:29.566Z",
+  "lastUpdated": "2026-02-15T05:32:16.949Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
@@ -13,7 +13,7 @@
     "openai-codex": {
       "toolId": "openai-codex",
       "releasesThisWeek": 3,
-      "releasesThisMonth": 16,
+      "releasesThisMonth": 15,
       "releasesThisQuarter": 37,
       "averageDaysBetweenReleases": 1.8,
       "featuresPerRelease": 15.9,
@@ -40,7 +40,7 @@
     "kiro": {
       "toolId": "kiro",
       "releasesThisWeek": 0,
-      "releasesThisMonth": 2,
+      "releasesThisMonth": 1,
       "releasesThisQuarter": 9,
       "averageDaysBetweenReleases": 9,
       "featuresPerRelease": 0.4,
