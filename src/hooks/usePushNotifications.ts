@@ -87,10 +87,13 @@ export function usePushNotifications(): UsePushNotificationsResult {
     setError(null);
 
     try {
-      // Register service worker if not already registered
-      const registration = await navigator.serviceWorker.register('/sw.js', {
-        scope: '/',
-      });
+      // Use existing registration (registered on page load) or register as fallback
+      let registration = await navigator.serviceWorker.getRegistration('/');
+      if (!registration) {
+        registration = await navigator.serviceWorker.register('/sw.js', {
+          scope: '/',
+        });
+      }
       await navigator.serviceWorker.ready;
 
       // Request notification permission
