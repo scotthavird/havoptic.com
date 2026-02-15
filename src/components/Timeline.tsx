@@ -41,7 +41,6 @@ export function Timeline({ groupedReleases, highlightedReleaseId, selectedTool }
   // Get current year/month to hide headers for the most recent period
   const now = new Date();
   const currentYear = now.getFullYear();
-  const currentMonth = now.getMonth() + 1; // JavaScript months are 0-indexed
 
   return (
     <section aria-label="Release timeline">
@@ -60,7 +59,7 @@ export function Timeline({ groupedReleases, highlightedReleaseId, selectedTool }
               </header>
             )}
 
-            {months.map(({ month, monthName, releases }, monthIndex) => {
+            {months.map(({ month, monthName, releases }) => {
               // Filter out any duplicates that might have slipped through
               const uniqueReleases = releases.filter(r => {
                 if (renderedIds.has(r.id)) return false;
@@ -70,22 +69,8 @@ export function Timeline({ groupedReleases, highlightedReleaseId, selectedTool }
 
               if (uniqueReleases.length === 0) return null;
 
-              // Hide month header only for the first month of the first year if it's current
-              const isCurrentMonth = isCurrentYear && month === currentMonth;
-              const isFirstMonth = isFirstYear && monthIndex === 0;
-              const showMonthHeader = !(isFirstMonth && isCurrentMonth);
-
               return (
                 <div key={`${year}-${month}`} className="mb-2 sm:mb-3" role="group" aria-label={`${monthName} ${year} releases`}>
-                  {/* Month label - hidden for current month at the top */}
-                  {showMonthHeader && (
-                    <div className="mb-1.5">
-                      <span className="text-xs sm:text-sm font-medium text-slate-400">
-                        {monthName}
-                      </span>
-                    </div>
-                  )}
-
                   {/* Release cards */}
                   <div className="space-y-3 sm:space-y-4">
                     {uniqueReleases.map((release) => {
