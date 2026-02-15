@@ -4,8 +4,10 @@
   "description": "Track releases from Claude Code, Cursor, Gemini CLI, GitHub Copilot, and more AI coding tools",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
+  "categories": ["productivity", "developer-tools"],
   "icons": [
     {
       "src": "/favicon-32x32.png",
@@ -18,10 +20,32 @@
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Releases",
+      "short_name": "Releases",
+      "description": "View latest AI tool releases",
+      "url": "/",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Read AI tool insights and comparisons",
+      "url": "/blog",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
     }
   ]
 }
