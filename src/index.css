@@ -33,6 +33,15 @@ body {
   }
 }
 
+/* Hide scrollbar cross-browser */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Image zoom modal utilities */
 .zoom-modal-open {
   overflow: hidden;
