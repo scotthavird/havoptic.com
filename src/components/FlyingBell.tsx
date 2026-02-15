@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useNewsletterBell } from '../context/NewsletterBellContext';
 
 interface Sparkle {
@@ -18,6 +18,22 @@ export function FlyingBell() {
   const animationRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const sparkleIdRef = useRef(0);
+  const sparkleBufferRef = useRef<Sparkle[]>([]);
+  const lastSparkleFlushRef = useRef<number>(0);
+
+  const flushSparkles = useCallback(() => {
+    if (sparkleBufferRef.current.length > 0) {
+      const newSparkles = [...sparkleBufferRef.current];
+      sparkleBufferRef.current = [];
+      setSparkles(prev => {
+        // Keep only sparkles younger than 800ms, plus new ones
+        const now = performance.now();
+        const cutoff = now - 800;
+        const filtered = prev.filter(s => s.id > cutoff - 1000);
+        return [...filtered, ...newSparkles];
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (!animationState.isAnimating || !animationState.startPosition || !animationState.endPosition) {
@@ -26,22 +42,34 @@ export function FlyingBell() {
 
     const start = animationState.startPosition;
     const end = animationState.endPosition;
-    const duration = 1200; // 1.2 seconds for the flight
+    const duration = 1200;
 
-    // Calculate control points for a magical curved path
-    // Like Tinker Bell flying in an arc with a loop
+    // Calculate control points relative to the distance between start and end
+    // so the arc scales properly on mobile and desktop
+    const dx = end.x - start.x;
+    const dy = end.y - start.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const arcHeight = Math.min(dist * 0.4, 150);
+
     const midX = (start.x + end.x) / 2;
-    const midY = Math.min(start.y, end.y) - 150; // Arc above both points
+    const midY = Math.min(start.y, end.y) - arcHeight;
 
-    // Control points for cubic bezier - creates a fairy-like swooping motion
-    const cp1 = { x: start.x + 50, y: start.y - 100 };
-    const cp2 = { x: midX - 80, y: midY - 50 };
-    const cp3 = { x: midX + 80, y: midY };
-    const cp4 = { x: end.x - 50, y: end.y - 80 };
+    // Scale control point offsets relative to the flight distance
+    const scale = Math.min(dist / 400, 1);
+    const cp1 = { x: start.x + 50 * scale, y: start.y - arcHeight * 0.6 };
+    const cp2 = { x: midX - 80 * scale, y: midY - 30 * scale };
+    const cp3 = { x: midX + 80 * scale, y: midY };
+    const cp4 = { x: end.x - 50 * scale, y: end.y - 60 * scale };
+
+    // Scale wobble amplitude based on viewport width
+    const wobbleScale = Math.min(window.innerWidth / 768, 1);
 
     setPosition(start);
     setPhase('flying');
+    setSparkles([]);
+    sparkleBufferRef.current = [];
     startTimeRef.current = performance.now();
+    lastSparkleFlushRef.current = 0;
 
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTimeRef.current;
@@ -54,7 +82,6 @@ export function FlyingBell() {
       let x: number, y: number;
 
       if (progress < 0.5) {
-        // First half: start to midpoint with upward arc
         const t = progress * 2;
         const t2 = t * t;
         const t3 = t2 * t;
@@ -65,7 +92,6 @@ export function FlyingBell() {
         x = mt3 * start.x + 3 * mt2 * t * cp1.x + 3 * mt * t2 * cp2.x + t3 * midX;
         y = mt3 * start.y + 3 * mt2 * t * cp1.y + 3 * mt * t2 * cp2.y + t3 * midY;
       } else {
-        // Second half: midpoint to end with graceful descent
         const t = (progress - 0.5) * 2;
         const t2 = t * t;
         const t3 = t2 * t;
@@ -77,37 +103,45 @@ export function FlyingBell() {
         y = mt3 * midY + 3 * mt2 * t * cp3.y + 3 * mt * t2 * cp4.y + t3 * end.y;
       }
 
-      // Add subtle wobble for fairy-like movement
-      const wobbleX = Math.sin(progress * Math.PI * 6) * (1 - eased) * 8;
-      const wobbleY = Math.cos(progress * Math.PI * 4) * (1 - eased) * 5;
+      // Wobble scales down on mobile and fades out toward the end
+      const wobbleX = Math.sin(progress * Math.PI * 6) * (1 - eased) * 8 * wobbleScale;
+      const wobbleY = Math.cos(progress * Math.PI * 4) * (1 - eased) * 5 * wobbleScale;
 
-      setPosition({ x: x + wobbleX, y: y + wobbleY });
+      // Clamp position to viewport bounds
+      const finalX = Math.max(16, Math.min(window.innerWidth - 16, x + wobbleX));
+      const finalY = Math.max(16, Math.min(window.innerHeight - 16, y + wobbleY));
 
-      // Generate sparkles along the path
+      setPosition({ x: finalX, y: finalY });
+
+      // Buffer sparkles and flush every ~60ms (instead of every frame)
       if (Math.random() < 0.4) {
-        const newSparkle: Sparkle = {
+        const spread = 20 * wobbleScale;
+        sparkleBufferRef.current.push({
           id: sparkleIdRef.current++,
-          x: x + wobbleX + (Math.random() - 0.5) * 30,
-          y: y + wobbleY + (Math.random() - 0.5) * 30,
-          size: Math.random() * 8 + 4,
+          x: finalX + (Math.random() - 0.5) * spread,
+          y: finalY + (Math.random() - 0.5) * spread,
+          size: Math.random() * 6 + 3,
           opacity: Math.random() * 0.5 + 0.5,
-          delay: Math.random() * 0.2,
-        };
-        setSparkles(prev => [...prev, newSparkle]);
+          delay: Math.random() * 0.15,
+        });
+      }
 
-        // Remove old sparkles
-        setTimeout(() => {
-          setSparkles(prev => prev.filter(s => s.id !== newSparkle.id));
-        }, 800);
+      // Flush sparkle buffer every ~60ms to batch DOM updates
+      if (elapsed - lastSparkleFlushRef.current > 60) {
+        lastSparkleFlushRef.current = elapsed;
+        flushSparkles();
       }
 
       if (progress < 1) {
         animationRef.current = requestAnimationFrame(animate);
       } else {
+        // Final sparkle flush
+        flushSparkles();
         // Landing phase - bouncy effect
         setPhase('landing');
         setTimeout(() => {
           setPhase('done');
+          setSparkles([]);
           onAnimationComplete();
         }, 500);
       }
@@ -120,7 +154,16 @@ export function FlyingBell() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [animationState, onAnimationComplete]);
+  }, [animationState, onAnimationComplete, flushSparkles]);
+
+  // Clean up old sparkles periodically during animation
+  useEffect(() => {
+    if (phase !== 'flying' || sparkles.length === 0) return;
+    const timer = setTimeout(() => {
+      setSparkles(prev => prev.slice(-15)); // Keep only the 15 most recent
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [sparkles.length, phase]);
 
   if (!animationState.isAnimating || phase === 'done') {
     return null;

@@ -18,7 +18,7 @@ export default {
       animation: {
         'sparkle-fade': 'sparkleFade 0.8s ease-out forwards',
         'sparkle-twinkle': 'sparkleTwinkle 0.4s ease-in-out infinite',
-        'bell-fly': 'bellFly 0.1s ease-out forwards',
+        'bell-fly': 'bellFly 0.4s ease-in-out infinite',
         'bell-land': 'bellLand 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
         'bell-pulse': 'bellPulse 2s ease-in-out infinite',
         'bell-ring': 'bellRing 0.5s ease-in-out',
