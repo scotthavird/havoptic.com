@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { Timeline } from './components/Timeline';
-import { ToolFilter } from './components/ToolFilter';
 import { Layout } from './components/Layout';
 import { SignInPrompt } from './components/SignInPrompt';
 import { NewsletterSignup } from './components/NewsletterSignup';
@@ -329,12 +328,8 @@ function App() {
 
   // Render home page
   return (
-    <Layout>
+    <Layout selectedTool={selectedTool} onSelectTool={setSelectedTool}>
       <main role="main" aria-label="AI Tool Releases Timeline">
-        <nav aria-label="Filter by tool">
-          <ToolFilter selectedTool={selectedTool} onSelect={setSelectedTool} />
-        </nav>
-
         <div className="my-4">
           <NewsletterSignup variant="hero" />
         </div>

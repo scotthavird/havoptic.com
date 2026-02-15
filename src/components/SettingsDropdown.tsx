@@ -1,7 +1,12 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePushNotificationContext } from '../context/PushNotificationContext';
-import { trackShare } from '../utils/analytics';
+import { useWatchlist } from '../context/WatchlistContext';
+import { trackShare, trackToolFilterClick, trackWatchlistFilterClick } from '../utils/analytics';
+import { TOOL_CONFIG, type ToolId } from '../types/release';
+import { getAllToolIds } from '../utils/toolRegistry';
+import { WatchToggle } from './WatchButton';
+import { Link } from './Link';
 
 const SUBSCRIBED_KEY = 'havoptic_subscribed';
 
@@ -21,7 +26,12 @@ function setLocalSubscribed(): void {
   }
 }
 
-export function SettingsDropdown() {
+interface SettingsDropdownProps {
+  selectedTool?: ToolId | 'all' | 'watching';
+  onSelectTool?: (tool: ToolId | 'all' | 'watching') => void;
+}
+
+export function SettingsDropdown({ selectedTool, onSelectTool }: SettingsDropdownProps) {
   const { user, loading: authLoading, login, logout } = useAuth();
   const {
     isSubscribed: isPushSubscribed,
@@ -41,7 +51,9 @@ export function SettingsDropdown() {
   const [showEmailInput, setShowEmailInput] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const { watchCount } = useWatchlist();
   const isEmailSubscribed = user?.isSubscribed || getLocalSubscribed();
+  const tools: (ToolId | 'all' | 'watching')[] = ['all', 'watching', ...getAllToolIds()];
 
   // Pre-fill email when user logs in
   useEffect(() => {
@@ -182,7 +194,111 @@ export function SettingsDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-72 bg-slate-800 border border-slate-700 rounded-xl shadow-xl z-50 overflow-hidden">
+        <div className="absolute right-0 mt-2 w-72 bg-slate-800 border border-slate-700 rounded-xl shadow-xl z-50 overflow-hidden max-h-[80vh] overflow-y-auto">
+          {/* Tools Filter Section */}
+          {onSelectTool && (
+            <div className="p-3 border-b border-slate-700">
+              <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-2">Filter Tools</p>
+              <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter releases by tool">
+                {tools.map((tool) => {
+                  const isSelected = selectedTool === tool;
+                  const config = tool === 'all' || tool === 'watching' ? null : TOOL_CONFIG[tool];
+                  const label = tool === 'all' ? 'All' : tool === 'watching' ? 'Watching' : config?.shortName || config?.displayName;
+
+                  if (tool === 'watching') {
+                    return (
+                      <button
+                        key={tool}
+                        onClick={() => {
+                          trackWatchlistFilterClick();
+                          onSelectTool(tool);
+                        }}
+                        aria-pressed={isSelected}
+                        className={`
+                          px-2.5 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap inline-flex items-center gap-1
+                          ${isSelected
+                            ? 'bg-amber-500 text-white'
+                            : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                          }
+                          ${watchCount === 0 ? 'opacity-50' : ''}
+                        `}
+                        disabled={watchCount === 0}
+                        title={watchCount === 0 ? 'Watch some tools first' : `Show ${watchCount} watched tools`}
+                      >
+                        <svg className="w-3 h-3" fill={isSelected ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                        </svg>
+                        {label}
+                        {watchCount > 0 && (
+                          <span className={`text-xs ${isSelected ? 'text-amber-100' : 'text-slate-400'}`}>
+                            ({watchCount})
+                          </span>
+                        )}
+                      </button>
+                    );
+                  }
+
+                  return (
+                    <button
+                      key={tool}
+                      onClick={() => {
+                        trackToolFilterClick(tool);
+                        onSelectTool(tool);
+                      }}
+                      aria-pressed={isSelected}
+                      className={`
+                        px-2.5 py-1 rounded-full text-xs font-medium transition-all whitespace-nowrap inline-flex items-center gap-1
+                        ${isSelected
+                          ? tool === 'all'
+                            ? 'bg-white text-slate-900'
+                            : `${config?.bgColor} text-white`
+                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                        }
+                      `}
+                    >
+                      {label}
+                      {tool !== 'all' && (
+                        <WatchToggle toolId={tool} className="ml-0" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Navigation Section */}
+          <div className="p-2 border-b border-slate-700">
+            <p className="px-3 py-1.5 text-xs font-medium text-slate-400 uppercase tracking-wider">Navigation</p>
+            <Link
+              href="/trends"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-colors"
+            >
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+              </svg>
+              <span className="text-sm">Trends</span>
+            </Link>
+            <Link
+              href="/blog"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-colors"
+            >
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+              </svg>
+              <span className="text-sm">Insights</span>
+            </Link>
+            <Link
+              href="/compare"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/50 transition-colors"
+            >
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+              </svg>
+              <span className="text-sm">Compare</span>
+            </Link>
+          </div>
+
           {/* User Section */}
           <div className="p-4 border-b border-slate-700">
             {authLoading ? (
