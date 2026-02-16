@@ -1,6 +1,66 @@
 {
-  "lastUpdated": "2026-02-02T15:28:02.895Z",
+  "lastUpdated": "2026-02-16T15:27:14.638Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w07",
+      "type": "weekly-digest",
+      "title": "AI Code Tools Digest: Week 7 - Performance Wins & New Commands",
+      "slug": "weekly-digest-week-7-2026",
+      "publishedAt": "2026-02-16T15:18:53.159Z",
+      "summary": "16 releases this week led by Claude Code's startup boost & Gemini's new /prompt-suggest command. Memory fixes & auth improvements across the board.",
+      "content": "# AI Code Tools Digest: Week 7 (Feb 9-15, 2026)\n\n## TL;DR 📊\n- **Performance focus**: Claude Code improved startup times, undefined tool fixed memory leaks\n- **New commands**: Gemini CLI added `/prompt-suggest` for better prompting workflows\n\n## This Week's Releases\n\n### Claude Code (4 releases)\nClaude's on a roll with **startup performance improvements** by deferring Zod schema construction and better prompt cache hit rates. The team also added **Windows ARM64 support** and new auth CLI commands (`claude auth login/status/logout`). Fixed a nasty AWS auth timeout bug that was hanging indefinitely.\n\n### Undefined Tool (4 releases) \nMajor **memory usage fixes** across the board - tackled rapid logging issues and reduced memory from encoding streaming chunks. Added **shell mode improvements** with raw text pasting and `/diff` now uses full screen in alt-screen mode. Quick help overlay (press `?`) is a nice UX touch.\n\n### Gemini CLI (4 releases)\nBiggest feature drop: **`/prompt-suggest` slash command** for better prompting workflows. Mostly patch releases with cherry-picks, but the new command could be a game-changer for prompt engineering.\n\n### OpenAI Codex CLI (3 releases)\nAdded **experimental JavaScript REPL runtime** that persists state across tool calls - could be huge for interactive coding sessions. Memory files now include working directory context, fixing behavior when switching between projects. Multi-model support improvements too.\n\n### Windsurf (1 release)\nQuiet week with just version 1.9552.21 - no feature details shared.\n\n## Highlight Deep Dive 🎯\n\nGemini CLI's new **`/prompt-suggest` command** is the standout feature this week. While details are sparse, this could fundamentally change how developers craft prompts within their coding workflows. Instead of guessing at optimal prompts, the tool can now suggest improvements - potentially boosting AI code generation quality across the board. Combined with the hooks alignment for skills and other workflow improvements, Gemini is positioning itself as more than just a CLI tool - it's becoming a prompt engineering assistant.\n\n## Quick Stats 📈\n- **Total releases**: 16 (down from 25 last week)\n- **Velocity trend**: -36% week-over-week\n- **Biggest mover**: Claude Code with 4 performance-focused releases\n- **Most active**: Tie between Claude Code, undefined tool, and Gemini CLI (4 each)\n\n---\n\n*The slowdown might signal tools are maturing - fewer releases but more meaningful features. Next week could see the velocity pick back up as teams ship Q1 goals.*",
+      "coverImageUrl": null,
+      "tools": [
+        "github-copilot",
+        "claude-code",
+        "openai-codex",
+        "windsurf",
+        "gemini-cli"
+      ],
+      "metrics": {
+        "totalReleases": 16,
+        "releasesByTool": {
+          "github-copilot": 4,
+          "claude-code": 4,
+          "openai-codex": 3,
+          "windsurf": 1,
+          "gemini-cli": 4
+        },
+        "topFeatures": [
+          {
+            "tool": "github-copilot",
+            "feature": "v0.0.410",
+            "description": "2026-02-14 - Fixed high memory usage caused by rapid logging - Shell mode pastes raw text instead of paste tokens - Reduce memory usage from encoding streaming chunks - Fix alt-screen and timeline ..."
+          },
+          {
+            "tool": "claude-code",
+            "feature": "2.1.42",
+            "description": "- Improved startup performance by deferring Zod schema construction - Improved prompt cache hit rates by moving date out of system prompt - Added one-time Opus 4.6 effort callout for eligible users..."
+          },
+          {
+            "tool": "claude-code",
+            "feature": "2.1.41",
+            "description": "- Fixed AWS auth refresh hanging indefinitely by adding a 3-minute timeout - Added claude auth login, claude auth status, and claude auth logout CLI subcommands - Added Windows ARM64 (win32-arm64) ..."
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "Gemini CLI",
+          "OpenAI Codex",
+          "developer tools",
+          "AI programming",
+          "code assistant",
+          "prompt engineering",
+          "CLI tools",
+          "coding productivity"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-7-2026"
+      }
+    },
     {
       "id": "weekly-digest-2026-w05",
       "type": "weekly-digest",
