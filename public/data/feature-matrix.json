@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-11T00:44:20.954Z",
+  "lastUpdated": "2026-02-16T15:18:53.169Z",
   "categories": [
     {
       "id": "core-editing",
@@ -53,7 +53,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:44:20.954Z"
+      "lastUpdated": "2026-02-16T15:18:53.169Z"
     },
     {
       "categoryId": "core-editing",
@@ -63,8 +63,8 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.33",
-          "addedAt": "2026-02-06T00:16:13.218Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
@@ -76,14 +76,14 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:44:53.244Z"
+      "lastUpdated": "2026-02-16T15:19:22.638Z"
     },
     {
       "categoryId": "core-editing",
@@ -98,22 +98,22 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.95.0",
-          "addedAt": "2026-02-04T04:54:32Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:45:22.928Z"
+      "lastUpdated": "2026-02-16T15:19:49.234Z"
     },
     {
       "categoryId": "core-editing",
@@ -128,22 +128,22 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.98.0",
-          "addedAt": "2026-02-05T17:00:36Z"
+          "addedInVersion": "rust-v0.101.0",
+          "addedAt": "2026-02-12T20:05:52Z"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.3",
-          "addedAt": "2026-02-06T20:32:33Z"
+          "addedInVersion": "v0.28.2",
+          "addedAt": "2026-02-11T23:00:30Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:45:52.218Z"
+      "lastUpdated": "2026-02-16T15:20:16.582Z"
     },
     {
       "categoryId": "terminal",
@@ -153,13 +153,13 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.34",
-          "addedAt": "2026-02-06T06:38:12.412Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.97.0",
-          "addedAt": "2026-02-05T05:11:10Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": true,
@@ -168,8 +168,8 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": true,
@@ -177,7 +177,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-11T00:46:21.318Z"
+      "lastUpdated": "2026-02-16T15:20:43.796Z"
     },
     {
       "categoryId": "terminal",
@@ -187,15 +187,14 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "References to tmux sessions and sandbox command exclusion suggest shell environment integration"
+          "notes": "References to bash commands, environment variables, and tmux integration suggest shell integration"
         },
         "openai-codex": {
-          "supported": true,
-          "notes": "v0.95.0 shows CLI integration with 'codex app <path>' command and v0.94.0 mentions 'Enter sends immediately during running tasks while Tab explicitly queues follow-up input' suggesting shell-like interaction"
+          "supported": false
         },
         "cursor": {
           "supported": true,
-          "notes": "Agent terminal in v1.6 suggests shell integration capabilities"
+          "notes": "Agent terminal in v1.6 and browser controls in v1.7 suggest shell integration"
         },
         "gemini-cli": {
           "supported": false
@@ -204,7 +203,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:46:51.882Z"
+      "lastUpdated": "2026-02-16T15:21:09.933Z"
     },
     {
       "categoryId": "terminal",
@@ -214,27 +213,27 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.27",
-          "addedAt": "2026-01-30T19:51:58.456Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.96.0",
-          "addedAt": "2026-02-04T18:23:37Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:47:22.846Z"
+      "lastUpdated": "2026-02-16T15:21:39.832Z"
     },
     {
       "categoryId": "mcp",
@@ -244,21 +243,21 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.30",
-          "addedAt": "2026-02-03T16:34:38.489Z"
+          "addedInVersion": "2.1.39",
+          "addedAt": "2026-02-10T21:12:16.378Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.97.0",
-          "addedAt": "2026-02-05T05:11:10Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": true,
@@ -266,7 +265,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-11T00:47:48.238Z"
+      "lastUpdated": "2026-02-16T15:22:04.831Z"
     },
     {
       "categoryId": "mcp",
@@ -281,16 +280,16 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.92.0",
-          "addedAt": "2026-01-27T11:50:52Z"
+          "addedInVersion": "rust-v0.99.0",
+          "addedAt": "2026-02-11T20:43:00Z"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": true,
@@ -298,7 +297,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-11T00:48:19.800Z"
+      "lastUpdated": "2026-02-16T15:22:32.254Z"
     },
     {
       "categoryId": "mcp",
@@ -308,27 +307,27 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.30",
-          "addedAt": "2026-02-03T16:34:38.489Z"
+          "addedInVersion": "2.1.38",
+          "addedAt": "2026-02-10T00:06:12.496Z"
         },
         "openai-codex": {
           "supported": true,
-          "notes": "v0.97.0 mentions 'MCP/App tool approvals' and v0.92.0 references 'dynamic tools at startup'"
+          "notes": "v0.92.0 adds 'dynamic tools at startup and route their calls/responses end-to-end' and v0.97.0 mentions 'MCP/App tool approvals'"
         },
         "cursor": {
           "supported": false
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.20.0",
-          "addedAt": "2025-12-09T20:23:43Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": true,
-          "notes": "v1.23.0 mentions 'Grep/Glob Tools' indicating custom tool functionality"
+          "notes": "v1.23.0 mentions 'Grep/Glob Tools' indicating custom tool support"
         }
       },
-      "lastUpdated": "2026-02-11T00:48:50.909Z"
+      "lastUpdated": "2026-02-16T15:23:06.412Z"
     },
     {
       "categoryId": "ide",
@@ -338,11 +337,13 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.30",
-          "addedAt": "2026-02-03T16:34:38.489Z"
+          "addedInVersion": "2.1.38",
+          "addedAt": "2026-02-10T00:06:12.496Z"
         },
         "openai-codex": {
-          "supported": false
+          "supported": true,
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": false
@@ -356,7 +357,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:49:20.495Z"
+      "lastUpdated": "2026-02-16T15:23:32.474Z"
     },
     {
       "categoryId": "ide",
@@ -382,7 +383,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:49:52.973Z"
+      "lastUpdated": "2026-02-16T15:24:00.125Z"
     },
     {
       "categoryId": "ide",
@@ -405,14 +406,14 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:50:24.133Z"
+      "lastUpdated": "2026-02-16T15:24:24.614Z"
     },
     {
       "categoryId": "ide",
@@ -427,8 +428,8 @@
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.96.0",
-          "addedAt": "2026-02-04T18:23:37Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": true,
@@ -444,7 +445,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:50:54.113Z"
+      "lastUpdated": "2026-02-16T15:24:54.750Z"
     },
     {
       "categoryId": "agentic",
@@ -454,13 +455,13 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.33",
-          "addedAt": "2026-02-06T00:16:13.218Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.95.0",
-          "addedAt": "2026-02-04T04:54:32Z"
+          "addedInVersion": "rust-v0.99.0",
+          "addedAt": "2026-02-11T20:43:00Z"
         },
         "cursor": {
           "supported": true,
@@ -469,8 +470,8 @@
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": true,
@@ -478,7 +479,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-02-11T00:51:25.296Z"
+      "lastUpdated": "2026-02-16T15:25:24.475Z"
     },
     {
       "categoryId": "agentic",
@@ -488,28 +489,28 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.34",
-          "addedAt": "2026-02-06T06:38:12.412Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.97.0",
-          "addedAt": "2026-02-05T05:11:10Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Agent Interface in v2.0, Subagents in v2.4, and overall agent-focused features suggest autonomous operation"
+          "notes": "Subagents in v2.4 and Multi-Agent Judging in v2.2 suggest autonomous capabilities"
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.26.0",
-          "addedAt": "2026-01-28T01:49:18Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:51:56.561Z"
+      "lastUpdated": "2026-02-16T15:25:55.235Z"
     },
     {
       "categoryId": "agentic",
@@ -519,17 +520,17 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.33",
-          "addedAt": "2026-02-06T00:16:13.218Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.98.0",
-          "addedAt": "2026-02-05T17:00:36Z"
+          "addedInVersion": "rust-v0.100.0",
+          "addedAt": "2026-02-12T18:29:57Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Plan Mode (v1.7, v2.1, v2.2) and Multi-Agent Judging (v2.2) suggest task breakdown capabilities"
+          "notes": "Plan Mode functionality (v1.7, v2.1, v2.2) and Multi-Agent Judging (v2.2) suggest task breakdown capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -541,7 +542,7 @@
           "notes": "v1.23.0 mentions 'Subagents' which suggests task decomposition capabilities"
         }
       },
-      "lastUpdated": "2026-02-11T00:52:21.730Z"
+      "lastUpdated": "2026-02-16T15:26:20.698Z"
     },
     {
       "categoryId": "agentic",
@@ -551,28 +552,28 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "addedInVersion": "2.1.33",
-          "addedAt": "2026-02-06T00:16:13.218Z"
+          "addedInVersion": "2.1.41",
+          "addedAt": "2026-02-13T01:12:41.057Z"
         },
         "openai-codex": {
           "supported": true,
-          "addedInVersion": "rust-v0.98.0",
-          "addedAt": "2026-02-05T17:00:36Z"
+          "addedInVersion": "rust-v0.101.0",
+          "addedAt": "2026-02-12T20:05:52Z"
         },
         "cursor": {
           "supported": true,
-          "notes": "Pinned Chats in v2.2 and improved Agent interface in v2.0 indicate context management features"
+          "notes": "Pinned Chats in v2.2 and AI Code Review in Editor v2.1 suggest context management"
         },
         "gemini-cli": {
           "supported": true,
-          "addedInVersion": "v0.27.0",
-          "addedAt": "2026-02-04T00:25:09Z"
+          "addedInVersion": "v0.28.0",
+          "addedAt": "2026-02-10T21:59:54Z"
         },
         "kiro": {
           "supported": false
         }
       },
-      "lastUpdated": "2026-02-11T00:52:48.098Z"
+      "lastUpdated": "2026-02-16T15:26:47.136Z"
     }
   ]
 }
