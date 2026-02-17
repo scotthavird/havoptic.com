@@ -1,44 +1,44 @@
 {
-  "lastUpdated": "2026-02-17T18:50:03.770Z",
+  "lastUpdated": "2026-02-17T20:17:35.926Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 67326,
-        "forks": 5252,
-        "openIssues": 6161,
+        "stars": 67342,
+        "forks": 5254,
+        "openIssues": 6175,
         "contributors": 48,
-        "lastCommitAt": "2026-02-17T18:01:00Z",
+        "lastCommitAt": "2026-02-17T18:53:52Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-17T18:50:00.289Z"
+      "fetchedAt": "2026-02-17T20:17:32.366Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 60819,
-        "forks": 8039,
-        "openIssues": 1282,
+        "stars": 60828,
+        "forks": 8041,
+        "openIssues": 1272,
         "contributors": 352,
-        "lastCommitAt": "2026-02-17T18:49:41Z",
+        "lastCommitAt": "2026-02-17T20:16:33Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-17T18:50:00.943Z"
+      "fetchedAt": "2026-02-17T20:17:32.970Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 94720,
-        "forks": 11210,
-        "openIssues": 2054,
-        "contributors": 493,
-        "lastCommitAt": "2026-02-17T18:47:44Z",
+        "stars": 94724,
+        "forks": 11212,
+        "openIssues": 2050,
+        "contributors": 494,
+        "lastCommitAt": "2026-02-17T20:10:06Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-17T18:50:01.716Z"
+      "fetchedAt": "2026-02-17T20:17:33.620Z"
     }
   }
 }
