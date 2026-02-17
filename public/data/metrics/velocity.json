@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-02-17T00:47:44.372Z",
+  "lastUpdated": "2026-02-17T05:37:41.534Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 4,
       "releasesThisMonth": 25,
-      "releasesThisQuarter": 63,
+      "releasesThisQuarter": 62,
       "averageDaysBetweenReleases": 1.2,
       "featuresPerRelease": 1,
       "lastReleaseAt": "2026-02-16T20:51:18.785Z"
@@ -39,12 +39,12 @@
     },
     "kiro": {
       "toolId": "kiro",
-      "releasesThisWeek": 0,
-      "releasesThisMonth": 1,
-      "releasesThisQuarter": 9,
+      "releasesThisWeek": 1,
+      "releasesThisMonth": 2,
+      "releasesThisQuarter": 10,
       "averageDaysBetweenReleases": 9,
       "featuresPerRelease": 0.4,
-      "lastReleaseAt": "2026-02-04T00:00:00.000Z"
+      "lastReleaseAt": "2026-02-13T00:00-05:00"
     }
   }
 }
