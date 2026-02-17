@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-17T10:24:17.743Z",
+  "lastUpdated": "2026-02-17T18:49:25.004Z",
   "releases": [
+    {
+      "id": "cursor-2.5",
+      "tool": "cursor",
+      "toolDisplayName": "Cursor",
+      "version": "2.5",
+      "date": "2026-02-17T00:00:00.000Z",
+      "summary": "Plugins, Sandbox Access Controls, and Async Subagents",
+      "fullNotes": "Plugins, Sandbox Access Controls, and Async Subagents",
+      "url": "https://www.cursor.com/changelog/2-5",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.44",
       "tool": "claude-code",
