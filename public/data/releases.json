@@ -10,7 +10,9 @@
       "summary": "Plugins, Sandbox Access Controls, and Async Subagents",
       "fullNotes": "Plugins, Sandbox Access Controls, and Async Subagents",
       "url": "https://www.cursor.com/changelog/2-5",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/cursor-2.5-2026-02-17-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/cursor-2.5-2026-02-17-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.44",
