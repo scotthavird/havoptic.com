@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import type { Release, ReleasesData, ToolId } from '../types/release';
 import { useAuth } from '../context/AuthContext';
 
@@ -65,6 +65,7 @@ export function useReleases(selectedTool: ToolId | 'all') {
   const [data, setData] = useState<GatedReleasesData | null>(hasCachedData ? cachedData : null);
   const [loading, setLoading] = useState(!hasCachedData);
   const [error, setError] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -113,6 +114,26 @@ export function useReleases(selectedTool: ToolId | 'all') {
 
     return () => controller.abort();
   }, [user, userKey]); // Re-fetch when user changes (login/logout)
+
+  const refresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      const response = await fetchWithRetry(
+        '/api/releases?_sw=bypass',
+        { cache: 'no-store', credentials: 'include' },
+        3
+      );
+      const json: GatedReleasesData = await response.json();
+      const fresh = deduplicateReleases(json);
+      cachedData = fresh;
+      cachedForUser = userKey;
+      setData(fresh);
+    } catch {
+      // Silently keep showing existing data on refresh failure
+    } finally {
+      setRefreshing(false);
+    }
+  }, [userKey]);
 
   const filteredReleases = useMemo(() => {
     if (!data) return [];
@@ -165,5 +186,7 @@ export function useReleases(selectedTool: ToolId | 'all') {
     error,
     isLimited: data?._limited ?? false,
     limitedMessage: data?._message ?? null,
+    refresh,
+    refreshing,
   };
 }
