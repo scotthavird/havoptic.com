@@ -8,15 +8,30 @@ import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
 
+const STORAGE_KEY = 'trends-selected-tools';
+
+function parseTools(param: string): ToolId[] | null {
+  const allToolIds = getAllToolIds();
+  const tools = param.split(',').filter((t) => allToolIds.includes(t as ToolId)) as ToolId[];
+  return tools.length >= 1 ? tools : null;
+}
+
 function getToolsFromUrl(): ToolId[] {
-  const searchParams = new URLSearchParams(window.location.search);
-  const toolsParam = searchParams.get('tools');
-  if (toolsParam) {
-    const allToolIds = getAllToolIds();
-    const tools = toolsParam.split(',').filter((t) => allToolIds.includes(t as ToolId)) as ToolId[];
-    if (tools.length >= 1) return tools;
+  // URL param takes priority (shared links)
+  const urlParam = new URLSearchParams(window.location.search).get('tools');
+  if (urlParam) {
+    const tools = parseTools(urlParam);
+    if (tools) return tools;
   }
-  return getAllToolIds(); // Default to all
+  // Fall back to session storage (navigated away and back)
+  try {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const tools = parseTools(stored);
+      if (tools) return tools;
+    }
+  } catch { /* ignore */ }
+  return getAllToolIds();
 }
 
 function updateUrl(tools: ToolId[]) {
@@ -28,6 +43,14 @@ function updateUrl(tools: ToolId[]) {
   if (currentUrl !== newUrl) {
     window.history.replaceState(null, '', newUrl);
   }
+  // Persist to session storage so it survives navigation away and back
+  try {
+    if (allSelected) {
+      sessionStorage.removeItem(STORAGE_KEY);
+    } else {
+      sessionStorage.setItem(STORAGE_KEY, tools.join(','));
+    }
+  } catch { /* ignore */ }
 }
 
 function formatNumber(num: number): string {
