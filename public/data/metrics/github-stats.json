@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-02-18T10:19:33.186Z",
+  "lastUpdated": "2026-02-18T11:16:22.220Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 67480,
-        "forks": 5268,
-        "openIssues": 6232,
+        "stars": 67493,
+        "forks": 5269,
+        "openIssues": 6204,
         "contributors": 48,
         "lastCommitAt": "2026-02-17T18:53:52Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-18T10:19:27.005Z"
+      "fetchedAt": "2026-02-18T11:16:18.230Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 60923,
-        "forks": 8051,
-        "openIssues": 1304,
+        "stars": 60927,
+        "forks": 8054,
+        "openIssues": 1314,
         "contributors": 358,
-        "lastCommitAt": "2026-02-18T10:18:20Z",
+        "lastCommitAt": "2026-02-18T11:12:40Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-18T10:19:27.621Z"
+      "fetchedAt": "2026-02-18T11:16:18.861Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 94765,
-        "forks": 11226,
-        "openIssues": 2100,
+        "stars": 94770,
+        "forks": 11227,
+        "openIssues": 2105,
         "contributors": 494,
-        "lastCommitAt": "2026-02-18T10:01:15Z",
+        "lastCommitAt": "2026-02-18T11:07:29Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-18T10:19:28.273Z"
+      "fetchedAt": "2026-02-18T11:16:19.412Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8470,
+        "stars": 8473,
         "forks": 1162,
-        "openIssues": 816,
+        "openIssues": 817,
         "contributors": 18,
         "lastCommitAt": "2026-02-18T06:08:25Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-18T10:19:28.758Z"
+      "fetchedAt": "2026-02-18T11:16:19.958Z"
     }
   }
 }
