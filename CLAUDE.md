@@ -40,6 +40,28 @@ Use these commands to streamline the Git workflow:
 
 Havoptic is a React-based web application that displays a timeline of AI coding tool releases (Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, Kiro CLI, GitHub Copilot CLI, and Windsurf). It fetches release data from various sources and presents them in a filterable, chronological timeline with auto-generated infographics.
 
+## Two-Repo Architecture
+
+This is the **public** repo containing the frontend, API functions, and deploy workflows. Proprietary pipeline scripts (release fetchers, infographic generators, blog generators, notification scripts, Terraform configs) live in the **private** `scotthavird/havoptic-scripts` repo.
+
+Private repo workflows use a two-checkout pattern: they clone both repos, copy scripts into the public repo working tree, run them, then clean private scripts before committing generated data (releases.json, infographics, blog posts) back to this repo.
+
+### What stays in this repo
+- React frontend (`src/`)
+- Cloudflare Pages functions (`functions/`)
+- Public data (`public/data/`, `public/images/`)
+- Deploy workflows (`deploy-prod.yml`, `deploy-dev.yml`)
+- DB migrations (`scripts/db-migrations/`)
+- SEO asset generation (`scripts/generate-seo-assets.mjs`)
+- VAPID key generation (`scripts/generate-vapid-keys.mjs`)
+- DB migration runner (`scripts/run-migrations.mjs`)
+
+### What lives in havoptic-scripts (private)
+- Release fetchers, infographic generators, blog generators
+- Notification scripts, remediation scripts
+- Terraform infrastructure configs
+- CI workflows for data generation pipelines
+
 ## Commands
 
 ```bash
@@ -47,113 +69,20 @@ npm run dev          # Start Vite dev server
 npm run build        # TypeScript compile + Vite build
 npm run lint         # Run ESLint
 npm run preview      # Preview production build locally
-npm run fetch-releases  # Fetch latest releases from sources (requires GITHUB_TOKEN)
-npm run generate:infographic -- --tool=<id>  # Generate infographic for a tool
-npm run setup:ga4 -- --property=<id>  # Configure GA4 via Admin API
 ```
-
-### GA4 Setup
-
-Configure Google Analytics 4 via the Admin API to create key events and custom dimensions:
-
-```bash
-# Prerequisites: Service account with Editor access on GA4 property
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
-
-# Dry run (preview changes)
-npm run setup:ga4 -- --property=YOUR_PROPERTY_ID
-
-# Apply changes
-npm run setup:ga4 -- --property=YOUR_PROPERTY_ID --apply
-```
-
-The script creates:
-- Key event: `newsletter_success` (conversion tracking)
-- Custom dimensions: `tool_name`, `event_category`, `version`, `method`, `link_url`, `percent_scrolled`
-
-### Infographic Generation
-
-```bash
-# Generate infographic for latest release (requires .env with API keys)
-node --env-file=.env scripts/generate-infographic-prompt.mjs \
-  --tool=claude-code --generate-image --update-releases
-
-# Generate for a specific old version
-node --env-file=.env scripts/generate-infographic-prompt.mjs \
-  --tool=cursor --version=2.3 --generate-image --update-releases --force
-
-# Available flags:
-#   --tool=<id>          Tool ID (claude-code, kiro, openai-codex, gemini-cli, cursor, github-copilot, windsurf)
-#   --version=<ver>      Specific version (default: latest)
-#   --generate-image     Generate image via Nano Banana Pro API
-#   --update-releases    Save to public/ and update releases.json
-#   --force              Regenerate even if infographic exists
-#   --all-formats        Generate 1:1, 16:9, and 9:16 formats
-#   --use-stored-source  Use source content from existing features.json (offline regeneration)
-#   --all-missing        Generate for all recent releases missing infographics (ignores --tool)
-#   --max-age-days=<n>   With --all-missing, limit to releases from last N days (default: 7)
-```
-
-### Infographic Validation
-
-Validate that generated infographic features match actual release notes:
-
-```bash
-# Validate a specific tool's infographic
-node --env-file=.env scripts/validate-infographic.mjs --tool=kiro
-
-# Validate a specific version
-node --env-file=.env scripts/validate-infographic.mjs --tool=gemini-cli --version=v0.22.0
-
-# Validate all releases with infographics
-node --env-file=.env scripts/validate-infographic.mjs --all
-```
-
-The validator compares extracted features against source URLs and reports:
-- ✅ VERIFIED: Feature clearly mentioned in source
-- 🟡 INFERRED: Reasonable inference from source
-- ❌ FABRICATED: Not supported by source
 
 ## Architecture
 
 ### Data Flow
-1. `scripts/fetch-releases.mjs` runs daily via GitHub Actions to scrape releases from:
-   - Claude Code: npm registry + GitHub CHANGELOG.md
-   - OpenAI Codex: GitHub Releases API
-   - Cursor: Scrapes changelog page HTML
-   - Gemini CLI: GitHub Releases API
-   - Kiro CLI: Scrapes changelog page HTML
-   - GitHub Copilot CLI: GitHub Releases API
-   - Windsurf: Scrapes changelog page HTML
-2. Results are written to `public/data/releases.json`
-3. Sitemap is auto-updated with current date
-4. `scripts/generate-infographic-prompt.mjs` runs after fetch to generate infographics:
-   - Uses Claude API to extract top 6 features from release notes
-   - Uses Nano Banana Pro (Gemini) to generate infographic images
-   - Saves images to `public/images/infographics/`
-   - Updates `releases.json` with `infographicUrl` field
-5. `scripts/notify-subscribers.mjs` sends email notifications when new releases are detected:
-   - Compares old vs new releases to identify changes
-   - Calls `/api/notify` endpoint with new releases
-   - Endpoint reads subscribers from R2 and sends emails via AWS SES
-6. React app fetches this JSON at runtime via `useReleases` hook
+1. Release fetchers run in the private repo via GitHub Actions
+2. Generated data (releases.json, infographics, blog posts) is committed to this repo
+3. Push to `public/` on main triggers the deploy workflow
+4. React app fetches this JSON at runtime via `useReleases` hook
 
 ### Key Types (`src/types/release.ts`)
 - `ToolId`: `'claude-code' | 'openai-codex' | 'cursor' | 'gemini-cli' | 'kiro' | 'github-copilot' | 'windsurf'`
 - `Release`: Individual release with id, tool, version, date, summary, fullNotes, url, type, infographicUrl
 - `TOOL_CONFIG`: Display names and Tailwind color classes per tool
-
-### Release Notes Storage
-- `summary`: Short excerpt (max 200 chars) for UI display
-- `fullNotes`: Complete release notes for accurate infographic generation
-- If `fullNotes` is sparse (<100 chars), the infographic script fetches from the URL
-
-### Infographic Source Content Storage
-Generated `features.json` files in `generated-prompts/` include source metadata:
-- `sourceContent`: The exact text used for feature extraction (enables offline regeneration)
-- `sourceUrl`: URL where content was fetched from
-- `sourceOrigin`: Where content came from (`fullNotes`, `fetched`, or `stored`)
-- `extractedAt`: ISO timestamp when extraction was performed
 
 ### Component Structure
 - `App.tsx`: Root component with tool filter state
@@ -175,24 +104,11 @@ Defined in `tailwind.config.js`:
 
 ## Infrastructure
 
-Deployed to Cloudflare Pages. Terraform configs in `iac/`:
-- `iac/prod/`: Production (havoptic.com, www.havoptic.com)
-- `iac/dev/`: Development (dev.havoptic.com)
+Deployed to Cloudflare Pages. Terraform configs are in the private `havoptic-scripts` repo.
 
 GitHub Actions deploy on push to main. Requires secrets:
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
-- `ANTHROPIC_API_KEY` (for infographic feature extraction)
-- `GOOGLE_API_KEY` (for Nano Banana Pro image generation)
-- `NOTIFY_API_KEY` (for newsletter notification authentication)
-
-### Environment Variables (Local Development)
-
-Create a `.env` file in the project root:
-```
-ANTHROPIC_API_KEY=sk-ant-...
-GOOGLE_API_KEY=AIza...
-```
 
 ## Newsletter System
 
@@ -213,7 +129,6 @@ Token expiration: 24 hours. Expired tokens require re-subscribing.
 - **Confirm API** (`functions/api/confirm.js`): Validates token, confirms subscriber, sends welcome email
 - **Unsubscribe API** (`functions/api/unsubscribe.js`): Handles unsubscribe requests, logs to audit trail
 - **Notify API** (`functions/api/notify.js`): Sends emails to confirmed subscribers via AWS SES
-- **Notify Script** (`scripts/notify-subscribers.mjs`): Detects new releases and triggers notifications
 - **Confirmation Page** (`src/pages/ConfirmationResult.tsx`): Shows success/error states after email confirmation
 
 ### Database Schema (D1)
@@ -222,11 +137,6 @@ See `scripts/db-migrations/006-double-opt-in.sql` for the double opt-in migratio
 - `subscribers.confirmation_token`: Unique token for email verification
 - `subscribers.token_expires_at`: Token expiration timestamp
 - `subscribers.confirmed_at`: When email was verified
-
-### Infrastructure (Terraform)
-- **D1 Database**: Stores subscribers with status, preferences, and audit trail
-- **AWS SES**: Email sending with verified domain (havoptic.com)
-- **Cloudflare Pages Secrets**: AWS credentials and API key for notify endpoint
 
 ### Audit Trail
 The `newsletter_audit` table tracks all subscription events:
@@ -258,28 +168,7 @@ curl -X POST "https://havoptic.com/api/preferences" \
   -d '{"email":"user@example.com","tools":{"cursor":false},"content":{"weekly-digest":false}}'
 ```
 
-### Testing Notifications Locally
-
-**Send test email directly via AWS SES** (uses default AWS credentials from `~/.aws/credentials`):
-```bash
-node scripts/send-test-email.mjs your-email@example.com
-```
-
-**Test via production API** (requires NOTIFY_API_KEY):
-```bash
-# Test release notification
-curl -X POST "https://havoptic.com/api/notify" \
-  -H "Content-Type: application/json" \
-  -d '{"apiKey":"YOUR_NOTIFY_API_KEY","releases":[...]}'
-
-# Test blog post notification
-curl -X POST "https://havoptic.com/api/notify" \
-  -H "Content-Type: application/json" \
-  -d '{"apiKey":"YOUR_NOTIFY_API_KEY","blogPost":{"id":"weekly-digest-2026-w04","type":"weekly-digest","title":"...","tools":["claude-code"],"summary":"...","slug":"..."}}'
-```
-
 ### Environment Variables (Cloudflare Pages)
-Set via Terraform in `iac/*/web.tf`:
 - `AWS_ACCESS_KEY_ID` - SES sender credentials
 - `AWS_SECRET_ACCESS_KEY` - SES sender credentials
 - `AWS_REGION` - SES region (us-east-1)
@@ -321,7 +210,6 @@ Generate a new VAPID key pair (run once during initial setup):
 ```bash
 node scripts/generate-vapid-keys.mjs
 ```
-Add the generated keys to your Terraform variables (`terraform.tfvars`).
 
 ### Testing Push Notifications
 Push notifications are sent automatically by `/api/notify` when new releases are detected.
@@ -337,25 +225,18 @@ The notification payload includes:
 
 ## Adding a New Tool
 
-**CRITICAL: All 12 locations must be updated for full functionality.**
-
-### Core Functionality (required for releases and infographics)
+### In this repo (public)
 1. Add tool ID to `ToolId` type in `src/types/release.ts`
 2. Add display config to `TOOL_CONFIG` in same file
 3. Add Tailwind color in `tailwind.config.js`
-4. Create fetch function in `scripts/fetch-releases.mjs`
-5. Call new fetch function in `main()` Promise.all
-6. Add tool config to `TOOL_CONFIGS` in `scripts/generate-infographic-prompt.mjs` with:
-   - `displayName`: Uppercase tool name for infographic header
-   - `primaryColor`: Brand color hex code
-   - `style`: Description of visual style for image generation
-7. **Add tool to `.github/workflows/generate-infographics.yml`** in TWO places:
-   - The `options` list under `workflow_dispatch.inputs.tool` (for manual runs)
-   - The `for tool in ...` loop in the generate step (for automated runs)
+4. Add tool to `TOOL_IDS` array in `scripts/generate-seo-assets.mjs`
+5. Add tool to `TOOL_CONFIG` in `functions/tools/[[id]].js`
+6. Add tool to `TOOL_CONFIG` in `functions/r/[[id]].js`
+7. Update meta descriptions in `index.html` (title, description, keywords, OG tags, Twitter tags, structured data)
+8. Add tool to `public/llms.txt` tracked tools list
 
-### SEO & Discoverability (required for search engines and LLMs)
-8. Add tool to `TOOL_IDS` array in `scripts/generate-seo-assets.mjs`
-9. Add tool to `TOOL_CONFIG` in `functions/tools/[[id]].js`
-10. Add tool to `TOOL_CONFIG` in `functions/r/[[id]].js`
-11. Update meta descriptions in `index.html` (title, description, keywords, OG tags, Twitter tags, structured data)
-12. Add tool to `public/llms.txt` tracked tools list
+### In havoptic-scripts repo (private)
+9. Create fetch function in `scripts/fetch-releases.mjs`
+10. Call new fetch function in `main()` Promise.all
+11. Add tool config to `TOOL_CONFIGS` in `scripts/generate-infographic-prompt.mjs`
+12. Add tool to `.github/workflows/generate-infographics.yml` options and generate loop
