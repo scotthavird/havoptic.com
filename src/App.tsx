@@ -16,6 +16,7 @@ import { Compare } from './pages/Compare';
 import { Tool } from './pages/Tool';
 import { Trends } from './pages/Trends';
 import { ConfirmationResult } from './pages/ConfirmationResult';
+import { PullToRefreshWrapper } from './components/PullToRefreshWrapper';
 
 type Page =
   | { type: 'home' }
@@ -115,7 +116,7 @@ function App() {
 
   // When "watching" is selected, fetch all releases and filter client-side
   const apiSelectedTool = selectedTool === 'watching' ? 'all' : selectedTool;
-  const { groupedReleases: rawGroupedReleases, loading, error, isLimited, limitedMessage } = useReleases(apiSelectedTool);
+  const { groupedReleases: rawGroupedReleases, loading, error, isLimited, limitedMessage, refresh } = useReleases(apiSelectedTool);
 
   // Filter releases for "watching" filter
   const groupedReleases = useMemo(() => {
@@ -329,40 +330,42 @@ function App() {
   // Render home page
   return (
     <Layout selectedTool={selectedTool} onSelectTool={setSelectedTool}>
-      <main role="main" aria-label="AI Tool Releases Timeline">
-        <div className="my-4">
-          <NewsletterSignup variant="hero" />
-        </div>
-
-        {loading && (
-          <div className="text-center py-12 text-slate-400" aria-live="polite" aria-busy="true">
-            Loading releases...
+      <PullToRefreshWrapper onRefresh={refresh} disabled={loading}>
+        <main role="main" aria-label="AI Tool Releases Timeline">
+          <div className="my-4">
+            <NewsletterSignup variant="hero" />
           </div>
-        )}
 
-        {error && (
-          <div className="text-center py-12 text-red-400" role="alert">
-            Error: {error}
-          </div>
-        )}
+          {loading && (
+            <div className="text-center py-12 text-slate-400" aria-live="polite" aria-busy="true">
+              Loading releases...
+            </div>
+          )}
 
-        {!loading && !error && (
-          <>
-            <Timeline
-              key={selectedTool}
-              groupedReleases={groupedReleases}
-              highlightedReleaseId={highlightedReleaseId}
-              selectedTool={selectedTool}
-            />
-            {isLimited && (
-              <SignInPrompt
-                message={limitedMessage || undefined}
-                className="mt-8"
+          {error && (
+            <div className="text-center py-12 text-red-400" role="alert">
+              Error: {error}
+            </div>
+          )}
+
+          {!loading && !error && (
+            <>
+              <Timeline
+                key={selectedTool}
+                groupedReleases={groupedReleases}
+                highlightedReleaseId={highlightedReleaseId}
+                selectedTool={selectedTool}
               />
-            )}
-          </>
-        )}
-      </main>
+              {isLimited && (
+                <SignInPrompt
+                  message={limitedMessage || undefined}
+                  className="mt-8"
+                />
+              )}
+            </>
+          )}
+        </main>
+      </PullToRefreshWrapper>
     </Layout>
   );
 }
