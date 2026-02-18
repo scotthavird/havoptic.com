@@ -1,13 +1,34 @@
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useGitHubStats, useNpmDownloads, useVelocityMetrics } from '../hooks/useMetrics';
 import { usePageMeta, PAGE_META } from '../hooks/usePageMeta';
 import { BreadcrumbSchema, BREADCRUMBS } from '../components/BreadcrumbSchema';
 import { Link } from '../components/Link';
+import { TrendsToolFilter } from '../components/TrendsToolFilter';
 import { TOOL_CONFIG, type ToolId } from '../types/release';
 import { getAllToolIds } from '../utils/toolRegistry';
 import type { ToolMetrics, VelocityMetrics } from '../types/metrics';
 
-const TOOL_IDS: ToolId[] = getAllToolIds();
+function getToolsFromUrl(): ToolId[] {
+  const searchParams = new URLSearchParams(window.location.search);
+  const toolsParam = searchParams.get('tools');
+  if (toolsParam) {
+    const allToolIds = getAllToolIds();
+    const tools = toolsParam.split(',').filter((t) => allToolIds.includes(t as ToolId)) as ToolId[];
+    if (tools.length >= 1) return tools;
+  }
+  return getAllToolIds(); // Default to all
+}
+
+function updateUrl(tools: ToolId[]) {
+  const allTools = getAllToolIds();
+  const allSelected = tools.length === allTools.length;
+  const basePath = '/trends';
+  const newUrl = allSelected ? basePath : `${basePath}?tools=${tools.join(',')}`;
+  const currentUrl = window.location.pathname + window.location.search;
+  if (currentUrl !== newUrl) {
+    window.history.replaceState(null, '', newUrl);
+  }
+}
 
 function formatNumber(num: number): string {
   if (num >= 1_000_000) {
@@ -78,16 +99,16 @@ interface StatCardProps {
   value: string | number;
   subtitle?: string;
   trend?: number;
-  icon: string;
 }
 
-function StatCard({ title, value, subtitle, trend, icon }: StatCardProps) {
+function StatCard({ title, value, subtitle, trend }: StatCardProps) {
   return (
     <div className="bg-slate-800/50 rounded-xl p-5">
-      <div className="flex items-start justify-between mb-2">
-        <span className="text-2xl">{icon}</span>
-        {trend !== undefined && <TrendBadge trend={trend} />}
-      </div>
+      {trend !== undefined && (
+        <div className="flex justify-end mb-2">
+          <TrendBadge trend={trend} />
+        </div>
+      )}
       <div className="text-2xl font-bold text-white mb-1">{value}</div>
       <div className="text-sm text-slate-400">{title}</div>
       {subtitle && <div className="text-xs text-slate-500 mt-1">{subtitle}</div>}
@@ -98,11 +119,34 @@ function StatCard({ title, value, subtitle, trend, icon }: StatCardProps) {
 export function Trends() {
   usePageMeta(PAGE_META.trends);
 
-  const { stats: githubStats, loading: githubLoading } = useGitHubStats();
-  const { stats: npmStats, loading: npmLoading } = useNpmDownloads();
-  const { metrics: velocityMetrics, loading: velocityLoading } = useVelocityMetrics();
+  const [selectedTools, setSelectedTools] = useState<ToolId[]>(getToolsFromUrl);
+
+  // Sync URL when tools change
+  useEffect(() => {
+    updateUrl(selectedTools);
+  }, [selectedTools]);
+
+  // Listen for browser back/forward
+  useEffect(() => {
+    const handleUrlChange = () => setSelectedTools(getToolsFromUrl());
+    window.addEventListener('popstate', handleUrlChange);
+    return () => window.removeEventListener('popstate', handleUrlChange);
+  }, []);
+
+  const { stats: githubStats, loading: githubLoading, lastUpdated: githubLastUpdated } = useGitHubStats();
+  const { stats: npmStats, loading: npmLoading, lastUpdated: npmLastUpdated } = useNpmDownloads();
+  const { metrics: velocityMetrics, loading: velocityLoading, lastUpdated: velocityLastUpdated } = useVelocityMetrics();
 
   const loading = githubLoading || npmLoading || velocityLoading;
+  const allSelected = selectedTools.length === getAllToolIds().length;
+
+  const lastUpdated = useMemo(() => {
+    const dates = [githubLastUpdated, npmLastUpdated, velocityLastUpdated]
+      .filter(Boolean)
+      .map((d) => new Date(d!).getTime());
+    if (dates.length === 0) return null;
+    return new Date(Math.max(...dates));
+  }, [githubLastUpdated, npmLastUpdated, velocityLastUpdated]);
 
   // Helper to safely get stats
   const getGithubStats = (id: ToolId): ToolMetrics | undefined => {
@@ -119,17 +163,17 @@ export function Trends() {
 
   // Prepare data for charts
   const starsData = useMemo(() => {
-    return TOOL_IDS
+    return selectedTools
       .filter((id) => getGithubStats(id)?.github?.stars)
       .map((id) => ({
         toolId: id,
         value: getGithubStats(id)?.github?.stars || 0,
       }))
       .sort((a, b) => b.value - a.value);
-  }, [githubStats]);
+  }, [githubStats, selectedTools]);
 
   const downloadsData = useMemo(() => {
-    return TOOL_IDS
+    return selectedTools
       .filter((id) => getNpmStats(id)?.npm?.weeklyDownloads)
       .map((id) => ({
         toolId: id,
@@ -137,10 +181,10 @@ export function Trends() {
         trend: getNpmStats(id)?.npm?.downloadsTrend || 0,
       }))
       .sort((a, b) => b.value - a.value);
-  }, [npmStats]);
+  }, [npmStats, selectedTools]);
 
   const velocityData = useMemo(() => {
-    return TOOL_IDS
+    return selectedTools
       .filter((id) => getVelocity(id))
       .map((id) => ({
         toolId: id,
@@ -148,10 +192,10 @@ export function Trends() {
         label: `${getVelocity(id)?.releasesThisMonth || 0} releases`,
       }))
       .sort((a, b) => b.value - a.value);
-  }, [velocityMetrics]);
+  }, [velocityMetrics, selectedTools]);
 
   const avgDaysData = useMemo(() => {
-    return TOOL_IDS
+    return selectedTools
       .filter((id) => getVelocity(id)?.averageDaysBetweenReleases)
       .map((id) => ({
         toolId: id,
@@ -159,23 +203,20 @@ export function Trends() {
         label: `${getVelocity(id)?.averageDaysBetweenReleases?.toFixed(1) || 0} days`,
       }))
       .sort((a, b) => a.value - b.value); // Lower is better
-  }, [velocityMetrics]);
+  }, [velocityMetrics, selectedTools]);
 
   // Summary stats
   const totalStars = useMemo(() => {
-    const statsArray = Object.values(githubStats) as ToolMetrics[];
-    return statsArray.reduce((sum, s) => sum + (s?.github?.stars || 0), 0);
-  }, [githubStats]);
+    return selectedTools.reduce((sum, id) => sum + (getGithubStats(id)?.github?.stars || 0), 0);
+  }, [githubStats, selectedTools]);
 
   const totalWeeklyDownloads = useMemo(() => {
-    const statsArray = Object.values(npmStats) as ToolMetrics[];
-    return statsArray.reduce((sum, s) => sum + (s?.npm?.weeklyDownloads || 0), 0);
-  }, [npmStats]);
+    return selectedTools.reduce((sum, id) => sum + (getNpmStats(id)?.npm?.weeklyDownloads || 0), 0);
+  }, [npmStats, selectedTools]);
 
   const totalReleasesThisMonth = useMemo(() => {
-    const metricsArray = Object.values(velocityMetrics) as VelocityMetrics[];
-    return metricsArray.reduce((sum, m) => sum + (m?.releasesThisMonth || 0), 0);
-  }, [velocityMetrics]);
+    return selectedTools.reduce((sum, id) => sum + (getVelocity(id)?.releasesThisMonth || 0), 0);
+  }, [velocityMetrics, selectedTools]);
 
   const fastestReleaser = useMemo(() => {
     const sorted = [...velocityData].sort((a, b) => b.value - a.value);
@@ -205,30 +246,34 @@ export function Trends() {
         <p className="text-slate-400">
           Compare growth, popularity, and release velocity across AI coding tools
         </p>
+        {lastUpdated && (
+          <p className="text-xs text-slate-500 mt-1">
+            Last updated {lastUpdated.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} at{' '}
+            {lastUpdated.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}
+          </p>
+        )}
       </div>
+
+      <TrendsToolFilter selectedTools={selectedTools} onChange={setSelectedTools} />
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <StatCard
-          icon="⭐"
           title="Total GitHub Stars"
           value={formatNumber(totalStars)}
-          subtitle="Across all tracked tools"
+          subtitle={allSelected ? 'Across all tracked tools' : `Across ${selectedTools.length} selected tools`}
         />
         <StatCard
-          icon="📦"
           title="Weekly Downloads"
           value={formatNumber(totalWeeklyDownloads)}
-          subtitle="npm packages combined"
+          subtitle={allSelected ? 'npm packages combined' : `${selectedTools.length} tools combined`}
         />
         <StatCard
-          icon="🚀"
           title="Releases This Month"
           value={totalReleasesThisMonth}
-          subtitle="All tools combined"
+          subtitle={allSelected ? 'All tools combined' : `${selectedTools.length} tools combined`}
         />
         <StatCard
-          icon="🏆"
           title="Most Active"
           value={fastestReleaser}
           subtitle="By releases this month"
