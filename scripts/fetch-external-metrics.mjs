@@ -18,6 +18,8 @@ const TOOL_GITHUB_REPOS = {
   'cursor': null, // Closed source
   'gemini-cli': 'google-gemini/gemini-cli',
   'kiro': null, // Closed source
+  'github-copilot': 'github/copilot-cli',
+  'windsurf': null, // Closed source
 };
 
 const TOOL_NPM_PACKAGES = {
@@ -26,6 +28,8 @@ const TOOL_NPM_PACKAGES = {
   'cursor': null,
   'gemini-cli': '@google/gemini-cli',
   'kiro': null,
+  'github-copilot': '@githubnext/github-copilot-cli',
+  'windsurf': null,
 };
 
 // Fetch GitHub repository stats
@@ -155,7 +159,7 @@ async function calculateVelocityMetrics() {
     const oneMonthAgo = new Date(now - 30 * 24 * 60 * 60 * 1000);
     const oneQuarterAgo = new Date(now - 90 * 24 * 60 * 60 * 1000);
 
-    const toolIds = ['claude-code', 'openai-codex', 'cursor', 'gemini-cli', 'kiro'];
+    const toolIds = Object.keys(TOOL_GITHUB_REPOS);
     const velocityMetrics = {};
 
     for (const toolId of toolIds) {
