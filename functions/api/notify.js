@@ -19,6 +19,10 @@ import {
   getAllSubscribers,
   getSubscribersForNotification,
   sendEmail,
+  generateSendId,
+  recordEmailSend,
+  wrapLinksForTracking,
+  addTrackingPixel,
 } from './_newsletter-utils.js';
 import {
   sendPushNotification,
@@ -602,13 +606,35 @@ export async function onRequestPost(context) {
       errors: [],
     };
 
+    const messageType = hasBlogPost ? 'blog' : 'release';
+    const sendMetadata = hasBlogPost
+      ? { blogSlug: blogPost.slug }
+      : { releaseIds: releases.map(r => r.id) };
+
     for (const subscriber of subscribers) {
       try {
-        // Replace email placeholder in unsubscribe link
+        // 1. Personalize: replace {{email}} placeholder (unsubscribe/preferences links)
         const personalizedHtml = htmlBody.replace(/\{\{email\}\}/g, encodeURIComponent(subscriber.email));
         const personalizedText = textBody.replace(/\{\{email\}\}/g, encodeURIComponent(subscriber.email));
 
-        await sendEmail(subscriber.email, subject, personalizedHtml, personalizedText, env);
+        // 2. Generate send ID and record the send
+        const sendId = generateSendId();
+        await recordEmailSend(env.AUTH_DB, {
+          id: sendId,
+          subscriberId: subscriber.id,
+          email: subscriber.email,
+          messageType,
+          subject,
+          metadata: sendMetadata,
+        });
+
+        // 3. Wrap links for click tracking and add open tracking pixel
+        const trackedHtml = addTrackingPixel(
+          wrapLinksForTracking(personalizedHtml, sendId, messageType),
+          sendId
+        );
+
+        await sendEmail(subscriber.email, subject, trackedHtml, personalizedText, env);
         results.sent++;
 
         // Small delay to respect SES rate limits

@@ -17,6 +17,10 @@ import {
   sendEmail,
   generateConfirmationToken,
   TOKEN_EXPIRY_MS,
+  generateSendId,
+  recordEmailSend,
+  wrapLinksForTracking,
+  addTrackingPixel,
 } from './_newsletter-utils.js';
 import { parseSessionCookie, getUserFromSession } from './auth/_utils.js';
 
@@ -504,7 +508,21 @@ export async function onRequestPost(context) {
         if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
           const confirmUrl = `https://havoptic.com/api/confirm?token=${token}`;
           const { subject, htmlBody, textBody } = generateConfirmationEmailContent(confirmUrl);
-          await sendEmail(normalizedEmail, subject, htmlBody, textBody, env);
+
+          const sendId = generateSendId();
+          await recordEmailSend(env.AUTH_DB, {
+            id: sendId,
+            subscriberId: existingSubscriber.id,
+            email: normalizedEmail,
+            messageType: 'confirmation',
+            subject,
+          });
+          const trackedHtml = addTrackingPixel(
+            wrapLinksForTracking(htmlBody, sendId, 'confirmation'),
+            sendId
+          );
+
+          await sendEmail(normalizedEmail, subject, trackedHtml, textBody, env);
         }
       } catch (emailError) {
         console.error('Confirmation email failed:', emailError.message);
@@ -546,7 +564,21 @@ export async function onRequestPost(context) {
       if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
         const confirmUrl = `https://havoptic.com/api/confirm?token=${token}`;
         const { subject, htmlBody, textBody } = generateConfirmationEmailContent(confirmUrl);
-        await sendEmail(normalizedEmail, subject, htmlBody, textBody, env);
+
+        const sendId = generateSendId();
+        await recordEmailSend(env.AUTH_DB, {
+          id: sendId,
+          subscriberId,
+          email: normalizedEmail,
+          messageType: 'confirmation',
+          subject,
+        });
+        const trackedHtml = addTrackingPixel(
+          wrapLinksForTracking(htmlBody, sendId, 'confirmation'),
+          sendId
+        );
+
+        await sendEmail(normalizedEmail, subject, trackedHtml, textBody, env);
       }
     } catch (emailError) {
       console.error('Confirmation email failed:', emailError.message);
