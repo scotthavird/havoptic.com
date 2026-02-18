@@ -126,7 +126,7 @@ jobs:
       - name: Check for infographic changes
         id: infographic-changes
         run: |
-          if [ -d "public/images/infographics" ] && [ -n "$(ls -A public/images/infographics 2>/dev/null)" ]; then
+          if git status --porcelain public/images/infographics/ | grep -q .; then
             echo "has_infographics=true" >> $GITHUB_OUTPUT
           else
             echo "has_infographics=false" >> $GITHUB_OUTPUT
