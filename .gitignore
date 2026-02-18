@@ -37,3 +37,26 @@ pr-drafts/
 *.sw?
 # Cloudflare Wrangler
 .wrangler
+
+# Private pipeline (lives in havoptic-scripts repo)
+scripts/fetch-releases.mjs
+scripts/fetch-external-metrics.mjs
+scripts/generate-infographic-prompt.mjs
+scripts/generate-blog-content.mjs
+scripts/generate-og-image.mjs
+scripts/remediate-infographic.mjs
+scripts/validate-infographic.mjs
+scripts/notify-subscribers.mjs
+scripts/notify-blog-subscribers.mjs
+scripts/backfill-fullnotes.mjs
+scripts/migrate-newsletter-to-d1.mjs
+scripts/send-test-email.mjs
+scripts/setup-ga4.mjs
+scripts/check-pr-status.mjs
+scripts/check-prs-notify.sh
+scripts/discover-repos.mjs
+scripts/generate-pr-draft.mjs
+scripts/generators/
+generated-prompts/
+iac/
+MARKETING.md
