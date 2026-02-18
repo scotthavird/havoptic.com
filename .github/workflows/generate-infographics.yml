@@ -145,6 +145,36 @@ jobs:
           git pull --rebase origin main
           git push
 
+      - name: Wait for deployment to propagate
+        if: github.event_name == 'workflow_run' && steps.infographic-changes.outputs.has_infographics == 'true'
+        run: |
+          # Get the first infographic URL from the updated releases.json
+          INFOGRAPHIC_PATH=$(node -e "
+            const data = require('./public/data/releases.json');
+            const r = data.releases.find(r => r.infographicUrl);
+            if (r) console.log(r.infographicUrl);
+          " 2>/dev/null || echo "")
+
+          if [ -z "$INFOGRAPHIC_PATH" ]; then
+            echo "No infographic URL found, skipping deploy wait"
+            exit 0
+          fi
+
+          URL="https://havoptic.com${INFOGRAPHIC_PATH}"
+          echo "Waiting for $URL to be available..."
+
+          for i in $(seq 1 40); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+            if [ "$STATUS" = "200" ]; then
+              echo "Infographic is live after ~$((i * 15)) seconds"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $STATUS, retrying in 15s..."
+            sleep 15
+          done
+
+          echo "WARNING: Infographic not available after 10 minutes, sending notifications anyway"
+
       - name: Notify subscribers about new releases (with infographics)
         if: github.event_name == 'workflow_run' && steps.infographic-changes.outputs.has_infographics == 'true'
         env:

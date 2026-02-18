@@ -38,10 +38,32 @@ const MONTH_NAMES = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
+// Module-level cache: survives component unmount/remount (e.g. navigating away and back)
+let cachedData: GatedReleasesData | null = null;
+let cachedForUser: string | null = null;
+
+function deduplicateReleases(json: GatedReleasesData): GatedReleasesData {
+  const seen = new Set<string>();
+  const uniqueReleases = json.releases.filter(r => {
+    if (seen.has(r.id)) return false;
+    seen.add(r.id);
+    return true;
+  });
+  return {
+    lastUpdated: json.lastUpdated,
+    releases: uniqueReleases,
+    _limited: json._limited,
+    _message: json._message,
+  };
+}
+
 export function useReleases(selectedTool: ToolId | 'all') {
   const { user } = useAuth();
-  const [data, setData] = useState<GatedReleasesData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const userKey = user?.id ?? '__anon__';
+  const hasCachedData = cachedData !== null && cachedForUser === userKey;
+
+  const [data, setData] = useState<GatedReleasesData | null>(hasCachedData ? cachedData : null);
+  const [loading, setLoading] = useState(!hasCachedData);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -49,9 +71,9 @@ export function useReleases(selectedTool: ToolId | 'all') {
 
     async function fetchReleases() {
       try {
-        // Use gated API endpoint instead of static file
+        // Bypass SW cache to guarantee fresh data from the network
         const response = await fetchWithRetry(
-          '/api/releases',
+          '/api/releases?_sw=bypass',
           {
             cache: 'no-store',
             signal: controller.signal,
@@ -60,34 +82,37 @@ export function useReleases(selectedTool: ToolId | 'all') {
           3
         );
         const json: GatedReleasesData = await response.json();
+        const fresh = deduplicateReleases(json);
 
-        // Deduplicate releases by id (safety net)
-        const seen = new Set<string>();
-        const uniqueReleases = json.releases.filter(r => {
-          if (seen.has(r.id)) return false;
-          seen.add(r.id);
-          return true;
-        });
-
-        setData({
-          lastUpdated: json.lastUpdated,
-          releases: uniqueReleases,
-          _limited: json._limited,
-          _message: json._message,
-        });
+        // Only update state if data actually changed
+        if (!cachedData || cachedData.lastUpdated !== fresh.lastUpdated) {
+          cachedData = fresh;
+          cachedForUser = userKey;
+          setData(fresh);
+        }
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
-        setError(err instanceof Error ? err.message : 'Unknown error');
+        // If we have cached data, silently keep showing it
+        if (!cachedData) {
+          setError(err instanceof Error ? err.message : 'Unknown error');
+        }
       } finally {
         setLoading(false);
       }
     }
 
-    setLoading(true);
+    // Invalidate cache on auth change
+    if (cachedForUser !== userKey) {
+      cachedData = null;
+      cachedForUser = null;
+      setData(null);
+      setLoading(true);
+    }
+
     fetchReleases();
 
     return () => controller.abort();
-  }, [user]); // Re-fetch when user changes (login/logout)
+  }, [user, userKey]); // Re-fetch when user changes (login/logout)
 
   const filteredReleases = useMemo(() => {
     if (!data) return [];
