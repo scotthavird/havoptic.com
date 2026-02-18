@@ -150,6 +150,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Allow callers to bypass SW cache entirely (e.g. useReleases background refresh)
+  if (url.searchParams.has('_sw') && url.searchParams.get('_sw') === 'bypass') {
+    return;
+  }
+
   // API & data: stale-while-revalidate
   if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/data/')) {
     event.respondWith(staleWhileRevalidate(request, RUNTIME_CACHE));
