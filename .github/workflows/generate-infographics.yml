@@ -148,12 +148,8 @@ jobs:
       - name: Wait for deployment to propagate
         if: github.event_name == 'workflow_run' && steps.infographic-changes.outputs.has_infographics == 'true'
         run: |
-          # Get the first infographic URL from the updated releases.json
-          INFOGRAPHIC_PATH=$(node -e "
-            const data = require('./public/data/releases.json');
-            const r = data.releases.find(r => r.infographicUrl);
-            if (r) console.log(r.infographicUrl);
-          " 2>/dev/null || echo "")
+          # Get a NEWLY generated infographic path from the latest commit
+          INFOGRAPHIC_PATH=$(git diff HEAD~1 --name-only --diff-filter=A -- 'public/images/infographics/' | head -1 | sed 's|^public||')
 
           if [ -z "$INFOGRAPHIC_PATH" ]; then
             echo "No infographic URL found, skipping deploy wait"
