@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-19T15:18:41.990Z",
+  "lastUpdated": "2026-02-19T20:10:59.817Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.29.4",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.29.4",
+      "date": "2026-02-19T19:04:43Z",
+      "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.3...v0.29.4",
+      "fullNotes": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.3...v0.29.4",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.4",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.29.3",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.29.3",
+      "date": "2026-02-19T15:43:22Z",
+      "summary": "What's Changed fix(patch): cherry-pick c43500c to release/v0.29.2-pr-19502 to patch version v0.29.2 and create version 0.29.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick c43500c to release/v0.29.2-pr-19502 to patch version v0.29.2 and create version 0.29.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/19522 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.2...v0.29.3",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.3",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.29.2",
       "tool": "gemini-cli",
