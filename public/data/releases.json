@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-18T20:14:14.224Z",
+  "lastUpdated": "2026-02-19T00:26:31.862Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.29.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.29.1",
+      "date": "2026-02-18T23:07:22Z",
+      "summary": "What's Changed fix(patch): cherry-pick 858918f to release/v0.29.0-pr-19460 to patch version v0.29.0 and create version 0.29.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 858918f to release/v0.29.0-pr-19460 to patch version v0.29.0 and create version 0.29.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/19480 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.0...v0.29.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.1",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.47",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.47",
+      "date": "2026-02-18T20:15:11.998Z",
+      "summary": "- Fixed FileWriteTool line counting to preserve intentional trailing blank lines instead of stripping them with trimEnd(). - Fixed Windows terminal rendering bugs caused by os.EOL (\\r\\n) in display...",
+      "fullNotes": "- Fixed FileWriteTool line counting to preserve intentional trailing blank lines instead of stripping them with trimEnd(). - Fixed Windows terminal rendering bugs caused by os.EOL (\\r\\n) in display code — line counts now show correct values instead of always showing 1 on Windows. - Improved VS Code plan preview: auto-updates as Claude iterates, enables commenting only when the plan is ready for review, and keeps the preview open when rejecting so Claude can revise. - Fixed a bug where bold and colored text in markdown output could shift to the wrong characters on Windows due to \\r\\n line endings. - Fixed compaction failing when conversation contains many PDF documents by stripping document blocks alongside images before sending to the compaction API (anthropics/claude-code26188) - Improved memory usage in long-running sessions by releasing API stream buffers, agent context, and skill state after use - Improved startup performance by deferring SessionStart hook execution, reducing time-to-interactive by ~500ms. - Fixed an issue where bash tool output was silently discarded on Windows when using MSYS2 or Cygwin shells. - Improved performance of @ file mentions - file suggestions now appear faster by pre-warming the index on startup and using session-based caching with background refresh. - Improved memory usage by trimming agent task message history after tasks complete - Improved memory usage during long agent sessions by eliminating O(n²) message accumulation in progress updates - Fixed the bash permission classifier to validate that returned match descriptions correspond to actual input rules, preventing hallucinated descriptions from incorrectly granting permissions - Fixed user-defined agents only loading one file on NFS/FUSE filesystems that report",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.104.0",
       "tool": "openai-codex",
@@ -91,6 +113,17 @@
       "type": "release",
       "infographicUrl": "/images/infographics/cursor-2.5-2026-02-17-1x1.jpg",
       "infographicUrl16x9": "/images/infographics/cursor-2.5-2026-02-17-16x9.jpg"
+    },
+    {
+      "id": "windsurf-1.9552.24",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9552.24",
+      "date": "2026-02-17T00:00:00.000Z",
+      "summary": "Windsurf version 1.9552.24",
+      "fullNotes": "Windsurf version 1.9552.24",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
     },
     {
       "id": "claude-code-2.1.44",
