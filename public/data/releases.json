@@ -10,7 +10,9 @@
       "summary": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.3...v0.29.4",
       "fullNotes": "Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.3...v0.29.4",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.4",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.29.4-2026-02-19-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.29.4-2026-02-19-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.29.3",
@@ -21,7 +23,9 @@
       "summary": "What's Changed fix(patch): cherry-pick c43500c to release/v0.29.2-pr-19502 to patch version v0.29.2 and create version 0.29.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick c43500c to release/v0.29.2-pr-19502 to patch version v0.29.2 and create version 0.29.3 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/19522 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.2...v0.29.3",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.3",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.29.3-2026-02-19-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.29.3-2026-02-19-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.29.2",
