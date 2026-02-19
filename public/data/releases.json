@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-19T00:26:31.862Z",
+  "lastUpdated": "2026-02-19T05:30:29.258Z",
   "releases": [
+    {
+      "id": "gemini-cli-v0.29.2",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.29.2",
+      "date": "2026-02-19T00:57:07Z",
+      "summary": "What's Changed fix(patch): cherry-pick 261788c to release/v0.29.1-pr-19453 to patch version v0.29.1 and create version 0.29.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 261788c to release/v0.29.1-pr-19453 to patch version v0.29.1 and create version 0.29.2 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/19491 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.1...v0.29.2",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.2",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.29.1",
       "tool": "gemini-cli",
