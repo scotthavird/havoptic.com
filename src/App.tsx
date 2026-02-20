@@ -16,6 +16,7 @@ import { Compare } from './pages/Compare';
 import { Tool } from './pages/Tool';
 import { Trends } from './pages/Trends';
 import { ConfirmationResult } from './pages/ConfirmationResult';
+import { AdminTracking } from './pages/AdminTracking';
 import { PullToRefreshWrapper } from './components/PullToRefreshWrapper';
 
 type Page =
@@ -28,7 +29,8 @@ type Page =
   | { type: 'compareVs'; tool1: ToolId; tool2: ToolId }
   | { type: 'trends' }
   | { type: 'tool'; toolId: ToolId }
-  | { type: 'confirmed' };
+  | { type: 'confirmed' }
+  | { type: 'admin-tracking' };
 
 // Parse "tool1-vs-tool2" pattern for comparison pages
 function parseCompareVsSlug(slug: string): { tool1: ToolId; tool2: ToolId } | null {
@@ -68,6 +70,7 @@ function getPageFromLocation(): Page {
   if (pathname === '/compare') return { type: 'compare' };
   if (pathname === '/trends') return { type: 'trends' };
   if (pathname === '/confirmed') return { type: 'confirmed' };
+  if (pathname === '/admin/tracking') return { type: 'admin-tracking' };
   if (pathname.startsWith('/blog/')) {
     return { type: 'blogPost', slug: pathname.slice(6) };
   }
@@ -196,6 +199,9 @@ function App() {
       case 'privacy':
         pageTitle = 'Privacy Policy | Havoptic';
         break;
+      case 'admin-tracking':
+        pageTitle = 'Email Tracking | Havoptic Admin';
+        break;
     }
 
     trackPageView(pagePath, pageTitle);
@@ -307,6 +313,14 @@ function App() {
     return (
       <Layout>
         <Trends />
+      </Layout>
+    );
+  }
+
+  if (currentPage.type === 'admin-tracking') {
+    return (
+      <Layout>
+        <AdminTracking />
       </Layout>
     );
   }
