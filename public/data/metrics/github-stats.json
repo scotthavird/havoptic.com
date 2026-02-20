@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-02-20T10:17:00.944Z",
+  "lastUpdated": "2026-02-20T11:11:18.798Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 67922,
-        "forks": 5310,
-        "openIssues": 6447,
+        "stars": 67930,
+        "forks": 5311,
+        "openIssues": 6457,
         "contributors": 48,
         "lastCommitAt": "2026-02-19T23:55:06Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-20T10:16:55.020Z"
+      "fetchedAt": "2026-02-20T11:11:16.374Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 61178,
-        "forks": 8105,
-        "openIssues": 1387,
+        "stars": 61183,
+        "forks": 8106,
+        "openIssues": 1390,
         "contributors": 360,
-        "lastCommitAt": "2026-02-20T10:02:30Z",
+        "lastCommitAt": "2026-02-20T10:53:06Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-20T10:16:55.581Z"
+      "fetchedAt": "2026-02-20T11:11:16.948Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 95003,
-        "forks": 11338,
-        "openIssues": 2084,
+        "stars": 95011,
+        "forks": 11337,
+        "openIssues": 2086,
         "contributors": 499,
         "lastCommitAt": "2026-02-20T06:36:18Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-20T10:16:56.191Z"
+      "fetchedAt": "2026-02-20T11:11:17.587Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
         "stars": 8541,
         "forks": 1175,
-        "openIssues": 844,
+        "openIssues": 845,
         "contributors": 18,
-        "lastCommitAt": "2026-02-20T09:44:17Z",
+        "lastCommitAt": "2026-02-20T10:22:22Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-20T10:16:56.717Z"
+      "fetchedAt": "2026-02-20T11:11:18.138Z"
     }
   }
 }
