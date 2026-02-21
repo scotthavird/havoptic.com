@@ -23,7 +23,9 @@
       "summary": "Windsurf version 1.9552.25",
       "fullNotes": "Windsurf version 1.9552.25",
       "url": "https://windsurf.com/changelog",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/windsurf-1.9552.25-2026-02-21-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/windsurf-1.9552.25-2026-02-21-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.413",
