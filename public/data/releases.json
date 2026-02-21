@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-21T00:24:46.446Z",
+  "lastUpdated": "2026-02-21T05:20:26.831Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.414",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.414",
+      "date": "2026-02-21T00:53:22Z",
+      "summary": "2026-02-21 - Explore agent can now use GitHub MCP tools when available - Show permission elevation dialog when accepting a plan with autopilot to prevent auto-denied tool errors",
+      "fullNotes": "2026-02-21 - Explore agent can now use GitHub MCP tools when available - Show permission elevation dialog when accepting a plan with autopilot to prevent auto-denied tool errors",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.414",
+      "type": "release"
+    },
     {
       "id": "github-copilot-v0.0.413",
       "tool": "github-copilot",
