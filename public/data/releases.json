@@ -10,7 +10,9 @@
       "summary": "2026-02-20 - Fix issue where Copilot API URL wasn't respected - Display heading content from reasoning for gpt models - Increase LSP request timeout from 30s to 90s to reduce timeout failures - Fix...",
       "fullNotes": "2026-02-20 - Fix issue where Copilot API URL wasn't respected - Display heading content from reasoning for gpt models - Increase LSP request timeout from 30s to 90s to reduce timeout failures - Fixed alt-screen timeline entries not updating when tool calls complete (particularly sub-agent calls) - ctrl+insert can now be used to copy selected text in the alt-screen view - Fix readbash, writebash, and stopbash in-progress icon showing filled dot instead of empty circle - Enable alt-screen mode by default when running with --experimental flag - Improve code search speed in large repos - Session info renders in the main view footer in alt-screen mode - Skill files with YAML array syntax for allowed-tools now load correctly - Support remote plugin sources (GitHub repos and git URLs) in marketplace.json plugin entries - Automatically migrate users from claude-sonnet-4.5 to the current default model on startup - Ctrl+A, Ctrl+E, and Ctrl+U navigate to logical line boundaries (newlines) instead of visual wrap boundaries - Add configurable status line support to display dynamic session information via custom shell scripts",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.413",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.413-2026-02-21-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.413-2026-02-21-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.50",
@@ -21,7 +23,9 @@
       "summary": "- Added support for startupTimeout configuration for LSP servers - Added WorktreeCreate and WorktreeRemove hook events, enabling custom VCS setup and teardown when agent worktree isolation creates ...",
       "fullNotes": "- Added support for startupTimeout configuration for LSP servers - Added WorktreeCreate and WorktreeRemove hook events, enabling custom VCS setup and teardown when agent worktree isolation creates or removes worktrees. - Fixed a bug where resumed sessions could be invisible when the working directory involved symlinks, because the session storage path was resolved at different times during startup. Also fixed session data loss on SSH disconnect by flushing session data before hooks and analytics in the graceful shutdown sequence. - Linux: Fixed native modules not loading on systems with glibc older than 2.30 (e.g., RHEL 8) - Fixed memory leak in agent teams where completed teammate tasks were never garbage collected from session state - Fixed CLAUDECODESIMPLE to fully strip down skills, session memory, custom agents, and CLAUDE.md token counting - Fixed /mcp reconnect free",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.50-2026-02-21-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.50-2026-02-21-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.412",
