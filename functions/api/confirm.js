@@ -13,6 +13,10 @@ import {
   confirmSubscriber,
   isTokenExpired,
   sendEmail,
+  generateSendId,
+  recordEmailSend,
+  wrapLinksForTracking,
+  addTrackingPixel,
 } from './_newsletter-utils.js';
 
 // Generate welcome email content (same as in subscribe.js)
@@ -300,7 +304,21 @@ export async function onRequestGet(context) {
     try {
       if (env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY) {
         const { subject, htmlBody, textBody } = generateWelcomeEmailContent(subscriber.email);
-        await sendEmail(subscriber.email, subject, htmlBody, textBody, env);
+
+        const sendId = generateSendId();
+        await recordEmailSend(env.AUTH_DB, {
+          id: sendId,
+          subscriberId: subscriber.id,
+          email: subscriber.email,
+          messageType: 'welcome',
+          subject,
+        });
+        const trackedHtml = addTrackingPixel(
+          wrapLinksForTracking(htmlBody, sendId, 'welcome'),
+          sendId
+        );
+
+        await sendEmail(subscriber.email, subject, trackedHtml, textBody, env);
       }
     } catch (emailError) {
       console.error('Welcome email failed:', emailError.message);

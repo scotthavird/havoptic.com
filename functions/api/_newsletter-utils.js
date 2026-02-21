@@ -412,6 +412,83 @@ export async function signRequest(method, url, headers, body, credentials, regio
 /**
  * Send email via AWS SES API
  */
+// --- Email Tracking Utilities ---
+
+const TRACKING_BASE = 'https://havoptic.com/api/t';
+
+function toBase64Url(str) {
+  return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function inferLinkLabel(url) {
+  try {
+    const parsed = new URL(url);
+    const path = parsed.pathname;
+    if (path.startsWith('/r/')) return 'view-release';
+    if (path.startsWith('/blog/')) return 'view-blog';
+    if (path.includes('/unsubscribe')) return 'unsubscribe';
+    if (path.includes('/preferences')) return 'preferences';
+    if (path.includes('/api/confirm')) return 'confirm';
+    if (parsed.hostname === 'havoptic.com' || parsed.hostname === 'www.havoptic.com') return 'visit-site';
+    return 'external';
+  } catch {
+    return 'unknown';
+  }
+}
+
+function addUtmParams(url, messageType) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname !== 'havoptic.com' && parsed.hostname !== 'www.havoptic.com') return url;
+    parsed.searchParams.set('utm_source', 'newsletter');
+    parsed.searchParams.set('utm_medium', 'email');
+    parsed.searchParams.set('utm_campaign', messageType);
+    return parsed.toString();
+  } catch {
+    return url;
+  }
+}
+
+export function generateSendId() {
+  return crypto.randomUUID();
+}
+
+export async function recordEmailSend(db, sendData) {
+  try {
+    await db.prepare(`
+      INSERT INTO email_sends (id, subscriber_id, email, message_type, subject, metadata, sent_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).bind(
+      sendData.id,
+      sendData.subscriberId || null,
+      sendData.email,
+      sendData.messageType,
+      sendData.subject || null,
+      sendData.metadata ? JSON.stringify(sendData.metadata) : null,
+      new Date().toISOString()
+    ).run();
+  } catch (e) {
+    console.error('Failed to record email send:', e);
+  }
+}
+
+export function wrapLinksForTracking(html, sendId, messageType) {
+  return html.replace(/href="(https:\/\/[^"]+)"/g, (match, url) => {
+    const label = inferLinkLabel(url);
+    const urlWithUtm = addUtmParams(url, messageType);
+    const encoded = toBase64Url(urlWithUtm);
+    const trackingUrl = `${TRACKING_BASE}/click?sid=${sendId}&url=${encoded}&label=${label}`;
+    return `href="${trackingUrl}"`;
+  });
+}
+
+export function addTrackingPixel(html, sendId) {
+  const pixel = `<img src="${TRACKING_BASE}/open?sid=${sendId}" width="1" height="1" alt="" style="display:none;width:1px;height:1px;border:0;" />`;
+  return html.replace(/<\/body>/i, `${pixel}</body>`);
+}
+
+// --- End Email Tracking Utilities ---
+
 export async function sendEmail(to, subject, htmlBody, textBody, env) {
   const region = env.AWS_REGION || 'us-east-1';
   const endpoint = `https://email.${region}.amazonaws.com/v2/email/outbound-emails`;
