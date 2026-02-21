@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-21T11:05:13.309Z",
+  "lastUpdated": "2026-02-21T15:17:53.438Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
@@ -57,12 +57,12 @@
     },
     "windsurf": {
       "toolId": "windsurf",
-      "releasesThisWeek": 1,
-      "releasesThisMonth": 9,
-      "releasesThisQuarter": 21,
-      "averageDaysBetweenReleases": 3.5,
+      "releasesThisWeek": 2,
+      "releasesThisMonth": 10,
+      "releasesThisQuarter": 22,
+      "averageDaysBetweenReleases": 3,
       "featuresPerRelease": 0.2,
-      "lastReleaseAt": "2026-02-17T00:00:00.000Z"
+      "lastReleaseAt": "2026-02-21T00:00:00.000Z"
     }
   }
 }
