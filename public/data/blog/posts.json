@@ -1,6 +1,68 @@
 {
-  "lastUpdated": "2026-02-16T15:27:14.638Z",
+  "lastUpdated": "2026-02-23T15:24:46.732Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w08",
+      "type": "weekly-digest",
+      "title": "AI Coding Tools Week 8: Claude Gets Worktree Isolation, Cursor Drops v2.5",
+      "slug": "weekly-digest-week-8-2026",
+      "publishedAt": "2026-02-23T15:16:28.435Z",
+      "summary": "Major updates this week: Claude Code adds git worktree isolation, Cursor ships v2.5 with plugins & sandboxing, plus 21 releases across 6 tools. Velocity up 24%.",
+      "content": "# AI Coding Tools Week 8: Claude Gets Worktree Isolation, Cursor Drops v2.5\n\n## TL;DR 🎯\n- **Claude Code** ships worktree isolation for safer agent operations\n- **Cursor v2.5** lands with plugins, sandbox controls, and async subagents\n\n## This Week's Releases\n\n### Claude Code (5 releases)\nBig week for Claude with **worktree isolation** - agents can now work in temporary git worktrees via the `--worktree (-w)` flag. Also added LSP server startup timeout configs and WorktreeCreate/WorktreeRemove hooks for custom VCS setup. Plus Ctrl+F to kill background processes.\n\n### Cursor (1 release)\n**v2.5 is here** with three major additions: plugin support, sandbox access controls, and async subagents. This feels like the biggest Cursor update in months.\n\n### Windsurf (2 releases)\nQuiet incremental updates with v1.9552.25 and v1.9552.24 - no detailed features disclosed.\n\n### Gemini CLI (6 releases)\nRapid-fire releases from v0.29.0 to v0.29.5. Key fix: removed `askuser` tool from non-interactive modes and added restricted `.env` loading for untrusted environments.\n\n### OpenAI Codex CLI (3 releases)\nRust versions v0.102.0 through v0.104.0 added WSPROXY/WSSPROXY environment support for websocket proxying and richer app metadata in listing responses.\n\n### Tool #1 (4 releases)\nFour quick releases (v0.0.411-414) with GitHub MCP tools for Explore agent, permission elevation dialogs for autopilot, and LSP timeout bumps from 30s to 90s.\n\n## Highlight Deep Dive\n\n**Claude Code's worktree isolation** is the standout feature this week. This addresses a major pain point - letting AI agents experiment safely without touching your main branch. When you start Claude with `--worktree`, it creates a temporary git worktree where subagents can make changes in isolation. The new WorktreeCreate/WorktreeRemove hooks let you customize VCS setup and teardown. This is exactly the kind of safety feature that makes AI coding tools ready for production workflows.\n\n## Quick Stats 📊\n- **Total releases:** 21 (up from 17 last week)\n- **Biggest mover:** Gemini CLI with 6 releases\n- **Velocity trend:** +24% week-over-week\n- **Tools shipping:** 6/6 active\n\nThe pace is picking up as we head into March. Claude's worktree feature and Cursor's v2.5 plugin system suggest the focus is shifting from raw AI capabilities to better developer experience and safety controls.",
+      "coverImageUrl": null,
+      "tools": [
+        "github-copilot",
+        "windsurf",
+        "claude-code",
+        "gemini-cli",
+        "openai-codex",
+        "cursor"
+      ],
+      "metrics": {
+        "totalReleases": 21,
+        "releasesByTool": {
+          "github-copilot": 4,
+          "windsurf": 2,
+          "claude-code": 5,
+          "gemini-cli": 6,
+          "openai-codex": 3,
+          "cursor": 1
+        },
+        "topFeatures": [
+          {
+            "tool": "github-copilot",
+            "feature": "v0.0.414",
+            "description": "2026-02-21 - Explore agent can now use GitHub MCP tools when available - Show permission elevation dialog when accepting a plan with autopilot to prevent auto-denied tool errors"
+          },
+          {
+            "tool": "windsurf",
+            "feature": "1.9552.25",
+            "description": "Windsurf version 1.9552.25"
+          },
+          {
+            "tool": "github-copilot",
+            "feature": "v0.0.413",
+            "description": "2026-02-20 - Fix issue where Copilot API URL wasn't respected - Display heading content from reasoning for gpt models - Increase LSP request timeout from 30s to 90s to reduce timeout failures - Fix..."
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "Cursor",
+          "worktree isolation",
+          "git worktree",
+          "coding assistant",
+          "developer tools",
+          "AI agents",
+          "sandbox",
+          "plugins"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-8-2026"
+      }
+    },
     {
       "id": "weekly-digest-2026-w07",
       "type": "weekly-digest",
