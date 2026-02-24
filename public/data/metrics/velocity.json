@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-24T15:26:12.380Z",
+  "lastUpdated": "2026-02-24T20:13:09.989Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 6,
+      "releasesThisWeek": 5,
       "releasesThisMonth": 25,
       "releasesThisQuarter": 62,
       "averageDaysBetweenReleases": 1.5,
@@ -12,8 +12,8 @@
     },
     "openai-codex": {
       "toolId": "openai-codex",
-      "releasesThisWeek": 3,
-      "releasesThisMonth": 15,
+      "releasesThisWeek": 2,
+      "releasesThisMonth": 13,
       "releasesThisQuarter": 36,
       "averageDaysBetweenReleases": 1.6,
       "featuresPerRelease": 16.8,
@@ -32,7 +32,7 @@
       "toolId": "gemini-cli",
       "releasesThisWeek": 8,
       "releasesThisMonth": 17,
-      "releasesThisQuarter": 50,
+      "releasesThisQuarter": 47,
       "averageDaysBetweenReleases": 1.4,
       "featuresPerRelease": 9,
       "lastReleaseAt": "2026-02-24T03:16:44Z"
@@ -48,12 +48,12 @@
     },
     "github-copilot": {
       "toolId": "github-copilot",
-      "releasesThisWeek": 5,
-      "releasesThisMonth": 21,
+      "releasesThisWeek": 6,
+      "releasesThisMonth": 22,
       "releasesThisQuarter": 47,
-      "averageDaysBetweenReleases": 1.8,
+      "averageDaysBetweenReleases": 1.4,
       "featuresPerRelease": 7,
-      "lastReleaseAt": "2026-02-23T21:46:06Z"
+      "lastReleaseAt": "2026-02-24T19:59:57Z"
     },
     "windsurf": {
       "toolId": "windsurf",
