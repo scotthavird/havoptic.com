@@ -10,7 +10,9 @@
       "summary": "2026-02-23 - Skill files saved with a UTF-8 BOM (common on Windows editors) now load correctly instead of failing with a frontmatter parse error - Custom agents support the model field to specify w...",
       "fullNotes": "2026-02-23 - Skill files saved with a UTF-8 BOM (common on Windows editors) now load correctly instead of failing with a frontmatter parse error - Custom agents support the model field to specify which model to use, and unknown fields now warn instead of blocking agent load - Plan approval menu shows model-curated actions with a recommended option highlighted first, including autopilot+fleet for parallelizable work - Env loading indicator no longer hangs indefinitely on MCP startup error or session resume - Add showfile tool for presenting code and diffs to the user - Add env loading indicator showing skills, MCPs, plugins, ... being loaded - MCP tool results with giant single lines are truncated correctly - /plugin marketplace add and /plugin install support local paths containing spaces - /mcp show groups servers into User, Workspace, Plugins, and Built-in sections and makes all servers navigable - Agent now knows which model is powering it when asked - Ctrl+A/E cycle through visual lines in wrapped input; Home/End navigate within a visual line; Ctrl+Home/End jump to text boundaries",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.415",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.415-2026-02-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.415-2026-02-24-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.29.6",
@@ -21,7 +23,9 @@
       "summary": "What's Changed fix(patch): cherry-pick aa9163d to release/v0.29.5-pr-19991 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20039 Full Changelog: https://github....",
       "fullNotes": "What's Changed fix(patch): cherry-pick aa9163d to release/v0.29.5-pr-19991 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20039 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.5...v0.29.6",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.6",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.29.6-2026-02-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.29.6-2026-02-24-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.414",
