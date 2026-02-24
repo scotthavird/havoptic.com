@@ -10,7 +10,9 @@
       "summary": "What's Changed fix(patch): cherry-pick d96bd05 to release/v0.29.6-pr-19867 to patch version v0.29.6 and create version 0.29.7 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick d96bd05 to release/v0.29.6-pr-19867 to patch version v0.29.6 and create version 0.29.7 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20111 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.29.6...v0.29.7",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.29.7",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.29.7-2026-02-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.29.7-2026-02-24-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.51",
@@ -21,7 +23,9 @@
       "summary": "- Added claude remote-control subcommand for external builds, enabling local environment serving for all users. - Updated plugin marketplace default git timeout from 30s to 120s and added CLAUDECOD...",
       "fullNotes": "- Added claude remote-control subcommand for external builds, enabling local environment serving for all users. - Updated plugin marketplace default git timeout from 30s to 120s and added CLAUDECODEPLUGINGITTIMEOUTMS to configure. - Added support for custom npm registries and specific version pinning when installing plugins from npm sources - BashTool now skips login shell (-l flag) by default when a shell snapshot is available, improving command execution performance. Previously this required setting CLAUDEBASHNOLOGIN=true. - Fixed a security issue where statusLine and fileSuggestion hook commands could execute without workspace trust acceptance in interactive mode. - Tool results larger than 50K characters are now persisted to disk (previously 100K). This reduces context window usage and improves conversation longevity. - Fixed a bug where duplicate controlresponse messages (e.g. from WebSocket reconnects) could cause API 400 errors by pushing duplicate assistant messages into the conversation. - Added CLAUDECODEACCOUNTUUID, CLAUDECODEUSEREMAIL, and CLAUDECODEORGANIZATIONUUID environment variables for SDK callers to provide account info synchronously, eliminating a race condition where early telemetry events lacked account metadata. - Fixed slash command autocomplete crashing when a plugin's SKILL.md description is a YAML array or other non-string type - The /model picker now shows human-readable labels (e.g., \"Sonnet 4.5\") instead of raw model IDs for pinned model versions, with an upgrade hint when a newer version is available.",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.51-2026-02-24-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.51-2026-02-24-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.415",
