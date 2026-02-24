@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-24T05:30:23.987Z",
+  "lastUpdated": "2026-02-24T10:19:35.285Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.52",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.52",
+      "date": "2026-02-24T06:00:40.801Z",
+      "summary": "- VS Code: Fixed extension crash on Windows (\"command 'claude-vscode.editor.openLast' not found\")",
+      "fullNotes": "- VS Code: Fixed extension crash on Windows (\"command 'claude-vscode.editor.openLast' not found\")",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.29.7",
       "tool": "gemini-cli",
