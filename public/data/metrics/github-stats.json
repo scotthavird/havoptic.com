@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-02-24T10:20:22.854Z",
+  "lastUpdated": "2026-02-24T11:16:28.534Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 69537,
-        "forks": 5475,
-        "openIssues": 6653,
+        "stars": 69543,
+        "forks": 5476,
+        "openIssues": 6664,
         "contributors": 49,
         "lastCommitAt": "2026-02-24T06:39:56Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-24T10:20:17.787Z"
+      "fetchedAt": "2026-02-24T11:16:24.055Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 61679,
-        "forks": 8191,
-        "openIssues": 1333,
+        "stars": 61684,
+        "forks": 8193,
+        "openIssues": 1335,
         "contributors": 362,
-        "lastCommitAt": "2026-02-24T10:17:50Z",
+        "lastCommitAt": "2026-02-24T11:06:50Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-24T10:20:18.481Z"
+      "fetchedAt": "2026-02-24T11:16:24.951Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 95498,
-        "forks": 11579,
-        "openIssues": 2292,
+        "stars": 95500,
+        "forks": 11582,
+        "openIssues": 2295,
         "contributors": 510,
         "lastCommitAt": "2026-02-24T10:06:08Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-24T10:20:19.158Z"
+      "fetchedAt": "2026-02-24T11:16:25.781Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8693,
-        "forks": 1198,
+        "stars": 8695,
+        "forks": 1199,
         "openIssues": 908,
         "contributors": 18,
         "lastCommitAt": "2026-02-23T21:46:08Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-24T10:20:19.723Z"
+      "fetchedAt": "2026-02-24T11:16:26.520Z"
     }
   }
 }
