@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-24T15:22:27.861Z",
+  "lastUpdated": "2026-02-24T20:12:18.294Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.416",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.416",
+      "date": "2026-02-24T19:59:57Z",
+      "summary": "2026-02-24 - Expand --help content with descriptions, examples, and sorted flags - Block third-party MCP servers when the Copilot MCP policy does not allow them - Streaming response size counter up...",
+      "fullNotes": "2026-02-24 - Expand --help content with descriptions, examples, and sorted flags - Block third-party MCP servers when the Copilot MCP policy does not allow them - Streaming response size counter updates continuously during tool calls and reasoning, and resets between requests - Status line automatically switches to a two-line layout on narrow terminals, keeping CWD, branch, and model info readable at any terminal width - Undo operations now always require confirmation",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.416",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.52",
       "tool": "claude-code",
