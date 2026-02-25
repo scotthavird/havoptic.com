@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-25T05:31:10.127Z",
+  "lastUpdated": "2026-02-25T10:21:07.680Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.56",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.56",
+      "date": "2026-02-25T05:55:32.621Z",
+      "summary": "- VS Code: Fixed another cause of \"command 'claude-vscode.editor.openLast' not found\" crashes",
+      "fullNotes": "- VS Code: Fixed another cause of \"command 'claude-vscode.editor.openLast' not found\" crashes",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "gemini-cli-v0.30.0",
       "tool": "gemini-cli",
