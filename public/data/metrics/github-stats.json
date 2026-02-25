@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-02-25T15:23:51.321Z",
+  "lastUpdated": "2026-02-25T20:13:32.453Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 70035,
-        "forks": 5521,
-        "openIssues": 6764,
+        "stars": 70093,
+        "forks": 5531,
+        "openIssues": 6792,
         "contributors": 49,
-        "lastCommitAt": "2026-02-25T14:37:12Z",
+        "lastCommitAt": "2026-02-25T20:00:11Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-25T15:23:46.926Z"
+      "fetchedAt": "2026-02-25T20:13:26.901Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 61867,
-        "forks": 8206,
-        "openIssues": 1326,
+        "stars": 61889,
+        "forks": 8213,
+        "openIssues": 1325,
         "contributors": 364,
-        "lastCommitAt": "2026-02-25T15:20:27Z",
+        "lastCommitAt": "2026-02-25T20:12:40Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-25T15:23:47.882Z"
+      "fetchedAt": "2026-02-25T20:13:27.438Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 95653,
-        "forks": 11632,
-        "openIssues": 2346,
+        "stars": 95667,
+        "forks": 11641,
+        "openIssues": 2360,
         "contributors": 511,
-        "lastCommitAt": "2026-02-25T15:18:41Z",
+        "lastCommitAt": "2026-02-25T20:10:16Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-25T15:23:48.907Z"
+      "fetchedAt": "2026-02-25T20:13:28.068Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8733,
-        "forks": 1212,
-        "openIssues": 906,
+        "stars": 8744,
+        "forks": 1211,
+        "openIssues": 873,
         "contributors": 18,
-        "lastCommitAt": "2026-02-25T14:38:16Z",
+        "lastCommitAt": "2026-02-25T18:11:26Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-25T15:23:49.681Z"
+      "fetchedAt": "2026-02-25T20:13:28.530Z"
     }
   }
 }
