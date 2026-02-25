@@ -10,7 +10,9 @@
       "summary": "- VS Code: Fixed another cause of \"command 'claude-vscode.editor.openLast' not found\" crashes",
       "fullNotes": "- VS Code: Fixed another cause of \"command 'claude-vscode.editor.openLast' not found\" crashes",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.56-2026-02-25-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.56-2026-02-25-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.30.0",
