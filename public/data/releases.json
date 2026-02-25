@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-24T20:12:18.294Z",
+  "lastUpdated": "2026-02-25T00:27:09.591Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.417",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.417",
+      "date": "2026-02-25T00:19:04Z",
+      "summary": "2026-02-25 - Add /research command for deep research with exportable reports - MCP servers no longer intermittently fail to load when opening a new session - Plugin agents and skills are available ...",
+      "fullNotes": "2026-02-25 - Add /research command for deep research with exportable reports - MCP servers no longer intermittently fail to load when opening a new session - Plugin agents and skills are available immediately after install without restarting - Plugin skills and commands load from custom paths declared in plugin.json - Alt+backspace correctly registers as backspace instead of delete",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.417",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.53",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.53",
+      "date": "2026-02-24T22:44:13.059Z",
+      "summary": "- Fixed a UI flicker where user input would briefly disappear after submission before the message rendered - Fixed bulk agent kill (ctrl+f) to send a single aggregate notification instead of one pe...",
+      "fullNotes": "- Fixed a UI flicker where user input would briefly disappear after submission before the message rendered - Fixed bulk agent kill (ctrl+f) to send a single aggregate notification instead of one per agent, and to properly clear the command queue - Fixed graceful shutdown sometimes leaving stale sessions when using Remote Control by paralleli",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "github-copilot-v0.0.416",
       "tool": "github-copilot",
