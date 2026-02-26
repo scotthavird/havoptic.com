@@ -10,7 +10,9 @@
       "summary": "- Claude automatically saves useful context to auto-memory. Manage with /memory - Added /copy command to show an interactive picker when code blocks are present, allowing selection of individual co...",
       "fullNotes": "- Claude automatically saves useful context to auto-memory. Manage with /memory - Added /copy command to show an interactive picker when code blocks are present, allowing selection of individual code blocks or the full response. - Improved \"always allow\" prefix suggestions for compound bash commands (e.g. cd /tmp && git fetch && git push) to compute smarter per-subcommand prefixes instead of treating the whole command as one - Improved ordering of short task lists - Improved memory usage in multi-agent sessions by releasing completed subagent task state - Fixed MCP OAuth token refresh race condition when running multiple Claude Code instances simultaneously - Fixed shell commands not showing a clear error message when the working directory has been deleted - Fixed config file corruption that could wipe authentication when multiple Claude Code instances ran simultaneously",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.59-2026-02-26-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.59-2026-02-26-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.58",
