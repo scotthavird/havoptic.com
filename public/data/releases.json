@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-02-26T05:29:21.896Z",
+  "lastUpdated": "2026-02-26T10:18:54.717Z",
   "releases": [
+    {
+      "id": "windsurf-1.9566.11",
+      "tool": "windsurf",
+      "toolDisplayName": "Windsurf",
+      "version": "1.9566.11",
+      "date": "2026-02-26T00:00:00.000Z",
+      "summary": "Windsurf version 1.9566.11",
+      "fullNotes": "Windsurf version 1.9566.11",
+      "url": "https://windsurf.com/changelog",
+      "type": "release"
+    },
     {
       "id": "claude-code-2.1.59",
       "tool": "claude-code",
