@@ -10,7 +10,9 @@
       "summary": "Windsurf version 1.9566.11",
       "fullNotes": "Windsurf version 1.9566.11",
       "url": "https://windsurf.com/changelog",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/windsurf-1.9566.11-2026-02-26-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/windsurf-1.9566.11-2026-02-26-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.59",
