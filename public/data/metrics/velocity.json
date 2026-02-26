@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-25T20:13:32.453Z",
+  "lastUpdated": "2026-02-26T00:39:31.850Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 9,
+      "releasesThisWeek": 8,
       "releasesThisMonth": 29,
       "releasesThisQuarter": 65,
       "averageDaysBetweenReleases": 0.9,
@@ -30,7 +30,7 @@
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
-      "releasesThisWeek": 8,
+      "releasesThisWeek": 7,
       "releasesThisMonth": 18,
       "releasesThisQuarter": 46,
       "averageDaysBetweenReleases": 1.5,
@@ -57,12 +57,12 @@
     },
     "windsurf": {
       "toolId": "windsurf",
-      "releasesThisWeek": 1,
+      "releasesThisWeek": 2,
       "releasesThisMonth": 8,
-      "releasesThisQuarter": 21,
-      "averageDaysBetweenReleases": 3,
+      "releasesThisQuarter": 22,
+      "averageDaysBetweenReleases": 3.3,
       "featuresPerRelease": 0.2,
-      "lastReleaseAt": "2026-02-21T00:00:00.000Z"
+      "lastReleaseAt": "2026-02-25T00:00:00.000Z"
     }
   }
 }
