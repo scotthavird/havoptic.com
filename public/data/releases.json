@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-27T00:26:13.357Z",
+  "lastUpdated": "2026-02-27T05:26:09.619Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.419",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.419",
+      "date": "2026-02-27T01:57:59Z",
+      "summary": "2026-02-27 - Add /chronicle command with standup, tips, and improve subcommands powered by session history (experimental) - Scrolling left or right no longer triggers unintended mouse button presse...",
+      "fullNotes": "2026-02-27 - Add /chronicle command with standup, tips, and improve subcommands powered by session history (experimental) - Scrolling left or right no longer triggers unintended mouse button presses - Add Ctrl+F/Ctrl+B as page down/up shortcuts for scrolling in alt-screen views - Add --mouse/--no-mouse flag and mouse config to disable mouse mode in alt screen - Home and End keys jump to the top and bottom of the alt-screen scroll buffer - Add Ctrl+G keyboard shortcut for editing prompts in external editor and dismissing UI elements - /mcp enable works for built-in servers that were auto-disabled before configuration - CLI spinner stops and final agent response is visible after agent finishes work - AUTO theme now uses the terminal's actual ANSI color palette for more accurate colors on any terminal theme - MCP server env vars referenced in command, args, or cwd fields are automatically included in the server environment - /diagnose shows a helpful message when no session has been started yet - MCP server names now support dots, slashes, and @ characters, enabling npm-style names like @modelcontextprotocol/server and io.github/server",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.419",
+      "type": "release"
+    },
+    {
+      "id": "claude-code-2.1.62",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.62",
+      "date": "2026-02-27T01:24:31.775Z",
+      "summary": "- Fixed prompt suggestion cache regression that reduced cache hit rates",
+      "fullNotes": "- Fixed prompt suggestion cache regression that reduced cache hit rates",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.106.0",
       "tool": "openai-codex",
