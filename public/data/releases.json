@@ -10,7 +10,9 @@
       "summary": "2026-02-27 - Auto-update now also updates the binary executable, not just the JS package - Plugin and marketplace git repos update correctly after force-pushes and tag-based installs - 502 bad gate...",
       "fullNotes": "2026-02-27 - Auto-update now also updates the binary executable, not just the JS package - Plugin and marketplace git repos update correctly after force-pushes and tag-based installs - 502 bad gateway errors are retried automatically and no longer crash the session with raw HTML output - Copy hint shows cmd+c in Ghostty on macOS and right-click as an alternative for all terminals - Type to reference GitHub issues, pull requests and discussions",
       "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.420",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/github-copilot-v0.0.420-2026-02-27-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/github-copilot-v0.0.420-2026-02-27-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.30.1",
@@ -21,7 +23,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 58df1c6 to release/v0.30.0-pr-20374 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20567 Full Changelog: https://github....",
       "fullNotes": "What's Changed fix(patch): cherry-pick 58df1c6 to release/v0.30.0-pr-20374 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20567 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.30.0...v0.30.1",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.30.1",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.30.1-2026-02-27-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.30.1-2026-02-27-16x9.jpg"
     },
     {
       "id": "github-copilot-v0.0.419",
