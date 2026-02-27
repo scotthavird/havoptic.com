@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-02-27T15:16:27.267Z",
+  "lastUpdated": "2026-02-27T20:09:15.121Z",
   "releases": [
+    {
+      "id": "github-copilot-v0.0.420",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v0.0.420",
+      "date": "2026-02-27T18:47:56Z",
+      "summary": "2026-02-27 - Auto-update now also updates the binary executable, not just the JS package - Plugin and marketplace git repos update correctly after force-pushes and tag-based installs - 502 bad gate...",
+      "fullNotes": "2026-02-27 - Auto-update now also updates the binary executable, not just the JS package - Plugin and marketplace git repos update correctly after force-pushes and tag-based installs - 502 bad gateway errors are retried automatically and no longer crash the session with raw HTML output - Copy hint shows cmd+c in Ghostty on macOS and right-click as an alternative for all terminals - Type to reference GitHub issues, pull requests and discussions",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v0.0.420",
+      "type": "release"
+    },
+    {
+      "id": "gemini-cli-v0.30.1",
+      "tool": "gemini-cli",
+      "toolDisplayName": "Gemini CLI",
+      "version": "v0.30.1",
+      "date": "2026-02-27T18:33:34Z",
+      "summary": "What's Changed fix(patch): cherry-pick 58df1c6 to release/v0.30.0-pr-20374 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20567 Full Changelog: https://github....",
+      "fullNotes": "What's Changed fix(patch): cherry-pick 58df1c6 to release/v0.30.0-pr-20374 [CONFLICTS] by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/20567 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.30.0...v0.30.1",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.30.1",
+      "type": "release"
+    },
     {
       "id": "github-copilot-v0.0.419",
       "tool": "github-copilot",
