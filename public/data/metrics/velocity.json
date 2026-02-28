@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-02-28T00:35:24.929Z",
+  "lastUpdated": "2026-02-28T05:15:28.814Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 9,
-      "releasesThisMonth": 28,
-      "releasesThisQuarter": 68,
-      "averageDaysBetweenReleases": 0.7,
-      "featuresPerRelease": 1.4,
-      "lastReleaseAt": "2026-02-27T01:24:31.775Z"
+      "releasesThisWeek": 10,
+      "releasesThisMonth": 29,
+      "releasesThisQuarter": 69,
+      "averageDaysBetweenReleases": 0.5,
+      "featuresPerRelease": 1.5,
+      "lastReleaseAt": "2026-02-28T02:43:42.865Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
@@ -48,7 +48,7 @@
     },
     "github-copilot": {
       "toolId": "github-copilot",
-      "releasesThisWeek": 7,
+      "releasesThisWeek": 6,
       "releasesThisMonth": 22,
       "releasesThisQuarter": 51,
       "averageDaysBetweenReleases": 1.1,
