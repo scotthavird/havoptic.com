@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-03-01T15:08:28.469Z",
+  "lastUpdated": "2026-03-01T20:08:28.852Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 10,
-      "releasesThisMonth": 28,
+      "releasesThisMonth": 27,
       "releasesThisQuarter": 69,
       "averageDaysBetweenReleases": 0.5,
       "featuresPerRelease": 1.5,
@@ -32,7 +32,7 @@
       "toolId": "gemini-cli",
       "releasesThisWeek": 5,
       "releasesThisMonth": 19,
-      "releasesThisQuarter": 48,
+      "releasesThisQuarter": 47,
       "averageDaysBetweenReleases": 1,
       "featuresPerRelease": 10.4,
       "lastReleaseAt": "2026-02-27T23:13:40Z"
