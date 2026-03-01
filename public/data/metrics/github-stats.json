@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-02-28T20:08:22.555Z",
+  "lastUpdated": "2026-03-01T00:29:56.415Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 71764,
-        "forks": 5678,
-        "openIssues": 5977,
+        "stars": 71833,
+        "forks": 5683,
+        "openIssues": 5671,
         "contributors": 49,
         "lastCommitAt": "2026-02-28T03:45:37Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-28T20:08:18.837Z"
+      "fetchedAt": "2026-03-01T00:29:52.429Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 62405,
-        "forks": 8299,
-        "openIssues": 1411,
+        "stars": 62414,
+        "forks": 8300,
+        "openIssues": 1405,
         "contributors": 366,
         "lastCommitAt": "2026-02-28T20:04:12Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-28T20:08:19.431Z"
+      "fetchedAt": "2026-03-01T00:29:53.180Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96015,
-        "forks": 11753,
-        "openIssues": 2481,
+        "stars": 96026,
+        "forks": 11756,
+        "openIssues": 2490,
         "contributors": 522,
-        "lastCommitAt": "2026-02-28T19:56:40Z",
+        "lastCommitAt": "2026-03-01T00:04:34Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-28T20:08:20.166Z"
+      "fetchedAt": "2026-03-01T00:29:54.018Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8846,
+        "stars": 8849,
         "forks": 1226,
-        "openIssues": 904,
+        "openIssues": 905,
         "contributors": 18,
         "lastCommitAt": "2026-02-27T18:47:58Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-02-28T20:08:20.758Z"
+      "fetchedAt": "2026-03-01T00:29:54.655Z"
     }
   }
 }
