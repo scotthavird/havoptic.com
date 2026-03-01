@@ -1,49 +1,49 @@
 {
-  "lastUpdated": "2026-03-01T05:28:14.393Z",
+  "lastUpdated": "2026-03-01T10:09:13.207Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 71948,
-        "forks": 5694,
-        "openIssues": 5703,
+        "stars": 72077,
+        "forks": 5707,
+        "openIssues": 5601,
         "contributors": 49,
         "lastCommitAt": "2026-02-28T03:45:37Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-01T05:28:10.727Z"
+      "fetchedAt": "2026-03-01T10:09:08.223Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 62439,
-        "forks": 8301,
-        "openIssues": 1408,
+        "stars": 62464,
+        "forks": 8306,
+        "openIssues": 1410,
         "contributors": 366,
-        "lastCommitAt": "2026-03-01T04:51:12Z",
+        "lastCommitAt": "2026-03-01T09:15:15Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-01T05:28:11.458Z"
+      "fetchedAt": "2026-03-01T10:09:08.744Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96034,
-        "forks": 11759,
-        "openIssues": 2401,
+        "stars": 96058,
+        "forks": 11761,
+        "openIssues": 2414,
         "contributors": 522,
-        "lastCommitAt": "2026-03-01T03:14:31Z",
+        "lastCommitAt": "2026-03-01T09:57:08Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-01T05:28:12.149Z"
+      "fetchedAt": "2026-03-01T10:09:09.559Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8855,
+        "stars": 8860,
         "forks": 1227,
         "openIssues": 907,
         "contributors": 18,
@@ -51,7 +51,7 @@
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-01T05:28:12.807Z"
+      "fetchedAt": "2026-03-01T10:09:10.023Z"
     }
   }
 }
