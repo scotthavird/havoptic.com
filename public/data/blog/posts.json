@@ -1,6 +1,78 @@
 {
-  "lastUpdated": "2026-02-23T15:24:46.732Z",
+  "lastUpdated": "2026-03-01T16:12:13.172Z",
   "posts": [
+    {
+      "id": "monthly-comparison-2026-02",
+      "type": "monthly-comparison",
+      "title": "AI Coding Tools Report: February 2026 - Gemini CLI Dominates Stars While Claude Code Leads Development Velocity",
+      "slug": "monthly-comparison-february-2026",
+      "publishedAt": "2026-03-01T16:04:09.642Z",
+      "summary": "February 2026 AI coding tools analysis: Claude Code leads with 26 releases, Gemini CLI tops GitHub stars at 96K, while npm downloads show clear market leaders.",
+      "content": "# AI Coding Tools Monthly Report: February 2026\n\n## Executive Summary\n\nFebruary 2026 showed steady development momentum across AI coding tools with 88 total releases, maintaining flat velocity compared to January. Claude Code dominated the release cycle with 26 updates focused on git workflow improvements, while Gemini CLI leads in community adoption with 96K GitHub stars despite fewer feature releases.\n\n## Velocity Leaderboard\n\n| Tool | February Releases | Market Share |\n|------|------------------|-------------|\n| **🏆 Claude Code** | 26 | 29.5% |\n| Gemini CLI | 19 | 21.6% |\n| OpenAI Codex CLI | 13 | 14.8% |\n| Kiro CLI | 2 | 2.3% |\n| Cursor | 1 | 1.1% |\n\n**Winner: Claude Code** continues its aggressive development pace, delivering nearly 30% of all AI coding tool releases this month.\n\n## Feature Highlights\n\n### Claude Code\n- **Git Worktree Integration**: New `--worktree (-w)` flag enables isolated development environments\n- **Subagent Isolation**: Enhanced subagent architecture for better task separation and performance\n\n### OpenAI Codex CLI\n- **Enhanced TUI Experience**: Syntax highlighting for fenced code blocks and diffs\n- **Theme Customization**: New `/theme` picker for personalized development environments\n\n### Cursor\n- **Plugin Ecosystem**: Expanded plugin support for third-party integrations\n- **Sandbox Security**: New access controls and async subagent capabilities\n\n### Gemini CLI\n- **Architecture Cleanup**: Removed fireAgent and beforeAgent hooks for simplified codebase\n- **Performance Optimizations**: Backend improvements for faster response times\n\n## GitHub Pulse\n\n| Tool | Stars | Community Momentum |\n|------|-------|-------------------|\n| **Gemini CLI** | 96,082 ⭐ | Leading community adoption |\n| **Claude Code** | 72,201 ⭐ | Strong enterprise following |\n| **OpenAI Codex CLI** | 62,496 ⭐ | Steady growth trajectory |\n\nGemini CLI maintains its position as the most starred AI coding tool, indicating strong developer interest despite fewer feature releases.\n\n## npm Trends\n\n| Tool | Weekly Downloads | Market Position |\n|------|-----------------|----------------|\n| **Claude Code** | 9,302,451 📈 | Enterprise leader |\n| **OpenAI Codex CLI** | 2,079,225 📊 | Strong second |\n| **Gemini CLI** | 756,788 📊 | Growing adoption |\n\nClaude Code dominates actual usage with 9.3M weekly downloads—4.5x more than its nearest competitor, suggesting strong production adoption beyond GitHub popularity metrics.\n\n## Looking Ahead\n\nBased on February patterns, expect continued focus on:\n- **Workflow Integration**: Claude Code's git worktree features signal industry movement toward seamless VCS integration\n- **UI/UX Polish**: OpenAI's TUI improvements suggest user experience becoming a key differentiator\n- **Plugin Ecosystems**: Cursor's plugin focus may drive other tools toward extensibility\n\nThe stable 0% velocity change suggests the market is maturing, with tools focusing on refinement over rapid feature expansion. Watch for potential consolidation as download patterns show clear usage leaders diverging from GitHub popularity.",
+      "coverImageUrl": null,
+      "tools": [
+        "claude-code",
+        "openai-codex",
+        "cursor",
+        "gemini-cli",
+        "kiro"
+      ],
+      "metrics": {
+        "totalReleases": 88,
+        "releasesByTool": {
+          "claude-code": 26,
+          "openai-codex": 13,
+          "cursor": 1,
+          "gemini-cli": 19,
+          "kiro": 2
+        },
+        "topFeatures": [
+          {
+            "tool": "claude-code",
+            "feature": "- Added --worktree (-w) flag to start Claude in an isolated git worktree - Subagents support isolati",
+            "description": "- Added --worktree (-w) flag to start Claude in an isolated git worktree - Subagents support isolation: \"worktree\" for working in a temporary git worktree - Added Ctrl+F keybinding to kill background "
+          },
+          {
+            "tool": "openai-codex",
+            "feature": "New Features - The TUI now syntax-highlights fenced code blocks and diffs, adds a /theme picker with",
+            "description": "New Features - The TUI now syntax-highlights fenced code blocks and diffs, adds a /theme picker with live preview, and uses better theme-aware diff colors for light and dark terminals. (11447, 12581) "
+          },
+          {
+            "tool": "cursor",
+            "feature": "Plugins, Sandbox Access Controls, and Async Subagents",
+            "description": "Plugins, Sandbox Access Controls, and Async Subagents"
+          },
+          {
+            "tool": "gemini-cli",
+            "feature": "What's Changed remove fireAgent and beforeAgent hook by @ishaanxgupta in https://github.com/google-g",
+            "description": "What's Changed remove fireAgent and beforeAgent hook by @ishaanxgupta in https://github.com/google-gemini/gemini-cli/pull/16919 Remove unused modelHooks and toolHooks by @ved015 in https://github.com/"
+          },
+          {
+            "tool": "kiro",
+            "feature": "Kiro CLI version 1.26.0",
+            "description": "Kiro CLI version 1.26.0"
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "OpenAI Codex",
+          "Gemini CLI",
+          "Cursor",
+          "developer tools",
+          "coding assistants",
+          "GitHub stars",
+          "npm downloads",
+          "software development",
+          "February 2026",
+          "tech analysis"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/monthly-comparison-february-2026"
+      }
+    },
     {
       "id": "weekly-digest-2026-w08",
       "type": "weekly-digest",
