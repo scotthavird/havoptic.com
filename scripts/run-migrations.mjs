@@ -45,22 +45,48 @@ console.log(`Found ${migrationFiles.length} migration(s) to run:`);
 migrationFiles.forEach(f => console.log(`  - ${f}`));
 console.log('');
 
-// Run each migration
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 5000;
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Run each migration with retries for transient Cloudflare API errors
 let successCount = 0;
 let failCount = 0;
 
 for (const file of migrationFiles) {
   const filePath = `scripts/db-migrations/${file}`;
-  console.log(`Running: ${file}`);
+  let succeeded = false;
 
-  try {
-    execSync(`npx wrangler d1 execute ${dbName} --remote --file=${filePath}`, {
-      stdio: 'inherit',
-    });
-    console.log(`✓ ${file} completed\n`);
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    if (attempt === 1) {
+      console.log(`Running: ${file}`);
+    } else {
+      console.log(`Retrying: ${file} (attempt ${attempt}/${MAX_RETRIES})`);
+    }
+
+    try {
+      execSync(`npx wrangler d1 execute ${dbName} --remote --file=${filePath}`, {
+        stdio: 'inherit',
+      });
+      console.log(`✓ ${file} completed\n`);
+      succeeded = true;
+      break;
+    } catch (error) {
+      if (attempt < MAX_RETRIES) {
+        console.error(`✗ ${file} failed (attempt ${attempt}/${MAX_RETRIES}), retrying in ${RETRY_DELAY_MS / 1000}s...\n`);
+        await sleep(RETRY_DELAY_MS);
+      } else {
+        console.error(`✗ ${file} failed after ${MAX_RETRIES} attempts\n`);
+      }
+    }
+  }
+
+  if (succeeded) {
     successCount++;
-  } catch (error) {
-    console.error(`✗ ${file} failed\n`);
+  } else {
     failCount++;
     // Continue with other migrations - they use IF NOT EXISTS so order matters less
   }

@@ -80,10 +80,14 @@ jobs:
         continue-on-error: true # Don't fail if DB doesn't exist yet (first Terraform apply pending)
 
       - name: Deploy to Cloudflare Pages (Dev)
-        uses: cloudflare/wrangler-action@v3
+        uses: nick-fields/retry@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          timeout_minutes: 5
+          max_attempts: 3
+          retry_wait_seconds: 10
           # Deploy with --branch=main so PR builds appear at dev.havoptic.com
           # (not just preview URLs) for testing before merge
-          command: pages deploy dist --project-name=havoptic-dev-web --branch=main
+          command: npx wrangler pages deploy dist --project-name=havoptic-dev-web --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
