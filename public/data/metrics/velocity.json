@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-02T00:27:02.127Z",
+  "lastUpdated": "2026-03-02T05:28:59.738Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
@@ -59,7 +59,7 @@
       "toolId": "windsurf",
       "releasesThisWeek": 2,
       "releasesThisMonth": 7,
-      "releasesThisQuarter": 23,
+      "releasesThisQuarter": 22,
       "averageDaysBetweenReleases": 3.3,
       "featuresPerRelease": 0.2,
       "lastReleaseAt": "2026-02-26T00:00:00.000Z"

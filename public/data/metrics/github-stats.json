@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-03-02T00:27:02.127Z",
+  "lastUpdated": "2026-03-02T05:28:59.738Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 72321,
-        "forks": 5733,
-        "openIssues": 5384,
+        "stars": 72424,
+        "forks": 5738,
+        "openIssues": 5422,
         "contributors": 49,
         "lastCommitAt": "2026-02-28T03:45:37Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T00:26:58.013Z"
+      "fetchedAt": "2026-03-02T05:28:54.629Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 62530,
-        "forks": 8316,
-        "openIssues": 1419,
+        "stars": 62573,
+        "forks": 8322,
+        "openIssues": 1434,
         "contributors": 366,
-        "lastCommitAt": "2026-03-02T00:19:11Z",
+        "lastCommitAt": "2026-03-02T05:23:46Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T00:26:58.793Z"
+      "fetchedAt": "2026-03-02T05:28:55.197Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96128,
-        "forks": 11777,
+        "stars": 96156,
+        "forks": 11790,
         "openIssues": 2461,
         "contributors": 522,
-        "lastCommitAt": "2026-03-01T22:41:49Z",
+        "lastCommitAt": "2026-03-02T05:26:33Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T00:26:59.567Z"
+      "fetchedAt": "2026-03-02T05:28:55.821Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8875,
+        "stars": 8880,
         "forks": 1228,
-        "openIssues": 913,
+        "openIssues": 916,
         "contributors": 18,
         "lastCommitAt": "2026-02-27T18:47:58Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T00:27:00.229Z"
+      "fetchedAt": "2026-03-02T05:28:56.282Z"
     }
   }
 }
