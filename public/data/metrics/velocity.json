@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-01T20:08:28.852Z",
+  "lastUpdated": "2026-03-02T00:27:02.127Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 10,
       "releasesThisMonth": 27,
-      "releasesThisQuarter": 69,
+      "releasesThisQuarter": 68,
       "averageDaysBetweenReleases": 0.5,
       "featuresPerRelease": 1.5,
       "lastReleaseAt": "2026-02-28T02:43:42.865Z"
@@ -49,7 +49,7 @@
     "github-copilot": {
       "toolId": "github-copilot",
       "releasesThisWeek": 6,
-      "releasesThisMonth": 21,
+      "releasesThisMonth": 20,
       "releasesThisQuarter": 51,
       "averageDaysBetweenReleases": 1.1,
       "featuresPerRelease": 6.9,
