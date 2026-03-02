@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-03-02T15:29:06.445Z",
+  "lastUpdated": "2026-03-02T21:05:27.959Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 10,
-      "releasesThisMonth": 27,
+      "releasesThisMonth": 26,
       "releasesThisQuarter": 68,
       "averageDaysBetweenReleases": 0.5,
       "featuresPerRelease": 1.5,
@@ -12,12 +12,12 @@
     },
     "openai-codex": {
       "toolId": "openai-codex",
-      "releasesThisWeek": 2,
-      "releasesThisMonth": 13,
-      "releasesThisQuarter": 38,
-      "averageDaysBetweenReleases": 2.4,
-      "featuresPerRelease": 18.9,
-      "lastReleaseAt": "2026-02-26T23:11:50Z"
+      "releasesThisWeek": 3,
+      "releasesThisMonth": 14,
+      "releasesThisQuarter": 39,
+      "averageDaysBetweenReleases": 2.8,
+      "featuresPerRelease": 19.3,
+      "lastReleaseAt": "2026-03-02T18:00:16Z"
     },
     "cursor": {
       "toolId": "cursor",
@@ -30,21 +30,21 @@
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
-      "releasesThisWeek": 5,
+      "releasesThisWeek": 4,
       "releasesThisMonth": 19,
-      "releasesThisQuarter": 47,
+      "releasesThisQuarter": 46,
       "averageDaysBetweenReleases": 1,
       "featuresPerRelease": 10.4,
       "lastReleaseAt": "2026-02-27T23:13:40Z"
     },
     "kiro": {
       "toolId": "kiro",
-      "releasesThisWeek": 0,
-      "releasesThisMonth": 2,
-      "releasesThisQuarter": 6,
-      "averageDaysBetweenReleases": 9,
+      "releasesThisWeek": 1,
+      "releasesThisMonth": 3,
+      "releasesThisQuarter": 7,
+      "averageDaysBetweenReleases": 10.8,
       "featuresPerRelease": 0.4,
-      "lastReleaseAt": "2026-02-13T00:00-05:00"
+      "lastReleaseAt": "2026-03-02T00:00:00.000Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
