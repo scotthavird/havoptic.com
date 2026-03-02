@@ -45,14 +45,14 @@ console.log(`Found ${migrationFiles.length} migration(s) to run:`);
 migrationFiles.forEach(f => console.log(`  - ${f}`));
 console.log('');
 
-const MAX_RETRIES = 3;
-const RETRY_DELAY_MS = 5000;
+const MAX_RETRIES = 5;
+const BASE_DELAY_MS = 5000;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Run each migration with retries for transient Cloudflare API errors
+// Run each migration with exponential backoff for transient Cloudflare API errors
 let successCount = 0;
 let failCount = 0;
 
@@ -75,9 +75,10 @@ for (const file of migrationFiles) {
       succeeded = true;
       break;
     } catch (error) {
+      const delayMs = BASE_DELAY_MS * Math.pow(2, attempt - 1); // 5s, 10s, 20s, 40s
       if (attempt < MAX_RETRIES) {
-        console.error(`✗ ${file} failed (attempt ${attempt}/${MAX_RETRIES}), retrying in ${RETRY_DELAY_MS / 1000}s...\n`);
-        await sleep(RETRY_DELAY_MS);
+        console.error(`✗ ${file} failed (attempt ${attempt}/${MAX_RETRIES}), retrying in ${delayMs / 1000}s...\n`);
+        await sleep(delayMs);
       } else {
         console.error(`✗ ${file} failed after ${MAX_RETRIES} attempts\n`);
       }
