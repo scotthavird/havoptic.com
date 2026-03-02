@@ -83,8 +83,8 @@ jobs:
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
-          max_attempts: 3
-          retry_wait_seconds: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
           # Deploy with --branch=main so PR builds appear at dev.havoptic.com
           # (not just preview URLs) for testing before merge
           command: npx wrangler pages deploy dist --project-name=havoptic-dev-web --branch=main

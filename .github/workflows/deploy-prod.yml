@@ -69,8 +69,8 @@ jobs:
         uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
-          max_attempts: 3
-          retry_wait_seconds: 10
+          max_attempts: 5
+          retry_wait_seconds: 30
           command: npx wrangler pages deploy dist --project-name=havoptic-prod-web
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
