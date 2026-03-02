@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-03-02T10:19:45.382Z",
+  "lastUpdated": "2026-03-02T11:14:39.432Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 72545,
-        "forks": 5751,
-        "openIssues": 5438,
+        "stars": 72563,
+        "forks": 5754,
+        "openIssues": 5432,
         "contributors": 49,
         "lastCommitAt": "2026-02-28T03:45:37Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T10:19:41.495Z"
+      "fetchedAt": "2026-03-02T11:14:36.205Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 62626,
-        "forks": 8325,
-        "openIssues": 1439,
+        "stars": 62631,
+        "forks": 8326,
+        "openIssues": 1444,
         "contributors": 366,
         "lastCommitAt": "2026-03-02T08:11:19Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T10:19:42.203Z"
+      "fetchedAt": "2026-03-02T11:14:37.132Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96188,
-        "forks": 11800,
-        "openIssues": 2475,
+        "stars": 96192,
+        "forks": 11801,
+        "openIssues": 2482,
         "contributors": 522,
         "lastCommitAt": "2026-03-02T09:39:13Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T10:19:43.049Z"
+      "fetchedAt": "2026-03-02T11:14:38.020Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 8891,
-        "forks": 1229,
+        "stars": 8892,
+        "forks": 1230,
         "openIssues": 917,
         "contributors": 18,
-        "lastCommitAt": "2026-02-27T18:47:58Z",
+        "lastCommitAt": "2026-03-02T10:55:07Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-02T10:19:43.730Z"
+      "fetchedAt": "2026-03-02T11:14:38.797Z"
     }
   }
 }
