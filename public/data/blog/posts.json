@@ -1,6 +1,66 @@
 {
-  "lastUpdated": "2026-03-01T16:12:13.172Z",
+  "lastUpdated": "2026-03-02T15:20:12.630Z",
   "posts": [
+    {
+      "id": "weekly-digest-2026-w09",
+      "type": "weekly-digest",
+      "title": "AI Coding Tools Week 9: Claude Code Ships Slash Commands, CLI Tools Heat Up",
+      "slug": "weekly-digest-week-9-2026",
+      "publishedAt": "2026-03-02T15:12:31.624Z",
+      "summary": "Claude Code drops batch commands & project configs while Gemini CLI gets fuzzy editing boost. 25 releases this week (+19% velocity) as CLI tools dominate updates.",
+      "content": "## TL;DR 📝\n\n• **Claude Code** shipped `/simplify` and `/batch` bundled commands plus project configs with auto-memory\n• **CLI renaissance** continues with Gemini CLI fuzzy editing improvements and OpenAI Codex getting syntax highlighting in TUI\n\n### Claude Code (10 releases)\n\nClaude's on fire this week with 10 rapid-fire updates. The big news: bundled slash commands are here with `/simplify` and `/batch` leading the charge. Project configs now include auto-memory features, making context management way smoother. Also fixed that annoying bug where local slash commands like `/cost` showed up as user messages instead of system messages.\n\n### Gemini CLI (5 releases)\n\nGoogle's CLI tool got some serious love with fuzzy editing improvements and ranged reads. The standout v0.31.0 brings limited searches that should speed up large codebase navigation. Plus they fixed that bottom border color issue that was bugging UI purists.\n\n### Mystery Tool #1 (6 releases)\n\nSomeone's shipping fast with version 0.0.420 (nice). Auto-update now handles binary executables, not just JS packages. The `/chronicle` command looks interesting - powered by session history for standups and tips. Plugin marketplace got stability improvements for git repos.\n\n### OpenAI Codex CLI (2 releases)\n\nCodex CLI is catching up with some slick TUI improvements. Rust v0.106.0 brings syntax highlighting for fenced code blocks and diffs, plus a `/theme` picker with live preview. Direct install scripts for macOS/Linux make onboarding smoother.\n\n### Windsurf (2 releases)\n\nQuiet week for Windsurf with just maintenance releases v1.9566.11 and v1.9566.9.\n\n## Highlight Deep Dive 🚀\n\nClaude Code's slash command evolution deserves attention. The `/batch` command could be a game-changer for developers juggling multiple file operations, while `/simplify` suggests AI-powered code cleanup is becoming more sophisticated. Combined with project configs and auto-memory, Claude's positioning itself as the context-aware coding companion. The rapid iteration (10 releases in one week) shows Anthropic is serious about developer tooling.\n\n## Quick Stats 📊\n\n• **Total releases:** 25 (+19% vs last week)\n• **Biggest mover:** Claude Code (10 releases)\n• **Velocity trend:** Accelerating - CLI tools driving most activity\n• **Pattern:** Slash commands and TUI improvements dominating feature sets\n\nThe CLI tool renaissance continues as developers gravitate toward terminal-native AI coding assistants. Expect more TUI polish and command-line integration in coming weeks.",
+      "coverImageUrl": null,
+      "tools": [
+        "claude-code",
+        "gemini-cli",
+        "github-copilot",
+        "openai-codex",
+        "windsurf"
+      ],
+      "metrics": {
+        "totalReleases": 25,
+        "releasesByTool": {
+          "claude-code": 10,
+          "gemini-cli": 5,
+          "github-copilot": 6,
+          "openai-codex": 2,
+          "windsurf": 2
+        },
+        "topFeatures": [
+          {
+            "tool": "claude-code",
+            "feature": "2.1.63",
+            "description": "- Added /simplify and /batch bundled slash commands - Fixed local slash command output like /cost appearing as user-sent messages instead of system messages in the UI - Project configs & auto memor..."
+          },
+          {
+            "tool": "gemini-cli",
+            "feature": "v0.31.0",
+            "description": "What's Changed Use ranged reads and limited searches and fuzzy editing improvements by @gundermanc in https://github.com/google-gemini/gemini-cli/pull/19240 Fix bottom border color by @jacob314 in ..."
+          },
+          {
+            "tool": "github-copilot",
+            "feature": "v0.0.420",
+            "description": "2026-02-27 - Auto-update now also updates the binary executable, not just the JS package - Plugin and marketplace git repos update correctly after force-pushes and tag-based installs - 502 bad gate..."
+          }
+        ],
+        "velocityChange": 0
+      },
+      "seo": {
+        "keywords": [
+          "AI coding tools",
+          "Claude Code",
+          "Gemini CLI",
+          "OpenAI Codex",
+          "developer tools",
+          "slash commands",
+          "TUI improvements",
+          "CLI tools",
+          "coding assistants",
+          "week 9 2026"
+        ],
+        "canonicalUrl": "https://havoptic.com/blog/weekly-digest-week-9-2026"
+      }
+    },
     {
       "id": "monthly-comparison-2026-02",
       "type": "monthly-comparison",

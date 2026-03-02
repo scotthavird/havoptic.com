@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-01T16:04:09.661Z",
+  "lastUpdated": "2026-03-02T15:12:31.640Z",
   "categories": [
     {
       "id": "core-editing",
@@ -42,7 +42,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Multi-file editing capability implied by Agent interface and coding model improvements across multiple versions"
+          "notes": "Multi-file editing capability implied by agent interface and coding model improvements in v2.0+"
         },
         "gemini-cli": {
           "supported": true,
@@ -53,7 +53,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:04:09.661Z"
+      "lastUpdated": "2026-03-02T15:12:31.640Z"
     },
     {
       "categoryId": "core-editing",
@@ -83,7 +83,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:04:35.618Z"
+      "lastUpdated": "2026-03-02T15:12:58.554Z"
     },
     {
       "categoryId": "core-editing",
@@ -113,7 +113,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:05:03.207Z"
+      "lastUpdated": "2026-03-02T15:13:25.240Z"
     },
     {
       "categoryId": "core-editing",
@@ -143,7 +143,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:05:27.758Z"
+      "lastUpdated": "2026-03-02T15:13:49.791Z"
     },
     {
       "categoryId": "terminal",
@@ -177,7 +177,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-03-01T16:05:51.976Z"
+      "lastUpdated": "2026-03-02T15:14:16.060Z"
     },
     {
       "categoryId": "terminal",
@@ -187,7 +187,7 @@
       "tools": {
         "claude-code": {
           "supported": true,
-          "notes": "BashTool and shell command execution capabilities evident from Windows fix"
+          "notes": "BashTool and remote-control subcommand suggest shell integration"
         },
         "openai-codex": {
           "supported": true,
@@ -196,7 +196,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "v1.6 'improved Agent terminal' indicates shell integration capabilities"
+          "notes": "Agent terminal feature in v1.6 indicates shell integration"
         },
         "gemini-cli": {
           "supported": false
@@ -205,7 +205,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:06:19.613Z"
+      "lastUpdated": "2026-03-02T15:14:43.941Z"
     },
     {
       "categoryId": "terminal",
@@ -237,7 +237,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:06:49.052Z"
+      "lastUpdated": "2026-03-02T15:15:09.220Z"
     },
     {
       "categoryId": "mcp",
@@ -269,7 +269,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-03-01T16:07:16.902Z"
+      "lastUpdated": "2026-03-02T15:15:33.842Z"
     },
     {
       "categoryId": "mcp",
@@ -301,7 +301,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-03-01T16:07:45.992Z"
+      "lastUpdated": "2026-03-02T15:15:57.725Z"
     },
     {
       "categoryId": "mcp",
@@ -316,11 +316,10 @@
         },
         "openai-codex": {
           "supported": true,
-          "notes": "v0.97.0 references 'MCP/App tool approvals' and v0.100.0 mentions 'JavaScript REPL runtime' and 'tool calls', suggesting custom tool support"
+          "notes": "v0.97.0 references 'MCP/App tool approvals' and v0.100.0 mentions 'JavaScript REPL runtime' as tools"
         },
         "cursor": {
-          "supported": true,
-          "notes": "v2.5 adds 'Plugins' which typically enable custom tool integration"
+          "supported": false
         },
         "gemini-cli": {
           "supported": true,
@@ -329,10 +328,10 @@
         },
         "kiro": {
           "supported": true,
-          "notes": "v1.23.0 explicitly mentions 'Grep/Glob Tools' indicating custom tool support"
+          "notes": "v1.23.0 mentions 'Grep/Glob Tools' indicating custom tool support"
         }
       },
-      "lastUpdated": "2026-03-01T16:08:10.119Z"
+      "lastUpdated": "2026-03-02T15:16:22.978Z"
     },
     {
       "categoryId": "ide",
@@ -352,7 +351,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "AI Code Review in Editor (v2.1), layout customization (v2.3), and overall editor-based functionality"
+          "notes": "Editor-based features like AI Code Review in v2.1 and slash commands in v1.6 suggest VS Code integration"
         },
         "gemini-cli": {
           "supported": true,
@@ -363,7 +362,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:08:39.652Z"
+      "lastUpdated": "2026-03-02T15:16:49.321Z"
     },
     {
       "categoryId": "ide",
@@ -389,7 +388,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:09:10.203Z"
+      "lastUpdated": "2026-03-02T15:17:16.032Z"
     },
     {
       "categoryId": "ide",
@@ -419,7 +418,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:09:36.540Z"
+      "lastUpdated": "2026-03-02T15:17:41.807Z"
     },
     {
       "categoryId": "ide",
@@ -451,7 +450,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:10:02.453Z"
+      "lastUpdated": "2026-03-02T15:18:05.924Z"
     },
     {
       "categoryId": "agentic",
@@ -485,7 +484,7 @@
           "addedAt": "2025-12-23T05:00:00.000Z"
         }
       },
-      "lastUpdated": "2026-03-01T16:10:30.479Z"
+      "lastUpdated": "2026-03-02T15:18:30.171Z"
     },
     {
       "categoryId": "agentic",
@@ -505,7 +504,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Agent interface in v2.0, subagents in v2.4, and async subagents in v2.5 enable autonomous operation"
+          "notes": "Subagents (v2.4) and Async Subagents (v2.5) indicate autonomous operation capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -516,7 +515,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:10:57.182Z"
+      "lastUpdated": "2026-03-02T15:18:54.810Z"
     },
     {
       "categoryId": "agentic",
@@ -536,7 +535,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Plan Mode functionality and subagents suggest ability to break down complex tasks"
+          "notes": "Subagents (v2.4) and Multi-Agent Judging (v2.2) suggest task decomposition and delegation capabilities"
         },
         "gemini-cli": {
           "supported": true,
@@ -547,7 +546,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:11:21.273Z"
+      "lastUpdated": "2026-03-02T15:19:20.412Z"
     },
     {
       "categoryId": "agentic",
@@ -567,7 +566,7 @@
         },
         "cursor": {
           "supported": true,
-          "notes": "Pinned Chats feature in v2.2 indicates context management across conversations"
+          "notes": "Pinned chats in v2.2 and improved plan mode suggest context management features"
         },
         "gemini-cli": {
           "supported": true,
@@ -578,7 +577,7 @@
           "supported": false
         }
       },
-      "lastUpdated": "2026-03-01T16:11:46.114Z"
+      "lastUpdated": "2026-03-02T15:19:45.843Z"
     }
   ]
 }
