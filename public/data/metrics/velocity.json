@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-03T15:20:25.641Z",
+  "lastUpdated": "2026-03-03T20:11:59.070Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "releasesThisWeek": 8,
       "releasesThisMonth": 26,
-      "releasesThisQuarter": 67,
+      "releasesThisQuarter": 66,
       "averageDaysBetweenReleases": 0.5,
       "featuresPerRelease": 1.5,
       "lastReleaseAt": "2026-02-28T02:43:42.865Z"
@@ -49,11 +49,11 @@
     "github-copilot": {
       "toolId": "github-copilot",
       "releasesThisWeek": 5,
-      "releasesThisMonth": 20,
-      "releasesThisQuarter": 51,
-      "averageDaysBetweenReleases": 1.1,
-      "featuresPerRelease": 6.9,
-      "lastReleaseAt": "2026-02-27T18:47:56Z"
+      "releasesThisMonth": 21,
+      "releasesThisQuarter": 52,
+      "averageDaysBetweenReleases": 1.3,
+      "featuresPerRelease": 7.1,
+      "lastReleaseAt": "2026-03-03T18:12:57Z"
     },
     "windsurf": {
       "toolId": "windsurf",
