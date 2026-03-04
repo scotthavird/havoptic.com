@@ -10,7 +10,9 @@
       "summary": "What's Changed fix(patch): cherry-pick 0659ad1 to release/v0.32.0-pr-21042 to patch version v0.32.0 and create version 0.32.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pul...",
       "fullNotes": "What's Changed fix(patch): cherry-pick 0659ad1 to release/v0.32.0-pr-21042 to patch version v0.32.0 and create version 0.32.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/21048 Full Changelog: https://github.com/google-gemini/gemini-cli/compare/v0.32.0...v0.32.1",
       "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.32.1",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/gemini-cli-v0.32.1-2026-03-04-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/gemini-cli-v0.32.1-2026-03-04-16x9.jpg"
     },
     {
       "id": "claude-code-2.1.66",
@@ -21,7 +23,9 @@
       "summary": "- Reduced spurious error logging",
       "fullNotes": "- Reduced spurious error logging",
       "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
-      "type": "release"
+      "type": "release",
+      "infographicUrl": "/images/infographics/claude-code-2.1.66-2026-03-04-1x1.jpg",
+      "infographicUrl16x9": "/images/infographics/claude-code-2.1.66-2026-03-04-16x9.jpg"
     },
     {
       "id": "gemini-cli-v0.32.0",
