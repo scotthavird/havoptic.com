@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-03-03T20:11:59.070Z",
+  "lastUpdated": "2026-03-04T00:39:30.753Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
-      "releasesThisWeek": 8,
+      "releasesThisWeek": 7,
       "releasesThisMonth": 26,
       "releasesThisQuarter": 66,
       "averageDaysBetweenReleases": 0.5,
@@ -21,21 +21,21 @@
     },
     "cursor": {
       "toolId": "cursor",
-      "releasesThisWeek": 0,
-      "releasesThisMonth": 1,
-      "releasesThisQuarter": 4,
-      "averageDaysBetweenReleases": 22.6,
+      "releasesThisWeek": 1,
+      "releasesThisMonth": 2,
+      "releasesThisQuarter": 5,
+      "averageDaysBetweenReleases": 21.5,
       "featuresPerRelease": 0.2,
-      "lastReleaseAt": "2026-02-17T00:00:00.000Z"
+      "lastReleaseAt": "2026-03-03T00:00:00.000Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
-      "releasesThisWeek": 3,
-      "releasesThisMonth": 19,
-      "releasesThisQuarter": 43,
-      "averageDaysBetweenReleases": 1,
-      "featuresPerRelease": 10.4,
-      "lastReleaseAt": "2026-02-27T23:13:40Z"
+      "releasesThisWeek": 4,
+      "releasesThisMonth": 20,
+      "releasesThisQuarter": 44,
+      "averageDaysBetweenReleases": 1.4,
+      "featuresPerRelease": 10.8,
+      "lastReleaseAt": "2026-03-03T23:50:37Z"
     },
     "kiro": {
       "toolId": "kiro",
@@ -48,16 +48,16 @@
     },
     "github-copilot": {
       "toolId": "github-copilot",
-      "releasesThisWeek": 5,
+      "releasesThisWeek": 4,
       "releasesThisMonth": 21,
-      "releasesThisQuarter": 52,
+      "releasesThisQuarter": 51,
       "averageDaysBetweenReleases": 1.3,
       "featuresPerRelease": 7.1,
       "lastReleaseAt": "2026-03-03T18:12:57Z"
     },
     "windsurf": {
       "toolId": "windsurf",
-      "releasesThisWeek": 2,
+      "releasesThisWeek": 1,
       "releasesThisMonth": 7,
       "releasesThisQuarter": 22,
       "averageDaysBetweenReleases": 3.3,
