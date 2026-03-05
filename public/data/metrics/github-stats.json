@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-03-05T10:17:48.864Z",
+  "lastUpdated": "2026-03-05T11:13:03.554Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 74030,
-        "forks": 5897,
-        "openIssues": 5668,
+        "stars": 74053,
+        "forks": 5899,
+        "openIssues": 5606,
         "contributors": 49,
         "lastCommitAt": "2026-03-05T00:26:21Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-05T10:17:43.834Z"
+      "fetchedAt": "2026-03-05T11:13:01.321Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 63171,
-        "forks": 8382,
-        "openIssues": 1513,
+        "stars": 63181,
+        "forks": 8383,
+        "openIssues": 1516,
         "contributors": 372,
-        "lastCommitAt": "2026-03-05T10:16:41Z",
+        "lastCommitAt": "2026-03-05T11:11:20Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-05T10:17:44.476Z"
+      "fetchedAt": "2026-03-05T11:13:01.855Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96522,
-        "forks": 11921,
-        "openIssues": 2603,
+        "stars": 96526,
+        "forks": 11923,
+        "openIssues": 2608,
         "contributors": 535,
         "lastCommitAt": "2026-03-05T09:33:28Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-05T10:17:45.403Z"
+      "fetchedAt": "2026-03-05T11:13:02.463Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 9070,
+        "stars": 9071,
         "forks": 1246,
-        "openIssues": 979,
+        "openIssues": 981,
         "contributors": 18,
         "lastCommitAt": "2026-03-04T14:34:50Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-05T10:17:45.939Z"
+      "fetchedAt": "2026-03-05T11:13:02.942Z"
     }
   }
 }
