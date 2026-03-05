@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-05T11:13:03.554Z",
+  "lastUpdated": "2026-03-05T15:22:51.518Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
@@ -49,7 +49,7 @@
     "github-copilot": {
       "toolId": "github-copilot",
       "releasesThisWeek": 3,
-      "releasesThisMonth": 21,
+      "releasesThisMonth": 20,
       "releasesThisQuarter": 50,
       "averageDaysBetweenReleases": 1.3,
       "featuresPerRelease": 7.1,
