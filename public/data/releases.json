@@ -1,6 +1,17 @@
 {
-  "lastUpdated": "2026-03-05T15:19:56.956Z",
+  "lastUpdated": "2026-03-05T20:15:06.141Z",
   "releases": [
+    {
+      "id": "openai-codex-rust-v0.111.0",
+      "tool": "openai-codex",
+      "toolDisplayName": "OpenAI Codex CLI",
+      "version": "rust-v0.111.0",
+      "date": "2026-03-05T19:12:13Z",
+      "summary": "New Features - Fast mode is now enabled by default, and the TUI header shows whether the session is running in Fast or Standard mode. (13450, 13446) - jsrepl can now dynamically import local .js an...",
+      "fullNotes": "New Features - Fast mode is now enabled by default, and the TUI header shows whether the session is running in Fast or Standard mode. (13450, 13446) - jsrepl can now dynamically import local .js and .mjs files, making it easier to reuse workspace scripts from the REPL. (13437) - Codex now tells the model which plugins are enabled at session start, improving discovery of installed MCPs, apps, and skills. (13433) - App-server v2 now exposes MCP elicitation as a structured request/response flow instead of raw events, which simplifies client integrations. (13425) - Expanded image workflow support for clients, including client-side handling of image-generation events and model metadata for image-capable web search. (13512, 13538) Bug Fixes - Resuming a thread now preserves its stored git context and keeps apps enabled, avoiding broken state after codex resume. (13504, 13533) Documentation - Added sample skill documentation for artifact workflows, including slide deck and spreadsheet examples. (13525) Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.110.0...rust-v0.111.0 - 13516 Log non-audio realtime events @aibrahim-oai - 13208 chore(deps): bump actions/download-artifact from 7 to 8 @dependabot - 13512 image-gen-event/clientprocessing @won-openai - 13210 chore(deps): bump strummacros from 0.27.2 to 0.28.0 in /codex-rs @dependabot - 13209 chore(deps): bump serdewith from 3.16.1 to 3.17.0 in /codex-rs @dependabot - 13504 Preserve persisted thread git info in resume @joeytrasatti-openai - 13207 chore(deps): bump actions/upload-artifact from 6 to 7 @dependabot - 13433 feat: track plugins mcps/apps and add plugin info to userinstructions @sayan-oai - 13450 [core] Enable fast mode by default @pash-openai - 13438 [tui] rotate paid promo tips to include fast mode @pash-openai - 13515 [tui] Update fast mode plan usage copy @pash-openai - 13533 [apps] Fix the issue where apps is not enabled after codex resume. @mzeng-openai - 13437 [jsrepl] Support local ESM file imports @aaronl-openai - 13539 Reduce realtime audio submission log noise @aibrahim-oai - 13538 chore: add websearchtooltype for image support @sayan-oai - 13446 [tui] Show speed in session header @pash-openai - 13392 refactor: prepare unified exec for zsh-fork backend @bolinfest - 13571 feat: bind package manager @jif-oai - 13525 feat: skills for artifacts @jif-oai - 13573 feat: ultra polish package manager @jif-oai - 13577 chore: ultra-clean artifacts @jif-oai - 13425 feat(app-server): support mcp elicitations in v2 api @owenlin0",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.111.0",
+      "type": "release"
+    },
     {
       "id": "openai-codex-rust-v0.110.0",
       "tool": "openai-codex",
