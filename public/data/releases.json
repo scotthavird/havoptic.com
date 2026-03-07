@@ -1,6 +1,28 @@
 {
-  "lastUpdated": "2026-03-06T20:10:34.586Z",
+  "lastUpdated": "2026-03-07T00:24:23.803Z",
   "releases": [
+    {
+      "id": "claude-code-2.1.71",
+      "tool": "claude-code",
+      "toolDisplayName": "Claude Code",
+      "version": "2.1.71",
+      "date": "2026-03-06T22:47:03.532Z",
+      "summary": "- Added /loop command to run a prompt or slash command on a recurring interval (e.g. /loop 5m check the deploy) - Added cron scheduling tools for recurring prompts within a session - Added voice:pu...",
+      "fullNotes": "- Added /loop command to run a prompt or slash command on a recurring interval (e.g. /loop 5m check the deploy) - Added cron scheduling tools for recurring prompts within a session - Added voice:pushToTalk keybinding to make the voice activation key rebindable in keybindings.json (default: space) — modifier+letter combos like meta+k have",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "type": "release"
+    },
+    {
+      "id": "github-copilot-v1.0.2",
+      "tool": "github-copilot",
+      "toolDisplayName": "GitHub Copilot CLI",
+      "version": "v1.0.2",
+      "date": "2026-03-06T21:33:05Z",
+      "summary": "2026-03-06 To commemorate GitHub Copilot CLI reaching general availability last week, we're incrementing the major version to 1.0! - Type 'exit' as a bare command to close the CLI - Askuser form no...",
+      "fullNotes": "2026-03-06 To commemorate GitHub Copilot CLI reaching general availability last week, we're incrementing the major version to 1.0! - Type 'exit' as a bare command to close the CLI - Askuser form now submits with Enter key and allows custom responses in enum fields - Support 'command' field as cross-platform alias for bash/powershell in hook configs - Hook configurations now accept timeout as alias for timeoutSec - Fix handling of meta with control keys (including shift+enter from /terminal-setup)",
+      "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.2",
+      "type": "release"
+    },
     {
       "id": "github-copilot-v0.0.423",
       "tool": "github-copilot",
