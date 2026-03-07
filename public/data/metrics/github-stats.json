@@ -1,57 +1,57 @@
 {
-  "lastUpdated": "2026-03-07T11:04:13.623Z",
+  "lastUpdated": "2026-03-07T15:07:11.021Z",
   "tools": {
     "claude-code": {
       "toolId": "claude-code",
       "github": {
-        "stars": 74831,
-        "forks": 6001,
-        "openIssues": 5689,
+        "stars": 74886,
+        "forks": 6010,
+        "openIssues": 5724,
         "contributors": 49,
         "lastCommitAt": "2026-03-07T00:12:45Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-07T11:04:10.201Z"
+      "fetchedAt": "2026-03-07T15:07:07.106Z"
     },
     "openai-codex": {
       "toolId": "openai-codex",
       "github": {
-        "stars": 63635,
-        "forks": 8457,
-        "openIssues": 1627,
+        "stars": 63668,
+        "forks": 8466,
+        "openIssues": 1631,
         "contributors": 374,
-        "lastCommitAt": "2026-03-07T11:02:52Z",
+        "lastCommitAt": "2026-03-07T14:40:54Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-07T11:04:10.891Z"
+      "fetchedAt": "2026-03-07T15:07:07.761Z"
     },
     "gemini-cli": {
       "toolId": "gemini-cli",
       "github": {
-        "stars": 96763,
-        "forks": 11986,
-        "openIssues": 2748,
+        "stars": 96781,
+        "forks": 11989,
+        "openIssues": 2753,
         "contributors": 550,
         "lastCommitAt": "2026-03-07T07:45:10Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-07T11:04:11.718Z"
+      "fetchedAt": "2026-03-07T15:07:08.571Z"
     },
     "github-copilot": {
       "toolId": "github-copilot",
       "github": {
-        "stars": 9124,
-        "forks": 1251,
-        "openIssues": 1007,
+        "stars": 9130,
+        "forks": 1255,
+        "openIssues": 1009,
         "contributors": 18,
         "lastCommitAt": "2026-03-06T21:33:07Z",
         "starsThisWeek": 0,
         "starsThisMonth": 0
       },
-      "fetchedAt": "2026-03-07T11:04:12.339Z"
+      "fetchedAt": "2026-03-07T15:07:09.164Z"
     }
   }
 }
